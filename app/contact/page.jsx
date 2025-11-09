@@ -60,7 +60,7 @@ function JsonLd() {
         name: BRAND,
         url: "/",
         email: CONTACT?.email || "info@epfproservices.com",
-        telephone: CONTACT?.phoneNumber || "+1 (647) 812-9135",
+        telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
         sameAs: [],
       },
       {
@@ -68,7 +68,7 @@ function JsonLd() {
         "@id": "/#loc-mississauga",
         name: `${BRAND} — Mississauga`,
         url: "/contact/",
-        telephone: CONTACT?.phoneNumber || "+1 (647) 812-9135",
+        telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
         email: CONTACT?.email || "info@epfproservices.com",
         branchOf: { "@id": "/#org" },
         address: {
@@ -93,7 +93,7 @@ function JsonLd() {
         "@id": "/#loc-stoney",
         name: `${BRAND} — Stoney Creek`,
         url: "/contact/",
-        telephone: CONTACT?.phoneNumber || "+1 (647) 812-9135",
+        telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
         email: CONTACT?.email || "info@epfproservices.com",
         branchOf: { "@id": "/#org" },
         address: {
@@ -327,8 +327,8 @@ export default function ContactPage() {
       <section className="mt-10 p-6 md:p-8 rounded-2xl ring-1 ring-blue-100 bg-gradient-to-br from-blue-50 via-white to-emerald-50">
         <h2 className="text-2xl font-semibold">Request a Fast Estimate</h2>
         <p className="mt-2 text-slate-700">
-          Attach a few photos and include room sizes / ceiling height. For
-          urgent jobs, text{" "}
+          Include room sizes / Popcorn ceiling painted/not painted / ceiling
+          height. For urgent jobs, text{CONTACT.phone}
           <a className="underline" href={CONTACT.phoneHref}>
             {CONTACT.phoneNumber}
           </a>

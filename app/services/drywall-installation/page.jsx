@@ -140,7 +140,7 @@ export default function Page() {
               href={CONTACT.phoneHref}
               aria-label="Call for a quote"
             >
-              📞 (647) 812-9135
+              📞 (647) 923-6784
             </a>
             <a className="btn-cta" href="/quote/" aria-label="Open quote form">
               Get my quote
@@ -250,7 +250,7 @@ export default function Page() {
         </div>
         <div className="flex gap-3">
           <a className="btn-cta" href={CONTACT.phoneHref}>
-            📞 (647) 812-9135
+            📞 (647) 923-6784
           </a>
           <a className="btn-cta" href="/quote/">
             Get my quote
@@ -304,7 +304,7 @@ export default function Page() {
       <div className=" ">
         <div className="bg-white/95 backdrop-blur border shadow-xl rounded-2xl p-3 flex items-center justify-between gap-3">
           <a href={CONTACT.phoneHref} className="btn-cta flex-1 text-center">
-            📞 Call (647) 812-9135
+            📞 Call (647) 923-6784
           </a>
           <a href="/quote/" className="btn-cta flex-1 text-center">
             Get my quote

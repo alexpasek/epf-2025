@@ -645,7 +645,7 @@ export async function POST(req) {
         priceLine +
         `For small areas (< ${MIN_SF_THRESHOLD} sqft), our **minimum labour charge is $${MIN_CHARGE.toLocaleString()}** because setup/containment time dominates. Materials & HST extra.\n\n` +
         "Could you share the service and approx. floor sqft? I’ll tighten the range.\n\n" +
-        "Next steps: call 📞 (647) 812-9135 or /quote/.";
+        "Next steps: call 📞 (647) 923-6784 or /quote/.";
     }
 
     recordMessage(sessionId, "assistant", reply);
@@ -662,7 +662,7 @@ export async function POST(req) {
     return NextResponse.json(payload);
   } catch (e) {
     var payload = {
-      reply: "Server error. Please call (647) 812-9135 or use /quote/.",
+      reply: "Server error. Please call (647) 923-6784 or use /quote/.",
       usedFallback: true,
     };
     if (DEBUG) payload.diag = { error: String(e && e.message ? e.message : e) };

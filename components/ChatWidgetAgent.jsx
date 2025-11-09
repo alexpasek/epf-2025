@@ -26,10 +26,10 @@ function safeHtml(text) {
     );
   });
 
-  // 4) phone (647) 812-9135
+  // 4) phone (647) 923-6784
   s = s.replace(
     /(\+?1?\s?\(?(647)\)?[-\s.]?923[-\s.]?6784)/g,
-    '<a href="tel:+16478129135" class="underline underline-offset-2">$1</a>'
+    '<a href="tel:+16479236784" class="underline underline-offset-2">$1</a>'
   );
 
   return s;
@@ -231,7 +231,7 @@ export default function ChatWidgetAgent() {
         const n = m.concat([
           {
             role: "assistant",
-            content: "Connection issue. You can also call 📞 (647) 812-9135.",
+            content: "Connection issue. You can also call 📞 (647) 923-6784.",
           },
         ]);
         saveMsgs(sessionId, n);
@@ -426,10 +426,10 @@ export default function ChatWidgetAgent() {
             </div>
             <div className="flex items-center justify-between text-[12px] mt-2">
               <a
-                href="tel:+16478129135"
+                href="tel:+16479236784"
                 className="underline underline-offset-2"
               >
-                📞 Call (647) 812-9135
+                📞 Call (647) 923-6784
               </a>
               <a href="/quote/" className="underline underline-offset-2">
                 Fast Quote →

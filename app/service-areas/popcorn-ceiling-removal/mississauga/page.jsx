@@ -148,7 +148,7 @@ function JsonLd() {
   );
 }
 
-const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16478129135";
+const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 
 export default function Page() {
   const neighborhoods = [
@@ -202,7 +202,7 @@ export default function Page() {
               className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md hover:brightness-110 active:brightness-95 transition"
             >
               <span className="mr-2">📞</span>
-              <span className="whitespace-nowrap">(647) 812-9135</span>
+              <span className="whitespace-nowrap">(647) 923-6784</span>
             </a>
             <a
               href="/quote/"
@@ -319,7 +319,7 @@ export default function Page() {
         </div>
         <div className="mt-5 flex gap-3">
           <a className="btn-cta" href={phoneHref}>
-            📞 (647) 812-9135
+            📞 (647) 923-6784
           </a>
           <a className="btn-cta" href="/quote/">
             Get my quote
@@ -486,7 +486,7 @@ export default function Page() {
         </div>
         <div className="flex gap-3">
           <a className="btn-cta" href={phoneHref}>
-            📞 (647) 812-9135
+            📞 (647) 923-6784
           </a>
           <a className="btn-cta" href="/quote/">
             Get my quote

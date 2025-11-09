@@ -48,7 +48,7 @@ export function CityCopy({ city, neighborhoods = [] }) {
       </ul>
       <p>
         Ready to make your walls look new again? Call{" "}
-        <a href="tel:+16478129135">(647) 812-9135</a> or request a fast quote.
+        <a href="tel:+16479236784">(647) 923-6784</a> or request a fast quote.
       </p>
     </div>
   );
@@ -86,7 +86,7 @@ export function ServiceCopy({ service }) {
       </ul>
       <p>
         Have questions about {service.toLowerCase()}? Call{" "}
-        <a href="tel:+16478129135">(647) 812-9135</a> or hit “Get Quote”.
+        <a href="tel:+16479236784">(647) 923-6784</a> or hit “Get Quote”.
       </p>
     </div>
   );

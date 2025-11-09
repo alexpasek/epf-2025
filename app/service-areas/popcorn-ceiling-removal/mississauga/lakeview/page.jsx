@@ -116,7 +116,7 @@ function JsonLd() {
   );
 }
 
-const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16478129135";
+const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 
 export default function Page() {
   let miss = null;
@@ -150,7 +150,7 @@ export default function Page() {
               href={phoneHref}
               className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md transition"
             >
-              📞 (647) 812-9135
+              📞 (647) 923-6784
             </a>
             <a
               href="/quote/"
@@ -304,7 +304,7 @@ export default function Page() {
             className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md transition"
             href={phoneHref}
           >
-            📞 (647) 812-9135
+            📞 (647) 923-6784
           </a>
           <a
             className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md transition"

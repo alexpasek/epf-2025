@@ -65,7 +65,7 @@ export default function City() {
         ]}
       />
       <p className="mt-6 flex gap-3">
-        <a className="btn-cta" href="tel:+16478129135">
+        <a className="btn-cta" href="tel:+16479236784">
           📞 (647) 923‑6784
         </a>
         <a className="btn-cta" href="/quote/">

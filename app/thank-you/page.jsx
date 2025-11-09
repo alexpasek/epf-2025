@@ -22,7 +22,7 @@ export default function ThankYou() {
                        bg-gradient-to-b from-blue-500 to-blue-700 text-white
                        hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-          Call (647) 812-9135
+          Call (647) 923-6784
         </a>
       </div>
     </main>

@@ -138,7 +138,7 @@ function JsonLd() {
 }
 
 export default function Page() {
-  const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16478129135";
+  const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
   const images = Array.from(
     { length: 6 },
     (_, i) => `/services/popcorn/${i + 1}.webp`
@@ -178,7 +178,7 @@ export default function Page() {
               href={phoneHref}
               className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md hover:brightness-110 active:brightness-95 transition"
             >
-              <span className="mr-2">📞</span>(647) 812-9135
+              <span className="mr-2">📞</span>(647) 923-6784
             </a>
             <a
               href="/quote/"
@@ -456,7 +456,7 @@ export default function Page() {
         </div>
         <div className="flex gap-3">
           <a className="btn-cta" href={phoneHref}>
-            📞 (647) 812-9135
+            📞 (647) 923-6784
           </a>
           <a className="btn-cta" href="/quote/">
             Get my quote
@@ -468,7 +468,7 @@ export default function Page() {
       <div className=" ">
         <div className="bg-white/95 backdrop-blur border shadow-xl rounded-2xl p-3 flex items-center justify-between gap-3">
           <a href={phoneHref} className="btn-cta flex-1 text-center">
-            📞 Call (647) 812-9135
+            📞 Call (647) 923-6784
           </a>
           <a href="/quote/" className="btn-cta flex-1 text-center">
             Get my quote

@@ -14,13 +14,13 @@ export const runtime = "edge"; //"edge" forr clowflare nodejs"for local
 function msgFor(key) {
   switch (key) {
     case "idle-15m":
-      return "Still here if you need me. Share rooms/areas, approx. sq ft, and if popcorn is painted—I’ll tighten your ballpark. Or call 📞 (647) 812-9135.";
+      return "Still here if you need me. Share rooms/areas, approx. sq ft, and if popcorn is painted—I’ll tighten your ballpark. Or call 📞 (647) 923-6784.";
     case "day-1":
       return "Quick check-in 👋 Unpainted often lands ~$5.5–$7.5/sqft labour; painted/heavier repairs ~$7.5–$9.5+/sqft (materials + HST extra).";
     case "day-3":
       return "We include Level 5 skim, raking-light inspection, and stain-block primer so the finish reads flat and bright.";
     case "day-7":
-      return "Last ping—want me to pencil a tentative window and send a written scope? Call 📞 (647) 812-9135 or use /quote/.";
+      return "Last ping—want me to pencil a tentative window and send a written scope? Call 📞 (647) 923-6784 or use /quote/.";
     default:
       return "Happy to help with a tighter range or timeline if you’d like.";
   }
@@ -34,7 +34,7 @@ function emailHTML(msg) {
     "<p>" +
     msg +
     "</p>" +
-    '<p>Next steps:<br>• Call: <a href="tel:+16478129135">(647) 812-9135</a><br>• Fast Quote: <a href="' +
+    '<p>Next steps:<br>• Call: <a href="tel:+16479236784">(647) 923-6784</a><br>• Fast Quote: <a href="' +
     quote +
     '">' +
     quote +

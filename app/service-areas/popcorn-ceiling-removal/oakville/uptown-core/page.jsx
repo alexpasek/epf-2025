@@ -3,7 +3,7 @@ import { CONTACT } from "@/app/config";
 
 export const revalidate = 86400;
 
-const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16478129135";
+const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 
 export const metadata = {
   title: "Popcorn Ceiling Removal — Uptown Core, Oakville | Smooth Level 5",
@@ -133,7 +133,7 @@ export default function Page() {
               className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md hover:brightness-110 active:brightness-95 transition"
             >
               <span className="mr-2">📞</span>
-              <span className="whitespace-nowrap">(647) 812-9135</span>
+              <span className="whitespace-nowrap">(647) 923-6784</span>
             </a>
             <a
               href="/quote/"
@@ -387,7 +387,7 @@ export default function Page() {
             className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-semibold shadow-sm hover:shadow-md"
             href={phoneHref}
           >
-            📞 (647) 812-9135
+            📞 (647) 923-6784
           </a>
           <a
             className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-semibold shadow-sm hover:shadow-md"

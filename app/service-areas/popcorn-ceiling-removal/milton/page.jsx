@@ -93,7 +93,7 @@ function JsonLd() {
   );
 }
 
-const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16478129135";
+const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 
 export default function Page() {
   // Load Milton city + neighborhoods from data (with safe fallbacks)
@@ -148,7 +148,7 @@ export default function Page() {
               aria-label="Call for a quote"
               className="btn-cta"
             >
-              📞 (647) 812-9135
+              📞 (647) 923-6784
             </a>
             <a href="/quote/" aria-label="Open quote form" className="btn-cta">
               Get my quote
@@ -396,7 +396,7 @@ export default function Page() {
         </div>
         <div className="flex gap-3">
           <a className="btn-cta" href={phoneHref}>
-            📞 (647) 812-9135
+            📞 (647) 923-6784
           </a>
           <a className="btn-cta" href="/quote/">
             Get my quote
@@ -421,7 +421,7 @@ export default function Page() {
       <div className=" ">
         <div className="bg-white/95 backdrop-blur border shadow-xl rounded-2xl p-3 flex items-center justify-between gap-3">
           <a href={phoneHref} className="btn-cta flex-1 text-center">
-            📞 Call (647) 812-9135
+            📞 Call (647) 923-6784
           </a>
           <a href="/quote/" className="btn-cta flex-1 text-center">
             Get my quote

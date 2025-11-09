@@ -265,8 +265,8 @@ export default function City() {
       </nav>
 
       <p className="mt-6 flex gap-3">
-        <a className="btn-cta" href="tel:+16478129135">
-          📞 (647) 812-9135
+        <a className="btn-cta" href="tel:+16479236784">
+          📞 (647) 923-6784
         </a>
         <a className="btn-cta" href="/quote/">
           Get a fast quote

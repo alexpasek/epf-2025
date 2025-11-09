@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
     : {};
 }
 
-const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16478129135";
+const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 
 export default async function CityPage({ params }) {
   const { city } = await params;
@@ -75,7 +75,7 @@ export default async function CityPage({ params }) {
 
       <div className="mt-10 flex gap-3">
         <a className="btn-cta" href={phoneHref}>
-          📞 (647) 812-9135
+          📞 (647) 923-6784
         </a>
         <a className="btn-cta" href="/quote/">
           Get my quote
