@@ -20,16 +20,16 @@ export default function HeaderNav() {
   return (
     <header className="sticky top-0 z-40">
       {/* Row 1: Logo + CTAs (CTAs visible md+ only) */}
-      <div className="bg-white"> 
+      <div className="bg-white">
         <div className="container-x py-2 md:py-3 flex h-16 items-center gap-3">
           <Link href="/" className="flex items-center gap-2 min-w-0">
             <img
               src="/logo.png"
-              alt="Wallpaper Removal Pro"
+              alt="Popcorn Ceiling removal"
               className="w-auto h-12 md:h-14 object-contain"
             />
             <span className="text-lg md:text-xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
-              Wallpaper Removal Pro
+              Popcorn Ceilign Removal EPF Pro Services
             </span>
           </Link>
 
@@ -61,8 +61,11 @@ export default function HeaderNav() {
             { href: "/", label: "Home" },
             ...services,
             { href: "/before-after/", label: "Before & After" },
-            { href: "/blog/", label: "Blog" },
+
+            { href: "/services/", label: "Locations" },
             { href: "/about-us/", label: "About us" },
+            { href: "/contact/", label: "Contact us" },
+            { href: "/blog/", label: "Blog" },
           ].map((item) => (
             <Link
               key={item.href}
