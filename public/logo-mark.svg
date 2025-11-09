@@ -1,0 +1,43 @@
+<!-- /public/logo-chat.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="t">
+  <title id="t">Chat — Wallpaper Removal Pro</title>
+  <defs>
+    <!-- Blue accent like your CTAs -->
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b82f6"></stop>
+      <stop offset="1" stop-color="#1d4ed8"></stop>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity=".25"></feDropShadow>
+    </filter>
+  </defs>
+
+  <!-- Chat bubble container -->
+  <g filter="url(#shadow)">
+    <!-- main bubble -->
+    <rect x="8" y="10" width="112" height="86" rx="22" fill="#fff" stroke="url(#g)" stroke-width="4"></rect>
+    <!-- tail -->
+    <path d="M84 96 L106 96 L96 116 Z" fill="#fff" stroke="url(#g)" stroke-width="4" stroke-linejoin="round"></path>
+  </g>
+
+  <!-- House + roller inside bubble (centred) -->
+  <!-- House -->
+  <g transform="translate(0,2)">
+    <path d="M64 28 L28 56 L34 56 L34 94 L94 94 L94 56 L100 56 Z" fill="#ef4444"></path>
+    <!-- house inner (subtle inset for readability) -->
+    <path d="M64 33 L35 55 L39 55 L39 90 L89 90 L89 55 L93 55 Z" fill="#f34b4b" opacity=".65"></path>
+  </g>
+
+  <!-- Roller -->
+  <g>
+    <!-- roller body -->
+    <rect x="44" y="58" width="40" height="18" rx="8" fill="#fff7db" stroke="#64748b" stroke-width="3"></rect>
+    <!-- metal bracket to handle -->
+    <path d="M84 67 C 92 60, 96 60, 101 65" fill="none" stroke="#64748b" stroke-width="4" stroke-linecap="round"></path>
+    <!-- handle -->
+    <rect x="98" y="62" width="10" height="18" rx="5" fill="#6b7280"></rect>
+    <!-- tiny ‘paint’ dots (echo from your source) -->
+    <circle cx="56" cy="74" r="2" fill="#f97316"></circle>
+    <circle cx="60" cy="74" r="2" fill="#ef4444"></circle>
+  </g>
+</svg>

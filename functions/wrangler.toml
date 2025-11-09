@@ -1,0 +1,10 @@
+name = "your-pages-app"
+pages_build_output_dir = ".vercel/output/static" # or your build dir
+compatibility_date = "2024-09-23"
+
+[[kv_namespaces]]
+binding = "BLOG_KV"
+# If you already created a namespace, you can paste its IDs; if not, Miniflare
+# will still create an ephemeral one locally as long as the binding is declared.
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"         # optional for local
+# preview_id = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"  # optional for local

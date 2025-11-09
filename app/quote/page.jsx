@@ -1,0 +1,1 @@
+import QuoteForm from '@/components/QuoteForm';export const metadata={title:'Get a Quote — Wallpaper Removal Pro'};export default function Page(){return(<div className='container-x py-10'><h1 className='text-3xl font-bold'>Get a Quote</h1><QuoteForm/></div>);}
