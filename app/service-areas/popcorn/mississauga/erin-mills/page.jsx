@@ -1,4 +1,4 @@
-// app/service-areas/popcorn-ceiling-removal/mississauga/erin-mills/page.jsx
+// app/popcorn-ceiling-removal/mississauga/erin-mills/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -12,13 +12,13 @@ export const metadata = {
   description:
     "Residential popcorn ceiling removal in Erin Mills: floor & stair protection, dust-controlled workflow, Level 5 skim, stain-block primer and a bright paint-ready finish. Clear schedule, tidy crews, written warranty.",
   alternates: {
-    canonical: "/service-areas/popcorn-ceiling-removal/mississauga/erin-mills/",
+    canonical: "/popcorn-ceiling-removal/mississauga/erin-mills/",
   },
   openGraph: {
     title: "Popcorn Ceiling Removal — Erin Mills, Mississauga",
     description:
       "Home-focused popcorn removal with Level 5 skim, prime & paint-ready finish. Clean, contained, guaranteed.",
-    url: "/service-areas/popcorn-ceiling-removal/mississauga/erin-mills/",
+    url: "/popcorn-ceiling-removal/mississauga/erin-mills/",
     type: "article",
   },
   robots: { index: true, follow: true },
@@ -33,7 +33,7 @@ function JsonLd() {
         name: "Popcorn Ceiling Removal",
         serviceType: ["Popcorn Ceiling Removal", "Ceiling Skim Coat Level 5"],
         areaServed: "Erin Mills, Mississauga",
-        url: "/service-areas/popcorn-ceiling-removal/mississauga/erin-mills/",
+        url: "/popcorn-ceiling-removal/mississauga/erin-mills/",
         potentialAction: { "@type": "RequestQuoteAction", target: "/quote/" },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -76,19 +76,19 @@ function JsonLd() {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/service-areas/popcorn-ceiling-removal/",
+            item: "/popcorn-ceiling-removal/",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Mississauga",
-            item: "/service-areas/popcorn-ceiling-removal/mississauga/",
+            item: "/popcorn-ceiling-removal/mississauga/",
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Erin Mills",
-            item: "/service-areas/popcorn-ceiling-removal/mississauga/erin-mills/",
+            item: "/popcorn-ceiling-removal/mississauga/erin-mills/",
           },
         ],
       },
@@ -549,9 +549,7 @@ export default function Page() {
                   <Link
                     key={n.slug}
                     href={
-                      "/service-areas/popcorn-ceiling-removal/mississauga/" +
-                      n.slug +
-                      "/"
+                      "/popcorn-ceiling-removal/mississauga/" + n.slug + "/"
                     }
                     className="pill"
                   >
@@ -566,15 +564,12 @@ export default function Page() {
       {/* Bottom links */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link
-          href="/service-areas/popcorn-ceiling-removal/mississauga/"
+          href="/popcorn-ceiling-removal/mississauga/"
           className="underline"
         >
           ← Back to Mississauga Popcorn page
         </Link>
-        <Link
-          href="/service-areas/popcorn-ceiling-removal/"
-          className="underline"
-        >
+        <Link href="/popcorn-ceiling-removal/" className="underline">
           Browse all Popcorn service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">

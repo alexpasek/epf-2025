@@ -39,7 +39,7 @@ export default function Page() {
           {cities.map((c) => (
             <Link
               key={c.slug}
-              href={`/service-areas/popcorn-ceiling-removal/${c.slug}/`}
+              href={`/popcorn-ceiling-removal/${c.slug}/`}
               className="pill"
             >
               {c.name}
@@ -62,7 +62,7 @@ export default function Page() {
                 <div className="flex items-center justify-between gap-3 flex-wrap">
                   <h3 className="text-xl font-semibold">{c.name}</h3>
                   <Link
-                    href={`/service-areas/popcorn-ceiling-removal/${c.slug}/`}
+                    href={`/popcorn-ceiling-removal/${c.slug}/`}
                     className="underline underline-offset-2 text-sm"
                   >
                     View {c.name} city page →
@@ -73,7 +73,7 @@ export default function Page() {
                   {c.neighborhoods.map((n) => (
                     <Link
                       key={n.slug}
-                      href={`/service-areas/popcorn-ceiling-removal/${c.slug}/${n.slug}`}
+                      href={`/popcorn-ceiling-removal/${c.slug}/${n.slug}`}
                       className="pill"
                     >
                       {n.name}
@@ -98,7 +98,7 @@ export default function Page() {
             hasPart: cities.map((c) => ({
               "@type": "CollectionPage",
               name: `Popcorn Ceiling Removal in ${c.name}`,
-              url: `/service-areas/popcorn-ceiling-removal/${c.slug}`,
+              url: `/popcorn-ceiling-removal/${c.slug}`,
             })),
           }),
         }}

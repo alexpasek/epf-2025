@@ -120,18 +120,18 @@ export default function HeaderNav() {
       label: "Popcorn Ceiling Removal",
     },
     { href: "/services/drywall-installation/", label: "Drywall Installation" },
-    { href: "/services/wallpaper/", label: "Wallpaper Removal" },
+    { href: "/services/wallpaper-removal/", label: "Wallpaper Removal" },
     { href: "/services/interior-painting/", label: "Interior Painting" },
   ];
 
   const locations = [
     { href: "/popcorn-removal/mississauga/", label: "Mississauga" },
-    { href: "/toronto/", label: "Toronto" },
-    { href: "/popcorn-removal/oakville/", label: "Oakville" },
-    { href: "/popcorn-removal/burlington/", label: "Burlington" },
-    { href: "/popcorn-removal/hamilton/", label: "Hamilton" },
-    { href: "/popcorn-removal/milton/", label: "Milton" },
-    { href: "/popcorn-removal/etobicoke/", label: "Etobicoke" },
+    { href: "/popcorn-ceiling-removal/toronto/", label: "Toronto" },
+    { href: "/popcorn-ceiling-removal/oakville/", label: "Oakville" },
+    { href: "/popcorn-ceiling-removal/burlington/", label: "Burlington" },
+    { href: "/popcorn-ceiling-removal/hamilton/", label: "Hamilton" },
+    { href: "/popcorn-ceiling-removal/milton/", label: "Milton" },
+    { href: "/popcorn-ceiling-removal/etobicoke/", label: "Etobicoke" },
     { href: "/grimsby/", label: "Grimsby" },
     { href: "/st-catharines/", label: "St. Catharines" },
   ];
@@ -274,7 +274,7 @@ export default function HeaderNav() {
       {pathname !== "/" && (
         <>
           <BreadcrumbJsonLd crumbs={crumbs} />
-          <div className="border-b border-[#3EC5F1] bg-[#00AEEF] text-slate-900">
+          <div className="border-b border-[#3EC5F1] bg-[#00AEEF] text-slate-100">
             <nav
               aria-label="Breadcrumb"
               className="container-x py-1 text-[13px] leading-5"

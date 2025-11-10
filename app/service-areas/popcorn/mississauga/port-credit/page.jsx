@@ -1,4 +1,4 @@
-// app/service-areas/popcorn-ceiling-removal/mississauga/port-credit/page.jsx
+// app/popcorn-ceiling-removal/mississauga/port-credit/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -12,14 +12,13 @@ export const metadata = {
   description:
     "Residential popcorn ceiling removal in Port Credit: dust-controlled protection for floors & stairs, Level 5 skim, stain-block primer and a bright, paint-ready finish. Tidy crews, clear schedule, written warranty.",
   alternates: {
-    canonical:
-      "/service-areas/popcorn-ceiling-removal/mississauga/port-credit/",
+    canonical: "/popcorn-ceiling-removal/mississauga/port-credit/",
   },
   openGraph: {
     title: "Popcorn Ceiling Removal — Port Credit, Mississauga",
     description:
       "Home-focused popcorn removal with Level 5 skim, prime & paint-ready finish. Clean, contained, guaranteed.",
-    url: "/service-areas/popcorn-ceiling-removal/mississauga/port-credit/",
+    url: "/popcorn-ceiling-removal/mississauga/port-credit/",
     type: "article",
   },
   robots: { index: true, follow: true },
@@ -34,7 +33,7 @@ function JsonLd() {
         name: "Popcorn Ceiling Removal",
         serviceType: ["Popcorn Ceiling Removal", "Ceiling Skim Coat Level 5"],
         areaServed: "Port Credit, Mississauga",
-        url: "/service-areas/popcorn-ceiling-removal/mississauga/port-credit/",
+        url: "/popcorn-ceiling-removal/mississauga/port-credit/",
         potentialAction: { "@type": "RequestQuoteAction", target: "/quote/" },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -77,19 +76,19 @@ function JsonLd() {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/service-areas/popcorn-ceiling-removal/",
+            item: "/popcorn-ceiling-removal/",
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Mississauga",
-            item: "/service-areas/popcorn-ceiling-removal/mississauga/",
+            item: "/popcorn-ceiling-removal/mississauga/",
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Port Credit",
-            item: "/service-areas/popcorn-ceiling-removal/mississauga/port-credit/",
+            item: "/popcorn-ceiling-removal/mississauga/port-credit/",
           },
         ],
       },
@@ -552,9 +551,7 @@ export default function Page() {
                   <Link
                     key={n.slug}
                     href={
-                      "/service-areas/popcorn-ceiling-removal/mississauga/" +
-                      n.slug +
-                      "/"
+                      "/popcorn-ceiling-removal/mississauga/" + n.slug + "/"
                     }
                     className="pill"
                   >
@@ -569,15 +566,12 @@ export default function Page() {
       {/* Bottom links */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link
-          href="/service-areas/popcorn-ceiling-removal/mississauga/"
+          href="/popcorn-ceiling-removal/mississauga/"
           className="underline"
         >
           ← Back to Mississauga Popcorn page
         </Link>
-        <Link
-          href="/service-areas/popcorn-ceiling-removal/"
-          className="underline"
-        >
+        <Link href="/popcorn-ceiling-removal/" className="underline">
           Browse all Popcorn service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">

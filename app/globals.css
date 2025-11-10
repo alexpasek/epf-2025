@@ -11,6 +11,9 @@
            border-b-4 border-sky-700
            shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5;
   }
+  .btn-cta:hover{
+    @apply from-sky-600 to-sky-800 border-sky-900; /* darker gradient + border */
+  }
   
 .prose-custom{@apply prose prose-neutral max-w-none;}
 .sticky-subnav{@apply sticky top-[120px] z-20 bg-white border-t border-gray-200;}

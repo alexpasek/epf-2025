@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
 
   const hoodName = titleCase(neighborhood);
   const cityName = c.name;
-  const url = `/service-areas/popcorn-ceiling-removal/${city}/${neighborhood}/`;
+  const url = `/popcorn-ceiling-removal/${city}/${neighborhood}/`;
 
   const title = `Popcorn Ceiling Removal — ${hoodName}, ${cityName} | Level 5 Smooth`;
   const description = `${hoodName}, ${cityName} popcorn ceiling removal: dust-controlled workflow, Level 5 skim, stain-block primer and a bright, even finish. Clear scope, tidy crew, written warranty.`;
@@ -127,7 +127,7 @@ export default async function Page({ params }) {
             {nearby.map((x) => (
               <Link
                 key={x.slug}
-                href={`/service-areas/popcorn-ceiling-removal/${c.slug}/${x.slug}/`}
+                href={`/popcorn-ceiling-removal/${c.slug}/${x.slug}/`}
                 className="pill"
               >
                 {x.name}
@@ -181,15 +181,12 @@ export default async function Page({ params }) {
 
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link
-          href={`/service-areas/popcorn-ceiling-removal/${c.slug}/`}
+          href={`/popcorn-ceiling-removal/${c.slug}/`}
           className="underline"
         >
           ← Back to {c.name} Popcorn page
         </Link>
-        <Link
-          href="/service-areas/popcorn-ceiling-removal/"
-          className="underline"
-        >
+        <Link href="/popcorn-ceiling-removal/" className="underline">
           Browse all Popcorn service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">

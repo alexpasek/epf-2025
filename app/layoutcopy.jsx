@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
 
 function Header() {
   const services = [
-    { href: "/services/wallpaper/", label: "Wallpaper Removal" },
+    { href: "/services/wallpaper-removal/", label: "Wallpaper Removal" },
     { href: "/services/popcorn-ceiling-removal/", label: "Popcorn Ceiling" },
     { href: "/services/drywall-installation/", label: "Drywall Installation" },
     { href: "/services/interior-painting/", label: "Interior Painting" },
@@ -132,7 +132,7 @@ function Header() {
           </div>
           <div className="scroller">
             <Link href="/">Home</Link>
-            <Link href="/services/wallpaper/">Wallpaper</Link>
+            <Link href="/services/wallpaper-removal/">Wallpaper</Link>
             <Link href="/services/popcorn-ceiling-removal/">Popcorn</Link>
             <Link href="/services/drywall-installation/">Drywall</Link>
             <Link href="/services/interior-painting/">Painting</Link>
