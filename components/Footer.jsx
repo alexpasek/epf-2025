@@ -1,5 +1,5 @@
 // components/Footer.jsx
-import ReviewScroller from "@/components/ReviewScroller";
+import GoogleReviews from "@/components/GoogleReviews";
 import { SERVICE_AREAS } from "@/app/config";
 
 export default function Footer() {
@@ -9,19 +9,8 @@ export default function Footer() {
       itemScope
       itemType="https://schema.org/LocalBusiness"
     >
-      {/* Reviews strip (unchanged) */}
-      <section id="reviews" className="mt-10 md:mt-16 scroll-mt-24">
-        <ReviewScroller
-          className="py-4 md:py-6"
-          brand="30 64 175"
-          accent="16 185 129"
-          bg="vivid"
-          bgAlpha={0.12}
-          cardAlpha={0.1}
-          hoverAlpha={0.2}
-          mobileTall
-        />
-      </section>
+      {/* Real Google Reviews */}
+      <GoogleReviews />
 
       {/* Footer cols */}
       <div className="container-x py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -34,7 +23,7 @@ export default function Footer() {
             Serving {SERVICE_AREAS.join(" · ")}
           </p>
 
-          {/* Hours (added) */}
+          {/* Hours */}
           <div
             className="mt-3 text-sm text-gray-700"
             itemProp="openingHoursSpecification"
@@ -73,7 +62,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Company (unchanged) */}
+        {/* Company */}
         <div className="md:text-center">
           <div className="font-semibold ">Company</div>
           <ul className="mt-3 space-y-2 text-sm">
@@ -105,7 +94,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Legal + Social (centered better) */}
+        {/* Legal + Social (kept) */}
         <div className="md:text-center md:justify-self-center md:flex md:flex-col md:items-center">
           <div className="font-semibold">Legal</div>
           <p className="mt-3 text-sm text-gray-600">All rights reserved.</p>
@@ -116,13 +105,13 @@ export default function Footer() {
             </div>
             <div className="md:flex md:justify-center">
               <SocialButtons
-                instagram="https://www.instagram.com/wallpaperremovalpro" // ← update
-                facebook="https://www.facebook.com/share/17bsRz3MTi/?mibextid=wwXIfr" // ← update
-                size={60} // button diameter (px)
-                icon={26} // icon size (px)
-                gap={12} // space between buttons (px)
+                instagram="https://www.instagram.com/wallpaperremovalpro"
+                facebook="https://www.facebook.com/share/17bsRz3MTi/?mibextid=wwXIfr"
+                size={60}
+                icon={26}
+                gap={12}
                 variant="solid"
-                className="mb-[calc(env(safe-area-inset-bottom)+24px)] md:mb-0" // sits a little above phone buttons on mobile, not sticky
+                className="mb-[calc(env(safe-area-inset-bottom)+24px)] md:mb-0"
               />
             </div>
           </div>
@@ -132,7 +121,7 @@ export default function Footer() {
   );
 }
 
-/* ---------- Social buttons (no sticky) ---------- */
+/* ---------- Social buttons (unchanged) ---------- */
 function SocialButtons({
   instagram,
   facebook,

@@ -9,12 +9,12 @@ export const metadata = {
   title: "Popcorn Ceiling Removal — Wallpaper Removal Pro",
   description:
     "GTA popcorn ceiling removal to Level 5 smooth. Dust-contained, skim-coat, prime & paint. Fast quotes, clear scope, and a written warranty.",
-  alternates: { canonical: "/services/popcorn" },
+  alternates: { canonical: "/services/popcorn-ceiling-removal/" },
   openGraph: {
     title: "Popcorn Ceiling Removal — Level 5 Smooth Finish (GTA)",
     description:
       "Dust-controlled popcorn removal with Level 5 skim-coat, prime & paint. Clean, tidy, guaranteed.",
-    url: "/services/popcorn",
+    url: "/services/popcorn-ceiling-removal/",
     type: "article",
   },
   robots: { index: true, follow: true },
@@ -92,7 +92,7 @@ function JsonLd() {
             "@type": "ListItem",
             position: 3,
             name: "Popcorn Ceiling Removal",
-            item: "/services/popcorn",
+            item: "/services/popcorn-ceiling-removal/",
           },
         ],
       },
