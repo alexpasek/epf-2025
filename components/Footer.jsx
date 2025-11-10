@@ -1,7 +1,7 @@
 // components/Footer.jsx
-import GoogleReviews from "@/components/GoogleReviews";
+import GoogleReviewsWall from "./GoogleReviewsWall";
 import { SERVICE_AREAS } from "@/app/config";
-
+import GoogleReviewsMulti from "./GoogleReviewsMulti";
 export default function Footer() {
   return (
     <footer
@@ -10,7 +10,7 @@ export default function Footer() {
       itemType="https://schema.org/LocalBusiness"
     >
       {/* Real Google Reviews */}
-      <GoogleReviews />
+      <GoogleReviewsWall />
 
       {/* Footer cols */}
       <div className="container-x py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
