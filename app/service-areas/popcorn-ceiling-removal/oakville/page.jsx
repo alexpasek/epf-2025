@@ -136,7 +136,7 @@ export default function Page() {
 
   const imgs = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
 
   return (
@@ -344,7 +344,7 @@ export default function Page() {
         </div>
         <p className="text-gray-600 mt-3">
           Also see our main service page:{" "}
-          <Link className="underline" href="/services/popcorn/">
+          <Link className="underline" href="/services/popcorn-ceiling-removal/">
             Popcorn Ceiling Removal Services
           </Link>
           .
@@ -500,7 +500,7 @@ export default function Page() {
         >
           ← Back to Popcorn Service Areas
         </Link>
-        <Link href="/services/popcorn/" className="underline">
+        <Link href="/services/popcorn-ceiling-removal/" className="underline">
           Main Popcorn Service page →
         </Link>
       </nav>

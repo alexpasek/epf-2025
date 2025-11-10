@@ -143,7 +143,7 @@ export default function Page() {
   const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
   const images = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
 
   return (
@@ -319,7 +319,10 @@ export default function Page() {
             <h3 className="font-semibold">Helpful links</h3>
             <ul className="mt-2 text-gray-700 list-disc pl-5 space-y-1">
               <li>
-                <Link className="underline" href="/services/popcorn/">
+                <Link
+                  className="underline"
+                  href="/services/popcorn-ceiling-removal/"
+                >
                   Main Popcorn Ceiling Service
                 </Link>
               </li>

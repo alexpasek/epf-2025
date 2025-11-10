@@ -105,7 +105,7 @@ export default function Page() {
     if (cities[i].slug === "mississauga") miss = cities[i];
   const images = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
 
   return (
@@ -397,7 +397,7 @@ export default function Page() {
         >
           Browse all Popcorn service areas →
         </Link>
-        <Link href="/services/popcorn/" className="underline">
+        <Link href="/services/popcorn-ceiling-removal/" className="underline">
           Main Popcorn service page →
         </Link>
       </nav>

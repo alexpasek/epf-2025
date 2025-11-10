@@ -163,7 +163,7 @@ export default function Page() {
       : null;
 
   var images = Array.from({ length: 6 }, function (_, i) {
-    return "/services/popcorn/" + (i + 1) + ".webp";
+    return "/services/popcorn-ceiling-removal/" + (i + 1) + ".webp";
   });
 
   return (
@@ -577,7 +577,7 @@ export default function Page() {
         >
           Browse all Popcorn service areas →
         </Link>
-        <Link href="/services/popcorn/" className="underline">
+        <Link href="/services/popcorn-ceiling-removal/" className="underline">
           Main Popcorn service page →
         </Link>
       </nav>

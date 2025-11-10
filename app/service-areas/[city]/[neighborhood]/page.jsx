@@ -192,7 +192,7 @@ export default async function Page({ params }) {
         >
           Browse all Popcorn service areas →
         </Link>
-        <Link href="/services/popcorn/" className="underline">
+        <Link href="/services/popcorn-ceiling-removal/" className="underline">
           Main Popcorn service page →
         </Link>
       </nav>

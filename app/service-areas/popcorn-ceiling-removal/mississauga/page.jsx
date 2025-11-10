@@ -173,7 +173,7 @@ export default function Page() {
 
   const images = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
 
   return (
@@ -459,7 +459,7 @@ export default function Page() {
       <section id="links" className="mt-10">
         <h2 className="text-2xl font-semibold">Useful Links</h2>
         <div className="mt-3 flex flex-wrap gap-3 text-sm">
-          <Link href="/services/popcorn/" className="underline">
+          <Link href="/services/popcorn-ceiling-removal/" className="underline">
             Main Popcorn Service Page
           </Link>
           <Link href="/services/wallpaper/" className="underline">
@@ -502,7 +502,7 @@ export default function Page() {
         >
           ← Back to Popcorn service areas
         </Link>
-        <Link href="/services/popcorn/" className="underline">
+        <Link href="/services/popcorn-ceiling-removal/" className="underline">
           Main Popcorn service page →
         </Link>
       </nav>

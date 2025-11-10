@@ -135,7 +135,7 @@ export default function Page() {
   const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
   const images = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
 
   return (
@@ -306,7 +306,10 @@ export default function Page() {
             <h3 className="font-semibold">Helpful links</h3>
             <ul className="mt-2 text-gray-700 list-disc pl-5 space-y-1">
               <li>
-                <Link className="underline" href="/services/popcorn/">
+                <Link
+                  className="underline"
+                  href="/services/popcorn-ceiling-removal/"
+                >
                   Main Popcorn Service
                 </Link>
               </li>
@@ -500,8 +503,11 @@ export default function Page() {
                 /quote/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -578,8 +584,11 @@ export default function Page() {
                 /quote/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
             </li>
             <li>
@@ -648,8 +657,11 @@ export default function Page() {
                 /services/interior-painting/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -726,8 +738,11 @@ export default function Page() {
                 /services/interior-painting/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
             </li>
             <li>
@@ -796,8 +811,11 @@ export default function Page() {
                 /quote/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -866,8 +884,11 @@ export default function Page() {
           <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1">
             <li>
               Helpful internal links:{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -944,8 +965,11 @@ export default function Page() {
                 /services/drywall-installation/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -1018,8 +1042,11 @@ export default function Page() {
                 /quote/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -1247,8 +1274,11 @@ export default function Page() {
                 /quote/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
             </li>
             <li>
@@ -1324,8 +1354,11 @@ export default function Page() {
                 /services/interior-painting/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
             </li>
             <li>
@@ -1394,8 +1427,11 @@ export default function Page() {
                 /services/drywall-installation/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a
@@ -1471,8 +1507,11 @@ export default function Page() {
                 /quote/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -1541,8 +1580,11 @@ export default function Page() {
           <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1">
             <li>
               Helpful internal links:{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -1615,8 +1657,11 @@ export default function Page() {
           <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1">
             <li>
               Helpful internal links:{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -1700,8 +1745,11 @@ export default function Page() {
                 /services/drywall-installation/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
             </li>
             <li>
@@ -1766,8 +1814,11 @@ export default function Page() {
           <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1">
             <li>
               Helpful internal links:{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -2001,8 +2052,11 @@ export default function Page() {
                 /services/interior-painting/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a
@@ -2304,8 +2358,11 @@ export default function Page() {
                 /blog/popcorn-ceiling-removal-cost-timeline
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -2385,8 +2442,11 @@ export default function Page() {
                 /blog/popcorn-ceiling-removal-cost-timeline
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
             </li>
             <li>
@@ -2455,8 +2515,11 @@ export default function Page() {
                 /services/drywall-installation/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -2532,8 +2595,11 @@ export default function Page() {
                 /blog/popcorn-ceiling-removal-cost-timeline
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -2610,8 +2676,11 @@ export default function Page() {
                 /services/drywall-installation/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
             </li>
             <li>
@@ -2836,8 +2905,11 @@ export default function Page() {
                 /blog/popcorn-ceiling-removal-cost-timeline
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -3442,8 +3514,11 @@ export default function Page() {
           <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1">
             <li>
               Helpful internal links:{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -3671,8 +3746,11 @@ export default function Page() {
                 /services/interior-painting/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -3741,8 +3819,11 @@ export default function Page() {
           <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1">
             <li>
               Helpful internal links:{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a
@@ -3822,8 +3903,11 @@ export default function Page() {
                 /quote/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -3899,8 +3983,11 @@ export default function Page() {
                 /blog/popcorn-ceiling-removal-cost-timeline
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -3973,8 +4060,11 @@ export default function Page() {
                 /services/drywall-installation/
               </a>
               ,{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a
@@ -4120,8 +4210,11 @@ export default function Page() {
           <ul className="list-disc pl-5 mt-2 text-gray-700 space-y-1">
             <li>
               Helpful internal links:{" "}
-              <a className="underline" href="/services/popcorn/">
-                /services/popcorn/
+              <a
+                className="underline"
+                href="/services/popcorn-ceiling-removal/"
+              >
+                /services/popcorn-ceiling-removal/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">

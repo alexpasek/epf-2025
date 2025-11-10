@@ -130,7 +130,7 @@ export default async function NeighborhoodPopcornPage({ params }) {
           </p>
         </div>
         <div className="flex gap-3">
-          <Link className="btn-cta" href="/services/popcorn/">
+          <Link className="btn-cta" href="/services/popcorn-ceiling-removal/">
             View the Popcorn Removal page →
           </Link>
         </div>
