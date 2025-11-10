@@ -45,13 +45,13 @@ export default function HeaderNav() {
   ];
 
   const locations = [
-    { href: "/mississauga/", label: "Mississauga" },
+    { href: "/popcorn-removal/mississauga/", label: "Mississauga" },
     { href: "/toronto/", label: "Toronto" },
-    { href: "/oakville/", label: "Oakville" },
-    { href: "/burlington/", label: "Burlington" },
-    { href: "/hamilton/", label: "Hamilton" },
-    { href: "/milton/", label: "Milton" },
-    { href: "/etobicoke/", label: "Etobicoke" },
+    { href: "/popcorn-removal/oakville/", label: "Oakville" },
+    { href: "/popcorn-removal/burlington/", label: "Burlington" },
+    { href: "/popcorn-removal/hamilton/", label: "Hamilton" },
+    { href: "/popcorn-removal/milton/", label: "Milton" },
+    { href: "/popcorn-removal/etobicoke/", label: "Etobicoke" },
     { href: "/grimsby/", label: "Grimsby" },
     { href: "/st-catharines/", label: "St. Catharines" },
   ];

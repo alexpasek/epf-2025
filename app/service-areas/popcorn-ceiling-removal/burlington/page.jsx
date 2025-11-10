@@ -1,4 +1,4 @@
-// app/service-areas/popcorn-ceiling-removal/burlington/page.jsx
+// app/service-areas/popcorn-ceiling-removal/popcorn-removal/burlington/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 

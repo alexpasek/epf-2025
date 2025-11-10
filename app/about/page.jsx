@@ -350,27 +350,30 @@ export default function AboutPage() {
         </h2>
         <p className="mt-2 text-gray-700">
           We serve{" "}
-          <Link href="/mississauga/" className="hover:underline">
+          <Link
+            href="/popcorn-removal/mississauga/"
+            className="hover:underline"
+          >
             Mississauga
           </Link>
           ,{" "}
-          <Link href="/oakville/" className="hover:underline">
+          <Link href="/popcorn-removal/oakville/" className="hover:underline">
             Oakville
           </Link>
           ,{" "}
-          <Link href="/burlington/" className="hover:underline">
+          <Link href="/popcorn-removal/burlington/" className="hover:underline">
             Burlington
           </Link>
           ,{" "}
-          <Link href="/hamilton/" className="hover:underline">
+          <Link href="/popcorn-removal/hamilton/" className="hover:underline">
             Hamilton
           </Link>
           ,{" "}
-          <Link href="/milton/" className="hover:underline">
+          <Link href="/popcorn-removal/milton/" className="hover:underline">
             Milton
           </Link>
           ,{" "}
-          <Link href="/etobicoke/" className="hover:underline">
+          <Link href="/popcorn-removal/etobicoke/" className="hover:underline">
             Etobicoke
           </Link>
           ,{" "}
@@ -532,27 +535,27 @@ export default function AboutPage() {
             Where do you offer popcorn ceiling removal?
           </summary>
           <p className="mt-2 text-gray-700">
-            <Link href="/mississauga/" className="underline">
+            <Link href="/popcorn-removal/mississauga/" className="underline">
               Mississauga
             </Link>
             ,{" "}
-            <Link href="/oakville/" className="underline">
+            <Link href="/popcorn-removal/oakville/" className="underline">
               Oakville
             </Link>
             ,{" "}
-            <Link href="/burlington/" className="underline">
+            <Link href="/popcorn-removal/burlington/" className="underline">
               Burlington
             </Link>
             ,{" "}
-            <Link href="/hamilton/" className="underline">
+            <Link href="/popcorn-removal/hamilton/" className="underline">
               Hamilton
             </Link>
             ,{" "}
-            <Link href="/milton/" className="underline">
+            <Link href="/popcorn-removal/milton/" className="underline">
               Milton
             </Link>
             ,{" "}
-            <Link href="/etobicoke/" className="underline">
+            <Link href="/popcorn-removal/etobicoke/" className="underline">
               Etobicoke
             </Link>
             ,{" "}
