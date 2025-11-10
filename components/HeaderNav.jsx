@@ -71,7 +71,7 @@ export default function HeaderNav() {
               alt="Popcorn ceiling removal EPF Pro Services"
               className="w-auto h-14 md:h-16 object-contain"
             />
-            <span className=" underline decoration-indigo-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
+            <span className=" underline decoration-red-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
               Popcorn Ceiling Removal
             </span>
           </Link>
