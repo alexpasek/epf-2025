@@ -19,6 +19,86 @@ const SAFE_VW_PX = 24; // safe padding from viewport edges
 const SERVICES_PANEL_W = 420; // narrow column for Services
 const LOCATIONS_MEGA_W = 860; // roomy grid for Locations
 
+/* ---------- Breadcrumb helpers ---------- */
+
+/** Map slugs to pretty labels when we know them */
+const SLUG_LABELS = {
+  services: "Services",
+  "popcorn-ceiling-removal": "Popcorn Ceiling Removal",
+  popcorn: "Popcorn Ceiling Removal",
+  "drywall-installation": "Drywall Installation",
+  wallpaper: "Wallpaper Removal",
+  "interior-painting": "Interior Painting",
+  "our-work": "Our Work",
+  "our-process": "Our Process",
+  "service-areas": "Service Areas",
+  contact: "Contact",
+  blog: "Blog",
+
+  // location hubs
+  "popcorn-removal": "Popcorn Removal",
+
+  // cities
+  mississauga: "Mississauga",
+  toronto: "Toronto",
+  oakville: "Oakville",
+  burlington: "Burlington",
+  hamilton: "Hamilton",
+  milton: "Milton",
+  etobicoke: "Etobicoke",
+  grimsby: "Grimsby",
+  "st-catharines": "St. Catharines",
+};
+
+/** Fallback: turn "st-catharines" -> "St Catharines" (or use SLUG_LABELS if present) */
+function labelFromSlug(slug) {
+  if (SLUG_LABELS[slug]) return SLUG_LABELS[slug];
+  return slug
+    .split("-")
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : ""))
+    .join(" ");
+}
+
+/** Build breadcrumb items from pathname */
+function buildCrumbs(pathname) {
+  const parts = pathname.split("/").filter(Boolean);
+  const crumbs = [{ href: "/", label: "Home" }];
+  let acc = "";
+  for (let i = 0; i < parts.length; i++) {
+    acc += `/${parts[i]}`;
+    const isLast = i === parts.length - 1;
+    crumbs.push({
+      href: acc + "/", // keep your trailing slash style
+      label: labelFromSlug(decodeURIComponent(parts[i])),
+      current: isLast,
+    });
+  }
+  return crumbs;
+}
+
+/** JSON-LD for breadcrumbs */
+function BreadcrumbJsonLd({ crumbs }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((c, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: c.label,
+      item: c.href, // relative is OK; absolute even better if you set site URL
+    })),
+  };
+  return (
+    <script
+      type="application/ld+json"
+      suppressHydrationWarning
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/* ---------- Header ---------- */
+
 export default function HeaderNav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -56,9 +136,11 @@ export default function HeaderNav() {
     { href: "/st-catharines/", label: "St. Catharines" },
   ];
 
+  const crumbs = buildCrumbs(pathname);
+
   return (
     <header className="sticky top-0 z-50">
-      {/* Row 1: taller + stylish glassy header (menu untouched below) */}
+      {/* Row 1: taller + stylish glassy header */}
       <div className="border-b bg-gradient-to-r from-white via-white to-red-50/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_10px_30px_-20px_rgba(0,0,0,.55)]">
         <div className="container-x py-2 md:py-3 flex h-24 md:h-28 items-center gap-3">
           <Link
@@ -71,17 +153,17 @@ export default function HeaderNav() {
               alt="Popcorn ceiling removal EPF Pro Services"
               className="w-auto h-14 md:h-16 object-contain"
             />
-            <span className=" underline decoration-red-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
+            <span className="underline decoration-red-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
               Popcorn Ceiling Removal
             </span>
           </Link>
 
-          {/* Desktop/tablet CTAs (unchanged style) */}
+          {/* Desktop/tablet CTAs */}
           <div className="hidden md:flex items-center gap-3 ml-auto">
             <a
               href={PHONE_HREF}
               className="btn-cta whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
-              title="Call for a fast popcorn ceiling remova estimate"
+              title="Call for a fast popcorn ceiling removal estimate"
             >
               📞 {PHONE_NUMBER}
             </a>
@@ -114,7 +196,7 @@ export default function HeaderNav() {
         </div>
       </div>
 
-      {/* Row 2: right-aligned menu (unchanged look) */}
+      {/* Row 2: right-aligned menu */}
       <div className="hidden lg:block border-b bg-gradient-to-r from-red-50/60 via-white to-red-50/60">
         <nav
           className="container-x py-3 flex items-center gap-2 text-[15px] justify-end"
@@ -123,7 +205,7 @@ export default function HeaderNav() {
           <NavItem href="/" label="HOME" active={isActive("/")} />
           <NavItem href="/about/" label="ABOUT" active={isActive("/about/")} />
 
-          {/* SERVICES — narrow vertical column (right-anchored, clamped) */}
+          {/* SERVICES — narrow vertical column */}
           <SmoothDropdown
             label="SERVICES"
             active={isActive("/services/")}
@@ -154,7 +236,7 @@ export default function HeaderNav() {
             active={isActive("/our-work/")}
           />
 
-          {/* LOCATIONS — same visual style (roomy grid) */}
+          {/* LOCATIONS */}
           <SmoothDropdown
             label="LOCATIONS"
             active={
@@ -188,7 +270,48 @@ export default function HeaderNav() {
         </nav>
       </div>
 
-      {/* Mobile drawer (unchanged) */}
+      {/* Row 3: Breadcrumb stripe (blue) */}
+      {pathname !== "/" && (
+        <>
+          <BreadcrumbJsonLd crumbs={crumbs} />
+          <div className="border-b border-[#3EC5F1] bg-[#00AEEF] text-slate-900">
+            <nav
+              aria-label="Breadcrumb"
+              className="container-x py-1 text-[13px] leading-5"
+            >
+              <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+                {crumbs.map((c, i) => {
+                  const isLast = i === crumbs.length - 1;
+                  return (
+                    <div key={c.href} className="flex items-center shrink-0">
+                      {i > 0 && <span className="mx-2 opacity-70">/</span>}
+                      {isLast ? (
+                        <span
+                          className="font-semibold"
+                          aria-current="page"
+                          title={c.label}
+                        >
+                          {c.label}
+                        </span>
+                      ) : (
+                        <Link
+                          href={c.href}
+                          className="underline decoration-slate-900/30 underline-offset-2 hover:decoration-slate-900/60 hover:text-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20 rounded"
+                          title={c.label}
+                        >
+                          {c.label}
+                        </Link>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </nav>
+          </div>
+        </>
+      )}
+
+      {/* Mobile drawer */}
       <div
         className={[
           "lg:hidden border-b bg-white/95 backdrop-blur transition-[max-height] overflow-hidden",
@@ -332,7 +455,7 @@ function SmoothDropdown({
 
       <div
         className={[
-          "absolute top-full mt-2 pt-1", // pt-1 = hover bridge so it doesn't feel stuck
+          "absolute top-full mt-2 pt-1",
           align === "right" ? "right-0" : "left-0",
           "transition-all duration-150 ease-out will-change-transform",
           open
@@ -375,7 +498,7 @@ function MenuItemCard({ href, label }) {
       className={[
         "group p-3 rounded-xl border bg-white",
         ACCENT.border,
-        "hover:bg-red-50/70 hover:border-red-300", // consistent red hover contrast
+        "hover:bg-red-50/70 hover:border-red-300",
         "shadow-[inset_0_1px_0_rgba(255,255,255,.6),0_8px_18px_-12px_rgba(0,0,0,.35)]",
         "transition",
       ].join(" ")}
