@@ -20,10 +20,14 @@ export const metadata = {
   title: {
     default: "Wallpaper Removal Pro — GTA",
     template: "%s — Wallpaper Removal Pro",
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_SITE_URL || "https://epf-2025.pages.dev"
+    ),
   },
   description:
     "Wallpaper removal, popcorn ceiling removal, drywall installation & repair, and interior painting across the GTA.",
 };
+
 
 export default function RootLayout({ children }) {
   return (
