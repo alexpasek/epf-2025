@@ -83,7 +83,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/about-us/" className="hover:underline">
+              <a href="/about/" className="hover:underline">
                 About us
               </a>
             </li>
@@ -93,7 +93,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/before-after/" className="hover:underline">
+              <a href="/our-work/" className="hover:underline">
                 Before &amp; After
               </a>
             </li>

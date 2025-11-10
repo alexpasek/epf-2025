@@ -58,14 +58,15 @@ export default function HeaderNav() {
           aria-label="Primary navigation"
         >
           {[
-            { href: "/", label: "Home" },
+            { href: "/", label: "HOME" },
+            { href: "/about/", label: "ABOUT" },
             ...services,
-            { href: "/before-after/", label: "Before & After" },
-
-            { href: "/services/", label: "Locations" },
-            { href: "/about-us/", label: "About us" },
-            { href: "/contact/", label: "Contact us" },
-            { href: "/blog/", label: "Blog" },
+            { href: "/services/", label: "SERVICES" },
+            { href: "/our-work/", label: "OUR WORK" },
+            { href: "/locations/", label: "LOCATIONS" },
+            { href: "/our-process/", label: "OUR PROCESS" },
+            { href: "/contact/", label: "CONTACT" },
+            { href: "/blog/", label: "BLOG" },
           ].map((item) => (
             <Link
               key={item.href}
@@ -96,7 +97,7 @@ export default function HeaderNav() {
             {[
               { href: "/", label: "Home" },
               ...services,
-              { href: "/before-after/", label: "Before & After" },
+              { href: "/our-work/", label: "OUR WORK" },
               { href: "/blog/", label: "Blog" },
             ].map((item) => (
               <Link

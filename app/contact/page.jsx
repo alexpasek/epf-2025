@@ -315,7 +315,7 @@ export default function ContactPage() {
             Learn About Popcorn Removal
           </Link>
           <Link
-            href="/before-after/"
+            href="/our-work/"
             className="btn-cta bg-sky-600 hover:bg-sky-700 text-white"
           >
             See Before / After

@@ -6,7 +6,7 @@ import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 export const revalidate = 86400;
 
 // Use whatever image you have available; keep path stable.
-const HERO_IMG = "/about-us/Popcorn-ceiling-removal-team.png";
+const HERO_IMG = "/about/Popcorn-ceiling-removal-team.png";
 
 export const metadata = {
   title:
@@ -276,7 +276,7 @@ export default function AboutPage() {
               St. Catharines
             </Link>
             . Ask for{" "}
-            <Link href="/before-after/" className="hover:underline">
+            <Link href="/our-work/" className="hover:underline">
               before/after photos
             </Link>{" "}
             and a quick schedule check.

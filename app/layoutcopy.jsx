@@ -5,36 +5,70 @@ import TrustBar from "@/components/TrustBar";
 import LightboxGlobal from "@/components/LightboxGlobal";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { cities } from "@/data/cities";
-import { BRAND_NAME, CONTACT, SERVICE_AREAS, PHONE_NUMBER, PHONE_HREF } from "./config";
+import {
+  BRAND_NAME,
+  CONTACT,
+  SERVICE_AREAS,
+  PHONE_NUMBER,
+  PHONE_HREF,
+} from "./config";
 import ChatWidgetAgent from "@/components/ChatWidgetAgent";
 import ReviewScroller from "@/components/ReviewScroller";
 
+export const metadata = {
+  title: {
+    default: "Wallpaper Removal Pro — GTA",
+    template: "%s — Wallpaper Removal Pro",
+  },
+  description:
+    "Wallpaper removal, popcorn ceiling removal, drywall installation & repair, and interior painting across the GTA.",
+};
 
-export const metadata={title:{default:"Wallpaper Removal Pro — GTA",template:"%s — Wallpaper Removal Pro"},description:"Wallpaper removal, popcorn ceiling removal, drywall installation & repair, and interior painting across the GTA."};
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/android-chrome-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+          href="/android-chrome-512x512.png"
+        />
+        <SEOJsonLd />
+      </head>
+      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+        {/*ai widget*/}
+        <ChatWidgetAgent />
 
-export default function RootLayout({children}){
-  return(<html lang="en"><head>
-    <link rel="icon" href="/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png"/>
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"/>
-      <SEOJsonLd/>
-  </head><body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-
-    {/*ai widget*/}
-    <ChatWidgetAgent />
-
-    <Header/><TrustBar/><main className="flex-1">{children}</main><Footer/><StickyCTA/>
-    <LightboxGlobal/>
-</body></html>);
+        <Header />
+        <TrustBar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <StickyCTA />
+        <LightboxGlobal />
+      </body>
+    </html>
+  );
 }
 
-function Header(){
-  const services=[
-    {href:"/services/wallpaper/",label:"Wallpaper Removal"},
-    {href:"/services/popcorn/",label:"Popcorn Ceiling"},
-    {href:"/services/drywall-installation/",label:"Drywall Installation"},
-    {href:"/services/interior-painting/",label:"Interior Painting"}
+function Header() {
+  const services = [
+    { href: "/services/wallpaper/", label: "Wallpaper Removal" },
+    { href: "/services/popcorn/", label: "Popcorn Ceiling" },
+    { href: "/services/drywall-installation/", label: "Drywall Installation" },
+    { href: "/services/interior-painting/", label: "Interior Painting" },
   ];
   return (
     <header className="bg-white border-b md:sticky md:top-0 md:z-40">
@@ -75,10 +109,7 @@ function Header(){
           <Link href="/blog/" className="hover:underline whitespace-nowrap">
             Blog
           </Link>
-          <Link
-            href="/before-after/"
-            className="hover:underline whitespace-nowrap"
-          >
+          <Link href="/our-work/" className="hover:underline whitespace-nowrap">
             Before & After
           </Link>
         </div>
@@ -118,7 +149,6 @@ function Header(){
     </header>
   );
 }
-
 
 function Footer() {
   return (
@@ -184,7 +214,7 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="/about-us/" className="hover:underline">
+              <a href="/about/" className="hover:underline">
                 About us
               </a>
             </li>
@@ -194,7 +224,7 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="/before-after/" className="hover:underline">
+              <a href="/our-work/" className="hover:underline">
                 Before &amp; After
               </a>
             </li>
@@ -214,4 +244,3 @@ function Footer() {
     </footer>
   );
 }
-
