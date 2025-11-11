@@ -1,5 +1,5 @@
 import PopcornMap from "@/components/PopcornMap";
-
+import OurWorkGallery from "@/components/OurWorkGallery";
 // ---- helpers ----
 function jitterAround(lat, lng, meters = 120) {
   const latOff = (meters / 111320) * (Math.random() - 0.5) * 2;
@@ -146,8 +146,31 @@ export default function Page() {
       <p className="text-center text-gray-600 mb-8">
         Click any house to open the service page for that neighbourhood.
       </p>
-
       <PopcornMap points={POINTS} />
+      import OurWorkGallery from "@/components/OurWorkGallery";
+      <OurWorkGallery
+        items={[
+          {
+            src: "/gallery/etobicoke-living-room-pro-pass.jpg",
+            alt: "Popcorn ceiling removal in Etobicoke — Pro Pass Level 5 smooth finish",
+            city: "Etobicoke",
+            service: "Popcorn Ceiling Removal (Pro Pass)",
+          },
+          {
+            src: "/gallery/mississauga-livingroom-after.jpg",
+            alt: "Popcorn ceiling removal in Mississauga — bright white ceiling, clean lines",
+            city: "Mississauga",
+            service: "Popcorn Ceiling Removal",
+          },
+        ]}
+        tileW={520}
+        tileH={540}
+        gap={16}
+        backdrop="none"
+        // title="Our Work — Popcorn Ceiling Removal"
+        // description="Two bright GTA projects with Level 5 smooth finishes."
+      />
     </main>
   );
 }
+
