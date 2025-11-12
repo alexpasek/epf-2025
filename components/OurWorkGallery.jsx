@@ -1,55 +1,53 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 /**
- * OurWorkGallery — 2 horizontal tiles with bold contour + bigger SEO text
- * - Rectangle cards (no rounded corners)
- * - Clear border around image AND description (contour)
- * - Stronger, larger sales copy + amber accents
+ * OurWorkGallery — reusable, SEO-first gallery
+ * - Rectangular service menu (below header, directly above pictures)
+ * - Horizontal tiles (wrap) with fixed sizes (tileW x tileH)
+ * - Premium description + keyword chips under each tile
+ * - Modal: IMAGE ONLY + keyword ribbon; fixed always-visible Close button
  *
- * Props (optional):
- *  - items: [{ src, alt?, city?, service?, caption?, headline?, blurb?, bullets?: string[], ctaHref?, ctaLabel? }]
- *  - tileW=420, tileH=280, gap=12, backdrop='none'
- *  - title?, description?, serviceAreas?
+ * Props:
+ *  - items: Array<{
+ *      src: string; alt?: string; city?: string; nbh?: string;
+ *      headline?: string; blurb?: string; bullets?: string[];
+ *      service?: string; modalKeyword?: string; ctaHref?: string; ctaLabel?: string;
+ *    }>
+ *  - tileW?: number (px)  default 500
+ *  - tileH?: number (px)  default 320
+ *  - layout?: { min?: number; gap?: number; ratio?: string }
+ *  - title?: string
+ *  - description?: string
+ *  - areas?: string[]            // JSON-LD areaServed
+ *  - business?: { name?: string; url?: string; phone?: string } // JSON-LD provider
+ *  - backdrop?: 'none' | 'dim'   // modal background
+ *  - menuItems?: Array<{ label: string; href: string; current?: boolean }>
  */
 
 const FALLBACK = [
   {
-    src: "/gallery/etobicoke-living-room-pro-pass.jpg",
-    alt: "Popcorn ceiling removal in Etobicoke — Pro Pass Level 5 smooth finish",
-    city: "Etobicoke",
-    service: "Popcorn Ceiling Removal (Pro Pass)",
-    headline: "Etobicoke — Popcorn Ceiling Removal (Pro Pass)",
-    blurb:
-      "Dust-controlled popcorn ceiling removal with Level 5 smooth finish for a bright, modern look.",
-    bullets: [
-      "Full plastic containment & floor protection",
-      "HEPA-connected sanding for low dust",
-      "Level 5 skim, primer + two coats ceiling paint",
-    ],
-    ctaHref: "/locations/popcorn-ceiling-removal-etobicoke/",
-    ctaLabel: "See Etobicoke service",
+    src: "/gallery/mississauga.jpg",
+    alt: "Level 5 smooth ceiling after popcorn removal in Mississauga",
+    city: "Mississauga",
+    nbh: "Mineola",
+    headline: "Mississauga — Mineola",
+    blurb: "Full containment, HEPA sanding, Level 5 skim, primer + 2 coats.",
+    bullets: ["Clean edges", "Even sheen", "On-time completion"],
   },
   {
-    src: "/gallery/mississauga-livingroom-after.jpg",
-    alt: "Popcorn ceiling removal in Mississauga — bright white ceiling, clean lines",
-    city: "Mississauga",
-    service: "Popcorn Ceiling Removal",
-    headline: "Mississauga — Popcorn Ceiling Removal",
-    blurb:
-      "Smooth Level 5 finish with crisp lines and a clean white ceiling to brighten the space.",
-    bullets: [
-      "Careful masking of walls, fixtures & openings",
-      "Uniform sheen with professional primers & paints",
-      "On-time completion and spotless clean-up",
-    ],
-    ctaHref: "/locations/popcorn-ceiling-removal-mississauga/",
-    ctaLabel: "See Mississauga service",
+    src: "/gallery/mississauga.jpg",
+    alt: "Smooth white ceiling after painted popcorn removal in Oakville",
+    city: "Oakville",
+    nbh: "Clearview",
+    headline: "Oakville — Clearview",
+    blurb: "Removed painted popcorn. Repaired joints. Bright Level 5 finish.",
+    bullets: ["Handles painted popcorn", "Level 5 skim", "Premium paints"],
   },
 ];
 
-const DEFAULT_CITIES = [
+const DEFAULT_AREAS = [
   "Mississauga",
   "Toronto",
   "Oakville",
@@ -61,31 +59,73 @@ const DEFAULT_CITIES = [
   "St. Catharines",
 ];
 
+const DEFAULT_MENU = [
+  {
+    label: "Popcorn Ceiling Removal",
+    href: "/our-work/",
+    current: true,
+  },
+  { label: "Interior Painting", href: "/gallery/interior-painting/" },
+  { label: "Drywall Installation", href: "/gallery/drywall-installation/" },
+  { label: "Wallpaper Removal", href: "/gallery/wallpaper-removal/" },
+  { label: "Design", href: "/gallery/design/" },
+];
+
 export default function OurWorkGallery({
   items,
-  tileW = 420,
-  tileH = 280,
-  gap = 12,
-  backdrop = "none",
+  tileW = 500,
+  tileH = 320,
+  layout,
   title,
   description,
-  serviceAreas = DEFAULT_CITIES,
+  areas = DEFAULT_AREAS,
+  business,
+  backdrop = "none",
+  menuItems = DEFAULT_MENU,
 }) {
+  const GAP = layout?.gap ?? 12;
   const data = useMemo(
-    () => (Array.isArray(items) && items.length ? items.slice(0, 2) : FALLBACK),
+    () => (Array.isArray(items) && items.length ? items : FALLBACK),
     [items]
   );
-
   const [active, setActive] = useState(null);
 
-  const toSlug = (name) =>
-    String(name || "")
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === "Escape") setActive(null);
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
+  const toSlug = (s) =>
+    String(s || "")
       .toLowerCase()
       .replace(/\./g, "")
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)/g, "");
 
-  // JSON-LD (CollectionPage + Service)
+  // --- Keyword helpers (for chips + JSON-LD "keywords") ---
+  function keywordVariants(service, city, nbh) {
+    const svc = (service || "Popcorn Ceiling Removal").toLowerCase();
+    const c = city ? city : "GTA";
+    const n = nbh ? ` ${nbh}` : "";
+    return [
+      `${svc} ${c}${n}`.trim(),
+      `popcorn removal ${c}${n}`.trim(),
+      `ceiling smoothing ${c}${n}`.trim(),
+      `level 5 skim ${c}${n}`.trim(),
+    ];
+  }
+
+  const allKeywords = [];
+  data.forEach((it) => {
+    keywordVariants(it.service, it.city, it.nbh).forEach((k) =>
+      allKeywords.push(k)
+    );
+  });
+
+  // ---------- JSON-LD (CollectionPage + Service + keywords) ----------
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -95,25 +135,28 @@ export default function OurWorkGallery({
         name: title || "Our Work — Popcorn Ceiling Removal (GTA)",
         description:
           description ||
-          "Two recent projects showing dust-controlled popcorn ceiling removal with Level 5 smooth finishes across the GTA.",
-        hasPart: data.map((it) => ({
+          "Projects showing dust-controlled popcorn ceiling removal with Level 5 smooth finishes across the GTA.",
+        hasPart: data.slice(0, 40).map((it) => ({
           "@type": "ImageObject",
           name:
             (it.service || "Popcorn Ceiling Removal") +
             (it.city ? " in " + it.city : ""),
           contentUrl: it.src,
           thumbnailUrl: it.src,
-          caption: it.alt || it.caption || "",
-          contentLocation: it.city
-            ? { "@type": "Place", name: it.city }
-            : undefined,
+          caption: it.alt || it.blurb || "",
         })),
+        keywords: Array.from(new Set(allKeywords)).join(", "),
       },
       {
         "@type": "Service",
         name: "Popcorn Ceiling Removal",
-        areaServed: serviceAreas,
-        provider: { "@type": "LocalBusiness", name: "EPF Pro Services" },
+        areaServed: areas,
+        provider: {
+          "@type": "LocalBusiness",
+          name: business?.name || "EPF Pro Services",
+          url: business?.url,
+          telephone: business?.phone,
+        },
         description:
           "Dust-controlled popcorn ceiling removal with Level 5 smooth finishing across the Greater Toronto Area.",
       },
@@ -122,7 +165,6 @@ export default function OurWorkGallery({
 
   return (
     <section className="py-10">
-      {/* SEO JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -130,7 +172,7 @@ export default function OurWorkGallery({
 
       <div className="container-x">
         {/* Header */}
-        <header className="mx-auto mb-6 max-w-3xl text-center">
+        <header className="mx-auto mb-4 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {title || "Our Work — Popcorn Ceiling Removal"}
           </h2>
@@ -140,33 +182,65 @@ export default function OurWorkGallery({
           </p>
         </header>
 
-        {/* Two tiles in a row, each with image + SEO description underneath */}
+        {/* Top Menu — directly ABOVE the pictures (rectangular, bigger, hover color) */}
+        <nav
+          aria-label="Gallery sections"
+          className="mx-auto mb-6 max-w-6xl overflow-x-auto [scrollbar-width:none]"
+        >
+          <ul className="flex items-center justify-center gap-3 whitespace-nowrap">
+            {menuItems.map((m) => {
+              const current = !!m.current;
+              return (
+                <li key={m.href}>
+                  <a
+                    href={m.href}
+                    aria-current={current ? "page" : undefined}
+                    className={[
+                      "group inline-flex items-center rounded-md border px-5 py-2.5 text-[15px] font-semibold transition-all duration-150",
+                      "shadow-sm hover:-translate-y-[1px]",
+                      current
+                        ? // ACTIVE (amber solid)
+                          "border-amber-600 bg-red-600 text-white shadow-[0_6px_20px_rgba(245,158,11,.35)] hover:bg-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                        : // INACTIVE (white -> amber on hover)
+                          "border-slate-300 bg-white text-slate-800 hover:border-amber-500 hover:bg-amber-50 hover:text-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300",
+                    ].join(" ")}
+                  >
+                    {m.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+        {/* Tiles row (wraps: works with 1, 2, 6, …) */}
         <div
           className="flex flex-wrap justify-center"
-          style={{ gap: gap + "px" }}
+          style={{ gap: (layout?.gap ?? 12) + "px" }}
         >
           {data.map((it, i) => {
-            const h =
-              it.headline ||
-              `${it.city || "GTA"} — ${
-                it.service || "Popcorn Ceiling Removal"
-              }`;
+            const service = it.service || "Popcorn Ceiling Removal";
+            const city = it.city || "GTA";
+            const nbh = it.nbh ? ` • ${it.nbh}` : "";
+            const h = it.headline || `${city}${nbh ? "" : ""} — ${service}`;
             const blurb =
               it.blurb ||
-              `Professional popcorn ceiling removal in ${
-                it.city || "the GTA"
-              } with Level 5 finishing for a smooth, modern ceiling.`;
+              `Professional ${service.toLowerCase()} in ${city} with Level 5 finishing for a smooth, modern ceiling.`;
             const bullets =
               Array.isArray(it.bullets) && it.bullets.length
                 ? it.bullets
                 : [
                     "Dust-controlled removal & HEPA sanding",
-                    "Level 5 skim coat, primer & premium paints",
-                    "Clean edges, uniform sheen, on-time completion",
+                    "Level 5 skim + primer",
+                    "Premium paints, uniform sheen",
                   ];
-            const cityLink =
+            const cityHref =
               it.ctaHref ||
-              `/locations/popcorn-ceiling-removal-${toSlug(it.city || "gta")}/`;
+              `/locations/popcorn-ceiling-removal-${toSlug(city)}/`;
+            const ctaLabel =
+              it.ctaLabel || `Popcorn Ceiling Removal in ${city} →`;
+
+            const chips = keywordVariants(service, it.city, it.nbh);
 
             return (
               <article
@@ -174,49 +248,70 @@ export default function OurWorkGallery({
                 className="overflow-hidden border-2 border-slate-300 bg-white shadow-[0_8px_30px_rgba(0,0,0,.06)]"
                 style={{ width: tileW + "px" }}
               >
-                {/* IMAGE with its own contour */}
+                {/* IMAGE tile */}
                 <figure
                   className="relative border-b-2 border-slate-300"
                   style={{ width: tileW + "px", height: tileH + "px" }}
                   onClick={() => setActive(it)}
-                  aria-label={`Open ${it.service || "project"} image`}
+                  aria-label={`Open ${service} photo`}
                 >
                   <img
                     src={it.src}
-                    alt={it.alt || ""}
+                    alt={it.alt || `${service} in ${city}`}
                     className="h-full w-full cursor-pointer object-cover transition duration-200 ease-out hover:brightness-110 hover:contrast-110"
                     loading="lazy"
                     decoding="async"
                   />
                 </figure>
 
-                {/* DESCRIPTION with clear contour and bigger text */}
-                <div className="border-t-0 px-4 py-4 text-slate-800">
-                  <h3 className="text-base font-semibold tracking-tight sm:text-lg">
+                {/* PREMIUM description under image */}
+                <div className="px-4 py-4">
+                  <h3 className="text-[17px] font-semibold tracking-tight text-slate-900 sm:text-lg">
                     {h}
+                    {it.nbh ? ` • ${it.nbh}` : ""}
                   </h3>
-                  <p className="mt-1 text-sm sm:text-base">
-                    <strong>Popcorn ceiling removal</strong> in{" "}
-                    <strong>{it.city || "the GTA"}</strong>. {blurb}
+                  <p className="mt-1 text-[15px] leading-relaxed text-slate-800">
+                    <strong>Popcorn ceiling removal</strong> (
+                    <strong>popcorn removal</strong>) in <strong>{city}</strong>
+                    {it.nbh ? ` • ${it.nbh}` : ""}. {blurb}
                   </p>
-                  <ul className="mt-3 list-disc pl-4 text-sm sm:text-base">
+
+                  {/* neat check bullets */}
+                  <ul className="mt-3 space-y-1.5 text-[15px] text-slate-800">
                     {bullets.map((b, idx) => (
-                      <li key={idx}>{b}</li>
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="mt-[2px] inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-amber-300 text-amber-700">
+                          ✓
+                        </span>
+                        <span>{b}</span>
+                      </li>
                     ))}
                   </ul>
 
-                  {/* SEO-friendly CTA row in your amber accent */}
+                  {/* Keyword chips (SEO-visible, human-friendly) */}
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {chips.map((k, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[12px] text-slate-700"
+                      >
+                        {k}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CTA row */}
                   <div className="mt-4 flex flex-wrap items-center gap-3">
                     <a
-                      href={cityLink}
-                      className="text-sm font-semibold text-amber-700 underline-offset-4 hover:text-amber-800 hover:underline sm:text-base"
+                      href={cityHref}
+                      className="text-[15px] font-semibold text-amber-700 underline-offset-4 hover:text-amber-800 hover:underline"
                     >
-                      Popcorn Ceiling Removal in {it.city || "GTA"} →
+                      {ctaLabel}
                     </a>
                     <span className="text-slate-400">•</span>
                     <a
                       href="/contact#estimate"
-                      className="text-sm font-medium text-slate-800 hover:text-slate-900 sm:text-base"
+                      className="text-[15px] font-medium text-slate-800 hover:text-slate-900"
                     >
                       Free estimate
                     </a>
@@ -228,39 +323,70 @@ export default function OurWorkGallery({
         </div>
       </div>
 
-      {/* Popup (transparent by default; set backdrop='dim' if you prefer) */}
+      {/* MODAL — IMAGE ONLY with keyword ribbon; Close button fixed to viewport */}
       {active && (
         <div
           className={
-            "fixed inset-0 z-50 flex items-center justify-center p-3 " +
+            "fixed inset-0 z-[1000] flex items-center justify-center p-3 " +
             (backdrop === "dim" ? "bg-black/70" : "bg-transparent")
           }
           onClick={() => setActive(null)}
           aria-modal="true"
           role="dialog"
         >
-          <div
-            className="relative bg-white shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setActive(null)}
-              aria-label="Close"
-              className="absolute right-2 top-2 rounded border border-slate-300 bg-white px-2 py-0.5 text-slate-700 hover:bg-slate-50"
-            >
-              ✕
-            </button>
-            <img
-              src={active.src}
-              alt={active.alt || ""}
-              className="max-h-[90vh] w-auto max-w-[95vw] object-contain"
-            />
-            {active.caption ? (
-              <div className="border-t px-4 py-3 text-sm text-slate-800">
-                {active.caption}
+          {/* image block (click inside should NOT close) */}
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <div className="relative">
+              <img
+                src={active.src}
+                alt={
+                  active.alt ||
+                  `${active.service || "Popcorn Ceiling Removal"}${
+                    active.city ? " in " + active.city : ""
+                  }`
+                }
+                className="max-h-[85vh] w-auto max-w-[96vw] object-contain"
+              />
+              {/* keyword ribbon */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-center">
+                <div
+                  className="mb-2 rounded px-3 py-1 text-[13px] font-semibold uppercase tracking-wide text-white"
+                  style={{
+                    background: "rgba(0,0,0,0.45)",
+                    backdropFilter: "saturate(120%) blur(1px)",
+                  }}
+                >
+                  {active.modalKeyword ||
+                    `${active.service || "Popcorn Ceiling Removal"}${
+                      active.city ? " — " + active.city : ""
+                    }`}
+                </div>
               </div>
-            ) : null}
+            </div>
           </div>
+
+          {/* Always-visible close button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setActive(null);
+            }}
+            aria-label="Close"
+            className="fixed z-[1010] inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/65 text-white ring-1 ring-white/30 backdrop-blur-sm hover:bg-black/75 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+            style={{
+              top: "max(env(safe-area-inset-top), 12px)",
+              right: "max(env(safe-area-inset-right), 12px)",
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
         </div>
       )}
     </section>

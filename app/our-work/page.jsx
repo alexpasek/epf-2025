@@ -147,28 +147,222 @@ export default function Page() {
         Click any house to open the service page for that neighbourhood.
       </p>
       <PopcornMap points={POINTS} />
-      import OurWorkGallery from "@/components/OurWorkGallery";
+
       <OurWorkGallery
+      
+        title="Popcorn Ceiling Removal — Mississauga, Oakville, Burlington, Hamilton"
+        description="Dust-controlled popcorn ceiling removal (painted or unpainted) with Level 5 skim, primer and two coats for a bright, uniform ceiling."
+        layout={{ min: 440, gap: 16, ratio: "5/3" }}
+        tileW={510}
+        tileH={700}
         items={[
+          // MISSISSAUGA
           {
-            src: "/gallery/etobicoke-living-room-pro-pass.jpg",
-            alt: "Popcorn ceiling removal in Etobicoke — Pro Pass Level 5 smooth finish",
-            city: "Etobicoke",
-            service: "Popcorn Ceiling Removal (Pro Pass)",
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal / popcorn removal — Mississauga (Mineola) — Level 5 smooth finish",
+            city: "Mississauga",
+            nbh: "Mineola",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Mississauga (Mineola)",
+            blurb:
+              "Local popcorn removal in Mississauga — Mineola. Full containment, HEPA sanding, Level 5 skim, primer and two coats for a bright, uniform ceiling.",
+            bullets: [
+              "Painted & unpainted popcorn removal",
+              "Level 5 skim for ultra-smooth results",
+              "Dust-controlled with HEPA extraction",
+            ],
+            modalKeyword: "Popcorn Ceiling Removal — Mississauga (Mineola)",
           },
           {
-            src: "/gallery/mississauga-livingroom-after.jpg",
-            alt: "Popcorn ceiling removal in Mississauga — bright white ceiling, clean lines",
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn removal / ceiling smoothing — Mississauga (Port Credit) — Level 5 finish",
             city: "Mississauga",
+            nbh: "Port Credit",
             service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Removal — Mississauga (Port Credit)",
+            blurb:
+              "Professional acoustic texture removal in Port Credit, Mississauga. Clean masking, precise taping, Level 5 skim, and premium coatings.",
+            bullets: [
+              "Low-dust containment & protection",
+              "Clean corners and bulkhead lines",
+              "Primer + two professional topcoats",
+            ],
+            modalKeyword: "Popcorn Removal — Mississauga (Port Credit)",
+          },
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal — Mississauga (Lorne Park) — painted popcorn specialist",
+            city: "Mississauga",
+            nbh: "Lorne Park",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Mississauga (Lorne Park)",
+            blurb:
+              "Painted popcorn removal in Lorne Park, Mississauga. Joint repair, Level 5 skim, and a consistent white finish without flashing.",
+            bullets: [
+              "Expertise with painted popcorn",
+              "Crack & joint repair included",
+              "Uniform matte/satin sheen",
+            ],
+            modalKeyword: "Popcorn Ceiling Removal — Mississauga (Lorne Park)",
+          },
+
+          // OAKVILLE
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal — Oakville (Clearview) — Level 5 skim & paint",
+            city: "Oakville",
+            nbh: "Clearview",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Oakville (Clearview)",
+            blurb:
+              "Clearview, Oakville popcorn removal with careful masking, Level 5 skim, and bright premium coatings for a clean modern ceiling.",
+            bullets: [
+              "Protective masking throughout",
+              "Level 5 skim + primer",
+              "Even, bright topcoat finish",
+            ],
+            modalKeyword: "Popcorn Ceiling Removal — Oakville (Clearview)",
+          },
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn removal — Oakville (Glen Abbey) — smooth, bright ceiling",
+            city: "Oakville",
+            nbh: "Glen Abbey",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Removal — Oakville (Glen Abbey)",
+            blurb:
+              "Acoustic texture removal across main areas in Glen Abbey, Oakville. HEPA-connected sanding and Level 5 finishing.",
+            bullets: [
+              "Low-dust HEPA sanding",
+              "Crisp lines at crown/bulkheads",
+              "Primer + two coats",
+            ],
+            modalKeyword: "Popcorn Removal — Oakville (Glen Abbey)",
+          },
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal — Oakville (River Oaks) — Level 5 smoothing",
+            city: "Oakville",
+            nbh: "River Oaks",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Oakville (River Oaks)",
+            blurb:
+              "River Oaks, Oakville texture removal and smoothing with neat cut-ins and a uniform, professional finish.",
+            bullets: [
+              "Flexible multi-area scheduling",
+              "Neat cut-ins around fixtures",
+              "Consistent, uniform sheen",
+            ],
+            modalKeyword: "Popcorn Ceiling Removal — Oakville (River Oaks)",
+          },
+
+          // BURLINGTON
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal — Burlington (Roseland) — Level 5 finish",
+            city: "Burlington",
+            nbh: "Roseland",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Burlington (Roseland)",
+            blurb:
+              "Roseland, Burlington stipple removal with joint correction and Level 5 skim for a bright, smooth ceiling.",
+            bullets: [
+              "Doorway & floor protection",
+              "Joint correction + skim coat",
+              "Primer and two finish coats",
+            ],
+            modalKeyword: "Popcorn Ceiling Removal — Burlington (Roseland)",
+          },
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn removal — Burlington (Millcroft) — high-ceiling expertise",
+            city: "Burlington",
+            nbh: "Millcroft",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Removal — Burlington (Millcroft)",
+            blurb:
+              "Millcroft, Burlington painted popcorn removal with full containment and safe access for higher ceilings.",
+            bullets: [
+              "High-ceiling setup & access",
+              "Painted popcorn specialists",
+              "Level 5 skim & premium paint",
+            ],
+            modalKeyword: "Popcorn Removal — Burlington (Millcroft)",
+          },
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal — Burlington (Alton Village) — modern smooth ceiling",
+            city: "Burlington",
+            nbh: "Alton Village",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Burlington (Alton Village)",
+            blurb:
+              "Alton Village, Burlington popcorn removal for a modern, smooth ceiling with crisp lines and uniform sheen.",
+            bullets: [
+              "Tight-space containment",
+              "Crisp bulkhead edges",
+              "Uniform topcoat result",
+            ],
+            modalKeyword:
+              "Popcorn Ceiling Removal — Burlington (Alton Village)",
+          },
+
+          // HAMILTON
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal — Hamilton (Ancaster) — Level 5 smooth finish",
+            city: "Hamilton",
+            nbh: "Ancaster",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Hamilton (Ancaster)",
+            blurb:
+              "Ancaster, Hamilton heavy texture removal with crack repair and Level 5 skim for a clean, modern ceiling.",
+            bullets: [
+              "Crack repair & taping",
+              "Level 5 skim coat",
+              "Even white finish — no flashing",
+            ],
+            modalKeyword: "Popcorn Ceiling Removal — Hamilton (Ancaster)",
+          },
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn removal — Hamilton (Stoney Creek) — bright smooth ceiling",
+            city: "Hamilton",
+            nbh: "Stoney Creek",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Removal — Hamilton (Stoney Creek)",
+            blurb:
+              "Stoney Creek, Hamilton painted popcorn removal with careful masking and a bright, uniform Level 5 result.",
+            bullets: [
+              "Painted popcorn removal",
+              "HEPA sanding & clean-up",
+              "Primer + two coats",
+            ],
+            modalKeyword: "Popcorn Removal — Hamilton (Stoney Creek)",
+          },
+          {
+            src: "/gallery/mississauga.jpg",
+            alt: "Popcorn ceiling removal — Hamilton (Dundas) — Level 5 finishing",
+            city: "Hamilton",
+            nbh: "Dundas",
+            service: "Popcorn Ceiling Removal",
+            headline: "Popcorn Ceiling Removal — Hamilton (Dundas)",
+            blurb:
+              "Dundas, Hamilton ceiling smoothing to Level 5 with neat cut-ins, consistent sheen, and professional coatings.",
+            bullets: [
+              "Neat cut-ins at transitions",
+              "Level 5 skim throughout",
+              "Uniform matte/satin finish",
+            ],
+            modalKeyword: "Popcorn Ceiling Removal — Hamilton (Dundas)",
           },
         ]}
-        tileW={520}
-        tileH={540}
-        gap={16}
-        backdrop="none"
-        // title="Our Work — Popcorn Ceiling Removal"
-        // description="Two bright GTA projects with Level 5 smooth finishes."
+        business={{
+          name: "EPF Pro Services",
+          url: "https://epfproservices.com",
+          phone: "+1-647-xxx-xxxx",
+        }}
+        areas={["Mississauga", "Oakville", "Burlington", "Hamilton"]}
       />
     </main>
   );
