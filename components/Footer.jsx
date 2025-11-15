@@ -306,136 +306,127 @@ export default function Footer() {
 }
 
 /* -------- Fancy Map Card -------- */
+/* -------- Map Card — clean, neutral, blue accent -------- */
 function MapCard({ loc }) {
   return (
     <li
-      className="group relative rounded-2xl p-[2px] bg-gradient-to-br from-red-400 via-rose-300 to-red-400 shadow-[0_20px_60px_-20px_rgba(225,29,72,0.45)] hover:shadow-[0_28px_80px_-24px_rgba(225,29,72,0.55)] transition-shadow"
+      className="relative rounded-2xl border border-gray-200 bg-white shadow-sm"
       itemScope
       itemProp="department"
       itemType="https://schema.org/LocalBusiness"
     >
-      {/* soft glow */}
-      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-red-600/10 via-rose-500/10 to-red-700/10 blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+      {/* Top info row */}
+      <div className="px-4 pt-4 pb-3 flex items-start justify-between gap-3">
+        <div>
+          <div className="text-sm font-semibold text-gray-900">
+            {loc.label}
+          </div>
 
-      <div className="relative rounded-[1rem] overflow-hidden bg-white ring-1 ring-black/5">
-        {/* header: label + status */}
-        <div className="flex items-center justify-between px-4 py-3 border-b bg-gradient-to-r from-white to-rose-50/60">
-          <div className="font-medium text-gray-900">{loc.label}</div>
-          <div className="text-xs font-semibold text-white px-2.5 py-1 rounded-full bg-gradient-to-r from-red-600 to-rose-600 shadow">
+          <address
+            className="mt-1 not-italic text-sm text-gray-700"
+            itemProp="address"
+            itemScope
+            itemType="https://schema.org/PostalAddress"
+          >
+            <a
+              className="hover:underline"
+              href={loc.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${loc.label} in Google Maps`}
+            >
+              <span itemProp="streetAddress">{loc.address.streetAddress}</span>,{" "}
+              <span itemProp="addressLocality">
+                {loc.address.addressLocality}
+              </span>
+              ,{" "}
+              <span itemProp="addressRegion">
+                {loc.address.addressRegion}
+              </span>{" "}
+              <span itemProp="postalCode">{loc.address.postalCode}</span>
+            </a>
+            <meta
+              itemProp="addressCountry"
+              content={loc.address.addressCountry}
+            />
+          </address>
+
+          <div className="mt-1 text-sm flex flex-wrap items-center gap-2">
+            <a
+              href={`tel:${loc.phoneHref}`}
+              className="font-medium hover:underline"
+              itemProp="telephone"
+            >
+              {loc.phone}
+            </a>
+            <span className="text-gray-300">•</span>
+            <a
+              href={loc.gmbUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Google Business Profile
+            </a>
+          </div>
+        </div>
+
+        {/* Status pill (HomeStars-style blue) */}
+        <div className="flex flex-col items-end gap-1 text-xs">
+          <span className="inline-flex items-center rounded-full bg-sky-50 text-sky-700 px-2.5 py-1 font-semibold border border-sky-100">
+            <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 mr-1.5" />
             Open 8–21
-          </div>
+          </span>
+          <span className="text-[11px] text-gray-500">
+            Local popcorn ceiling crew
+          </span>
         </div>
+      </div>
 
-        {/* address */}
-        <address
-          className="px-4 pt-3 not-italic text-sm text-gray-700"
-          itemProp="address"
-          itemScope
-          itemType="https://schema.org/PostalAddress"
-        >
-          <a
-            className="hover:underline"
-            href={loc.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Open ${loc.label} in Google Maps`}
-          >
-            <span itemProp="streetAddress">{loc.address.streetAddress}</span>,{" "}
-            <span itemProp="addressLocality">
-              {loc.address.addressLocality}
-            </span>
-            , <span itemProp="addressRegion">{loc.address.addressRegion}</span>{" "}
-            <span itemProp="postalCode">{loc.address.postalCode}</span>
-          </a>
-          <meta
-            itemProp="addressCountry"
-            content={loc.address.addressCountry}
-          />
-        </address>
+      {/* Map block */}
+      <div className="px-4 pb-4">
+        <div className="relative rounded-xl overflow-hidden border border-gray-200 bg-gray-50">
+          {/* subtle top fade so it feels branded, not raw iframe */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-white/80 to-transparent z-10" />
 
-        {/* phone + GBP */}
-        <div className="px-4 pb-3 text-sm flex flex-wrap items-center gap-2">
-          <a
-            href={`tel:${loc.phoneHref}`}
-            className="font-medium hover:underline"
-            itemProp="telephone"
-          >
-            {loc.phone}
-          </a>
-          <span className="text-gray-300">•</span>
-          <a
-            href={loc.gmbUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            Google Business Profile
-          </a>
-        </div>
-
-        {/* Map with branded frame, shine & CTA chips */}
-        <div className="relative">
-          {/* gradient rim */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute inset-[6px] rounded-xl ring-1 ring-black/10"></div>
-            <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-tr from-rose-500/40 via-transparent to-red-600/40 opacity-60 mix-blend-normal"></div>
-          </div>
-
-          {/* map */}
-          <div className="relative aspect-[16/11] overflow-hidden rounded-xl mx-1 mb-1">
+          {/* smaller, static map (no scroll/zoom) */}
+          <div className="h-52 md:h-56">
             <iframe
               src={loc.embedUrl}
               title={`Map — ${loc.label}`}
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 h-full w-full border-0 transform-gpu transition duration-500 group-hover:scale-[1.01]"
+              className="h-full w-full border-0"
+              style={{ pointerEvents: "none" }} // no scroll / zoom on hover
             />
-            {/* glossy shine */}
-            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-              <div className="absolute -top-1/2 -left-1/2 w-[140%] h-[140%] rotate-[20deg] bg-gradient-to-b from-white/35 via-white/5 to-transparent blur-xl"></div>
-            </div>
+          </div>
 
-            {/* corner badge */}
-            <div className="absolute left-3 top-3 pointer-events-none">
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-gray-900 shadow">
-                <span className="inline-block h-2 w-2 rounded-full bg-red-600"></span>
-                EPF • Local
-              </div>
-            </div>
-
-            {/* bottom CTAs */}
-            <div className="absolute left-3 right-3 bottom-3 flex flex-wrap items-center gap-2 pointer-events-auto">
-              <a
-                href={`tel:${loc.phoneHref}`}
-                className="inline-flex items-center rounded-full bg-black text-white text-xs font-semibold px-3 py-1.5 shadow hover:-translate-y-0.5 transition"
-              >
-                Call
-              </a>
-              <a
-                href={loc.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-white/90 backdrop-blur text-xs font-semibold px-3 py-1.5 shadow hover:-translate-y-0.5 transition border border-black/10"
-                itemProp="hasMap"
-              >
-                Directions
-              </a>
-              <a
-                href={loc.gmbUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-white/90 backdrop-blur text-xs font-semibold px-3 py-1.5 shadow hover:-translate-y-0.5 transition border border-black/10"
-              >
-                Reviews
-              </a>
-
-              {/* rating (non-numeric, safe) */}
-              <div className="ml-auto hidden sm:flex items-center gap-1 text-[11px] font-semibold text-white bg-gradient-to-r from-red-600 to-rose-600 rounded-full px-2.5 py-1 shadow">
-                <span aria-hidden>★★★★★</span>
-                <span className="opacity-90">Top Rated</span>
-              </div>
-            </div>
+          {/* bottom actions */}
+          <div className="absolute left-4 right-4 bottom-3 flex flex-wrap items-center gap-2 z-20">
+            <a
+              href={`tel:${loc.phoneHref}`}
+              className="inline-flex items-center rounded-full bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 shadow-sm"
+            >
+              Call
+            </a>
+            <a
+              href={loc.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full bg-white text-blue-700 text-xs font-semibold px-3 py-1.5 shadow-sm border border-blue-200"
+              itemProp="hasMap"
+            >
+              Directions
+            </a>
+            <a
+              href={loc.gmbUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full bg-white text-blue-700 text-xs font-semibold px-3 py-1.5 shadow-sm border border-blue-200"
+            >
+              Reviews
+            </a>
           </div>
         </div>
       </div>
