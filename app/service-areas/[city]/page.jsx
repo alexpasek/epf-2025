@@ -7,21 +7,10 @@ import { buildCityCopy } from "@/lib/seoCopy";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  // If the file is /[city]//page.jsx:
-  if (!("neighborhood" in (arguments[0] || {}))) {
-    // cities is imported from "@/data/cities"
-    return cities.map((c) => ({ city: c.slug }));
-  }
-
-  // If the file is /[city]//[neighborhood]/page.jsx:
-  const out = [];
-  for (const c of cities) {
-    for (const n of c.neighborhoods || [])
-      out.push({ city: c.slug, neighborhood: n.slug });
-  }
-  return out;
+  return cities.map((c) => ({ city: c.slug }));
 }
 
 //old metadata

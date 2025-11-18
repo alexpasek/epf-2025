@@ -5,7 +5,9 @@ import { CONTACT } from "@/app/config";
 import LocalSignals from "@/components/LocalSignals";
 import { buildPopcornHoodCopy } from "@/lib/seoCopy";
 
+export const dynamic = "force-static";
 export const revalidate = 86400;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   var out = [];

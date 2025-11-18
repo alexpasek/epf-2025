@@ -3,6 +3,7 @@ import { getPosts } from '@/lib/posts';
 
 export const metadata={title:'Blog — Wallpaper Removal Pro'};
 export const dynamic='force-dynamic';
+export const runtime='edge';
 
 export default async function Blog(){
   const posts=await getPosts();

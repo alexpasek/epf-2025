@@ -6,7 +6,7 @@ import { buildPopcornHoodCopy } from "@/lib/seoCopy";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
-export const dynamicParams = true; // allow any hood slug
+export const dynamicParams = false;
 
 function titleCase(slug = "") {
   return slug
