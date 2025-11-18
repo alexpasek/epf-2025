@@ -1,7 +1,11 @@
 import Link from 'next/link';
-import { posts } from '@/data/posts';
+import { getPosts } from '@/lib/posts';
+
 export const metadata={title:'Blog — Wallpaper Removal Pro'};
-export default function Blog(){
+export const dynamic='force-dynamic';
+
+export default async function Blog(){
+  const posts=await getPosts();
   return(<div className='container-x py-10'>
     <h1 className='text-3xl font-bold'>Blog</h1>
     <div className='mt-6 grid gap-4 sm:grid-cols-2'>

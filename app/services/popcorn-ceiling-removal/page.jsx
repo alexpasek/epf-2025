@@ -22,6 +22,34 @@ export const metadata = {
 
 function JsonLd() {
   const areaServed = cities.map((c) => c.name);
+
+  const videoObjects = [
+    {
+      "@type": "VideoObject",
+      name: "Popcorn Ceiling Removal – Ceiling Prep & Containment",
+      description:
+        "On-site popcorn ceiling removal with dust control, masking, and clean preparation for Level 5 finish.",
+      url: "https://www.youtube.com/watch?v=g8Zl0XlbxBo",
+      embedUrl: "https://www.youtube.com/embed/g8Zl0XlbxBo",
+    },
+    {
+      "@type": "VideoObject",
+      name: "Popcorn Ceiling Removal – Skim Coat & Sanding",
+      description:
+        "Popcorn ceiling removal process focusing on skim coating, sanding, and achieving a smooth ceiling.",
+      url: "https://www.youtube.com/watch?v=73P8rMOy9pc",
+      embedUrl: "https://www.youtube.com/embed/73P8rMOy9pc",
+    },
+    {
+      "@type": "VideoObject",
+      name: "Popcorn Ceiling Removal – Finished Level 5 Ceilings",
+      description:
+        "Walkthrough of finished ceilings after popcorn removal with a bright, modern Level 5 smooth look.",
+      url: "https://www.youtube.com/watch?v=nSnbyGVqbMQ",
+      embedUrl: "https://www.youtube.com/embed/nSnbyGVqbMQ",
+    },
+  ];
+
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -96,8 +124,10 @@ function JsonLd() {
           },
         ],
       },
+      ...videoObjects,
     ],
   };
+
   return (
     <script
       type="application/ld+json"
@@ -108,16 +138,40 @@ function JsonLd() {
 }
 
 export default function Page() {
+  // only 3 photos now
   const images = Array.from(
-    { length: 6 },
+    { length: 3 },
     (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
+
+  // 3 videos for the gallery
+  const videos = [
+    {
+      id: "g8Zl0XlbxBo",
+      title: "Ceiling Prep & Containment",
+      blurb:
+        "Masking, plastic, and dust control on a live popcorn removal job.",
+      src: "https://www.youtube.com/embed/g8Zl0XlbxBo",
+    },
+    {
+      id: "73P8rMOy9pc",
+      title: "Skim Coat & Sanding",
+      blurb: "How we skim-coat and sand to get a Level 5 smooth ceiling.",
+      src: "https://www.youtube.com/embed/73P8rMOy9pc",
+    },
+    {
+      id: "nSnbyGVqbMQ",
+      title: "Finished Level 5 Ceilings",
+      blurb: "Walkthrough of finished smooth ceilings after popcorn removal.",
+      src: "https://www.youtube.com/embed/nSnbyGVqbMQ",
+    },
+  ];
 
   return (
     <div className="container-x py-10">
       <JsonLd />
 
-      {/* HERO */}
+      {/* HERO — same simple structure as your original */}
       <header className="max-w-5xl">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
@@ -152,7 +206,6 @@ export default function Page() {
             </Link>
           ))}
         </div>
-        {/* Removed the in-page text menu */}
       </header>
 
       {/* WHY CHOOSE US */}
@@ -183,18 +236,64 @@ export default function Page() {
         </div>
       </section>
 
-      {/* GALLERY — unchanged */}
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {images.map((s, i) => (
-          <img
-            key={i}
-            src={s}
-            alt={`Popcorn Ceiling Removal project ${i + 1}`}
-            className="w-full h-56 object-cover rounded-2xl border shadow"
-            data-lightbox="true"
-          />
-        ))}
-      </div>
+      {/* GALLERY + VIDEOS (redesigned) */}
+      <section className="mt-10">
+        <div className="flex items-end justify-between gap-4 mb-4">
+          <div>
+            <h2 className="text-2xl font-semibold">
+              See Our Popcorn Ceiling Work
+            </h2>
+            <p className="text-gray-600 text-sm">
+              Short videos plus real project photos — clients see exactly what
+              to expect.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* 3 video cards */}
+          {videos.map((v) => (
+            <article
+              key={v.id}
+              className="card bg-white overflow-hidden rounded-2xl border shadow-sm flex flex-col"
+            >
+              <div
+                className="relative w-full bg-black"
+                style={{ aspectRatio: "16 / 9" }}
+              >
+                <iframe
+                  src={v.src}
+                  title={v.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-sm font-semibold">{v.title}</h3>
+                <p className="mt-1 text-xs text-gray-600">{v.blurb}</p>
+              </div>
+            </article>
+          ))}
+
+          {/* 3 photo cards (half the old gallery, cleaner) */}
+          {images.map((s, i) => (
+            <figure
+              key={i}
+              className="card bg-white overflow-hidden rounded-2xl border shadow-sm"
+            >
+              <img
+                src={s}
+                alt={`Popcorn Ceiling Removal project ${i + 1}`}
+                className="w-full h-56 object-cover"
+                loading="lazy"
+                data-lightbox="true"
+              />
+            </figure>
+          ))}
+        </div>
+      </section>
 
       {/* PROCESS */}
       <section
@@ -298,8 +397,8 @@ export default function Page() {
         </details>
       </section>
 
-      {/* STICKY MOBILE CTA */}
-      <div className=" ">
+      {/* STICKY MOBILE CTA (if you want real sticky, you can add fixed+inset later) */}
+      <div className="mt-8 md:hidden">
         <div className="bg-white/95 backdrop-blur border shadow-xl rounded-2xl p-3 flex items-center justify-between gap-3">
           <a href={CONTACT.phoneHref} className="btn-cta flex-1 text-center">
             📞 Call (647) 923-6784

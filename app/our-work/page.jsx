@@ -1,5 +1,6 @@
 import PopcornMap from "@/components/PopcornMap";
 import OurWorkGallery from "@/components/OurWorkGallery";
+
 // ---- helpers ----
 function jitterAround(lat, lng, meters = 120) {
   const latOff = (meters / 111320) * (Math.random() - 0.5) * 2;
@@ -9,6 +10,7 @@ function jitterAround(lat, lng, meters = 120) {
     2;
   return { lat: lat + latOff, lng: lng + lngOff };
 }
+
 const STREETS = [
   "Maple Ave",
   "Queen St",
@@ -137,6 +139,31 @@ function buildPoints(cities = CITY_DATA, perHood = 8) {
 
 const POINTS = buildPoints(CITY_DATA, 8); // adjust 6–10 to control density
 
+// 3 popcorn-ceiling videos for this page
+const VIDEOS = [
+  {
+    id: "g8Zl0XlbxBo",
+    title: "Ceiling Prep & Containment",
+    blurb:
+      "Masking, plastic, and dust control on a live popcorn removal job in the Mississauga.",
+    src: "https://www.youtube.com/embed/g8Zl0XlbxBo",
+  },
+  {
+    id: "73P8rMOy9pc",
+    title: "Skim Coat & Sanding",
+    blurb:
+      "How we paint smooth ceiling (after removal of painted or unpainted popcorn).",
+    src: "https://www.youtube.com/embed/73P8rMOy9pc",
+  },
+  {
+    id: "nSnbyGVqbMQ",
+    title: "Finished Level 5 Ceilings",
+    blurb:
+      "Walkthrough of finished ceilings  popcorn removal — bright, smooth and modern no dust.",
+    src: "https://www.youtube.com/embed/nSnbyGVqbMQ",
+  },
+];
+
 export default function Page() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
@@ -146,10 +173,45 @@ export default function Page() {
       <p className="text-center text-gray-600 mb-8">
         Click any house to open the service page for that neighbourhood.
       </p>
-      <PopcornMap points={POINTS} />
 
+      <PopcornMap points={POINTS} />
+      <section className="mt-10">
+        <h2 className="text-2xl font-semibold text-center mb-3">
+          Watch Our Popcorn Ceiling Removal Process
+        </h2>
+        <p className="text-center text-gray-600 mb-6 text-sm">
+          Short real-job clips showing dust control, Level 5 skim and finished,
+          bright ceilings across the GTA.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {VIDEOS.map((v) => (
+            <article
+              key={v.id}
+              className="bg-white rounded-2xl border shadow-sm overflow-hidden flex flex-col"
+            >
+              <div
+                className="relative w-full bg-black"
+                style={{ aspectRatio: "16 / 9" }}
+              >
+                <iframe
+                  src={v.src}
+                  title={v.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-sm font-semibold">{v.title}</h3>
+                <p className="mt-1 text-xs text-gray-600">{v.blurb}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
       <OurWorkGallery
-      
         title="Popcorn Ceiling Removal — Mississauga, Oakville, Burlington, Hamilton"
         description="Dust-controlled popcorn ceiling removal (painted or unpainted) with Level 5 skim, primer and two coats for a bright, uniform ceiling."
         layout={{ min: 440, gap: 16, ratio: "5/3" }}
@@ -364,7 +426,8 @@ export default function Page() {
         }}
         areas={["Mississauga", "Oakville", "Burlington", "Hamilton"]}
       />
+
+      {/* VIDEO STRIP — right after the gallery description */}
     </main>
   );
 }
-

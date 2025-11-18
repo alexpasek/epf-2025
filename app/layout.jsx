@@ -16,7 +16,12 @@ import ChatWidgetAgent from "@/components/ChatWidgetAgent";
 import ReviewScroller from "@/components/ReviewScroller";
 import HeaderNav from "@/components/HeaderNav"; // ✅ NEW
 import Footer from "@/components/Footer";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://epf-2025.pages.dev";
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Wallpaper Removal Pro — GTA",
     template: "%s — Wallpaper Removal Pro",

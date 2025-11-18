@@ -14,6 +14,9 @@ const nextConfig = {
   trailingSlash: true,
   images: { unoptimized: true },
   outputFileTracingRoot: __dirname,
+  experimental: {
+    devtoolSegmentExplorer: false,
+  },
   async redirects() {
     return [
       {

@@ -211,6 +211,7 @@ export default function HeaderNav() {
             active={isActive("/services/")}
             align="right"
             widthPx={SERVICES_PANEL_W}
+            closeKey={pathname}
           >
             <Panel>
               <div className="flex flex-col gap-2 max-h-[70vh] overflow-auto pr-1">
@@ -245,6 +246,7 @@ export default function HeaderNav() {
             }
             align="right"
             widthPx={LOCATIONS_MEGA_W}
+            closeKey={pathname}
           >
             <Panel>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
@@ -402,6 +404,7 @@ function SmoothDropdown({
   children,
   align = "right",
   widthPx = 860,
+  closeKey,
 }) {
   const [open, setOpen] = useState(false);
   const openTimer = useRef(null);
@@ -415,6 +418,12 @@ function SmoothDropdown({
     clearTimeout(openTimer.current);
     closeTimer.current = setTimeout(() => setOpen(false), 110);
   };
+
+  useEffect(() => {
+    setOpen(false);
+    clearTimeout(openTimer.current);
+    clearTimeout(closeTimer.current);
+  }, [closeKey]);
 
   // right-anchored and constrained to viewport
   const style = {
