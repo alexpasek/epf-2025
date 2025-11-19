@@ -291,7 +291,7 @@ export default function Page() {
                 {cities.slice(0, 10).map((c) => (
                   <Link
                     key={c.slug}
-                    href={`/${c.slug}/`}
+                    href={`/popcorn-ceiling-removal/${c.slug}/`}
                     className="pill"
                     title={`Popcorn ceiling removal in ${c.name}`}
                   >
