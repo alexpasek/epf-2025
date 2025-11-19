@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+
+# Host
+Host: https://epf-2025.pages.dev
+
+# Sitemaps
+Sitemap: https://epf-2025.pages.dev/sitemap.xml

@@ -335,7 +335,7 @@ export default function Page() {
               <li>
                 <Link
                   className="underline"
-                  href="/blog/popcorn-ceiling-removal-cost-timeline"
+                  href="/blog/popcorn-ceiling-removal-cost-timeline/"
                 >
                   Cost & Timeline Guide
                 </Link>
@@ -432,9 +432,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -505,9 +505,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -590,9 +590,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -740,9 +740,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/services/interior-painting/">
@@ -821,9 +821,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -974,9 +974,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -1055,9 +1055,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -1124,9 +1124,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -1358,9 +1358,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -1431,9 +1431,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -1519,9 +1519,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -1596,9 +1596,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -1907,9 +1907,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -1980,9 +1980,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a
@@ -2067,9 +2067,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -2594,9 +2594,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -2682,9 +2682,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
             </li>
             <li>
@@ -2751,9 +2751,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a
@@ -2831,9 +2831,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -2986,9 +2986,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a
@@ -3146,9 +3146,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">
@@ -3223,9 +3223,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a
@@ -3684,9 +3684,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/services/drywall-installation/">
@@ -3996,9 +3996,9 @@ export default function Page() {
               ,{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a
@@ -4072,9 +4072,9 @@ export default function Page() {
               Helpful internal links:{" "}
               <a
                 className="underline"
-                href="/blog/popcorn-ceiling-removal-cost-timeline"
+                href="/blog/popcorn-ceiling-removal-cost-timeline/"
               >
-                /blog/popcorn-ceiling-removal-cost-timeline
+                /blog/popcorn-ceiling-removal-cost-timeline/
               </a>
               ,{" "}
               <a className="underline" href="/quote/">

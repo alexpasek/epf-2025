@@ -347,7 +347,7 @@ export default function Page() {
               <li>
                 <Link
                   className="underline"
-                  href="/blog/popcorn-ceiling-removal-cost-timeline"
+                  href="/blog/popcorn-ceiling-removal-cost-timeline/"
                 >
                   Popcorn Removal: Cost & Timeline
                 </Link>

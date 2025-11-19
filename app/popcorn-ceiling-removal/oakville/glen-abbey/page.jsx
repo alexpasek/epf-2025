@@ -302,7 +302,7 @@ export default function Page() {
               <li>
                 <Link
                   className="underline"
-                  href="/blog/popcorn-ceiling-removal-cost-timeline"
+                  href="/blog/popcorn-ceiling-removal-cost-timeline/"
                 >
                   Cost & Timeline Guide
                 </Link>
