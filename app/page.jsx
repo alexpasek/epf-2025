@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cities } from "@/data/cities";
 import { PHONE_HREF, PHONE_NUMBER } from "./config";
 import QuoteForm from "@/components/QuoteForm";
-import ReviewScroller from "@/components/ReviewScroller";
+import GoogleReviews from "@/components/GoogleReviews";
 import OurWorkGallery from "@/components/OurWorkGallery";
 
 export const revalidate = 86400;
@@ -100,9 +100,9 @@ function JsonLd() {
 
 export default function Page() {
   const heroStats = [
-    { label: "Ceilings smoothed", value: "450+" },
-    { label: "Years dust-controlled", value: "12" },
-    { label: "Average rating", value: "4.9 ★" },
+    { label: "Ceilings smoothed", value: "4500+" },
+    { label: "Years dust-controlled", value: "18" },
+    { label: "Average rating", value: "5 ★" },
   ];
 
   const videos = [
@@ -159,11 +159,11 @@ export default function Page() {
     },
     {
       src: "/home/4.webp",
-      alt: "Burlington staircase ceiling Level 5 finish",
+      alt: "Burlington Popcorn ceiling removal ceiling Level 5 finish",
       city: "Burlington",
       nbh: "Roseland",
       service: "Popcorn Ceiling Removal",
-      headline: "Roseland Staircase",
+      headline: "Roseland Stucco ceiling removal",
       blurb: "Tall foyer scraped, skimmed and painted with scaffolding.",
       bullets: ["Two-storey access", "Critical-light inspection"],
     },
@@ -327,24 +327,7 @@ export default function Page() {
       </section>
 
       {/* REVIEWS */}
-      <section className="container-x">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
-                Verified Google reviews
-              </p>
-              <h2 className="text-2xl font-semibold text-slate-900">
-                Real homeowners rate our popcorn ceiling work 4.9★
-              </h2>
-            </div>
-            <div className="text-sm text-slate-500">
-              WSIB, $5M liability, condo-compliant paperwork
-            </div>
-          </div>
-          <ReviewScroller />
-        </div>
-      </section>
+      <GoogleReviews className="bg-white" />
       {/* VIDEOS */}
       <section className="container-x">
         <div className="mx-auto max-w-3xl text-center">

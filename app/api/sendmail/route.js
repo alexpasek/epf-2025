@@ -22,7 +22,7 @@ export async function POST(req) {
         // For first tests use Resend sandbox sender.
         // After you verify epfproservices.com in Resend, switch to e.g. no-reply@epfproservices.com
         const from = (
-            process.env.RESEND_FROM || "Wallpaper Removal Pro <onboarding@resend.dev>"
+            process.env.RESEND_FROM || "Popcorn Ceiling Removal Pro <onboarding@resend.dev>"
         ).trim();
 
         // Build payload

@@ -220,7 +220,7 @@ export default function Page() {
         items={[
           // MISSISSAUGA
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn-ceiling-removal4.jpeg",
             alt: "Popcorn ceiling removal / popcorn removal — Mississauga (Mineola) — Level 5 smooth finish",
             city: "Mississauga",
             nbh: "Mineola",
@@ -236,7 +236,7 @@ export default function Page() {
             modalKeyword: "Popcorn Ceiling Removal — Mississauga (Mineola)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn-ceiling-removal.jpeg",
             alt: "Popcorn removal / ceiling smoothing — Mississauga (Port Credit) — Level 5 finish",
             city: "Mississauga",
             nbh: "Port Credit",
@@ -252,7 +252,7 @@ export default function Page() {
             modalKeyword: "Popcorn Removal — Mississauga (Port Credit)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn-ceiling-removal1.jpeg",
             alt: "Popcorn ceiling removal — Mississauga (Lorne Park) — painted popcorn specialist",
             city: "Mississauga",
             nbh: "Lorne Park",
@@ -270,7 +270,7 @@ export default function Page() {
 
           // OAKVILLE
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4238 2 Medium.jpeg",
             alt: "Popcorn ceiling removal — Oakville (Clearview) — Level 5 skim & paint",
             city: "Oakville",
             nbh: "Clearview",
@@ -286,7 +286,7 @@ export default function Page() {
             modalKeyword: "Popcorn Ceiling Removal — Oakville (Clearview)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4232 2 Medium.jpeg",
             alt: "Popcorn removal — Oakville (Glen Abbey) — smooth, bright ceiling",
             city: "Oakville",
             nbh: "Glen Abbey",
@@ -302,7 +302,7 @@ export default function Page() {
             modalKeyword: "Popcorn Removal — Oakville (Glen Abbey)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4234 2 Medium.jpeg",
             alt: "Popcorn ceiling removal — Oakville (River Oaks) — Level 5 smoothing",
             city: "Oakville",
             nbh: "River Oaks",
@@ -320,7 +320,7 @@ export default function Page() {
 
           // BURLINGTON
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4235 2 Medium.jpeg",
             alt: "Popcorn ceiling removal — Burlington (Roseland) — Level 5 finish",
             city: "Burlington",
             nbh: "Roseland",
@@ -336,7 +336,7 @@ export default function Page() {
             modalKeyword: "Popcorn Ceiling Removal — Burlington (Roseland)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling remova3.jpeg",
             alt: "Popcorn removal — Burlington (Millcroft) — high-ceiling expertise",
             city: "Burlington",
             nbh: "Millcroft",
@@ -352,7 +352,7 @@ export default function Page() {
             modalKeyword: "Popcorn Removal — Burlington (Millcroft)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4236 2 Medium.jpeg",
             alt: "Popcorn ceiling removal — Burlington (Alton Village) — modern smooth ceiling",
             city: "Burlington",
             nbh: "Alton Village",
@@ -371,7 +371,7 @@ export default function Page() {
 
           // HAMILTON
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4231 2 Medium.jpeg",
             alt: "Popcorn ceiling removal — Hamilton (Ancaster) — Level 5 smooth finish",
             city: "Hamilton",
             nbh: "Ancaster",
@@ -387,7 +387,7 @@ export default function Page() {
             modalKeyword: "Popcorn Ceiling Removal — Hamilton (Ancaster)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4240 2 Medium.jpeg",
             alt: "Popcorn removal — Hamilton (Stoney Creek) — bright smooth ceiling",
             city: "Hamilton",
             nbh: "Stoney Creek",
@@ -403,7 +403,7 @@ export default function Page() {
             modalKeyword: "Popcorn Removal — Hamilton (Stoney Creek)",
           },
           {
-            src: "/gallery/mississauga.jpg",
+            src: "/gallery/popcorn ceiling removal_4230 2 Medium.jpeg",
             alt: "Popcorn ceiling removal — Hamilton (Dundas) — Level 5 finishing",
             city: "Hamilton",
             nbh: "Dundas",

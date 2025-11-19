@@ -285,7 +285,7 @@ export default function ContactPage() {
       {/* POPCORN CEILING REMOVAL — SEO/sales block */}
       <section className="mt-10 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-rose-50 via-white to-sky-50 ring-1 ring-slate-200">
         <h2 className="text-2xl font-semibold">
-          Popcorn Ceiling Removal — GTA & Niagara
+          Popcorn Ceiling Removal — Epf Pro Services
         </h2>
         <p className="mt-2 text-slate-700">
           We specialize in turning dated textured ceilings into{" "}

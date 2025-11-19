@@ -7,7 +7,7 @@ import { CityCopy } from "@/components/LocalSEOCopy";
 // Page-level metadata (title, description, canonical, OG/Twitter, robots)
 // ─────────────────────────────────────────────────────────────────────────────
 export const metadata = {
-  title: "Mississauga — Wallpaper Removal Pro",
+  title: "Mississauga — Popcorn Ceiling Removal Pro",
   description:
     "Wallpaper removal, dust-free popcorn ceiling removal, drywall installation & repair, and interior painting in Mississauga. Fast quotes and clean results.",
   alternates: {
@@ -23,7 +23,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://your-domain.com/service-areas/wallpaper-removal/mississauga",
-    siteName: "Wallpaper Removal Pro",
+    siteName: "Popcorn Ceiling Removal Pro",
     title: "Wallpaper & Popcorn Ceiling Removal in Mississauga",
     description:
       "Wallpaper removal, popcorn ceiling smoothing, drywall repair, and painting in Mississauga.",
@@ -74,7 +74,7 @@ export default function City() {
   const localBusinessLd = {
     "@context": "https://schema.org",
     "@type": ["HomeAndConstructionBusiness", "HousePainter"],
-    name: "Wallpaper Removal Pro",
+    name: "Popcorn Ceiling Removal Pro",
     url: "https://your-domain.com/",
     telephone: "+1-647-812-9135",
     priceRange: "$$",

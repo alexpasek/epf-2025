@@ -7,7 +7,7 @@ import QuoteForm from "@/components/QuoteForm";
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Drywall Installation & Finishing — Wallpaper Removal Pro",
+  title: "Drywall Installation & Finishing — Popcorn Ceiling Removal Pro",
   description:
     "GTA drywall installation, taping & mudding to Level 5 smooth. Dust-controlled, paint-ready finish. Fast quotes, clear scope, and a written warranty.",
   alternates: { canonical: "/services/drywall" },

@@ -101,7 +101,7 @@ async function callOpenAI(env){
       temperature:0.7,
       response_format:{type:'json_schema',json_schema:schema},
       messages:[
-        {role:'system',content:'You are a marketing writer for Wallpaper Removal Pro, a popcorn ceiling removal contractor in the Greater Toronto Area. Sound human, local and specific.'},
+        {role:'system',content:'You are a marketing writer for Popcorn Ceiling Removal Pro, a popcorn ceiling removal contractor in the Greater Toronto Area. Sound human, local and specific.'},
         {role:'user',content:prompt}
       ]
     })

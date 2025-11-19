@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getPosts } from '@/lib/posts';
 
-export const metadata={title:'Blog — Wallpaper Removal Pro'};
+export const metadata={title:'Blog — Popcorn Ceiling Removal Pro'};
 export const dynamic='force-dynamic';
 export const runtime='edge';
 

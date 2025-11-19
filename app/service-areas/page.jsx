@@ -9,7 +9,7 @@
   export const revalidate = 86400;
   
   export const metadata = {
-    title: "Service Areas | Wallpaper Removal Pro",
+    title: "Service Areas | Popcorn Ceiling Removal Pro",
     description: "We service Toronto & the GTA. Browse cities and neighbourhoods to see recent work and request a quote.",
   };
   

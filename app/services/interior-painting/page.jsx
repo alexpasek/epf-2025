@@ -6,7 +6,7 @@ import { cities } from "@/data/cities";
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Interior Painting — Wallpaper Removal Pro",
+  title: "Interior Painting — Popcorn Ceiling Removal Pro",
   description:
     "GTA interior painting with sharp lines and durable finishes. Walls, trim, and ceilings—dust-controlled prep, Level 5 surfaces, and a clean, guaranteed result.",
   alternates: { canonical: "/services/painting" },

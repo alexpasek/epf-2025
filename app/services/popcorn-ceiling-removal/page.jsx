@@ -6,7 +6,7 @@ import { cities } from "@/data/cities";
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Popcorn Ceiling Removal — Wallpaper Removal Pro",
+  title: "Popcorn Ceiling Removal — Popcorn Ceiling Removal Pro",
   description:
     "GTA popcorn ceiling removal to Level 5 smooth. Dust-contained, skim-coat, prime & paint. Fast quotes, clear scope, and a written warranty.",
   alternates: { canonical: "/services/popcorn-ceiling-removal/" },

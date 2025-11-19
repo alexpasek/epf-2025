@@ -104,12 +104,23 @@ export default function HeaderNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     setMobileOpen(false);
     setMobileServicesOpen(false);
     setMobileLocationsOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const handler = () => {
+      const shouldCollapse = window.scrollY > 80;
+      setIsCollapsed(shouldCollapse);
+    };
+    handler();
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -122,6 +133,10 @@ export default function HeaderNav() {
     { href: "/services/drywall-installation/", label: "Drywall Installation" },
     { href: "/services/wallpaper-removal/", label: "Wallpaper Removal" },
     { href: "/services/interior-painting/", label: "Interior Painting" },
+    {
+      href: "/services/baseboard-installation/",
+      label: "Baseboard Installation",
+    },
   ];
 
   const locations = [
@@ -141,7 +156,12 @@ export default function HeaderNav() {
   return (
     <header className="sticky top-0 z-50">
       {/* Row 1: taller + stylish glassy header */}
-      <div className="border-b bg-gradient-to-r from-white via-white to-red-50/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_10px_30px_-20px_rgba(0,0,0,.55)]">
+      <div
+        className={[
+          "border-b bg-gradient-to-r from-white via-white to-red-50/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_10px_30px_-20px_rgba(0,0,0,.55)] transition-transform duration-300",
+          isCollapsed ? "lg:-translate-y-full" : "",
+        ].join(" ")}
+      >
         <div className="container-x py-2 md:py-3 flex h-24 md:h-28 items-center gap-3">
           <Link
             href="/"
@@ -197,7 +217,12 @@ export default function HeaderNav() {
       </div>
 
       {/* Row 2: right-aligned menu */}
-      <div className="hidden lg:block border-b bg-gradient-to-r from-red-50/60 via-white to-red-50/60">
+      <div
+        className={[
+          "hidden lg:block border-b bg-gradient-to-r from-red-50/60 via-white to-red-50/60 sticky top-0 z-40 transition-transform duration-300",
+          isCollapsed ? "-translate-y-24" : "translate-y-0",
+        ].join(" ")}
+      >
         <nav
           className="container-x py-3 flex items-center gap-2 text-[15px] justify-end"
           aria-label="Primary navigation"
@@ -276,7 +301,12 @@ export default function HeaderNav() {
       {pathname !== "/" && (
         <>
           <BreadcrumbJsonLd crumbs={crumbs} />
-          <div className="border-b border-[#3EC5F1] bg-[#00AEEF] text-slate-100">
+          <div
+            className={[
+              "border-b border-[#3EC5F1] bg-[#00AEEF] text-slate-100 transition-transform duration-300 sticky top-0 z-30",
+              isCollapsed ? "-translate-y-24" : "translate-y-0",
+            ].join(" ")}
+          >
             <nav
               aria-label="Breadcrumb"
               className="container-x py-1 text-[13px] leading-5"

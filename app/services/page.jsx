@@ -72,6 +72,18 @@ const services = [
       "Colour consulting available",
     ],
   },
+  {
+    slug: "/services/baseboard-installation/",
+    name: "Baseboard Installation & Finishing",
+    tagline:
+      "Popcorn ceiling removal clean-up plus new baseboards, shoe moulding, caulk and paint-ready delivery.",
+    bullets: [
+      "Measure, cut and cope MDF/wood baseboards for tight inside corners",
+      "Finish nail, fill, sand and caulk joints for a seamless look",
+      "Match profiles after popcorn removal or flooring upgrades",
+      "Optional spray/brush finish so trim is ready when walls are painted",
+    ],
+  },
 ];
 
 const cities = [

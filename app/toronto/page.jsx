@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CityCopy } from "@/components/LocalSEOCopy";
-export const metadata = { title: "Toronto — Wallpaper Removal Pro" };
+export const metadata = { title: "Toronto — Popcorn Ceiling Removal Pro" };
 export default function City() {
   const images = Array.from({ length: 6 }, (_, i) => `/home/${i + 1}.webp`); //cities/toronto path for images for this page
   const hidden = Array.from({ length: 120 }).map((_, i) => (

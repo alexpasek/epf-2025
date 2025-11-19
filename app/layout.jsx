@@ -23,8 +23,8 @@ const SITE_URL =
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Wallpaper Removal Pro — GTA",
-    template: "%s — Wallpaper Removal Pro",
+    default: "Popcorn Ceiling Removal Pro — GTA",
+    template: "%s — Popcorn Ceiling Removal Pro",
   },
   description:
     "Wallpaper removal, popcorn ceiling removal, drywall installation & repair, and interior painting across the GTA.",

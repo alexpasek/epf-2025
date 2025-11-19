@@ -1,6 +1,9 @@
+'use client';
+
 // components/Footer.jsx
 import GoogleReviews from "@/components/GoogleReviews";
 import { SERVICE_AREAS } from "@/app/config";
+import { usePathname } from "next/navigation";
 
 /** Contact + Locations */
 const CONTACT = {
@@ -62,6 +65,8 @@ const LOCATIONS = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const hideReviews = pathname === "/";
   const orgId = "https://www.epfproservices.com/#org";
 
   /* -------- JSON-LD (SEO) -------- */
@@ -187,7 +192,7 @@ export default function Footer() {
       />
 
       {/* Google Reviews */}
-      <GoogleReviews />
+      {!hideReviews && <GoogleReviews />}
 
       {/* SEO line */}
       <div className="container-x pt-6">
@@ -196,7 +201,9 @@ export default function Footer() {
             Popcorn Ceiling Removal — EPF Pro Services
           </span>
           : dust-controlled scraping, Level 5 skim + HEPA sanding, primer-ready
-          smooth ceilings. Serving {SERVICE_AREAS.join(", ")}.
+          smooth ceilings. Visit our crews at 6855 Glen Erin Dr #33, Mississauga
+          ON L5N 1P6 and 37 Dalegrove Crescent, Stoney Creek ON L8J 3R5. Serving{" "}
+          {SERVICE_AREAS.join(", ")}.
         </p>
       </div>
 
@@ -240,6 +247,28 @@ export default function Footer() {
                     itemProp="telephone"
                   >
                     {p.display}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-4 text-sm">
+            <div className="font-medium text-gray-900">Service hubs</div>
+            <ul className="mt-2 space-y-2 text-gray-700">
+              {LOCATIONS.map((loc) => (
+                <li key={loc.label}>
+                  <div className="font-semibold text-gray-900">
+                    {loc.label}
+                  </div>
+                  <a
+                    href={loc.mapsUrl}
+                    className="hover:underline block"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {loc.address.streetAddress}, {loc.address.addressLocality},{" "}
+                    {loc.address.addressRegion} {loc.address.postalCode}
                   </a>
                 </li>
               ))}

@@ -6,7 +6,7 @@ export const runtime='edge';
 
 export async function generateMetadata({ params }){
   const post=await getPostBySlug(params.slug);
-  return { title: post ? `${post.title} — Wallpaper Removal Pro` : 'Post — Wallpaper Removal Pro' };
+  return { title: post ? `${post.title} — Popcorn Ceiling Removal Pro` : 'Post — Popcorn Ceiling Removal Pro' };
 }
 
 export default async function Post({ params }){

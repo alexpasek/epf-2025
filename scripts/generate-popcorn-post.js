@@ -86,7 +86,7 @@ async function callOpenAI(){
     }
   };
 
-  const prompt=`Write a unique, conversational blog post about popcorn ceiling removal for homeowners near ${today}. Focus on Greater Toronto Area neighborhoods and naturally incorporate the supplied local SEO keywords. Mention protective prep, cleanup timelines, pricing factors and why to work with Wallpaper Removal Pro. Reference actual pages from ${siteUrl} to encourage internal linking, and close with a helpful CTA. Provide photo ideas that describe what to shoot to support the story.`;
+  const prompt=`Write a unique, conversational blog post about popcorn ceiling removal for homeowners near ${today}. Focus on Greater Toronto Area neighborhoods and naturally incorporate the supplied local SEO keywords. Mention protective prep, cleanup timelines, pricing factors and why to work with Popcorn Ceiling Removal Pro. Reference actual pages from ${siteUrl} to encourage internal linking, and close with a helpful CTA. Provide photo ideas that describe what to shoot to support the story.`;
 
   const res=await fetch('https://api.openai.com/v1/chat/completions',{
     method:'POST',

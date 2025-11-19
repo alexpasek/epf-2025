@@ -296,7 +296,7 @@ export default function Page() {
               category: "Home Improvement",
               provider: {
                 "@type": "LocalBusiness",
-                name: "Wallpaper Removal Pro",
+                name: "Popcorn Ceiling Removal Pro",
               },
               areaServed: "Greater Toronto Area, Canada",
               url: PAGE_URL,
