@@ -201,7 +201,11 @@ export default function Page() {
         {/* City pills (internal linking for local SEO) */}
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
           {cities.map((c) => (
-            <Link key={c.slug} href={`/${c.slug}/`} className="pill">
+            <Link
+              key={c.slug}
+              href={`/popcorn-ceiling-removal/${c.slug}/`}
+              className="pill"
+            >
               {c.name}
             </Link>
           ))}
