@@ -243,9 +243,7 @@ export default function GoogleReviews({ className = "" }) {
             View more Google reviews
           </a>
           <a
-            href={`https://search.google.com/local/writereview?placeid=${
-              process.GBP_PLACE_ID || ""
-            }`}
+            href="https://share.google/sqRKpoYNmcALdmjrP"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta"
