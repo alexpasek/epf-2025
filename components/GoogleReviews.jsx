@@ -244,7 +244,7 @@ export default function GoogleReviews({ className = "" }) {
           </a>
           <a
             href={`https://search.google.com/local/writereview?placeid=${
-              process.env.NEXT_PUBLIC_GBP_PLACE_ID || ""
+              process.GBP_PLACE_ID || ""
             }`}
             target="_blank"
             rel="noopener noreferrer"

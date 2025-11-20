@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://epf-2025.pages.dev
+Host: https://epfproservices.com/
 
 # Sitemaps
-Sitemap: https://epf-2025.pages.dev/sitemap.xml
+Sitemap: https://epfproservices.com/sitemap.xml
