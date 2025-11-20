@@ -78,8 +78,8 @@ export default function Footer() {
     url: "https://www.epfproservices.com/",
     email: CONTACT.email,
     sameAs: [
-      "https://www.instagram.com/wallpaperremovalpro",
-      "https://www.facebook.com/share/17bsRz3MTi/?mibextid=wwXIfr",
+      "https://www.instagram.com/epf_pro_services",
+      "https://www.facebook.com/epfproservices/?rdid=Wpko4jNGWEWo6enD",
     ],
     areaServed: SERVICE_AREAS,
     knowsAbout: [
@@ -258,9 +258,7 @@ export default function Footer() {
             <ul className="mt-2 space-y-2 text-gray-700">
               {LOCATIONS.map((loc) => (
                 <li key={loc.label}>
-                  <div className="font-semibold text-gray-900">
-                    {loc.label}
-                  </div>
+                  <div className="font-semibold text-gray-900">{loc.label}</div>
                   <a
                     href={loc.mapsUrl}
                     className="hover:underline block"
@@ -320,8 +318,8 @@ export default function Footer() {
           </div>
           <div className="flex justify-center">
             <SocialButtons
-              instagram="https://www.instagram.com/wallpaperremovalpro"
-              facebook="https://www.facebook.com/share/17bsRz3MTi/?mibextid=wwXIfr"
+              instagram="www.instagram.com/epf_pro_services"
+              facebook="https://www.facebook.com/epfproservices/?rdid=Wpko4jNGWEWo6enD"
               size={60}
               icon={26}
               gap={12}
