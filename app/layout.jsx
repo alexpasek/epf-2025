@@ -20,6 +20,9 @@ import Footer from "@/components/Footer";
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://epf-2025.pages.dev";
 
+// Cloudflare/edge runtime for all routes
+export const runtime = "edge";
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
