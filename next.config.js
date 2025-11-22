@@ -16,6 +16,8 @@ const nextConfig = {
   outputFileTracingRoot: __dirname,
   experimental: {
     devtoolSegmentExplorer: false,
+    // Drop legacy browser transforms/polyfills; target modern browsers only
+    legacyBrowsers: false,
   },
   async redirects() {
     return [

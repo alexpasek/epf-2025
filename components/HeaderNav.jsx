@@ -534,6 +534,8 @@ function MenuItemCard({ href, label }) {
       href={href}
       title={label}
       aria-label={label}
+      role="menuitem"
+      tabIndex={-1}
       className={[
         "group p-3 rounded-xl border bg-white",
         ACCENT.border,
