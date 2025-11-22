@@ -349,7 +349,6 @@ export default function HeaderNav() {
           "lg:hidden border-b bg-white/95 backdrop-blur transition-[max-height] overflow-hidden",
           mobileOpen ? "max-h-[75vh]" : "max-h-0",
         ].join(" ")}
-        aria-hidden={!mobileOpen}
       >
         <div className="container-x py-3">
           <nav className="space-y-1 text-[16px]" aria-label="Mobile">
@@ -589,6 +588,7 @@ function MobileDisclosure({ label, open, setOpen, items, isActive }) {
         type="button"
         className="w-full flex items-center justify-between px-3 py-2"
         aria-expanded={open}
+        aria-controls={`mobile-disclosure-${label}`}
         onClick={() => setOpen((v) => !v)}
       >
         <span className="font-medium">{label}</span>
@@ -609,11 +609,13 @@ function MobileDisclosure({ label, open, setOpen, items, isActive }) {
         </svg>
       </button>
       <div
+        id={`mobile-disclosure-${label}`}
         className={
           open
             ? "max-h-96 overflow-hidden transition-[max-height]"
             : "max-h-0 overflow-hidden transition-[max-height]"
         }
+        hidden={!open}
       >
         <div className="p-1 pt-0">
           {items.map((i) => (
