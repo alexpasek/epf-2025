@@ -504,7 +504,7 @@ function SmoothDropdown({
         role="menu"
         aria-label={`${label} menu`}
       >
-        {children}
+        <div role="none">{children}</div>
       </div>
     </div>
   );
@@ -533,7 +533,6 @@ function MenuItemCard({ href, label }) {
     <Link
       href={href}
       title={label}
-      aria-label={label}
       role="menuitem"
       tabIndex={-1}
       className={[
