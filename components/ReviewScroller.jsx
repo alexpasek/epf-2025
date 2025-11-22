@@ -13,7 +13,7 @@ function useScroller() {
     const measure = () => {
       const card = el.querySelector("[data-card]");
       if (!card) return;
-      const next = card.getBoundingClientRect().width + 16; // card width + gap
+      const next = (card.clientWidth || 0) + 16; // card width + gap
       setStep((prev) => (Math.abs(prev - next) > 0.5 ? next : prev));
     };
 

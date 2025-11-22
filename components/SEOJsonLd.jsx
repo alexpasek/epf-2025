@@ -6,7 +6,6 @@ export default function SEOJsonLd(){
     "name": BRAND_NAME,
     "areaServed": SERVICE_AREAS,
     "telephone": CONTACT.phone,
-    "email": CONTACT.email || undefined,
     "url": "https://example.com", // update after deploy
     "image": "https://example.com/android-chrome-512x512.png",
     "address": CONTACT.address || undefined,

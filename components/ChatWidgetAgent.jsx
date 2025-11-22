@@ -64,32 +64,46 @@ function saveMsgs(sessionId, msgs) {
 function useStickyBottomOffset(defaultPx) {
   const [offset, setOffset] = useState(defaultPx);
   useEffect(() => {
-    function update() {
-      var el = document.getElementById("sticky-cta");
-      if (el) {
-        var r = el.getBoundingClientRect();
-        setOffset((r ? r.height : 0) + 16);
-      } else {
-        setOffset(defaultPx);
-      }
+    const el = document.getElementById("sticky-cta");
+    if (!el) {
+      setOffset(defaultPx);
+      return;
     }
-    update();
-    var el2 = document.getElementById("sticky-cta");
-    var ro = null;
-    try {
-      if (el2 && typeof ResizeObserver !== "undefined") {
-        ro = new ResizeObserver(() => update());
-        ro.observe(el2);
-      }
-    } catch (e) {}
-    window.addEventListener("resize", update);
+
+    const set = (h) => setOffset((h || 0) + 16);
+
+    let raf = null;
+    const update = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => set(el.clientHeight || 0));
+    };
+
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver((entries) => {
+        const entry = entries && entries[0];
+        const h = entry?.borderBoxSize?.[0]?.blockSize ?? entry?.contentRect?.height;
+        if (typeof h === "number") {
+          set(h);
+        } else {
+          update();
+        }
+      });
+      ro.observe(el);
+    } else {
+      window.addEventListener("resize", update);
+      update();
+    }
+
     return () => {
+      cancelAnimationFrame(raf);
       if (ro) {
         try {
           ro.disconnect();
         } catch (e) {}
+      } else {
+        window.removeEventListener("resize", update);
       }
-      window.removeEventListener("resize", update);
     };
   }, [defaultPx]);
   return offset;

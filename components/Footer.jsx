@@ -230,13 +230,13 @@ export default function Footer() {
 
           <div className="mt-4 text-sm">
             <div className="font-medium text-gray-900">Contact</div>
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="hover:underline"
-              itemProp="email"
-            >
-              {CONTACT.email}
-            </a>
+            <p className="text-gray-700">
+              Prefer forms?{" "}
+              <a href="/quote/" className="hover:underline font-medium">
+                Request a quote
+              </a>{" "}
+              or call:
+            </p>
             <ul className="mt-1 space-y-1">
               {CONTACT.phones.map((p, i) => (
                 <li key={i}>
@@ -251,6 +251,16 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="mt-2">
+              <span className="text-gray-500 mr-1">Email</span>
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="hover:underline font-medium"
+                itemProp="email"
+              >
+                {CONTACT.email}
+              </a>
+            </div>
           </div>
 
           <div className="mt-4 text-sm">

@@ -59,7 +59,6 @@ function JsonLd() {
         "@id": "/#org",
         name: BRAND,
         url: "/",
-        email: CONTACT?.email || "info@epfproservices.com",
         telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
         sameAs: [],
       },
@@ -69,7 +68,6 @@ function JsonLd() {
         name: `${BRAND} — Mississauga`,
         url: "/contact/",
         telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
-        email: CONTACT?.email || "info@epfproservices.com",
         branchOf: { "@id": "/#org" },
         address: {
           "@type": "PostalAddress",
@@ -94,7 +92,6 @@ function JsonLd() {
         name: `${BRAND} — Stoney Creek`,
         url: "/contact/",
         telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
-        email: CONTACT?.email || "info@epfproservices.com",
         branchOf: { "@id": "/#org" },
         address: {
           "@type": "PostalAddress",
@@ -210,12 +207,6 @@ export default function ContactPage() {
                 className="btn-cta bg-blue-600 hover:bg-blue-700 text-white"
               >
                 📞 {CONTACT.phoneNumber}
-              </a>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                className="btn-cta bg-rose-600 hover:bg-rose-700 text-white"
-              >
-                ✉️ {CONTACT.email}
               </a>
               <Link
                 href="/quote/"
