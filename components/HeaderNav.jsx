@@ -502,6 +502,7 @@ function SmoothDropdown({
         ].join(" ")}
         style={style}
         role="menu"
+        aria-label={`${label} menu`}
       >
         {children}
       </div>
@@ -553,6 +554,7 @@ function DropdownLink({ href, label, bold }) {
     <Link
       href={href}
       role="menuitem"
+      tabIndex={-1}
       title={label}
       className={[
         "block px-3 py-2 rounded-xl text-[15px] transition",

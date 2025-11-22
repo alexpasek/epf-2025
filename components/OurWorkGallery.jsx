@@ -333,6 +333,7 @@ export default function OurWorkGallery({
           onClick={() => setActive(null)}
           aria-modal="true"
           role="dialog"
+          aria-label="Project photo"
         >
           {/* image block (click inside should NOT close) */}
           <div className="relative" onClick={(e) => e.stopPropagation()}>
