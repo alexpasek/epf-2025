@@ -249,10 +249,10 @@ export default function Page() {
 
       {/* HERO */}
       <section className="container-x">
-        <div className="rounded-3xl border bg-white/90 p-6 md:p-10 shadow-xl ring-1 ring-black/5">
+        <div className="rounded-3xl border bg-white p-6 md:p-10 shadow-xl ring-1 ring-black/5">
           <div className="grid gap-10 lg:grid-cols-[3fr_2fr]">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-amber-600">
+              <p className="text-sm uppercase tracking-[0.2em] text-amber-700 font-semibold">
                 Popcorn ceiling removal • Level 5 smooth
               </p>
               <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
@@ -331,7 +331,7 @@ export default function Page() {
       {/* VIDEOS */}
       <section className="container-x">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
             Video walk-throughs
           </p>
           <h2 className="mt-2 text-3xl font-semibold">
@@ -388,7 +388,7 @@ export default function Page() {
       {/* SERVICES */}
       <section className="container-x">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
             What’s included
           </p>
           <h2 className="mt-2 text-3xl font-semibold">
@@ -465,7 +465,7 @@ export default function Page() {
       {/* FAQ */}
       <section className="container-x">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
             FAQ
           </p>
           <h2 className="mt-2 text-3xl font-semibold">

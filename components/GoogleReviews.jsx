@@ -7,6 +7,7 @@ function Stars({ value = 5, size = 14 }) {
   return (
     <span
       aria-label={`${value} out of 5`}
+      role="img"
       className="inline-flex"
       style={{ gap: 2 }}
     >
@@ -17,6 +18,7 @@ function Stars({ value = 5, size = 14 }) {
           height={size}
           viewBox="0 0 20 20"
           className={i < full ? "text-amber-500" : "text-gray-300"}
+          aria-hidden="true"
         >
           <path
             fill="currentColor"
@@ -258,7 +260,7 @@ export default function GoogleReviews({ className = "" }) {
                       {r.text.replace(/\s+/g, " ").trim()}
                     </p>
                   ) : null}
-                  <span className="mt-2 text-xs text-amber-600">
+                  <span className="mt-2 text-xs text-amber-700 font-semibold">
                     Click to read full review
                   </span>
                 </article>
@@ -349,7 +351,7 @@ export default function GoogleReviews({ className = "" }) {
                 href={mapsUrl || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-amber-600 hover:text-amber-700"
+                className="font-semibold text-amber-700 hover:text-amber-800"
               >
                 View on Google →
               </a>

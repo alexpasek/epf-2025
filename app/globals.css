@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.gmap-roboto-reset{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+/* So Google Maps' injected Roboto links don't block rendering */
+@font-face{
+  font-family:"Roboto";
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:local("Roboto"),local("Roboto Regular");
+}
+@font-face{
+  font-family:"Roboto";
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:local("Roboto Medium");
+}
+
 .container-x{@apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;}
 .card{@apply rounded-2xl border border-gray-200 bg-white shadow;}
 .pill{@apply inline-flex items-center justify-center rounded-2xl border px-5 py-3 font-medium shadow-sm bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100;}
@@ -29,7 +48,6 @@
 .range{ -webkit-appearance:none; appearance:none; position:absolute; inset:0; width:100%; height:100%; background:transparent; z-index:30; opacity:0; }
 .range::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:20px; height:20px; border-radius:9999px; background:#fff; border:2px solid #2563eb; box-shadow:0 1px 3px rgba(0,0,0,.25); }
 .range::-moz-range-thumb{ width:20px; height:20px; border-radius:9999px; background:#fff; border:2px solid #2563eb; box-shadow:0 1px 3px rgba(0,0,0,.25); }
-
 
 
 

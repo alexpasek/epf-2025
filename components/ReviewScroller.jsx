@@ -57,9 +57,15 @@ function Stars({ count = 5 }) {
     <div
       className="flex items-center gap-0.5"
       aria-label={`${count} star rating`}
+      role="img"
     >
       {Array.from({ length: count }).map((_, i) => (
-        <svg key={i} viewBox="0 0 24 24" className="h-4 w-4 fill-yellow-400">
+        <svg
+          key={i}
+          viewBox="0 0 24 24"
+          className="h-4 w-4 fill-yellow-400"
+          aria-hidden="true"
+        >
           <path d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l4.46 4.73L5.82 21z" />
         </svg>
       ))}

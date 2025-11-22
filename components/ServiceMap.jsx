@@ -44,7 +44,7 @@ export default function ServiceMap() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className="my-10">
+    <div className="my-10 gmap-roboto-reset">
       <h2 className="text-2xl font-semibold mb-4 text-center">
         Our Completed Projects Across the GTA
       </h2>

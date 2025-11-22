@@ -125,36 +125,38 @@ export default function PopcornMap({ points = [] }) {
   }
 
   return (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      options={options}
-      center={{ lat: 43.6, lng: -79.6 }}
-      zoom={9}
-      onLoad={onLoad}
-    >
-      {points.map((p) => {
-        const city = slugify(p.city);
-        const hood = p.nbh ? slugify(p.nbh) : null;
-        const href = hood
-          ? `/popcorn-ceiling-removal/${city}/${hood}`
-          : `/popcorn-ceiling-removal/${city}`;
+    <div className="gmap-roboto-reset">
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        options={options}
+        center={{ lat: 43.6, lng: -79.6 }}
+        zoom={9}
+        onLoad={onLoad}
+      >
+        {points.map((p) => {
+          const city = slugify(p.city);
+          const hood = p.nbh ? slugify(p.nbh) : null;
+          const href = hood
+            ? `/popcorn-ceiling-removal/${city}/${hood}`
+            : `/popcorn-ceiling-removal/${city}`;
 
-        const title =
-          `Popcorn ceiling removal — ${p.city}${p.nbh ? `, ${p.nbh}` : ""}` +
-          `${p.street ? ` — ${p.street}` : ""}`;
+          const title =
+            `Popcorn ceiling removal — ${p.city}${p.nbh ? `, ${p.nbh}` : ""}` +
+            `${p.street ? ` — ${p.street}` : ""}`;
 
-        return (
-          <Marker
-            key={p.id}
-            position={{ lat: p.lat, lng: p.lng }}
-            icon={pinIcon}
-            title={title} // keyword tooltip
-            onClick={() => (window.location.href = href)} // direct nav
-            zIndex={2}
-          />
-        );
-      })}
-    </GoogleMap>
+          return (
+            <Marker
+              key={p.id}
+              position={{ lat: p.lat, lng: p.lng }}
+              icon={pinIcon}
+              title={title} // keyword tooltip
+              onClick={() => (window.location.href = href)} // direct nav
+              zIndex={2}
+            />
+          );
+        })}
+      </GoogleMap>
+    </div>
   );
 }
 

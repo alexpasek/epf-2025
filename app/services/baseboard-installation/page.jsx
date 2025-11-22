@@ -120,7 +120,7 @@ export default function BaseboardInstallationPage() {
       {/* Hero */}
       <section className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] items-center">
         <div>
-          <p className="text-xs uppercase tracking-[0.35em] text-amber-600">
+          <p className="text-xs uppercase tracking-[0.35em] text-amber-700 font-semibold">
             Popcorn ceiling finishing • GTA
           </p>
           <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
