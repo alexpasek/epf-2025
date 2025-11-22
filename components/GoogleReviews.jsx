@@ -38,6 +38,7 @@ export default function GoogleReviews({ className = "" }) {
   });
   const [active, setActive] = useState(null);
   const stripRef = useRef(null);
+  const [scrollStep, setScrollStep] = useState(320);
 
   useEffect(() => {
     let cancelled = false;
@@ -55,13 +56,47 @@ export default function GoogleReviews({ className = "" }) {
     };
   }, []);
 
+  // measure the visible width once (and on resize) so scrollBy uses cached values
+  useEffect(() => {
+    const el = stripRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      const next = Math.min(680, el.clientWidth * 0.9);
+      setScrollStep((prev) => (Math.abs(prev - next) > 0.5 ? next : prev));
+    };
+
+    let raf = requestAnimationFrame(measure);
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(() => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(measure);
+      });
+      ro.observe(el);
+    } else {
+      window.addEventListener("resize", measure);
+    }
+
+    return () => {
+      cancelAnimationFrame(raf);
+      if (ro) {
+        try {
+          ro.disconnect();
+        } catch (e) {}
+      } else {
+        window.removeEventListener("resize", measure);
+      }
+    };
+  }, []);
+
   const { ok, reviews = [], rating = 5, count = 0, mapsUrl } = data;
 
   const scroll = (dir) => {
     const el = stripRef.current;
     if (!el) return;
     el.scrollBy({
-      left: dir * Math.min(680, el.clientWidth * 0.9),
+      left: dir * scrollStep,
       behavior: "smooth",
     });
   };

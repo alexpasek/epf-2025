@@ -48,6 +48,7 @@ export default function PopcornMap({ points = [] }) {
   const { isLoaded } = useJsApiLoader({
     id: "gmap-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    preventGoogleFontsLoading: true,
   });
 
   useEffect(() => {

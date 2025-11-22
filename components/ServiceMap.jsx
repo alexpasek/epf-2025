@@ -51,6 +51,7 @@ export default function ServiceMap() {
 
       <LoadScript
         googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+        preventGoogleFontsLoading={true}
       >
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
