@@ -212,7 +212,7 @@ export default function Page() {
         </div>
       </section>
       <OurWorkGallery
-        title="Popcorn Ceiling Removal — Mississauga, Oakville, Burlington, Hamilton"
+        title="Popcorn Ceiling Removal Mississauga, Oakville, Burlington, Hamilton"
         description="Dust-controlled popcorn ceiling removal (painted or unpainted) with Level 5 skim, primer and two coats for a bright, uniform ceiling."
         layout={{ min: 440, gap: 16, ratio: "5/3" }}
         tileW={510}
@@ -225,7 +225,7 @@ export default function Page() {
             city: "Mississauga",
             nbh: "Mineola",
             service: "Popcorn Ceiling Removal",
-            headline: "Popcorn Ceiling Removal — Mississauga (Mineola)",
+            headline: "Popcorn Ceiling Removal Mississauga (Mineola)",
             blurb:
               "Local popcorn removal in Mississauga — Mineola. Full containment, HEPA sanding, Level 5 skim, primer and two coats for a bright, uniform ceiling.",
             bullets: [
@@ -233,7 +233,7 @@ export default function Page() {
               "Level 5 skim for ultra-smooth results",
               "Dust-controlled with HEPA extraction",
             ],
-            modalKeyword: "Popcorn Ceiling Removal — Mississauga (Mineola)",
+            modalKeyword: "Popcorn Ceiling Removal Mississauga (Mineola)",
           },
           {
             src: "/gallery/popcorn-ceiling-removal.jpeg",
@@ -257,7 +257,7 @@ export default function Page() {
             city: "Mississauga",
             nbh: "Lorne Park",
             service: "Popcorn Ceiling Removal",
-            headline: "Popcorn Ceiling Removal — Mississauga (Lorne Park)",
+            headline: "Popcorn Ceiling Removal Mississauga (Lorne Park)",
             blurb:
               "Painted popcorn removal in Lorne Park, Mississauga. Joint repair, Level 5 skim, and a consistent white finish without flashing.",
             bullets: [
@@ -265,7 +265,7 @@ export default function Page() {
               "Crack & joint repair included",
               "Uniform matte/satin sheen",
             ],
-            modalKeyword: "Popcorn Ceiling Removal — Mississauga (Lorne Park)",
+            modalKeyword: "Popcorn Ceiling Removal Mississauga (Lorne Park)",
           },
 
           // OAKVILLE

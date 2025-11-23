@@ -5,14 +5,14 @@ export const revalidate = 86400;
 
 export const metadata = {
   title:
-    "Popcorn Ceiling Removal — Mississauga | House-Friendly, Dust-Controlled, Level 5 Finish",
+    "Popcorn Ceiling Removal Mississauga | House-Friendly, Dust-Controlled, Level 5 Finish",
   description:
     "Residential popcorn/stipple ceiling removal in Mississauga: clean containment, HEPA dust control, Level 5 skim, stain-block primer, paint-ready finish. Fast photo quotes.",
   alternates: {
     canonical: "/popcorn-ceiling-removal/mississauga/",
   },
   openGraph: {
-    title: "Popcorn Ceiling Removal — Mississauga",
+    title: "Popcorn Ceiling Removal Mississauga",
     description:
       "Make bumpy ceilings flat and bright. We protect floors, control dust, skim to Level 5, and leave a paint-ready finish across Mississauga neighbourhoods.",
     url: "/popcorn-ceiling-removal/mississauga/",
@@ -185,7 +185,7 @@ export default function Page() {
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Popcorn Ceiling Removal — Mississauga (Homes & Townhomes)
+              Popcorn Ceiling Removal Mississauga (Stucco removal)
             </h1>
             <p className="mt-3 text-gray-700">
               Turn stipple into smooth. We protect your floors and furniture,

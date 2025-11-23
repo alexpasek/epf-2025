@@ -38,7 +38,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wallpaper & Popcorn Ceiling Removal — Mississauga",
+    title: "Wallpaper & Popcorn Ceiling Removal Mississauga",
     description:
       "Fast, clean results. Wallpaper removal, popcorn ceiling removal, drywall & painting.",
     images: ["https://your-domain.com/og/mississauga.jpg"],
