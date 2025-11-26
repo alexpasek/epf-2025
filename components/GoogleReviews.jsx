@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { SITE_URL } from "@/app/config";
 
 function Stars({ value = 5, size = 14 }) {
   const full = Math.round(value ?? 5);
@@ -104,39 +105,43 @@ export default function GoogleReviews({ className = "" }) {
   };
 
   // Build SEO JSON-LD when we have data
+  const businessId = `${SITE_URL}/#business`;
+  const business = {
+    "@type": "LocalBusiness",
+    "@id": businessId,
+    name: "EPF Pro Services",
+    url: SITE_URL,
+    telephone: "+1-647-923-6784",
+    areaServed: [
+      "Mississauga",
+      "Toronto",
+      "Oakville",
+      "Burlington",
+      "Hamilton",
+      "Milton",
+      "Etobicoke",
+      "Grimsby",
+      "St. Catharines",
+    ],
+    description:
+      "Popcorn ceiling removal, Level 5 drywall finishing, and interior painting trusted by GTA homeowners.",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: Number(rating).toFixed(1),
+      reviewCount: count,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  };
+
   const jsonLd = ok
     ? {
         "@context": "https://schema.org",
         "@graph": [
-          {
-            "@type": "LocalBusiness",
-            "@id": "/#business",
-            name: "EPF Pro Services",
-            url: "https://epfproservices.com/",
-            telephone: "+1-647-923-6784",
-            areaServed: [
-              "Mississauga",
-              "Toronto",
-              "Oakville",
-              "Burlington",
-              "Hamilton",
-              "Milton",
-              "Etobicoke",
-              "Grimsby",
-              "St. Catharines",
-            ],
-            description:
-              "Popcorn ceiling removal, Level 5 drywall finishing, and interior painting trusted by GTA homeowners.",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: Number(rating).toFixed(1),
-              reviewCount: count,
-              bestRating: 5,
-              worstRating: 1,
-            },
-          },
+          business,
           ...reviews.slice(0, 4).map((r) => ({
             "@type": "Review",
+            itemReviewed: { "@type": "LocalBusiness", "@id": businessId },
             author: r?.author_name
               ? { "@type": "Person", name: r.author_name }
               : undefined,
