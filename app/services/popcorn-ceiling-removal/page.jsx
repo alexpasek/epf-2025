@@ -31,6 +31,8 @@ function JsonLd() {
         "On-site popcorn ceiling removal with dust control, masking, and clean preparation for Level 5 finish.",
       url: "https://www.youtube.com/watch?v=g8Zl0XlbxBo",
       embedUrl: "https://www.youtube.com/embed/g8Zl0XlbxBo",
+      thumbnailUrl: "https://i.ytimg.com/vi/g8Zl0XlbxBo/hqdefault.jpg",
+      uploadDate: "2024-01-01T00:00:00Z",
     },
     {
       "@type": "VideoObject",
@@ -39,6 +41,8 @@ function JsonLd() {
         "Popcorn ceiling removal process focusing on skim coating, sanding, and achieving a smooth ceiling.",
       url: "https://www.youtube.com/watch?v=73P8rMOy9pc",
       embedUrl: "https://www.youtube.com/embed/73P8rMOy9pc",
+      thumbnailUrl: "https://i.ytimg.com/vi/73P8rMOy9pc/hqdefault.jpg",
+      uploadDate: "2024-01-01T00:00:00Z",
     },
     {
       "@type": "VideoObject",
@@ -47,6 +51,8 @@ function JsonLd() {
         "Walkthrough of finished ceilings after popcorn removal with a bright, modern Level 5 smooth look.",
       url: "https://www.youtube.com/watch?v=nSnbyGVqbMQ",
       embedUrl: "https://www.youtube.com/embed/nSnbyGVqbMQ",
+      thumbnailUrl: "https://i.ytimg.com/vi/nSnbyGVqbMQ/hqdefault.jpg",
+      uploadDate: "2024-01-01T00:00:00Z",
     },
   ];
 
