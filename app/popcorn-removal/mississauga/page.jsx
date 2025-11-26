@@ -2,6 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { CityCopy } from "@/components/LocalSEOCopy";
+import { SITE_URL } from "@/app/config";
+
+const PAGE_PATH = "/popcorn-removal/mississauga/";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/og/mississauga.jpg`;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Page-level metadata (title, description, canonical, OG/Twitter, robots)
@@ -11,9 +16,7 @@ export const metadata = {
   description:
     "Wallpaper removal, dust-free popcorn ceiling removal, drywall installation & repair, and interior painting in Mississauga. Fast quotes and clean results.",
   alternates: {
-    // ⬇️ Replace with your absolute URL for this page
-    canonical:
-      "https://your-domain.com/service-areas/wallpaper-removal/mississauga",
+    canonical: PAGE_PATH,
   },
   robots: {
     index: true,
@@ -22,14 +25,14 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://your-domain.com/service-areas/wallpaper-removal/mississauga",
+    url: PAGE_PATH,
     siteName: "Popcorn Ceiling Removal Pro",
     title: "Wallpaper & Popcorn Ceiling Removal in Mississauga",
     description:
       "Wallpaper removal, popcorn ceiling smoothing, drywall repair, and painting in Mississauga.",
     images: [
       {
-        url: "https://your-domain.com/og/mississauga.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Smooth ceiling and freshly painted room in Mississauga",
@@ -41,7 +44,7 @@ export const metadata = {
     title: "Wallpaper & Popcorn Ceiling Removal Mississauga",
     description:
       "Fast, clean results. Wallpaper removal, popcorn ceiling removal, drywall & painting.",
-    images: ["https://your-domain.com/og/mississauga.jpg"],
+    images: [OG_IMAGE],
   },
 };
 
@@ -75,10 +78,10 @@ export default function City() {
     "@context": "https://schema.org",
     "@type": ["HomeAndConstructionBusiness", "HousePainter"],
     name: "Popcorn Ceiling Removal Pro",
-    url: "https://your-domain.com/",
+    url: SITE_URL,
     telephone: "+1-647-812-9135",
     priceRange: "$$",
-    image: "https://your-domain.com/logo.png",
+    image: OG_IMAGE,
     address: {
       "@type": "PostalAddress",
       streetAddress: "736 Dundas St E",
@@ -116,19 +119,19 @@ export default function City() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://your-domain.com/",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Service Areas",
-        item: "https://your-domain.com/service-areas/",
+        name: "Popcorn Removal",
+        item: `${SITE_URL}/popcorn-removal/`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Mississauga",
-        item: "https://your-domain.com/service-areas/wallpaper-removal/mississauga",
+        item: PAGE_URL,
       },
     ],
   };

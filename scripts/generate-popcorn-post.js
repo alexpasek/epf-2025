@@ -17,7 +17,7 @@ if(!OPENAI_API_KEY){
 const MODEL=process.env.OPENAI_MODEL||'gpt-4.1-mini';
 const OUTPUT_LIMIT=parseInt(process.env.BLOG_SECTION_COUNT??'5',10);
 const dataPath=path.join(process.cwd(),'data','generated-posts.json');
-const siteUrl=process.env.NEXT_PUBLIC_SITE_URL||'https://epf-2025.pages.dev';
+const siteUrl=process.env.NEXT_PUBLIC_SITE_URL||'https://epfproservices.com';
 
 const INTERNAL_LINK_OPTIONS=[
   {id:'popcornService',href:'/services/popcorn-ceiling-removal',anchor:'Popcorn Ceiling Removal Service',description:'Step-by-step removal process and pricing info.'},

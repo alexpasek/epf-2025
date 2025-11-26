@@ -1,18 +1,29 @@
 // app/services/wallpaper-removal/page.jsx
 import Link from "next/link";
-import { CONTACT } from "@/app/config";
+import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
 import { ServiceCopy } from "@/components/LocalSEOCopy";
+
+const PAGE_PATH = "/services/wallpaper-removal/";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata = {
   title:
     "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready",
   description:
     "Pro wallpaper removal across the GTA. Full adhesive wash, drywall repairs, skim-coat, primer and a smooth, paint-ready finish. Tidy crews, HEPA control, 3-year warranty.",
+  alternates: { canonical: PAGE_PATH },
+  openGraph: {
+    title:
+      "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready",
+    description:
+      "Pro wallpaper removal across the GTA. Full adhesive wash, drywall repairs, skim-coat, primer and a smooth, paint-ready finish.",
+    url: PAGE_PATH,
+    type: "article",
+  },
+  robots: { index: true, follow: true },
 };
 
-const PAGE_URL =
-  "https://wallpaper-final.pages.dev/services/wallpaper-removal/"; // set your custom domain when ready
 const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 
 export default function Page() {
@@ -410,13 +421,13 @@ export default function Page() {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: PAGE_URL.replace("/services/wallpaper-removal/", "/"),
+                  item: SITE_URL,
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Services",
-                  item: PAGE_URL.replace("/wallpaper-removal/", ""),
+                  item: `${SITE_URL}/services/`,
                 },
                 {
                   "@type": "ListItem",

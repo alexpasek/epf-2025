@@ -7,3 +7,4 @@ export const PHONE_HREF = "tel:+16479236784";
 export const SERVICE_AREAS = ["Toronto", "Mississauga", "Oakville", "Burlington", "Hamilton", "Etobicoke", "Milton", "North York", "Grimsby"];
 export const ADDRESS = "";
 export const CONTACT = { phone: PHONE_NUMBER, phoneHref: PHONE_HREF, email: EMAIL, address: ADDRESS };
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://epfproservices.com";

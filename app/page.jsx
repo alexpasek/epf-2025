@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { cities } from "@/data/cities";
-import { PHONE_HREF, PHONE_NUMBER } from "./config";
+import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "./config";
 import QuoteForm from "@/components/QuoteForm";
 import GoogleReviews from "@/components/GoogleReviews";
 import OurWorkGallery from "@/components/OurWorkGallery";
 
 export const revalidate = 86400;
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://epf-2025.pages.dev";
 
 export const metadata = {
   title: "Popcorn Ceiling Removal & Interior Finishing — GTA",

@@ -16,7 +16,7 @@
 5. **Manual trigger example**
 
 ```
-curl -X POST https://epf-2025.pages.dev/api/generated-posts/refresh \
+curl -X POST https://epfproservices.com/api/generated-posts/refresh \
      -H "Authorization: Bearer $BLOG_CRON_TOKEN"
 ```
 

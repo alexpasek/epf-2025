@@ -11,14 +11,12 @@ import {
   SERVICE_AREAS,
   PHONE_NUMBER,
   PHONE_HREF,
+  SITE_URL,
 } from "./config";
 import ChatWidgetAgent from "@/components/ChatWidgetAgent";
 import ReviewScroller from "@/components/ReviewScroller";
 import HeaderNav from "@/components/HeaderNav"; // ✅ NEW
 import Footer from "@/components/Footer";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://epf-2025.pages.dev";
 
 // Cloudflare/edge runtime for all routes
 export const runtime = "edge";
