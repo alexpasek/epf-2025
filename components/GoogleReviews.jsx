@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { SITE_URL } from "@/app/config";
+import { SITE_URL, BUSINESS_NAME } from "@/app/config";
 
 function Stars({ value = 5, size = 14 }) {
   const full = Math.round(value ?? 5);
@@ -109,7 +109,7 @@ export default function GoogleReviews({ className = "" }) {
   const business = {
     "@type": "LocalBusiness",
     "@id": businessId,
-    name: "EPF Pro Services",
+    name: BUSINESS_NAME,
     url: SITE_URL,
     telephone: "+1-647-923-6784",
     areaServed: [

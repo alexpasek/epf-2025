@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
+import { BUSINESS_NAME } from "@/app/config";
 
 /**
  * OurWorkGallery — reusable, SEO-first gallery
@@ -153,7 +155,7 @@ export default function OurWorkGallery({
         areaServed: areas,
         provider: {
           "@type": "LocalBusiness",
-          name: business?.name || "EPF Pro Services",
+          name: business?.name || BUSINESS_NAME,
           url: business?.url,
           telephone: business?.phone,
         },

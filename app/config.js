@@ -8,3 +8,4 @@ export const SERVICE_AREAS = ["Toronto", "Mississauga", "Oakville", "Burlington"
 export const ADDRESS = "";
 export const CONTACT = { phone: PHONE_NUMBER, phoneHref: PHONE_HREF, email: EMAIL, address: ADDRESS };
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://epfproservices.com";
+export const BUSINESS_NAME = "Popcorn Ceiling Removal - EPF Pro Services";

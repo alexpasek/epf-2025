@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { cities } from "@/data/cities";
-import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "./config";
+import {
+  PHONE_HREF,
+  PHONE_NUMBER,
+  SITE_URL,
+  BUSINESS_NAME,
+} from "./config";
 import QuoteForm from "@/components/QuoteForm";
 import GoogleReviews from "@/components/GoogleReviews";
 import OurWorkGallery from "@/components/OurWorkGallery";
@@ -30,7 +35,7 @@ function JsonLd() {
       {
         "@type": "LocalBusiness",
         "@id": `${SITE_URL}/#business`,
-        name: "EPF Pro Services",
+        name: BUSINESS_NAME,
         url: SITE_URL,
         telephone: PHONE_NUMBER,
         areaServed,
@@ -378,7 +383,11 @@ export default function Page() {
           title="Real popcorn ceiling removal & interior finishing results"
           description="Bright, dust-free projects across Toronto, Mississauga, Oakville, Burlington, Milton, Hamilton and more."
           areas={cities.map((c) => c.name)}
-          business={{ name: "EPF Pro Services", url: SITE_URL, phone: PHONE_NUMBER }}
+          business={{
+            name: BUSINESS_NAME,
+            url: SITE_URL,
+            phone: PHONE_NUMBER,
+          }}
         />
       </section>
 

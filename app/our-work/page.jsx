@@ -1,5 +1,6 @@
 import PopcornMap from "@/components/PopcornMap";
 import OurWorkGallery from "@/components/OurWorkGallery";
+import { BUSINESS_NAME, PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 
 // ---- helpers ----
 function jitterAround(lat, lng, meters = 120) {
@@ -212,7 +213,7 @@ export default function Page() {
         </div>
       </section>
       <OurWorkGallery
-        title="Popcorn Ceiling Removal Mississauga, Oakville, Burlington, Hamilton"
+        title="Popcorn Ceiling Removal — Burlington / Oakville / Hamilton / Grimsby"
         description="Dust-controlled popcorn ceiling removal (painted or unpainted) with Level 5 skim, primer and two coats for a bright, uniform ceiling."
         layout={{ min: 440, gap: 16, ratio: "5/3" }}
         tileW={510}
@@ -420,9 +421,9 @@ export default function Page() {
           },
         ]}
         business={{
-          name: "EPF Pro Services",
+          name: BUSINESS_NAME,
           url: "https://epfproservices.com",
-          phone: "+1-647-xxx-xxxx",
+          phone: PHONE_NUMBER,
         }}
         areas={["Mississauga", "Oakville", "Burlington", "Hamilton"]}
       />

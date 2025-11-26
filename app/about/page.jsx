@@ -1,7 +1,7 @@
 // app/about/page.tsx (Next.js App Router)
 
 import Link from "next/link";
-import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
+import { PHONE_HREF, PHONE_NUMBER, BUSINESS_NAME } from "@/app/config";
 
 export const revalidate = 86400;
 
@@ -39,7 +39,7 @@ function JsonLd() {
       {
         "@type": "LocalBusiness",
         "@id": "/#business",
-        name: "EPF Pro Services",
+        name: BUSINESS_NAME,
         url: "/",
         image: HERO_IMG,
         telephone: PHONE_NUMBER,
