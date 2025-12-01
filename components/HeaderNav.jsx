@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
+import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
 
 /* Accent used only for nav/dropdowns (CTAs unchanged) */
 const ACCENT = {
@@ -78,6 +78,7 @@ function buildCrumbs(pathname) {
 
 /** JSON-LD for breadcrumbs */
 function BreadcrumbJsonLd({ crumbs }) {
+  const base = (SITE_URL || "").replace(/\/$/, "");
   const data = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -85,7 +86,7 @@ function BreadcrumbJsonLd({ crumbs }) {
       "@type": "ListItem",
       position: idx + 1,
       name: c.label,
-      item: c.href, // relative is OK; absolute even better if you set site URL
+      item: `${base}${c.href}`,
     })),
   };
   return (
