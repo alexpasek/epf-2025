@@ -68,6 +68,75 @@ export default function Footer() {
   const pathname = usePathname();
   const hideReviews = pathname === "/";
   const orgId = "https://www.epfproservices.com/#org";
+  const primaryLocation = LOCATIONS[0];
+  const primaryTelDigits = primaryLocation.phoneHref.replace("+1", "");
+  const primaryTelephone = `+1-${primaryTelDigits.slice(0, 3)}-${primaryTelDigits.slice(
+    3,
+    6
+  )}-${primaryTelDigits.slice(6)}`;
+  const secondaryLocation = LOCATIONS[1];
+  const secondaryTelDigits = secondaryLocation.phoneHref.replace("+1", "");
+  const secondaryTelephone = `+1-${secondaryTelDigits.slice(0, 3)}-${secondaryTelDigits.slice(
+    3,
+    6
+  )}-${secondaryTelDigits.slice(6)}`;
+
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": orgId,
+    name: "Popcorn Ceiling Removal - EPF Pro Services",
+    url: "https://www.epfproservices.com/",
+    image: "https://www.epfproservices.com/logo.png",
+    sameAs: [
+      "https://www.instagram.com/epf_pro_services",
+      "https://www.facebook.com/epfproservices/?rdid=Wpko4jNGWEWo6enD",
+    ],
+    department: [
+      {
+        "@type": "LocalBusiness",
+        name: "Popcorn Ceiling Removal - EPF Pro Services (Mississauga)",
+        telephone: primaryTelephone,
+        priceRange: "$$",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: primaryLocation.address.streetAddress,
+          addressLocality: primaryLocation.address.addressLocality,
+          addressRegion: primaryLocation.address.addressRegion,
+          postalCode: primaryLocation.address.postalCode,
+          addressCountry: primaryLocation.address.addressCountry,
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: primaryLocation.geo.lat,
+          longitude: primaryLocation.geo.lng,
+        },
+        hasMap: primaryLocation.mapsUrl,
+        url: primaryLocation.gmbUrl,
+      },
+      {
+        "@type": "LocalBusiness",
+        name: "Popcorn Ceiling Removal - EPF Pro Services (Stoney Creek)",
+        telephone: secondaryTelephone,
+        priceRange: "$$",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: secondaryLocation.address.streetAddress,
+          addressLocality: secondaryLocation.address.addressLocality,
+          addressRegion: secondaryLocation.address.addressRegion,
+          postalCode: secondaryLocation.address.postalCode,
+          addressCountry: secondaryLocation.address.addressCountry,
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: secondaryLocation.geo.lat,
+          longitude: secondaryLocation.geo.lng,
+        },
+        hasMap: secondaryLocation.mapsUrl,
+        url: secondaryLocation.gmbUrl,
+      },
+    ],
+  };
 
   /* -------- JSON-LD (SEO) -------- */
   const orgJsonLd = {
@@ -189,6 +258,10 @@ export default function Footer() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
 
       {/* Google Reviews */}

@@ -106,6 +106,12 @@ export default function GoogleReviews({ className = "" }) {
 
   // Build SEO JSON-LD when we have data
   const businessId = `${SITE_URL}/#business`;
+  const itemReviewed = {
+    "@type": "LocalBusiness",
+    "@id": businessId,
+    name: BUSINESS_NAME,
+    url: SITE_URL,
+  };
   const business = {
     "@type": "LocalBusiness",
     "@id": businessId,
@@ -131,6 +137,7 @@ export default function GoogleReviews({ className = "" }) {
       reviewCount: count,
       bestRating: 5,
       worstRating: 1,
+      itemReviewed: { "@id": businessId },
     },
   };
 
@@ -141,7 +148,7 @@ export default function GoogleReviews({ className = "" }) {
           business,
           ...reviews.slice(0, 4).map((r) => ({
             "@type": "Review",
-            itemReviewed: { "@type": "LocalBusiness", "@id": businessId },
+            itemReviewed,
             author: r?.author_name
               ? { "@type": "Person", name: r.author_name }
               : undefined,
