@@ -1,4 +1,4 @@
-import { handlePagesFunction } from "@cloudflare/next-on-pages";
+import nextWorker from "./.vercel/output/static/_worker.js/index.js";
 
 const INTERNAL_LINK_OPTIONS=[
   {id:"popcornService",href:"/services/popcorn-ceiling-removal",anchor:"Popcorn Ceiling Removal Service",description:"Step-by-step removal process and pricing info."},
@@ -179,7 +179,7 @@ export default {
       if(!created){ return new Response(JSON.stringify({status:'skipped'}),{status:500,headers:{'content-type':'application/json'}}); }
       return new Response(JSON.stringify(created),{headers:{'content-type':'application/json'}});
     }
-    return handlePagesFunction(request, env, ctx);
+    return nextWorker.fetch(request, env, ctx);
   },
   async scheduled(event, env, ctx) {
     ctx.waitUntil(refreshGeneratedPosts(env));
