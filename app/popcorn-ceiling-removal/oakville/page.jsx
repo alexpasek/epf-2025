@@ -6,7 +6,7 @@ export const revalidate = 86400;
 
 export const metadata = {
   title:
-    "Popcorn Ceiling Removal — Oakville | Dustless Skim Coat Level 5, Prime & Paint",
+    "Popcorn Ceiling Removal Oakville , Stucco removal",
   description:
     "Oakville popcorn (stucco/stipple) ceiling removal for houses, townhomes & condos: dust-controlled sanding, Level 5 skim coat, stain-block primer, paint-ready. Local, insured, warranty.",
   alternates: { canonical: "/popcorn-ceiling-removal/oakville/" },
