@@ -6,6 +6,7 @@ const siteUrl =
 module.exports = {
     siteUrl, // real domain comes from env in production
     generateRobotsTxt: true,
+    trailingSlash: true,
     sitemapSize: 5000,
     changefreq: "weekly",
     priority: 0.7,
@@ -31,6 +32,27 @@ module.exports = {
         };
 
         return entry;
+    },
+
+    // Add real video watch pages (on-site URLs) explicitly so they appear even though we block bracketed routes
+    additionalPaths: async(config) => {
+        const { videoLibrary, videoPagePath } = await import("./data/videos.js");
+        const now = new Date().toISOString();
+        const videos = videoLibrary.map((video) => ({
+            loc: videoPagePath(video).replace(/\/?$/, "/"),
+            changefreq: config.changefreq,
+            priority: config.priority,
+            lastmod: now,
+        }));
+        return [
+            {
+                loc: "/videos/",
+                changefreq: config.changefreq,
+                priority: config.priority,
+                lastmod: now,
+            },
+            ...videos,
+        ];
     },
 
     robotsTxtOptions: {

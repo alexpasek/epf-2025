@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/app/config";
+import { SITE_URL } from "../app/config.js";
 
 const site = (SITE_URL || "").replace(/\/$/, "");
 
