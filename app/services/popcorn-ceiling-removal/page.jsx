@@ -2,6 +2,14 @@ import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import { ServiceCopy } from "@/components/LocalSEOCopy";
 import { cities } from "@/data/cities";
+import {
+  videoEmbedUrl,
+  videoLibrary,
+  videoPagePath,
+  videoPageUrl,
+  videoThumbnailUrl,
+  videoWatchUrl,
+} from "@/data/videos";
 
 export const revalidate = 86400;
 
@@ -23,38 +31,21 @@ export const metadata = {
 function JsonLd() {
   const areaServed = cities.map((c) => c.name);
 
-  const videoObjects = [
-    {
-      "@type": "VideoObject",
-      name: "Popcorn Ceiling Removal – Ceiling Prep & Containment",
-      description:
-        "On-site popcorn ceiling removal with dust control, masking, and clean preparation for Level 5 finish.",
-      url: "https://www.youtube.com/watch?v=g8Zl0XlbxBo",
-      embedUrl: "https://www.youtube.com/embed/g8Zl0XlbxBo",
-      thumbnailUrl: "https://i.ytimg.com/vi/g8Zl0XlbxBo/hqdefault.jpg",
-      uploadDate: "2024-01-01T00:00:00Z",
+  const videoObjects = videoLibrary.map((video) => ({
+    "@type": "VideoObject",
+    "@id": videoPageUrl(video),
+    url: videoPageUrl(video),
+    name: video.title,
+    description: video.description,
+    thumbnailUrl: videoThumbnailUrl(video),
+    uploadDate: video.uploadDate,
+    embedUrl: videoEmbedUrl(video),
+    contentUrl: videoWatchUrl(video),
+    potentialAction: {
+      "@type": "WatchAction",
+      target: videoPageUrl(video),
     },
-    {
-      "@type": "VideoObject",
-      name: "Popcorn Ceiling Removal – Skim Coat & Sanding",
-      description:
-        "Popcorn ceiling removal process focusing on skim coating, sanding, and achieving a smooth ceiling.",
-      url: "https://www.youtube.com/watch?v=73P8rMOy9pc",
-      embedUrl: "https://www.youtube.com/embed/73P8rMOy9pc",
-      thumbnailUrl: "https://i.ytimg.com/vi/73P8rMOy9pc/hqdefault.jpg",
-      uploadDate: "2024-01-01T00:00:00Z",
-    },
-    {
-      "@type": "VideoObject",
-      name: "Popcorn Ceiling Removal – Finished Level 5 Ceilings",
-      description:
-        "Walkthrough of finished ceilings after popcorn removal with a bright, modern Level 5 smooth look.",
-      url: "https://www.youtube.com/watch?v=nSnbyGVqbMQ",
-      embedUrl: "https://www.youtube.com/embed/nSnbyGVqbMQ",
-      thumbnailUrl: "https://i.ytimg.com/vi/nSnbyGVqbMQ/hqdefault.jpg",
-      uploadDate: "2024-01-01T00:00:00Z",
-    },
-  ];
+  }));
 
   const data = {
     "@context": "https://schema.org",
@@ -151,27 +142,12 @@ export default function Page() {
   );
 
   // 3 videos for the gallery
-  const videos = [
-    {
-      id: "g8Zl0XlbxBo",
-      title: "Ceiling Prep & Containment",
-      blurb:
-        "Masking, plastic, and dust control on a live popcorn removal job.",
-      src: "https://www.youtube.com/embed/g8Zl0XlbxBo",
-    },
-    {
-      id: "73P8rMOy9pc",
-      title: "Skim Coat & Sanding",
-      blurb: "How we skim-coat and sand to get a Level 5 smooth ceiling.",
-      src: "https://www.youtube.com/embed/73P8rMOy9pc",
-    },
-    {
-      id: "nSnbyGVqbMQ",
-      title: "Finished Level 5 Ceilings",
-      blurb: "Walkthrough of finished smooth ceilings after popcorn removal.",
-      src: "https://www.youtube.com/embed/nSnbyGVqbMQ",
-    },
-  ];
+  const videos = videoLibrary.map((video) => ({
+    ...video,
+    id: video.youtubeId,
+    src: videoEmbedUrl(video),
+    href: videoPagePath(video),
+  }));
 
   return (
     <div className="container-x py-10">
@@ -283,6 +259,12 @@ export default function Page() {
               <div className="p-4">
                 <h3 className="text-sm font-semibold">{v.title}</h3>
                 <p className="mt-1 text-xs text-gray-600">{v.blurb}</p>
+                <Link
+                  href={v.href}
+                  className="mt-2 inline-flex text-xs font-semibold text-amber-700 hover:underline"
+                >
+                  Watch on our site →
+                </Link>
               </div>
             </article>
           ))}

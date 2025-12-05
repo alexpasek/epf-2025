@@ -1,6 +1,12 @@
+import Link from "next/link";
 import PopcornMap from "@/components/PopcornMap";
 import OurWorkGallery from "@/components/OurWorkGallery";
 import { BUSINESS_NAME, PHONE_HREF, PHONE_NUMBER } from "@/app/config";
+import {
+  videoEmbedUrl,
+  videoLibrary,
+  videoPagePath,
+} from "@/data/videos";
 
 // ---- helpers ----
 function jitterAround(lat, lng, meters = 120) {
@@ -141,29 +147,12 @@ function buildPoints(cities = CITY_DATA, perHood = 8) {
 const POINTS = buildPoints(CITY_DATA, 8); // adjust 6–10 to control density
 
 // 3 popcorn-ceiling videos for this page
-const VIDEOS = [
-  {
-    id: "g8Zl0XlbxBo",
-    title: "Ceiling Prep & Containment",
-    blurb:
-      "Masking, plastic, and dust control on a live popcorn removal job in the Mississauga.",
-    src: "https://www.youtube.com/embed/g8Zl0XlbxBo",
-  },
-  {
-    id: "73P8rMOy9pc",
-    title: "Skim Coat & Sanding",
-    blurb:
-      "How we paint smooth ceiling (after removal of painted or unpainted popcorn).",
-    src: "https://www.youtube.com/embed/73P8rMOy9pc",
-  },
-  {
-    id: "nSnbyGVqbMQ",
-    title: "Finished Level 5 Ceilings",
-    blurb:
-      "Walkthrough of finished ceilings  popcorn removal — bright, smooth and modern no dust.",
-    src: "https://www.youtube.com/embed/nSnbyGVqbMQ",
-  },
-];
+const VIDEOS = videoLibrary.map((video) => ({
+  ...video,
+  id: video.youtubeId,
+  src: videoEmbedUrl(video),
+  href: videoPagePath(video),
+}));
 
 export default function Page() {
   return (
@@ -207,6 +196,12 @@ export default function Page() {
               <div className="p-4">
                 <h3 className="text-sm font-semibold">{v.title}</h3>
                 <p className="mt-1 text-xs text-gray-600">{v.blurb}</p>
+                <Link
+                  href={v.href}
+                  className="mt-2 inline-flex text-xs font-semibold text-amber-700 hover:underline"
+                >
+                  Watch on our site →
+                </Link>
               </div>
             </article>
           ))}

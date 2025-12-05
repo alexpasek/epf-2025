@@ -9,6 +9,13 @@ import {
 import QuoteForm from "@/components/QuoteForm";
 import GoogleReviews from "@/components/GoogleReviews";
 import OurWorkGallery from "@/components/OurWorkGallery";
+import {
+  videoEmbedUrl,
+  videoLibrary,
+  videoPagePath,
+  videoThumbnailUrl,
+  videoWatchUrl,
+} from "@/data/videos";
 
 export const revalidate = 86400;
 
@@ -89,6 +96,21 @@ function JsonLd() {
           },
         ],
       },
+      ...videoLibrary.map((video) => ({
+        "@type": "VideoObject",
+        "@id": `${SITE_URL}${videoPagePath(video)}`,
+        url: `${SITE_URL}${videoPagePath(video)}`,
+        name: video.title,
+        description: video.description,
+        thumbnailUrl: videoThumbnailUrl(video),
+        uploadDate: video.uploadDate,
+        embedUrl: videoEmbedUrl(video),
+        contentUrl: videoWatchUrl(video),
+        potentialAction: {
+          "@type": "WatchAction",
+          target: `${SITE_URL}${videoPagePath(video)}`,
+        },
+      })),
     ],
   };
   return (
@@ -107,26 +129,12 @@ export default function Page() {
     { label: "Average rating", value: "5 ★" },
   ];
 
-  const videos = [
-    {
-      id: "g8Zl0XlbxBo",
-      title: "Containment & Prep",
-      blurb: "Live walkthrough of how we protect floors, vents, and built-ins.",
-      src: "https://www.youtube.com/embed/g8Zl0XlbxBo",
-    },
-    {
-      id: "73P8rMOy9pc",
-      title: "Skim Coat & Sanding",
-      blurb: "Level 5 skim, vacuum sanding, and light check for a flat finish.",
-      src: "https://www.youtube.com/embed/73P8rMOy9pc",
-    },
-    {
-      id: "nSnbyGVqbMQ",
-      title: "Finished Smooth Ceilings",
-      blurb: "Client-ready ceilings after popcorn removal and painting.",
-      src: "https://www.youtube.com/embed/nSnbyGVqbMQ",
-    },
-  ];
+  const videos = videoLibrary.map((video) => ({
+    ...video,
+    id: video.youtubeId,
+    src: videoEmbedUrl(video),
+    href: videoPagePath(video),
+  }));
 
   const galleryItems = [
     {
@@ -344,6 +352,14 @@ export default function Page() {
             containment, sanding, and final handoffs. Every job follows the same
             playbook.
           </p>
+          <div className="mt-3">
+            <Link
+              href="/videos/"
+              className="text-sm font-semibold text-amber-700 hover:underline"
+            >
+              Browse all videos →
+            </Link>
+          </div>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {videos.map((video) => (
@@ -369,6 +385,12 @@ export default function Page() {
                   {video.title}
                 </h3>
                 <p className="mt-1 text-sm text-slate-600">{video.blurb}</p>
+                <Link
+                  href={video.href}
+                  className="mt-3 inline-flex text-sm font-semibold text-amber-700 hover:underline"
+                >
+                  Watch on our site →
+                </Link>
               </div>
             </article>
           ))}
