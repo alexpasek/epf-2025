@@ -22,6 +22,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/locations/popcorn-ceiling-removal-mississauga",
+        destination: "/popcorn-ceiling-removal/mississauga/",
+        permanent: true,
+      },
+      {
+        source: "/locations/popcorn-ceiling-removal-mississauga/",
+        destination: "/popcorn-ceiling-removal/mississauga/",
+        permanent: true,
+      },
+      {
         source: "/popcorn-ceiling-removal/mississauga/lorne-park",
         destination: "/popcorn-ceiling-removal/mississauga/lorne-park/",
         permanent: true,
