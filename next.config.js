@@ -22,6 +22,26 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/popcorn-removal/hamilton",
+        destination: "/popcorn-ceiling-removal/hamilton/",
+        permanent: true,
+      },
+      {
+        source: "/popcorn-removal/hamilton/",
+        destination: "/popcorn-ceiling-removal/hamilton/",
+        permanent: true,
+      },
+      {
+        source: "/locations/popcorn-ceiling-removal-burlington",
+        destination: "/popcorn-ceiling-removal/burlington/",
+        permanent: true,
+      },
+      {
+        source: "/locations/popcorn-ceiling-removal-burlington/",
+        destination: "/popcorn-ceiling-removal/burlington/",
+        permanent: true,
+      },
+      {
         source: "/locations/popcorn-ceiling-removal-mississauga",
         destination: "/popcorn-ceiling-removal/mississauga/",
         permanent: true,
