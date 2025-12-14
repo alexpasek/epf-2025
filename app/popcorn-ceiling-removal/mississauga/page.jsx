@@ -1,13 +1,13 @@
 import Link from "next/link";
+import QuoteForm from "@/components/QuoteForm";
 import { CONTACT } from "@/app/config";
 
 export const revalidate = 86400;
 
 export const metadata = {
-  title:
-    "Popcorn Ceiling Removal Mississauga | House-Friendly, Dust-Controlled, Level 5 Finish",
+  title: "Popcorn Ceiling Removal Mississauga | Dust-Controlled | Free Quote",
   description:
-    "Residential popcorn/stipple ceiling removal in Mississauga: clean containment, HEPA dust control, Level 5 skim, stain-block primer, paint-ready finish. Fast photo quotes.",
+    "Popcorn/stipple ceiling removal in Mississauga with full containment + HEPA dust control. Level 5 skim coat, stain-block primer, paint-ready finish. Fast photo quotes.",
   alternates: {
     canonical: "/popcorn-ceiling-removal/mississauga/",
   },
@@ -149,6 +149,8 @@ function JsonLd() {
 }
 
 const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
+const phoneDisplay = (CONTACT && CONTACT.phone) || "(647) 923-6784";
+const smsHref = phoneHref.replace("tel:", "sms:");
 
 export default function Page() {
   const neighborhoods = [
@@ -175,333 +177,649 @@ export default function Page() {
     { length: 6 },
     (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
+  const heroStats = [
+    { label: "Mississauga ceilings smoothed from 2008", value: "6000+" },
+    { label: "Photo quote turnaround", value: "< 4 hrs" },
+    { label: "Projects delivered dust-controlled", value: "100%" },
+  ];
+  const anchorLinks = [
+    ["#coverage", "Neighbourhoods"],
+    ["#gallery", "Gallery"],
+    ["#why-us", "Why us"],
+    ["#process", "Process"],
+    ["#pricing", "Pricing"],
+    ["#faqs", "FAQs"],
+  ];
+  const quickLinks = [
+    { href: "/our-work/", label: "See completed ceilings" },
+    { href: "/services/popcorn-ceiling-removal/", label: "Service overview" },
+    { href: "/our-process/", label: "Dust-control process" },
+    { href: "/contact/", label: "Book a site visit" },
+  ];
+  const nearbyCities = [
+    ["oakville", "Oakville"],
+    ["burlington", "Burlington"],
+    ["toronto", "Toronto"],
+    ["etobicoke", "Etobicoke"],
+    ["milton", "Milton"],
+    ["hamilton", "Hamilton"],
+  ];
+  const sellingPoints = [
+    {
+      title: "House-friendly containment",
+      body: "Floors, furniture, and vents are wrapped before we touch a ceiling. Zip walls create clean zones so the rest of your home stays livable.",
+      href: "/our-process/",
+      cta: "Prep checklist",
+    },
+    {
+      title: "Level 5 finish with QA lighting",
+      body: "We skim the entire surface, sand with HEPA vacuums, then inspect under raking light so joints disappear before paint.",
+      href: "/services/popcorn-ceiling-removal/",
+      cta: "See service details",
+    },
+    {
+      title: "Coordinated trade timing",
+      body: "Need pot lights, painting, or built-ins afterward? We sync our schedule with your electrician or painter to keep the reno moving.",
+      href: "/services/interior-painting/",
+      cta: "Finish coat options",
+    },
+    {
+      title: "Photo-first estimating",
+      body: "Text or upload photos and approximate sizes for an initial number. We confirm on-site so there are no mid-project surprises.",
+      href: "/quote/",
+      cta: "Send photos",
+    },
+  ];
+  const processSteps = [
+    {
+      title: "Contain + protect",
+      body: "Mask floors, walls, fixtures, and vents. Build plastic tunnels so HEPA vacs can stay outside the work zone.",
+    },
+    {
+      title: "Test + choose method",
+      body: "Sample scrape to gauge paint build-up. We either carefully remove, or encapsulate and skim depending on the result.",
+    },
+    {
+      title: "Removal & skim",
+      body: "Texture comes off, then we full-field skim with setting compounds for a flat plane (no banding).",
+    },
+    {
+      title: "Sand with HEPA",
+      body: "Vacuum-assisted sanders keep dust contained while revealing highs/lows for touch-ups.",
+    },
+    {
+      title: "Prime + inspect",
+      body: "Stain-block primer locks everything in. Raking light reveals micro flaws before paint.",
+    },
+    {
+      title: "Paint or hand-off",
+      body: "We can apply two coats of ceiling paint or leave a perfectly documented paint-ready surface.",
+    },
+  ];
+  const serviceCombos = [
+    {
+      title: "Popcorn removal + interior painting",
+      body: "Keep momentum going—our painting team can roll right after primer for a turnkey ceiling refresh.",
+      href: "/services/interior-painting/",
+    },
+    {
+      title: "Ceiling smoothing + drywall repairs",
+      body: "Blend in bulkhead repairs, new framing, or drywall patches while we’re already skimming.",
+      href: "/services/drywall-installation/",
+    },
+    {
+      title: "Texture removal + wallpaper cleanup",
+      body: "Pair smooth ceilings with fresh walls. Our wallpaper removal crew can clear walls before paint.",
+      href: "/services/wallpaper-removal/",
+    },
+  ];
 
   return (
-    <div className="container-x mx-auto px-4 py-10">
+    <div className="space-y-12 pb-12">
       <JsonLd />
 
       {/* HERO */}
-      <header className="max-w-6xl">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Popcorn Ceiling Removal Mississauga (Stucco removal)
-            </h1>
-            <p className="mt-3 text-gray-700">
-              Turn stipple into smooth. We protect your floors and furniture,
-              seal work areas, control dust with HEPA, and skim to{" "}
-              <strong>Level 5</strong> for a bright, even ceiling. Predictable
-              scheduling, tidy daily wrap-ups, and clear communication.
-            </p>
+      <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white">
+        <div className="container-x px-4 py-14">
+          <div className="grid gap-12 lg:grid-cols-[3fr_2fr]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-amber-300 font-semibold">
+                Mississauga • Dust-controlled popcorn removal
+              </p>
+              <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+                Smooth ceilings, zero mess in Mississauga.
+              </h1>
+              <p className="mt-4 text-lg text-slate-200">
+                We convert stipple to flat white ceilings with HEPA containment,
+                Level 5 skim coating, and concierge-style communication. Most
+                Mississauga quotes are turned around the same day you send
+                photos.
+              </p>
+              <ul className="mt-6 grid gap-4 text-sm text-slate-200 sm:grid-cols-2">
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="text-lg">🧼</span>
+                  <span>
+                    Full containment, zipper walls, and HEPA sanding to keep
+                    dust out of the rest of your home.
+                  </span>
+                </li>
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="text-lg">🪜</span>
+                  <span>
+                    Level 5 skim coating + primer so ceilings are ready for{" "}
+                    <Link
+                      href="/services/interior-painting/"
+                      className="underline underline-offset-2"
+                    >
+                      finish paint
+                    </Link>{" "}
+                    right away.
+                  </span>
+                </li>
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="text-lg">🗓️</span>
+                  <span>
+                    Predictable scheduling and clean wrap-ups in Port Credit,
+                    Sheridan, Clarkson, Streetsville, and every pocket in
+                    between.
+                  </span>
+                </li>
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <span className="text-lg">📸</span>
+                  <span>
+                    Share photos below for pricing or{" "}
+                    <a href={smsHref} className="underline underline-offset-2">
+                      text us directly
+                    </a>{" "}
+                    if that’s faster.
+                  </span>
+                </li>
+              </ul>
+              <nav className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
+                {anchorLinks.map(([href, label]) => (
+                  <a
+                    key={href}
+                    href={href}
+                    className="rounded-full border border-white/20 px-4 py-2 text-white/80 hover:text-white hover:border-white"
+                  >
+                    {label}
+                  </a>
+                ))}
+              </nav>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {heroStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center shadow-lg"
+                  >
+                    <div className="text-2xl font-semibold text-white">
+                      {stat.value}
+                    </div>
+                    <p className="text-xs uppercase tracking-wide text-slate-300">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {quickLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="pill border-white/40 bg-white/10 text-white hover:bg-white/20"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-white/10 bg-white/95 p-6 text-slate-900 shadow-2xl ring-1 ring-black/5">
+              <h2 className="text-2xl font-semibold">
+                Get a Mississauga quote
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Upload photos, ceiling heights, and timing. We reply the same
+                day with square-foot guidance and availability.
+              </p>
+              <div className="mt-4">
+                <QuoteForm />
+              </div>
+              <p className="mt-3 text-xs text-slate-500">
+                Prefer a call? Reach us at{" "}
+                <a href={phoneHref} className="font-semibold underline">
+                  {phoneDisplay}
+                </a>{" "}
+                or text photos to{" "}
+                <a href={smsHref} className="underline">
+                  {phoneDisplay}
+                </a>
+                .
+              </p>
+            </div>
           </div>
-          {/* Blue CTAs (right side) */}
-          <div className="flex gap-3 md:shrink-0">
-            <a
-              href={phoneHref}
-              aria-label="Call for a quote"
-              className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md hover:brightness-110 active:brightness-95 transition"
-            >
-              <span className="mr-2">📞</span>
-              <span className="whitespace-nowrap">(647) 923-6784</span>
-            </a>
-            <a
-              href="/quote/"
-              aria-label="Open quote form"
-              className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md hover:brightness-110 active:brightness-95 transition"
-            >
-              Get my quote
-            </a>
-          </div>
-        </div>
-
-        {/* Anchor subnav */}
-        <nav className="mt-4 flex flex-wrap items-center gap-3 text-sm">
-          <a
-            href="#neighbourhoods"
-            className="underline-offset-2 hover:underline"
-          >
-            Neighbourhoods
-          </a>
-          <a href="#why-us" className="underline-offset-2 hover:underline">
-            Why Homeowners Choose Us
-          </a>
-          <a href="#process" className="underline-offset-2 hover:underline">
-            Our Process
-          </a>
-          <a href="#pricing" className="underline-offset-2 hover:underline">
-            Pricing & Sq-Ft
-          </a>
-          <a href="#qa" className="underline-offset-2 hover:underline">
-            FAQs
-          </a>
-          <a href="#links" className="underline-offset-2 hover:underline">
-            Useful Links
-          </a>
-        </nav>
-      </header>
-
-      {/* NEIGHBOURHOODS */}
-      <section id="neighbourhoods" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          Neighbourhoods We Serve Across Mississauga
-        </h2>
-        <p className="mt-2 text-gray-700 max-w-3xl">
-          We regularly work in detached homes, semis and townhomes across
-          Mississauga. Pick your neighbourhood for a local page with examples
-          and details:
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {neighborhoods.map(([slug, name]) => (
-            <Link
-              key={slug}
-              href={`/popcorn-ceiling-removal/mississauga/${slug}/`}
-              className="pill"
-            >
-              {name}
-            </Link>
-          ))}
         </div>
       </section>
 
-      {/* GALLERY */}
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {images.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={`Mississauga popcorn ceiling removal — project ${i + 1}`}
-            className="w-full h-56 object-cover rounded-2xl border shadow"
-            data-lightbox="true"
-          />
-        ))}
-      </div>
-
-      {/* WHY US */}
-      <section id="why-us" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          Why Mississauga Homeowners Choose Us
-        </h2>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-5 bg-white rounded-2xl border shadow-sm">
-            <h3 className="text-xl font-semibold">
-              House-Friendly Containment
-            </h3>
-            <p className="mt-2 text-gray-700">
-              Floors protected, furniture wrapped, doorways sealed, and vents
-              masked. We keep dust inside the work area and clean up daily so
-              your home remains livable during the project.
-            </p>
-          </div>
-          <div className="p-5 bg-white rounded-2xl border shadow-sm">
-            <h3 className="text-xl font-semibold">Level 5 Smoothness</h3>
-            <p className="mt-2 text-gray-700">
-              After removal or safe encapsulation, we skim the full surface and
-              check under raking light so joints don’t telegraph. The result is
-              a flat, bright ceiling that looks new.
-            </p>
-          </div>
-          <div className="p-5 bg-white rounded-2xl border shadow-sm">
-            <h3 className="text-xl font-semibold">Predictable Scheduling</h3>
-            <p className="mt-2 text-gray-700">
-              We set a clear start and finish, coordinate any pot-light work
-              with your electrician, and keep you updated with simple,
-              no-surprise communication.
-            </p>
-          </div>
-          <div className="p-5 bg-white rounded-2xl border shadow-sm">
-            <h3 className="text-xl font-semibold">Prime & Paint-Ready</h3>
-            <p className="mt-2 text-gray-700">
-              We use a stain-blocking primer system so old marks don’t bleed
-              through. We can finish with two coats of quality ceiling paint or
-              leave it perfectly paint-ready for your crew.
-            </p>
+      {/* COVERAGE + INTERNAL LINKS */}
+      <section id="coverage" className="container-x -mt-8 px-4">
+        <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
+          <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
+            <div>
+              <h2 className="text-2xl font-semibold">
+                Mississauga neighbourhoods we service weekly
+              </h2>
+              <p className="mt-2 text-slate-600">
+                Detached homes, semis, condos, and townhomes across every
+                Mississauga pocket. Jump into a local guide for photos and
+                project notes.
+              </p>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {neighborhoods.map(([slug, name]) => (
+                  <Link
+                    key={slug}
+                    href={`/popcorn-ceiling-removal/mississauga/${slug}/`}
+                    className="rounded-2xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                  >
+                    {name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="text-lg font-semibold">Nearby crews</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                We bounce between Mississauga and these neighbouring cities, so
+                multi-property owners can book everything together.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {nearbyCities.map(([slug, label]) => (
+                  <Link
+                    key={slug}
+                    href={`/popcorn-ceiling-removal/${slug}/`}
+                    className="pill bg-white text-slate-700 border-slate-200"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-4 border-t border-slate-200 pt-4 space-y-2 text-sm">
+                {quickLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="flex items-center justify-between rounded-xl border border-transparent px-3 py-2 font-medium text-slate-700 hover:border-slate-300"
+                  >
+                    {item.label} <span>→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-5 flex gap-3">
-          <a className="btn-cta" href={phoneHref}>
-            📞 (647) 923-6784
-          </a>
-          <a className="btn-cta" href="/quote/">
-            Get my quote
-          </a>
+      </section>
+
+      {/* GALLERY + APPROACH */}
+      <section id="gallery" className="container-x px-4">
+        <div className="grid gap-8 lg:grid-cols-[3fr_2fr]">
+          <div className="rounded-3xl border bg-white p-6 shadow-lg ring-1 ring-black/5">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+                  Field photos
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold">
+                  Recent Mississauga ceilings
+                </h2>
+              </div>
+              <Link
+                href="/our-work/"
+                className="hidden text-sm font-semibold text-amber-700 hover:underline md:inline-flex"
+              >
+                Browse full gallery →
+              </Link>
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {images.map((src, idx) => (
+                <div
+                  key={src}
+                  className="overflow-hidden rounded-2xl border border-slate-100"
+                >
+                  <img
+                    src={src}
+                    alt={`Mississauga popcorn ceiling removal ${idx + 1}`}
+                    className="h-44 w-full object-cover transition duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+            <Link
+              href="/our-work/"
+              className="mt-4 inline-flex text-sm font-semibold text-amber-700 hover:underline md:hidden"
+            >
+              Browse full gallery →
+            </Link>
+          </div>
+          <div className="rounded-3xl border bg-slate-900 p-6 text-white shadow-lg ring-1 ring-black/5">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-300">
+              What to expect
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold">
+              Concierge popcorn removal
+            </h2>
+            <p className="mt-3 text-sm text-slate-200">
+              Every Mississauga project gets a dedicated lead, daily text/photo
+              updates, and full clean downs before we leave.
+            </p>
+            <ul className="mt-6 space-y-4 text-sm">
+              <li className="flex gap-3">
+                <span>📍</span>
+                <span>
+                  Local dispatch from Port Credit covers Clarkson, Mineola,
+                  Lakeview, Erin Mills, Churchill Meadows, and new builds north
+                  of Britannia.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span>🧰</span>
+                <span>
+                  We coordinate with{" "}
+                  <Link
+                    href="/services/drywall-installation/"
+                    className="underline underline-offset-2"
+                  >
+                    drywall
+                  </Link>{" "}
+                  or{" "}
+                  <Link
+                    href="/services/wallpaper-removal/"
+                    className="underline underline-offset-2"
+                  >
+                    wallpaper
+                  </Link>{" "}
+                  crews when ceilings and walls both need love.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span>📅</span>
+                <span>
+                  Weekend or evening set-ups available for condos that have
+                  strict elevator booking windows.
+                </span>
+              </li>
+            </ul>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a className="btn-cta" href={phoneHref}>
+                📞 {phoneDisplay}
+              </a>
+              <a className="btn-cta" href="/quote/">
+                Get my quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section id="why-us" className="container-x px-4">
+        <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+            Why Mississauga homeowners book us
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold">
+            Dust-controlled, Level 5 ceilings without drama
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {sellingPoints.map((point) => (
+              <div
+                key={point.title}
+                className="rounded-2xl border border-slate-200 p-5 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold">{point.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{point.body}</p>
+                <Link
+                  href={point.href}
+                  className="mt-3 inline-flex text-sm font-semibold text-amber-700 hover:underline"
+                >
+                  {point.cta} →
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          Our 6-Step Process (Optimized for Homes)
-        </h2>
-        <ol className="mt-3 list-decimal pl-5 space-y-2 text-gray-700 max-w-3xl">
-          <li>
-            Protect floors and furniture, seal doorways, mask returns/supplies.
-          </li>
-          <li>
-            Test a small patch: controlled scrape vs. safe encapsulation, based
-            on paint layers.
-          </li>
-          <li>
-            Remove texture or encapsulate, then <strong>full-field skim</strong>{" "}
-            to Level 5.
-          </li>
-          <li>
-            Sand with vacuum-assist tools for dust control and a uniform
-            surface.
-          </li>
-          <li>
-            Prime with a stain-blocking system; inspect under raking light and
-            touch-up.
-          </li>
-          <li>
-            Optional: ceiling paint (two coats) or leave paint-ready with a
-            written scope.
-          </li>
-        </ol>
-      </section>
-
-      {/* PRICING & KEYWORDS */}
-      <section id="pricing" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          Pricing & Square-Foot Guidance
-        </h2>
-        <p className="mt-2 text-gray-700 max-w-3xl">
-          Every home is a bit different (paint build-up, repairs, access,
-          ceiling height). For larger areas we can price by square foot; for
-          bedrooms and hallways, fixed packages are common. Share a few photos
-          and rough sizes and we’ll confirm a clear number before we start.
-        </p>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-4 bg-white rounded-2xl border shadow-sm">
-            <h3 className="font-semibold">Typical Scopes</h3>
-            <ul className="mt-2 text-gray-700 list-disc pl-5 space-y-1">
-              <li>Bedroom ceilings (incl. minor repairs)</li>
-              <li>Main-floor living/dining + hallway</li>
-              <li>Open-plan spaces & stair landings</li>
-            </ul>
-          </div>
-          <div className="p-4 bg-white rounded-2xl border shadow-sm">
-            <h3 className="font-semibold">High-Intent Services</h3>
-            <ul className="mt-2 text-gray-700 list-disc pl-5 space-y-1">
-              <li>Dust-controlled popcorn removal (HEPA)</li>
-              <li>Skim coat ceiling to Level 5 smoothness</li>
-              <li>Ceiling resurfacing & flattening</li>
-            </ul>
-          </div>
-          <div className="p-4 bg-white rounded-2xl border shadow-sm">
-            <h3 className="font-semibold">Popular Add-Ons</h3>
-            <ul className="mt-2 text-gray-700 list-disc pl-5 space-y-1">
-              <li>Pot-light cutout blending</li>
-              <li>Crack & patch repairs at corners</li>
-              <li>Prime & paint (2 coats)</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Keyword cluster for Mississauga (natural language, internal-link friendly) */}
-        <div className="mt-6 p-5 bg-white rounded-2xl border shadow-sm">
-          <h3 className="text-lg font-semibold">People search for:</h3>
-          <p className="mt-2 text-gray-700">
-            popcorn ceiling removal Mississauga, remove popcorn ceiling
-            Mississauga, popcorn ceiling scraping, stucco or stipple ceiling
-            removal, ceiling texture removal, ceiling smoothing/flattening, skim
-            coat ceiling, ceiling resurfacing,{" "}
-            <strong>popcorn ceiling removal cost Mississauga</strong>, price per
-            square foot, dustless popcorn removal, popcorn ceiling removal near
-            me, contractors in Mississauga, condo & house options, asbestos
-            testing referrals, pot-light installation timing, and painting after
-            removal.
+      <section id="process" className="container-x px-4">
+        <div className="rounded-3xl border bg-slate-900 p-6 text-white shadow-xl ring-1 ring-black/5">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-300">
+            Proven workflow
           </p>
+          <h2 className="mt-2 text-3xl font-semibold">
+            6-step Mississauga playbook
+          </h2>
+          <ol className="mt-6 space-y-5">
+            {processSteps.map((step, idx) => (
+              <li key={step.title} className="flex gap-4">
+                <span className="mt-1 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-lg font-semibold">
+                  {idx + 1}
+                </span>
+                <div>
+                  <h3 className="text-xl font-semibold">{step.title}</h3>
+                  <p className="text-sm text-slate-200">{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      {/* Q&A (onsite content + matches FAQ JSON-LD) */}
-      <section id="qa" className="mt-10">
-        <h2 className="text-2xl font-semibold">Mississauga FAQs</h2>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            {
-              q: "How do you keep the house clean?",
-              a: "We set up full containment, mask vents, use vacuum-assist sanders, and tidy daily so non-work rooms stay clean.",
-            },
-            {
-              q: "Can you coordinate pot lights?",
-              a: "Yes. We’ll align with your electrician or refer one, then blend cutouts so rings don’t show through paint.",
-            },
-            {
-              q: "Is pricing by square foot or fixed?",
-              a: "Both are available. Larger areas often suit sq-ft pricing; bedrooms/hallways are usually a fixed scope.",
-            },
-            {
-              q: "Do you paint the ceilings too?",
-              a: "We can finish with two coats of quality ceiling paint or leave a perfect paint-ready surface.",
-            },
-            {
-              q: "What about asbestos testing?",
-              a: "If the home’s era suggests risk, we can refer a local lab for a quick test and choose the safest method.",
-            },
-            {
-              q: "Do you work in all neighbourhoods?",
-              a: "Yes—see the neighbourhood links above for local pages in Port Credit, Lorne Park, Clarkson, Erin Mills and more.",
-            },
-          ].map((f, i) => (
-            <details
-              key={i}
-              className="p-5 bg-white rounded-2xl border shadow-sm"
-            >
-              <summary className="font-medium">{f.q}</summary>
-              <p className="mt-2 text-gray-700">{f.a}</p>
-            </details>
-          ))}
+      {/* PRICING */}
+      <section id="pricing" className="container-x px-4">
+        <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+                Pricing outlook
+              </p>
+              <h2 className="mt-1 text-3xl font-semibold">
+                Square-foot guidance + fixed packages
+              </h2>
+              <p className="mt-2 text-slate-600">
+                Paint layers, ceiling height, repairs, and condo rules impact
+                the final number. We spell that out before we mobilize.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <a className="btn-cta" href={phoneHref}>
+                Call {phoneDisplay}
+              </a>
+              <a className="btn-cta" href="/quote/">
+                Share photos
+              </a>
+            </div>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 p-5">
+              <h3 className="text-lg font-semibold">Typical scopes</h3>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                <li>Bedrooms + closets (150–250 sq. ft.)</li>
+                <li>Main-floor living/dining + hallway</li>
+                <li>Open-concept condos with bulkheads</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-slate-200 p-5">
+              <h3 className="text-lg font-semibold">Premium services</h3>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                <li>Dust-controlled popcorn removal (HEPA)</li>
+                <li>Ceiling resurfacing + Level 5 skim</li>
+                <li>Pot-light patching + shadow line repairs</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-slate-200 p-5">
+              <h3 className="text-lg font-semibold">Popular add-ons</h3>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                <li>Stain-block primer + 2 coats paint</li>
+                <li>Crack, nail pop, or corner bead repairs</li>
+                <li>Coordination with electricians + painters</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-6 rounded-2xl border border-dashed border-amber-300 bg-amber-50/60 p-5 text-sm text-amber-900">
+            People search for: popcorn ceiling removal Mississauga, stucco
+            ceiling scraping Mississauga, stipple removal cost per square foot,
+            dustless popcorn removal, Level 5 skim coat contractors,{" "}
+            <strong>popcorn ceiling removal cost Mississauga</strong>, pot-light
+            coordination, and asbestos testing referrals. If that is you, send a
+            few photos and we’ll confirm the right plan.
+          </div>
         </div>
       </section>
 
-      {/* LINKS to strengthen internal relevance */}
-      <section id="links" className="mt-10">
-        <h2 className="text-2xl font-semibold">Useful Links</h2>
-        <div className="mt-3 flex flex-wrap gap-3 text-sm">
+      {/* SERVICE COMBOS */}
+      <section className="container-x px-4">
+        <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+            Stack services
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold">
+            Extend the refresh beyond ceilings
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {serviceCombos.map((combo) => (
+              <div
+                key={combo.title}
+                className="rounded-2xl border border-slate-200 p-5 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold">{combo.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{combo.body}</p>
+                <Link
+                  href={combo.href}
+                  className="mt-3 inline-flex text-sm font-semibold text-amber-700 hover:underline"
+                >
+                  Learn more →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faqs" className="container-x px-4">
+        <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+            Mississauga FAQs
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold">
+            Answers homeowners ask before booking
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {[
+              {
+                q: "How do you keep the house clean?",
+                a: "We set up full containment, mask vents, connect every tool to a HEPA vacuum, and do daily clean downs so non-work rooms stay livable.",
+              },
+              {
+                q: "Can you coordinate pot lights or electricians?",
+                a: "Yes. We sync schedules with your electrician or bring ours. Cutouts are skimmed so trim rings sit tight.",
+              },
+              {
+                q: "Is pricing by square foot or fixed?",
+                a: "Both. Open spaces often use sq-ft rates, while bedrooms or hallways are quoted as fixed packages after photos.",
+              },
+              {
+                q: "Do you paint the ceilings too?",
+                a: "We prime every project and can finish with two coats of high-hiding ceiling paint, or hand it off to your painter.",
+              },
+              {
+                q: "What about asbestos testing?",
+                a: "If the home predates 1990, we refer a local lab for rapid testing. We follow the safe removal or encapsulation method based on results.",
+              },
+              {
+                q: "Do you work in condos?",
+                a: "Yes—elevator bookings, parking, and loading dock logistics are handled for downtown Mississauga towers.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="rounded-2xl border border-slate-200 p-5 shadow-sm"
+              >
+                <summary className="cursor-pointer text-lg font-semibold">
+                  {faq.q}
+                </summary>
+                <p className="mt-2 text-sm text-slate-600">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LINKS + CTA */}
+      <section className="container-x px-4">
+        <div className="rounded-3xl border bg-slate-900 p-6 text-white shadow-xl ring-1 ring-black/5">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-3xl font-semibold">
+                Ready for flat, bright ceilings?
+              </h2>
+              <p className="text-sm text-slate-200">
+                Send photos, get a plan, and lock in your preferred window.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href="/services/popcorn-ceiling-removal/"
+                  className="underline underline-offset-2"
+                >
+                  Popcorn service overview
+                </Link>
+                <Link
+                  href="/services/wallpaper-removal/"
+                  className="underline underline-offset-2"
+                >
+                  Wallpaper removal
+                </Link>
+                <Link
+                  href="/services/drywall-installation/"
+                  className="underline underline-offset-2"
+                >
+                  Drywall + taping
+                </Link>
+                <Link
+                  href="/services/interior-painting/"
+                  className="underline underline-offset-2"
+                >
+                  Interior painting
+                </Link>
+                <Link
+                  href="/our-process/"
+                  className="underline underline-offset-2"
+                >
+                  Our process
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a className="btn-cta" href={phoneHref}>
+                📞 {phoneDisplay}
+              </a>
+              <a className="btn-cta" href="/quote/">
+                Start my quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav className="container-x px-4">
+        <div className="flex flex-wrap gap-3 text-sm">
+          <Link href="/popcorn-ceiling-removal/" className="underline">
+            ← Back to popcorn service areas
+          </Link>
           <Link href="/services/popcorn-ceiling-removal/" className="underline">
-            Main Popcorn Service Page
-          </Link>
-          <Link href="/services/wallpaper-removal/" className="underline">
-            Wallpaper Removal
-          </Link>
-          <Link href="/services/drywall-installation/" className="underline">
-            Drywall Installation
-          </Link>
-          <Link href="/services/interior-painting/" className="underline">
-            Interior Painting
+            Main popcorn service page →
           </Link>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="mt-10 p-6 bg-white rounded-2xl border shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h3 className="text-xl font-semibold">
-            Ready to make your ceilings smooth and bright?
-          </h3>
-          <p className="text-gray-600">
-            Fast photo estimate. Clear plan. Tidy finish.
-          </p>
-        </div>
-        <div className="flex gap-3">
-          <a className="btn-cta" href={phoneHref}>
-            📞 (647) 923-6784
-          </a>
-          <a className="btn-cta" href="/quote/">
-            Get my quote
-          </a>
-        </div>
-      </section>
-
-      {/* BOTTOM NAV */}
-      <nav className="mt-8 flex flex-wrap gap-3 text-sm">
-        <Link href="/popcorn-ceiling-removal/" className="underline">
-          ← Back to Popcorn service areas
-        </Link>
-        <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
-        </Link>
       </nav>
     </div>
   );
