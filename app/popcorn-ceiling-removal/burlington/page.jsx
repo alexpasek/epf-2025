@@ -235,11 +235,18 @@ export default function Page() {
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed">
-              Smooth, modern ceilings with <strong>HEPA dust control</strong> and a <strong>Level 5 skim coat</strong> finish that looks clean under pot lights.
+              Smooth, modern ceilings with <strong>HEPA dust control</strong>{" "}
+              and a <strong>Level 5 skim coat</strong> finish that looks clean
+              under pot lights.
             </p>
 
             <ul className="flex flex-wrap justify-center gap-3 mb-10 text-base md:text-lg">
-              {["Sealed rooms + protection", "HEPA sanding", "Level 5 finish", "Prime + optional paint"].map((x) => (
+              {[
+                "Sealed rooms + protection",
+                "HEPA sanding",
+                "Level 5 finish",
+                "Prime + optional paint",
+              ].map((x) => (
                 <li
                   key={x}
                   className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"
@@ -475,7 +482,10 @@ export default function Page() {
       </section>
 
       {/* LOCAL SEO COPY */}
-      <section className="py-20 bg-white border-t border-gray-100" id="burlington-details">
+      <section
+        className="py-20 bg-white border-t border-gray-100"
+        id="burlington-details"
+      >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid gap-12 lg:gap-16 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] items-start">
             <div className="space-y-10 text-gray-700 leading-relaxed">
@@ -484,13 +494,58 @@ export default function Page() {
                   Burlington Popcorn Ceiling Specialists
                 </h2>
                 <p>
-                  {BRAND_NAME} helps {CITY} homeowners, condo boards, and builders remove dated popcorn, stipple, and stucco texture along Lakeshore Road, Tyandaga, Aldershot, and brand-new builds near the GO station. We manage parking, elevator bookings, and quiet hours so ceiling smoothing projects finish on schedule without upsetting neighbors.
+                  {BRAND_NAME} helps {CITY} homeowners, condo boards, and
+                  builders remove dated popcorn, stipple, and stucco texture
+                  along Lakeshore Road, Tyandaga, Aldershot, and brand-new
+                  builds near the GO station. We manage parking, elevator
+                  bookings, and quiet hours so ceiling smoothing projects finish
+                  on schedule without upsetting neighbors.
                 </p>
                 <p>
-                  Every project includes dust containment, a texture removal or encapsulation plan, a <strong>Level 5 skim coat</strong>, primer, and optional ceiling painting. If you are comparing options, skim <Link className="text-blue-600 font-semibold hover:underline" href="/popcorn-ceiling-removal/">our full popcorn ceiling removal guide</Link> or book a quick site visit through the <Link className="text-blue-600 font-semibold hover:underline" href="/quote/">online quote form</Link> for written pricing.
+                  Every project includes dust containment, a texture removal or
+                  encapsulation plan, a <strong>Level 5 skim coat</strong>,
+                  primer, and optional ceiling painting. If you are comparing
+                  options, skim{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="/popcorn-ceiling-removal/"
+                  >
+                    our full popcorn ceiling removal guide
+                  </Link>{" "}
+                  or book a quick site visit through the{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="/quote/"
+                  >
+                    online quote form
+                  </Link>{" "}
+                  for written pricing.
                 </p>
                 <p>
-                  Need coordinated services? We line up drywall repairs, <Link className="text-blue-600 font-semibold hover:underline" href="/services/drywall-installation/">bulkhead framing</Link>, and <Link className="text-blue-600 font-semibold hover:underline" href="/services/interior-painting/">ceiling painting</Link> so the finish stays consistent from room to room. Browse the neighborhood list below for hyper-local logistics, or jump to the <Link className="text-blue-600 font-semibold hover:underline" href="#process">process overview</Link>.
+                  Need coordinated services? We line up drywall repairs,{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="/services/drywall-installation/"
+                  >
+                    bulkhead framing
+                  </Link>
+                  , and{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="/services/interior-painting/"
+                  >
+                    ceiling painting
+                  </Link>{" "}
+                  so the finish stays consistent from room to room. Browse the
+                  neighborhood list below for hyper-local logistics, or jump to
+                  the{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="#process"
+                  >
+                    process overview
+                  </Link>
+                  .
                 </p>
               </div>
 
@@ -499,13 +554,36 @@ export default function Page() {
                   Local Logistics + Turnaround
                 </h3>
                 <p>
-                  Burlington clients lean on us for tight turnaround projects when a nursery, rental suite, or basement apartment needs to be painted by the weekend. We coordinate with local electricians for pot light installs, sync with HVAC techs for register adjustments, and plan hallway pads with condo boards at buildings such as Bunton's Wharf, Strata, and Bridgewater Residences. Because we log daily progress photos, property managers can approve the next step without being on-site.
+                  Burlington clients lean on us for tight turnaround projects
+                  when a nursery, rental suite, or basement apartment needs to
+                  be painted by the weekend. We coordinate with local
+                  electricians for pot light installs, sync with HVAC techs for
+                  register adjustments, and plan hallway pads with condo boards
+                  at buildings such as Bunton's Wharf, Strata, and Bridgewater
+                  Residences. Because we log daily progress photos, property
+                  managers can approve the next step without being on-site.
                 </p>
                 <p>
-                  Ceiling conditions vary block to block. Lakeshore condos often have painted texture that requires a full skim, while older Aldershot bungalows might have unpainted popcorn that can be scraped with less prep. Newer developments in Alton Village sometimes include heavy knockdown finishes that need a hybrid scrape and float process to look modern next to smooth drywall bulkheads. We assess texture hardness, existing paint, humidity, and traffic flow before recommending the safest route.
+                  Ceiling conditions vary block to block. Lakeshore condos often
+                  have painted texture that requires a full skim, while older
+                  Aldershot bungalows might have unpainted popcorn that can be
+                  scraped with less prep. Newer developments in Alton Village
+                  sometimes include heavy knockdown finishes that need a hybrid
+                  scrape and float process to look modern next to smooth drywall
+                  bulkheads. We assess texture hardness, existing paint,
+                  humidity, and traffic flow before recommending the safest
+                  route.
                 </p>
                 <p>
-                  Our estimators live and work in Halton, so they already know which neighborhoods limit start times, which high-rises have strict loading dock schedules, and which property managers demand clean elevator bookings. We plan deliveries around Brant Street traffic and schedule sanding passes when the QEW wind gusts will not push dust back into hallways. That local context keeps projects calm for homeowners juggling work-from-home calls or families trying to maintain quiet nap times.
+                  Our estimators live and work in Halton, so they already know
+                  which neighborhoods limit start times, which high-rises have
+                  strict loading dock schedules, and which property managers
+                  demand clean elevator bookings. We plan deliveries around
+                  Brant Street traffic and schedule sanding passes when the QEW
+                  wind gusts will not push dust back into hallways. That local
+                  context keeps projects calm for homeowners juggling
+                  work-from-home calls or families trying to maintain quiet nap
+                  times.
                 </p>
               </div>
 
@@ -514,10 +592,49 @@ export default function Page() {
                   Moisture, Compliance, and Materials
                 </h3>
                 <p>
-                  Moisture and stain management is a critical part of Burlington ceiling upgrades. Waterfront suites can develop condensation issues, while north-end homes might have older roof leaks that left tannin stains. We use a stain-block primer plan and recommend trusted paint partners such as the <a className="text-blue-600 font-semibold hover:underline" href="https://www.sherwin-williams.com/store-locator/paint-store/burlington/on/707289" rel="noopener noreferrer" target="_blank">Sherwin-Williams Burlington paint store</a> to match ceiling paint for final coats. When municipal permits, condo alteration letters, or noise policies are unclear, we reference the <a className="text-blue-600 font-semibold hover:underline" href="https://www.burlington.ca/en/building-and-renovating/" rel="noopener noreferrer" target="_blank">City of Burlington building and renovating resources</a> so projects stay compliant.
+                  Moisture and stain management is a critical part of Burlington
+                  ceiling upgrades. Waterfront suites can develop condensation
+                  issues, while north-end homes might have older roof leaks that
+                  left tannin stains. We use a stain-block primer plan and
+                  recommend trusted paint partners such as the{" "}
+                  <a
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="https://share.google/8WdrW77X9YeycOeMM"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Sherwin-Williams Burlington paint store
+                  </a>{" "}
+                  to match ceiling paint for final coats. When municipal
+                  permits, condo alteration letters, or noise policies are
+                  unclear, we reference the{" "}
+                  <a
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="https://www.burlington.ca/en/building-and-renovating/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    City of Burlington building and renovating resources
+                  </a>{" "}
+                  so projects stay compliant.
                 </p>
                 <p>
-                  Residents often ask how ceiling work affects resale. Smooth ceilings test well with home inspectors because the Level 5 skim coat reveals hidden seam problems, and freshly primed ceilings photograph better for listings in Roseland or Millcroft. If you are preparing for market, we can pair ceiling work with wall paint touch-ups, smoke detector updates, and minor drywall repairs to tell a stronger staging story. Visit our <Link className="text-blue-600 font-semibold hover:underline" href="/popcorn-ceiling-removal/">main popcorn ceiling removal page</Link> to compare service tiers and see how Burlington fits within the regional service map.
+                  Residents often ask how ceiling work affects resale. Smooth
+                  ceilings test well with home inspectors because the Level 5
+                  skim coat reveals hidden seam problems, and freshly primed
+                  ceilings photograph better for listings in Roseland or
+                  Millcroft. If you are preparing for market, we can pair
+                  ceiling work with wall paint touch-ups, smoke detector
+                  updates, and minor drywall repairs to tell a stronger staging
+                  story. Visit our{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="/popcorn-ceiling-removal/"
+                  >
+                    main popcorn ceiling removal page
+                  </Link>{" "}
+                  to compare service tiers and see how Burlington fits within
+                  the regional service map.
                 </p>
               </div>
 
@@ -527,10 +644,25 @@ export default function Page() {
                     Trade Coordination + Dust Control
                   </h3>
                   <p>
-                    Contractors and designers appreciate that we map out material staging, water access, and disposal plans up front. We protect hardwoods and stair runners in Shoreacres, cover built-in shelving in Tyandaga, and coordinate elevator keys with concierge staff downtown. When scheduling multiple rooms, we build a sequence so families can still use key spaces at night. Our HEPA sanding stacks pair with air scrubbers to reduce dust on furniture, plants, and electronics—critical for home offices and basement studios.
+                    Contractors and designers appreciate that we map out
+                    material staging, water access, and disposal plans up front.
+                    We protect hardwoods and stair runners in Shoreacres, cover
+                    built-in shelving in Tyandaga, and coordinate elevator keys
+                    with concierge staff downtown. When scheduling multiple
+                    rooms, we build a sequence so families can still use key
+                    spaces at night. Our HEPA sanding stacks pair with air
+                    scrubbers to reduce dust on furniture, plants, and
+                    electronics—critical for home offices and basement studios.
                   </p>
                   <p>
-                    For homeowners balancing budgets, we outline phased plans. Phase one might address bedrooms and hallways, while phase two covers vaulted living rooms or basement suites. Because we document square footage, texture type, and ceiling heights in our CRM, it is easy to pull pricing data if you decide to schedule the next phase a few months later. The same team lead comes back whenever possible so the finish and jobsite routines feel familiar.
+                    For homeowners balancing budgets, we outline phased plans.
+                    Phase one might address bedrooms and hallways, while phase
+                    two covers vaulted living rooms or basement suites. Because
+                    we document square footage, texture type, and ceiling
+                    heights in our CRM, it is easy to pull pricing data if you
+                    decide to schedule the next phase a few months later. The
+                    same team lead comes back whenever possible so the finish
+                    and jobsite routines feel familiar.
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -538,10 +670,24 @@ export default function Page() {
                     Restoration + Visualization
                   </h3>
                   <p>
-                    Builder partners and restoration pros call us when remediation work leaves ceilings patchy. We feather blend new drywall with existing gypsum, reinforce seams with fiberglass mesh, and feather bulkhead corners so future pot light layouts look clean. If your project requires asbestos testing, we have third-party labs available and can coordinate next steps once results return.
+                    Builder partners and restoration pros call us when
+                    remediation work leaves ceilings patchy. We feather blend
+                    new drywall with existing gypsum, reinforce seams with
+                    fiberglass mesh, and feather bulkhead corners so future pot
+                    light layouts look clean. If your project requires asbestos
+                    testing, we have third-party labs available and can
+                    coordinate next steps once results return.
                   </p>
                   <p>
-                    Want to visualize your project? We can reference past Burlington jobs with similar ceiling heights, fixture counts, or condo rules so you know exactly what to expect. Review process photos, dust containment layouts, and primer selection for each project type. Whether it is a penthouse near Spencer Smith Park or a split-level home near Guelph Line, the workflow stays disciplined: protect, remove or encapsulate texture, skim coat, sand with HEPA, prime, and paint.
+                    Want to visualize your project? We can reference past
+                    Burlington jobs with similar ceiling heights, fixture
+                    counts, or condo rules so you know exactly what to expect.
+                    Review process photos, dust containment layouts, and primer
+                    selection for each project type. Whether it is a penthouse
+                    near Spencer Smith Park or a split-level home near Guelph
+                    Line, the workflow stays disciplined: protect, remove or
+                    encapsulate texture, skim coat, sand with HEPA, prime, and
+                    paint.
                   </p>
                 </div>
               </div>
@@ -551,22 +697,59 @@ export default function Page() {
                   Getting Started
                 </h3>
                 <p>
-                  To get started, gather ceiling photos, note ceiling heights, and flag any access constraints such as spiral staircases or tiny elevators. Submit everything through the <Link className="text-blue-600 font-semibold hover:underline" href="/quote/">quote form</Link> and mention any preferred timelines. We respond quickly with a written scope, optional add-ons, and scheduling windows. That roadmap keeps everyone aligned, whether you are a long-time Burlington resident or you just picked up the keys to a pre-construction condo.
+                  To get started, gather ceiling photos, note ceiling heights,
+                  and flag any access constraints such as spiral staircases or
+                  tiny elevators. Submit everything through the{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
+                    href="/quote/"
+                  >
+                    quote form
+                  </Link>{" "}
+                  and mention any preferred timelines. We respond quickly with a
+                  written scope, optional add-ons, and scheduling windows. That
+                  roadmap keeps everyone aligned, whether you are a long-time
+                  Burlington resident or you just picked up the keys to a
+                  pre-construction condo.
                 </p>
                 <div className="bg-white border border-gray-200 rounded-2xl p-6">
-                  <h4 className="text-xl font-bold mb-4">Sample Local Project Flow</h4>
+                  <h4 className="text-xl font-bold mb-4">
+                    Sample Local Project Flow
+                  </h4>
                   <ol className="space-y-2 list-decimal list-inside">
-                    <li>Desk review of your photos, room list, and building rules.</li>
-                    <li>On-site verification of access, ceiling height, and texture type.</li>
-                    <li>Protection plan for hallways, elevators, and garages.</li>
-                    <li>Texture removal or skim strategy based on paint layers.</li>
-                    <li>Level 5 skim, HEPA sanding, and raking light inspections.</li>
-                    <li>Primer and optional ceiling paint using your preferred brand.</li>
-                    <li>Client walkthrough, punch list, and tidy cleanup before furniture reset.</li>
+                    <li>
+                      Desk review of your photos, room list, and building rules.
+                    </li>
+                    <li>
+                      On-site verification of access, ceiling height, and
+                      texture type.
+                    </li>
+                    <li>
+                      Protection plan for hallways, elevators, and garages.
+                    </li>
+                    <li>
+                      Texture removal or skim strategy based on paint layers.
+                    </li>
+                    <li>
+                      Level 5 skim, HEPA sanding, and raking light inspections.
+                    </li>
+                    <li>
+                      Primer and optional ceiling paint using your preferred
+                      brand.
+                    </li>
+                    <li>
+                      Client walkthrough, punch list, and tidy cleanup before
+                      furniture reset.
+                    </li>
                   </ol>
                 </div>
                 <p>
-                  Halton residents trust us because we communicate often, document every stage, and keep the tidy standards that families expect. When you call, you speak with a project lead who already knows Burlington roads, supply houses, and condo bylaws, which means your ceiling refresh starts faster and finishes without surprises.
+                  Halton residents trust us because we communicate often,
+                  document every stage, and keep the tidy standards that
+                  families expect. When you call, you speak with a project lead
+                  who already knows Burlington roads, supply houses, and condo
+                  bylaws, which means your ceiling refresh starts faster and
+                  finishes without surprises.
                 </p>
               </div>
             </div>
@@ -574,27 +757,42 @@ export default function Page() {
               <h3 className="text-2xl font-bold mb-4">Quick Links</h3>
               <ul className="space-y-3 text-lg">
                 <li>
-                  <Link className="text-blue-700 font-semibold hover:underline" href="/blog/popcorn-ceiling-removal-cost-timeline/">
+                  <Link
+                    className="text-blue-700 font-semibold hover:underline"
+                    href="/blog/popcorn-ceiling-removal-cost-timeline/"
+                  >
                     Cost & timeline article →
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-blue-700 font-semibold hover:underline" href="#neighbourhoods">
+                  <Link
+                    className="text-blue-700 font-semibold hover:underline"
+                    href="#neighbourhoods"
+                  >
                     Burlington neighbourhood readiness →
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-blue-700 font-semibold hover:underline" href="/popcorn-ceiling-removal/">
+                  <Link
+                    className="text-blue-700 font-semibold hover:underline"
+                    href="/popcorn-ceiling-removal/"
+                  >
                     Main popcorn ceiling removal service hub →
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-blue-700 font-semibold hover:underline" href="/quote/">
+                  <Link
+                    className="text-blue-700 font-semibold hover:underline"
+                    href="/quote/"
+                  >
                     Upload photos for a quote →
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-blue-700 font-semibold hover:underline" href="/services/interior-painting/">
+                  <Link
+                    className="text-blue-700 font-semibold hover:underline"
+                    href="/services/interior-painting/"
+                  >
                     Combine ceiling work with painting →
                   </Link>
                 </li>
@@ -604,7 +802,8 @@ export default function Page() {
                   Service radius
                 </p>
                 <p className="text-gray-700">
-                  Downtown waterfront condos, Tyandaga, Shoreacres, Millcroft, and detached homes throughout Halton.
+                  Downtown waterfront condos, Tyandaga, Shoreacres, Millcroft,
+                  and detached homes throughout Halton.
                 </p>
               </div>
             </div>
@@ -638,7 +837,8 @@ export default function Page() {
                   </span>
                 </div>
                 <p className="text-sm text-gray-600">
-                  Popcorn/stipple removal · Level 5 skim · HEPA sanding · Prime & paint
+                  Popcorn/stipple removal · Level 5 skim · HEPA sanding · Prime
+                  & paint
                 </p>
               </Link>
             ))}
