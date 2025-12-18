@@ -40,7 +40,6 @@ function JsonLd() {
     thumbnailUrl: videoThumbnailUrl(video),
     uploadDate: video.uploadDate,
     embedUrl: videoEmbedUrl(video),
-    contentUrl: videoWatchUrl(video),
     potentialAction: {
       "@type": "WatchAction",
       target: videoPageUrl(video),
