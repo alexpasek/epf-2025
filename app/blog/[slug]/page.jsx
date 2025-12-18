@@ -2,42 +2,41 @@ import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { getPostBySlug } from "@/lib/posts";
 
-export const dynamic='force-dynamic';
-export const runtime='edge';
+export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
-const SITE_URL=(process.env.NEXT_PUBLIC_SITE_URL||'').replace(/\/$/,'');
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
 
-export async function generateMetadata({ params }){
-  const resolvedParams=await params;
-  const slug=resolvedParams?.slug;
-  const post=await getPostBySlug(slug);
-  if(!post){
-    return{title:'Post — Popcorn Ceiling Removal Pro'};
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+  const post = await getPostBySlug(slug);
+  if (!post) {
+    return { title: "Post — Popcorn Ceiling Removal Pro" };
   }
-  const path=`/blog/${slug}/`;
-  const url=SITE_URL?`${SITE_URL}${path}`:path;
-  const description=post.metaDescription
-    || post.excerpt
-    || post.content?.[0]?.slice(0,155);
-  return{
-    title:`${post.title} — Popcorn Ceiling Removal Pro`,
+  const path = `/blog/${slug}/`;
+  const url = SITE_URL ? `${SITE_URL}${path}` : path;
+  const description =
+    post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
+  return {
+    title: `${post.title} — Popcorn Ceiling Removal Pro`,
     description,
-    alternates:{canonical:url},
-    openGraph:{
-      title:post.title,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.title,
       description,
       url,
-      type:'article',
-      locale:'en_CA',
-      publishedTime:post.date,
-      modifiedTime:post.date,
-      authors:['EPF Pro Services']
+      type: "article",
+      locale: "en_CA",
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: ["EPF Pro Services"],
     },
-    twitter:{
-      card:'summary_large_image',
-      title:post.title,
-      description
-    }
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+    },
   };
 }
 
@@ -57,8 +56,7 @@ export default async function Post({ params }) {
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   const wordCount = post.content?.reduce(
-    (sum, para) =>
-      sum + (para?.split(/\s+/).filter(Boolean).length || 0),
+    (sum, para) => sum + (para?.split(/\s+/).filter(Boolean).length || 0),
     0
   );
   const articleBody = post.content?.join(" ");
@@ -172,6 +170,32 @@ export default async function Post({ params }) {
             {post.content.map((t, i) => (
               <p key={i}>{t}</p>
             ))}
+            <p>
+              For example, our{" "}
+              <Link
+                href="/popcorn-ceiling-removal/burlington/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Burlington popcorn ceiling removal
+              </Link>{" "}
+              projects typically range from $800 for a standard bedroom to
+              $8,500 for a whole 3-bedroom condo, depending on whether the
+              texture is painted, ceiling height, fixture counts, and included
+              services like stain-block primer and painting.
+            </p>
+            <p>
+              We serve communities across the GTA with specialized local
+              knowledge—from waterfront condos requiring elevator coordination
+              in{" "}
+              <Link
+                href="/popcorn-ceiling-removal/burlington/"
+                className="text-blue-600 hover:underline"
+              >
+                Burlington
+              </Link>{" "}
+              to heritage homes in Mississauga's Port Credit and modern
+              subdivisions in Oakville's Glen Abbey.
+            </p>
           </div>
         </div>
       </section>

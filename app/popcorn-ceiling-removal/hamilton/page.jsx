@@ -65,7 +65,8 @@ function JsonLd() {
         },
         url: "/popcorn-ceiling-removal/hamilton/",
         potentialAction: { "@type": "RequestQuoteAction", target: "/quote/" },
-        description: "Professional popcorn ceiling removal contractor in Hamilton offering dust-controlled ceiling texture removal, stipple ceiling removal, and Level 5 smooth ceiling finishing.",
+        description:
+          "Professional popcorn ceiling removal contractor in Hamilton offering dust-controlled ceiling texture removal, stipple ceiling removal, and Level 5 smooth ceiling finishing.",
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Professional Popcorn Ceiling Removal Services Hamilton",
@@ -206,27 +207,35 @@ export default function Page() {
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         <div className="relative container mx-auto px-4 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
               <div className="inline-block mb-4 px-4 py-2 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30">
-                <span className="text-sm font-semibold text-blue-300">🏆 Hamilton's #1 Ceiling Contractor</span>
+                <span className="text-sm font-semibold text-blue-300">
+                  🏆 Hamilton's #1 Ceiling Contractor
+                </span>
               </div>
-              
+
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Professional<br />
+                Professional
+                <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                   Popcorn Ceiling Removal
-                </span><br />
+                </span>
+                <br />
                 Hamilton
               </h1>
-              
+
               <p className="text-xl text-gray-200 mb-6 leading-relaxed">
-                Your trusted <strong>popcorn ceiling removal contractor Hamilton</strong> specializing in 
-                <strong> ceiling texture removal</strong>, <strong>stipple ceiling removal</strong>, and 
-                <strong> ceiling resurfacing Hamilton</strong> with industry-leading dust control.
+                Your trusted{" "}
+                <strong>popcorn ceiling removal contractor Hamilton</strong>{" "}
+                specializing in
+                <strong> ceiling texture removal</strong>,{" "}
+                <strong>stipple ceiling removal</strong>, and
+                <strong> ceiling resurfacing Hamilton</strong> with
+                industry-leading dust control.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
@@ -277,17 +286,24 @@ export default function Page() {
 
             {/* Right Form */}
             <div className="bg-white rounded-3xl shadow-2xl p-8 text-gray-900">
-              <h2 className="text-3xl font-bold mb-2 text-gray-900">Get Your Free Quote</h2>
+              <h2 className="text-3xl font-bold mb-2 text-gray-900">
+                Get Your Free Quote
+              </h2>
               <p className="text-gray-600 mb-6">
-                Professional <strong>popcorn ceiling removal service Hamilton</strong> — Fast response, transparent pricing
+                Professional{" "}
+                <strong>popcorn ceiling removal service Hamilton</strong> — Fast
+                response, transparent pricing
               </p>
-              
+
               <QuoteForm />
 
               <div className="mt-6 pt-6 border-t border-gray-200 text-center">
-                <p className="text-sm text-gray-600 mb-2">Serving all Hamilton neighbourhoods:</p>
+                <p className="text-sm text-gray-600 mb-2">
+                  Serving all Hamilton neighbourhoods:
+                </p>
                 <p className="text-xs text-gray-500">
-                  Ancaster • Dundas • Westdale • Waterdown • Stoney Creek • Durand
+                  Ancaster • Dundas • Westdale • Waterdown • Stoney Creek •
+                  Durand
                 </p>
               </div>
             </div>
@@ -304,8 +320,14 @@ export default function Page() {
                 Professional Popcorn Ceiling Removal Services in Hamilton
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                As your local <strong>smooth ceiling contractor Hamilton</strong>, we provide complete 
-                <strong> professional popcorn ceiling removal Hamilton</strong> services
+                As your local{" "}
+                <strong>smooth ceiling contractor Hamilton</strong>, we provide
+                complete
+                <strong>
+                  {" "}
+                  professional popcorn ceiling removal Hamilton
+                </strong>{" "}
+                services
               </p>
             </div>
 
@@ -314,10 +336,16 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
                   🏗️
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Popcorn Ceiling Removal</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  Popcorn Ceiling Removal
+                </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Expert <strong>popcorn ceiling removal contractor Hamilton</strong> service. From <strong>scraping popcorn ceiling Hamilton</strong> to 
-                  complete <strong>ceiling texture removal Hamilton</strong>, we handle it all with precision.
+                  Expert{" "}
+                  <strong>popcorn ceiling removal contractor Hamilton</strong>{" "}
+                  service. From{" "}
+                  <strong>scraping popcorn ceiling Hamilton</strong> to complete{" "}
+                  <strong>ceiling texture removal Hamilton</strong>, we handle
+                  it all with precision.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -339,10 +367,14 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
                   ✨
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Stipple & Stucco Removal</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  Stipple & Stucco Removal
+                </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Specialized <strong>stipple ceiling removal Hamilton</strong> and <strong>stucco ceiling removal Hamilton</strong>. 
-                  Expert <strong>removing stucco ceiling Hamilton</strong> with minimal mess.
+                  Specialized <strong>stipple ceiling removal Hamilton</strong>{" "}
+                  and <strong>stucco ceiling removal Hamilton</strong>. Expert{" "}
+                  <strong>removing stucco ceiling Hamilton</strong> with minimal
+                  mess.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -364,10 +396,14 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
                   🎯
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Ceiling Resurfacing</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  Ceiling Resurfacing
+                </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Complete <strong>ceiling resurfacing Hamilton</strong> with Level 5 smooth finish. 
-                  Whether <strong>taking off popcorn ceiling</strong> or refinishing, we deliver perfection.
+                  Complete <strong>ceiling resurfacing Hamilton</strong> with
+                  Level 5 smooth finish. Whether{" "}
+                  <strong>taking off popcorn ceiling</strong> or refinishing, we
+                  deliver perfection.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -389,10 +425,15 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
                   🔧
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Painted Popcorn Removal</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  Painted Popcorn Removal
+                </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Specialized <strong>painted popcorn ceiling removal Hamilton</strong>. Safe methods for 
-                  <strong> stripping popcorn ceiling</strong> that's been painted multiple times.
+                  Specialized{" "}
+                  <strong>painted popcorn ceiling removal Hamilton</strong>.
+                  Safe methods for
+                  <strong> stripping popcorn ceiling</strong> that's been
+                  painted multiple times.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -414,10 +455,15 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
                   💨
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Dust-Controlled Process</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  Dust-Controlled Process
+                </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Our <strong>professional popcorn ceiling removal Hamilton</strong> includes complete containment. 
-                  Whether <strong>taking down popcorn ceiling</strong>, we keep your home clean.
+                  Our{" "}
+                  <strong>professional popcorn ceiling removal Hamilton</strong>{" "}
+                  includes complete containment. Whether{" "}
+                  <strong>taking down popcorn ceiling</strong>, we keep your
+                  home clean.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -439,10 +485,14 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
                   🏅
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Smooth Ceiling Contractor</h3>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                  Smooth Ceiling Contractor
+                </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Trusted <strong>smooth ceiling contractor Hamilton</strong> delivering flawless Level 5 finishes. 
-                  From <strong>take out popcorn ceiling</strong> to final paint, we perfect every detail.
+                  Trusted <strong>smooth ceiling contractor Hamilton</strong>{" "}
+                  delivering flawless Level 5 finishes. From{" "}
+                  <strong>take out popcorn ceiling</strong> to final paint, we
+                  perfect every detail.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -472,11 +522,16 @@ export default function Page() {
               Ceiling Texture & Stipple Ceiling Removal in Hamilton
             </h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-              Recent <strong>popcorn removal Hamilton</strong> projects transforming Hamilton homes from outdated texture to modern smooth ceilings
+              Recent <strong>popcorn removal Hamilton</strong> projects
+              transforming Hamilton homes from outdated texture to modern smooth
+              ceilings
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {images.map((src, i) => (
-                <div key={i} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+                <div
+                  key={i}
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+                >
                   <img
                     src={src}
                     alt={`Popcorn ceiling removal Hamilton project ${i + 1}`}
@@ -484,8 +539,12 @@ export default function Page() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                     <div className="text-white">
-                      <p className="font-bold text-lg">Hamilton Project {i + 1}</p>
-                      <p className="text-sm text-gray-200">Professional ceiling transformation</p>
+                      <p className="font-bold text-lg">
+                        Hamilton Project {i + 1}
+                      </p>
+                      <p className="text-sm text-gray-200">
+                        Professional ceiling transformation
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -503,14 +562,17 @@ export default function Page() {
               Our Hamilton Popcorn Ceiling Removal Process
             </h2>
             <p className="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">
-              Tailored <strong>ceiling resurfacing Hamilton</strong> workflows for character homes and modern builds. 
-              From <strong>taking off popcorn ceiling</strong> to <strong>stripping popcorn ceiling</strong>, Level 5 perfection every time.
+              Tailored <strong>ceiling resurfacing Hamilton</strong> workflows
+              for character homes and modern builds. From{" "}
+              <strong>taking off popcorn ceiling</strong> to{" "}
+              <strong>stripping popcorn ceiling</strong>, Level 5 perfection
+              every time.
             </p>
-            
+
             <div className="relative">
               {/* Vertical Timeline Line */}
               <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-cyan-500 to-blue-500"></div>
-              
+
               {/* Timeline Items */}
               <div className="space-y-12">
                 {[
@@ -518,52 +580,69 @@ export default function Page() {
                     num: "01",
                     title: "Assessment & Protection",
                     desc: "Free consultation, texture testing, and complete home protection. Floors, furniture, HVAC sealed for dust control during popcorn ceiling Hamilton work.",
-                    color: "from-blue-500 to-blue-600"
+                    color: "from-blue-500 to-blue-600",
                   },
                   {
                     num: "02",
                     title: "Strategic Removal",
                     desc: "Expert taking down popcorn ceiling using controlled scraping or safe encapsulation for painted surfaces. HEPA extraction throughout.",
-                    color: "from-cyan-500 to-cyan-600"
+                    color: "from-cyan-500 to-cyan-600",
                   },
                   {
                     num: "03",
                     title: "Surface Repair",
                     desc: "Fix all cracks, seams, water damage. Removing stucco ceiling Hamilton and cottage cheese ceiling removal Hamilton with precision.",
-                    color: "from-blue-600 to-cyan-600"
+                    color: "from-blue-600 to-cyan-600",
                   },
                   {
                     num: "04",
                     title: "Level 5 Skim Coating",
                     desc: "Full-field application by our smooth ceiling contractor Hamilton team. Multiple passes for perfectly flat results.",
-                    color: "from-cyan-600 to-blue-700"
+                    color: "from-cyan-600 to-blue-700",
                   },
                   {
                     num: "05",
                     title: "HEPA Sanding & Inspection",
                     desc: "Vacuum-assisted sanding with raking-light quality checks. Re-skim any imperfections until flawless.",
-                    color: "from-blue-700 to-cyan-700"
+                    color: "from-blue-700 to-cyan-700",
                   },
                   {
                     num: "06",
                     title: "Prime & Finish",
                     desc: "Stain-block primer application. Optional premium ceiling paint or leave paint-ready. Final walkthrough and warranty.",
-                    color: "from-cyan-700 to-blue-800"
-                  }
+                    color: "from-cyan-700 to-blue-800",
+                  },
                 ].map((step, idx) => (
-                  <div key={idx} className={`relative flex items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div
+                    key={idx}
+                    className={`relative flex items-center ${
+                      idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
+                  >
                     {/* Number Circle */}
                     <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
-                      <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-xl shadow-lg`}>
+                      <div
+                        className={`w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-bold text-xl shadow-lg`}
+                      >
                         {step.num}
                       </div>
                     </div>
-                    
+
                     {/* Content Card */}
-                    <div className={`ml-24 md:ml-0 ${idx % 2 === 0 ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'} md:w-1/2`}>
+                    <div
+                      className={`ml-24 md:ml-0 ${
+                        idx % 2 === 0
+                          ? "md:mr-auto md:pr-16"
+                          : "md:ml-auto md:pl-16"
+                      } md:w-1/2`}
+                    >
                       <div className="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all">
-                        <h3 className="text-2xl font-bold mb-2 text-gray-900">{step.title}</h3>
-                        <p className="text-gray-700 leading-relaxed">{step.desc}</p>
+                        <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                          {step.title}
+                        </h3>
+                        <p className="text-gray-700 leading-relaxed">
+                          {step.desc}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -583,22 +662,32 @@ export default function Page() {
                 Popcorn Ceiling Removal Cost in Hamilton
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Transparent <strong>popcorn ceiling removal cost Hamilton</strong> and <strong>popcorn removal cost Hamilton</strong> estimates. 
-                Get accurate <strong>cost to scrape popcorn ceiling Hamilton</strong> pricing today.
+                Transparent{" "}
+                <strong>popcorn ceiling removal cost Hamilton</strong> and{" "}
+                <strong>popcorn removal cost Hamilton</strong> estimates. Get
+                accurate{" "}
+                <strong>cost to scrape popcorn ceiling Hamilton</strong> pricing
+                today.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-gray-200 hover:border-blue-300 transition-all">
                 <div className="text-center mb-6">
-                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">Basic</div>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">$$</div>
+                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">
+                    Basic
+                  </div>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">
+                    $$
+                  </div>
                   <div className="text-sm text-gray-600">Per Room</div>
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
-                    <span className="text-gray-700">Standard unpainted removal</span>
+                    <span className="text-gray-700">
+                      Standard unpainted removal
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
@@ -606,7 +695,9 @@ export default function Page() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
-                    <span className="text-gray-700">Basic dust containment</span>
+                    <span className="text-gray-700">
+                      Basic dust containment
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
@@ -620,7 +711,9 @@ export default function Page() {
                   MOST POPULAR
                 </div>
                 <div className="text-center mb-6">
-                  <div className="text-sm font-bold text-blue-100 uppercase tracking-wide mb-2">Professional</div>
+                  <div className="text-sm font-bold text-blue-100 uppercase tracking-wide mb-2">
+                    Professional
+                  </div>
                   <div className="text-4xl font-bold mb-2">$$$</div>
                   <div className="text-sm text-blue-100">Per Room</div>
                 </div>
@@ -650,22 +743,32 @@ export default function Page() {
 
               <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-gray-200 hover:border-blue-300 transition-all">
                 <div className="text-center mb-6">
-                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">Premium</div>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">$$$$</div>
+                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">
+                    Premium
+                  </div>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">
+                    $$$$
+                  </div>
                   <div className="text-sm text-gray-600">Per Room</div>
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
-                    <span className="text-gray-700">Everything in Professional</span>
+                    <span className="text-gray-700">
+                      Everything in Professional
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
-                    <span className="text-gray-700">Premium ceiling paint (2 coats)</span>
+                    <span className="text-gray-700">
+                      Premium ceiling paint (2 coats)
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
-                    <span className="text-gray-700">Pot light coordination</span>
+                    <span className="text-gray-700">
+                      Pot light coordination
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">✓</span>
@@ -676,20 +779,28 @@ export default function Page() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 border-2 border-blue-100 mb-8">
-              <h3 className="text-2xl font-bold mb-6 text-center">Cost Factors</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center">
+                Cost Factors
+              </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    <span className="text-gray-700">Ceiling height (8', 10', vaulted)</span>
+                    <span className="text-gray-700">
+                      Ceiling height (8', 10', vaulted)
+                    </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    <span className="text-gray-700">Painted vs unpainted texture</span>
+                    <span className="text-gray-700">
+                      Painted vs unpainted texture
+                    </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    <span className="text-gray-700">Room size & accessibility</span>
+                    <span className="text-gray-700">
+                      Room size & accessibility
+                    </span>
                   </li>
                 </ul>
                 <ul className="space-y-3">
@@ -699,11 +810,15 @@ export default function Page() {
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    <span className="text-gray-700">Existing damage/repairs</span>
+                    <span className="text-gray-700">
+                      Existing damage/repairs
+                    </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    <span className="text-gray-700">Asbestos testing (pre-1990)</span>
+                    <span className="text-gray-700">
+                      Asbestos testing (pre-1990)
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -734,39 +849,56 @@ export default function Page() {
                 {
                   title: "Ancaster Two-Storey",
                   area: "Golf Links / Wilson",
-                  scope: "Painted popcorn ceiling removal Hamilton; safe encapsulation; Level 5 skim; stain-block primer.",
+                  scope:
+                    "Painted popcorn ceiling removal Hamilton; safe encapsulation; Level 5 skim; stain-block primer.",
                   time: "3 days",
-                  result: "Flawless reflectance across open-concept living/dining."
+                  result:
+                    "Flawless reflectance across open-concept living/dining.",
                 },
                 {
                   title: "Dundas Character Home",
                   area: "Governor's Road",
-                  scope: "Scraping popcorn ceiling Hamilton + repairs; pot-light integration; primer; paint-ready.",
+                  scope:
+                    "Scraping popcorn ceiling Hamilton + repairs; pot-light integration; primer; paint-ready.",
                   time: "2.5 days",
-                  result: "Bright, flat ceiling enhancing period details."
+                  result: "Bright, flat ceiling enhancing period details.",
                 },
                 {
                   title: "Westdale Bungalow",
                   area: "Near McMaster",
-                  scope: "Complete ceiling resurfacing Hamilton; raking-light inspection; optional spray finish.",
+                  scope:
+                    "Complete ceiling resurfacing Hamilton; raking-light inspection; optional spray finish.",
                   time: "3-4 days",
-                  result: "Modern smooth ceiling throughout main floor."
-                }
+                  result: "Modern smooth ceiling throughout main floor.",
+                },
               ].map((project, idx) => (
-                <div key={idx} className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all">
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">{project.title}</h3>
-                  <p className="text-sm text-blue-600 font-semibold mb-4">{project.area}</p>
+                <div
+                  key={idx}
+                  className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border-2 border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all"
+                >
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-blue-600 font-semibold mb-4">
+                    {project.area}
+                  </p>
                   <div className="space-y-3 text-sm">
                     <div>
-                      <span className="font-semibold text-gray-700">Scope:</span>
+                      <span className="font-semibold text-gray-700">
+                        Scope:
+                      </span>
                       <p className="text-gray-600 mt-1">{project.scope}</p>
                     </div>
                     <div>
-                      <span className="font-semibold text-gray-700">Timeline:</span>
+                      <span className="font-semibold text-gray-700">
+                        Timeline:
+                      </span>
                       <p className="text-gray-600 mt-1">{project.time}</p>
                     </div>
                     <div>
-                      <span className="font-semibold text-gray-700">Result:</span>
+                      <span className="font-semibold text-gray-700">
+                        Result:
+                      </span>
                       <p className="text-gray-600 mt-1">{project.result}</p>
                     </div>
                   </div>
@@ -788,7 +920,8 @@ export default function Page() {
               Hamilton Service Areas & Neighbourhoods
             </h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-              Professional <strong>popcorn ceiling removal Hamilton</strong> throughout all neighbourhoods
+              Professional <strong>popcorn ceiling removal Hamilton</strong>{" "}
+              throughout all neighbourhoods
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {hoods.map((n) => (
@@ -797,10 +930,46 @@ export default function Page() {
                   href={`/popcorn-ceiling-removal/hamilton/${n.slug}/`}
                   className="group bg-white p-6 rounded-2xl border-2 border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all text-center"
                 >
-                  <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">{n.name}</h3>
+                  <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {n.name}
+                  </h3>
                   <p className="text-sm text-gray-500 mt-1">View Details →</p>
                 </Link>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEARBY SERVICE AREAS */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="p-8 bg-gray-50 rounded-2xl border border-gray-200">
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Nearby Service Areas
+            </h2>
+            <p className="text-center text-gray-600 mb-6">
+              Expert popcorn ceiling removal in surrounding areas:
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/popcorn-ceiling-removal/burlington/"
+                className="px-6 py-3 bg-white border-2 border-blue-200 rounded-full text-blue-600 font-semibold hover:bg-blue-50 hover:border-blue-400 transition"
+              >
+                Burlington Ceiling Contractor
+              </Link>
+              <Link
+                href="/popcorn-ceiling-removal/oakville/"
+                className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition"
+              >
+                Oakville Popcorn Removal
+              </Link>
+              <Link
+                href="/popcorn-ceiling-removal/stoney-creek/"
+                className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition"
+              >
+                Stoney Creek Services
+              </Link>
             </div>
           </div>
         </div>
@@ -814,7 +983,9 @@ export default function Page() {
               Ready for Professional Popcorn Ceiling Removal in Hamilton?
             </h2>
             <p className="text-2xl mb-8 text-blue-100">
-              Your trusted <strong>popcorn ceiling removal contractor Hamilton</strong> — Fast quotes, clean work, guaranteed results
+              Your trusted{" "}
+              <strong>popcorn ceiling removal contractor Hamilton</strong> —
+              Fast quotes, clean work, guaranteed results
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-10">
               <a
@@ -851,11 +1022,17 @@ export default function Page() {
       {/* Bottom Navigation */}
       <div className="container mx-auto px-4 py-8">
         <nav className="flex flex-wrap gap-4 justify-center text-sm">
-          <Link href="/popcorn-ceiling-removal/" className="text-blue-600 hover:underline font-semibold">
+          <Link
+            href="/popcorn-ceiling-removal/"
+            className="text-blue-600 hover:underline font-semibold"
+          >
             ← All Service Areas
           </Link>
           <span className="text-gray-400">|</span>
-          <Link href="/services/popcorn-ceiling-removal/" className="text-blue-600 hover:underline font-semibold">
+          <Link
+            href="/services/popcorn-ceiling-removal/"
+            className="text-blue-600 hover:underline font-semibold"
+          >
             Main Service Page →
           </Link>
         </nav>

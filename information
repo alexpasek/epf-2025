@@ -1,0 +1,90 @@
+Add a "Featured Service Areas" section to /services/popcorn-ceiling-removal/page.jsx that prominently features [CITY] with:
+
+1. Burlington-style blue border (border-blue-200 hover:border-blue-400)
+2. Rich description including:
+   - "[CITY] popcorn ceiling removal"
+   - "Licensed ceiling contractor"
+   - 2-3 neighborhood names
+   - "HEPA dust control"
+   - "Level 5 skim coat finish"
+3. Anchor text: "View [CITY] Ceiling Services →"
+4. Link to: /popcorn-ceiling-removal/[city-slug]/
+
+Keep Mississauga and Oakville as regular cards (gray border).
+
+Add a contextual link to [CITY] on the homepage (app/page.jsx) in the service areas section:
+
+"Serving homeowners across the Greater Toronto Area including [link to /popcorn-ceiling-removal/[city-slug]/]Burlington[/link], Toronto, Mississauga, and [CITY] with professional popcorn ceiling removal."
+
+Use anchor text: "[CITY]"
+Add hover:underline and text-blue-600 font-semibold classes.
+Add a contextual link to [CITY] in the blog post /blog/popcorn-ceiling-removal-cost-timeline/ in a pricing example paragraph:
+
+"For example, our [link to /popcorn-ceiling-removal/[city-slug]/][CITY] popcorn ceiling removal[/link] projects typically range from $800 for a standard bedroom to $8,500 for a whole 3-bedroom condo, depending on ceiling height, texture type, and included services."
+
+Use anchor text: "[CITY] popcorn ceiling removal"
+Add text-blue-600 font-semibold hover:underline classes.
+Add a "Nearby Service Areas" section to /popcorn-ceiling-removal/mississauga/page.jsx before the FAQ section:
+
+<div className="mt-12 p-8 bg-gray-50 rounded-2xl border border-gray-200">
+  <h3 className="text-2xl font-bold mb-4 text-center">Nearby Service Areas</h3>
+  <p className="text-center text-gray-600 mb-6">
+    We also serve these nearby cities with professional popcorn ceiling removal:
+  </p>
+  <div className="flex flex-wrap justify-center gap-4">
+    <Link 
+      href="/popcorn-ceiling-removal/[city-slug]/" 
+      className="px-6 py-3 bg-white border-2 border-blue-200 rounded-full text-blue-600 font-semibold hover:bg-blue-50 hover:border-blue-400 transition"
+    >
+      [CITY] Ceiling Contractor
+    </Link>
+    <Link 
+      href="/popcorn-ceiling-removal/oakville/" 
+      className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 transition"
+    >
+      Oakville
+    </Link>
+    <Link 
+      href="/popcorn-ceiling-removal/burlington/" 
+      className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 transition"
+    >
+      Burlington
+    </Link>
+  </div>
+</div>
+Add a "Nearby Service Areas" section to /popcorn-ceiling-removal/oakville/page.jsx before the FAQ section with [CITY] featured (blue border) and Burlington/Mississauga as regular links.
+
+Featured anchor text: "[CITY] Popcorn Removal"
+Add a "Nearby Service Areas" section to /popcorn-ceiling-removal/burlington/page.jsx before the FAQ section with [CITY] featured (blue border) and Oakville/Mississauga as regular links.
+
+Featured anchor text: "[CITY] Ceiling Specialist"
+
+
+
+
+
+
+SEO prompts for pages 
+
+Implement internal linking strategy TO Toronto page:
+
+1. Add "Featured Service Areas" section to /services/popcorn-ceiling-removal/page.jsx:
+   - Feature Toronto with blue border (border-blue-200)
+   - Description: "Licensed ceiling contractor serving Toronto, North York, Etobicoke, and Scarborough. HEPA dust control, Level 5 skim coat finish, condo-ready logistics."
+   - Anchor text: "View Toronto Ceiling Services →"
+   - Link: /popcorn-ceiling-removal/toronto/
+
+2. Add Toronto mention to homepage (app/page.jsx):
+   - "Serving homeowners across the GTA including [Toronto] with professional popcorn ceiling removal"
+   - Anchor: "Toronto"
+
+3. Add Toronto example to /blog/popcorn-ceiling-removal-cost-timeline/:
+   - "For example, our [Toronto popcorn ceiling removal] projects typically range from $800–$8,500..."
+   - Anchor: "Toronto popcorn ceiling removal"
+
+4. Add "Nearby Service Areas" to:
+   - Mississauga page: Feature Toronto (blue border), anchor "Toronto Ceiling Contractor"
+   - Oakville page: Feature Toronto (blue border), anchor "Toronto Popcorn Removal"
+   - Vaughan page: Feature Toronto (blue border), anchor "Toronto Ceiling Specialist"
+
+Use varied anchor text across pages. Maintain consistent styling with Burlington implementation.

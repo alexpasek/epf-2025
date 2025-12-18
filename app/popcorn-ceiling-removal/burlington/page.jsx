@@ -82,9 +82,25 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Popcorn Ceiling Removal Burlington | Level 5 Smooth Finish`,
+  title: `Popcorn Ceiling Removal Burlington | Licensed Ceiling Contractor`,
   description:
     "Burlington popcorn/stipple/stucco ceiling removal with sealed rooms, HEPA sanding, Level 5 skim coat, stain-block primer and optional ceiling painting. Fast quotes.",
+  keywords: [
+    "popcorn ceiling removal Burlington",
+    "ceiling contractor Burlington",
+    "remove popcorn ceiling Burlington",
+    "stipple ceiling removal Burlington",
+    "stucco ceiling removal Burlington",
+    "ceiling texture removal Burlington",
+    "smooth ceiling Burlington",
+    "Level 5 ceiling Burlington",
+    "popcorn ceiling removal cost Burlington",
+    "popcorn ceiling contractors Burlington",
+    "Burlington ceiling specialist",
+    "Aldershot popcorn removal",
+    "Tyandaga ceiling contractor",
+    "Millcroft popcorn ceiling",
+  ],
   alternates: { canonical: SLUG },
   openGraph: {
     title: `Popcorn Ceiling Removal in ${CITY} | Level 5 Finish`,
@@ -100,7 +116,9 @@ function SeoJsonLd() {
   const baseServiceUrl = BASE_URL ? `${BASE_URL}${SLUG}` : SLUG;
   const quoteUrl = BASE_URL ? `${BASE_URL}/quote/` : "/quote/";
   const providerUrl = BASE_URL ? `${BASE_URL}/` : "/";
-  const breadcrumbServiceUrl = BASE_URL ? `${BASE_URL}/popcorn-ceiling-removal/` : "/popcorn-ceiling-removal/";
+  const breadcrumbServiceUrl = BASE_URL
+    ? `${BASE_URL}/popcorn-ceiling-removal/`
+    : "/popcorn-ceiling-removal/";
 
   const data = [
     {
@@ -121,6 +139,9 @@ function SeoJsonLd() {
         name: BRAND_NAME,
         telephone: phoneText,
         url: providerUrl,
+        image: `${BASE_URL}/logo.png`,
+        priceRange: "$$",
+        sameAs: ["https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"],
       },
       areaServed: { "@type": "City", name: `${CITY}, ON` },
       url: baseServiceUrl,
@@ -230,8 +251,7 @@ export default function Page() {
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              Popcorn Ceiling Removal <br />
-              <span className="text-blue-400">{CITY}</span>
+              Popcorn Ceiling Removal Burlington
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed">
@@ -311,6 +331,35 @@ export default function Page() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
             Why Choose Us in {CITY}?
           </h2>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full border border-blue-200">
+              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-sm font-semibold text-gray-700">
+                WSIB Insured
+              </span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full border border-blue-200">
+              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-sm font-semibold text-gray-700">
+                Liability Coverage
+              </span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full border border-blue-200">
+              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-sm font-semibold text-gray-700">
+                3-Year Warranty
+              </span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full border border-blue-200">
+              <span className="text-blue-600 font-bold">✓</span>
+              <span className="text-sm font-semibold text-gray-700">
+                Local Burlington Team
+              </span>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-white border border-blue-100">
               <div className="text-5xl mb-4">🏠</div>
@@ -353,11 +402,11 @@ export default function Page() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Recent Work in {CITY}
+            Burlington Projects & Results
           </h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-            Smooth ceilings with consistent finish—before/after quality you can
-            see.
+            Real Burlington homes—from waterfront condos to Aldershot bungalows.
+            Smooth Level 5 ceilings that photograph beautifully.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -368,20 +417,83 @@ export default function Page() {
               >
                 <img
                   src={src}
-                  alt={`${CITY} popcorn ceiling removal — project ${i + 1}`}
+                  alt={`Burlington popcorn ceiling removal project ${i + 1}`}
                   className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                   data-lightbox="true"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                  <p className="text-white font-semibold">Project {i + 1}</p>
+                  <div>
+                    <p className="text-white font-semibold">
+                      Burlington Project {i + 1}
+                    </p>
+                    <p className="text-sm text-gray-200">
+                      Level 5 smooth finish
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Burlington Social Proof */}
+          <div className="mt-12 grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-2xl border-2 border-gray-100">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+              </div>
+              <p className="text-gray-700 italic mb-3">
+                "Perfect finish in our Bridgewater condo. They coordinated
+                elevator access, kept hallways clean, and the Level 5 skim looks
+                amazing under our pot lights."
+              </p>
+              <p className="text-sm font-semibold text-gray-900">
+                — Sarah M., Downtown Burlington
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border-2 border-gray-100">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+              </div>
+              <p className="text-gray-700 italic mb-3">
+                "Removed painted popcorn in our Aldershot home. Dust control was
+                excellent, crew was professional, and the price was exactly as
+                quoted."
+              </p>
+              <p className="text-sm font-semibold text-gray-900">
+                — Mike T., Aldershot
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl border-2 border-gray-100">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+              </div>
+              <p className="text-gray-700 italic mb-3">
+                "Whole main floor done in our Millcroft home. Vaulted ceiling,
+                kitchen, three bedrooms—everything smooth and ready for paint.
+                Highly recommend."
+              </p>
+              <p className="text-sm font-semibold text-gray-900">
+                — Jennifer L., Millcroft
+              </p>
+            </div>
+          </div>
+
+          {/* Review Link */}
+          <div className="mt-8 text-center">
+            <a
+              href="https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition"
+            >
+              <span>⭐</span>
+              Read More Burlington Reviews on Google
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* PROCESS */}
+      {/* MAIN PROCESS SECTION */}
       <section className="py-20 bg-white" id="process">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
@@ -413,12 +525,108 @@ export default function Page() {
       <section className="py-20 bg-gray-50" id="pricing">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Pricing Factors (What Affects Cost)
+            Burlington Popcorn Ceiling Removal Cost
           </h2>
-          <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-            Per-sq-ft ranges change based on height, painted texture, fixture
-            counts, repairs, access, and whether you want paint included.
+          <p className="text-center text-lg text-gray-600 mb-4 max-w-3xl mx-auto">
+            Typical Burlington pricing ranges based on real projects. These are
+            rough estimates only.
           </p>
+          <p className="text-center text-base text-gray-500 mb-12 max-w-2xl mx-auto">
+            <strong>
+              Actual site visit and photo review required for exact cost.
+            </strong>{" "}
+            Every ceiling is different—we recommend getting a detailed written
+            estimate.
+          </p>
+
+          {/* PRICING TABLE */}
+          <div className="mb-12 overflow-x-auto">
+            <div className="bg-white rounded-3xl border-2 border-gray-200 overflow-hidden min-w-[600px]">
+              <table className="w-full">
+                <thead className="bg-blue-600 text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-left font-bold">
+                      Project Type
+                    </th>
+                    <th className="px-6 py-4 text-left font-bold">
+                      Typical Range
+                    </th>
+                    <th className="px-6 py-4 text-left font-bold">
+                      What's Included
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold">
+                      Standard Bedroom
+                    </td>
+                    <td className="px-6 py-4 text-blue-600 font-bold">
+                      $800–$1,400
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      Unpainted removal, Level 5 skim, primer
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold">Painted Bedroom</td>
+                    <td className="px-6 py-4 text-blue-600 font-bold">
+                      $1,200–$1,900
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      Skim encapsulation, Level 5, primer
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold">
+                      Living Room (12×16)
+                    </td>
+                    <td className="px-6 py-4 text-blue-600 font-bold">
+                      $1,500–$2,400
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      Removal, repairs, skim, primer
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold">
+                      Vaulted / 10' Ceiling
+                    </td>
+                    <td className="px-6 py-4 text-blue-600 font-bold">
+                      $2,000–$3,500
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      Scaffolding, removal, skim, primer
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold">
+                      Whole Condo (3BR)
+                    </td>
+                    <td className="px-6 py-4 text-blue-600 font-bold">
+                      $5,500–$8,500
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      All ceilings, hallways, skim, primer
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-50 bg-blue-50">
+                    <td className="px-6 py-4 font-semibold">+ Ceiling Paint</td>
+                    <td className="px-6 py-4 text-blue-600 font-bold">
+                      +$200–$500/room
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      Premium ceiling paint, 2 coats
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              *Ranges based on typical Burlington projects 2023–2024. Heights,
+              repairs, painted texture, and access affect final price.
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-8 bg-white rounded-3xl border-2 border-gray-100">
@@ -449,33 +657,129 @@ export default function Page() {
             </div>
 
             <div className="p-8 bg-white rounded-3xl border-2 border-gray-100">
-              <h3 className="text-2xl font-bold mb-4">Related services</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    className="text-blue-600 font-semibold hover:underline"
-                    href="/services/drywall-installation/"
-                  >
-                    Drywall & skim coat finishing →
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-blue-600 font-semibold hover:underline"
-                    href="/services/interior-painting/"
-                  >
-                    Interior painting →
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-blue-600 font-semibold hover:underline"
-                    href="/services/popcorn-ceiling-removal/"
-                  >
-                    Main service page →
-                  </Link>
-                </li>
+              <h3 className="text-2xl font-bold mb-4">Why prices vary</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Condo elevator/access fees</li>
+                <li>• Lakeshore vs Aldershot logistics</li>
+                <li>• Weekend/evening premium</li>
+                <li>• Permit requirements</li>
+                <li>• Material delivery distance</li>
               </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-full hover:bg-blue-700 transition shadow-xl"
+              href="#quote"
+            >
+              Get Your Burlington Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ROOM TYPES - NEW SECTION */}
+      <section className="py-20 bg-white" id="room-types">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+            Room Types We Handle in Burlington
+          </h2>
+          <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+            Every space has unique challenges—from waterfront condo ceilings to
+            vaulted family rooms in Aldershot.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-100 hover:border-blue-300 hover:shadow-lg transition-all">
+              <div className="text-4xl mb-4">🏢</div>
+              <h3 className="text-xl font-bold mb-3">
+                Burlington Condo Popcorn Ceiling Removal
+              </h3>
+              <p className="text-gray-700 text-sm mb-4">
+                Waterfront high-rises, Bridgewater, Nautique, Strata—elevator
+                booking, quiet hours, hallway protection. Expert condo popcorn
+                ceiling removal.
+              </p>
+              <ul className="text-xs text-gray-600 space-y-1">
+                <li>✓ Elevator coordination</li>
+                <li>✓ Condo board approvals</li>
+                <li>✓ Painted texture common</li>
+                <li>✓ Limited staging space</li>
+              </ul>
+            </div>
+
+            <div className="p-6 bg-gradient-to-br from-green-50 to-white rounded-2xl border-2 border-green-100 hover:border-green-300 hover:shadow-lg transition-all">
+              <div className="text-4xl mb-4">🍳</div>
+              <h3 className="text-xl font-bold mb-3">
+                Kitchen Popcorn Ceiling Removal
+              </h3>
+              <p className="text-gray-700 text-sm mb-4">
+                Cabinet protection, ventilation concerns, coordinating with
+                backsplash/cabinet installs in Millcroft & Tyandaga.
+                Professional kitchen ceiling texture removal.
+              </p>
+              <ul className="text-xs text-gray-600 space-y-1">
+                <li>✓ Cabinet masking critical</li>
+                <li>✓ Exhaust fan integration</li>
+                <li>✓ High moisture areas</li>
+                <li>✓ Pot light planning</li>
+              </ul>
+            </div>
+
+            <div className="p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border-2 border-purple-100 hover:border-purple-300 hover:shadow-lg transition-all">
+              <div className="text-4xl mb-4">🏠</div>
+              <h3 className="text-xl font-bold mb-3">
+                Basement Popcorn Ceiling Removal
+              </h3>
+              <p className="text-gray-700 text-sm mb-4">
+                Lower ceilings, bulkheads, HVAC runs—common in Aldershot & Brant
+                homes with finished rec rooms. Basement stipple ceiling removal
+                specialists.
+              </p>
+              <ul className="text-xs text-gray-600 space-y-1">
+                <li>✓ Low ceiling access</li>
+                <li>✓ Bulkhead transitions</li>
+                <li>✓ Moisture testing</li>
+                <li>✓ Ductwork obstacles</li>
+              </ul>
+            </div>
+
+            <div className="p-6 bg-gradient-to-br from-orange-50 to-white rounded-2xl border-2 border-orange-100 hover:border-orange-300 hover:shadow-lg transition-all">
+              <div className="text-4xl mb-4">🪜</div>
+              <h3 className="text-xl font-bold mb-3">
+                Stairwell & Vaulted Popcorn Ceiling Removal
+              </h3>
+              <p className="text-gray-700 text-sm mb-4">
+                Two-storey foyers, cathedral ceilings in Roseland &
+                Palmer—scaffolding, safety, extended reach. High ceiling popcorn
+                removal experts.
+              </p>
+              <ul className="text-xs text-gray-600 space-y-1">
+                <li>✓ Scaffolding required</li>
+                <li>✓ 12'–20' ceiling heights</li>
+                <li>✓ Stairwell protection</li>
+                <li>✓ Complex lighting</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-10 p-8 bg-gray-50 rounded-2xl border border-gray-200">
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              Not Sure What You Need?
+            </h3>
+            <p className="text-center text-gray-700 mb-6 max-w-2xl mx-auto">
+              Send photos of your Burlington space—we'll identify texture type,
+              ceiling height challenges, and recommend the best approach for
+              your specific room layout.
+            </p>
+            <div className="text-center">
+              <Link
+                href="/quote/"
+                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition"
+              >
+                Upload Photos for Assessment
+              </Link>
             </div>
           </div>
         </div>
@@ -505,12 +809,12 @@ export default function Page() {
                   Every project includes dust containment, a texture removal or
                   encapsulation plan, a <strong>Level 5 skim coat</strong>,
                   primer, and optional ceiling painting. If you are comparing
-                  options, skim{" "}
+                  options, review our{" "}
                   <Link
                     className="text-blue-600 font-semibold hover:underline"
-                    href="/popcorn-ceiling-removal/"
+                    href="/services/popcorn-ceiling-removal/"
                   >
-                    our full popcorn ceiling removal guide
+                    complete popcorn ceiling removal services
                   </Link>{" "}
                   or book a quick site visit through the{" "}
                   <Link
@@ -522,19 +826,19 @@ export default function Page() {
                   for written pricing.
                 </p>
                 <p>
-                  Need coordinated services? We line up drywall repairs,{" "}
+                  Need coordinated services? We line up{" "}
                   <Link
                     className="text-blue-600 font-semibold hover:underline"
                     href="/services/drywall-installation/"
                   >
-                    bulkhead framing
+                    drywall repairs and bulkhead framing
                   </Link>
-                  , and{" "}
+                  , plus{" "}
                   <Link
                     className="text-blue-600 font-semibold hover:underline"
                     href="/services/interior-painting/"
                   >
-                    ceiling painting
+                    professional ceiling painting
                   </Link>{" "}
                   so the finish stays consistent from room to room. Browse the
                   neighborhood list below for hyper-local logistics, or jump to
@@ -775,9 +1079,17 @@ export default function Page() {
                 <li>
                   <Link
                     className="text-blue-700 font-semibold hover:underline"
+                    href="/services/popcorn-ceiling-removal/"
+                  >
+                    Complete popcorn ceiling removal guide →
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-blue-700 font-semibold hover:underline"
                     href="/popcorn-ceiling-removal/"
                   >
-                    Main popcorn ceiling removal service hub →
+                    All GTA service areas →
                   </Link>
                 </li>
                 <li>
