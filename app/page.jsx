@@ -763,8 +763,8 @@ export default function Page() {
                 className="text-blue-600 font-semibold hover:underline"
               >
                 popcorn ceiling removal contractors
-              </Link>
-              {" "}serving homeowners across the GTA including{" "}
+              </Link>{" "}
+              serving homeowners across the GTA including{" "}
               <Link
                 href="/popcorn-ceiling-removal/burlington/"
                 className="text-blue-600 font-semibold hover:underline"
@@ -798,8 +798,9 @@ export default function Page() {
                 className="text-blue-600 font-semibold hover:underline"
               >
                 Hamilton
-              </Link>
-              {" "}with dust-controlled ceiling texture removal, stipple ceiling removal, and Level 5 smooth finishes.
+              </Link>{" "}
+              with dust-controlled ceiling texture removal, stipple ceiling
+              removal, and Level 5 smooth finishes.
             </p>
           </div>
 
