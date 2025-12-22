@@ -15,7 +15,8 @@ import {
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Professional Popcorn Ceiling Removal Contractor | GTA Level 5 Smooth Finish",
+  title:
+    "Professional Popcorn Ceiling Removal Contractor | GTA Level 5 Smooth Finish",
   description:
     "Expert popcorn ceiling removal contractor serving the GTA. Dust-controlled ceiling texture removal, stipple ceiling removal, Level 5 skim coat, stain-block prime & paint. Licensed, insured with 3-year warranty. Fast quotes.",
   keywords: [
@@ -48,8 +49,8 @@ export const metadata = {
         url: "/services/popcorn-ceiling-removal/1.webp",
         width: 1200,
         height: 630,
-        alt: "Professional popcorn ceiling removal"
-      }
+        alt: "Professional popcorn ceiling removal",
+      },
     ],
   },
   robots: { index: true, follow: true },
@@ -97,10 +98,30 @@ function JsonLd() {
           telephone: phoneText,
           url: "https://epfproservices.com",
           image: "/logo.png",
-          sameAs: [
-            "https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9",
-          ],
+          sameAs: ["https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"],
           priceRange: "$$",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "127",
+            bestRating: "5",
+            worstRating: "1",
+          },
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "ON",
+            addressCountry: "CA",
+          },
+          areaServed: areaServed,
+          knowsAbout: [
+            "Popcorn Ceiling Removal",
+            "Stipple Ceiling Removal",
+            "Level 5 Skim Coating",
+            "Ceiling Texture Removal",
+            "HEPA Dust Control",
+          ],
+          slogan:
+            "Professional Popcorn Ceiling Removal Contractors Serving the GTA",
         },
         offers: {
           "@type": "Offer",
@@ -196,7 +217,7 @@ function JsonLd() {
 export default function Page() {
   const phoneHref = CONTACT?.phoneHref || "tel:+16479236784";
   const phoneText = CONTACT?.phone || "(647) 923-6784";
-  
+
   // Gallery images
   const images = Array.from(
     { length: 6 },
@@ -219,35 +240,47 @@ export default function Page() {
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+              backgroundSize: "40px 40px",
+            }}
+          ></div>
         </div>
 
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            
             {/* Left: Content */}
             <div className="text-white">
               <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-2 mb-6">
                 <span className="text-2xl">✓</span>
-                <span className="text-sm font-semibold text-blue-300">GTA's Trusted Popcorn Ceiling Contractor</span>
+                <span className="text-sm font-semibold text-blue-300">
+                  GTA's Trusted Popcorn Ceiling Contractor
+                </span>
               </div>
-              
+
               <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
                 Professional Popcorn Ceiling Removal
               </h1>
-              
+
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Transform outdated textured ceilings into smooth, modern surfaces. Expert <strong className="text-white">ceiling texture removal</strong>, <strong className="text-white">stipple ceiling removal</strong>, and <strong className="text-white">Level 5 finishing</strong> with HEPA dust control across the GTA.
+                Transform outdated textured ceilings into smooth, modern
+                surfaces. Expert{" "}
+                <strong className="text-white">ceiling texture removal</strong>,{" "}
+                <strong className="text-white">stipple ceiling removal</strong>,
+                and <strong className="text-white">Level 5 finishing</strong>{" "}
+                with HEPA dust control across the GTA.
               </p>
 
               {/* Trust Badges */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 text-center">
                   <div className="text-3xl mb-2">🏆</div>
-                  <div className="text-sm font-semibold">Licensed & Insured</div>
+                  <div className="text-sm font-semibold">
+                    Licensed & Insured
+                  </div>
                 </div>
                 <div className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-4 text-center">
                   <div className="text-3xl mb-2">⚡</div>
@@ -269,7 +302,8 @@ export default function Page() {
                   href={phoneHref}
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 transition shadow-lg hover:shadow-2xl hover:scale-105 transform"
                 >
-                  <span className="mr-2">📞</span>{phoneText}
+                  <span className="mr-2">📞</span>
+                  {phoneText}
                 </a>
                 <a
                   href="#quote-form"
@@ -294,11 +328,15 @@ export default function Page() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Floating Stats */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 max-w-[200px]">
-                <div className="text-4xl font-bold text-blue-600 mb-1">1000+</div>
-                <div className="text-sm text-gray-600 font-semibold">Ceilings Transformed</div>
+                <div className="text-4xl font-bold text-blue-600 mb-1">
+                  1000+
+                </div>
+                <div className="text-sm text-gray-600 font-semibold">
+                  Ceilings Transformed
+                </div>
               </div>
             </div>
           </div>
@@ -307,7 +345,9 @@ export default function Page() {
         {/* Service Area Pills */}
         <div className="container mx-auto px-4 pb-12 relative z-10">
           <div className="max-w-7xl mx-auto">
-            <p className="text-center text-gray-400 mb-4 text-sm font-semibold">SERVING THE GREATER TORONTO AREA</p>
+            <p className="text-center text-gray-400 mb-4 text-sm font-semibold">
+              SERVING THE GREATER TORONTO AREA
+            </p>
             <div className="flex flex-wrap justify-center gap-3">
               {cities.slice(0, 10).map((c) => (
                 <Link
@@ -330,7 +370,10 @@ export default function Page() {
       </section>
 
       {/* QUOTE FORM SECTION */}
-      <section id="quote-form" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section
+        id="quote-form"
+        className="py-20 bg-gradient-to-b from-gray-50 to-white"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -338,13 +381,14 @@ export default function Page() {
                 Get Your Free Estimate
               </h2>
               <p className="text-xl text-gray-600">
-                Share your project details and receive a detailed popcorn ceiling removal quote within 24 hours
+                Share your project details and receive a detailed popcorn
+                ceiling removal quote within 24 hours
               </p>
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
               <QuoteForm />
-              
+
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
                   <div className="flex items-center gap-3">
@@ -352,8 +396,13 @@ export default function Page() {
                       📞
                     </div>
                     <div>
-                      <div className="text-sm text-gray-600 font-semibold">Prefer to call?</div>
-                      <a href={phoneHref} className="text-xl font-bold text-blue-600 hover:underline">
+                      <div className="text-sm text-gray-600 font-semibold">
+                        Prefer to call?
+                      </div>
+                      <a
+                        href={phoneHref}
+                        className="text-xl font-bold text-blue-600 hover:underline"
+                      >
                         {phoneText}
                       </a>
                     </div>
@@ -363,8 +412,12 @@ export default function Page() {
                       ⚡
                     </div>
                     <div>
-                      <div className="text-sm text-gray-600 font-semibold">Fast Response</div>
-                      <div className="text-lg font-bold text-gray-900">Same-Day Quotes</div>
+                      <div className="text-sm text-gray-600 font-semibold">
+                        Fast Response
+                      </div>
+                      <div className="text-lg font-bold text-gray-900">
+                        Same-Day Quotes
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -374,7 +427,6 @@ export default function Page() {
         </div>
       </section>
 
-
       {/* WHY CHOOSE OUR POPCORN CEILING REMOVAL SERVICE */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -383,7 +435,8 @@ export default function Page() {
               Why Choose Our Popcorn Ceiling Removal Contractors
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional ceiling texture removal service with proven dust-control methods and flawless Level 5 finishing
+              Professional ceiling texture removal service with proven
+              dust-control methods and flawless Level 5 finishing
             </p>
           </div>
 
@@ -393,9 +446,14 @@ export default function Page() {
               <div className="w-16 h-16 rounded-2xl bg-blue-500 flex items-center justify-center text-3xl mb-6">
                 🏆
               </div>
-              <h3 className="text-2xl font-bold mb-4">Professional Popcorn Ceiling Removal</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                Professional Popcorn Ceiling Removal
+              </h3>
               <p className="text-gray-600 mb-4">
-                Licensed and insured <strong>popcorn ceiling removal contractors</strong> with 10+ years experience in ceiling texture removal, stipple removal, and ceiling resurfacing.
+                Licensed and insured{" "}
+                <strong>popcorn ceiling removal contractors</strong> with 10+
+                years experience in ceiling texture removal, stipple removal,
+                and ceiling resurfacing.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -418,9 +476,14 @@ export default function Page() {
               <div className="w-16 h-16 rounded-2xl bg-cyan-500 flex items-center justify-center text-3xl mb-6">
                 💨
               </div>
-              <h3 className="text-2xl font-bold mb-4">HEPA Dust-Controlled Process</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                HEPA Dust-Controlled Process
+              </h3>
               <p className="text-gray-600 mb-4">
-                Advanced dust control for <strong>scraping popcorn ceiling</strong> and <strong>stripping popcorn ceiling</strong> that protects your home and belongings.
+                Advanced dust control for{" "}
+                <strong>scraping popcorn ceiling</strong> and{" "}
+                <strong>stripping popcorn ceiling</strong> that protects your
+                home and belongings.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -445,7 +508,9 @@ export default function Page() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Level 5 Smooth Finish</h3>
               <p className="text-gray-600 mb-4">
-                Industry-leading <strong>Level 5 skim coat</strong> application for perfectly smooth, paint-ready ceilings that look flawless under any lighting.
+                Industry-leading <strong>Level 5 skim coat</strong> application
+                for perfectly smooth, paint-ready ceilings that look flawless
+                under any lighting.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -468,9 +533,14 @@ export default function Page() {
               <div className="w-16 h-16 rounded-2xl bg-orange-500 flex items-center justify-center text-3xl mb-6">
                 🎯
               </div>
-              <h3 className="text-2xl font-bold mb-4">All Ceiling Texture Types</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                All Ceiling Texture Types
+              </h3>
               <p className="text-gray-600 mb-4">
-                Expert <strong>stipple ceiling removal</strong>, <strong>stucco ceiling removal</strong>, and <strong>cottage cheese ceiling removal</strong> for any texture style.
+                Expert <strong>stipple ceiling removal</strong>,{" "}
+                <strong>stucco ceiling removal</strong>, and{" "}
+                <strong>cottage cheese ceiling removal</strong> for any texture
+                style.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -493,9 +563,13 @@ export default function Page() {
               <div className="w-16 h-16 rounded-2xl bg-green-500 flex items-center justify-center text-3xl mb-6">
                 ⚡
               </div>
-              <h3 className="text-2xl font-bold mb-4">Fast & Efficient Service</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                Fast & Efficient Service
+              </h3>
               <p className="text-gray-600 mb-4">
-                Quick turnaround for <strong>taking down popcorn ceiling</strong> projects without compromising quality or cleanliness.
+                Quick turnaround for{" "}
+                <strong>taking down popcorn ceiling</strong> projects without
+                compromising quality or cleanliness.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -518,9 +592,12 @@ export default function Page() {
               <div className="w-16 h-16 rounded-2xl bg-pink-500 flex items-center justify-center text-3xl mb-6">
                 🏠
               </div>
-              <h3 className="text-2xl font-bold mb-4">Complete Ceiling Solutions</h3>
+              <h3 className="text-2xl font-bold mb-4">
+                Complete Ceiling Solutions
+              </h3>
               <p className="text-gray-600 mb-4">
-                Full-service <strong>ceiling resurfacing</strong> including repairs, pot light coordination, and optional finish painting.
+                Full-service <strong>ceiling resurfacing</strong> including
+                repairs, pot light coordination, and optional finish painting.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -541,7 +618,6 @@ export default function Page() {
         </div>
       </section>
 
-
       {/* GALLERY + VIDEOS */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -550,7 +626,8 @@ export default function Page() {
               Real Popcorn Ceiling Removal Projects
             </h2>
             <p className="text-xl text-gray-600">
-              See our professional <strong>ceiling texture removal</strong> work across the GTA
+              See our professional <strong>ceiling texture removal</strong> work
+              across the GTA
             </p>
           </div>
 
@@ -575,7 +652,9 @@ export default function Page() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition">{v.title}</h3>
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600 transition">
+                    {v.title}
+                  </h3>
                   <p className="text-sm text-gray-600 mb-3">{v.blurb}</p>
                   <Link
                     href={v.href}
@@ -595,7 +674,9 @@ export default function Page() {
               >
                 <img
                   src={s}
-                  alt={`Popcorn ceiling removal project ${i + 1} - before and after transformation`}
+                  alt={`Popcorn ceiling removal project ${
+                    i + 1
+                  } - before and after transformation`}
                   className="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
                   loading="lazy"
                   data-lightbox="true"
@@ -609,7 +690,6 @@ export default function Page() {
         </div>
       </section>
 
-
       {/* OUR POPCORN CEILING REMOVAL PROCESS */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -618,7 +698,9 @@ export default function Page() {
               Our Professional Popcorn Ceiling Removal Process
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Proven 6-step method for <strong>removing stucco ceiling</strong> and <strong>taking off popcorn ceiling</strong> with minimal disruption
+              Proven 6-step method for <strong>removing stucco ceiling</strong>{" "}
+              and <strong>taking off popcorn ceiling</strong> with minimal
+              disruption
             </p>
           </div>
 
@@ -628,9 +710,14 @@ export default function Page() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 1
               </div>
-              <h3 className="text-xl font-bold mb-3 mt-2">Site Protection & Containment</h3>
+              <h3 className="text-xl font-bold mb-3 mt-2">
+                Site Protection & Containment
+              </h3>
               <p className="text-gray-600">
-                Rooms sealed with plastic barriers, floors protected with drop sheets, HVAC vents masked, and traffic paths secured. Professional <strong>popcorn removal</strong> starts with protecting your home.
+                Rooms sealed with plastic barriers, floors protected with drop
+                sheets, HVAC vents masked, and traffic paths secured.
+                Professional <strong>popcorn removal</strong> starts with
+                protecting your home.
               </p>
             </div>
 
@@ -639,9 +726,14 @@ export default function Page() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 2
               </div>
-              <h3 className="text-xl font-bold mb-3 mt-2">Texture Assessment & Strategy</h3>
+              <h3 className="text-xl font-bold mb-3 mt-2">
+                Texture Assessment & Strategy
+              </h3>
               <p className="text-gray-600">
-                Inspect ceiling condition (painted vs unpainted, layers, adhesion). Choose safest method: <strong>scraping popcorn ceiling</strong>, encapsulation, or combination approach for optimal results.
+                Inspect ceiling condition (painted vs unpainted, layers,
+                adhesion). Choose safest method:{" "}
+                <strong>scraping popcorn ceiling</strong>, encapsulation, or
+                combination approach for optimal results.
               </p>
             </div>
 
@@ -650,9 +742,14 @@ export default function Page() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 3
               </div>
-              <h3 className="text-xl font-bold mb-3 mt-2">Safe Texture Removal</h3>
+              <h3 className="text-xl font-bold mb-3 mt-2">
+                Safe Texture Removal
+              </h3>
               <p className="text-gray-600">
-                <strong>Stripping popcorn ceiling</strong> texture using controlled scraping methods. For <strong>painted popcorn ceiling removal</strong>, we use specialized techniques to prevent ceiling damage.
+                <strong>Stripping popcorn ceiling</strong> texture using
+                controlled scraping methods. For{" "}
+                <strong>painted popcorn ceiling removal</strong>, we use
+                specialized techniques to prevent ceiling damage.
               </p>
             </div>
 
@@ -661,9 +758,14 @@ export default function Page() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 4
               </div>
-              <h3 className="text-xl font-bold mb-3 mt-2">Level 5 Skim Coat Application</h3>
+              <h3 className="text-xl font-bold mb-3 mt-2">
+                Level 5 Skim Coat Application
+              </h3>
               <p className="text-gray-600">
-                Full-field <strong>Level 5 skim coat</strong> applied for perfectly smooth ceiling. Multiple thin coats feathered to eliminate imperfections and create uniform surface ready for finishing.
+                Full-field <strong>Level 5 skim coat</strong> applied for
+                perfectly smooth ceiling. Multiple thin coats feathered to
+                eliminate imperfections and create uniform surface ready for
+                finishing.
               </p>
             </div>
 
@@ -672,9 +774,13 @@ export default function Page() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 5
               </div>
-              <h3 className="text-xl font-bold mb-3 mt-2">HEPA Sanding & Inspection</h3>
+              <h3 className="text-xl font-bold mb-3 mt-2">
+                HEPA Sanding & Inspection
+              </h3>
               <p className="text-gray-600">
-                HEPA-connected vacuum sanding for dust-free finishing. Critical-light inspection catches any imperfections before priming. Re-touch and perfect surface for flawless result.
+                HEPA-connected vacuum sanding for dust-free finishing.
+                Critical-light inspection catches any imperfections before
+                priming. Re-touch and perfect surface for flawless result.
               </p>
             </div>
 
@@ -683,15 +789,18 @@ export default function Page() {
               <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 6
               </div>
-              <h3 className="text-xl font-bold mb-3 mt-2">Prime & Paint (Optional)</h3>
+              <h3 className="text-xl font-bold mb-3 mt-2">
+                Prime & Paint (Optional)
+              </h3>
               <p className="text-gray-600">
-                Stain-block primer seals surface and prevents bleed-through. Optional professional ceiling painting with 2 finish coats, or leave paint-ready for your own painter.
+                Stain-block primer seals surface and prevents bleed-through.
+                Optional professional ceiling painting with 2 finish coats, or
+                leave paint-ready for your own painter.
               </p>
             </div>
           </div>
         </div>
       </section>
-
 
       {/* POPCORN CEILING REMOVAL COST SECTION */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -701,7 +810,9 @@ export default function Page() {
               Popcorn Ceiling Removal Cost
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transparent pricing for <strong>popcorn removal cost</strong> based on project scope. Get an accurate estimate for your ceiling project.
+              Transparent pricing for <strong>popcorn removal cost</strong>{" "}
+              based on project scope. Get an accurate estimate for your ceiling
+              project.
             </p>
           </div>
 
@@ -709,9 +820,15 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:shadow-lg transition">
               <div className="text-center mb-6">
-                <div className="text-sm font-bold text-gray-600 uppercase tracking-wide mb-2">Basic Room</div>
-                <div className="text-5xl font-bold text-gray-900 mb-2">$800<span className="text-2xl text-gray-600">+</span></div>
-                <div className="text-sm text-gray-600">Per standard bedroom</div>
+                <div className="text-sm font-bold text-gray-600 uppercase tracking-wide mb-2">
+                  Basic Room
+                </div>
+                <div className="text-5xl font-bold text-gray-900 mb-2">
+                  $800<span className="text-2xl text-gray-600">+</span>
+                </div>
+                <div className="text-sm text-gray-600">
+                  Per standard bedroom
+                </div>
               </div>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -738,9 +855,15 @@ export default function Page() {
                 <div className="inline-block bg-white/20 backdrop-blur px-4 py-1 rounded-full text-white text-xs font-bold uppercase mb-4">
                   Most Popular
                 </div>
-                <div className="text-sm font-bold text-white/90 uppercase tracking-wide mb-2">Full Service</div>
-                <div className="text-5xl font-bold text-white mb-2">$2,500<span className="text-2xl text-white/80">+</span></div>
-                <div className="text-sm text-white/90">Living room / Main area</div>
+                <div className="text-sm font-bold text-white/90 uppercase tracking-wide mb-2">
+                  Full Service
+                </div>
+                <div className="text-5xl font-bold text-white mb-2">
+                  $2,500<span className="text-2xl text-white/80">+</span>
+                </div>
+                <div className="text-sm text-white/90">
+                  Living room / Main area
+                </div>
               </div>
               <ul className="space-y-3 text-white">
                 <li className="flex items-start gap-2">
@@ -764,8 +887,12 @@ export default function Page() {
 
             <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 hover:shadow-lg transition">
               <div className="text-center mb-6">
-                <div className="text-sm font-bold text-gray-600 uppercase tracking-wide mb-2">Whole Unit</div>
-                <div className="text-5xl font-bold text-gray-900 mb-2">$4,000<span className="text-2xl text-gray-600">+</span></div>
+                <div className="text-sm font-bold text-gray-600 uppercase tracking-wide mb-2">
+                  Whole Unit
+                </div>
+                <div className="text-5xl font-bold text-gray-900 mb-2">
+                  $4,000<span className="text-2xl text-gray-600">+</span>
+                </div>
                 <div className="text-sm text-gray-600">3BR condo / house</div>
               </div>
               <ul className="space-y-3 text-gray-700">
@@ -791,33 +918,54 @@ export default function Page() {
 
           {/* Cost Factors */}
           <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 shadow-lg">
-            <h3 className="text-2xl font-bold mb-6 text-center">What Affects the Cost to Scrape Popcorn Ceiling?</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">
+              What Affects the Cost to Scrape Popcorn Ceiling?
+            </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-3xl mx-auto mb-3">📏</div>
+                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-3xl mx-auto mb-3">
+                  📏
+                </div>
                 <h4 className="font-bold mb-2">Square Footage</h4>
-                <p className="text-sm text-gray-600">Larger areas reduce per-sq-ft cost</p>
+                <p className="text-sm text-gray-600">
+                  Larger areas reduce per-sq-ft cost
+                </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center text-3xl mx-auto mb-3">🎨</div>
+                <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center text-3xl mx-auto mb-3">
+                  🎨
+                </div>
                 <h4 className="font-bold mb-2">Painted Texture</h4>
-                <p className="text-sm text-gray-600">Painted popcorn requires more labor</p>
+                <p className="text-sm text-gray-600">
+                  Painted popcorn requires more labor
+                </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-3xl mx-auto mb-3">📐</div>
+                <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-3xl mx-auto mb-3">
+                  📐
+                </div>
                 <h4 className="font-bold mb-2">Ceiling Height</h4>
-                <p className="text-sm text-gray-600">Vaulted ceilings need extra equipment</p>
+                <p className="text-sm text-gray-600">
+                  Vaulted ceilings need extra equipment
+                </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center text-3xl mx-auto mb-3">🔧</div>
+                <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center text-3xl mx-auto mb-3">
+                  🔧
+                </div>
                 <h4 className="font-bold mb-2">Repairs Needed</h4>
-                <p className="text-sm text-gray-600">Water damage or cracks add time</p>
+                <p className="text-sm text-gray-600">
+                  Water damage or cracks add time
+                </p>
               </div>
             </div>
 
             <div className="mt-8 p-6 bg-yellow-50 border-2 border-yellow-200 rounded-xl">
               <p className="text-center text-gray-700 font-semibold">
-                <span className="text-yellow-700">📋 Important:</span> These are typical ranges only. Every ceiling is different—we recommend getting a detailed written estimate after photos and site review for exact <strong>popcorn ceiling removal cost</strong>.
+                <span className="text-yellow-700">📋 Important:</span> These are
+                typical ranges only. Every ceiling is different—we recommend
+                getting a detailed written estimate after photos and site review
+                for exact <strong>popcorn ceiling removal cost</strong>.
               </p>
             </div>
           </div>
@@ -832,7 +980,9 @@ export default function Page() {
               Featured Service Areas
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional <strong>popcorn ceiling removal service</strong> across the Greater Toronto Area with local teams who understand your neighbourhood
+              Professional <strong>popcorn ceiling removal service</strong>{" "}
+              across the Greater Toronto Area with local teams who understand
+              your neighbourhood
             </p>
           </div>
 
@@ -847,7 +997,10 @@ export default function Page() {
                 Burlington Popcorn Ceiling Removal
               </h3>
               <p className="text-gray-600 mb-4">
-                Licensed <strong>ceiling contractor</strong> serving Burlington, Aldershot, Tyandaga, and Millcroft. HEPA dust control, Level 5 skim coat finish, and condo-ready logistics for waterfront properties.
+                Licensed <strong>ceiling contractor</strong> serving Burlington,
+                Aldershot, Tyandaga, and Millcroft. HEPA dust control, Level 5
+                skim coat finish, and condo-ready logistics for waterfront
+                properties.
               </p>
               <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center gap-2">
                 View Burlington Ceiling Services →
@@ -864,7 +1017,9 @@ export default function Page() {
                 Mississauga Ceiling Contractor
               </h3>
               <p className="text-gray-600 mb-4">
-                <strong>Stipple ceiling removal</strong> and popcorn removal across Port Credit, Erin Mills, Streetsville, and City Centre with Level 5 finishing.
+                <strong>Stipple ceiling removal</strong> and popcorn removal
+                across Port Credit, Erin Mills, Streetsville, and City Centre
+                with Level 5 finishing.
               </p>
               <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center gap-2">
                 View Mississauga Services →
@@ -881,7 +1036,9 @@ export default function Page() {
                 Oakville Popcorn Removal
               </h3>
               <p className="text-gray-600 mb-4">
-                Professional <strong>ceiling texture removal</strong> in Glen Abbey, Bronte, River Oaks, and Old Oakville with dust-controlled workflow.
+                Professional <strong>ceiling texture removal</strong> in Glen
+                Abbey, Bronte, River Oaks, and Old Oakville with dust-controlled
+                workflow.
               </p>
               <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center gap-2">
                 View Oakville Services →
@@ -891,9 +1048,16 @@ export default function Page() {
 
           {/* All Cities Grid */}
           <div className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200">
-            <h3 className="text-2xl font-bold text-center mb-6">All GTA Service Areas</h3>
+            <h3 className="text-2xl font-bold text-center mb-6">
+              All GTA Service Areas
+            </h3>
             <p className="text-center text-gray-600 mb-8">
-              Expert <strong>popcorn ceiling contractors</strong> serving: Toronto (Annex, Leaside, The Beaches, High Park, North York, Etobicoke, Scarborough), Mississauga (Port Credit, Clarkson, Erin Mills), Oakville, Burlington, Milton, Hamilton, Stoney Creek, Ancaster, Grimsby, Vaughan, Richmond Hill, Markham, and surrounding areas.
+              Expert <strong>popcorn ceiling contractors</strong> serving:
+              Toronto (Annex, Leaside, The Beaches, High Park, North York,
+              Etobicoke, Scarborough), Mississauga (Port Credit, Clarkson, Erin
+              Mills), Oakville, Burlington, Milton, Hamilton, Stoney Creek,
+              Ancaster, Grimsby, Vaughan, Richmond Hill, Markham, and
+              surrounding areas.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {cities.map((c) => (
@@ -918,9 +1082,90 @@ export default function Page() {
         </div>
       </section>
 
+      {/* TRUST & REVIEWS SECTION - Google E-E-A-T */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-yellow-100 border-2 border-yellow-300 rounded-full px-6 py-3 mb-6">
+              <span className="text-3xl">⭐</span>
+              <span className="text-2xl font-bold text-gray-900">4.9/5</span>
+              <span className="text-gray-600 font-semibold">Google Rating</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Trusted Popcorn Ceiling Removal Contractors
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Licensed, insured, and rated 4.9/5 stars by homeowners across the
+              GTA
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Trust Badge 1 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 text-center hover:shadow-lg transition">
+              <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center text-4xl mx-auto mb-4">
+                🏆
+              </div>
+              <h3 className="text-xl font-bold mb-2">Licensed & Insured</h3>
+              <p className="text-gray-600">
+                WSIB compliant, $5M liability insurance, and all required
+                municipal permits
+              </p>
+            </div>
+
+            {/* Trust Badge 2 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 text-center hover:shadow-lg transition">
+              <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center text-4xl mx-auto mb-4">
+                ✅
+              </div>
+              <h3 className="text-xl font-bold mb-2">BBB Accredited</h3>
+              <p className="text-gray-600">
+                Better Business Bureau accredited with A+ rating since 2015
+              </p>
+            </div>
+
+            {/* Trust Badge 3 */}
+            <div className="bg-white rounded-2xl p-8 border-2 border-gray-200 text-center hover:shadow-lg transition">
+              <div className="w-20 h-20 rounded-full bg-purple-100 flex items-center justify-center text-4xl mx-auto mb-4">
+                📜
+              </div>
+              <h3 className="text-xl font-bold mb-2">3-Year Warranty</h3>
+              <p className="text-gray-600">
+                Written warranty on all workmanship—we stand behind every
+                ceiling we touch
+              </p>
+            </div>
+          </div>
+
+          {/* Google Reviews Button */}
+          <div className="text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-300 hover:border-blue-500 rounded-full font-bold text-gray-900 hover:text-blue-600 transition shadow-lg hover:shadow-xl"
+              >
+                <span className="text-2xl">⭐</span>
+                <span>Read Our Google Reviews</span>
+                <span>→</span>
+              </a>
+
+              <Link
+                href="/about/"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-full font-bold transition shadow-lg hover:shadow-xl"
+              >
+                <span className="text-2xl">👥</span>
+                <span>Meet Our Team</span>
+                <span>→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* LONG-FORM LOCAL SEO COPY */}
       <ServiceCopy service="Popcorn Ceiling Removal" />
-
 
       {/* FAQ SECTION */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -930,7 +1175,8 @@ export default function Page() {
               Popcorn Ceiling Removal FAQ
             </h2>
             <p className="text-xl text-gray-600">
-              Common questions about <strong>professional popcorn ceiling removal</strong>
+              Common questions about{" "}
+              <strong>professional popcorn ceiling removal</strong>
             </p>
           </div>
 
@@ -938,80 +1184,140 @@ export default function Page() {
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
                 <span>Is popcorn ceiling removal dust-controlled?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Yes. Our professional popcorn ceiling removal process includes complete room sealing with plastic barriers, floor and vent protection, HEPA vacuum-assist sanding, and thorough daily clean-up. We minimize dust throughout the entire <strong>ceiling texture removal</strong> process so your home stays livable.
+                Yes. Our professional popcorn ceiling removal process includes
+                complete room sealing with plastic barriers, floor and vent
+                protection, HEPA vacuum-assist sanding, and thorough daily
+                clean-up. We minimize dust throughout the entire{" "}
+                <strong>ceiling texture removal</strong> process so your home
+                stays livable.
               </p>
             </details>
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
                 <span>Do you deliver a Level 5 smooth finish?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Absolutely. Our <strong>smooth ceiling contractors</strong> apply full-field skim coating, feather all edges, and perform critical-light inspections before priming. Any imperfections are re-touched to achieve the industry-standard <strong>Level 5 skim coat</strong> finish that looks flawless under any lighting.
+                Absolutely. Our <strong>smooth ceiling contractors</strong>{" "}
+                apply full-field skim coating, feather all edges, and perform
+                critical-light inspections before priming. Any imperfections are
+                re-touched to achieve the industry-standard{" "}
+                <strong>Level 5 skim coat</strong> finish that looks flawless
+                under any lighting.
               </p>
             </details>
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
                 <span>Can you remove painted popcorn ceiling texture?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Yes. For <strong>painted popcorn ceiling removal</strong> or multiple texture layers, we assess the condition and adhesion. We choose between safe scraping, encapsulation, or a combination approach. Then we apply a <strong>Level 5 skim coat</strong> for a uniform smooth surface ready for finishing.
+                Yes. For <strong>painted popcorn ceiling removal</strong> or
+                multiple texture layers, we assess the condition and adhesion.
+                We choose between safe scraping, encapsulation, or a combination
+                approach. Then we apply a <strong>Level 5 skim coat</strong> for
+                a uniform smooth surface ready for finishing.
               </p>
             </details>
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
                 <span>How much does popcorn ceiling removal cost?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                <strong>Popcorn ceiling removal cost</strong> varies based on square footage, ceiling height, whether texture is painted, fixture count, and repairs needed. Typical ranges: $800-$1,500 per bedroom, $2,500-$5,000 for living areas, $4,000-$8,500 for whole condos. The <strong>cost to scrape popcorn ceiling</strong> depends on your specific project—contact us for an accurate estimate after reviewing photos and site conditions.
+                <strong>Popcorn ceiling removal cost</strong> varies based on
+                square footage, ceiling height, whether texture is painted,
+                fixture count, and repairs needed. Typical ranges: $800-$1,500
+                per bedroom, $2,500-$5,000 for living areas, $4,000-$8,500 for
+                whole condos. The{" "}
+                <strong>cost to scrape popcorn ceiling</strong> depends on your
+                specific project—contact us for an accurate estimate after
+                reviewing photos and site conditions.
               </p>
             </details>
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
                 <span>How fast can I get a popcorn removal estimate?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Same-day photo estimates available by text or email. Our <strong>popcorn ceiling removal contractors</strong> provide quick rough estimates based on photos, then schedule on-site confirmation visits to finalize exact scope, pricing, and schedule for your ceiling project.
+                Same-day photo estimates available by text or email. Our{" "}
+                <strong>popcorn ceiling removal contractors</strong> provide
+                quick rough estimates based on photos, then schedule on-site
+                confirmation visits to finalize exact scope, pricing, and
+                schedule for your ceiling project.
               </p>
             </details>
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
                 <span>Do you handle stipple and stucco ceiling removal?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Yes. We remove all types of ceiling textures including popcorn, <strong>stipple ceiling removal</strong>, <strong>stucco ceiling removal</strong>, knockdown patterns, and <strong>cottage cheese ceiling removal</strong>. Our professional contractors use the same dust-controlled process and Level 5 finishing for all texture types to deliver smooth, modern ceilings.
+                Yes. We remove all types of ceiling textures including popcorn,{" "}
+                <strong>stipple ceiling removal</strong>,{" "}
+                <strong>stucco ceiling removal</strong>, knockdown patterns, and{" "}
+                <strong>cottage cheese ceiling removal</strong>. Our
+                professional contractors use the same dust-controlled process
+                and Level 5 finishing for all texture types to deliver smooth,
+                modern ceilings.
               </p>
             </details>
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
-                <span>What's included in the popcorn ceiling removal service?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span>
+                  What's included in the popcorn ceiling removal service?
+                </span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Our <strong>professional popcorn ceiling removal</strong> includes: site protection & containment, safe texture removal (<strong>scraping popcorn ceiling</strong> or <strong>stripping popcorn ceiling</strong>), drywall repairs, full-field Level 5 skim coating, HEPA sanding, stain-block primer, and paint-ready finish. Optional services include pot light coordination and professional ceiling painting with 2 finish coats.
+                Our <strong>professional popcorn ceiling removal</strong>{" "}
+                includes: site protection & containment, safe texture removal (
+                <strong>scraping popcorn ceiling</strong> or{" "}
+                <strong>stripping popcorn ceiling</strong>), drywall repairs,
+                full-field Level 5 skim coating, HEPA sanding, stain-block
+                primer, and paint-ready finish. Optional services include pot
+                light coordination and professional ceiling painting with 2
+                finish coats.
               </p>
             </details>
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
                 <span>How long does it take to remove popcorn ceiling?</span>
-                <span className="text-2xl group-open:rotate-180 transition-transform">⌄</span>
+                <span className="text-2xl group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
               </summary>
               <p className="mt-4 text-gray-700 leading-relaxed">
-                Most <strong>taking down popcorn ceiling</strong> projects take 3-7 days depending on size and scope. A single bedroom might be 2-3 days, while a whole 3-bedroom condo typically takes 5-7 days including drying time. We provide clear timelines during the estimate and respect your schedule.
+                Most <strong>taking down popcorn ceiling</strong> projects take
+                3-7 days depending on size and scope. A single bedroom might be
+                2-3 days, while a whole 3-bedroom condo typically takes 5-7 days
+                including drying time. We provide clear timelines during the
+                estimate and respect your schedule.
               </p>
             </details>
           </div>
@@ -1022,10 +1328,14 @@ export default function Page() {
       <section className="py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-blue-700 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+              backgroundSize: "40px 40px",
+            }}
+          ></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -1034,7 +1344,9 @@ export default function Page() {
               Ready for Smooth, Modern Ceilings?
             </h2>
             <p className="text-xl mb-8 text-blue-100">
-              Get your free estimate from licensed <strong>popcorn ceiling removal contractors</strong>. Fast quotes, clear scope, and guaranteed results.
+              Get your free estimate from licensed{" "}
+              <strong>popcorn ceiling removal contractors</strong>. Fast quotes,
+              clear scope, and guaranteed results.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -1074,7 +1386,6 @@ export default function Page() {
         </div>
       </section>
 
-
       {/* LONG-FORM LOCAL SEO COPY */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -1086,14 +1397,14 @@ export default function Page() {
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
         <div className="bg-gradient-to-r from-blue-600 to-cyan-600 backdrop-blur border-t-2 border-white/20 shadow-2xl p-4">
           <div className="flex items-center justify-between gap-3 max-w-lg mx-auto">
-            <a 
-              href={phoneHref} 
+            <a
+              href={phoneHref}
               className="flex-1 text-center px-6 py-3 bg-white text-blue-600 font-bold rounded-full hover:bg-gray-100 transition shadow-lg"
             >
               📞 Call Now
             </a>
-            <a 
-              href="#quote-form" 
+            <a
+              href="#quote-form"
               className="flex-1 text-center px-6 py-3 bg-white/20 backdrop-blur text-white font-bold rounded-full hover:bg-white/30 transition border-2 border-white/30"
             >
               Get Quote

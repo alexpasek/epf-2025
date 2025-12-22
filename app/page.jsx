@@ -749,58 +749,84 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Service Areas mention with Burlington */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Serving the Greater Toronto Area
-          </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Professional popcorn ceiling removal contractor serving homeowners
-            across the GTA including{" "}
+      {/* SERVICE AREAS MENTION - Internal Linking */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Professional Services Across the Greater Toronto Area
+            </h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Expert{" "}
+              <Link
+                href="/services/popcorn-ceiling-removal/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                popcorn ceiling removal contractors
+              </Link>
+              {" "}serving homeowners across the GTA including{" "}
+              <Link
+                href="/popcorn-ceiling-removal/burlington/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Burlington
+              </Link>
+              ,{" "}
+              <Link
+                href="/popcorn-ceiling-removal/mississauga/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Mississauga
+              </Link>
+              ,{" "}
+              <Link
+                href="/popcorn-ceiling-removal/oakville/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Oakville
+              </Link>
+              ,{" "}
+              <Link
+                href="/popcorn-ceiling-removal/toronto/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Toronto
+              </Link>
+              , and{" "}
+              <Link
+                href="/popcorn-ceiling-removal/hamilton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Hamilton
+              </Link>
+              {" "}with dust-controlled ceiling texture removal, stipple ceiling removal, and Level 5 smooth finishes.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/popcorn-ceiling-removal/burlington/"
-              className="text-blue-600 font-semibold hover:underline"
+              href="/services/popcorn-ceiling-removal/"
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-full hover:from-blue-600 hover:to-cyan-600 transition shadow-lg hover:shadow-xl"
             >
-              Burlington
+              Popcorn Ceiling Removal
             </Link>
-            ,{" "}
             <Link
-              href="/popcorn-ceiling-removal/mississauga/"
-              className="text-blue-600 font-semibold hover:underline"
+              href="/services/interior-painting/"
+              className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:border-blue-500 hover:text-blue-600 transition"
             >
-              Mississauga
+              Interior Painting
             </Link>
-            ,{" "}
             <Link
-              href="/popcorn-ceiling-removal/oakville/"
-              className="text-blue-600 font-semibold hover:underline"
+              href="/services/wallpaper-removal/"
+              className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:border-blue-500 hover:text-blue-600 transition"
             >
-              Oakville
+              Wallpaper Removal
             </Link>
-            ,{" "}
             <Link
-              href="/popcorn-ceiling-removal/toronto/"
-              className="text-blue-600 font-semibold hover:underline"
+              href="/services/drywall-installation/"
+              className="px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:border-blue-500 hover:text-blue-600 transition"
             >
-              Toronto
-            </Link>
-            , and{" "}
-            <Link
-              href="/popcorn-ceiling-removal/hamilton/"
-              className="text-blue-600 font-semibold hover:underline"
-            >
-              Hamilton
-            </Link>{" "}
-            with dust-controlled ceiling texture removal, stipple ceiling
-            removal, and Level 5 smooth finishes.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/popcorn-ceiling-removal/"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition"
-            >
-              View All Service Areas
+              Drywall Installation
             </Link>
           </div>
         </div>
