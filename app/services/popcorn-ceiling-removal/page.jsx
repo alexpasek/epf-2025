@@ -1164,9 +1164,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* LONG-FORM LOCAL SEO COPY */}
-      <ServiceCopy service="Popcorn Ceiling Removal" />
-
       {/* FAQ SECTION */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-4xl">

@@ -231,88 +231,190 @@ export default function ServicesPage() {
       </header>
 
       {/* IN-PAGE NAV */}
-      <nav className="scroller mt-8" aria-label="On-page">
-        <a href="#popcorn" className="pill">
-          Popcorn Ceiling Removal
+      <nav
+        className="mt-8 flex flex-wrap justify-center gap-3 pb-4"
+        aria-label="On-page navigation"
+      >
+        <a
+          href="#services"
+          className="px-5 py-2.5 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold rounded-full border-2 border-blue-200 transition"
+        >
+          Our Services
         </a>
-        <a href="#drywall" className="pill">
-          Drywall
+        <a
+          href="#why-us"
+          className="px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-full border-2 border-gray-200 transition"
+        >
+          Why Choose Us
         </a>
-        <a href="#wallpaper" className="pill">
-          Wallpaper Removal
-        </a>
-        <a href="#painting" className="pill">
-          Interior Painting
-        </a>
-        <a href="#areas" className="pill">
+        <a
+          href="#areas"
+          className="px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-full border-2 border-gray-200 transition"
+        >
           Service Areas
         </a>
-        <a href="#faq" className="pill">
+        <a
+          href="#faq"
+          className="px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-full border-2 border-gray-200 transition"
+        >
           FAQ
         </a>
       </nav>
 
       {/* SERVICES GRID */}
-      <section className="mt-8 grid gap-6 md:grid-cols-2">
-        {services.map((s) => (
-          <article
-            key={s.slug}
-            id={anchorFor(s.name)}
-            className="card p-6 bg-white"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  <Link href={s.slug} className="hover:underline">
-                    {s.name}
-                  </Link>
-                </h2>
-                <p className="mt-1 text-gray-700">{s.tagline}</p>
+      <section id="services" className="mt-12">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+            Professional Home Services
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            From popcorn ceiling removal to interior painting, we deliver
+            quality craftsmanship with clean, dust-controlled workflows.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((s) => (
+            <article
+              key={s.slug}
+              id={anchorFor(s.name)}
+              className="card p-6 bg-white hover:shadow-lg transition-shadow"
+            >
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold">
+                    <Link
+                      href={s.slug}
+                      className="hover:text-blue-600 transition"
+                    >
+                      {s.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-1 text-gray-700">{s.tagline}</p>
+                </div>
+                <Link href={s.slug} className="btn-cta shrink-0">
+                  Learn More
+                </Link>
               </div>
-              <Link href={s.slug} className="btn-cta shrink-0">
-                Learn More
-              </Link>
-            </div>
-            <ul className="mt-4 list-disc pl-5 text-gray-700 space-y-2">
-              {s.bullets.map((b) => (
-                <li key={b}>{b}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
+              <ul className="list-disc pl-5 text-gray-700 space-y-2">
+                {s.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </section>
 
-      {/* PROCESS + WHAT'S INCLUDED */}
-      <section className="mt-10 grid gap-6 md:grid-cols-2">
-        <div className="card p-6 bg-white">
-          <h3 className="text-xl font-semibold">How we work</h3>
-          <ol className="mt-3 list-decimal pl-6 text-gray-700 space-y-2">
-            <li>Photo/size review → fast ballpark estimate</li>
-            <li>On-site assessment → confirmed scope & schedule</li>
-            <li>Containment & protection → clean work area</li>
-            <li>
-              Skim/tape/sand with raking-light checks (Level 5 where needed)
+      {/* WHY CHOOSE US + HOW WE WORK */}
+      <section id="why-us" className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="card p-6 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-2xl">
+              ✓
+            </div>
+            <h3 className="text-2xl font-bold">What You Get</h3>
+          </div>
+          <ul className="space-y-3 text-gray-700">
+            <li className="flex items-start gap-3">
+              <span className="text-blue-600 font-bold text-xl">•</span>
+              <span>
+                <strong>Real containment</strong> — Plastic barriers, floor &
+                stair protection
+              </span>
             </li>
-            <li>Prime & paint (when requested)</li>
-            <li>Final tidy-up & walkthrough</li>
+            <li className="flex items-start gap-3">
+              <span className="text-blue-600 font-bold text-xl">•</span>
+              <span>
+                <strong>HEPA dust control</strong> — Vacuum-assisted sanding,
+                daily clean-ups
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-blue-600 font-bold text-xl">•</span>
+              <span>
+                <strong>Level 5 finishing</strong> — Critical-light inspection
+                for flawless results
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-blue-600 font-bold text-xl">•</span>
+              <span>
+                <strong>Licensed & insured</strong> — WSIB & $5M liability
+                coverage
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-blue-600 font-bold text-xl">•</span>
+              <span>
+                <strong>3-year warranty</strong> — Written guarantee on all
+                workmanship
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="card p-6 bg-gradient-to-br from-cyan-50 to-white border-2 border-cyan-100">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center text-2xl">
+              🚀
+            </div>
+            <h3 className="text-2xl font-bold">How We Work</h3>
+          </div>
+          <ol className="space-y-3 text-gray-700">
+            <li className="flex items-start gap-3">
+              <span className="font-bold text-cyan-600">1.</span>
+              <span>
+                <strong>Photo review</strong> — Fast ballpark estimate within 24
+                hours
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="font-bold text-cyan-600">2.</span>
+              <span>
+                <strong>Site assessment</strong> — Confirmed scope & schedule
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="font-bold text-cyan-600">3.</span>
+              <span>
+                <strong>Protection</strong> — Containment setup & prep work
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="font-bold text-cyan-600">4.</span>
+              <span>
+                <strong>Expert work</strong> — Skim/tape/sand with quality
+                checks
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="font-bold text-cyan-600">5.</span>
+              <span>
+                <strong>Finish</strong> — Prime & paint (when requested)
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="font-bold text-cyan-600">6.</span>
+              <span>
+                <strong>Final walkthrough</strong> — Tidy cleanup & inspection
+              </span>
+            </li>
           </ol>
-          <div className="mt-4 flex gap-3">
-            <Link href="/our-process/" className="btn-cta">
-              See Our Process
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/our-process/"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-full transition shadow-md hover:shadow-lg"
+            >
+              See Full Process →
             </Link>
-            <Link href="/our-work/" className="btn-cta">
-              Before / After
+            <Link
+              href="/our-work/"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-900 font-semibold rounded-full border-2 border-gray-200 transition"
+            >
+              Before/After Gallery →
             </Link>
           </div>
-        </div>
-        <div className="card p-6 bg-white">
-          <h3 className="text-xl font-semibold">What you get</h3>
-          <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-2">
-            <li>Real containment + floor & stair protection</li>
-            <li>HEPA-assisted sanding and tidy daily wrap-ups</li>
-            <li>Level 5 attention to detail in critical lighting</li>
-            <li>WSIB & liability coverage, written warranty</li>
-          </ul>
         </div>
       </section>
 
@@ -345,45 +447,72 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mt-10 card p-6 bg-white">
-        <h2 className="text-2xl font-semibold">FAQ — services & local work</h2>
-
-        <details className="mt-4">
-          <summary className="font-medium">How fast can you start?</summary>
-          <p className="mt-2 text-gray-700">
-            Smaller ceilings (300–600 sq ft) often start within 1–2 weeks
-            depending on city and season. Share photos and sizes for a quick
-            ballpark and timeline.
+      <section id="faq" className="mt-10 card p-8 bg-white">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-3">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-gray-600">
+            Common questions about our services and local work
           </p>
-        </details>
+        </div>
 
-        <details className="mt-4">
-          <summary className="font-medium">
-            Will popcorn ceiling removal make a mess in my home?
-          </summary>
-          <p className="mt-2 text-gray-700">
-            We prioritize containment—plastic barriers, taped seams, protected
-            floors and stairs, vent masking, and HEPA-assist sanding to manage
-            dust. We do tidy daily wrap-ups.
-          </p>
-        </details>
+        <div className="space-y-4 max-w-3xl mx-auto">
+          <details className="group bg-gray-50 rounded-xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
+            <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
+              <span>How fast can you start?</span>
+              <span className="text-2xl group-open:rotate-180 transition-transform">
+                ⌄
+              </span>
+            </summary>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              Smaller ceilings (300–600 sq ft) often start within 1–2 weeks
+              depending on city and season. Share photos and sizes for a quick
+              ballpark and timeline.
+            </p>
+          </details>
 
-        <details className="mt-4">
-          <summary className="font-medium">Do you paint after removal?</summary>
-          <p className="mt-2 text-gray-700">
-            Yes. We can leave ceilings paint-ready or complete finish coats. We
-            also paint walls and trim on request.
-          </p>
-        </details>
+          <details className="group bg-gray-50 rounded-xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
+            <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
+              <span>Will popcorn ceiling removal make a mess in my home?</span>
+              <span className="text-2xl group-open:rotate-180 transition-transform">
+                ⌄
+              </span>
+            </summary>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              We prioritize containment—plastic barriers, taped seams, protected
+              floors and stairs, vent masking, and HEPA-assist sanding to manage
+              dust. We do tidy daily wrap-ups.
+            </p>
+          </details>
 
-        <details className="mt-4">
-          <summary className="font-medium">What affects price?</summary>
-          <p className="mt-2 text-gray-700">
-            Square footage, ceiling height, painted texture, access/scaffolding,
-            pot light cutouts, and painting. Send photos + sizes for a fast
-            ballpark or book a free in-home estimate.
-          </p>
-        </details>
+          <details className="group bg-gray-50 rounded-xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
+            <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
+              <span>Do you paint after removal?</span>
+              <span className="text-2xl group-open:rotate-180 transition-transform">
+                ⌄
+              </span>
+            </summary>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              Yes. We can leave ceilings paint-ready or complete finish coats.
+              We also paint walls and trim on request.
+            </p>
+          </details>
+
+          <details className="group bg-gray-50 rounded-xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
+            <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
+              <span>What affects price?</span>
+              <span className="text-2xl group-open:rotate-180 transition-transform">
+                ⌄
+              </span>
+            </summary>
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              Square footage, ceiling height, painted texture,
+              access/scaffolding, pot light cutouts, and painting. Send photos +
+              sizes for a fast ballpark or book a free in-home estimate.
+            </p>
+          </details>
+        </div>
       </section>
 
       {/* CTA */}
