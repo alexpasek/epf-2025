@@ -16,7 +16,7 @@ export const metadata = {
     description:
       "Make bumpy ceilings flat and bright. We protect floors, control dust, skim to Level 5, and leave a paint-ready finish across Mississauga neighbourhoods.",
     url: "/popcorn-ceiling-removal/mississauga/",
-    type: "article",
+    type: "website",
   },
   robots: { index: true, follow: true },
 };
@@ -288,7 +288,7 @@ export default function Page() {
                   Mississauga • Dust-controlled popcorn removal
                 </p>
                 <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-                  Smooth ceilings, zero mess in Mississauga.
+                  Popcorn Ceiling Removal in Mississauga
                 </h1>
                 <p className="mt-4 text-lg text-slate-200">
                   We convert stipple to flat white ceilings with HEPA
