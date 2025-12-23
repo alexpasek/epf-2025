@@ -15,10 +15,9 @@ import {
 export const revalidate = 86400;
 
 export const metadata = {
-  title:
-    "Professional Popcorn Ceiling Removal Contractor | GTA Level 5 Smooth Finish",
+  title: "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services",
   description:
-    "Expert popcorn ceiling removal contractor serving the GTA. Dust-controlled ceiling texture removal, stipple ceiling removal, Level 5 skim coat, stain-block prime & paint. Licensed, insured with 3-year warranty. Fast quotes.",
+    "Professional popcorn ceiling removal and Level 5 finishing across the GTA. Dust-controlled scraping, skim-coating, HEPA sanding, stain-block primer and optional ceiling painting. Free quotes and same-day estimates.",
   keywords: [
     "popcorn ceiling removal",
     "popcorn ceiling contractor",
@@ -36,14 +35,18 @@ export const metadata = {
     "stripping popcorn ceiling",
     "Level 5 skim coat",
     "HEPA dust control ceiling",
+    "popcorn ceiling removal cost",
+    "popcorn removal near me",
+    "ceiling smoothing",
+    "Level 5 ceiling finish",
   ],
   alternates: { canonical: "/services/popcorn-ceiling-removal/" },
   openGraph: {
-    title: "Professional Popcorn Ceiling Removal Contractor | GTA",
+    title: "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services",
     description:
-      "Expert popcorn ceiling removal with dust-controlled workflow, Level 5 skim coat, and professional finish. Licensed contractors serving Toronto, Mississauga, Burlington, Hamilton & GTA.",
+      "Dust-controlled popcorn ceiling removal, Level 5 skim coat, HEPA sanding, primer and optional ceiling painting. Serving the GTA with quick quotes.",
     url: "/services/popcorn-ceiling-removal/",
-    type: "article",
+    type: "website",
     images: [
       {
         url: "/services/popcorn-ceiling-removal/1.webp",

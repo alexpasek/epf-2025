@@ -281,6 +281,12 @@ export default function Page() {
                   📞 {PHONE_NUMBER}
                 </a>
                 <Link
+                  href="/services/popcorn-ceiling-removal/"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-slate-50"
+                >
+                  Popcorn ceiling removal services
+                </Link>
+                <Link
                   href="/our-work/"
                   className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-slate-50"
                 >

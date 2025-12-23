@@ -179,6 +179,13 @@ export default function City() {
         Trusted contractor for wallpaper removal, dust-free popcorn ceiling
         removal, drywall installation & repair, and interior painting in {city}.
       </p>
+      <p className="mt-3 text-sm text-gray-600">
+        Want the full scope? Explore our{" "}
+        <Link href="/services/popcorn-ceiling-removal/" className="underline">
+          popcorn ceiling removal services
+        </Link>{" "}
+        overview.
+      </p>
 
       <p className="mt-1 text-sm">
         Official site:{" "}

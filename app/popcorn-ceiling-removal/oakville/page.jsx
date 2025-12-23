@@ -192,6 +192,16 @@ export default function Page() {
               your electrician, and keep hallways and bedrooms usable with tidy
               daily wrap-ups. Insured, WSIB, written warranty.
             </p>
+            <p className="mt-3 text-sm text-gray-600">
+              Need a full scope overview? Explore our{" "}
+              <Link
+                href="/services/popcorn-ceiling-removal/"
+                className="underline underline-offset-2"
+              >
+                popcorn ceiling removal services
+              </Link>{" "}
+              hub.
+            </p>
           </div>
 
           {/* CTAs right – both blue */}

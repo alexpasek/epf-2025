@@ -237,6 +237,16 @@ export default function Page() {
                 <strong> ceiling resurfacing Hamilton</strong> with
                 industry-leading dust control.
               </p>
+              <p className="text-sm text-gray-200 mb-6">
+                Get the complete workflow on our{" "}
+                <Link
+                  href="/services/popcorn-ceiling-removal/"
+                  className="underline underline-offset-2"
+                >
+                  popcorn ceiling removal services
+                </Link>{" "}
+                page.
+              </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">

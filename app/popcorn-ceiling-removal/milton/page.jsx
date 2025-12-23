@@ -139,6 +139,16 @@ export default function Page() {
               bright, even finish. Floors, stairs and furniture protected;
               predictable schedule; tidy wrap-ups daily.
             </p>
+            <p className="mt-3 text-sm text-gray-600">
+              Want the full GTA overview? Visit our{" "}
+              <Link
+                href="/services/popcorn-ceiling-removal/"
+                className="underline underline-offset-2"
+              >
+                popcorn ceiling removal services
+              </Link>{" "}
+              page.
+            </p>
           </div>
 
           {/* Right-side CTAs (match site style) */}

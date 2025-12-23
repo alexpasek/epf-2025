@@ -334,6 +334,15 @@ export default function Footer() {
                 {CONTACT.email}
               </a>
             </div>
+            <p className="mt-3 text-gray-700">
+              Need scope details?{" "}
+              <a
+                href="/services/popcorn-ceiling-removal/"
+                className="font-semibold hover:underline"
+              >
+                Popcorn ceiling removal services
+              </a>
+            </p>
           </div>
 
           <div className="mt-4 text-sm">

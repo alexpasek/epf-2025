@@ -296,6 +296,16 @@ export default function Page() {
                   communication. Most Mississauga quotes are turned around the
                   same day you send photos.
                 </p>
+                <p className="mt-4 text-sm text-slate-200/90">
+                  Need the full workflow? Explore our{" "}
+                  <Link
+                    href="/services/popcorn-ceiling-removal/"
+                    className="underline underline-offset-2"
+                  >
+                    popcorn ceiling removal services
+                  </Link>{" "}
+                  for process details.
+                </p>
                 <ul className="mt-6 grid gap-4 text-sm text-slate-200 sm:grid-cols-2">
                   <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
                     <span className="text-lg">🧼</span>
