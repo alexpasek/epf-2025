@@ -82,7 +82,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Popcorn Ceiling Removal Burlington | Licensed Ceiling Contractor`,
+  title: `Popcorn Ceiling Removal Burlington, ON | Licensed Ceiling Contractor`,
   description:
     "Burlington popcorn/stipple/stucco ceiling removal with sealed rooms, HEPA sanding, Level 5 skim coat, stain-block primer and optional ceiling painting. Fast quotes.",
   keywords: [
@@ -103,7 +103,7 @@ export const metadata = {
   ],
   alternates: { canonical: SLUG },
   openGraph: {
-    title: `Popcorn Ceiling Removal in ${CITY} | Level 5 Finish`,
+    title: `Popcorn Ceiling Removal in Burlington, ON | Level 5 Finish`,
     description:
       "House-friendly dust control, HEPA sanding, full-field Level 5 skim coat, stain-block primer and optional painting for Burlington homes and condos.",
     url: SLUG,
@@ -251,7 +251,7 @@ export default function Page() {
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              Popcorn Ceiling Removal Burlington
+              Popcorn Ceiling Removal Burlington, ON
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed">
@@ -497,7 +497,7 @@ export default function Page() {
       <section className="py-20 bg-white" id="process">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Our Dust-Controlled Process
+            Our Burlington Popcorn Ceiling Removal Process
           </h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
             Serving Burlington homes and condos with practical logistics
