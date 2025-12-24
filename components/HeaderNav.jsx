@@ -65,11 +65,15 @@ function buildCrumbs(pathname) {
   const crumbs = [{ href: "/", label: "Home" }];
   let acc = "";
   for (let i = 0; i < parts.length; i++) {
-    acc += `/${parts[i]}`;
+    const slug = parts[i];
+    acc += `/${slug}`;
     const isLast = i === parts.length - 1;
+    let href = `${acc}/`;
+    if (slug === "popcorn-ceiling-removal")
+      href = "/services/popcorn-ceiling-removal/";
     crumbs.push({
-      href: acc + "/", // keep your trailing slash style
-      label: labelFromSlug(decodeURIComponent(parts[i])),
+      href, // keep your trailing slash style
+      label: labelFromSlug(decodeURIComponent(slug)),
       current: isLast,
     });
   }

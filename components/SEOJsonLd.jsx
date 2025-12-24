@@ -6,7 +6,7 @@ export default function SEOJsonLd(){
     "name": BRAND_NAME,
     "areaServed": SERVICE_AREAS,
     "telephone": CONTACT.phone,
-    "url": "https://example.com", // update after deploy
+    "url": "https://epfproservices.com", // update after deploy
     "image": "https://example.com/android-chrome-512x512.png",
     "address": CONTACT.address || undefined,
     "description": "Wallpaper removal, popcorn ceiling removal, drywall installation & interior painting across the GTA."
