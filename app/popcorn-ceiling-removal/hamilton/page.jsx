@@ -7,9 +7,9 @@ import QuoteForm from "@/components/QuoteForm";
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Popcorn Ceiling Removal Hamilton | Licensed Ceiling Contractor",
+  title: "Popcorn Ceiling Removal Hamilton | Level 5 Smooth Ceilings + HEPA Dust Control",
   description:
-    "Professional popcorn ceiling removal contractor in Hamilton. Expert ceiling texture removal, stipple ceiling removal, and ceiling resurfacing with dust control & Level 5 smooth finish. Serving Ancaster, Dundas, Westdale.",
+    "Professional popcorn ceiling removal contractor in Hamilton. Expert ceiling texture removal, stipple ceiling removal, and ceiling resurfacing with dust control & Level 5 smooth finish. Serving Ancaster, Dundas, Westdale, Waterdown, Stoney Creek.",
   keywords: [
     "popcorn ceiling removal hamilton",
     "popcorn ceiling contractor hamilton",
@@ -21,21 +21,38 @@ export const metadata = {
     "ceiling resurfacing hamilton",
     "painted popcorn ceiling removal hamilton",
     "stucco ceiling removal hamilton",
+    "popcorn ceiling removal cost hamilton",
+    "cost to remove popcorn ceiling hamilton",
+    "popcorn removal cost hamilton",
+    "cost to scrape popcorn ceiling hamilton",
   ],
   alternates: {
     canonical: "/popcorn-ceiling-removal/hamilton/",
   },
   openGraph: {
-    title: "Popcorn Ceiling Removal Hamilton | Professional Ceiling Contractor",
+    title: "Popcorn Ceiling Removal Hamilton | Level 5 Smooth Ceilings + HEPA Dust Control",
     description:
-      "Trusted popcorn ceiling removal service in Hamilton with dust-controlled workflow, Level 5 skim-coat, and paint-ready finish. Licensed contractors serving all Hamilton neighbourhoods.",
+      "Professional popcorn/stipple ceiling removal in Hamilton. HEPA dust control, Level 5 skim coat, 3-year warranty, painted texture specialists. Free quote, same-day response.",
     url: "/popcorn-ceiling-removal/hamilton/",
-    type: "article",
+    type: "website",
   },
   robots: { index: true, follow: true },
 };
 
 function JsonLd() {
+  const neighborhoods = [
+    ["ancaster", "Ancaster"],
+    ["dundas", "Dundas"],
+    ["westdale", "Westdale"],
+    ["waterdown", "Waterdown"],
+    ["stoney-creek", "Stoney Creek"],
+    ["durand", "Durand"],
+    ["ainslie-wood", "Ainslie Wood"],
+    ["kirkendall", "Kirkendall"],
+    ["strathcona", "Strathcona"],
+    ["downtown-hamilton", "Downtown Hamilton"],
+  ];
+
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -43,93 +60,24 @@ function JsonLd() {
         "@type": "Service",
         name: "Popcorn Ceiling Removal Hamilton",
         serviceType: [
-          "Popcorn Ceiling Removal",
-          "Ceiling Texture Removal",
-          "Stipple Ceiling Removal",
-          "Ceiling Resurfacing",
-          "Smooth Ceiling Contractor",
-          "Painted Popcorn Ceiling Removal",
-          "Stucco Ceiling Removal",
+          "Popcorn/Stipple/Stucco Ceiling Removal",
+          "Ceiling Smoothing & Flattening",
           "Level 5 Skim Coat",
+          "Ceiling Resurfacing",
         ],
-        areaServed: {
-          "@type": "City",
-          name: "Hamilton",
-          containsPlace: [
-            { "@type": "Neighborhood", name: "Ancaster" },
-            { "@type": "Neighborhood", name: "Dundas" },
-            { "@type": "Neighborhood", name: "Westdale" },
-            { "@type": "Neighborhood", name: "Waterdown" },
-            { "@type": "Neighborhood", name: "Stoney Creek" },
-          ],
-        },
+        areaServed: "Hamilton",
         url: "/popcorn-ceiling-removal/hamilton/",
         potentialAction: { "@type": "RequestQuoteAction", target: "/quote/" },
-        description:
-          "Professional popcorn ceiling removal contractor in Hamilton offering dust-controlled ceiling texture removal, stipple ceiling removal, and Level 5 smooth ceiling finishing.",
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Professional Popcorn Ceiling Removal Services Hamilton",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Dust-controlled popcorn ceiling removal with HEPA filtration",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Level 5 skim coat with raking-light inspection",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Painted popcorn ceiling removal and ceiling resurfacing",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Stain-block primer & turnkey paint-ready finish",
-              },
-            },
-          ],
-        },
       },
       {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "How much does popcorn ceiling removal cost in Hamilton?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Popcorn ceiling removal cost in Hamilton varies by ceiling height, texture type (painted vs unpainted), room size, and repairs needed. Our popcorn removal cost Hamilton quotes are transparent with no hidden fees. Contact us for accurate cost to scrape popcorn ceiling Hamilton pricing.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Do you offer professional popcorn ceiling removal in all Hamilton neighbourhoods?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes, our popcorn ceiling removal contractor Hamilton team serves all areas including Ancaster, Dundas, Westdale, Waterdown, Stoney Creek, and throughout Hamilton. We're your local smooth ceiling contractor Hamilton.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Can you handle painted popcorn ceiling removal Hamilton?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Absolutely. Our professional popcorn ceiling removal Hamilton service specializes in painted popcorn ceiling removal, stucco ceiling removal Hamilton, and all ceiling texture removal Hamilton projects. We safely encapsulate or scrape based on surface condition.",
-            },
-          },
-        ],
+        "@type": "ItemList",
+        name: "Hamilton Neighbourhoods We Serve",
+        itemListElement: neighborhoods.map(([slug, name], i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name,
+          url: `/popcorn-ceiling-removal/hamilton/${slug}/`,
+        })),
       },
       {
         "@type": "BreadcrumbList",
@@ -154,8 +102,54 @@ function JsonLd() {
           },
         ],
       },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How much does popcorn ceiling removal cost in Hamilton?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Pricing depends on paint layers, repairs, and access. Most Hamilton homes fall within a predictable range after a quick photo estimate. We can price by square foot for larger areas or as a fixed scope for bedrooms, hallways, and open-plan spaces.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you offer dustless or dust-controlled removal?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes—rooms are contained, vents are masked, and sanding tools connect to HEPA vacuums to keep dust contained during Level 5 skimming.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can you coordinate pot-light installation after removal?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We can sync timing with your electrician or refer one. We blend cutouts and patch rings so the final surface reads flat under light.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you test for asbestos?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "If the home is from an age where asbestos could be present, we can refer a local lab for a fast test. If needed, we follow the safe approach based on results.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you paint after removal?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "We prime with a stain-blocking system and can finish with two coats of quality ceiling paint, or leave the surface paint-ready if you prefer to DIY.",
+            },
+          },
+        ],
+      },
     ],
   };
+
   return (
     <script
       type="application/ld+json"
@@ -166,6 +160,7 @@ function JsonLd() {
 }
 
 const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
+const phoneDisplay = (CONTACT && CONTACT.phone) || "(647) 923-6784";
 
 export default function Page() {
   // Load Hamilton city + neighborhoods
@@ -951,6 +946,241 @@ export default function Page() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faqs" className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+            FAQ — Hamilton
+          </h2>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "How much does popcorn ceiling removal cost in Hamilton?",
+                a: "Cost depends on ceiling size, height, whether the texture is painted, fixture counts, and how much repair/skim is needed. Share photos and dimensions for a firm written quote.",
+              },
+              {
+                q: "Is popcorn ceiling removal dusty?",
+                a: "Work areas are sealed, floors and corridors protected, HVAC masked where needed, and sanding is HEPA-connected to reduce airborne dust. We tidy daily to keep the home usable.",
+              },
+              {
+                q: "Do you remove stipple or stucco ceilings too?",
+                a: "Yes. The best approach depends on texture type, paint layers, and the substrate. We recommend the safest path to a smooth, modern ceiling after a quick assessment.",
+              },
+              {
+                q: "What's the difference between scraping and skim coating?",
+                a: "Scraping removes the texture when feasible. Skim coating (often used for painted texture) creates a smooth surface with better finish control and fewer risks, then we finish to Level 5.",
+              },
+              {
+                q: "How long does a bedroom usually take?",
+                a: "Many bedrooms take 1-2 days depending on drying time, repairs, and whether painting is included. Larger or painted ceilings can take longer.",
+              },
+              {
+                q: "Do you provide a Level 5 skim coat finish?",
+                a: "Yes. A full-field Level 5 skim coat creates a uniform, smooth surface that looks clean under pot lights and bright windows.",
+              },
+              {
+                q: "Can you repair cracks and old patches at the same time?",
+                a: "Yes. We commonly fix cracks, seams, nail pops, and patchy areas as part of delivering a consistent, paint-ready ceiling.",
+              },
+              {
+                q: "Do you use stain-block primer for water stains?",
+                a: "When stains are present, we typically recommend a stain-block primer to reduce the chance of bleed-through and to unify the surface before paint.",
+              },
+              {
+                q: "Can you coordinate pot lights with the ceiling work?",
+                a: "Yes. We can plan cutouts and patching around your electrician's schedule so the final finish stays clean and consistent.",
+              },
+              {
+                q: "Do you work in Hamilton condos near the waterfront?",
+                a: "Yes, subject to building rules. We plan for common-area protection, elevator pads, quiet hours, and tidy daily cleanup to reduce disruption.",
+              },
+              {
+                q: "Should I test for asbestos before removing popcorn ceiling texture?",
+                a: "If your home is older, testing is a smart first step before disturbing texture. If testing is positive, the job needs the appropriate next steps and handling.",
+              },
+              {
+                q: "Do you serve character homes in Durand and Kirkendall?",
+                a: "Yes. We work throughout Hamilton's heritage neighborhoods with special care for period details, high ceilings, and delicate millwork.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="rounded-2xl border border-slate-200 p-5 shadow-sm bg-white hover:border-blue-200 transition-colors"
+              >
+                <summary className="cursor-pointer text-lg font-semibold">
+                  {faq.q}
+                </summary>
+                <p className="mt-2 text-sm text-slate-600">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="#quote-form"
+              className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-2xl hover:scale-105"
+            >
+              Get a Free Quote
+            </a>
+            <div className="mt-4">
+              <a
+                className="font-bold text-blue-700 hover:underline"
+                href={phoneHref}
+              >
+                Or call {phoneDisplay}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL SEO CONTENT - Hamilton Hub Oriented */}
+      <section className="container-x px-4 py-20">
+        <div className="rounded-3xl border bg-white p-8 shadow-xl ring-1 ring-black/5">
+          <h2 className="text-3xl font-bold mb-6">
+            Hamilton Popcorn Ceiling Removal Services
+          </h2>
+          
+          <div className="prose prose-slate max-w-none">
+            <p className="text-gray-700 leading-relaxed mb-4">
+              As Southern Ontario's steel city evolving into a vibrant urban center, Hamilton presents unique challenges for <strong>popcorn ceiling removal</strong>. Our specialized teams understand the city's diverse architectural landscape—from historic Victorian homes in <Link href="/popcorn-ceiling-removal/hamilton/durand/" className="text-blue-600 font-semibold hover:underline">Durand</Link> and <Link href="/popcorn-ceiling-removal/hamilton/kirkendall/" className="text-blue-600 font-semibold hover:underline">Kirkendall</Link> to modern condos along the waterfront, mid-century bungalows across the Mountain, and heritage properties in <Link href="/popcorn-ceiling-removal/hamilton/dundas/" className="text-blue-600 font-semibold hover:underline">Dundas</Link> and <Link href="/popcorn-ceiling-removal/hamilton/ancaster/" className="text-blue-600 font-semibold hover:underline">Ancaster</Link>.
+            </p>
+            
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Whether you're searching for <strong>popcorn ceiling removal Hamilton</strong> solutions, need <strong>stipple ceiling removal Hamilton</strong> expertise, or require comprehensive <strong>ceiling resurfacing Hamilton</strong>, our <strong>popcorn ceiling removal contractor Hamilton</strong> team delivers professional results with dust-controlled workflows. From <strong>scraping popcorn ceiling Hamilton</strong> to achieving a Level 5 smooth finish, we're your trusted <strong>smooth ceiling contractor Hamilton</strong>.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Why Hamilton Homes Need Professional Ceiling Services
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Hamilton's transformation from industrial hub to residential haven means housing stock spans over a century of construction styles. Lower City neighborhoods like Durand, Kirkendall, and Westdale feature character homes from the 1920s-1950s with original plaster and textured ceilings. The Mountain communities—from Lime Ridge to Upper Gage—predominantly showcase 1960s-1980s ranch-style homes with popcorn ceilings. Meanwhile, waterfront developments and Ancaster/Dundas areas mix heritage properties with modern builds requiring different ceiling treatment approaches.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Navigating Hamilton's Building Environment
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Working across Hamilton means understanding local requirements and logistics that affect every ceiling project:
+            </p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+              <li><strong>City of Hamilton building codes:</strong> Compliance with municipal standards for ceiling modifications, structural work, and renovation permits</li>
+              <li><strong>Heritage district considerations:</strong> Special protocols for homes in Durand, Kirkendall, and Corktown heritage conservation areas</li>
+              <li><strong>Escarpment access challenges:</strong> Navigating steep driveways and narrow streets throughout Mountain neighborhoods</li>
+              <li><strong>Waterfront condo regulations:</strong> Coordinating with building managers at Pier 8, Bayfront condos, and Harbor West developments</li>
+              <li><strong>Waste management protocols:</strong> Proper disposal through City of Hamilton facilities with environmental compliance documentation</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Hamilton's Diverse Housing Stock
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              The city's century-spanning development creates complex residential needs. <strong>Popcorn ceiling removal in Hamilton</strong> requires specialized approaches:
+            </p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+              <li><strong>Character homes:</strong> Durand, Kirkendall, and Strathcona properties demand careful work around period details, high ceilings, and potential asbestos concerns</li>
+              <li><strong>Mid-century Mountain homes:</strong> Standard 1960s-80s construction throughout East Mountain, West Mountain, and Glanbrook with typical popcorn texture challenges</li>
+              <li><strong>Ancaster estates:</strong> Larger properties with vaulted ceilings, multi-level layouts, and premium finish expectations</li>
+              <li><strong>Dundas village homes:</strong> Mix of heritage and renovated properties requiring sensitive ceiling updates that respect historical character</li>
+              <li><strong>Waterdown growth areas:</strong> New construction and recent developments where builders specify modern smooth ceilings from the start</li>
+              <li><strong>Stoney Creek residential:</strong> Suburban communities with standard ceiling heights and straightforward removal projects</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Local Market Knowledge
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Our Hamilton expertise goes beyond technical execution. We understand how ceiling upgrades affect property values across different submarkets. Lower City character homes attract young professionals seeking walkable neighborhoods—smooth ceilings help modernize vintage interiors while preserving charm. Mountain properties prioritize practical updates for families—ceiling work often coincides with basement finishing or kitchen renovations. Ancaster and Waterdown focus on resale value—Level 5 finishes are standard for pre-listing preparations.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Coordinating with Hamilton Trades
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              We partner with local Hamilton suppliers and contractors to ensure seamless project delivery:
+            </p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+              <li><strong>Material suppliers:</strong> Direct relationships with Hamilton drywall and paint suppliers on Barton Street and Upper James ensure competitive pricing and same-day availability</li>
+              <li><strong>Licensed electricians:</strong> Coordinated pot light installation with Hamilton-based electrical contractors familiar with ESA inspection requirements</li>
+              <li><strong>Painting contractors:</strong> Partnership with Hamilton painting crews for turnkey ceiling and wall finishing packages</li>
+              <li><strong>Waste management:</strong> Established protocols with City of Hamilton transfer stations and private haulers for environmentally responsible disposal</li>
+              <li><strong>Equipment rental:</strong> Local access to scaffolding, lifts, and specialized tools from Hamilton industrial suppliers on Burlington Street</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Transit and Accessibility
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Hamilton's transit network and geography affect project scheduling. HSR bus routes throughout the city mean crews can maintain consistent schedules even during peak traffic on the Linc, Red Hill Parkway, or QEW approaches. GO Transit stations at West Harbour, Hamilton Centre, and Aldershot provide regional crew access. The escarpment creates unique logistical challenges—Mountain-access timing differs from Lower City projects, especially during winter weather.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Cost Considerations for Hamilton Projects
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              <strong>Popcorn ceiling removal cost in Hamilton</strong> varies significantly by property type and location:
+            </p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+              <li><strong>Character homes:</strong> High ceilings (10'-14'), plaster substrate, potential asbestos testing ($300-500), and delicate millwork protection add 25-40% to standard pricing</li>
+              <li><strong>Mountain bungalows:</strong> Standard 8' ceilings with straightforward access represent baseline pricing for most Hamilton projects</li>
+              <li><strong>Waterfront condos:</strong> Building access fees, elevator booking requirements, and parking permits add 15-25% to project costs</li>
+              <li><strong>Vaulted ceilings:</strong> Common in Ancaster and Waterdown homes, requiring scaffolding and extended labor adds 30-50% to per-square-foot rates</li>
+              <li><strong>Painted texture:</strong> Prevalent throughout Mountain communities built 1990s-2000s, requiring full skim coating increases material costs by approximately 40%</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Regional Context
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              While Hamilton is our primary service hub, our teams regularly work throughout the Greater Golden Horseshoe. We're equally equipped to handle ceiling projects in <Link href="/popcorn-ceiling-removal/burlington/" className="text-blue-600 font-semibold hover:underline">Burlington</Link> to the north, <Link href="/popcorn-ceiling-removal/grimsby/" className="text-blue-600 font-semibold hover:underline">Grimsby</Link> and <Link href="/popcorn-ceiling-removal/st-catharines/" className="text-blue-600 font-semibold hover:underline">St. Catharines</Link> along the QEW corridor, or <Link href="/popcorn-ceiling-removal/oakville/" className="text-blue-600 font-semibold hover:underline">Oakville</Link> and <Link href="/popcorn-ceiling-removal/mississauga/" className="text-blue-600 font-semibold hover:underline">Mississauga</Link> in the GTA. Property owners with multiple locations across Southern Ontario appreciate our regional consistency and centralized project management.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Complete Popcorn Ceiling Removal Solutions
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Our <strong>professional popcorn ceiling removal Hamilton</strong> service encompasses everything from initial assessment to final finishing. We specialize in <strong>taking down popcorn ceiling</strong> textures safely and efficiently, whether you're dealing with unpainted surfaces or complex <strong>painted popcorn ceiling removal Hamilton</strong> scenarios. Our comprehensive approach includes:
+            </p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+              <li><strong>Texture assessment & safe removal:</strong> Identifying whether your ceiling requires <strong>scraping popcorn ceiling Hamilton</strong>, encapsulation, or complete <strong>stucco ceiling removal Hamilton</strong></li>
+              <li><strong>Dust containment systems:</strong> HEPA filtration and sealed work zones ensure minimal disruption when <strong>taking off popcorn ceiling</strong> or <strong>removing stucco ceiling Hamilton</strong></li>
+              <li><strong>Level 5 finishing:</strong> Our <strong>smooth ceiling contractor Hamilton</strong> team delivers flawless surfaces that pass raking-light inspection</li>
+              <li><strong>Comprehensive repair:</strong> Fixing cracks, water damage, and structural issues discovered during <strong>stripping popcorn ceiling</strong> work</li>
+              <li><strong>Integrated services:</strong> Coordinating <Link href="/services/interior-painting/" className="text-blue-600 font-semibold hover:underline">interior painting</Link>, <Link href="/services/drywall-installation/" className="text-blue-600 font-semibold hover:underline">drywall installation</Link>, and pot light installation for complete ceiling transformations</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Understanding Popcorn Ceiling Removal Cost in Hamilton
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              The <strong>popcorn ceiling removal cost Hamilton</strong> varies significantly based on several factors. When clients ask about <strong>cost to remove popcorn ceiling Hamilton</strong>, we explain that pricing depends on ceiling height, texture type, paint layers, and room accessibility. Our transparent <strong>popcorn removal cost Hamilton</strong> structure ensures you understand exactly what you're paying for:
+            </p>
+            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+              <li><strong>Baseline factors:</strong> The <strong>cost to scrape popcorn ceiling Hamilton</strong> starts with square footage and ceiling height—8-foot ceilings cost less than 10-foot or cathedral configurations</li>
+              <li><strong>Texture complexity:</strong> Unpainted <strong>cottage cheese ceiling removal Hamilton</strong> is typically more affordable than heavily painted surfaces requiring encapsulation</li>
+              <li><strong>Property type:</strong> Character homes in heritage districts may require special handling, affecting <strong>popcorn ceiling removal cost Hamilton</strong></li>
+              <li><strong>Additional services:</strong> Repair work, primer, and paint can be bundled for better value when you <strong>get rid of popcorn ceiling</strong> throughout your home</li>
+              <li><strong>Volume discounts:</strong> Bundling multiple rooms or coordinating with other <Link href="/services/" className="text-blue-600 font-semibold hover:underline">renovation services</Link> typically reduces per-square-foot pricing</li>
+            </ul>
+
+            <p className="text-gray-700 leading-relaxed mb-4">
+              For accurate <strong>popcorn removal cost Hamilton</strong> estimates, we provide detailed quotes after assessing your specific project. Most Hamilton homeowners find our <strong>cost to remove popcorn ceiling Hamilton</strong> competitive and transparent compared to general contractors who lack ceiling-specific expertise.
+            </p>
+
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Schedule Your Hamilton Ceiling Project
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Whether you're renovating a Durand Victorian for heritage appeal, updating a Mountain bungalow for modern living, or preparing an Ancaster estate for resale, professional <strong>popcorn ceiling removal</strong> transforms dated spaces into marketable, contemporary homes. Our Hamilton-based teams understand local building practices, municipal requirements, and real estate expectations that make ceiling projects succeed.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              <Link href="/quote/" className="text-blue-600 font-semibold hover:underline">Request a detailed quote</Link> with photos and measurements, or call <a href={phoneHref} className="text-blue-600 font-semibold hover:underline">{phoneDisplay}</a> to discuss your specific project requirements. Most Hamilton estimates are delivered within 4 hours with firm pricing, clear timelines, and detailed scope documentation.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* NEARBY SERVICE AREAS */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -959,7 +1189,7 @@ export default function Page() {
               Nearby Service Areas
             </h2>
             <p className="text-center text-gray-600 mb-6">
-              Expert popcorn ceiling removal in surrounding areas:
+              We also serve these nearby cities with the same professional popcorn ceiling removal service:
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -972,7 +1202,13 @@ export default function Page() {
                 href="/popcorn-ceiling-removal/oakville/"
                 className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition"
               >
-                Oakville Popcorn Removal
+                Oakville Stipple Removal
+              </Link>
+              <Link
+                href="/popcorn-ceiling-removal/grimsby/"
+                className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition"
+              >
+                Grimsby Popcorn Removal
               </Link>
               <Link
                 href="/popcorn-ceiling-removal/stoney-creek/"
