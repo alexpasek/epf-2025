@@ -380,7 +380,7 @@ export default function Page() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="pill border-white/40 bg-white/10 text-white hover:bg-white/20"
+                      className="rounded-full border border-white/40 bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20 hover:border-white/60 transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -814,13 +814,128 @@ export default function Page() {
                 </div>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <a className="btn-cta" href={phoneHref}>
+                <a 
+                  className="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 font-semibold text-white hover:bg-amber-600 active:bg-amber-700 transition-colors" 
+                  href={phoneHref}
+                >
                   📞 {phoneDisplay}
                 </a>
-                <a className="btn-cta" href="/quote/">
+                <a 
+                  className="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 font-semibold text-white hover:bg-amber-600 active:bg-amber-700 transition-colors" 
+                  href="/quote/"
+                >
                   Start my quote
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* LOCAL SEO CONTENT - Mississauga Specific */}
+        <section className="container-x px-4">
+          <div className="rounded-3xl border bg-white p-8 shadow-xl ring-1 ring-black/5">
+            <h2 className="text-3xl font-bold mb-6">
+              Mississauga Popcorn Ceiling Removal Services
+            </h2>
+            
+            <div className="prose prose-slate max-w-none">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                As Ontario's third-largest city and a major commercial hub in the Greater Toronto Area, Mississauga presents unique challenges for <strong>popcorn ceiling removal</strong>. Our specialized teams understand the diverse architectural landscape—from vintage 1960s-1980s homes near historic Port Credit to modern high-rise developments along the Hurontario LRT corridor and sprawling residential communities in Churchill Meadows and Erin Mills.
+              </p>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Why Mississauga Homes Need Professional Ceiling Services
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Mississauga's rapid growth from a collection of villages to Canada's sixth most populous city means homes span six decades of construction styles. Older neighborhoods like Malton, Cooksville, and Lakeview often feature original popcorn ceilings from the 1970s and 1980s that now clash with modern design expectations. Meanwhile, newer areas like East Credit and Meadowvale Village frequently have painted stipple textures that require specialized skim coating rather than simple scraping.
+              </p>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Navigating Mississauga's Building Regulations
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Working across Mississauga means understanding local requirements and logistics that affect every ceiling project:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+                <li><strong>Peel Region waste management:</strong> Proper disposal of texture material through designated facilities, with documentation for environmental compliance</li>
+                <li><strong>Condo corporation rules:</strong> Strict elevator booking systems, insurance requirements, and noise bylaws at high-density developments near Square One and City Centre</li>
+                <li><strong>Heritage district considerations:</strong> Older Port Credit and Streetsville properties that may require asbestos testing before disturbing ceiling materials</li>
+                <li><strong>Transit-oriented development standards:</strong> Coordinating with building managers at new LRT-adjacent towers along Hurontario Street</li>
+                <li><strong>Municipal inspection protocols:</strong> Compliance with City of Mississauga building codes when ceiling work involves structural repairs or modifications</li>
+              </ul>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Mississauga's Diverse Housing Stock
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The city's evolution from suburban sprawl to urban center creates a complex residential landscape. <strong>Popcorn ceiling removal in Mississauga</strong> isn't one-size-fits-all:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+                <li><strong>Waterfront luxury condos:</strong> Port Credit's lakeside towers like The Sail and Bridgewater demand meticulous dust control and pristine finishes—bright natural light from Lake Ontario reveals every imperfection</li>
+                <li><strong>Mid-century single-family homes:</strong> Established neighborhoods throughout central Mississauga feature post-war construction with challenging access, low basements, and textured ceilings that may contain asbestos</li>
+                <li><strong>New construction developments:</strong> Erin Mills and Churchill Meadows see ongoing builder projects where we coordinate with other trades during final finishing phases</li>
+                <li><strong>Townhouse complexes:</strong> High-density residential areas require careful staging, shared wall considerations, and coordination with condo boards for common area protection</li>
+                <li><strong>Commercial-residential mixed use:</strong> Downtown core properties along Burnhamthorpe and Hurontario often have challenging parking, elevator logistics, and tight scheduling windows</li>
+              </ul>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Local Market Knowledge
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Our Mississauga expertise extends beyond just technical execution. We understand how ceiling upgrades affect property values in different submarkets. Port Credit waterfront properties command premium pricing, so Level 5 finishes are non-negotiable for pre-sale renovations. Streetsville's heritage character attracts buyers seeking character homes—smooth ceilings help modernize dated interiors while preserving charm. Erin Mills family neighborhoods prioritize quick turnarounds so homes aren't disrupted during school years.
+              </p>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Coordinating with Mississauga Trades
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We partner with local Mississauga suppliers and contractors to ensure seamless project delivery:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+                <li><strong>Material suppliers:</strong> Direct relationships with Mississauga drywall and paint suppliers mean competitive pricing and same-day material availability</li>
+                <li><strong>Licensed electricians:</strong> Coordinated pot light installation with local electrical contractors familiar with Peel Region inspection requirements</li>
+                <li><strong>Painting contractors:</strong> Partnership with Mississauga-based painting crews for turnkey ceiling and wall finishing packages</li>
+                <li><strong>Waste management:</strong> Established protocols with Peel Region transfer stations for environmentally responsible disposal</li>
+                <li><strong>Equipment rental:</strong> Local access to scaffolding, lifts, and specialized tools from Mississauga industrial suppliers</li>
+              </ul>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Transit and Accessibility
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Mississauga's extensive transit network affects how we schedule and execute projects. GO Transit stations at Port Credit, Cooksville, Streetsville, Meadowvale, Lisgar, and Erindale provide crew access without parking headaches. MiWay bus routes throughout the city mean we can maintain consistent scheduling even during rush hour congestion on the 403, QEW, and Hurontario corridor. The new Hazel McCallion LRT line will improve access to downtown core projects starting in 2024.
+              </p>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Cost Considerations for Mississauga Projects
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>Popcorn ceiling removal cost in Mississauga</strong> varies significantly by property type and location:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+                <li><strong>High-rise condos:</strong> Elevator booking fees ($150-300), extended insurance requirements, and common area protection add 15-25% to base pricing</li>
+                <li><strong>Heritage homes:</strong> Pre-1990 properties often require mandatory asbestos testing ($300-500) and specialized removal protocols if positive</li>
+                <li><strong>New construction:</strong> Coordination with builders and other trades may include scheduling premiums but offers efficiencies through bulk material purchasing</li>
+                <li><strong>Vaulted ceilings:</strong> Common in Erin Mills and Meadowvale homes, requiring scaffolding and extended labor adds 30-50% to standard per-square-foot rates</li>
+                <li><strong>Painted texture:</strong> Prevalent in 2000s-era developments, requiring full skim coating rather than scraping increases material costs by approximately 40%</li>
+              </ul>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Regional Context
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                While Mississauga is our primary service hub, our teams regularly work throughout Peel Region and neighboring municipalities. We're equally equipped to handle ceiling projects in <Link href="/popcorn-ceiling-removal/brampton/" className="text-blue-600 font-semibold hover:underline">Brampton</Link> to the north, <Link href="/popcorn-ceiling-removal/oakville/" className="text-blue-600 font-semibold hover:underline">Oakville</Link> and <Link href="/popcorn-ceiling-removal/burlington/" className="text-blue-600 font-semibold hover:underline">Burlington</Link> along the lakeshore, or <Link href="/popcorn-ceiling-removal/milton/" className="text-blue-600 font-semibold hover:underline">Milton</Link> to the west. Property owners with multiple locations across the Greater Toronto Area appreciate our regional consistency and centralized project management.
+              </p>
+
+              <h3 className="text-2xl font-semibold mt-8 mb-4">
+                Schedule Your Mississauga Ceiling Project
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Whether you're renovating a Port Credit condo for resale, updating a Streetsville family home, or preparing an Erin Mills property for new tenants, professional <strong>popcorn ceiling removal</strong> transforms dated spaces into modern, marketable homes. Our Mississauga-based teams understand local building practices, municipal requirements, and real estate expectations that make ceiling projects succeed.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                <Link href="/quote/" className="text-blue-600 font-semibold hover:underline">Request a detailed quote</Link> with photos and measurements, or call <a href={phoneHref} className="text-blue-600 font-semibold hover:underline">{phoneDisplay}</a> to discuss your specific project requirements. Most Mississauga estimates are delivered within 4 hours with firm pricing, clear timelines, and detailed scope documentation.
+              </p>
             </div>
           </div>
         </section>
