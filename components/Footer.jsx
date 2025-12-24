@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // components/Footer.jsx
 import GoogleReviews from "@/components/GoogleReviews";
@@ -15,12 +15,18 @@ const CONTACT = {
 };
 
 /** Helper: build /locations/popcorn-ceiling-removal-{city} slugs */
-const slugifyCity = (city) =>
-  `/locations/popcorn-ceiling-removal-${city
+const slugifyCity = (city) => {
+  const slug = city
     .toLowerCase()
+    .normalize("NFKD") // remove diacritics
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, "and")
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
-    .replace(/\s+/g, "-")}`;
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+  return `/popcorn-ceiling-removal/${slug}/`;
+};
 
 const LOCATIONS = [
   {
@@ -70,16 +76,16 @@ export default function Footer() {
   const orgId = "https://www.epfproservices.com/#org";
   const primaryLocation = LOCATIONS[0];
   const primaryTelDigits = primaryLocation.phoneHref.replace("+1", "");
-  const primaryTelephone = `+1-${primaryTelDigits.slice(0, 3)}-${primaryTelDigits.slice(
-    3,
-    6
-  )}-${primaryTelDigits.slice(6)}`;
+  const primaryTelephone = `+1-${primaryTelDigits.slice(
+    0,
+    3
+  )}-${primaryTelDigits.slice(3, 6)}-${primaryTelDigits.slice(6)}`;
   const secondaryLocation = LOCATIONS[1];
   const secondaryTelDigits = secondaryLocation.phoneHref.replace("+1", "");
-  const secondaryTelephone = `+1-${secondaryTelDigits.slice(0, 3)}-${secondaryTelDigits.slice(
-    3,
-    6
-  )}-${secondaryTelDigits.slice(6)}`;
+  const secondaryTelephone = `+1-${secondaryTelDigits.slice(
+    0,
+    3
+  )}-${secondaryTelDigits.slice(3, 6)}-${secondaryTelDigits.slice(6)}`;
 
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
@@ -261,7 +267,9 @@ export default function Footer() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd),
+        }}
       />
 
       {/* Google Reviews */}
@@ -461,7 +469,7 @@ export default function Footer() {
                 Popcorn ceiling removal St. Catharines
               </a>
             </li>
-            
+
             {/* Remaining cities using slugifyCity */}
             {SERVICE_AREAS.filter(
               (city) =>
@@ -525,9 +533,7 @@ function MapCard({ loc }) {
       {/* Top info row */}
       <div className="px-4 pt-4 pb-3 flex items-start justify-between gap-3">
         <div>
-          <div className="text-sm font-semibold text-gray-900">
-            {loc.label}
-          </div>
+          <div className="text-sm font-semibold text-gray-900">{loc.label}</div>
 
           <address
             className="mt-1 not-italic text-sm text-gray-700"
@@ -547,9 +553,7 @@ function MapCard({ loc }) {
                 {loc.address.addressLocality}
               </span>
               ,{" "}
-              <span itemProp="addressRegion">
-                {loc.address.addressRegion}
-              </span>{" "}
+              <span itemProp="addressRegion">{loc.address.addressRegion}</span>{" "}
               <span itemProp="postalCode">{loc.address.postalCode}</span>
             </a>
             <meta
