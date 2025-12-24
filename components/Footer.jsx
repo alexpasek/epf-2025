@@ -388,16 +388,104 @@ export default function Footer() {
             Popcorn Ceiling Removal Near You
           </div>
           <ul className="text-sm flex flex-wrap gap-3">
-            {SERVICE_AREAS.slice(0, 12).map((city) => (
-              <li key={city}>
-                <a
-                  href={slugifyCity(city)}
-                  className="text-gray-700 hover:underline"
-                >
-                  {`Popcorn ceiling removal ${city}`}
-                </a>
-              </li>
-            ))}
+            {/* Priority cities with direct links */}
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/mississauga/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Mississauga
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/burlington/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Burlington
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/toronto/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Toronto
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/oakville/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Oakville
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/hamilton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Hamilton
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/milton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Milton
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/etobicoke/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Etobicoke
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/grimsby/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal Grimsby
+              </a>
+            </li>
+            <li>
+              <a
+                href="/popcorn-ceiling-removal/st-catharines/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal St. Catharines
+              </a>
+            </li>
+            
+            {/* Remaining cities using slugifyCity */}
+            {SERVICE_AREAS.filter(
+              (city) =>
+                city !== "Mississauga" &&
+                city !== "Burlington" &&
+                city !== "Toronto" &&
+                city !== "Oakville" &&
+                city !== "Hamilton" &&
+                city !== "Milton" &&
+                city !== "Etobicoke" &&
+                city !== "Grimsby" &&
+                city !== "St. Catharines"
+            )
+              .slice(0, 6)
+              .map((city) => (
+                <li key={city}>
+                  <a
+                    href={slugifyCity(city)}
+                    className="text-gray-700 hover:underline"
+                  >
+                    {`Popcorn ceiling removal ${city}`}
+                  </a>
+                </li>
+              ))}
           </ul>
         </div>
       </div>

@@ -5,16 +5,16 @@ import { CONTACT } from "@/app/config";
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Popcorn Ceiling Removal Mississauga | Dust-Controlled | Free Quote",
+  title: "Popcorn Ceiling Removal Mississauga | Level 5 Smooth Ceilings + HEPA Dust Control",
   description:
-    "Popcorn/stipple ceiling removal in Mississauga with full containment + HEPA dust control. Level 5 skim coat, stain-block primer, paint-ready finish. Fast photo quotes.",
+    "Professional popcorn/stipple ceiling removal in Mississauga. HEPA dust control, Level 5 skim coat, 3-year warranty, painted removal texture specialists. Free quote, same-day response. Port Credit • Streetsville • Erin Mills.",
   alternates: {
     canonical: "/popcorn-ceiling-removal/mississauga/",
   },
   openGraph: {
-    title: "Popcorn Ceiling Removal Mississauga",
+    title: "Popcorn Ceiling Removal Mississauga | Level 5 Smooth Ceilings + HEPA Dust Control",
     description:
-      "Make bumpy ceilings flat and bright. We protect floors, control dust, skim to Level 5, and leave a paint-ready finish across Mississauga neighbourhoods.",
+      "Professional popcorn/stipple ceiling removal in Mississauga. HEPA dust control, Level 5 skim coat, 3-year warranty, painted texture specialists. Free quote, same-day response.",
     url: "/popcorn-ceiling-removal/mississauga/",
     type: "website",
   },
