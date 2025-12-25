@@ -314,7 +314,7 @@ export default function Page() {
                     className="pill"
                     title={`Popcorn ceiling removal in ${c.name}`}
                   >
-                    {c.name}
+                    {`Popcorn ceiling removal ${c.name}`}
                   </Link>
                 ))}
               </div>

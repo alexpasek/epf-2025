@@ -336,7 +336,7 @@ export default function Page() {
             href="/popcorn-ceiling-removal/oakville/"
             className="underline underline-offset-2"
           >
-            ← Back to Oakville Popcorn Ceiling Removal
+            ← Popcorn ceiling removal Oakville
           </Link>
         </div>
       </section>

@@ -87,15 +87,51 @@ const services = [
 ];
 
 const cities = [
-  { href: "/popcorn-removal/mississauga/", label: "Mississauga" },
-  { href: "/toronto/", label: "Toronto" },
-  { href: "/popcorn-removal/oakville/", label: "Oakville" },
-  { href: "/popcorn-removal/burlington/", label: "Burlington" },
-  { href: "/popcorn-removal/hamilton/", label: "Hamilton" },
-  { href: "/popcorn-removal/milton/", label: "Milton" },
-  { href: "/popcorn-removal/etobicoke/", label: "Etobicoke" },
-  { href: "/grimsby/", label: "Grimsby" },
-  { href: "/st-catharines/", label: "St. Catharines" },
+  {
+    href: "/popcorn-removal/mississauga/",
+    label: "Popcorn ceiling removal Mississauga",
+    city: "Mississauga",
+  },
+  {
+    href: "/toronto/",
+    label: "Popcorn ceiling removal Toronto",
+    city: "Toronto",
+  },
+  {
+    href: "/popcorn-removal/oakville/",
+    label: "Popcorn ceiling removal Oakville",
+    city: "Oakville",
+  },
+  {
+    href: "/popcorn-removal/burlington/",
+    label: "Popcorn ceiling removal Burlington",
+    city: "Burlington",
+  },
+  {
+    href: "/popcorn-removal/hamilton/",
+    label: "Popcorn ceiling removal Hamilton",
+    city: "Hamilton",
+  },
+  {
+    href: "/popcorn-removal/milton/",
+    label: "Popcorn ceiling removal Milton",
+    city: "Milton",
+  },
+  {
+    href: "/popcorn-removal/etobicoke/",
+    label: "Popcorn ceiling removal Etobicoke",
+    city: "Etobicoke",
+  },
+  {
+    href: "/grimsby/",
+    label: "Popcorn ceiling removal Grimsby",
+    city: "Grimsby",
+  },
+  {
+    href: "/st-catharines/",
+    label: "Popcorn ceiling removal St. Catharines",
+    city: "St. Catharines",
+  },
 ];
 
 function JsonLd() {
@@ -105,7 +141,7 @@ function JsonLd() {
     name: s.name,
     serviceType: s.name,
     provider: { "@id": "/#business" },
-    areaServed: cities.map((c) => c.label),
+    areaServed: cities.map((c) => c.city || c.label),
     url: s.slug,
     description: s.tagline,
   }));

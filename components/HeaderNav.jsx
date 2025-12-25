@@ -145,15 +145,42 @@ export default function HeaderNav() {
   ];
 
   const locations = [
-    { href: "/popcorn-removal/mississauga/", label: "Mississauga" },
-    { href: "/popcorn-ceiling-removal/toronto/", label: "Toronto" },
-    { href: "/popcorn-ceiling-removal/oakville/", label: "Oakville" },
-    { href: "/popcorn-ceiling-removal/burlington/", label: "Burlington" },
-    { href: "/popcorn-ceiling-removal/hamilton/", label: "Hamilton" },
-    { href: "/popcorn-ceiling-removal/milton/", label: "Milton" },
-    { href: "/popcorn-ceiling-removal/etobicoke/", label: "Etobicoke" },
-    { href: "/grimsby/", label: "Grimsby" },
-    { href: "/st-catharines/", label: "St. Catharines" },
+    {
+      href: "/popcorn-removal/mississauga/",
+      label: "Popcorn Ceiling Removal Mississauga",
+    },
+    {
+      href: "/popcorn-ceiling-removal/toronto/",
+      label: "Popcorn Ceiling Removal Toronto",
+    },
+    {
+      href: "/popcorn-ceiling-removal/oakville/",
+      label: "Popcorn Ceiling Removal Oakville",
+    },
+    {
+      href: "/popcorn-ceiling-removal/burlington/",
+      label: "Popcorn Ceiling Removal Burlington",
+    },
+    {
+      href: "/popcorn-ceiling-removal/hamilton/",
+      label: "Popcorn Ceiling Removal Hamilton",
+    },
+    {
+      href: "/popcorn-ceiling-removal/milton/",
+      label: "Popcorn Ceiling Removal Milton",
+    },
+    {
+      href: "/popcorn-ceiling-removal/etobicoke/",
+      label: "Popcorn Ceiling Removal Etobicoke",
+    },
+    {
+      href: "/grimsby/",
+      label: "Popcorn Ceiling Removal Grimsby",
+    },
+    {
+      href: "/st-catharines/",
+      label: "Popcorn Ceiling Removal St. Catharines",
+    },
   ];
 
   const crumbs = buildCrumbs(pathname);

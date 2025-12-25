@@ -160,7 +160,7 @@ export default async function NeighborhoodPopcornPage({ params }) {
                   href={"/popcorn-ceiling-removal/" + c.slug + "/" + x.slug}
                   className="pill"
                 >
-                  {x.name}
+                  {`Popcorn ceiling removal ${x.name}`}
                 </Link>
               );
             })}
@@ -170,7 +170,7 @@ export default async function NeighborhoodPopcornPage({ params }) {
 
       <nav className="mt-10 text-sm text-gray-600">
         <Link href={"/popcorn-ceiling-removal/" + c.slug} className="underline">
-          ← Back to {c.name}
+          ← Popcorn ceiling removal {c.name}
         </Link>
       </nav>
     </div>

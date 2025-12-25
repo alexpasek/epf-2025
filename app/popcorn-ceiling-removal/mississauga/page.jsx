@@ -943,7 +943,7 @@ export default function Page() {
         <nav className="container-x px-4">
           <div className="flex flex-wrap gap-3 text-sm">
             <Link href="/popcorn-ceiling-removal/" className="underline">
-              ← Back to popcorn service areas
+              ← Popcorn ceiling removal service areas
             </Link>
             <Link
               href="/services/popcorn-ceiling-removal/"

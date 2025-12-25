@@ -1133,7 +1133,27 @@ export default function Page() {
               Regional Context
             </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              While Hamilton is our primary service hub, our teams regularly work throughout the Greater Golden Horseshoe. We're equally equipped to handle ceiling projects in <Link href="/popcorn-ceiling-removal/burlington/" className="text-blue-600 font-semibold hover:underline">Burlington</Link> to the north, <Link href="/popcorn-ceiling-removal/grimsby/" className="text-blue-600 font-semibold hover:underline">Grimsby</Link> and <Link href="/popcorn-ceiling-removal/st-catharines/" className="text-blue-600 font-semibold hover:underline">St. Catharines</Link> along the QEW corridor, or <Link href="/popcorn-ceiling-removal/oakville/" className="text-blue-600 font-semibold hover:underline">Oakville</Link> and <Link href="/popcorn-ceiling-removal/mississauga/" className="text-blue-600 font-semibold hover:underline">Mississauga</Link> in the GTA. Property owners with multiple locations across Southern Ontario appreciate our regional consistency and centralized project management.
+              While Hamilton is our primary service hub, our teams regularly work throughout the Greater Golden Horseshoe. We're equally equipped to handle ceiling projects in{" "}
+              <Link href="/popcorn-ceiling-removal/burlington/" className="text-blue-600 font-semibold hover:underline">
+                Popcorn ceiling removal Burlington
+              </Link>{" "}
+              to the north,{" "}
+              <Link href="/popcorn-ceiling-removal/grimsby/" className="text-blue-600 font-semibold hover:underline">
+                Popcorn ceiling removal Grimsby
+              </Link>{" "}
+              and{" "}
+              <Link href="/popcorn-ceiling-removal/st-catharines/" className="text-blue-600 font-semibold hover:underline">
+                Popcorn ceiling removal St. Catharines
+              </Link>{" "}
+              along the QEW corridor, or{" "}
+              <Link href="/popcorn-ceiling-removal/oakville/" className="text-blue-600 font-semibold hover:underline">
+                Popcorn ceiling removal Oakville
+              </Link>{" "}
+              and{" "}
+              <Link href="/popcorn-ceiling-removal/mississauga/" className="text-blue-600 font-semibold hover:underline">
+                Popcorn ceiling removal Mississauga
+              </Link>{" "}
+              in the GTA. Property owners with multiple locations across Southern Ontario appreciate our regional consistency and centralized project management.
             </p>
 
             <h3 className="text-2xl font-semibold mt-8 mb-4">

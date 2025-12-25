@@ -564,7 +564,7 @@ export default function Page() {
       {/* Bottom nav */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          ← Back to Popcorn Service Areas
+          ← Popcorn ceiling removal service areas
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
           Main Popcorn Service page →

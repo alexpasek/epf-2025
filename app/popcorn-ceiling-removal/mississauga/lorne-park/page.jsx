@@ -515,14 +515,14 @@ export default function Page() {
           href="/popcorn-ceiling-removal/mississauga/"
           className="underline"
         >
-          ← Back to Mississauga Popcorn page
+          ← Popcorn ceiling removal Mississauga
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          Browse all Popcorn service areas →
+          Popcorn ceiling removal service areas →
         </Link>
         {/* Keep main service link as-is unless you’ve migrated that page too */}
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
+          Popcorn ceiling removal services →
         </Link>
       </nav>
 
