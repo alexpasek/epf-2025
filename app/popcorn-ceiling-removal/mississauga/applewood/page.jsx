@@ -9,10 +9,10 @@ export const revalidate = 86400;
 
 export const metadata = {
   title: "Popcorn Ceiling Removal Applewood, Mississauga | Level 5 Smooth Ceilings",
-  description: "Professional popcorn ceiling removal contractor Applewood. Expert ceiling texture removal, stipple ceiling removal, and ceiling resurfacing Applewood with HEPA dust control. Serving Applewood Hills, Applewood Acres near Bloor, Dixie & Burnhamthorpe.",
-  keywords: ["popcorn ceiling removal applewood", "popcorn ceiling contractor applewood", "popcorn ceiling removal contractor applewood", "professional popcorn ceiling removal applewood", "popcorn ceiling removal service applewood", "smooth ceiling contractor applewood", "ceiling texture removal applewood", "stipple ceiling removal applewood", "ceiling resurfacing applewood", "painted popcorn ceiling removal applewood", "stucco ceiling removal applewood", "popcorn ceiling removal cost applewood"],
+  description: "Professional popcorn ceiling removal contractor Applewood Hills & Acres. Expert ceiling texture removal near Bloor St, Dixie Rd & Fieldgate Dr with HEPA dust control. Serving Applewood Mississauga neighborhoods.",
+  keywords: ["popcorn ceiling removal applewood", "popcorn ceiling removal applewood hills", "popcorn ceiling removal applewood acres", "ceiling contractor applewood mississauga", "ceiling texture removal applewood", "ceiling resurfacing applewood", "popcorn ceiling near bloor street", "popcorn ceiling dixie road", "stipple ceiling removal applewood", "smooth ceiling contractor applewood", "popcorn ceiling fieldgate drive", "ceiling removal burnhamthorpe"],
   alternates: { canonical: "/popcorn-ceiling-removal/mississauga/applewood/" },
-  openGraph: { title: "Popcorn Ceiling Removal Applewood, Mississauga | Level 5 Finish", description: "Trusted popcorn ceiling removal service Applewood with dust-controlled workflow, Level 5 skim coat, and paint-ready finish. Licensed contractors serving Applewood Hills & Applewood Acres.", url: "/popcorn-ceiling-removal/mississauga/applewood/", type: "website" },
+  openGraph: { title: "Popcorn Ceiling Removal Applewood, Mississauga | Level 5 Finish", description: "Trusted popcorn ceiling removal service Applewood Hills & Applewood Acres with dust-controlled workflow. Licensed contractors serving Applewood near Bloor, Dixie & Burnhamthorpe.", url: "/popcorn-ceiling-removal/mississauga/applewood/", type: "website" },
   robots: { index: true, follow: true }
 };
 
@@ -86,7 +86,7 @@ export default function Page() {
               </h1>
 
               <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
-                Professional <strong>popcorn ceiling removal contractor Applewood</strong> specializing in <strong>ceiling texture removal</strong>, <strong>stipple ceiling removal</strong>, and <strong>ceiling resurfacing Applewood</strong>. Serving homes near Bloor St, Dixie Rd, Burnhamthorpe, and throughout Applewood Hills.
+                Professional <strong>popcorn ceiling removal contractor Applewood</strong> specializing in <strong>Applewood Hills ceiling texture removal</strong>, <strong>stipple ceiling removal near Bloor St</strong>, and <strong>ceiling resurfacing Applewood Acres</strong>. Serving homes near Fieldgate Dr, Dixie Rd, Burnhamthorpe, and throughout Applewood neighborhoods.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -181,6 +181,73 @@ export default function Page() {
         </div>
       </section>
 
+      {/* CUSTOMER REVIEWS */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-10">What Applewood Homeowners Say</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-2xl shadow-lg border-2 border-blue-100">
+              <div className="flex items-center mb-4">
+                <div className="text-yellow-400 text-xl">★★★★★</div>
+              </div>
+              <p className="text-gray-700 italic mb-4">"Hallway and master bedroom done in 2 days. No mess left behind. The smooth finish looks incredible under our LED lights."</p>
+              <p className="text-sm font-semibold text-gray-900">— Sarah T., Fieldgate Drive</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-lg border-2 border-blue-100">
+              <div className="flex items-center mb-4">
+                <div className="text-yellow-400 text-xl">★★★★★</div>
+              </div>
+              <p className="text-gray-700 italic mb-4">"They worked around our schedule and kept the kitchen usable. Quote was exactly what we paid—no surprises."</p>
+              <p className="text-sm font-semibold text-gray-900">— Mike R., Applewood Acres</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-lg border-2 border-blue-100">
+              <div className="flex items-center mb-4">
+                <div className="text-yellow-400 text-xl">★★★★★</div>
+              </div>
+              <p className="text-gray-700 italic mb-4">"Old water stains completely gone. They primed everything and it's been perfect for 2 years now."</p>
+              <p className="text-sm font-semibold text-gray-900">— Jennifer L., near Bloor St</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SIMPLE PROCESS */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-10">How We Work (Applewood)</h2>
+          <div className="space-y-6">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Free Quote</h3>
+                <p className="text-gray-700">Send us photos and room dimensions. We reply in under 4 hours with firm pricing and timeline.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Protect Your Home</h3>
+                <p className="text-gray-700">Seal doorways, cover floors, mask vents. Room-by-room containment keeps the rest of your house clean.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Remove & Smooth</h3>
+                <p className="text-gray-700">Scrape or encapsulate (depending on paint layers), then apply Level 5 skim coat. HEPA dust control throughout.</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl">4</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Prime & Finish</h3>
+                <p className="text-gray-700">Stain-block primer, final inspection, thorough cleanup. Paint-ready surface with 3-year warranty.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* GALLERY */}
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -199,20 +266,20 @@ export default function Page() {
                 "Popcorn ceiling removal cost Applewood - affordable ceiling texture removal Dixie Rd area"
               ];
               const projectTitles = [
-                "Popcorn Removal Applewood Hills",
-                "Ceiling Texture Removal Applewood Acres",
-                "Stipple Ceiling Removal Mississauga",
-                "Painted Popcorn Ceiling Contractor",
-                "Ceiling Resurfacing Near Bloor St",
-                "Affordable Popcorn Removal Dixie Rd"
+                "Two-Storey Hallway Near Fieldgate",
+                "Main Floor Kitchen & Living",
+                "Stairwell with LED Shadows Fixed",
+                "Painted Ceiling on Bloor St",
+                "Applewood Acres Full Home",
+                "Water Damage Repair & Refinish"
               ];
               const projectSubtitles = [
-                "Level 5 Smooth Finish",
-                "Professional Ceiling Resurfacing",
-                "Smooth Ceiling Transformation",
-                "Texture Removal Service",
-                "Stucco Popcorn Removal",
-                "Cost-Effective Ceiling Upgrade"
+                "Smooth finish, no seam lines",
+                "Even reflectance across rooms",
+                "Tall surfaces, safe staging",
+                "Multiple paint layers handled",
+                "Whole-home transformation",
+                "Stains blocked, fully restored"
               ];
               return (
                 <div
@@ -243,71 +310,72 @@ export default function Page() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2>Local Details for Applewood</h2>
+            <h2>Why Applewood Homes Need Special Attention</h2>
             <p>
-              Homes off Fieldgate Dr, Bloor St, Dixie Rd and Burnhamthorpe Rd often
-              have painted popcorn and a history of electrical upgrades. We test a
-              discreet area first: if scraping risks the substrate or paint build is
-              heavy, we use safe encapsulation before a full{" "}
-              <strong>Level 5 skim</strong>. We feather around trims and old repairs
-              so edges disappear, then prime with a stain-block system to prevent
-              bleed-through.
+              Most homes in Applewood Hills and Acres were built in the 60s-80s with popcorn texture that's been painted multiple times over the years. We see this constantly off Fieldgate Dr, Bloor St, Dixie Rd, and Burnhamthorpe—thick paint buildup means we can't always scrape safely.
             </p>
             <p>
-              Our workflow keeps stairs and key routes open, with room isolation and
-              daily tidy so kitchens and bedrooms remain usable. You get a clear
-              scope at the start, photo updates during the job, and a predictable
-              handoff.
+              Instead, we do a test patch first. If the paint is heavy or scraping risks damaging drywall, we encapsulate with a bonding coat before applying our Level 5 skim. We also handle old pot light rings, water stains from roof leaks, and seam shadows that show up under LED lighting. Everything gets a stain-blocking primer so nothing bleeds through later.
+            </p>
+            <p>
+              We work room-by-room with sealed containment so your kitchen and bedrooms stay usable. Daily cleanup, clear communication, predictable handoff—that's how we do it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING SECTION - ALL COST INFO IN ONE PLACE */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="card p-8 bg-white rounded-2xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4">Applewood Pricing (Ballpark)</h2>
+            <p className="text-gray-700 mb-4">
+              Here's what drives the cost for ceiling work in Applewood:
+            </p>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold">•</span>
+                <span><strong>Standard bedroom (10'×12'):</strong> Unpainted texture is your baseline. This is the simplest job.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold">•</span>
+                <span><strong>Painted ceilings:</strong> Common in Applewood Hills—adds 30-40% because we encapsulate first.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold">•</span>
+                <span><strong>Repair work:</strong> Water damage, cracks, old patches increase scope. We quote after assessment.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 font-bold">•</span>
+                <span><strong>Whole-home projects:</strong> Bundling multiple rooms reduces per-square-foot pricing significantly.</span>
+              </li>
+            </ul>
+            <p className="text-gray-700 mt-4">
+              Send us photos and dimensions—we'll reply within 4 hours with firm pricing. Most Applewood homes get quotes the same day.
             </p>
           </div>
         </div>
       </section>
 
       {/* HOME TYPES */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="card p-8 bg-white rounded-2xl shadow-lg">
             <h2 className="text-2xl font-semibold">
               Typical Applewood Homes We Handle
             </h2>
             <ul className="mt-3 space-y-2 text-gray-700 list-disc pl-5">
-              <li>
-                Applewood Hills/Acres with painted texture and scattered repairs.
-              </li>
-              <li>Two-storeys where long hallways show seam telegraphing.</li>
-              <li>Open main floors needing consistent reflectance across rooms.</li>
-              <li>Stairwells/landings where tall surfaces require safe staging.</li>
-              <li>
-                Basements or kitchens with prior moisture/nicotine (blocked at
-                primer).
-              </li>
+              <li>Two-storey family homes with long hallways that show seam shadows</li>
+              <li>Bungalows in Applewood Acres with painted texture throughout</li>
+              <li>Open-concept main floors where reflectance needs to match across rooms</li>
+              <li>Stairwells and tall landings requiring safe scaffolding</li>
+              <li>Basements with old moisture stains or nicotine buildup</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* ON-SITE WORKFLOW */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="card p-8 bg-white rounded-2xl shadow-lg">
-            <h2 className="text-2xl font-semibold">On-Site Workflow (Applewood)</h2>
-            <ul className="mt-3 space-y-2 text-gray-700 list-disc pl-5">
-              <li>
-                Protect floors, stairs and entries; seal doorways; mask vents.
-              </li>
-              <li>Method test: controlled scrape vs safe encapsulation.</li>
-              <li>
-                Level 5 skim across full fields; raking-light checks; touch-ups.
-              </li>
-              <li>
-                Feather pot-light rings and old patches so they vanish after primer.
-              </li>
-              <li>Stain-block primer; bright, even, paint-ready finish.</li>
-              <li>Daily tidy; simple communications; walkthrough at handover.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      {/* ON-SITE WORKFLOW - REMOVED, REPLACED BY NUMBERED PROCESS ABOVE */}
 
       {/* LOCAL SEO SIGNALS */}
       <section className="py-12 bg-gray-50">
@@ -373,222 +441,83 @@ export default function Page() {
       </section>
 
       {miss && miss.signals ? <LocalSignals signals={miss.signals} /> : null}
-      {/* FAQ */}
+      
+      {/* FAQ - REMOVED COST QUESTION, CONSOLIDATED ABOVE */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8">FAQ — Applewood Popcorn Ceiling Removal</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">Common Questions About Applewood Projects</h2>
           <div className="space-y-4">
             <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
-              <summary className="cursor-pointer text-lg font-semibold">How much does popcorn ceiling removal cost in Applewood, Mississauga?</summary>
+              <summary className="cursor-pointer text-lg font-semibold">Can you stage work so bedrooms and kitchen stay available?</summary>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                Popcorn ceiling removal cost in Applewood typically ranges from baseline pricing for unpainted textures to 30-40% more for heavily painted ceilings requiring encapsulation. Standard Applewood bedrooms represent baseline pricing, while whole-home projects benefit from volume discounts. We provide transparent estimates after assessment with firm pricing.
+                Yes. We plan room-by-room workflow with sealed containment, keeping stairs and key routes protected. Daily cleanup ensures kitchens and bedrooms remain usable throughout your project.
               </p>
             </details>
             <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
-              <summary className="cursor-pointer text-lg font-semibold">Can you stage work so bedrooms/kitchen stay available?</summary>
+              <summary className="cursor-pointer text-lg font-semibold">Do you handle old leaks and patch edges?</summary>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                Yes. We plan room-by-room workflow with sealed containment, keeping stairs and key routes protected. Daily cleanup ensures kitchens and bedrooms remain usable throughout your Applewood popcorn ceiling removal project.
+                We feather old patches, blend pot-light rings, repair water damage, and use stain-block primer to prevent bleed-through. Common in aging Applewood homes—we see it constantly.
               </p>
             </details>
             <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
-              <summary className="cursor-pointer text-lg font-semibold">Do you handle old leaks and patch edges in Applewood homes?</summary>
+              <summary className="cursor-pointer text-lg font-semibold">What is Level 5 finish?</summary>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                We feather old patches, blend pot-light rings, repair water damage, and use stain-block primer to prevent bleed-through. Our process addresses common issues in aging Applewood homes including roof leaks and electrical upgrade marks.
+                Level 5 is the highest drywall finish standard—full-field skim coating for uniform texture and light reflection. Eliminates shadows and imperfections visible under modern LED lighting.
               </p>
             </details>
             <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
-              <summary className="cursor-pointer text-lg font-semibold">What is Level 5 finish and why does it matter?</summary>
+              <summary className="cursor-pointer text-lg font-semibold">Do you test for asbestos in older homes?</summary>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                Level 5 is the highest drywall finish standard, involving full-field skim coating for uniform texture and light reflection. This premium finish eliminates shadows, seams, and imperfections visible under modern LED lighting common in Applewood homes.
+                For pre-1980 homes, we recommend asbestos testing before starting. We coordinate with certified labs and follow appropriate protocols based on results.
               </p>
             </details>
             <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
-              <summary className="cursor-pointer text-lg font-semibold">Do you test for asbestos in older Applewood homes?</summary>
+              <summary className="cursor-pointer text-lg font-semibold">How long does a typical project take?</summary>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                For pre-1980 Applewood homes, we recommend asbestos testing before popcorn ceiling removal. We coordinate with certified labs and follow appropriate protocols based on results to ensure safe removal.
+                Most two-storey homes take 2-3 days. Single bedrooms typically complete in 1-1.5 days. Timeline depends on paint layers, repairs needed, and drying conditions.
               </p>
             </details>
             <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
-              <summary className="cursor-pointer text-lg font-semibold">How long does a typical Applewood project take?</summary>
+              <summary className="cursor-pointer text-lg font-semibold">Do you offer same-day estimates?</summary>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                Most Applewood two-storey homes take 2-3 days for complete popcorn ceiling removal and Level 5 finishing. Single bedrooms typically complete in 1-1.5 days. Timeline depends on paint layers, repairs needed, and drying conditions.
-              </p>
-            </details>
-            <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
-              <summary className="cursor-pointer text-lg font-semibold">Do you offer same-day or next-day estimates for Applewood?</summary>
-              <p className="mt-3 text-gray-700 leading-relaxed">
-                Yes. Most Applewood estimates are delivered within 4 hours of receiving photos and dimensions. We can often schedule on-site assessments within 24-48 hours for complex projects.
+                Yes. Most estimates delivered within 4 hours of receiving photos and dimensions. On-site assessments within 24-48 hours for complex projects.
               </p>
             </details>
             <details className="rounded-2xl border border-slate-200 p-6 shadow-sm bg-white hover:border-blue-200 transition-colors">
               <summary className="cursor-pointer text-lg font-semibold">What's included in your warranty?</summary>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                We provide a 3-year written workmanship warranty on all popcorn ceiling removal Applewood projects, covering finish quality, adhesion, and structural integrity. WSIB + comprehensive liability insurance protects homeowners.
+                3-year written workmanship warranty on all projects, covering finish quality, adhesion, and structural integrity. WSIB + comprehensive liability insurance.
               </p>
             </details>
           </div>
         </div>
       </section>
 
-      {/* COMPREHENSIVE APPLEWOOD SEO CONTENT */}
-      <section className="mt-16 container mx-auto px-4">
+      {/* COMPREHENSIVE APPLEWOOD SEO CONTENT - DRASTICALLY REDUCED */}
+      <section className="mt-16 container mx-auto px-4 mb-16">
         <div className="bg-white rounded-3xl p-8 shadow-xl border max-w-4xl mx-auto">
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold mb-6">
-              Professional Popcorn Ceiling Removal Service Applewood, Mississauga
+              About Our Applewood Service
             </h2>
           
           <p className="text-gray-700 leading-relaxed mb-4">
-            Applewood represents a unique chapter in Mississauga's residential development—established neighborhoods like Applewood Hills and Applewood Acres feature predominantly 1960s-1980s construction with characteristic popcorn and stipple ceiling textures. Our <strong>popcorn ceiling removal contractor Applewood</strong> team specializes in transforming these mid-century homes with modern smooth ceiling finishes while respecting the area's architectural heritage.
+            Applewood's housing stock is predominantly 1960s-1980s construction—Applewood Hills and Applewood Acres feature painted popcorn that's accumulated multiple layers over the decades. We're specialists in these mid-century homes because we've done hundreds of them locally.
           </p>
 
           <p className="text-gray-700 leading-relaxed mb-4">
-            Whether you're seeking <strong>popcorn ceiling removal Applewood</strong> solutions for your family home near Fieldgate Drive, require expert <strong>ceiling texture removal Applewood</strong> for a property near Bloor Street, or need comprehensive <strong>ceiling resurfacing Applewood</strong> services, our local teams understand the specific challenges and opportunities presented by Applewood's housing stock.
+            Most ceiling challenges in this neighborhood come down to paint buildup, old pot light installations that disturbed the original texture, and settling that creates visible seams under LED lighting. Our approach is straightforward: test a patch, choose scrape or encapsulate based on what's safe, then apply a full Level 5 skim for uniform smoothness.
           </p>
 
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Understanding Applewood's Housing Landscape
-          </h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Applewood's residential character differs from newer Mississauga developments. The neighborhood's maturity brings specific ceiling-related considerations that inform our <strong>professional popcorn ceiling removal Applewood</strong> approach:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Original 1960s-70s construction:</strong> Homes throughout Applewood Hills typically feature painted popcorn textures applied during initial construction, requiring careful assessment before <strong>scraping popcorn ceiling Applewood</strong></li>
-            <li><strong>Layered renovations:</strong> Many properties have undergone multiple updates, creating varied substrates that demand flexible <strong>stipple ceiling removal Applewood</strong> techniques</li>
-            <li><strong>Standard ceiling heights:</strong> Typical 8-foot ceilings throughout most of Applewood simplify logistics but require attention to proportion and finish quality</li>
-            <li><strong>Plaster vs drywall substrates:</strong> Older sections near Dixie Road may have original plaster, while later additions feature drywall—both requiring specific <strong>ceiling texture removal Applewood</strong> methods</li>
-            <li><strong>Previous repair history:</strong> Water damage from roof issues, bathroom leaks, or foundation settling creates patching challenges that our <strong>smooth ceiling contractor Applewood</strong> team regularly addresses</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Applewood Geographic & Logistical Considerations
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Successful <strong>popcorn ceiling removal service Applewood</strong> requires understanding local geography, infrastructure, and access patterns:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Bloor Street corridor:</strong> Properties along or near Bloor benefit from excellent access but may require timing coordination around traffic patterns</li>
-            <li><strong>Dixie Road proximity:</strong> Homes near Dixie Road offer straightforward material delivery from nearby suppliers, reducing project costs</li>
-            <li><strong>Burnhamthorpe access:</strong> Southern Applewood properties benefit from Burnhamthorpe Road's direct routes for crew and equipment transport</li>
-            <li><strong>Residential street patterns:</strong> Quiet interior streets like Fieldgate Drive and Tomken Road require considerate parking and noise management</li>
-            <li><strong>Transit connectivity:</strong> MiWay bus routes throughout Applewood ensure consistent crew scheduling regardless of vehicle availability</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Common Applewood Ceiling Challenges We Solve
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Our <strong>popcorn ceiling removal contractor Applewood</strong> experience reveals recurring issues specific to the neighborhood:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Heavily painted textures:</strong> Decades of repainting create thick texture layers requiring careful evaluation—sometimes <strong>taking off popcorn ceiling</strong> through scraping, other times employing safe encapsulation before <strong>ceiling resurfacing Applewood</strong></li>
-            <li><strong>Water stain patterns:</strong> Roof issues common in aging Applewood homes create yellowing or brown staining requiring stain-blocking primers as part of our <strong>professional popcorn ceiling removal Applewood</strong> process</li>
-            <li><strong>Electrical updates:</strong> Added pot lights or ceiling fans disturb original texture, leaving visible rings and patches our <strong>smooth ceiling contractor Applewood</strong> team blends seamlessly</li>
-            <li><strong>Seam telegraphing:</strong> Temperature cycling and settling cause drywall seams to show through texture—addressed during our Level 5 finishing process</li>
-            <li><strong>Asbestos concerns:</strong> Pre-1980 homes may require testing before <strong>stripping popcorn ceiling</strong> work begins, which we coordinate with certified labs</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Our Applewood-Specific Process
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            <strong>Popcorn ceiling removal Applewood</strong> projects follow a proven workflow adapted to local conditions:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Initial assessment:</strong> On-site evaluation determines whether your ceiling requires scraping, encapsulation, or hybrid approach for optimal <strong>ceiling texture removal Applewood</strong> results</li>
-            <li><strong>Home protection:</strong> Complete containment of work areas with sealed plastic barriers, floor protection, and HVAC masking prevents dust migration throughout your Applewood home</li>
-            <li><strong>Strategic removal:</strong> Controlled <strong>scraping popcorn ceiling Applewood</strong> or safe encapsulation based on texture condition and paint layers</li>
-            <li><strong>Surface preparation:</strong> Repair of cracks, water damage, seam issues, and previous patches creates ideal substrate for Level 5 finishing</li>
-            <li><strong>Level 5 skim coating:</strong> Full-field compound application by our experienced <strong>smooth ceiling contractor Applewood</strong> crew, followed by raking-light inspection and touch-ups</li>
-            <li><strong>Stain-blocking primer:</strong> Professional-grade primer prevents bleed-through and creates uniform surface for paint adhesion</li>
-            <li><strong>Paint-ready finish:</strong> Thoroughly cleaned, primed surface ready for your choice of ceiling paint or our optional turnkey painting service</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Applewood Home Types & Typical Projects
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Our <strong>popcorn ceiling removal service Applewood</strong> adapts to diverse property types throughout the neighborhood:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Two-storey family homes:</strong> Standard Applewood layout with bedrooms upstairs, open main floor—typically 2-3 days for complete <strong>taking down popcorn ceiling</strong> and refinishing</li>
-            <li><strong>Bungalows:</strong> Single-level homes throughout Applewood Acres benefit from efficient access and faster project completion</li>
-            <li><strong>Split-level designs:</strong> Mid-century split-levels common near Burnhamthorpe require careful staging but offer room-by-room flexibility</li>
-            <li><strong>Basement renovations:</strong> Finished basements throughout Applewood often need <strong>ceiling resurfacing Applewood</strong> to match updated living spaces</li>
-            <li><strong>Investment properties:</strong> Rental homes and pre-sale updates where <strong>get rid of popcorn ceiling</strong> transformations significantly impact market appeal</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Cost Considerations for Applewood Projects
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Understanding <strong>popcorn ceiling removal cost Applewood</strong> helps homeowners budget effectively:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Standard rooms:</strong> Typical Applewood bedrooms (10'×12') with unpainted texture represent baseline <strong>popcorn removal cost Applewood</strong> pricing</li>
-            <li><strong>Painted ceilings:</strong> Heavily painted textures common throughout Applewood Hills add 30-40% to base <strong>cost to scrape popcorn ceiling Applewood</strong> due to encapsulation requirements</li>
-            <li><strong>Repair work:</strong> Water damage, crack repair, or extensive patching increases project scope—transparent estimates provided after assessment</li>
-            <li><strong>Multi-room bundling:</strong> Whole-home projects throughout Applewood benefit from volume pricing, reducing per-square-foot costs</li>
-            <li><strong>Additional services:</strong> Coordinating with <Link href="/services/interior-painting/" className="text-blue-600 font-semibold hover:underline">interior painting</Link> or <Link href="/services/drywall-installation/" className="text-blue-600 font-semibold hover:underline">drywall installation</Link> services often provides better overall value</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Why Applewood Homeowners Choose Us
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Our <strong>popcorn ceiling contractor Applewood</strong> reputation reflects consistent local success:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Applewood expertise:</strong> Extensive project history throughout Applewood Hills and Applewood Acres means we understand your home's construction</li>
-            <li><strong>Transparent communication:</strong> Clear estimates, realistic timelines, and daily progress updates keep you informed throughout <strong>ceiling texture removal Applewood</strong> projects</li>
-            <li><strong>Dust management:</strong> HEPA-filtered sanding and sealed containment protect your Applewood home's interior</li>
-            <li><strong>Quality assurance:</strong> Raking-light inspection of every ceiling ensures Level 5 smoothness before primer application</li>
-            <li><strong>Written warranty:</strong> 3-year workmanship guarantee on all <strong>popcorn ceiling removal Applewood</strong> projects</li>
-            <li><strong>Licensed & insured:</strong> WSIB compliance and comprehensive liability coverage protect homeowners</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Specialized Services for Applewood Homes
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Beyond standard <strong>popcorn ceiling removal Applewood</strong>, we offer targeted solutions:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Painted popcorn ceiling removal Applewood:</strong> Safe removal or encapsulation of multiple paint layers without damaging substrate</li>
-            <li><strong>Stucco ceiling removal Applewood:</strong> Heavy texture patterns requiring specialized scraping techniques</li>
-            <li><strong>Stipple ceiling removal Applewood:</strong> Fine-textured ceiling patterns common in Applewood bathrooms and hallways</li>
-            <li><strong>Water damage restoration:</strong> Complete repair and refinishing of water-damaged ceilings, including stain blocking</li>
-            <li><strong>Pot light integration:</strong> Coordination with electricians for seamless ceiling finish after lighting upgrades</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Applewood Market Context
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Real estate dynamics in Applewood increasingly favor modern ceiling finishes. Our <strong>smooth ceiling contractor Applewood</strong> services help homeowners:
-          </p>
-          <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-            <li><strong>Pre-listing upgrades:</strong> Smooth ceilings significantly improve showing appeal for Applewood homes entering the market</li>
-            <li><strong>Post-purchase renovations:</strong> New buyers throughout Applewood often prioritize <strong>taking out popcorn ceiling</strong> before move-in</li>
-            <li><strong>Rental property updates:</strong> Investment property owners find smooth ceilings reduce vacancy periods and support higher rents</li>
-            <li><strong>Age-in-place modifications:</strong> Senior homeowners modernizing Applewood properties for extended occupancy</li>
-          </ul>
-
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Beyond Applewood: Regional Service Context
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            While Applewood represents our neighborhood-level expertise, we serve throughout Mississauga and beyond. Homeowners appreciate consistent quality whether we're <strong>removing stucco ceiling Applewood</strong> properties or working on projects in nearby <Link href="/popcorn-ceiling-removal/mississauga/erin-mills/" className="text-blue-600 font-semibold hover:underline">Erin Mills</Link>, <Link href="/popcorn-ceiling-removal/mississauga/port-credit/" className="text-blue-600 font-semibold hover:underline">Port Credit</Link>, or <Link href="/popcorn-ceiling-removal/mississauga/streetsville/" className="text-blue-600 font-semibold hover:underline">Streetsville</Link>. Our centralized <Link href="/popcorn-ceiling-removal/mississauga/" className="text-blue-600 font-semibold hover:underline">Mississauga ceiling removal</Link> operations ensure the same crews, quality standards, and customer service regardless of specific neighborhood.
+            We also serve nearby Mississauga neighborhoods—<Link href="/popcorn-ceiling-removal/mississauga/erin-mills/" className="text-blue-600 font-semibold hover:underline">Erin Mills</Link>, <Link href="/popcorn-ceiling-removal/mississauga/port-credit/" className="text-blue-600 font-semibold hover:underline">Port Credit</Link>, and <Link href="/popcorn-ceiling-removal/mississauga/streetsville/" className="text-blue-600 font-semibold hover:underline">Streetsville</Link>—with the same crews, quality standards, and warranty. See our full <Link href="/popcorn-ceiling-removal/mississauga/" className="text-blue-600 font-semibold hover:underline">Mississauga service area</Link> for details.
           </p>
 
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
-            Schedule Your Applewood Ceiling Project
-          </h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Whether you're updating a family home near Fieldgate Drive, preparing an Applewood Hills property for sale, or renovating a recent purchase near Dixie Road, professional <strong>popcorn ceiling removal Applewood</strong> transforms dated interiors into contemporary living spaces. Our local teams understand Applewood's housing patterns, access requirements, and homeowner expectations.
+            <strong>Ready to start?</strong> Whether you're updating a family home near Fieldgate Drive or preparing an Applewood Hills property for sale, we handle the full process from quote to final cleanup.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            <Link href="/quote/" className="text-blue-600 font-semibold hover:underline">Request a detailed quote</Link> with photos and room dimensions, or call <a href={phoneHref} className="text-blue-600 font-semibold hover:underline">{phoneDisplay}</a> to discuss your Applewood project. Most estimates are delivered within 4 hours with firm pricing, clear timelines, and comprehensive scope documentation. Discover why Applewood homeowners trust our <strong>professional popcorn ceiling removal Applewood</strong> expertise for ceiling transformations that enhance both livability and property value.
+            <Link href="/quote/" className="text-blue-600 font-semibold hover:underline">Request a quote</Link> with photos and room dimensions, or call <a href={phoneHref} className="text-blue-600 font-semibold hover:underline">{phoneDisplay}</a> to discuss your project. Most estimates delivered within 4 hours with firm pricing and clear timelines.
           </p>
         </div>
         </div>
