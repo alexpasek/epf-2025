@@ -4,12 +4,29 @@ export const revalidate = 14400; // 4h
 // export const runtime = "edge";
 // export const dynamic = "force-dynamic";
 
+const env =
+    typeof process !== "undefined" && process && process.env ?
+    process.env :
+    {};
+
+const readEnv = (key) => {
+    if (env[key]) return env[key];
+    if (
+        typeof globalThis !== "undefined" &&
+        globalThis &&
+        typeof globalThis[key] === "string"
+    ) {
+        return globalThis[key];
+    }
+    return undefined;
+};
+
 export async function GET() {
     const apiKey =
-        process.env.GOOGLE_MAPS_API_KEY ||
-        process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+        readEnv("GOOGLE_MAPS_API_KEY") ||
+        readEnv("NEXT_PUBLIC_GOOGLE_MAPS_API_KEY");
     const placeId =
-        process.env.GBP_PLACE_ID || process.env.NEXT_PUBLIC_GBP_PLACE_ID;
+        readEnv("GBP_PLACE_ID") || readEnv("NEXT_PUBLIC_GBP_PLACE_ID");
 
     const json = (obj, init = {}) =>
         new Response(JSON.stringify(obj), {
