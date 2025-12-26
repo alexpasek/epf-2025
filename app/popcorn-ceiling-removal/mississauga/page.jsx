@@ -330,9 +330,14 @@ export default function Page() {
                   <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
                     <span className="text-lg">🗓️</span>
                     <span>
-                      Predictable scheduling and clean wrap-ups in Port Credit,
-                      Sheridan, Clarkson, Streetsville, and every pocket in
-                      between.
+                      Predictable scheduling and clean wrap-ups in Port Credit,{" "}
+                      <Link
+                        href="/popcorn-ceiling-removal/mississauga/sheridan/"
+                        className="underline underline-offset-4"
+                      >
+                        Sheridan
+                      </Link>
+                      , Clarkson, Streetsville, and every pocket in between.
                     </span>
                   </li>
                   <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -847,7 +852,14 @@ export default function Page() {
                 Why Mississauga Homes Need Professional Ceiling Services
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Mississauga's rapid growth from a collection of villages to Canada's sixth most populous city means homes span six decades of construction styles. Older neighborhoods like Malton, Cooksville, and Lakeview often feature original popcorn ceilings from the 1970s and 1980s that now clash with modern design expectations. Meanwhile, newer areas like East Credit and Meadowvale Village frequently have painted stipple textures that require specialized skim coating rather than simple scraping.
+                Mississauga's rapid growth from a collection of villages to Canada's sixth most populous city means homes span six decades of construction styles. Older neighborhoods like Malton,{" "}
+                <Link
+                  href="/popcorn-ceiling-removal/mississauga/cooksville/"
+                  className="text-blue-600 underline"
+                >
+                  Cooksville
+                </Link>
+                , and Lakeview often feature original popcorn ceilings from the 1970s and 1980s that now clash with modern design expectations. Meanwhile, newer areas like East Credit and Meadowvale Village frequently have painted stipple textures that require specialized skim coating rather than simple scraping.
               </p>
 
               <h3 className="text-2xl font-semibold mt-8 mb-4">

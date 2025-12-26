@@ -305,10 +305,22 @@ export default function Page() {
           wells or bulkheads.
         </p>
         <p>
-          Communication is simple: you’ll receive a clear scope and schedule up
+          Communication is simple: you'll receive a clear scope and schedule up
           front, photo updates during the job, and tidy daily wrap-ups so family
           life continues. We are WSIB and liability insured and include a
           written 3-year workmanship warranty.
+        </p>
+        <p>
+          We frequently rotate the same crew between Lorne Park estates and
+          Clarkson bungalows along Lakeshore, so you can browse our{" "}
+          <Link
+            href="/popcorn-ceiling-removal/mississauga/clarkson/"
+            className="text-blue-600 underline font-medium"
+          >
+            Clarkson popcornc ceiling removal service
+          </Link>{" "}
+          to see identical containment setups, staging plans and Level 5
+          finishes just east of your neighborhood.
         </p>
       </section>
 

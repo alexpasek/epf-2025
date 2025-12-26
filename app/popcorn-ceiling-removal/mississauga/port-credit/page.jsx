@@ -259,6 +259,18 @@ export default function Page() {
           walk-through before handover. We’re WSIB and liability insured, and
           every project includes a <strong>3-year workmanship warranty</strong>.
         </p>
+        <p>
+          Because we run the same crew between the marina and Clarkson village,
+          you can preview nearby{" "}
+          <Link
+            href="/popcorn-ceiling-removal/mississauga/clarkson/"
+            className="text-blue-600 underline font-medium"
+          >
+            Clarkson ceiling removal projects
+          </Link>{" "}
+          to see how we treat similar split-levels and lakeside bungalows before
+          we start in Port Credit.
+        </p>
       </section>
 
       {/* CASES (sales proof) */}

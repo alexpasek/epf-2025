@@ -208,6 +208,18 @@ export default function Page() {
           disturbance; we can refer third-party testing and proceed after
           clearance.
         </p>
+        <p>
+          Many families own or manage properties both here and just north along
+          Hurontario, so we often reference our{" "}
+          <Link
+            href="/popcorn-ceiling-removal/mississauga/cooksville/"
+            className="text-blue-600 underline"
+          >
+            Cooksville smooth ceiling projects
+          </Link>{" "}
+          to show the same Level 5 workflow in tighter post-war homes before we
+          start on Mineola custom builds.
+        </p>
       </section>
 
       <section id="costs" className="mt-10 card p-6 bg-white">

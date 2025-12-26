@@ -1,20 +1,21 @@
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
+import QuoteForm from "@/components/QuoteForm";
 
 export const revalidate = 86400;
 
 export const metadata = {
   title:
-    "Popcorn Ceiling Removal — Sheridan, Mississauga | Level 5 Smooth, Dust-Controlled",
+    "Sheridan Popcorn Ceiling Removal | Level 5 Smooth Ceilings & Local Crew",
   description:
-    "Sheridan & Sheridan Homelands popcorn ceiling removal for detached/semi homes. Dust control, Level 5 skim, stain-block primer and paint-ready results. Fast photo quotes.",
+    "Modernize Sheridan and Sheridan Homelands ceilings with dust-controlled popcorn removal, Level 5 skims, and paint-ready finishes. Fast photo estimates, HEPA protection, 3-year warranty.",
   alternates: {
     canonical: "/popcorn-ceiling-removal/mississauga/sheridan/",
   },
   openGraph: {
-    title: "Popcorn Ceiling Removal — Sheridan, Mississauga",
+    title: "Sheridan Popcorn Ceiling Removal | Level 5 Smooth Ceilings",
     description:
-      "Residential popcorn/stipple ceiling removal with tidy containment and Level 5 smoothness in Sheridan and Sheridan Homelands.",
+      "Sheridan Homelands popcorn ceiling removal with HEPA dust control, Level 5 skim, stain-block primer, and trusted local crews.",
     url: "/popcorn-ceiling-removal/mississauga/sheridan/",
     type: "article",
   },
@@ -27,11 +28,11 @@ function JsonLd() {
     "@graph": [
       {
         "@type": "Service",
-        name: "Popcorn Ceiling Removal",
+        name: "Sheridan Popcorn Ceiling Removal",
         serviceType: [
           "Popcorn Ceiling Removal",
-          "Stipple/Stucco Ceiling Removal",
-          "Ceiling Skim Coat Level 5",
+          "Stipple Ceiling Removal",
+          "Level 5 Skim Coat",
           "Ceiling Resurfacing",
         ],
         areaServed: "Sheridan, Mississauga",
@@ -44,30 +45,9 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Service Areas",
-            item: "/service-areas",
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Mississauga",
-            item: "/popcorn-ceiling-removal/mississauga/",
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            name: "Sheridan",
-            item: "/popcorn-ceiling-removal/mississauga/sheridan/",
-          },
+          { "@type": "ListItem", position: 1, name: "Popcorn Ceiling Removal", item: "/popcorn-ceiling-removal/" },
+          { "@type": "ListItem", position: 2, name: "Mississauga", item: "/popcorn-ceiling-removal/mississauga/" },
+          { "@type": "ListItem", position: 3, name: "Sheridan", item: "/popcorn-ceiling-removal/mississauga/sheridan/" },
         ],
       },
       {
@@ -75,26 +55,26 @@ function JsonLd() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "How long does Sheridan main-floor removal usually take?",
+            name: "How fast can you quote Sheridan Homelands ceilings?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Typical 600–900 sq.ft. main floors take about 2–3 working days including skim, primer and tidy wrap-ups.",
+              text: "Text photos + approximate square footage for a same-day popcorn ceiling removal estimate in Sheridan.",
             },
           },
           {
             "@type": "Question",
-            name: "Do you coordinate pot lights with an electrician?",
+            name: "Do you control dust in occupied homes?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes. We align timing with your electrician and blend around new rings so nothing ghosts after primer.",
+              text: "Yes. We seal rooms, mask vents, run HEPA sanders and tidy daily so Sheridan homes stay livable.",
             },
           },
           {
             "@type": "Question",
-            name: "What about older painted textures?",
+            name: "What finish do you deliver?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "We test a small patch first, then choose controlled scrape or safe encapsulation before a full Level 5 skim.",
+              text: "Every Sheridan project receives a Level 5 skim and stain-block primer for a flawless paint-ready ceiling.",
             },
           },
         ],
@@ -111,9 +91,10 @@ function JsonLd() {
 }
 
 const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
+const phoneDisplay = (CONTACT && CONTACT.phone) || "(647) 923-6784";
 
 export default function Page() {
-  const images = Array.from(
+  const gallery = Array.from(
     { length: 6 },
     (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
   );
@@ -124,370 +105,398 @@ export default function Page() {
 
       {/* HERO */}
       <header className="max-w-6xl">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Popcorn Ceiling Removal — Sheridan, Mississauga
-            </h1>
-            <p className="mt-3 text-gray-700">
-              Sheridan Homelands and nearby streets often have legacy stipple
-              that shows seams and shadows. Our residential workflow keeps rooms
-              livable: floor/wall protection, room containment,{" "}
-              <strong>HEPA-assisted sanding</strong>, full-field{" "}
-              <strong>Level 5 skim</strong>, and a stain-block primer so your
-              top coat covers beautifully.
-            </p>
-          </div>
-          <div className="flex gap-3 md:shrink-0">
-            <a
-              href={phoneHref}
-              aria-label="Call for a quote"
-              className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md hover:brightness-110 active:brightness-95 transition"
-            >
-              <span className="mr-2">📞</span>
-              <span className="whitespace-nowrap">(647) 923-6784</span>
-            </a>
-            <a
-              href="/quote/"
-              aria-label="Open quote form"
-              className="inline-flex items-center h-11 px-4 rounded-xl bg-gradient-to-b from-blue-600 to-blue-700 text-white font-medium shadow-sm hover:shadow-md hover:brightness-110 active:brightness-95 transition"
-            >
-              Get my quote
-            </a>
+        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 text-white shadow-2xl">
+          <div className="grid gap-10 p-10 lg:grid-cols-[1.1fr,0.9fr]">
+            <div>
+              <div className="inline-flex gap-2 text-xs uppercase tracking-[0.3em] text-white/70">
+                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+                  Sheridan & Sheridan Homelands
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+                  Dust-Controlled Workflow
+                </span>
+              </div>
+              <h1 className="mt-5 text-3xl md:text-5xl font-bold leading-tight">
+                Smooth ceilings for Sheridan homelands bungalows & splits
+              </h1>
+              <p className="mt-4 text-lg text-slate-100">
+                We deliver professional popcorn ceiling removal Sheridan homeowners trust: HEPA dust control, Level 5 skims, stain-block primer, and tidy wrap-ups that keep Royal Windsor & Winston Churchill commutes uninterrupted.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a href={phoneHref} className="btn-cta bg-white text-slate-900 shadow-lg">
+                  📞 {phoneDisplay}
+                </a>
+                <a
+                  href="/quote/"
+                  className="btn-cta border border-white/60 bg-transparent text-white hover:bg-white/10"
+                >
+                  Get my quote
+                </a>
+                <p className="text-sm text-white/80">
+                  Fast photo estimate • 3-year workmanship warranty
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl p-6 text-slate-900 shadow-2xl">
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-500 font-semibold">
+                Popcorn ceiling removal quote
+              </p>
+              <h2 className="mt-2 text-2xl font-bold">
+                Contact the Sheridan popcorn ceiling crew
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Tell us about your Sheridan Homelands popcorn ceilings and we’ll reply with a Level 5 plan, timeline, and dust-control notes.
+              </p>
+              <QuoteForm />
+              <div className="mt-4 grid gap-3 text-sm text-slate-600">
+                <p>
+                  ✅ Average main floor: 2–3 days room-by-room with HEPA containment.
+                </p>
+                <p>
+                  ✅ Methods include controlled scrape or encapsulate + Level 5 skim depending on painted build-up.
+                </p>
+                <p>
+                  ✅ Familiar with Sheridan Homelands crescents, Credit Woodland pockets, and Erin Mills Pkwy access.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Sticky sub-nav */}
-        <nav className="mt-4 flex flex-wrap items-center gap-3 text-sm">
-          <a href="#why" className="underline-offset-2 hover:underline">
-            Why us
-          </a>
-          <a href="#process" className="underline-offset-2 hover:underline">
-            Process
-          </a>
-          <a href="#pricing" className="underline-offset-2 hover:underline">
-            Pricing
-          </a>
-          <a href="#compare" className="underline-offset-2 hover:underline">
-            Compare methods
-          </a>
-          <a href="#faq" className="underline-offset-2 hover:underline">
-            FAQ
-          </a>
-          <a
-            href="#neighbourhoods"
-            className="underline-offset-2 hover:underline"
-          >
-            Nearby areas
-          </a>
+        <nav className="mt-6 flex flex-wrap gap-3 text-sm">
+          {[
+            ["#why", "Why us"],
+            ["#local", "Local insight"],
+            ["#services", "Services"],
+            ["#pricing", "Pricing"],
+            ["#projects", "Projects"],
+            ["#resources", "Local resources"],
+            ["#faq", "FAQ"],
+            ["#neighbourhoods", "Nearby areas"],
+          ].map(([href, label]) => (
+            <a
+              key={href}
+              href={href}
+              className="px-4 py-2 rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50"
+            >
+              {label}
+            </a>
+          ))}
         </nav>
       </header>
 
-      {/* HIGHLIGHTS */}
-      <section id="why" className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="card p-6 bg-white">
-          <h3 className="text-xl font-semibold">Dust-Controlled & Tidy</h3>
-          <p className="text-gray-600 mt-2">
-            Room containment, vent masking, HEPA vacuum-assist sanding, daily
-            cleanups.
+      {/* WHY */}
+      <section id="why" className="mt-12 py-12 bg-gradient-to-br from-slate-50 to-white rounded-3xl border border-slate-100">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center">
+            Why Sheridan homeowners choose our crew
+          </h2>
+          <p className="mt-2 text-center text-gray-600 max-w-3xl mx-auto">
+            Sheridan popcorn ceiling removal depends on staging in tight crescents, low carports, and open-to-below foyers. We built a workflow that respects those constraints.
           </p>
-        </div>
-        <div className="card p-6 bg-white">
-          <h3 className="text-xl font-semibold">Level 5 Smooth</h3>
-          <p className="text-gray-600 mt-2">
-            Full-field skim checked under raking light; stain-block primer for
-            an even read.
-          </p>
-        </div>
-        <div className="card p-6 bg-white">
-          <h3 className="text-xl font-semibold">House-Friendly Scheduling</h3>
-          <p className="text-gray-600 mt-2">
-            Predictable start/finish windows that work around family routines.
-          </p>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Transit-friendly staging",
+                copy: "Gear runs stay compact for Winston Churchill & QEW commutes. Materials stay in containment, not the driveway.",
+              },
+              {
+                title: "Level 5 every time",
+                copy: "Popcorn ceiling removal Sheridan Homelands clients expect includes skim, raking-light checks, and stain-block primer.",
+              },
+              {
+                title: "Neighbourly wrap-ups",
+                copy: "Daily tidies, clear updates, respectful noise windows in family-heavy streets near Sheridan Park.",
+              },
+            ].map((card) => (
+              <div key={card.title} className="p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                <h3 className="text-xl font-semibold">{card.title}</h3>
+                <p className="mt-2 text-gray-600">{card.copy}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* GALLERY */}
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {images.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={`Sheridan popcorn ceiling removal — project ${i + 1}`}
-            className="w-full h-56 object-cover rounded-2xl border shadow"
-            data-lightbox="true"
-          />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {gallery.map((src, i) => (
+          <div key={src} className="rounded-3xl overflow-hidden bg-slate-100 shadow">
+            <img
+              src={src}
+              alt={`Sheridan popcorn ceiling removal project ${i + 1}`}
+              className="h-56 w-full object-cover"
+            />
+          </div>
         ))}
       </div>
 
-      {/* PROCESS */}
-      <section id="process" className="prose-custom max-w-none mt-10">
-        <h2>Exact Process for Sheridan Homes</h2>
-        <ol>
-          <li>
-            <strong>Protection & Containment.</strong> Floors, stairs and
-            furniture covered; vents sealed; pathways kept clean.
-          </li>
-          <li>
-            <strong>Test Patch.</strong> We check adhesion on a discreet spot to
-            pick the safest, cleanest approach.
-          </li>
-          <li>
-            <strong>Removal / Encapsulation.</strong> Controlled scrape where
-            suitable, or safe encapsulation prior to skim.
-          </li>
-          <li>
-            <strong>Level 5 Skim.</strong> Full-field skim with raking-light
-            inspection to eliminate joint telegraphing.
-          </li>
-          <li>
-            <strong>Stain-Block Primer.</strong> Locks down the surface so your
-            top coat covers fast and even.
-          </li>
-          <li>
-            <strong>Tidy Wrap-Ups.</strong> Daily cleanup; simple hand-over with
-            touch-up walkthrough if needed.
-          </li>
-        </ol>
-
-        <h3>Rooms we typically handle in Sheridan</h3>
-        <ul>
-          <li>Main-floor living/dining + hallway/stairs</li>
-          <li>
-            Bedrooms and closets (two coats of primer if requested by painter)
-          </li>
-          <li>Two-storey foyers with proper access and protection</li>
-        </ul>
+      {/* LOCAL INSIGHT */}
+      <section id="local" className="mt-12 grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+        <div className="p-8 rounded-3xl bg-white shadow border border-slate-100">
+          <h2 className="text-3xl font-bold">Sheridan Homelands insight</h2>
+          <p className="mt-4 text-gray-700">
+            Sheridan Homelands bungalows, Erin Mills Parkway splits, and Credit Woodland two-storeys often have painted stipple hiding decades of repairs. We test a discreet area, measure moisture, and choose controlled scrape or encapsulate before Level 5 skimming so pot lights and corridor light don’t telegraph seams.
+          </p>
+          <p className="mt-4 text-gray-700">
+            Tight driveways near Homelands Dr require micro-staging: we load-in once, cart materials inside, and keep separation walls sealed to protect active kitchens and stairs. HEPA sanders, negative-air options, and floor runners keep dust off hardwoods.
+          </p>
+          <p className="mt-4 text-gray-700">
+            Popcorn ceiling removal Sheridan projects commonly book alongside Clarkson or Erin Mills homes. Review our neighbouring routes if you plan multi-home upgrades.
+          </p>
+        </div>
+        <div className="p-8 rounded-3xl bg-gradient-to-b from-indigo-50 to-white border border-indigo-100">
+          <h3 className="text-xl font-semibold">Typical requests</h3>
+          <ul className="mt-4 space-y-3 text-gray-700">
+            <li>Popcorn ceiling removal Sheridan Homelands main floors</li>
+            <li>Stipple ceiling removal near Sheridan Centre & Thorn Lodge</li>
+            <li>Ceiling resurfacing Sheridan bungalows before listing</li>
+            <li>Pot light + Level 5 combo for Royal Windsor / Winston Churchill splits</li>
+          </ul>
+          <div className="mt-6 p-4 rounded-2xl bg-white shadow">
+            <p className="text-sm text-gray-600">
+              Need a lofted foyer or skylight return smoothed? We bring engineered planks and guardrails so the job staying on schedule never compromises safety.
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* PRICING GUIDANCE */}
-      <section id="pricing" className="mt-10 card p-6 bg-white">
-        <h2 className="text-2xl font-semibold">
-          Pricing — Clear & Condition-Based
+      {/* SERVICES */}
+      <section id="services" className="mt-12">
+        <h2 className="text-3xl font-bold text-center">
+          Sheridan-focused ceiling services
         </h2>
-        <p className="text-gray-700 mt-2">
-          Quotes are based on square footage, painted vs unpainted texture,
-          repairs, and access (stairwells, two-storey foyer). Send photos and
-          rough sizes for a fast estimate; we confirm everything on site before
-          starting.
-        </p>
-        <div className="mt-4 grid md:grid-cols-3 gap-4 text-gray-700">
-          <div className="p-4 border rounded-2xl">
-            <div className="font-semibold">Touch-ups + Prime</div>
-            <div className="text-sm mt-1">
-              For newer textures with minor imperfections.
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Popcorn ceiling removal Sheridan",
+              copy: "Protect, test, remove or encapsulate, Level 5 skim, prime, and paint-ready handoff.",
+            },
+            {
+              title: "Smooth ceiling contractor Sheridan",
+              copy: "Coordinated pot light rings, bulkhead blending, stairwell staging, and trim-ready finishes.",
+            },
+            {
+              title: "Ceiling texture removal Sheridan",
+              copy: "Stipple, stucco, or swirls eliminated across bungalows and two-storey foyers with HEPA dust control.",
+            },
+          ].map((svc) => (
+            <div key={svc.title} className="p-6 rounded-3xl bg-white shadow border border-slate-100">
+              <h3 className="text-xl font-semibold">{svc.title}</h3>
+              <p className="mt-2 text-gray-700">{svc.copy}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="mt-12 rounded-3xl bg-slate-900 text-white p-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-indigo-300">Pricing & schedule</p>
+            <h2 className="text-3xl font-bold mt-2">Sheridan popcorn ceiling removal cost range</h2>
+            <p className="mt-4 text-slate-200">
+              Unpainted popcorn: $6–$7/sq ft. Painted or stubborn stipple needing encapsulation + Level 5 skim: $8–$9/sq ft. Includes protection, HEPA dust control, skim, stain-block primer, and tidy wrap-ups.
+            </p>
+            <ul className="mt-4 space-y-2 text-slate-200">
+              <li>✅ 2–3 days for main floors (room-by-room)
+</li>
+              <li>✅ Two-storey foyers scheduled around daylight and quiet hours</li>
+              <li>✅ Written scope + punch list before final payment</li>
+            </ul>
           </div>
-          <div className="p-4 border rounded-2xl">
-            <div className="font-semibold">Full Removal + Level 5</div>
-            <div className="text-sm mt-1">
-              Most Sheridan jobs. Clean skim, raking-light checks, stain-block
-              primer.
-            </div>
-          </div>
-          <div className="p-4 border rounded-2xl">
-            <div className="font-semibold">Complex Access / Repairs</div>
-            <div className="text-sm mt-1">
-              Two-storey foyers, ceiling repairs, and pot-light blending with
-              electrician timing.
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              ["Method", "Controlled scrape or encapsulate"],
+              ["Finish", "Level 5 + stain-block primer"],
+              ["Warranty", "3 years workmanship"],
+              ["Access", "Stair/foyer staging included"],
+            ].map(([label, value]) => (
+              <div key={label} className="p-4 rounded-2xl bg-white/10 border border-white/20">
+                <p className="text-xs uppercase tracking-wide text-indigo-200">{label}</p>
+                <p className="text-2xl font-semibold text-white">{value}</p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="mt-4 flex gap-3">
-          <a className="btn-cta" href={phoneHref}>
-            📞 (647) 923-6784
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a className="btn-cta bg-white text-slate-900" href="/quote/">
+            Get estimate
           </a>
-          <a className="btn-cta" href="/quote/">
-            Get my quote
+          <a className="btn-cta border border-white/40 text-white" href={phoneHref}>
+            Call {phoneDisplay}
           </a>
+          <p className="text-sm text-slate-300">
+            Includes protection, HEPA dust control, Level 5 skim, primer.
+          </p>
         </div>
       </section>
 
-      {/* COMPARE METHODS */}
-      <section id="compare" className="prose-custom max-w-none mt-10">
-        <h2>Compare: Scrape vs. Encapsulate vs. Drywall-Over</h2>
-        <ul>
-          <li>
-            <strong>Controlled Scrape</strong> — Works when texture releases
-            cleanly. Faster; minimal height change.
-          </li>
-          <li>
-            <strong>Encapsulation + Skim</strong> — For stubborn or heavily
-            painted stipple. Locks in the surface before the Level 5 skim.
-          </li>
-          <li>
-            <strong>Drywall-Over (Selective)</strong> — When ceilings are
-            severely damaged or uneven; adds height/trim considerations.
-          </li>
-        </ul>
-        <p className="text-gray-700">
-          We recommend the path after a quick test patch. Goal: a durable,
-          perfectly flat substrate that looks great in both natural light and
-          pot lights.
-        </p>
-      </section>
-
-      {/* RELATED SERVICES (INTERNAL LINKS) */}
-      <section className="mt-10">
-        <h2 className="text-2xl font-semibold">Related Services in Sheridan</h2>
-        <div className="mt-4 grid md:grid-cols-3 gap-4">
-          <Link
-            href="/services/wallpaper"
-            className="card p-5 bg-white hover:shadow-md transition"
-          >
-            <div className="font-semibold">
-              Wallpaper Removal & Adhesive Wash
+      {/* PROJECTS */}
+      <section id="projects" className="mt-12">
+        <h2 className="text-3xl font-bold text-center">Recent Sheridan projects</h2>
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Sheridan Homelands main floor",
+              location:
+                "Homelands Dr crescent",
+              scope:
+                "Encapsulate painted popcorn, Level 5 skim, prime, painter hand-off",
+              duration: "3 days",
+              result: "Open plan reads flat under new LED pot lights",
+            },
+            {
+              title: "Split near Erin Mills Pkwy",
+              location:
+                "South Common area",
+              scope:
+                "Controlled scrape, ceiling resurfacing Sheridan stair + hallway",
+              duration: "2.5 days",
+              result: "No seam shadows down long hallway sightline",
+            },
+            {
+              title: "Credit Woodland bungalow",
+              location: "Liruma Rd pocket",
+              scope: "Stipple removal, Level 5, stain-block primer, paint",
+              duration: "3 days",
+              result: "Bright, modern ceiling ahead of listing",
+            },
+          ].map((proj) => (
+            <div key={proj.title} className="p-6 bg-white rounded-3xl border">
+              <p className="text-sm text-indigo-600 uppercase tracking-wide">
+                {proj.location}
+              </p>
+              <h3 className="mt-2 text-xl font-semibold">{proj.title}</h3>
+              <p className="mt-3 text-gray-700">
+                <strong>Scope:</strong> {proj.scope}
+              </p>
+              <p className="text-gray-700">
+                <strong>Duration:</strong> {proj.duration}
+              </p>
+              <p className="text-gray-700">
+                <strong>Result:</strong> {proj.result}
+              </p>
             </div>
-            <p className="mt-2 text-gray-700">
-              Clean removal, skim as needed, primer, paint-ready walls.
-            </p>
-          </Link>
-          <Link
-            href="/services/drywall-installation"
-            className="card p-5 bg-white hover:shadow-md transition"
-          >
-            <div className="font-semibold">Drywall Repairs & Patches</div>
-            <p className="mt-2 text-gray-700">
-              Pot-light holes, bulkhead fixes, cracks and seams blended to
-              vanish.
-            </p>
-          </Link>
-          <Link
-            href="/services/interior-painting"
-            className="card p-5 bg-white hover:shadow-md transition"
-          >
-            <div className="font-semibold">Interior Painting</div>
-            <p className="mt-2 text-gray-700">
-              Ceilings, walls and trim — matched to your preferred finish.
-            </p>
-          </Link>
+          ))}
         </div>
       </section>
 
-      {/* SEO — SEARCH INTENT CLUSTER */}
-      <section className="prose-custom max-w-none mt-10">
-        <h2>Searches We Commonly Match in Sheridan</h2>
-        <p className="text-gray-700">
-          popcorn ceiling removal Mississauga • remove popcorn ceiling
-          Mississauga • stucco/stipple ceiling removal • ceiling smoothing and
-          flattening • skim coat ceiling • ceiling resurfacing • dustless
-          popcorn removal • popcorn ceiling removal cost / price per square foot
-          (condition dependent) • pot light installation after popcorn removal •
-          popcorn ceiling painting after removal • “near me” Sheridan.
+      {/* LOCAL RESOURCES */}
+      <section id="resources" className="mt-12 bg-gradient-to-r from-purple-50 via-white to-blue-50 p-8 rounded-3xl">
+        <h2 className="text-3xl font-bold text-center">Sheridan local resources</h2>
+        <p className="mt-2 text-center text-gray-600">
+          Handy references we coordinate with around Sheridan Centre, Erin Mills Pkwy, and Winston Churchill Blvd.
         </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="p-6 bg-white rounded-3xl border">
+            <h3 className="text-xl font-semibold">Paint & supply counters</h3>
+            <ul className="mt-4 space-y-2 text-gray-700">
+              <li>Benjamin Moore — Southdown Rd (colour matches for Level 5 ceilings)</li>
+              <li>Sherwin-Williams — Dundas & Erin Mills</li>
+              <li>Home Depot — Winston Churchill & QEW for staging supplies</li>
+            </ul>
+          </div>
+          <div className="p-6 bg-white rounded-3xl border">
+            <h3 className="text-xl font-semibold">Permits & waste</h3>
+            <ul className="mt-4 space-y-2 text-gray-700">
+              <li>City of Mississauga building counter for interior clarification</li>
+              <li>Peel Community Recycling Centre (Mavis Rd) for drywall/textured waste</li>
+              <li>Household hazardous waste drop-off for primer and mud pails</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mt-10">
-        <h2 className="text-2xl font-semibold">FAQ — Sheridan</h2>
-        {[
-          {
-            q: "Do you move furniture?",
-            a: "We can help with light items. Larger pieces are covered and floated; floors and stairs are protected.",
-          },
-          {
-            q: "Will there be odours or strong fumes?",
-            a: "We use low-VOC compounds and primers and keep ventilation moving for comfort.",
-          },
-          {
-            q: "How do I get a firm quote?",
-            a: "Send photos + approximate square footage. We provide a fast estimate and confirm the scope on site.",
-          },
-        ].map((f, i) => (
-          <details key={i} className="card p-6 bg-white mt-4">
-            <summary className="font-medium">{f.q}</summary>
-            <p className="mt-2 text-gray-700">{f.a}</p>
-          </details>
-        ))}
-      </section>
-
-      {/* NEARBY AREAS — INTERNAL LINK SILO */}
-      <section id="neighbourhoods" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          Nearby Mississauga Areas We Serve
-        </h2>
-        <div className="mt-4 flex flex-wrap gap-2">
+      <section id="faq" className="mt-12">
+        <h2 className="text-3xl font-bold text-center">Sheridan FAQ</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           {[
-            [
-              "/popcorn-ceiling-removal/mississauga/port-credit/",
-              "Port Credit",
-            ],
-            ["/popcorn-ceiling-removal/mississauga/lorne-park/", "Lorne Park"],
-            ["/popcorn-ceiling-removal/mississauga/clarkson/", "Clarkson"],
-            ["/popcorn-ceiling-removal/mississauga/erin-mills/", "Erin Mills"],
-            ["/popcorn-ceiling-removal/mississauga/lakeview/", "Lakeview"],
-            ["/popcorn-ceiling-removal/mississauga/mineola/", "Mineola"],
-            [
-              "/popcorn-ceiling-removal/mississauga/streetsville/",
-              "Streetsville",
-            ],
-            ["/popcorn-ceiling-removal/mississauga/meadowvale/", "Meadowvale"],
-            [
-              "/popcorn-ceiling-removal/mississauga/meadowvale-village/",
-              "Meadowvale Village",
-            ],
-            ["/popcorn-ceiling-removal/mississauga/hurontario/", "Hurontario"],
-            [
-              "/popcorn-ceiling-removal/mississauga/city-centre/",
-              "City Centre",
-            ],
-            [
-              "/popcorn-ceiling-removal/mississauga/east-credit/",
-              "East Credit",
-            ],
-            ["/popcorn-ceiling-removal/mississauga/cooksville/", "Cooksville"],
-            ["/popcorn-ceiling-removal/mississauga/applewood/", "Applewood"],
-            ["/popcorn-ceiling-removal/mississauga/malton/", "Malton"],
-          ].map(([href, name]) => (
-            <Link key={href} href={href} className="pill">
-              {name}
-            </Link>
+            {
+              q: "Can you work in stages so rooms stay available?",
+              a: "Yes. Popcorn ceiling removal Sheridan projects run room-by-room so kitchens, bedrooms, and stairs remain accessible.",
+            },
+            {
+              q: "Do you handle painted popcorn ceiling removal Sheridan homes have?",
+              a: "Absolutely. We test adhesion and choose scrape vs encapsulate to protect drywall before Level 5 skimming.",
+            },
+            {
+              q: "What finish do we get?",
+              a: "A true Level 5 smooth ceiling contractor Sheridan homeowners can trust: skim, sand, raking-light inspection, stain-block primer.",
+            },
+            {
+              q: "Can you include pot-light coordination?",
+              a: "Yes. We sync with your electrician, feather rings, and keep trims from flashing.",
+            },
+          ].map((faq) => (
+            <details key={faq.q} className="p-6 bg-white rounded-3xl border">
+              <summary className="font-semibold text-lg">{faq.q}</summary>
+              <p className="mt-2 text-gray-700">{faq.a}</p>
+            </details>
           ))}
         </div>
+      </section>
 
-        <div className="mt-6 text-sm">
-          Looking for Toronto West or Oakville? Try{" "}
+      {/* SEARCH TERMS */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-semibold">Searches we match</h2>
+        <p className="mt-2 text-gray-700">
+          popcorn ceiling removal Sheridan • popcorn ceiling removal Sheridan Homelands • popcorn ceiling removal service Sheridan • popcorn ceiling removal contractor Sheridan • professional popcorn ceiling removal Sheridan • smooth ceiling contractor Sheridan • ceiling texture removal Sheridan • stipple ceiling removal Sheridan • ceiling resurfacing Sheridan • local terms like "popcorn removal Sheridan" "scraping popcorn ceiling Sheridan" "take out popcorn ceiling Sheridan" "painted popcorn ceiling removal Sheridan" (used lightly so we don’t compete with the city hub)
+        </p>
+      </section>
+
+      {/* NEARBY AREAS */}
+      <section id="neighbourhoods" className="mt-12">
+        <h2 className="text-3xl font-bold text-center">Neighbourhood links</h2>
+        <p className="mt-2 text-center text-gray-600">
+          Check the Mississauga hub or nearby routes, then loop back when you’re ready for Sheridan.
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
           <Link
-            href="/popcorn-ceiling-removal/etobicoke/"
-            className="underline"
+            href="/popcorn-ceiling-removal/mississauga/"
+            className="p-6 rounded-3xl bg-white border hover:shadow"
           >
-            Etobicoke
-          </Link>{" "}
-          or{" "}
-          <Link href="/popcorn-ceiling-removal/oakville/" className="underline">
-            Oakville
+            ← Mississauga popcorn ceiling removal overview
           </Link>
-          .
+          <Link
+            href="/popcorn-ceiling-removal/mississauga/clarkson/"
+            className="p-6 rounded-3xl bg-white border hover:shadow"
+          >
+            Clarkson popcorn ceiling removal →
+          </Link>
+          <Link
+            href="/popcorn-ceiling-removal/mississauga/erin-mills/"
+            className="p-6 rounded-3xl bg-white border hover:shadow"
+          >
+            Erin Mills smooth ceiling projects →
+          </Link>
         </div>
       </section>
 
-      {/* SALES CTA */}
-      <section className="mt-10 card p-6 bg-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      {/* CTA */}
+      <section className="mt-12 p-8 rounded-3xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-2xl font-semibold">
             Ready to smooth your Sheridan ceilings?
           </h3>
-          <p className="text-gray-600">
-            Fast photo estimate today. Clear plan, tidy workflow, paint-ready
-            results.
+          <p className="text-white/80">
+            Send photos, get a clear plan, and relax while our Sheridan crew transforms your ceiling.
           </p>
         </div>
         <div className="flex gap-3">
-          <a className="btn-cta" href={phoneHref}>
-            📞 (647) 923-6784
+          <a className="btn-cta bg-white text-indigo-600" href={phoneHref}>
+            📞 {phoneDisplay}
           </a>
-          <a className="btn-cta" href="/quote/">
+          <a className="btn-cta border border-white/60" href="/quote/">
             Get my quote
           </a>
         </div>
       </section>
 
-      {/* BOTTOM LINKS */}
+      {/* Bottom links */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
-        <Link
-          href="/popcorn-ceiling-removal/mississauga/"
-          className="underline"
-        >
+        <Link href="/popcorn-ceiling-removal/mississauga/" className="underline">
           ← Popcorn ceiling removal Mississauga
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
@@ -497,18 +506,6 @@ export default function Page() {
           Popcorn ceiling removal services →
         </Link>
       </nav>
-
-      {/* Sticky mobile CTA */}
-      <div className=" ">
-        <div className="bg-white/95 backdrop-blur border shadow-xl rounded-2xl p-3 flex items-center justify-between gap-3">
-          <a href={phoneHref} className="btn-cta flex-1 text-center">
-            📞 Call (647) 923-6784
-          </a>
-          <a href="/quote/" className="btn-cta flex-1 text-center">
-            Get my quote
-          </a>
-        </div>
-      </div>
     </div>
   );
 }

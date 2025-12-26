@@ -310,10 +310,22 @@ export default function Page() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2>Why Applewood Homes Need Special Attention</h2>
-            <p>
-              Most homes in Applewood Hills and Acres were built in the 60s-80s with popcorn texture that's been painted multiple times over the years. We see this constantly off Fieldgate Dr, Bloor St, Dixie Rd, and Burnhamthorpe—thick paint buildup means we can't always scrape safely.
-            </p>
+        <h2>Why Applewood Homes Need Special Attention</h2>
+        <p>
+          Most homes in Applewood Hills and Acres were built in the 60s-80s with popcorn texture that's been painted multiple times over the years. We see this constantly off Fieldgate Dr, Bloor St, Dixie Rd, and Burnhamthorpe—thick paint buildup means we can't always scrape safely.
+        </p>
+        <p>
+          Families who split time between Applewood and Hurontario/Dundas often
+          peek at our{" "}
+          <Link
+            href="/popcorn-ceiling-removal/mississauga/cooksville/"
+            className="text-blue-600 underline"
+          >
+            Cooksville popcorn ceiling removal
+          </Link>{" "}
+          projects to see the same Level 5 crew working just west of here before
+          locking in dates.
+        </p>
             <p>
               Instead, we do a test patch first. If the paint is heavy or scraping risks damaging drywall, we encapsulate with a bonding coat before applying our Level 5 skim. We also handle old pot light rings, water stains from roof leaks, and seam shadows that show up under LED lighting. Everything gets a stain-blocking primer so nothing bleeds through later.
             </p>

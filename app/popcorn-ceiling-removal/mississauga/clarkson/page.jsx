@@ -11,7 +11,7 @@ export const metadata = {
   title:
     "Popcorn Ceiling Removal Clarkson, Mississauga | Level 5 Smooth Finish",
   description:
-    "Professional popcorn ceiling removal Clarkson for post-war bungalows & split-levels. Expert ceiling texture removal with HEPA dust control. Serving Lakeshore Rd W, Southdown & Rattray Marsh area.",
+    "Professional popcorn ceiling removal Clarkson for lakeshore bungalows, character homes & split-levels. Expert ceiling texture removal with HEPA dust control. Serving Lakeshore Rd W, Southdown & Rattray Marsh area.",
   keywords: [
     "popcorn ceiling removal clarkson",
     "ceiling texture removal clarkson mississauga",
@@ -115,13 +115,13 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://epfproservices.com/"
+            item: "https://epfproservices.com/",
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "https://epfproservices.com/popcorn-ceiling-removal/"
+            item: "https://epfproservices.com/popcorn-ceiling-removal/",
           },
           {
             "@type": "ListItem",
@@ -208,9 +208,15 @@ export default function Page() {
         <div className="absolute inset-0">
           {/* Gradient Orbs */}
           <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-500/30 to-pink-500/20 rounded-full filter blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-tr from-blue-500/20 to-purple-500/10 rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-gradient-to-br from-indigo-500/20 to-transparent rounded-full filter blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-          
+          <div
+            className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-tr from-blue-500/20 to-purple-500/10 rounded-full filter blur-3xl animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-1/4 w-80 h-80 bg-gradient-to-br from-indigo-500/20 to-transparent rounded-full filter blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+
           {/* Grid Pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         </div>
@@ -222,11 +228,29 @@ export default function Page() {
               {/* Breadcrumb */}
               <nav className="text-sm text-white/60">
                 <ol className="inline-flex items-center space-x-2 flex-wrap">
-                  <li><Link href="/" className="hover:text-white transition">Home</Link></li>
+                  <li>
+                    <Link href="/" className="hover:text-white transition">
+                      Home
+                    </Link>
+                  </li>
                   <li className="text-white/40">/</li>
-                  <li><Link href="/popcorn-ceiling-removal/" className="hover:text-white transition">Popcorn Ceiling Removal</Link></li>
+                  <li>
+                    <Link
+                      href="/popcorn-ceiling-removal/"
+                      className="hover:text-white transition"
+                    >
+                      Popcorn Ceiling Removal
+                    </Link>
+                  </li>
                   <li className="text-white/40">/</li>
-                  <li><Link href="/popcorn-ceiling-removal/mississauga/" className="hover:text-white transition">Mississauga</Link></li>
+                  <li>
+                    <Link
+                      href="/popcorn-ceiling-removal/mississauga/"
+                      className="hover:text-white transition"
+                    >
+                      Mississauga
+                    </Link>
+                  </li>
                   <li className="text-white/40">/</li>
                   <li className="font-semibold text-white">Clarkson</li>
                 </ol>
@@ -250,24 +274,36 @@ export default function Page() {
                     Removal Clarkson
                   </span>
                 </h1>
-                
+
                 <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                  Expert <strong className="text-white">Level 5 smooth ceiling</strong> transformation for Clarkson's post-war bungalows and split-levels. HEPA dust control. Professional results. Fast timeline.
+                  Expert{" "}
+                  <strong className="text-white">Level 5 smooth ceiling</strong>{" "}
+                  transformation for Clarkson's lakeshore bungalows, character homes and
+                  split-levels. HEPA dust control. Professional results. Fast
+                  timeline.
                 </p>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">150+</div>
-                  <p className="text-xs text-gray-400 mt-1">Clarkson Projects</p>
+                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    150+
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1">
+                    Clarkson Projects
+                  </p>
                 </div>
                 <div className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">2-3</div>
+                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                    2-3
+                  </div>
                   <p className="text-xs text-gray-400 mt-1">Day Timeline</p>
                 </div>
                 <div className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">4.9/5</div>
+                  <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
+                    4.9/5
+                  </div>
                   <p className="text-xs text-gray-400 mt-1">Rated (127+)</p>
                 </div>
               </div>
@@ -312,20 +348,24 @@ export default function Page() {
               <div className="relative w-full max-w-lg lg:max-w-xl">
                 {/* Floating Background Shape */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600/30 to-pink-600/30 rounded-[3rem] blur-3xl transform rotate-6 scale-105"></div>
-                
+
                 {/* Image Card with 3D Effect */}
-                <div className="relative transform hover:scale-105 transition-transform duration-700" style={{perspective: '1000px'}}>
+                <div
+                  className="relative transform hover:scale-105 transition-transform duration-700"
+                  style={{ perspective: "1000px" }}
+                >
                   <div className="relative rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl backdrop-blur-sm bg-white/5">
                     {/* Main Image */}
                     <img
                       src="/services/popcorn-ceiling-removal/1.webp"
-                      alt="Professional Level 5 smooth ceiling removal in Clarkson Mississauga - Before and after transformation"
+                      alt="Professional Level 5 smooth ceiling removal in Clarkson Mississauga - Before and after transformation showing HEPA dust control and paint-ready finish"
+                      loading="eager"
                       className="w-full h-auto object-cover aspect-[4/5]"
                     />
-                    
+
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent"></div>
-                    
+
                     {/* Gloss Effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none"></div>
                   </div>
@@ -335,18 +375,27 @@ export default function Page() {
                     <div className="flex items-center gap-3">
                       <div className="text-4xl">✨</div>
                       <div>
-                        <p className="font-bold text-white text-lg">Level 5 Finish</p>
-                        <p className="text-sm text-green-100">Paint-ready surface</p>
+                        <p className="font-bold text-white text-lg">
+                          Level 5 Finish
+                        </p>
+                        <p className="text-sm text-green-100">
+                          Paint-ready surface
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   {/* Floating Badge - Top Right */}
-                  <div className="absolute -top-6 -right-6 bg-gradient-to-br from-blue-500 to-cyan-600 p-5 rounded-2xl shadow-2xl border-2 border-blue-400/50 transform hover:scale-110 transition-transform" style={{animationDelay: '0.5s'}}>
+                  <div
+                    className="absolute -top-6 -right-6 bg-gradient-to-br from-blue-500 to-cyan-600 p-5 rounded-2xl shadow-2xl border-2 border-blue-400/50 transform hover:scale-110 transition-transform"
+                    style={{ animationDelay: "0.5s" }}
+                  >
                     <div className="flex items-center gap-3">
                       <div className="text-4xl">🛡️</div>
                       <div>
-                        <p className="font-bold text-white text-lg">HEPA Safe</p>
+                        <p className="font-bold text-white text-lg">
+                          HEPA Safe
+                        </p>
                         <p className="text-sm text-blue-100">Dust controlled</p>
                       </div>
                     </div>
@@ -372,15 +421,24 @@ export default function Page() {
                 We'll respond within 4 hours with your personalized estimate.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Clarkson’s mix of post-war bungalows, split-levels and newer
-                infill needs a <strong>Level 5 skim</strong> so ceilings read flat
-                under both natural light and LEDs. We work dust-contained, keep
-                daily tidy, and deliver a paint-ready finish.
+                Clarkson’s mix of lakeshore bungalows, character homes and newer
+                infill needs a <strong>Level 5 skim</strong> so ceilings read
+                flat under both natural light and LEDs. We work dust-contained,
+                keep daily tidy, and deliver a paint-ready finish.
               </p>
               <ul className="space-y-2 text-gray-700 text-sm">
-                <li>• Full-field skim and raking-light checks for a uniform, premium finish.</li>
-                <li>• Room isolation, clear paths and daily tidy so normal routines continue.</li>
-                <li>• Floors/stairs covered, vents masked, HEPA vacuum-assist sanding at source.</li>
+                <li>
+                  • Full-field skim and raking-light checks for a uniform,
+                  premium finish.
+                </li>
+                <li>
+                  • Room isolation, clear paths and daily tidy so normal
+                  routines continue.
+                </li>
+                <li>
+                  • Floors/stairs covered, vents masked, HEPA vacuum-assist
+                  sanding at source.
+                </li>
               </ul>
             </div>
             <div className="bg-white rounded-2xl border border-blue-100 shadow-lg p-4 md:p-6">
@@ -417,7 +475,9 @@ export default function Page() {
 
             <div className="group relative p-8 bg-gradient-to-br from-blue-50 to-white rounded-3xl border-2 border-blue-100 hover:border-blue-300 hover:shadow-2xl transition-all duration-300">
               <div className="text-5xl mb-4">👨‍👩‍👧‍👦</div>
-              <h3 className="text-2xl font-bold mb-3">Family-Friendly Workflow</h3>
+              <h3 className="text-2xl font-bold mb-3">
+                Family-Friendly Workflow
+              </h3>
               <p className="text-gray-600">
                 Room isolation, clear paths and daily tidy so normal routines
                 continue during the project.
@@ -428,8 +488,8 @@ export default function Page() {
               <div className="text-5xl mb-4">🛡️</div>
               <h3 className="text-2xl font-bold mb-3">Clean Protection</h3>
               <p className="text-gray-600">
-                HEPA dust control, sealed containment, protected floors and stairs
-                throughout the entire process.
+                HEPA dust control, sealed containment, protected floors and
+                stairs throughout the entire process.
               </p>
             </div>
           </div>
@@ -499,13 +559,13 @@ export default function Page() {
           <div className="prose max-w-none">
             <h2>Local Details for Clarkson</h2>
             <p>
-              Clarkson homes near Lakeshore Rd W, Southdown Rd and the Rattray Marsh
-              area often show a mix of original ceilings and new patches from
-              lighting or layout updates. We begin by testing a small area to
-              confirm whether a careful scrape or safe encapsulation is best. When
-              texture is heavily painted or the substrate is delicate, encapsulation
-              prevents damage; we then apply a full <strong>Level 5 skim</strong>{" "}
-              for a consistent surface.
+              Clarkson homes near Lakeshore Rd W, Southdown Rd and the Rattray
+              Marsh area often show a mix of original ceilings and new patches
+              from lighting or layout updates. We begin by testing a small area
+              to confirm whether a careful scrape or safe encapsulation is best.
+              When texture is heavily painted or the substrate is delicate,
+              encapsulation prevents damage; we then apply a full{" "}
+              <strong>Level 5 skim</strong> for a consistent surface.
             </p>
             <p>
               Split-levels and open plans make lighting transitions reveal
@@ -516,11 +576,85 @@ export default function Page() {
             </p>
             <p>
               Families need hallways and kitchens accessible—so we maintain
-              protected routes, keep non-work rooms usable, and coordinate day by
-              day to reduce disruption. You’ll have a clear written scope at the
-              start, photo updates during the job, and a straightforward handover to
-              paint or we can finish it.
+              protected routes, keep non-work rooms usable, and coordinate day
+              by day to reduce disruption. You’ll have a clear written scope at
+              the start, photo updates during the job, and a straightforward
+              handover to paint or we can finish it.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL RESOURCES */}
+      <section
+        id="resources"
+        className="py-16 bg-gradient-to-r from-purple-50 via-white to-blue-50"
+      >
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <p className="text-sm uppercase tracking-[0.2em] text-purple-500 font-semibold">
+            Local Resources
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+            Trusted links for permits, paint, and recycling
+          </h2>
+          <p className="mt-3 text-gray-700 max-w-3xl mx-auto">
+            These are the vendors and municipal references we lean on between
+            Clarkson, Cooksville and central Mississauga to keep every job
+            smooth.
+          </p>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2 text-left">
+            <div className="bg-white/95 p-6 rounded-3xl shadow border border-white/60">
+              <h3 className="text-2xl font-semibold text-gray-900">
+                Quality Paint Stores
+              </h3>
+              <p className="text-gray-600 mt-2">
+                Quick colour matches, primers and sundries within 10–15 minutes
+                of Clarkson Village.
+              </p>
+              <ul className="mt-4 space-y-3 text-gray-700">
+                <li>
+                  <strong>Benjamin Moore — The Paint People (Cooksville)</strong>
+                  <br />
+                  720 Burnhamthorpe Rd W Unit 21, Mississauga, ON L5C 3G1
+                </li>
+                <li>
+                  <strong>Sherwin-Williams — Dundas St E</strong>
+                  <br />
+                  1560 Dundas St E, Mississauga, ON L4X 1L4
+                </li>
+                <li>
+                  <strong>The Home Depot — Mississauga South</strong>
+                  <br />
+                  3065 Mavis Rd, Mississauga, ON L5C 1T7
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white/95 p-6 rounded-3xl shadow border border-white/60">
+              <h3 className="text-2xl font-semibold text-gray-900">
+                City & Recycling Links
+              </h3>
+              <p className="text-gray-600 mt-2">
+                Handy municipal contacts we reference before work begins.
+              </p>
+              <ul className="mt-4 space-y-3 text-gray-700 list-disc pl-5">
+                <li>
+                  <strong>City permits & inspections:</strong> Mississauga
+                  building counter guidance for interior work, insulation
+                  changes and fire separations.
+                </li>
+                <li>
+                  <strong>Household hazardous waste:</strong> Peel Region HHW
+                  drop-off notes for leftover compounds, primer or solvents.
+                </li>
+                <li>
+                  <strong>Drop-off depots:</strong> Clarkson Community Recycling
+                  Centre (2255 Royal Windsor Dr) for drywall scrap, bagged
+                  texture debris and empty pails.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -533,12 +667,10 @@ export default function Page() {
               Typical Clarkson Homes We Handle
             </h2>
             <ul className="mt-3 space-y-2 text-gray-700 list-disc pl-5">
-              <li>Post-war bungalows with multiple paint layers on texture.</li>
+              <li>Lakeshore bungalows and character homes with multiple paint layers on texture.</li>
               <li>Split-levels where stair lighting exposes waves and seams.</li>
               <li>Renovated main floors needing uniform reflectance end-to-end.</li>
-              <li>
-                Pot-light upgrades with visible rings around trims (blended out).
-              </li>
+              <li>Pot-light upgrades with visible rings around trims (blended out).</li>
               <li>Rooms with old leak marks or nicotine (blocked at primer).</li>
             </ul>
           </div>
@@ -549,7 +681,9 @@ export default function Page() {
       <section id="workflow" className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="card p-6 bg-white">
-            <h2 className="text-2xl font-semibold">On-Site Workflow (Clarkson)</h2>
+            <h2 className="text-2xl font-semibold">
+              On-Site Workflow (Clarkson)
+            </h2>
             <ul className="mt-3 space-y-2 text-gray-700 list-disc pl-5">
               <li>
                 Protect entries, floors and stairs; seal openings; mask vents.
@@ -559,11 +693,12 @@ export default function Page() {
                 condition.
               </li>
               <li>
-                Level 5 skim across full areas; raking-light checks; re-skim where
-                needed.
+                Level 5 skim across full areas; raking-light checks; re-skim
+                where needed.
               </li>
               <li>
-                Feather around pot-light cutouts and past patches so edges vanish.
+                Feather around pot-light cutouts and past patches so edges
+                vanish.
               </li>
               <li>
                 Stain-blocking primer system; even, bright, paint-ready handoff.
@@ -581,43 +716,81 @@ export default function Page() {
       <section id="cases" className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Recent Projects in Clarkson</h2>
-            <p className="text-gray-600 text-lg">Real transformations from your neighborhood</p>
+            <h2 className="text-4xl font-bold mb-4">
+              Recent Projects in Clarkson
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Real transformations from your neighborhood
+            </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Split-Level Near Rattray Marsh",
                 near: "Lakeshore Rd W & Meadow Wood Rd",
-                scope: "Encapsulation; full Level 5 skim; stain-block prime; edges crisp at trims.",
+                scope:
+                  "Encapsulation; full Level 5 skim; stain-block prime; edges crisp at trims.",
                 duration: "3 days",
-                outcome: "Uniform read down stair flight; no seam shadows under LEDs.",
+                outcome:
+                  "Uniform read down stair flight; no seam shadows under LEDs.",
+                problemLink: {
+                  href: "/services/popcorn-ceiling-removal/painted-popcorn-ceiling",
+                  text: "Learn about painted popcorn ceiling removal"
+                }
               },
               {
                 title: "Bungalow in Park Royal",
                 near: "Southdown Rd corridor",
-                scope: "Scrape + Level 5 skim; pot-light rings blended; prime & paint-ready main floor.",
+                scope:
+                  "Scrape + Level 5 skim; pot-light rings blended; prime & paint-ready main floor.",
                 duration: "2.5 days",
-                outcome: "Smooth, even ceilings across living/dining/kitchen; family stayed on schedule.",
+                outcome:
+                  "Smooth, even ceilings across living/dining/kitchen; family stayed on schedule.",
               },
               {
                 title: "Renovated Main Floor",
                 near: "Clarkson Village area",
-                scope: "Mixed old/new drywall; full skim; raking-light checks; primer system for leaks.",
+                scope:
+                  "Mixed old/new drywall; full skim; raking-light checks; primer system for leaks.",
                 duration: "3 days",
-                outcome: "Bright, premium finish with consistent reflectance across open plan.",
+                outcome:
+                  "Bright, premium finish with consistent reflectance across open plan.",
+                problemLink: {
+                  href: "/services/popcorn-ceiling-removal/water-stain-ceiling-repair",
+                  text: "See how we handle water stain repairs"
+                }
               },
             ].map((cs, i) => (
-              <div key={i} className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border-2 border-gray-200 hover:border-purple-300 hover:shadow-2xl transition-all duration-300">
+              <div
+                key={i}
+                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border-2 border-gray-200 hover:border-purple-300 hover:shadow-2xl transition-all duration-300"
+              >
                 <div className="text-2xl font-bold mb-2">{cs.title}</div>
                 <div className="text-sm text-purple-600 font-semibold mb-4 flex items-center gap-2">
-                  <span>📍</span>{cs.near}
+                  <span>📍</span>
+                  {cs.near}
                 </div>
                 <div className="space-y-3 text-gray-700">
-                  <p><strong className="text-gray-900">Scope:</strong> {cs.scope}</p>
-                  <p><strong className="text-gray-900">Duration:</strong> {cs.duration}</p>
-                  <p><strong className="text-gray-900">Result:</strong> {cs.outcome}</p>
+                  <p>
+                    <strong className="text-gray-900">Scope:</strong> {cs.scope}
+                  </p>
+                  <p>
+                    <strong className="text-gray-900">Duration:</strong>{" "}
+                    {cs.duration}
+                  </p>
+                  <p>
+                    <strong className="text-gray-900">Result:</strong>{" "}
+                    {cs.outcome}
+                  </p>
+                  {cs.problemLink && (
+                    <p className="mt-4 pt-4 border-t border-gray-200">
+                      <Link href={cs.problemLink.href} className="text-purple-600 hover:text-purple-700 font-semibold hover:underline inline-flex items-center gap-2">
+                        {cs.problemLink.text}
+                        <span>→</span>
+                      </Link>
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
@@ -630,8 +803,12 @@ export default function Page() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-2 border-purple-100">
             <div className="text-center mb-8">
-              <h2 className="text-4xl font-bold mb-4">Popcorn Ceiling Removal Cost in Clarkson (Mississauga)</h2>
-              <p className="text-xl text-gray-600">Transparent pricing for your lakeshore home</p>
+              <h2 className="text-4xl font-bold mb-4">
+                Popcorn Ceiling Removal Cost in Clarkson (Mississauga)
+              </h2>
+              <p className="text-xl text-gray-600">
+                Transparent pricing for your lakeshore home
+              </p>
             </div>
 
             <div className="space-y-6">
@@ -640,27 +817,51 @@ export default function Page() {
                   $
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Typical Clarkson Project Costs</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Typical Clarkson Project Costs
+                  </h3>
                   <p className="text-gray-700 leading-relaxed">
-                    <strong>Popcorn ceiling removal cost Clarkson Mississauga:</strong> $6–$9 per square foot for complete service including removal, Level 5 skim coat, and stain-block primer. Final quote provided after photo inspection.
+                    <strong>
+                      Popcorn ceiling removal cost Clarkson Mississauga:
+                    </strong>{" "}
+                    $6–$9 per square foot for complete service including
+                    removal, Level 5 skim coat, and stain-block primer. Final
+                    quote provided after photo inspection.
                   </p>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="p-6 border-2 border-gray-200 rounded-2xl hover:border-purple-300 transition">
-                  <h4 className="font-bold text-lg mb-3 text-purple-600">What Affects Pricing?</h4>
+                  <h4 className="font-bold text-lg mb-3 text-purple-600">
+                    What Affects Pricing?
+                  </h4>
                   <ul className="space-y-2 text-gray-700 text-sm">
-                    <li>✓ <strong>Paint layers:</strong> Heavily painted texture ($8-9/sq ft)</li>
-                    <li>✓ <strong>Ceiling height:</strong> Split-levels require staging</li>
-                    <li>✓ <strong>Repairs needed:</strong> Water damage, cracks, patches</li>
-                    <li>✓ <strong>Access:</strong> Furniture moving, tight spaces</li>
-                    <li>✓ <strong>Timeline:</strong> Rush jobs may cost more</li>
+                    <li>
+                      ✓ <strong>Paint layers:</strong> Heavily painted texture
+                      ($8-9/sq ft)
+                    </li>
+                    <li>
+                      ✓ <strong>Ceiling height:</strong> Split-levels require
+                      staging
+                    </li>
+                    <li>
+                      ✓ <strong>Repairs needed:</strong> Water damage, cracks,
+                      patches
+                    </li>
+                    <li>
+                      ✓ <strong>Access:</strong> Furniture moving, tight spaces
+                    </li>
+                    <li>
+                      ✓ <strong>Timeline:</strong> Rush jobs may cost more
+                    </li>
                   </ul>
                 </div>
 
                 <div className="p-6 border-2 border-gray-200 rounded-2xl hover:border-green-300 transition">
-                  <h4 className="font-bold text-lg mb-3 text-green-600">What's Included?</h4>
+                  <h4 className="font-bold text-lg mb-3 text-green-600">
+                    What's Included?
+                  </h4>
                   <ul className="space-y-2 text-gray-700 text-sm">
                     <li>✓ Full room protection & HEPA dust control</li>
                     <li>✓ Safe texture removal (scrape or encapsulation)</li>
@@ -673,106 +874,45 @@ export default function Page() {
               </div>
 
               <div className="p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl">
-                <h4 className="font-bold text-lg mb-3">Cost to Scrape Popcorn Ceiling Clarkson Mississauga</h4>
+                <h4 className="font-bold text-lg mb-3">
+                  Cost to Scrape Popcorn Ceiling Clarkson Mississauga
+                </h4>
                 <p className="text-gray-700 mb-4">
-                  The <strong>cost to scrape popcorn ceiling Clarkson Mississauga</strong> varies based on paint buildup. Unpainted texture: $6-7/sq ft. Painted texture requiring encapsulation: $8-9/sq ft. <strong>Popcorn removal cost Clarkson Mississauga</strong> always includes dust control and primer.
+                  The{" "}
+                  <strong>
+                    cost to scrape popcorn ceiling Clarkson Mississauga
+                  </strong>{" "}
+                  varies based on paint buildup. Unpainted texture: $6-7/sq ft.
+                  Painted texture requiring encapsulation: $8-9/sq ft.{" "}
+                  <strong>Popcorn removal cost Clarkson Mississauga</strong>{" "}
+                  always includes dust control and primer.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/quote/" className="flex-1 text-center px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition shadow-lg hover:shadow-xl">
+                  <a
+                    href="/quote/"
+                    className="flex-1 text-center px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition shadow-lg hover:shadow-xl"
+                  >
                     Get Your Free Estimate
                   </a>
-                  <a href={phoneHref} className="flex-1 text-center px-6 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold rounded-xl transition">
+                  <a
+                    href={phoneHref}
+                    className="flex-1 text-center px-6 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold rounded-xl transition"
+                  >
                     Call {phoneDisplay}
                   </a>
                 </div>
               </div>
 
               <div className="text-sm text-gray-600 text-center pt-4 border-t-2 border-gray-100">
-                <p><strong>Popular searches:</strong> popcorn ceiling removal cost Clarkson | painted popcorn ceiling removal Clarkson | cottage cheese ceiling removal Clarkson | stucco ceiling removal Clarkson | take out popcorn ceiling Clarkson | get rid of popcorn ceiling Clarkson | removing stucco ceiling Clarkson</p>
+                <p>
+                  <strong>Popular searches:</strong> popcorn ceiling removal
+                  cost Clarkson | painted popcorn ceiling removal Clarkson |
+                  cottage cheese ceiling removal Clarkson | stucco ceiling
+                  removal Clarkson | take out popcorn ceiling Clarkson | get rid
+                  of popcorn ceiling Clarkson | removing stucco ceiling Clarkson
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CUSTOMER REVIEWS SECTION */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">What Clarkson Homeowners Say</h2>
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="text-yellow-400 text-3xl">★★★★★</div>
-              <span className="text-2xl font-bold text-gray-900">4.9/5</span>
-              <span className="text-gray-600">(127+ Google Reviews)</span>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl transition-all">
-              <div className="flex items-center mb-4">
-                <div className="text-yellow-400 text-2xl">★★★★★</div>
-              </div>
-              <p className="text-gray-700 italic leading-relaxed mb-4">
-                "Split-level done in 2 days. Perfect smooth finish down the stairwell sightline. No shadows under our new LED pot lights. Clean protection throughout—kitchen stayed usable the whole time."
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  DM
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">David M.</p>
-                  <p className="text-sm text-gray-600">Lakeshore Rd W</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl border-2 border-green-100 hover:border-green-300 hover:shadow-xl transition-all">
-              <div className="flex items-center mb-4">
-                <div className="text-yellow-400 text-2xl">★★★★★</div>
-              </div>
-              <p className="text-gray-700 italic leading-relaxed mb-4">
-                "Bungalow main floor—all that painted popcorn gone! They sealed everything perfectly. Dust control was amazing. Level 5 finish looks professional. Price was exactly what they quoted."
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  SK
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">Sarah K.</p>
-                  <p className="text-sm text-gray-600">Southdown Rd</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-white p-8 rounded-3xl border-2 border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all">
-              <div className="flex items-center mb-4">
-                <div className="text-yellow-400 text-2xl">★★★★★</div>
-              </div>
-              <p className="text-gray-700 italic leading-relaxed mb-4">
-                "Renovated 1960s home near Rattray Marsh. Old nicotine stains completely blocked. Smooth transformation throughout. Courteous crew, daily updates. Would absolutely recommend."
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  JT
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">James T.</p>
-                  <p className="text-sm text-gray-600">Rattray Marsh Area</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <a 
-              href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-            >
-              Read All 127+ Google Reviews
-              <span className="ml-3 text-2xl">→</span>
-            </a>
           </div>
         </div>
       </section>
@@ -784,15 +924,22 @@ export default function Page() {
       <section className="py-16 bg-gradient-to-br from-purple-50 via-white to-blue-50">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Serving Clarkson & Nearby Lakeshore Communities</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              Serving Clarkson & Nearby Lakeshore Communities
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              We provide the same professional ceiling removal service throughout the Mississauga lakeshore. Explore our service in neighboring areas:
+              We provide the same professional ceiling removal service
+              throughout the Mississauga lakeshore. Explore our service in
+              neighboring areas:
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {/* Port Credit */}
-            <Link href="/popcorn-ceiling-removal/mississauga/port-credit/" className="group">
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/port-credit/"
+              className="group"
+            >
               <div className="relative p-8 bg-white rounded-3xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-2xl transition-all duration-300 h-full">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
@@ -802,21 +949,31 @@ export default function Page() {
                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition">
                       Port Credit
                     </h3>
-                    <p className="text-sm text-gray-500 font-semibold">East of Clarkson</p>
+                    <p className="text-sm text-gray-500 font-semibold">
+                      East of Clarkson
+                    </p>
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Historic lakeshore community with similar post-war architecture. Expert ceiling removal for heritage homes and renovated properties near Port Credit Village and Lakeshore Promenade.
+                  Historic lakeshore community with similar post-war
+                  architecture. Expert ceiling removal for heritage homes and
+                  renovated properties near Port Credit Village and Lakeshore
+                  Promenade.
                 </p>
                 <div className="flex items-center text-blue-600 font-semibold group-hover:underline">
                   Port Credit Ceiling Removal Service
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                  <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                    →
+                  </span>
                 </div>
               </div>
             </Link>
 
             {/* Lorne Park */}
-            <Link href="/popcorn-ceiling-removal/mississauga/lorne-park/" className="group">
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/lorne-park/"
+              className="group"
+            >
               <div className="relative p-8 bg-white rounded-3xl border-2 border-green-200 hover:border-green-400 hover:shadow-2xl transition-all duration-300 h-full">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
@@ -826,21 +983,30 @@ export default function Page() {
                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition">
                       Lorne Park
                     </h3>
-                    <p className="text-sm text-gray-500 font-semibold">West of Clarkson</p>
+                    <p className="text-sm text-gray-500 font-semibold">
+                      West of Clarkson
+                    </p>
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Established neighborhood near Rattray Marsh with mature homes. Professional ceiling texture removal for split-levels and bungalows along Lakeshore and Lorne Park Road.
+                  Established neighborhood near Rattray Marsh with mature homes.
+                  Professional ceiling texture removal for split-levels and
+                  bungalows along Lakeshore and Lorne Park Road.
                 </p>
                 <div className="flex items-center text-green-600 font-semibold group-hover:underline">
                   Lorne Park Ceiling Removal Service
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                  <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                    →
+                  </span>
                 </div>
               </div>
             </Link>
 
             {/* Mississauga Hub */}
-            <Link href="/popcorn-ceiling-removal/mississauga/" className="group">
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/"
+              className="group"
+            >
               <div className="relative p-8 bg-gradient-to-br from-purple-100 to-white rounded-3xl border-2 border-purple-200 hover:border-purple-400 hover:shadow-2xl transition-all duration-300 h-full">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
@@ -850,15 +1016,22 @@ export default function Page() {
                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition">
                       All Mississauga Areas
                     </h3>
-                    <p className="text-sm text-gray-500 font-semibold">Full Service Coverage</p>
+                    <p className="text-sm text-gray-500 font-semibold">
+                      Full Service Coverage
+                    </p>
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  View all neighborhoods we serve throughout Mississauga including Streetsville, Meadowvale, Erin Mills, Churchill Meadows, and more. Same expert service, same quality guarantee.
+                  View all neighborhoods we serve throughout Mississauga
+                  including Streetsville, Meadowvale, Erin Mills, Churchill
+                  Meadows, and more. Same expert service, same quality
+                  guarantee.
                 </p>
                 <div className="flex items-center text-purple-600 font-semibold group-hover:underline">
                   View All Mississauga Neighborhoods
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                  <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                    →
+                  </span>
                 </div>
               </div>
             </Link>
@@ -868,7 +1041,10 @@ export default function Page() {
             <p className="text-gray-600 mb-6 text-lg">
               Looking for service in another area?
             </p>
-            <Link href="/popcorn-ceiling-removal/" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105">
+            <Link
+              href="/popcorn-ceiling-removal/"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+            >
               View All Service Areas
               <span className="ml-3 text-2xl">→</span>
             </Link>
@@ -911,24 +1087,25 @@ export default function Page() {
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
-        
+
         <div className="relative container mx-auto px-4 max-w-4xl">
           <div className="text-center space-y-6">
             <h3 className="text-4xl md:text-5xl font-black">
               Ready for Level 5 Smooth Ceilings?
             </h3>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Fast photo estimate. Clear plan and schedule. Professional results for your Clarkson home.
+              Fast photo estimate. Clear plan and schedule. Professional results
+              for your Clarkson home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <a 
-                className="inline-flex items-center justify-center px-8 py-5 bg-white text-purple-600 hover:bg-gray-100 font-bold text-lg rounded-2xl shadow-2xl transition-all hover:scale-105" 
+              <a
+                className="inline-flex items-center justify-center px-8 py-5 bg-white text-purple-600 hover:bg-gray-100 font-bold text-lg rounded-2xl shadow-2xl transition-all hover:scale-105"
                 href={phoneHref}
               >
                 📞 {phoneDisplay}
               </a>
-              <a 
-                className="inline-flex items-center justify-center px-8 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white font-bold text-lg rounded-2xl transition-all hover:scale-105" 
+              <a
+                className="inline-flex items-center justify-center px-8 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white font-bold text-lg rounded-2xl transition-all hover:scale-105"
                 href="/quote/"
               >
                 Get Free Estimate
@@ -941,7 +1118,10 @@ export default function Page() {
       {/* Bottom links */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl">
-          <nav className="flex flex-wrap gap-4 text-sm justify-center" aria-label="Related pages">
+          <nav
+            className="flex flex-wrap gap-4 text-sm justify-center"
+            aria-label="Related pages"
+          >
             <Link
               href="/popcorn-ceiling-removal/mississauga/"
               className="text-purple-600 hover:text-purple-700 font-semibold hover:underline transition"
@@ -949,15 +1129,15 @@ export default function Page() {
               ← Mississauga Ceiling Removal
             </Link>
             <span className="text-gray-400">|</span>
-            <Link 
-              href="/popcorn-ceiling-removal/" 
+            <Link
+              href="/popcorn-ceiling-removal/"
               className="text-purple-600 hover:text-purple-700 font-semibold hover:underline transition"
             >
               All Service Areas
             </Link>
             <span className="text-gray-400">|</span>
-            <Link 
-              href="/services/popcorn-ceiling-removal/" 
+            <Link
+              href="/services/popcorn-ceiling-removal/"
               className="text-purple-600 hover:text-purple-700 font-semibold hover:underline transition"
             >
               Ceiling Removal Services →
@@ -969,10 +1149,16 @@ export default function Page() {
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:hidden">
         <div className="bg-white/95 backdrop-blur-lg border-2 border-purple-200 shadow-2xl rounded-2xl p-3 flex items-center gap-3">
-          <a href={phoneHref} className="flex-1 text-center py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition shadow-lg">
+          <a
+            href={phoneHref}
+            className="flex-1 text-center py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition shadow-lg"
+          >
             📞 Call
           </a>
-          <a href="/quote/" className="flex-1 text-center py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition shadow-lg">
+          <a
+            href="/quote/"
+            className="flex-1 text-center py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl transition shadow-lg"
+          >
             Quote
           </a>
         </div>

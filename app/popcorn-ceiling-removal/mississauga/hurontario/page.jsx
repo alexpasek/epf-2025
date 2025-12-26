@@ -228,6 +228,17 @@ export default function Page() {
           (painted vs. unpainted, repairs needed, access). You’ll get a clear
           written scope, schedule, and a paint-ready surface at the end.
         </p>
+        <p>
+          When projects extend south toward Dundas or Cooksville GO, we keep the
+          same crew on-site so you can review{" "}
+          <Link
+            href="/popcorn-ceiling-removal/mississauga/cooksville/"
+            className="text-blue-600 underline"
+          >
+            Cooksville ceiling removal
+          </Link>{" "}
+          timelines and plan multi-home phases without changing workflows.
+        </p>
 
         <h3>What you can expect</h3>
         <ul>

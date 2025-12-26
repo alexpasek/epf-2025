@@ -1,0 +1,18 @@
+
+> wallpaper-removal-pro@21.7.1 dev
+> next dev
+
+ ⚠ Invalid next.config.js options detected: 
+ ⚠     Unrecognized key(s) in object: 'legacyBrowsers' at "experimental"
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+ ⚠ Port 3000 is in use by process 1867, using available port 3001 instead.
+   ▲ Next.js 15.5.4
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.1.15:3001
+   - Environments: .env.local
+   - Experiments (use with caution):
+     ⨯ legacyBrowsers
+     ⨯ devtoolSegmentExplorer
+
+ ✓ Starting...
+[?25h
