@@ -3,12 +3,13 @@ import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
 import LocalSignals from "@/components/LocalSignals";
+import QuoteForm from "@/components/QuoteForm";
 
 export const revalidate = 86400;
 
 export const metadata = {
   title:
-    "Popcorn Ceiling Removal — Port Credit, Mississauga | Residential Level 5",
+    "Popcorn Ceiling Removal Port Credit, Mississauga | Residential Level 5",
   description:
     "Residential popcorn ceiling removal in Port Credit: dust-contained workflow, Level 5 skim, stain-block primer and a bright, even finish. Clear scope, tidy crew, written warranty.",
   alternates: {
@@ -135,15 +136,21 @@ export default function Page() {
         <div className="flex flex-col gap-4 md:flex-row md:items-center">
           <div className="md:flex-1">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Popcorn Ceiling Removal — Port Credit, Mississauga
+              Popcorn Ceiling Removal Port Credit Mississauga Lakeside Pros
             </h1>
             <p className="mt-3 text-gray-700">
-              Residential specialists for Port Credit houses—bungalows,
-              side-splits, townhomes and renovations near Lakeshore Rd E. We
-              work <strong>dust-contained</strong>, deliver a true{" "}
-              <strong>Level 5 skim</strong>, and leave a bright, modern,{" "}
-              <strong>paint-ready</strong> ceiling. Clear scope, predictable
-              schedule, tidy daily wrap-ups.
+              Our popcorn ceiling contractor Port Credit crew handles bungalows,
+              semis, townhomes and custom builds near Lakeshore and Hurontario.
+              Expect professional popcorn ceiling removal Port Credit residents
+              trust: dust-contained scraping or encapsulation, a{" "}
+              <strong>Level 5 skim</strong>, and a bright, modern{" "}
+              <strong>paint-ready</strong> surface. As the smooth ceiling
+              contractor Port Credit homeowners call first, we lock in scope,
+              schedule, and tidy daily wrap-ups before we start.
+            </p>
+            <p className="mt-2 text-gray-700">
+              Need a popcorn ceiling removal service Port Credit wide? We’re the
+              local team, WSIB-insured, and on call for fast quotes.
             </p>
           </div>
 
@@ -186,6 +193,92 @@ export default function Page() {
           </a>
         </nav>
       </header>
+
+      {/* CONTACT FORM - ENHANCED */}
+      <section className="mt-8 relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 p-8 md:p-10 rounded-3xl shadow-2xl">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full filter blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 left-10 w-80 h-80 bg-cyan-300 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }}></div>
+        </div>
+
+        <div className="relative grid gap-8 md:grid-cols-[1.1fr,0.9fr] items-start">
+          <div className="text-white">
+            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4">
+              <p className="text-xs uppercase tracking-[0.3em] font-bold flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Same-day response guaranteed
+              </p>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-black leading-tight">
+              Get Your Port Credit Popcorn Ceiling Removal Quote
+            </h2>
+            
+            <p className="mt-4 text-white/90 text-lg leading-relaxed">
+              Condos near the marina, bungalows south of Lakeshore, and
+              townhomes off Stavebank—we reply same-day with Level 5 scope,
+              schedule, and dust-control notes.
+            </p>
+
+            <div className="mt-6 space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-10 h-10 bg-green-400 rounded-full flex items-center justify-center text-xl">
+                  ⚡
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg">2–3 Day Main Floors</h4>
+                  <p className="text-white/80 text-sm">HEPA containment keeps your home clean while we work</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-300 rounded-full flex items-center justify-center text-xl">
+                  ✨
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg">Level 5 Smooth Finish</h4>
+                  <p className="text-white/80 text-sm">Controlled scrape or encapsulate + full-field skim coat</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-10 h-10 bg-purple-300 rounded-full flex items-center justify-center text-xl">
+                  📍
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg">Local Port Credit Experts</h4>
+                  <p className="text-white/80 text-sm">Familiar with Lakeshore Rd E, Hurontario, Stavebank corridors</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <div className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30">
+                <span className="text-sm font-semibold">✓ WSIB Insured</span>
+              </div>
+              <div className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30">
+                <span className="text-sm font-semibold">✓ 3-Year Warranty</span>
+              </div>
+              <div className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/30">
+                <span className="text-sm font-semibold">✓ Licensed Contractor</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-2xl p-6 transform hover:scale-105 transition-transform duration-300">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-gray-900">Quick Quote Form</h3>
+              <p className="text-sm text-gray-600 mt-1">We'll reply within 2 hours on weekdays</p>
+            </div>
+            <QuoteForm />
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500">
+              <span>🔒</span>
+              <span>Your information is secure and never shared</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* WHY (sales bullets) */}
       <section id="why" className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -238,7 +331,8 @@ export default function Page() {
           <strong>painted many times</strong>, we’ll test first. When scraping
           risks damage, we use <strong>controlled encapsulation</strong>{" "}
           followed by a full Level 5 skim so the surface reads flat—even under
-          raking light.
+          raking light. It’s professional popcorn ceiling removal Port Credit
+          homeowners rely on, even while the house stays occupied.
         </p>
         <p>
           Many Port Credit houses have <strong>pot-light upgrades</strong> and
@@ -247,8 +341,12 @@ export default function Page() {
           feathering wide, and checking from windows and corridor sightlines.
           After inspection, we prime with a{" "}
           <strong>stain-blocking system</strong> to lock down old water marks or
-          nicotine. You get a uniform, bright, modern ceiling that’s ready for
-          your finish paint (or we can spray the ceiling for you).
+          nicotine. When we deliver ceiling texture removal Port Credit
+          projects, we treat every wall transition and light cutout the same
+          way, which is why stipple ceiling removal Port Credit homeowners
+          request from us always reads even once painted. You get a uniform,
+          bright, modern ceiling that’s ready for your finish paint (or we can
+          spray the ceiling for you).
         </p>
         <p>
           Home access and parking off <em>Lakeshore Rd E</em> can be tight—our
@@ -258,6 +356,9 @@ export default function Page() {
           <strong>daily photo updates</strong> during the job, and a punch-list
           walk-through before handover. We’re WSIB and liability insured, and
           every project includes a <strong>3-year workmanship warranty</strong>.
+          That ceiling resurfacing Port Credit homeowners ask for is always
+          documented, warrantied, and delivered by the same crew start to
+          finish.
         </p>
         <p>
           Because we run the same crew between the marina and Clarkson village,
@@ -271,6 +372,141 @@ export default function Page() {
           to see how we treat similar split-levels and lakeside bungalows before
           we start in Port Credit.
         </p>
+      </section>
+
+      {/* Authority flow to city + neighbours */}
+      <section className="mt-10 bg-slate-50 border border-slate-100 rounded-3xl p-6 md:p-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-semibold">
+            Mississauga Popcorn Ceiling Removal + nearby neighbourhood crews
+          </h2>
+          <p className="mt-2 text-gray-700">
+            Authority flows up to the{" "}
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/"
+              className="text-blue-600 underline font-medium"
+            >
+              Mississauga popcorn ceiling removal 
+            </Link>{" "}
+            and back down to the lakefront communities we serve every week.
+            Browse the three closest neighbourhood teams for more photos,
+            schedules, and workflow notes.
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/"
+              className="group block h-full"
+            >
+              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-300 hover:shadow-lg transition">
+                <p className="text-sm uppercase tracking-wide text-blue-500 font-semibold">
+                  City Hub
+                </p>
+                <h3 className="mt-1 text-xl font-bold">
+                  Mississauga popcorn ceiling removal
+                </h3>
+                <p className="mt-2 text-gray-600 text-sm">
+                  All neighbourhoods, condo towers, and scheduling info for the
+                  city-wide crew.
+                </p>
+                <span className="mt-3 inline-flex items-center text-blue-600 font-semibold">
+                  Explore Mississauga popcorn removal services →
+                </span>
+              </div>
+            </Link>
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/clarkson/"
+              className="group block h-full"
+            >
+              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-300 hover:shadow-lg transition">
+                <p className="text-sm uppercase tracking-wide text-slate-500 font-semibold">
+                  5 min west
+                </p>
+                <h3 className="mt-1 text-xl font-bold">
+                  Clarkson ceiling removal projects
+                </h3>
+                <p className="mt-2 text-gray-600 text-sm">
+                  Lakeshore bungalows and Rattray Marsh splits with Level 5
+                  skim-coat detail.
+                </p>
+                <span className="mt-3 inline-flex items-center text-blue-600 font-semibold">
+                  Clarkson popcorn ceiling removal →
+                </span>
+              </div>
+            </Link>
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/lorne-park/"
+              className="group block h-full"
+            >
+              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-300 hover:shadow-lg transition">
+                <p className="text-sm uppercase tracking-wide text-slate-500 font-semibold">
+                  7 min west
+                </p>
+                <h3 className="mt-1 text-xl font-bold">
+                  Lorne Park smooth ceiling specialists
+                </h3>
+                <p className="mt-2 text-gray-600 text-sm">
+                  Estate homes, cathedral spans, and premium painted finishes in
+                  Lorne Park.
+                </p>
+                <span className="mt-3 inline-flex items-center text-blue-600 font-semibold">
+                     Lorne Park popcorn ceiling removal →
+                </span>
+              </div>
+            </Link>
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/lakeview/"
+              className="group block h-full"
+            >
+              <div className="h-full rounded-2xl border border-slate-200 bg-white p-5 hover:border-blue-300 hover:shadow-lg transition">
+                <p className="text-sm uppercase tracking-wide text-slate-500 font-semibold">
+                  5 min east
+                </p>
+                <h3 className="mt-1 text-xl font-bold">
+                  Lakeview popcorn ceiling resurfacing
+                </h3>
+                <p className="mt-2 text-gray-600 text-sm">
+                  Applewood Acres renos, cottages, and custom builds near the
+                  new Lakeview Village.
+                </p>
+                <span className="mt-3 inline-flex items-center text-blue-600 font-semibold">
+                  Lakeview popcorn ceiling removal →
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Searches block for light-use keywords */}
+      <section className="mt-10 card p-6 bg-white">
+        <h2 className="text-2xl font-semibold">
+          Searches we hear in Port Credit
+        </h2>
+        <p className="text-gray-700 mt-2">
+          Homeowners near the marina often Google different phrases before they
+          end up calling us. Here are the exact searches we see once or twice
+          each week, so you know you’re in the right place.
+        </p>
+        <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+          {[
+            "popcorn ceiling Port Credit",
+            "popcorn removal Port Credit",
+            "scraping popcorn ceiling Port Credit",
+            "stripping popcorn ceiling Port Credit",
+            "taking off popcorn ceiling Port Credit",
+            "taking down popcorn ceiling Port Credit",
+            "take out popcorn ceiling Port Credit",
+            "get rid of popcorn ceiling Port Credit",
+            "removing stucco ceiling Port Credit",
+            "stucco ceiling removal Port Credit",
+            "cottage cheese ceiling removal Port Credit",
+            "painted popcorn ceiling removal Port Credit",
+          ].map((term) => (
+            <li key={term} className="px-3 py-2 bg-slate-50 rounded-xl border">
+              “{term}”
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* CASES (sales proof) */}
@@ -336,6 +572,19 @@ export default function Page() {
           within a predictable range once we confirm method (scrape vs
           encapsulate) and final scope. You receive a written plan, start date,
           and daily milestones so you always know what’s next.
+        </p>
+        <p>
+          Curious about{" "}
+          <strong>popcorn ceiling removal cost Port Credit</strong>? We send a
+          transparent range after photos, then lock it in following a
+          confirmation walk-through so there are no surprises once work starts.
+        </p>
+        <p>
+          If you’re comparing <strong>popcorn removal cost Port Credit</strong>{" "}
+          versus full skim, we line-item prep, skim, prime, and paint so you can
+          see the difference—including the{" "}
+          <strong>cost to scrape popcorn ceiling Port Credit</strong> rooms that
+          still allow safe removal.
         </p>
         <ul>
           <li>
@@ -409,29 +658,79 @@ export default function Page() {
       {/* FAQ */}
       <section id="faq" className="mt-10">
         <h2 className="text-2xl font-semibold">FAQ — Port Credit Homes</h2>
-        {[
-          {
-            q: "Will you keep dust out of the rest of the house?",
-            a: "Yes. We seal work rooms, protect floors/stairs, mask vents and use HEPA-connected sanders. Non-work areas remain clean.",
-          },
-          {
-            q: "Our ceiling has been painted several times—can it still be smooth?",
-            a: "We test first. If scraping risks damage, we encapsulate safely and then Level 5 skim so it reads perfectly flat.",
-          },
-          {
-            q: "Can you coordinate with an electrician for new pot lights?",
-            a: "Absolutely. We can patch and blend their cutouts so trims sit clean and edges disappear after primer.",
-          },
-          {
-            q: "How long does a typical main-floor take?",
-            a: "Most main floors are 2–3 days depending on paint layers, height, access, and blending requirements.",
-          },
-        ].map((f, i) => (
-          <details key={i} className="card p-6 bg-white mt-4">
-            <summary className="font-medium">{f.q}</summary>
-            <p className="mt-2 text-gray-700">{f.a}</p>
-          </details>
-        ))}
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            {
+              q: "Will you keep dust out of the rest of the house?",
+              a: "Yes. We seal work rooms, protect floors/stairs, mask vents and use HEPA-connected sanders. Non-work areas remain clean.",
+            },
+            {
+              q: "Our ceiling has been painted several times—can it still be smooth?",
+              a: "We test first. If scraping risks damage, we encapsulate safely and then Level 5 skim so it reads perfectly flat.",
+            },
+            {
+              q: "Can you coordinate with an electrician for new pot lights?",
+              a: "Absolutely. We can patch and blend their cutouts so trims sit clean and edges disappear after primer.",
+            },
+            {
+              q: "How long does a typical main-floor take?",
+              a: "Most main floors are 2–3 days depending on paint layers, height, access, and blending requirements.",
+            },
+            {
+              q: "How do you structure quotes for Port Credit ceilings?",
+              a: "We review photos, confirm ceiling height and layout, then send a project total that includes containment, skim, primer, and optional finish paint so you understand every line item.",
+            },
+            {
+              q: "Do you help with asbestos testing?",
+              a: "If the home predates 1980 we can refer local labs before starting professional popcorn ceiling removal in Port Credit.",
+            },
+            {
+              q: "Can basement apartments stay accessible?",
+              a: "Yes. We stage room-by-room, run negative air if needed, and coordinate with tenants so routes remain open.",
+            },
+            {
+              q: "Do you work weekends or evenings?",
+              a: "We can adjust hours to respect marina traffic, commuter schedules, or condo quiet-time rules when required.",
+            },
+            {
+              q: "How much does popcorn ceiling removal cost in Port Credit?",
+              a: "Popcorn ceiling removal cost Port Credit typically ranges $7-$9/sq ft depending on paint layers, ceiling height, and whether we scrape or encapsulate. We provide transparent quotes after reviewing photos.",
+            },
+            {
+              q: "What's included in your Port Credit popcorn removal service?",
+              a: "Our popcorn ceiling removal service Port Credit includes full containment, HEPA dust control, Level 5 skim coat, stain-block primer, and a 3-year workmanship warranty. Paint-ready handoff or full finish painting available.",
+            },
+            {
+              q: "Can you handle waterfront condos and townhomes near the marina?",
+              a: "Yes. Our popcorn ceiling contractor Port Credit team works in condos, townhomes, and detached homes throughout the waterfront area. We coordinate elevator access and building rules.",
+            },
+            {
+              q: "Do you work with painted popcorn in older Port Credit homes?",
+              a: "Absolutely. Painted popcorn ceiling removal Port Credit is our specialty. We test adhesion first, then encapsulate and skim for a perfectly smooth result without damaging the substrate.",
+            },
+            {
+              q: "What areas of Port Credit do you serve?",
+              a: "We cover all Port Credit including Lakeshore Rd E, Hurontario St, Stavebank Rd, the marina district, and waterfront neighborhoods. Same smooth ceiling contractor Port Credit crew for all areas.",
+            },
+            {
+              q: "Can you match existing ceiling textures in adjacent rooms?",
+              a: "Yes. For ceiling texture removal Port Credit projects where only some rooms get smoothed, we can feather transitions or match knockdown/orange peel in adjacent spaces.",
+            },
+            {
+              q: "Do you handle stipple ceiling removal in Port Credit?",
+              a: "Yes. Stipple ceiling removal Port Credit follows the same Level 5 process—test, scrape or encapsulate, full-field skim, prime. The result is equally smooth whether starting from popcorn or stipple.",
+            },
+            {
+              q: "What's your warranty for ceiling resurfacing Port Credit?",
+              a: "Our ceiling resurfacing Port Credit projects include a 3-year workmanship warranty covering cracks, tape lifts, and finish quality. We're WSIB and liability insured for your protection.",
+            },
+          ].map((f, i) => (
+            <details key={`${f.q}-${i}`} className="card p-6 bg-white mt-4">
+              <summary className="font-medium">{f.q}</summary>
+              <p className="mt-2 text-gray-700">{f.a}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
       {/* CTA */}
@@ -460,13 +759,28 @@ export default function Page() {
           href="/popcorn-ceiling-removal/mississauga/"
           className="text-blue-600 hover:underline font-semibold"
         >
-          ← Mississauga popcorn ceiling removal services
+          ← Mississauga popcorn ceiling removal services citywide
         </Link>
-        <Link href="/popcorn-ceiling-removal/" className="underline">
-          All GTA service areas →
+        <span className="text-gray-400">|</span>
+        <Link
+          href="/popcorn-ceiling-removal/mississauga/clarkson/"
+          className="text-blue-600 hover:underline font-semibold"
+        >
+          Clarkson popcorn ceiling removal lakefront bungalows →
         </Link>
-        <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Our removal process →
+        <span className="text-gray-400">|</span>
+        <Link
+          href="/popcorn-ceiling-removal/mississauga/lorne-park/"
+          className="text-blue-600 hover:underline font-semibold"
+        >
+          Lorne Park popcorn ceiling removal →
+        </Link>
+        <span className="text-gray-400">|</span>
+        <Link
+          href="/popcorn-ceiling-removal/mississauga/lakeview/"
+          className="text-blue-600 hover:underline font-semibold"
+        >
+          Lakeview popcorn ceiling removal residential homes →
         </Link>
       </nav>
 
