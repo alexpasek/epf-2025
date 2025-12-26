@@ -782,9 +782,9 @@ export default function Page() {
                 href="/popcorn-ceiling-removal/mississauga/"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                Mississauga
-              </Link>
-              ,{" "}
+                Mississauga popcorn ceiling removal
+              </Link>{" "}
+              (Port Credit, Erin Mills, Streetsville),{" "}
               <Link
                 href="/popcorn-ceiling-removal/oakville/"
                 className="text-blue-600 font-semibold hover:underline"

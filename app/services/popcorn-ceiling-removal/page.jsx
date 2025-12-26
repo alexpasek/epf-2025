@@ -15,7 +15,8 @@ import {
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services",
+  title:
+    "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services",
   description:
     "Professional popcorn ceiling removal and Level 5 finishing across the GTA. Dust-controlled scraping, skim-coating, HEPA sanding, stain-block primer and optional ceiling painting. Free quotes and same-day estimates.",
   keywords: [
@@ -42,7 +43,8 @@ export const metadata = {
   ],
   alternates: { canonical: "/services/popcorn-ceiling-removal/" },
   openGraph: {
-    title: "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services",
+    title:
+      "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services",
     description:
       "Dust-controlled popcorn ceiling removal, Level 5 skim coat, HEPA sanding, primer and optional ceiling painting. Serving the GTA with quick quotes.",
     url: "/services/popcorn-ceiling-removal/",
@@ -990,10 +992,30 @@ export default function Page() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {/* Burlington - Featured */}
+            {/* Mississauga - Featured */}
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/"
+              className="group bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border-2 border-blue-200 hover:border-blue-400 hover:shadow-xl transition-all transform hover:scale-105"
+            >
+              <div className="text-4xl mb-4">📍</div>
+              <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">
+                Mississauga Ceiling Contractor
+              </h3>
+              <p className="text-gray-600 mb-4">
+                <strong>Stipple ceiling removal</strong> and popcorn removal
+                across Port Credit, Erin Mills, Streetsville, Lorne Park, and
+                City Centre neighborhoods with professional Level 5 finishing
+                and HEPA dust control.
+              </p>
+              <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center gap-2">
+                View Mississauga Services →
+              </span>
+            </Link>
+
+            {/* Burlington */}
             <Link
               href="/popcorn-ceiling-removal/burlington/"
-              className="group bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border-2 border-blue-200 hover:border-blue-400 hover:shadow-xl transition-all transform hover:scale-105"
+              className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
             >
               <div className="text-4xl mb-4">📍</div>
               <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">
@@ -1007,25 +1029,6 @@ export default function Page() {
               </p>
               <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center gap-2">
                 View Burlington Ceiling Services →
-              </span>
-            </Link>
-
-            {/* Mississauga */}
-            <Link
-              href="/popcorn-ceiling-removal/mississauga/"
-              className="group bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
-            >
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition">
-                Mississauga Ceiling Contractor
-              </h3>
-              <p className="text-gray-600 mb-4">
-                <strong>Stipple ceiling removal</strong> and popcorn removal
-                across Port Credit, Erin Mills, Streetsville, and City Centre
-                with Level 5 finishing.
-              </p>
-              <span className="text-blue-600 font-semibold group-hover:underline inline-flex items-center gap-2">
-                View Mississauga Services →
               </span>
             </Link>
 

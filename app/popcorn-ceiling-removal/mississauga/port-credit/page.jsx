@@ -458,15 +458,15 @@ export default function Page() {
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link
           href="/popcorn-ceiling-removal/mississauga/"
-          className="underline"
+          className="text-blue-600 hover:underline font-semibold"
         >
-          ← Popcorn ceiling removal Mississauga
+          ← Mississauga popcorn ceiling removal services
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          Popcorn ceiling removal service areas →
+          All GTA service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Popcorn ceiling removal services →
+          Our removal process →
         </Link>
       </nav>
 
