@@ -170,32 +170,24 @@ export default async function Post({ params }) {
             {post.content.map((t, i) => (
               <p key={i}>{t}</p>
             ))}
-            <p>
-              For example, our{" "}
-              <Link
-                href="/popcorn-ceiling-removal/burlington/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Burlington popcorn ceiling removal
-              </Link>{" "}
-              projects typically range from $800 for a standard bedroom to
-              $8,500 for a whole 3-bedroom condo, depending on whether the
-              texture is painted, ceiling height, fixture counts, and included
-              services like stain-block primer and painting.
-            </p>
-            <p>
-              We serve communities across the GTA with specialized local
-              knowledge—from waterfront condos requiring elevator coordination
-              in{" "}
-              <Link
-                href="/popcorn-ceiling-removal/burlington/"
-                className="text-blue-600 hover:underline"
-              >
-                Burlington
-              </Link>{" "}
-              to heritage homes in Mississauga's Port Credit and modern
-              subdivisions in Oakville's Glen Abbey.
-            </p>
+            {post.links?.length > 0 && (
+              <div className="mt-6 space-y-2">
+                <h3 className="text-xl font-semibold text-slate-900">
+                  Authority flow: Mississauga + nearby neighbourhoods
+                </h3>
+                {post.links.map((link, idx) => (
+                  <p key={`${link.href}-${idx}`} className="text-slate-700">
+                    <Link
+                      href={link.href}
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      {link.anchor}
+                    </Link>{" "}
+                    — {link.description}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -244,10 +236,12 @@ export default async function Post({ params }) {
       {post.keywords?.length > 0 && (
         <section className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <h2 className="text-2xl font-semibold">Local SEO keywords</h2>
+            <h2 className="text-2xl font-semibold">
+              Mississauga ceiling terminology to know
+            </h2>
             <p className="text-sm text-slate-500">
-              Sprinkle these keywords naturally when sharing the article on your
-              own channels to reinforce Oakville relevancy.
+              Skim these phrases before you call so conversations with our crew
+              stay clear and focused.
             </p>
             <ul className="mt-4 flex flex-wrap gap-2 text-sm text-slate-700">
               {post.keywords.map((k, idx) => (
@@ -259,32 +253,6 @@ export default async function Post({ params }) {
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
-      )}
-
-      {post.links?.length > 0 && (
-        <section className="container-x px-4">
-          <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <h2 className="text-2xl font-semibold">Related resources</h2>
-            <div className="mt-4 space-y-3">
-              {post.links.map((link, idx) => (
-                <div
-                  key={`${link.href}-${idx}`}
-                  className="rounded-2xl border border-slate-200 p-4"
-                >
-                  <Link
-                    className="text-base font-semibold text-amber-700 hover:underline"
-                    href={link.href}
-                  >
-                    {link.anchor}
-                  </Link>
-                  {link.description && (
-                    <p className="text-sm text-slate-600">{link.description}</p>
-                  )}
-                </div>
-              ))}
-            </div>
           </div>
         </section>
       )}
@@ -315,17 +283,9 @@ export default async function Post({ params }) {
       </section>
 
       <section className="container-x px-4">
-        <div className="flex flex-wrap gap-3 text-sm">
-          <Link href="/blog/" className="btn-cta">
-            ← Back to blog
-          </Link>
-          <Link
-            href="/popcorn-ceiling-removal/"
-            className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            Explore service areas →
-          </Link>
-        </div>
+        <Link href="/blog/" className="btn-cta">
+          ← Back to blog
+        </Link>
       </section>
     </div>
   );
