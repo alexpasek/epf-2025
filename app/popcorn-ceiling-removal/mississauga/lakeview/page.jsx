@@ -595,52 +595,82 @@ export default function Page() {
       {/* NEIGHBOURHOODS */}
       <section id="neighbourhoods" className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="text-3xl font-bold text-center">Neighbourhood links</h2>
-        <p className="mt-2 text-center text-gray-600">
-          Visit the Mississauga hub or nearby areas, then return to Lakeview when you’re ready.
-        </p>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          <Link
-            href="/popcorn-ceiling-removal/mississauga/"
-            className="p-6 rounded-3xl bg-white border hover:shadow"
-          >
-            ← Mississauga popcorn ceiling removal hub
-          </Link>
-          <Link
-            href="/popcorn-ceiling-removal/mississauga/port-credit/"
-            className="p-6 rounded-3xl bg-white border hover:shadow"
-          >
-            Port Credit popcorn ceiling removal →
-          </Link>
-          <Link
-            href="/popcorn-ceiling-removal/mississauga/cooksville/"
-            className="p-6 rounded-3xl bg-white border hover:shadow"
-          >
-            Cooksville popcorn ceiling removal →
-          </Link>
-        </div>
+          <h2 className="text-3xl font-bold text-center mb-4">Explore Nearby Mississauga Neighborhoods</h2>
+          <p className="mt-2 text-center text-gray-600 mb-8">
+            Professional popcorn ceiling removal across Mississauga. Compare nearby areas and services.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/"
+              className="p-6 rounded-3xl bg-gradient-to-br from-teal-50 to-white border-2 border-teal-100 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
+            >
+              <h3 className="font-bold text-lg text-teal-600">← Mississauga Hub</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                View all neighborhoods and citywide services
+              </p>
+            </Link>
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/port-credit/"
+              className="p-6 rounded-3xl bg-white border-2 border-gray-100 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
+            >
+              <h3 className="font-bold text-lg">Port Credit</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Waterfront homes & vintage bungalow ceiling updates
+              </p>
+            </Link>
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/cooksville/"
+              className="p-6 rounded-3xl bg-white border-2 border-gray-100 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
+            >
+              <h3 className="font-bold text-lg">Cooksville</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Central location residential ceiling transformations
+              </p>
+            </Link>
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/streetsville/"
+              className="p-6 rounded-3xl bg-white border-2 border-gray-100 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
+            >
+              <h3 className="font-bold text-lg">Streetsville</h3>
+              <p className="text-sm text-gray-600 mt-2">
+                Heritage district smooth ceiling specialists
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-        <div>
-          <h3 className="text-2xl font-semibold">
-            Ready for professional popcorn ceiling removal in Lakeview?
-          </h3>
-          <p className="text-white/80">
-            Send photos, choose dates, and let our smooth ceiling contractor Lakeview team handle your project.
-          </p>
-        </div>
-        <div className="flex gap-3 mt-6">
-          <a className="btn-cta bg-white text-indigo-600" href={phoneHref}>
-            📞 {phoneDisplay}
-          </a>
-          <a className="btn-cta border border-white/60" href="/quote/">
-            Get my quote
-          </a>
-        </div>
+      <section className="py-16 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+
+        <div className="relative container mx-auto px-4 max-w-6xl">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h3 className="text-3xl md:text-4xl font-black">
+                Ready for Professional Popcorn Ceiling Removal in Lakeview?
+              </h3>
+              <p className="text-xl text-white/90 mt-2">
+                Send photos, choose dates, and let our smooth ceiling contractor Lakeview team handle the mess.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                className="inline-flex items-center justify-center px-8 py-5 bg-white text-teal-600 hover:bg-gray-100 font-bold text-lg rounded-2xl shadow-2xl transition-all hover:scale-105"
+                href={phoneHref}
+              >
+                📞 {phoneDisplay}
+              </a>
+              <a
+                className="inline-flex items-center justify-center px-8 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white font-bold text-lg rounded-2xl transition-all hover:scale-105"
+                href="/quote/"
+              >
+                Get Free Quote
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -652,12 +682,16 @@ export default function Page() {
               ← Mississauga popcorn ceiling removal
             </Link>
             <span className="text-gray-400">|</span>
-            <Link href="/popcorn-ceiling-removal/" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline transition">
-              All service areas
+            <Link href="/popcorn-ceiling-removal/mississauga/port-credit/" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline transition">
+              Port Credit waterfront ceiling services →
             </Link>
             <span className="text-gray-400">|</span>
-            <Link href="/services/popcorn-ceiling-removal/" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline transition">
-              Service details →
+            <Link href="/popcorn-ceiling-removal/mississauga/cooksville/" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline transition">
+              Cooksville central ceiling removal →
+            </Link>
+            <span className="text-gray-400">|</span>
+            <Link href="/popcorn-ceiling-removal/mississauga/streetsville/" className="text-teal-600 hover:text-teal-700 font-semibold hover:underline transition">
+              Streetsville heritage ceiling specialists →
             </Link>
           </nav>
         </div>
