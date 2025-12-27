@@ -31,9 +31,10 @@ module.exports = {
 
         // City pages for popcorn ceiling removal
         const cities = [
-            "burlington", "mississauga", "oakville", "toronto", "hamilton", 
+            "burlington", "mississauga", "oakville", "toronto", "hamilton",
             "milton", "georgetown", "vaughan", "markham", "richmond-hill",
-            "etobicoke", "scarborough", "north-york", "brampton", "stoney-creek"
+            "etobicoke", "scarborough", "north-york", "brampton", "stoney-creek",
+            "grimsby",
         ];
 
         cities.forEach(city => {
@@ -42,6 +43,61 @@ module.exports = {
                 changefreq: "weekly",
                 priority: 0.9,
                 lastmod: now
+            });
+        });
+
+        const mississaugaNeighbourhoods = [
+            "applewood",
+            "churchill-meadows",
+            "city-centre",
+            "clarkson",
+            "cooksville",
+            "east-credit",
+            "erin-mills",
+            "hurontario",
+            "lakeview",
+            "lorne-park",
+            "malton",
+            "meadowvale",
+            "meadowvale-village",
+            "mineola",
+            "port-credit",
+            "sheridan",
+            "streetsville",
+        ];
+
+        mississaugaNeighbourhoods.forEach((slug) => {
+            paths.push({
+                loc: `/popcorn-ceiling-removal/mississauga/${slug}/`,
+                changefreq: "weekly",
+                priority: 0.85,
+                lastmod: now,
+            });
+        });
+
+        const burlingtonNeighbourhoods = [
+            "aldershot",
+            "alton-village",
+            "brant",
+            "brant-hills",
+            "elizabeth-gardens",
+            "headon-forest",
+            "millcroft",
+            "mountainside",
+            "orchard",
+            "palmer",
+            "roseland",
+            "shoreacres",
+            "tansley",
+            "tyandaga",
+        ];
+
+        burlingtonNeighbourhoods.forEach((slug) => {
+            paths.push({
+                loc: `/popcorn-ceiling-removal/burlington/${slug}/`,
+                changefreq: "weekly",
+                priority: 0.85,
+                lastmod: now,
             });
         });
 
