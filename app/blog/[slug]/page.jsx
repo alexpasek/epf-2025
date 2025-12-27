@@ -55,11 +55,22 @@ export default async function Post({ params }) {
   const url = SITE_URL ? `${SITE_URL}${path}` : path;
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
-  const wordCount = post.content?.reduce(
-    (sum, para) => sum + (para?.split(/\s+/).filter(Boolean).length || 0),
-    0
-  );
-  const articleBody = post.content?.join(" ");
+  const getParagraphText = (para) => {
+    if (typeof para === "string") return para;
+    if (para && typeof para === "object" && "html" in para) {
+      return (para.html || "").replace(/<[^>]+>/g, " ");
+    }
+    return para ? String(para) : "";
+  };
+  const plainParagraphs = post.content?.map(getParagraphText) || [];
+  const wordCount = plainParagraphs.reduce((sum, para) => {
+    const words = para
+      .split(/\s+/)
+      .map((w) => w.trim())
+      .filter(Boolean).length;
+    return sum + words;
+  }, 0);
+  const articleBody = plainParagraphs.join(" ");
   const areaServed = post.slug.includes("mississauga")
     ? [
         {
@@ -167,9 +178,20 @@ export default async function Post({ params }) {
       <section className="container-x px-4 -mt-8">
         <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
           <div className="prose-custom max-w-none text-slate-800">
-            {post.content.map((t, i) => (
-              <p key={i}>{t}</p>
-            ))}
+            {post.content.map((t, i) => {
+              if (typeof t === "string") {
+                return <p key={i}>{t}</p>;
+              }
+              if (t && typeof t === "object" && "html" in t) {
+                return (
+                  <p
+                    key={i}
+                    dangerouslySetInnerHTML={{ __html: t.html }}
+                  />
+                );
+              }
+              return <p key={i}>{String(t ?? "")}</p>;
+            })}
             {post.links?.length > 0 && (
               <div className="mt-6 space-y-2">
                 <h3 className="text-xl font-semibold text-slate-900">

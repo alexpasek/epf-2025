@@ -7,28 +7,6 @@ export const revalidate = 86400;
 const NAME = "Shoreacres";
 const SLUG = "shoreacres";
 const CITY_BASE = "/popcorn-ceiling-removal/burlington";
-const ALL = [
-  ["downtown-burlington", "Downtown Burlington"],
-  ["aldershot", "Aldershot"],
-  ["tyandaga", "Tyandaga"],
-  ["brant-hills", "Brant Hills"],
-  ["mountainside", "Mountainside"],
-  ["headon-forest", "Headon Forest"],
-  ["palmer", "Palmer"],
-  ["tansley", "Tansley"],
-  ["orchard", "Orchard"],
-  ["shoreacres", "Shoreacres"],
-  ["roseland", "Roseland"],
-  ["longmoor", "Longmoor"],
-  ["pinedale", "Pinedale"],
-  ["alton-village", "Alton Village"],
-  ["millcroft", "Millcroft"],
-  ["brant", "Brant"],
-  ["freeman", "Freeman"],
-  ["maple", "Maple"],
-  ["elizabeth-gardens", "Elizabeth Gardens"],
-];
-
 export const metadata = {
   title: `Popcorn Ceiling Removal — ${NAME}, Burlington | HEPA Dust Control & Level 5 Finish`,
   description: `${NAME} (near Paletta Lakefront Park & Lakeshore Rd) popcorn/stucco/stipple ceiling removal. Sealed rooms, HEPA sanding, full-field Level 5 skim, stain-block primer & optional finish paint. Pot light coordination, tidy crews, written warranty.`,
@@ -345,11 +323,6 @@ export default function Page() {
                 </Link>
               </li>
               <li>
-                <Link className="underline" href={`${CITY_BASE}/`}>
-                  Burlington Neighbourhood Index
-                </Link>
-              </li>
-              <li>
                 <Link className="underline" href="/services/interior-painting/">
                   Interior Painting
                 </Link>
@@ -433,14 +406,41 @@ export default function Page() {
       </section>
 
       {/* LINKS */}
-      <section id="links" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          More Burlington neighbourhoods
-        </h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {ALL.filter(([s]) => s !== SLUG).map(([s, n]) => (
-            <Link key={s} href={`${CITY_BASE}/${s}/`} className="pill">
-              {n}
+      <section id="links" className="mt-10 space-y-4">
+        <h2 className="text-2xl font-semibold">Burlington service hub</h2>
+        <Link
+          href={`${CITY_BASE}/`}
+          className="inline-flex items-center rounded-2xl border border-slate-300 px-5 py-3 font-semibold text-slate-800 hover:border-blue-400 hover:text-blue-600 transition"
+        >
+          Burlington popcorn ceiling removal services →
+        </Link>
+        <div className="grid gap-3 md:grid-cols-3">
+          {[
+            {
+              href: `${CITY_BASE}/roseland/`,
+              anchor: "Roseland ceiling resurfacing",
+              body: "Heritage homes west along Lakeshore.",
+            },
+            {
+              href: `${CITY_BASE}/elizabeth-gardens/`,
+              anchor: "Elizabeth Gardens popcorn removal",
+              body: "Bungalows + townhomes near Burloak.",
+            },
+            {
+              href: `${CITY_BASE}/longmoor/`,
+              anchor: "Longmoor smooth ceiling updates",
+              body: "Family homes south of New Street.",
+            },
+          ].map((card) => (
+            <Link
+              key={card.anchor}
+              href={card.href}
+              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:border-blue-400 hover:shadow-md transition"
+            >
+              <p className="text-lg font-semibold text-slate-900">
+                {card.anchor}
+              </p>
+              <p className="text-sm text-slate-600">{card.body}</p>
             </Link>
           ))}
         </div>

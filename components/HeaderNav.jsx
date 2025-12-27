@@ -174,7 +174,7 @@ export default function HeaderNav() {
       label: "Popcorn Ceiling Removal Etobicoke",
     },
     {
-      href: "/grimsby/",
+      href: "/popcorn-ceiling-removal/grimsby/",
       label: "Popcorn Ceiling Removal Grimsby",
     },
     {

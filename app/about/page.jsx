@@ -377,7 +377,10 @@ export default function AboutPage() {
             Etobicoke
           </Link>
           ,{" "}
-          <Link href="/grimsby/" className="hover:underline">
+          <Link
+            href="/popcorn-ceiling-removal/popcorn-ceiling-removal/popcorn-ceiling-removal/grimsby/"
+            className="hover:underline"
+          >
             Grimsby
           </Link>
           , and{" "}
