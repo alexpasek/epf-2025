@@ -933,11 +933,11 @@ export default function Page() {
                   story. Visit our{" "}
                   <Link
                     className="text-blue-600 font-semibold hover:underline"
-                    href="/popcorn-ceiling-removal/"
+                    href="/services/popcorn-ceiling-removal/"
                   >
-                    main popcorn ceiling removal page
+                    popcorn ceiling removal
                   </Link>{" "}
-                  to compare service tiers and see how Burlington fits within
+                  page to compare service tiers and see how Burlington fits within
                   the regional service map.
                 </p>
               </div>
