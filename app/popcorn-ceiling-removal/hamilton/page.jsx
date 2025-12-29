@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -196,13 +197,17 @@ export default function Page() {
       {/* UNIQUE HERO - Split Layout with Form */}
       <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img
-            src={images[0]}
-            alt="Popcorn ceiling removal Hamilton background"
-            className="w-full h-full object-cover"
-            loading="eager"
-            fetchPriority="high"
-          />
+          <div className="relative h-full w-full">
+            <Image
+              src={images[0]}
+              alt="Popcorn ceiling removal Hamilton background"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+              quality={70}
+            />
+          </div>
         </div>
 
         <div className="relative container mx-auto px-4 py-16 md:py-24">
@@ -537,12 +542,15 @@ export default function Page() {
               {images.map((src, i) => (
                 <div
                   key={i}
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+                  className="group relative h-72 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
                 >
-                  <img
+                  <Image
                     src={src}
                     alt={`Popcorn ceiling removal Hamilton project ${i + 1}`}
-                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    quality={70}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
                     <div className="text-white">

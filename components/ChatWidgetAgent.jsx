@@ -109,8 +109,8 @@ function useStickyBottomOffset(defaultPx) {
   return offset;
 }
 
-export default function ChatWidgetAgent() {
-  const [open, setOpen] = useState(false);
+export default function ChatWidgetAgent({ defaultOpen = false } = {}) {
+  const [open, setOpen] = useState(defaultOpen);
   const [sending, setSending] = useState(false);
   const [input, setInput] = useState("");
   const [msgs, setMsgs] = useState([]);

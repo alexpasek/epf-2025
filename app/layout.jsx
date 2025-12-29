@@ -13,7 +13,7 @@ import {
   PHONE_HREF,
   SITE_URL,
 } from "./config";
-import ChatWidgetAgent from "@/components/ChatWidgetAgent";
+import ChatWidgetDeferred from "@/components/ChatWidgetDeferred";
 import ReviewScroller from "@/components/ReviewScroller";
 import HeaderNav from "@/components/HeaderNav"; // ✅ NEW
 import Footer from "@/components/Footer";
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
         <SEOJsonLd />
       </head>
       <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-        <ChatWidgetAgent />
+        <ChatWidgetDeferred />
         <HeaderNav /> {/* ✅ use the client header */}
         <TrustBar />
         <main className="flex-1">{children}</main>
