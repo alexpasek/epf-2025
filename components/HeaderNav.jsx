@@ -335,7 +335,7 @@ export default function HeaderNav() {
           <BreadcrumbJsonLd crumbs={crumbs} />
           <div
             className={[
-              "border-b border-[#3EC5F1] bg-[#00AEEF] text-slate-100 transition-transform duration-300 sticky top-0 z-30",
+              "border-b border-[#0B76AC] bg-[#005F87] text-white transition-transform duration-300 sticky top-0 z-30",
               isCollapsed ? "-translate-y-24" : "translate-y-0",
             ].join(" ")}
           >
@@ -351,7 +351,7 @@ export default function HeaderNav() {
                       {i > 0 && <span className="mx-2 opacity-70">/</span>}
                       {isLast ? (
                         <span
-                          className="font-semibold"
+                          className="font-semibold text-white"
                           aria-current="page"
                           title={c.label}
                         >
@@ -360,7 +360,7 @@ export default function HeaderNav() {
                       ) : (
                         <Link
                           href={c.href}
-                          className="underline decoration-slate-900/30 underline-offset-2 hover:decoration-slate-900/60 hover:text-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20 rounded"
+                          className="text-white underline decoration-white/70 underline-offset-2 hover:decoration-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
                           title={c.label}
                         >
                           {c.label}

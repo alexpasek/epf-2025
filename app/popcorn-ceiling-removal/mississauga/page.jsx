@@ -450,7 +450,7 @@ export default function Page() {
         <section className="container-x px-4">
           <div className="rounded-3xl border bg-gradient-to-br from-amber-50 to-white p-8 shadow-xl ring-1 ring-black/5">
             <div className="text-center mb-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-600 font-semibold">
+              <p className="text-xs uppercase tracking-[0.3em] text-amber-800 font-semibold">
                 Real Mississauga reviews
               </p>
               <h2 className="mt-2 text-3xl font-bold text-gray-900">
@@ -548,7 +548,7 @@ export default function Page() {
                 href="https://www.homestars.com/profile/2872320-epf-pro-services"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-amber-600 px-8 py-4 font-semibold text-white hover:bg-amber-700 active:bg-amber-800 transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-amber-700 px-8 py-4 font-semibold text-white hover:bg-amber-800 active:bg-amber-900 transition-colors shadow-lg"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -565,7 +565,7 @@ export default function Page() {
             <div className="rounded-3xl border bg-white p-6 shadow-lg ring-1 ring-black/5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+                  <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
                     Field photos
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold">
@@ -652,7 +652,7 @@ export default function Page() {
         {/* WHY US */}
         <section id="why-us" className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
               Why Mississauga homeowners book us
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
@@ -702,7 +702,7 @@ export default function Page() {
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+                <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
                   Pricing outlook
                 </p>
                 <h2 className="mt-1 text-3xl font-semibold">
@@ -819,7 +819,7 @@ export default function Page() {
         {/* SERVICE COMBOS */}
         <section className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
               Stack services
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
@@ -842,7 +842,7 @@ export default function Page() {
         {/* FAQ */}
         <section id="faqs" className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
               Mississauga FAQs
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
@@ -915,13 +915,13 @@ export default function Page() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a 
-                  className="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 font-semibold text-white hover:bg-amber-600 active:bg-amber-700 transition-colors" 
+                className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 font-semibold text-white hover:bg-amber-700 active:bg-amber-800 transition-colors"
                   href={phoneHref}
                 >
                   📞 {phoneDisplay}
                 </a>
                 <a 
-                  className="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 font-semibold text-white hover:bg-amber-600 active:bg-amber-700 transition-colors" 
+                className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 font-semibold text-white hover:bg-amber-700 active:bg-amber-800 transition-colors"
                   href="/quote/"
                 >
                   Start my quote
@@ -947,7 +947,7 @@ export default function Page() {
               <details className="mt-8 rounded-2xl border-2 border-slate-200 bg-slate-50">
                 <summary className="cursor-pointer p-6 text-xl font-bold text-gray-900 hover:bg-slate-100 transition-colors">
                   📋 Local Popcorn ceiling removal details for homeowners who want the deep dive
-                  <span className="float-right text-amber-600">▼</span>
+                  <span className="float-right text-amber-800">▼</span>
                 </summary>
                 
                 <div className="p-6 pt-0 border-t border-slate-200">
