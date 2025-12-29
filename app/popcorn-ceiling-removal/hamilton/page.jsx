@@ -200,6 +200,8 @@ export default function Page() {
             src={images[0]}
             alt="Popcorn ceiling removal Hamilton background"
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
 
