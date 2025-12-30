@@ -1,6 +1,11 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
-import { CONTACT } from "@/app/config";
+import { CONTACT, SITE_URL } from "@/app/config";
+
+const BASE_URL = (SITE_URL || "https://epfproservices.com").replace(/\/$/, "");
+const PAGE_PATH = "/popcorn-ceiling-removal/mississauga/";
+const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
+const ORG_ID = `${BASE_URL}/#org`;
 
 export const revalidate = 86400;
 
@@ -9,13 +14,13 @@ export const metadata = {
   description:
     "Professional popcorn/stipple ceiling removal in Mississauga. HEPA dust control, Level 5 skim coat, 3-year warranty, painted removal texture specialists. Free quote, same-day response. Port Credit • Streetsville • Erin Mills.",
   alternates: {
-    canonical: "/popcorn-ceiling-removal/mississauga/",
+    canonical: PAGE_PATH,
   },
   openGraph: {
     title: "Popcorn Ceiling Removal Mississauga | Level 5 Smooth Ceilings + HEPA Dust Control",
     description:
       "Professional popcorn/stipple ceiling removal in Mississauga. HEPA dust control, Level 5 skim coat, 3-year warranty, painted texture specialists. Free quote, same-day response.",
-    url: "/popcorn-ceiling-removal/mississauga/",
+    url: PAGE_URL,
     type: "website",
   },
   robots: { index: true, follow: true },
@@ -55,8 +60,12 @@ function JsonLd() {
           "Ceiling Resurfacing",
         ],
         areaServed: "Mississauga",
-        url: "/popcorn-ceiling-removal/mississauga/",
-        potentialAction: { "@type": "RequestQuoteAction", target: "/quote/" },
+        url: PAGE_URL,
+        provider: { "@id": ORG_ID },
+        potentialAction: {
+          "@type": "RequestQuoteAction",
+          target: `${BASE_URL}/quote/`,
+        },
       },
       {
         "@type": "ItemList",
@@ -65,7 +74,7 @@ function JsonLd() {
           "@type": "ListItem",
           position: i + 1,
           name,
-          url: `/popcorn-ceiling-removal/mississauga/${slug}/`,
+          url: `${BASE_URL}${PAGE_PATH}${slug}/`,
         })),
       },
       {
@@ -75,19 +84,19 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Service Areas",
-            item: "/service-areas",
+            item: `${BASE_URL}/service-areas/`,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: `${BASE_URL}/popcorn-ceiling-removal/`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Mississauga",
-            item: "/popcorn-ceiling-removal/mississauga/",
+            item: PAGE_URL,
           },
         ],
       },
@@ -803,7 +812,7 @@ export default function Page() {
               </div>
 
               <div className="bg-white rounded-xl p-4 border border-blue-200">
-                <p className="text-sm font-semibold text-gray-900 mb-2">� Need area-specific pricing?</p>
+                <p className="text-sm font-semibold text-gray-900 mb-2">Need area-specific pricing?</p>
                 <p className="text-xs text-gray-600">
                   Each neighborhood above has detailed cost breakdowns based on local property types, ceiling heights, and common project scopes. Click any neighborhood link for location-specific pricing.
                 </p>

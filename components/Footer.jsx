@@ -73,182 +73,6 @@ const LOCATIONS = [
 export default function Footer() {
   const pathname = usePathname();
   const hideReviews = pathname === "/";
-  const orgId = "https://www.epfproservices.com/#org";
-  const primaryLocation = LOCATIONS[0];
-  const primaryTelDigits = primaryLocation.phoneHref.replace("+1", "");
-  const primaryTelephone = `+1-${primaryTelDigits.slice(
-    0,
-    3
-  )}-${primaryTelDigits.slice(3, 6)}-${primaryTelDigits.slice(6)}`;
-  const secondaryLocation = LOCATIONS[1];
-  const secondaryTelDigits = secondaryLocation.phoneHref.replace("+1", "");
-  const secondaryTelephone = `+1-${secondaryTelDigits.slice(
-    0,
-    3
-  )}-${secondaryTelDigits.slice(3, 6)}-${secondaryTelDigits.slice(6)}`;
-
-  const localBusinessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": orgId,
-    name: "Popcorn Ceiling Removal - EPF Pro Services",
-    url: "https://www.epfproservices.com/",
-    image: "https://www.epfproservices.com/logo.png",
-    sameAs: [
-      "https://www.instagram.com/epf_pro_services",
-      "https://www.facebook.com/epfproservices/?rdid=Wpko4jNGWEWo6enD",
-    ],
-    department: [
-      {
-        "@type": "LocalBusiness",
-        name: "Popcorn Ceiling Removal - EPF Pro Services (Mississauga)",
-        telephone: primaryTelephone,
-        priceRange: "$$",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: primaryLocation.address.streetAddress,
-          addressLocality: primaryLocation.address.addressLocality,
-          addressRegion: primaryLocation.address.addressRegion,
-          postalCode: primaryLocation.address.postalCode,
-          addressCountry: primaryLocation.address.addressCountry,
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: primaryLocation.geo.lat,
-          longitude: primaryLocation.geo.lng,
-        },
-        hasMap: primaryLocation.mapsUrl,
-        url: primaryLocation.gmbUrl,
-      },
-      {
-        "@type": "LocalBusiness",
-        name: "Popcorn Ceiling Removal - EPF Pro Services (Stoney Creek)",
-        telephone: secondaryTelephone,
-        priceRange: "$$",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: secondaryLocation.address.streetAddress,
-          addressLocality: secondaryLocation.address.addressLocality,
-          addressRegion: secondaryLocation.address.addressRegion,
-          postalCode: secondaryLocation.address.postalCode,
-          addressCountry: secondaryLocation.address.addressCountry,
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: secondaryLocation.geo.lat,
-          longitude: secondaryLocation.geo.lng,
-        },
-        hasMap: secondaryLocation.mapsUrl,
-        url: secondaryLocation.gmbUrl,
-      },
-    ],
-  };
-
-  /* -------- JSON-LD (SEO) -------- */
-  const orgJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": orgId,
-    name: "Popcorn Ceiling Removal - EPF Pro Services",
-    url: "https://www.epfproservices.com/",
-    email: CONTACT.email,
-    sameAs: [
-      "https://www.instagram.com/epf_pro_services",
-      "https://www.facebook.com/epfproservices/?rdid=Wpko4jNGWEWo6enD",
-    ],
-    areaServed: SERVICE_AREAS,
-    knowsAbout: [
-      "Popcorn ceiling removal",
-      "Level 5 skim coating",
-      "HEPA sanding",
-      "Ceiling priming and painting",
-      "Drywall repair",
-    ],
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+1-647-923-6784",
-        email: CONTACT.email,
-        contactType: "customer service",
-        areaServed: "CA",
-        availableLanguage: ["en"],
-      },
-      {
-        "@type": "ContactPoint",
-        telephone: "+1-647-824-3723",
-        contactType: "customer service",
-        areaServed: "CA",
-        availableLanguage: ["en"],
-      },
-    ],
-    department: LOCATIONS.map((loc) => ({
-      "@type": "LocalBusiness",
-      name: `Popcorn Ceiling Removal - EPF Pro Services — ${loc.label}`,
-      telephone: loc.phone,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: loc.address.streetAddress,
-        addressLocality: loc.address.addressLocality,
-        addressRegion: loc.address.addressRegion,
-        postalCode: loc.address.postalCode,
-        addressCountry: loc.address.addressCountry,
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: loc.geo.lat,
-        longitude: loc.geo.lng,
-      },
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-          ],
-          opens: "08:00",
-          closes: "21:00",
-        },
-      ],
-      hasMap: loc.mapsUrl,
-      url: loc.gmbUrl,
-      areaServed: SERVICE_AREAS,
-      priceRange: "$$",
-    })),
-    potentialAction: [
-      {
-        "@type": "ContactAction",
-        target: "tel:+1-647-923-6784",
-        name: "Call for estimate",
-      },
-      {
-        "@type": "ReserveAction",
-        target: "https://www.epfproservices.com/quote/",
-        name: "Request a free quote",
-      },
-    ],
-  };
-
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Popcorn Ceiling Removal",
-    serviceType: "Popcorn Ceiling Removal",
-    provider: { "@id": orgId },
-    areaServed: SERVICE_AREAS,
-    slogan:
-      "Dust-controlled popcorn ceiling removal with Level 5 smooth finish.",
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "CAD",
-      url: "https://www.epfproservices.com/quote/",
-      availability: "https://schema.org/InStock",
-    },
-  };
 
   return (
     <footer
@@ -256,21 +80,6 @@ export default function Footer() {
       itemScope
       itemType="https://schema.org/Organization"
     >
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(localBusinessJsonLd),
-        }}
-      />
 
       {/* Google Reviews */}
       {!hideReviews && <GoogleReviews />}
@@ -506,7 +315,7 @@ export default function Footer() {
           </div>
           <div className="flex justify-center">
             <SocialButtons
-              instagram="www.instagram.com/epf_pro_services"
+              instagram="https://www.instagram.com/epf_pro_services"
               facebook="https://www.facebook.com/epfproservices/?rdid=Wpko4jNGWEWo6enD"
               size={60}
               icon={26}
