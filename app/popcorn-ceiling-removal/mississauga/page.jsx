@@ -578,7 +578,7 @@ export default function Page() {
                     Field photos
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold">
-                    Recent Mississauga ceilings
+                    Recent Mississauga popcorn ceilings removal
                   </h2>
                 </div>
               </div>
