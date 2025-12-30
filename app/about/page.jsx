@@ -351,34 +351,49 @@ export default function AboutPage() {
         <p className="mt-2 text-gray-700">
           We serve{" "}
           <Link
-            href="/popcorn-removal/mississauga/"
+            href="/popcorn-ceiling-removal/mississauga/"
             className="hover:underline"
           >
             Mississauga
           </Link>
           ,{" "}
-          <Link href="/popcorn-removal/oakville/" className="hover:underline">
+          <Link
+            href="/popcorn-ceiling-removal/oakville/"
+            className="hover:underline"
+          >
             Oakville
           </Link>
           ,{" "}
-          <Link href="/popcorn-removal/burlington/" className="hover:underline">
+          <Link
+            href="/popcorn-ceiling-removal/burlington/"
+            className="hover:underline"
+          >
             Burlington
           </Link>
           ,{" "}
-          <Link href="/popcorn-removal/hamilton/" className="hover:underline">
+          <Link
+            href="/popcorn-ceiling-removal/hamilton/"
+            className="hover:underline"
+          >
             Hamilton
           </Link>
           ,{" "}
-          <Link href="/popcorn-removal/milton/" className="hover:underline">
+          <Link
+            href="/popcorn-ceiling-removal/milton/"
+            className="hover:underline"
+          >
             Milton
           </Link>
           ,{" "}
-          <Link href="/popcorn-removal/etobicoke/" className="hover:underline">
+          <Link
+            href="/popcorn-ceiling-removal/etobicoke/"
+            className="hover:underline"
+          >
             Etobicoke
           </Link>
           ,{" "}
           <Link
-            href="/popcorn-ceiling-removal/popcorn-ceiling-removal/popcorn-ceiling-removal/grimsby/"
+            href="/popcorn-ceiling-removal/grimsby/"
             className="hover:underline"
           >
             Grimsby
@@ -538,27 +553,45 @@ export default function AboutPage() {
             Where do you offer popcorn ceiling removal?
           </summary>
           <p className="mt-2 text-gray-700">
-            <Link href="/popcorn-removal/mississauga/" className="underline">
+            <Link
+              href="/popcorn-ceiling-removal/mississauga/"
+              className="underline"
+            >
               Mississauga
             </Link>
             ,{" "}
-            <Link href="/popcorn-removal/oakville/" className="underline">
+            <Link
+              href="/popcorn-ceiling-removal/oakville/"
+              className="underline"
+            >
               Oakville
             </Link>
             ,{" "}
-            <Link href="/popcorn-removal/burlington/" className="underline">
+            <Link
+              href="/popcorn-ceiling-removal/burlington/"
+              className="underline"
+            >
               Burlington
             </Link>
             ,{" "}
-            <Link href="/popcorn-removal/hamilton/" className="underline">
+            <Link
+              href="/popcorn-ceiling-removal/hamilton/"
+              className="underline"
+            >
               Hamilton
             </Link>
             ,{" "}
-            <Link href="/popcorn-removal/milton/" className="underline">
+            <Link
+              href="/popcorn-ceiling-removal/milton/"
+              className="underline"
+            >
               Milton
             </Link>
             ,{" "}
-            <Link href="/popcorn-removal/etobicoke/" className="underline">
+            <Link
+              href="/popcorn-ceiling-removal/etobicoke/"
+              className="underline"
+            >
               Etobicoke
             </Link>
             ,{" "}

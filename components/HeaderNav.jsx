@@ -146,7 +146,7 @@ export default function HeaderNav() {
 
   const locations = [
     {
-      href: "/popcorn-removal/mississauga/",
+      href: "/popcorn-ceiling-removal/mississauga/",
       label: "Popcorn Ceiling Removal Mississauga",
     },
     {

@@ -88,7 +88,7 @@ const services = [
 
 const cities = [
   {
-    href: "/popcorn-removal/mississauga/",
+    href: "/popcorn-ceiling-removal/mississauga/",
     label: "Popcorn ceiling removal Mississauga",
     city: "Mississauga",
   },
@@ -98,27 +98,27 @@ const cities = [
     city: "Toronto",
   },
   {
-    href: "/popcorn-removal/oakville/",
+    href: "/popcorn-ceiling-removal/oakville/",
     label: "Popcorn ceiling removal Oakville",
     city: "Oakville",
   },
   {
-    href: "/popcorn-removal/burlington/",
+    href: "/popcorn-ceiling-removal/burlington/",
     label: "Popcorn ceiling removal Burlington",
     city: "Burlington",
   },
   {
-    href: "/popcorn-removal/hamilton/",
+    href: "/popcorn-ceiling-removal/hamilton/",
     label: "Popcorn ceiling removal Hamilton",
     city: "Hamilton",
   },
   {
-    href: "/popcorn-removal/milton/",
+    href: "/popcorn-ceiling-removal/milton/",
     label: "Popcorn ceiling removal Milton",
     city: "Milton",
   },
   {
-    href: "/popcorn-removal/etobicoke/",
+    href: "/popcorn-ceiling-removal/etobicoke/",
     label: "Popcorn ceiling removal Etobicoke",
     city: "Etobicoke",
   },
