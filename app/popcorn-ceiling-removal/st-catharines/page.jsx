@@ -285,6 +285,8 @@ export default function Page() {
             src={images[0]}
             alt={`${CITY} popcorn ceiling removal`}
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         </div>
