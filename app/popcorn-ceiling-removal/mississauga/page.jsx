@@ -192,6 +192,8 @@ function JsonLd() {
 const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 const phoneDisplay = (CONTACT && CONTACT.phone) || "(647) 923-6784";
 const smsHref = phoneHref.replace("tel:", "sms:");
+const phoneAriaLabel = `Call Popcorn ceiling removal EPF Pro Services at ${phoneDisplay}`;
+const smsAriaLabel = `Text Popcorn ceiling removal EPF Pro Services at ${phoneDisplay}`;
 
 export default function Page() {
   const neighborhoods = [
@@ -414,11 +416,19 @@ export default function Page() {
                 </div>
                 <p className="mt-3 text-xs text-slate-500">
                   Prefer a call? Reach us at{" "}
-                  <a href={phoneHref} className="font-semibold underline">
+                  <a
+                    href={phoneHref}
+                    aria-label={phoneAriaLabel}
+                    className="font-semibold underline"
+                  >
                     {phoneDisplay}
                   </a>{" "}
                   or text photos to{" "}
-                  <a href={smsHref} className="underline">
+                  <a
+                    href={smsHref}
+                    aria-label={smsAriaLabel}
+                    className="underline"
+                  >
                     {phoneDisplay}
                   </a>
                   .
@@ -647,7 +657,7 @@ export default function Page() {
                 </li>
               </ul>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a className="btn-cta" href={phoneHref}>
+                <a className="btn-cta" href={phoneHref} aria-label={phoneAriaLabel}>
                   📞 {phoneDisplay}
                 </a>
                 <a className="btn-cta" href="/quote/">
@@ -723,7 +733,7 @@ export default function Page() {
                 </p>
               </div>
               <div className="flex gap-3">
-                <a className="btn-cta" href={phoneHref}>
+                <a className="btn-cta" href={phoneHref} aria-label={phoneAriaLabel}>
                   Call {phoneDisplay}
                 </a>
                 <a className="btn-cta" href="/quote/">
@@ -923,14 +933,15 @@ export default function Page() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <a 
-                className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 font-semibold text-white hover:bg-amber-700 active:bg-amber-800 transition-colors"
+                <a
+                  className="inline-flex items-center justify-center rounded-full bg-amber-800 px-6 py-3 font-semibold text-white hover:bg-amber-900 active:bg-amber-950 transition-colors"
                   href={phoneHref}
+                  aria-label={phoneAriaLabel}
                 >
                   📞 {phoneDisplay}
                 </a>
                 <a 
-                className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 font-semibold text-white hover:bg-amber-700 active:bg-amber-800 transition-colors"
+                className="inline-flex items-center justify-center rounded-full bg-amber-800 px-6 py-3 font-semibold text-white hover:bg-amber-900 active:bg-amber-950 transition-colors"
                   href="/quote/"
                 >
                   Start my quote
@@ -1060,7 +1071,20 @@ export default function Page() {
                 Whether you're renovating a Port Credit condo for resale, updating a Streetsville family home, or preparing an Erin Mills property for new tenants, professional <strong>popcorn ceiling removal</strong> transforms dated spaces into modern, marketable homes. Our Mississauga-based teams understand local building practices, municipal requirements, and real estate expectations that make ceiling projects succeed.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <Link href="/quote/" className="text-blue-600 font-semibold hover:underline">Request a detailed quote</Link> with photos and measurements, or call <a href={phoneHref} className="text-blue-600 font-semibold hover:underline">{phoneDisplay}</a> to discuss your specific project requirements. Most Mississauga estimates are delivered within 4 hours with firm pricing, clear timelines, and detailed scope documentation.
+                <Link href="/quote/" className="text-blue-600 font-semibold hover:underline">
+                  Request a detailed quote
+                </Link>{" "}
+                with photos and measurements, or call{" "}
+                <a
+                  href={phoneHref}
+                  aria-label={phoneAriaLabel}
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  {phoneDisplay}
+                </a>{" "}
+                to discuss your specific project requirements. Most Mississauga
+                estimates are delivered within 4 hours with firm pricing, clear
+                timelines, and detailed scope documentation.
               </p>
             </div>
           </div>

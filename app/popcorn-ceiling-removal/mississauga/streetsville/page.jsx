@@ -45,7 +45,7 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: "/services/popcorn-ceiling-removal/",
           },
           {
             "@type": "ListItem",
@@ -122,7 +122,7 @@ export default function Page() {
                 <ol className="inline-flex items-center space-x-2 flex-wrap">
                   <li><Link href="/" className="hover:text-cyan-300 transition">Home</Link></li>
                   <li className="text-white/30">→</li>
-                  <li><Link href="/popcorn-ceiling-removal/" className="hover:text-cyan-300 transition">Popcorn Ceiling Removal</Link></li>
+                  <li><Link href="/services/popcorn-ceiling-removal/" className="hover:text-cyan-300 transition">Popcorn Ceiling Removal</Link></li>
                   <li className="text-white/30">→</li>
                   <li><Link href="/popcorn-ceiling-removal/mississauga/" className="hover:text-cyan-300 transition">Mississauga</Link></li>
                   <li className="text-white/30">→</li>

@@ -21,7 +21,7 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       { "@type": "Service", name: "Popcorn Ceiling Removal Applewood", serviceType: ["Popcorn Ceiling Removal", "Ceiling Skim Coat Level 5", "Stipple Ceiling Removal"], areaServed: "Applewood, Mississauga, Ontario", url: "/popcorn-ceiling-removal/mississauga/applewood/", potentialAction: { "@type": "RequestQuoteAction", target: "/quote/" } },
-      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://epfproservices.com/" }, { "@type": "ListItem", position: 2, name: "Popcorn Ceiling Removal", item: "https://epfproservices.com/popcorn-ceiling-removal/" }, { "@type": "ListItem", position: 3, name: "Mississauga", item: "https://epfproservices.com/popcorn-ceiling-removal/mississauga/" }, { "@type": "ListItem", position: 4, name: "Applewood", item: "https://epfproservices.com/popcorn-ceiling-removal/mississauga/applewood/" }] },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://epfproservices.com/" }, { "@type": "ListItem", position: 2, name: "Popcorn Ceiling Removal", item: "https://epfproservices.com/services/popcorn-ceiling-removal/" }, { "@type": "ListItem", position: 3, name: "Mississauga", item: "https://epfproservices.com/popcorn-ceiling-removal/mississauga/" }, { "@type": "ListItem", position: 4, name: "Applewood", item: "https://epfproservices.com/popcorn-ceiling-removal/mississauga/applewood/" }] },
       { "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "How much does popcorn ceiling removal cost in Applewood, Mississauga?", acceptedAnswer: { "@type": "Answer", text: "Popcorn ceiling removal cost in Applewood typically ranges from baseline pricing for unpainted textures to 30-40% more for heavily painted ceilings requiring encapsulation. We provide transparent estimates after assessment with firm pricing." } }, { "@type": "Question", name: "Can you keep key rooms available during the project?", acceptedAnswer: { "@type": "Answer", text: "Yes. We plan room-by-room workflow with sealed containment, keeping stairs and key routes protected. Daily cleanup ensures kitchens and bedrooms remain usable." } }] }
     ]
   };
@@ -55,7 +55,7 @@ export default function Page() {
             <nav className="mb-6 text-sm text-white/80">
               <ol className="inline-flex items-center space-x-2">
                 <li>
-                  <Link href="/popcorn-ceiling-removal/" className="hover:underline">
+                  <Link href="/services/popcorn-ceiling-removal/" className="hover:underline">
                     Popcorn Ceiling Removal
                   </Link>
                 </li>

@@ -112,7 +112,7 @@ function JsonLd() {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "https://epfproservices.com/popcorn-ceiling-removal/"
+            item: "https://epfproservices.com/services/popcorn-ceiling-removal/"
           },
           {
             "@type": "ListItem",
@@ -207,7 +207,7 @@ export default function Page() {
             <nav className="mb-6 text-sm text-white/80">
               <ol className="inline-flex items-center space-x-2">
                 <li>
-                  <Link href="/popcorn-ceiling-removal/" className="hover:underline">
+                  <Link href="/services/popcorn-ceiling-removal/" className="hover:underline">
                     Popcorn Ceiling Removal
                   </Link>
                 </li>

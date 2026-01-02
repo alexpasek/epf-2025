@@ -211,7 +211,7 @@ function SeoJsonLd() {
           "@type": "ListItem",
           position: 2,
           name: "Popcorn Ceiling Removal",
-          item: "https://epfproservices.ca/popcorn-ceiling-removal/",
+          item: "https://epfproservices.ca/services/popcorn-ceiling-removal/",
         },
         {
           "@type": "ListItem",

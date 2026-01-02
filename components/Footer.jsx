@@ -208,6 +208,14 @@ export default function Footer() {
             {/* Priority cities with direct links */}
             <li>
               <a
+                href="/services/popcorn-ceiling-removal/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Popcorn ceiling removal service hub
+              </a>
+            </li>
+            <li>
+              <a
                 href="/popcorn-ceiling-removal/mississauga/"
                 className="text-blue-600 font-semibold hover:underline"
               >

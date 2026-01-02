@@ -45,7 +45,7 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Popcorn Ceiling Removal", item: "/popcorn-ceiling-removal/" },
+          { "@type": "ListItem", position: 1, name: "Popcorn Ceiling Removal", item: "/services/popcorn-ceiling-removal/" },
           { "@type": "ListItem", position: 2, name: "Mississauga", item: "/popcorn-ceiling-removal/mississauga/" },
           { "@type": "ListItem", position: 3, name: "Sheridan", item: "/popcorn-ceiling-removal/mississauga/sheridan/" },
         ],

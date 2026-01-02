@@ -45,7 +45,7 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: "/services/popcorn-ceiling-removal/",
           },
           {
             "@type": "ListItem",
