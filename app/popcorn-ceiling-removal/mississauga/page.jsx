@@ -567,7 +567,7 @@ export default function Page() {
                 href="https://www.homestars.com/profile/2872320-epf-pro-services"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-amber-700 px-8 py-4 font-semibold text-white hover:bg-amber-800 active:bg-amber-900 transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-amber-800 px-8 py-4 font-semibold text-white hover:bg-amber-900 active:bg-amber-950 transition-colors shadow-lg"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>

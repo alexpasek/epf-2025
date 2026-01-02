@@ -1,5 +1,6 @@
 // app/popcorn-ceiling-removal/st-catharines/page.jsx
 import Link from "next/link";
+import Image from "next/image";
 import QuoteForm from "@/components/QuoteForm";
 import { BRAND_NAME, CONTACT, SITE_URL } from "@/app/config";
 
@@ -281,12 +282,15 @@ export default function Page() {
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src={images[0]}
             alt={`${CITY} popcorn ceiling removal`}
-            className="w-full h-full object-cover"
-            loading="eager"
-            fetchpriority="high"
+            fill
+            priority
+            fetchPriority="high"
+            quality={70}
+            sizes="100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         </div>
@@ -592,7 +596,7 @@ export default function Page() {
               href="https://www.homestars.com/profile/2872320-epf-pro-services"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-amber-600 px-8 py-4 font-semibold text-white hover:bg-amber-700 active:bg-amber-800 transition-colors shadow-lg hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-full bg-amber-800 px-8 py-4 font-semibold text-white hover:bg-amber-900 active:bg-amber-950 transition-colors shadow-lg hover:scale-105"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -618,12 +622,15 @@ export default function Page() {
             {images.map((src, i) => (
               <div
                 key={src}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
+                className="group relative h-72 overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
               >
-                <img
+                <Image
                   src={src}
                   alt={`${CITY} popcorn ceiling removal project ${i + 1}`}
-                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  quality={70}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                   data-lightbox="true"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
