@@ -178,7 +178,7 @@ export default function HeaderNav() {
       label: "Popcorn Ceiling Removal Grimsby",
     },
     {
-      href: "/st-catharines/",
+      href: "/popcorn-ceiling-removal/st-catharines/",
       label: "Popcorn Ceiling Removal St. Catharines",
     },
   ];
