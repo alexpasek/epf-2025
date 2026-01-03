@@ -1372,15 +1372,37 @@ export default function Page() {
                 </div>
               ))}
             </div>
-            <p className="mt-2 text-sm">
-              Working in Mississauga?{" "}
-              <Link
-                href="/services/drywall-repair/mississauga/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                View Mississauga drywall repair →
-              </Link>
-            </p>
+            <div className="mt-6 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border-2 border-blue-200">
+              <h4 className="text-lg font-semibold mb-3 text-gray-900">
+                Featured City Pages
+              </h4>
+              <p className="text-gray-700 mb-4">
+                Detailed drywall installation guides for major GTA cities:
+              </p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <Link
+                  href="/services/drywall-installation/burlington/"
+                  className="rounded-xl border-2 border-blue-300 bg-white p-4 text-center font-semibold text-blue-600 hover:bg-blue-50 hover:border-blue-500 transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="text-2xl mb-2">🏘️</div>
+                  Drywall Installation Burlington
+                </Link>
+                <Link
+                  href="/services/drywall-installation/hamilton/"
+                  className="rounded-xl border-2 border-blue-300 bg-white p-4 text-center font-semibold text-blue-600 hover:bg-blue-50 hover:border-blue-500 transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="text-2xl mb-2">🏗️</div>
+                  Drywall Installation Hamilton
+                </Link>
+                <Link
+                  href="/services/drywall-installation/mississauga/"
+                  className="rounded-xl border-2 border-blue-300 bg-white p-4 text-center font-semibold text-blue-600 hover:bg-blue-50 hover:border-blue-500 transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="text-2xl mb-2">🏢</div>
+                  Drywall Installation Mississauga
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="mt-6">
