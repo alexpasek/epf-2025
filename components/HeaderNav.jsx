@@ -135,6 +135,7 @@ export default function HeaderNav() {
       href: "/services/popcorn-ceiling-removal/",
       label: "Popcorn Ceiling Removal",
     },
+    { href: "/services/drywall-repair/", label: "Drywall Repair" },
     { href: "/services/drywall-installation/", label: "Drywall Installation" },
     { href: "/services/wallpaper-removal/", label: "Wallpaper Removal" },
     { href: "/services/interior-painting/", label: "Interior Painting" },
