@@ -1638,17 +1638,26 @@ export default function Page() {
                   href="/services/drywall-repair/mississauga/"
                   className="rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 text-sm font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-500 transition-all hover:shadow-md"
                 >
-                  Mississauga →
+                  Drywall Repair Mississauga
+                </Link>
+
+                <Link
+                  href="/services/drywall-repair/burlington/"
+                  className="rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 text-sm font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-500 transition-all hover:shadow-md"
+                >
+                  Drywall Repair Burlington
                 </Link>
 
                 {cities
-                  .filter((city) => city.name !== "Mississauga")
+                  .filter(
+                    (city) => !["Mississauga", "Burlington"].includes(city.name)
+                  )
                   .map((city) => (
                     <div
                       key={city.slug}
                       className="rounded-2xl border border-gray-200 p-4 text-sm font-semibold text-gray-700 hover:border-blue-400 transition"
                     >
-                      {city.name}
+                      Drywall Repair {city.name}
                     </div>
                   ))}
               </div>

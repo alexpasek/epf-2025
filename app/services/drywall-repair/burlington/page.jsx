@@ -14,18 +14,18 @@ const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 const phoneText = (CONTACT && CONTACT.phone) || "(647) 923-6784";
 
 const NEIGHBOURHOODS = [
-  ["aldershot", "Aldershot"],
-  ["downtown-burlington", "Downtown Burlington"],
-  ["roseland", "Roseland"],
-  ["orchard", "Orchard"],
-  ["headon", "Headon"],
-  ["millcroft", "Millcroft"],
-  ["tyandaga", "Tyandaga"],
-  ["brant-hills", "Brant Hills"],
-  ["palmer", "Palmer"],
-  ["shoreacres", "Shoreacres"],
-  ["tansley", "Tansley"],
-  ["longmoor", "Longmoor"],
+  ["aldershot", "Aldershot", "Lakefront community with GO station access", "Drywall repair for water damage from Lake Ontario, residential and condo work"],
+  ["downtown-burlington", "Downtown Burlington", "Historic downtown with mixed-use development", "Commercial drywall repair, heritage homes, waterfront condos"],
+  ["roseland", "Roseland", "Established neighbourhood with mature trees", "Residential drywall repair, renovation support, basement finishing"],
+  ["orchard", "Orchard", "Family-oriented community near parks", "Drywall repair for family homes, hole patching, paint-ready finishing"],
+  ["headon", "Headon", "Upscale area with executive homes", "Premium drywall repair, seamless finishing, luxury coordination"],
+  ["millcroft", "Millcroft", "Prestigious neighbourhood with large properties", "Estate drywall repair, Level 5 finishing, designer coordination"],
+  ["tyandaga", "Tyandaga", "Newer development with modern homes", "New home drywall repair, settlement fixes, builder warranty work"],
+  ["brant-hills", "Brant Hills", "Escarpment area with diverse housing", "Drywall repair for cracks, water damage, renovation support"],
+  ["palmer", "Palmer", "Lakeside community near waterfront", "Waterfront drywall repair, humidity damage, seamless patching"],
+  ["shoreacres", "Shoreacres", "Waterfront neighbourhood with lake views", "Drywall repair for Lake Ontario water damage, luxury homes, premium finishing"],
+  ["tansley", "Tansley", "Residential area with family homes", "Residential drywall repair, basement work, renovation coordination"],
+  ["longmoor", "Longmoor", "Established community near QEW", "Drywall repair for homes, crack fixes, paint-ready surfaces"],
 ];
 
 const FAQS = [
@@ -557,15 +557,23 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-              {NEIGHBOURHOODS.map(([slug, name]) => (
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+              {NEIGHBOURHOODS.map(([slug, name, description, services]) => (
                 <div
                   key={slug}
-                  className="group p-5 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 rounded-xl text-center hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+                  className="group p-6 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 rounded-xl hover:border-blue-400 hover:shadow-lg transition-all duration-300"
                 >
-                  <p className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <p className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2 text-lg">
                     {name}
                   </p>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                    {description}
+                  </p>
+                  <div className="pt-3 border-t border-blue-100">
+                    <p className="text-xs text-gray-500 leading-relaxed">
+                      {services}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -810,13 +818,13 @@ export default function Page() {
             </p>
 
             <p className="text-gray-700 leading-relaxed mt-8">
-              For detailed information about our complete service offerings, repair techniques, and quality standards throughout the GTA, explore our{" "}
+              For detailed information about our complete service offerings, repair techniques, and quality standards throughout the GTA, explore our main{" "}
               <Link
                 href="/services/drywall-repair/"
                 className="text-blue-600 hover:text-blue-700 font-semibold underline"
               >
-                main drywall repair services page
-              </Link>.
+               drywall repair services 
+              </Link> page.
             </p>
             </div>
           </div>

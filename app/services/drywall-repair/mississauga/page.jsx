@@ -14,20 +14,20 @@ const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 const phoneText = (CONTACT && CONTACT.phone) || "(647) 923-6784";
 
 const NEIGHBOURHOODS = [
-  ["port-credit", "Port Credit"],
-  ["streetsville", "Streetsville"],
-  ["meadowvale", "Meadowvale"],
-  ["erin-mills", "Erin Mills"],
-  ["cooksville", "Cooksville"],
-  ["malton", "Malton"],
-  ["churchill-meadows", "Churchill Meadows"],
-  ["creditview", "Creditview"],
-  ["lakeview", "Lakeview"],
-  ["clarkson", "Clarkson"],
-  ["mineola", "Mineola"],
-  ["applewood", "Applewood"],
-  ["hurontario", "Hurontario"],
-  ["square-one", "Square One"],
+  ["port-credit", "Port Credit", "Lakefront village with marina and boutiques", "Waterfront water damage, heritage home repairs, condo drywall work"],
+  ["streetsville", "Streetsville", "Historic village with heritage character", "Heritage home repairs, renovation support, seamless patching"],
+  ["meadowvale", "Meadowvale", "Established suburb with family homes", "Residential repairs, basement finishing, crack repair"],
+  ["erin-mills", "Erin Mills", "Upscale residential area with amenities", "Premium home repairs, luxury finishing, designer coordination"],
+  ["cooksville", "Cooksville", "Diverse urban neighbourhood near transit", "Condo repairs, commercial work, residential patching"],
+  ["malton", "Malton", "Industrial and residential mix near airport", "Commercial repairs, warehouse work, residential support"],
+  ["churchill-meadows", "Churchill Meadows", "Newer development with executive homes", "New home repairs, settlement cracks, modern finishing"],
+  ["creditview", "Creditview", "Residential community with schools", "Family home repairs, basement work, hole patching"],
+  ["lakeview", "Lakeview", "Waterfront neighbourhood along Lake Ontario", "Lake damage repairs, waterfront condos, premium finishing"],
+  ["clarkson", "Clarkson", "Lakefront community with GO station", "Water damage restoration, residential repairs, transit-area condos"],
+  ["mineola", "Mineola", "Upscale lakefront area with heritage homes", "Luxury repairs, heritage restoration, premium finishing"],
+  ["applewood", "Applewood", "Mature neighbourhood near QEW", "Residential repairs, renovation support, paint-ready work"],
+  ["hurontario", "Hurontario", "LRT corridor with mixed development", "High-rise condos, commercial repairs, transit construction impacts"],
+  ["square-one", "Square One", "Urban core with high-rise condos and retail", "Condo towers, commercial repairs, concierge coordination"],
 ];
 
 const FAQS = [
