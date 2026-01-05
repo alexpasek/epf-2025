@@ -10,16 +10,18 @@ const ORG_ID = `${BASE_URL}/#org`;
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Popcorn Ceiling Removal Mississauga | Level 5 Smooth Ceilings + HEPA Dust Control",
+  title:
+    "Popcorn Ceiling Removal Mississauga | Stipple & Stucco Removal Experts",
   description:
-    "Professional popcorn/stipple ceiling removal in Mississauga. HEPA dust control, Level 5 skim coat, 3-year warranty, painted removal texture specialists. Free quote, same-day response. Port Credit • Streetsville • Erin Mills.",
+    "Mississauga popcorn, stipple & stucco ceiling removal – dust-free scraping, Level 5 skim coat, 3-year warranty. Local, insured contractors transforming textured ceilings to smooth in Port Credit, Streetsville, Erin Mills & all Mississauga neighborhoods.",
   alternates: {
     canonical: PAGE_PATH,
   },
   openGraph: {
-    title: "Popcorn Ceiling Removal Mississauga | Level 5 Smooth Ceilings + HEPA Dust Control",
+    title:
+      "Popcorn Ceiling Removal Mississauga | Stipple & Stucco Removal Experts",
     description:
-      "Professional popcorn/stipple ceiling removal in Mississauga. HEPA dust control, Level 5 skim coat, 3-year warranty, painted texture specialists. Free quote, same-day response.",
+      "Mississauga popcorn, stipple & stucco ceiling removal – dust-free scraping, Level 5 skim coat, 3-year warranty. Local, insured contractors transforming textured ceilings to smooth in every neighborhood.",
     url: PAGE_URL,
     type: "website",
   },
@@ -325,121 +327,280 @@ export default function Page() {
         {/* HERO */}
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white">
           <div className="container-x px-4 py-14">
-            <div className="grid gap-12 lg:grid-cols-[3fr_2fr]">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-amber-300 font-semibold">
+            <div className="max-w-7xl mx-auto">
+              {/* Hero Content */}
+              <div className="max-w-4xl mb-12">
+                <p className="text-xs uppercase tracking-[0.3em] text-blue-300 font-semibold">
                   Mississauga • Dust-controlled popcorn removal
                 </p>
-                <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-                  Popcorn Ceiling Removal in Mississauga
+                <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+                  Popcorn Ceiling Removal Mississauga
                 </h1>
-                <p className="mt-4 text-lg text-slate-200">
-                  We convert stipple to flat white ceilings with HEPA
-                  containment, Level 5 skim coating, and concierge-style
-                  communication. Most Mississauga quotes are turned around the
-                  same day you send photos.
+                <p className="mt-4 text-xl text-slate-200 max-w-3xl">
+                  We convert popcorn, stipple, and stucco ceilings to flat white
+                  surfaces with HEPA containment, Level 5 skim coating, and
+                  concierge-style communication. Most Mississauga quotes are
+                  turned around the same day you send photos.
                 </p>
-                <p className="mt-4 text-sm text-slate-200/90">
-                  Need the full workflow? Explore our{" "}
-                  <Link
-                    href="/services/popcorn-ceiling-removal/"
-                    className="underline underline-offset-2"
-                  >
-                    popcorn ceiling removal services
-                  </Link>{" "}
-                  for process details.
-                </p>
-                <ul className="mt-6 grid gap-4 text-sm text-slate-200 sm:grid-cols-2">
-                  <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-                    <span className="text-lg">🧼</span>
-                    <span>
-                      Full containment, zipper walls, and HEPA sanding to keep
-                      dust out of the rest of your home.
-                    </span>
-                  </li>
-                  <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-                    <span className="text-lg">🪜</span>
-                    <span>
-                      Level 5 skim coating + primer so ceilings are ready for finish paint right away.
-                    </span>
-                  </li>
-                  <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-                    <span className="text-lg">🗓️</span>
-                    <span>
-                      Predictable scheduling and clean wrap-ups in Port Credit, Sheridan, Clarkson, Streetsville, and every pocket in between.
-                    </span>
-                  </li>
-                  <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-                    <span className="text-lg">📸</span>
-                    <span>
-                      Share photos below for pricing or text us directly if that's faster.
-                    </span>
-                  </li>
-                </ul>
-                <nav className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-                  {anchorLinks.map(([href, label]) => (
-                    <a
-                      key={href}
-                      href={href}
-                      className="rounded-full border border-white/20 px-4 py-2 text-white/80 hover:text-white hover:border-white"
-                    >
-                      {label}
-                    </a>
-                  ))}
-                </nav>
-                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              </div>
+
+              {/* Two Column Grid - Advantages + Quick Nav */}
+              <div className="grid lg:grid-cols-2 gap-8 mb-10">
+                {/* MISSISSAUGA-SPECIFIC ADVANTAGES */}
+                <div className="rounded-2xl border-2 border-blue-400 bg-blue-900/20 p-6">
+                  <p className="text-sm font-bold text-blue-300 mb-4 uppercase tracking-wider">
+                    ✓ Why Mississauga Homeowners Choose Us
+                  </p>
+                  <ul className="space-y-3 text-sm text-white">
+                    <li className="flex items-start gap-3">
+                      <span className="text-blue-400 font-bold text-lg">✓</span>
+                      <span>
+                        <strong className="text-blue-300">
+                          Condo-ready logistics:
+                        </strong>{" "}
+                        Elevator bookings, insurance coordination, and hallway
+                        protection for Square One towers, Port Credit
+                        high-rises, and Hurontario condos
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-blue-400 font-bold text-lg">✓</span>
+                      <span>
+                        <strong className="text-blue-300">
+                          Local Mississauga team:
+                        </strong>{" "}
+                        Dispatched from Port Credit covering Streetsville, Erin
+                        Mills, Churchill Meadows, Clarkson, and all 17
+                        neighborhoods daily
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-blue-400 font-bold text-lg">✓</span>
+                      <span>
+                        <strong className="text-blue-300">
+                          4-hour photo quotes:
+                        </strong>{" "}
+                        Text ceiling pictures and measurements—get detailed
+                        pricing before lunch, confirmed availability by dinner
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-blue-400 font-bold text-lg">✓</span>
+                      <span>
+                        <strong className="text-blue-300">
+                          HEPA dust containment:
+                        </strong>{" "}
+                        Sealed work zones, vacuum-assisted sanding, and daily
+                        cleanup—rest of your home stays livable during the
+                        project
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-blue-400 font-bold text-lg">✓</span>
+                      <span>
+                        <strong className="text-blue-300">
+                          Painted texture expertise:
+                        </strong>{" "}
+                        Full skim coating for stubborn painted popcorn common in
+                        2000s-era Meadowvale and East Credit developments
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-blue-400 font-bold text-lg">✓</span>
+                      <span>
+                        <strong className="text-blue-300">
+                          Trade coordination:
+                        </strong>{" "}
+                        Sync with your Mississauga electrician for pot lights or
+                        our painting crews for turnkey ceiling-to-walls packages
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* QUICK JUMP MENU */}
+                <div className="rounded-2xl border-2 border-blue-400 bg-blue-900/20 p-6">
+                  <p className="text-xs uppercase tracking-wider text-blue-300 font-bold mb-4">
+                    📋 Quick Navigation
+                  </p>
+                  <nav className="flex flex-wrap gap-3">
+                    {anchorLinks.map(([href, label]) => (
+                      <a
+                        key={href}
+                        href={href}
+                        className="inline-flex items-center gap-2 rounded-full border-2 border-blue-400/50 bg-blue-900/40 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-800/60 hover:border-blue-300 transition-all"
+                      >
+                        {label}
+                      </a>
+                    ))}
+                  </nav>
+
+                  <div className="mt-6 pt-6 border-t border-blue-400/30">
+                    <p className="text-sm text-slate-200 mb-4">
+                      Need the full workflow? Explore our{" "}
+                      <Link
+                        href="/services/popcorn-ceiling-removal/"
+                        className="text-blue-300 underline underline-offset-2 hover:text-blue-200"
+                      >
+                        comprehensive popcorn ceiling removal guide
+                      </Link>{" "}
+                      for detailed process information, or check our{" "}
+                      <Link
+                        href="/blog/popcorn-ceiling-removal-cost-timeline/"
+                        className="text-blue-300 underline underline-offset-2 hover:text-blue-200"
+                      >
+                        cost & timeline breakdown
+                      </Link>
+                      .
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature Bullets */}
+              <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-slate-200 mb-10">
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-2xl">🧼</span>
+                  <span>
+                    Full containment, zipper walls, and HEPA sanding to keep
+                    dust out of the rest of your home.
+                  </span>
+                </li>
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-2xl">🪜</span>
+                  <span>
+                    Level 5 skim coating + primer so ceilings are ready for
+                    finish paint right away.
+                  </span>
+                </li>
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-2xl">🗓️</span>
+                  <span>
+                    Predictable scheduling and clean wrap-ups in Port Credit,
+                    Sheridan, Clarkson, Streetsville, and every pocket in
+                    between.
+                  </span>
+                </li>
+                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <span className="text-2xl">📸</span>
+                  <span>
+                    Share photos below for pricing or text us directly if that's
+                    faster.
+                  </span>
+                </li>
+              </ul>
+
+              {/* Stats + CTA Buttons */}
+              <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
+                <div className="grid grid-cols-3 gap-6 flex-1">
                   {heroStats.map((stat) => (
                     <div
                       key={stat.label}
                       className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center shadow-lg"
                     >
-                      <div className="text-2xl font-semibold text-white">
+                      <div className="text-3xl font-bold text-white">
                         {stat.value}
                       </div>
-                      <p className="text-xs uppercase tracking-wide text-slate-300">
+                      <p className="text-xs uppercase tracking-wide text-slate-300 mt-2">
                         {stat.label}
                       </p>
                     </div>
                   ))}
                 </div>
-              </div>
-              <div className="rounded-3xl border border-white/10 bg-white/95 p-6 text-slate-900 shadow-2xl ring-1 ring-black/5">
-                <h2 className="text-2xl font-semibold">
-                  Get a Mississauga quote
-                </h2>
-                <p className="mt-2 text-sm text-slate-600">
-                  Upload photos, ceiling heights, and timing. We reply the same
-                  day with square-foot guidance and availability.
-                </p>
-                <div className="mt-4">
-                  <QuoteForm />
-                </div>
-                <p className="mt-3 text-xs text-slate-500">
-                  Prefer a call? Reach us at{" "}
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="#quote"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-xl text-lg"
+                  >
+                    <span>📋</span> Get Free Quote
+                  </a>
                   <a
                     href={phoneHref}
                     aria-label={phoneAriaLabel}
-                    className="font-semibold underline"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-white hover:bg-white/10 text-white font-bold rounded-full transition-all shadow-xl text-lg"
                   >
-                    {phoneDisplay}
-                  </a>{" "}
-                  or text photos to{" "}
-                  <a
-                    href={smsHref}
-                    aria-label={smsAriaLabel}
-                    className="underline"
-                  >
-                    {phoneDisplay}
+                    <span>📞</span> {phoneDisplay}
                   </a>
-                  .
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* QUOTE FORM SECTION - Separate */}
+        <section id="quote" className="container-x -mt-8 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Left Column - Info */}
+              <div>
+                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                  FAST & ACCURATE QUOTES
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                  Get Your Mississauga Quote
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Upload photos, ceiling heights, and timing. We reply the same
+                  day with square-foot guidance and availability.
                 </p>
+
+                <div className="space-y-4">
+                  {[
+                    {
+                      icon: "💧",
+                      title: "Water damage & ceilings",
+                      desc: "Moisture mapping and ceiling water damage repair Mississauga insurance adjusters trust.",
+                    },
+                    {
+                      icon: "🧱",
+                      title: "Trade cut-outs",
+                      desc: "Coordinated popcorn removal after pot light installation, HVAC upgrades, and electrical work.",
+                    },
+                    {
+                      icon: "✨",
+                      title: "Finish perfection",
+                      desc: "Level 5 skim coat and sanding for no visible texture lines Mississauga homeowners demand.",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.title}
+                      className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"
+                    >
+                      <div className="text-3xl">{item.icon}</div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-600">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column - Form */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border-2 border-blue-200 p-8 shadow-xl">
+                <QuoteForm />
+                <div className="mt-6 pt-6 border-t border-blue-200 text-center">
+                  <p className="text-sm text-gray-600 mb-3">
+                    Need immediate help?
+                  </p>
+                  <a
+                    href={phoneHref}
+                    aria-label={phoneAriaLabel}
+                    className="inline-flex items-center gap-2 text-xl font-bold text-blue-600 hover:text-blue-700"
+                  >
+                    📞 {phoneDisplay}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* COVERAGE + INTERNAL LINKS */}
-        <section id="coverage" className="container-x -mt-8 px-4">
+        <section id="coverage" className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
             <div>
               <h2 className="text-2xl font-semibold">
@@ -455,9 +616,15 @@ export default function Page() {
                   <Link
                     key={slug}
                     href={`/popcorn-ceiling-removal/mississauga/${slug}/`}
-                    className="rounded-2xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                    className="group rounded-2xl border border-slate-200 px-4 py-3 text-sm hover:border-slate-900 hover:bg-slate-50 transition-all"
+                    title={`${name} popcorn ceiling removal`}
                   >
-                    {name}
+                    <span className="font-medium text-slate-900 group-hover:text-slate-900">
+                      {name}
+                    </span>
+                    <span className="block text-xs text-slate-500 mt-0.5">
+                      Popcorn, stipple & stucco removal
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -467,9 +634,9 @@ export default function Page() {
 
         {/* TESTIMONIALS */}
         <section className="container-x px-4">
-          <div className="rounded-3xl border bg-gradient-to-br from-amber-50 to-white p-8 shadow-xl ring-1 ring-black/5">
+          <div className="rounded-3xl border bg-gradient-to-br from-blue-50 to-white p-8 shadow-xl ring-1 ring-black/5">
             <div className="text-center mb-8">
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-800 font-semibold">
+              <p className="text-xs uppercase tracking-[0.3em] text-blue-600 font-semibold">
                 Real Mississauga reviews
               </p>
               <h2 className="mt-2 text-3xl font-bold text-gray-900">
@@ -478,76 +645,112 @@ export default function Page() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
-              <div className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-500">⭐</span>
+                    <span key={i} className="text-blue-500">
+                      ⭐
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">
-                  "Clean, professional crew. They contained everything and our Port Credit condo stayed dust-free. Level 5 finish looks amazing under our pot lights."
+                  "Clean, professional crew. They contained everything and our
+                  Port Credit condo stayed dust-free. Level 5 finish looks
+                  amazing under our pot lights."
                 </p>
-                <p className="text-xs text-gray-500 font-semibold">— Sarah M., Port Credit</p>
+                <p className="text-xs text-gray-500 font-semibold">
+                  — Sarah M., Port Credit
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-500">⭐</span>
+                    <span key={i} className="text-blue-500">
+                      ⭐
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">
-                  "Fast quote turnaround and they coordinated perfectly with our electrician. Streetsville house looks modern now. Highly recommend!"
+                  "Fast quote turnaround and they coordinated perfectly with our
+                  electrician. Streetsville house looks modern now. Highly
+                  recommend!"
                 </p>
-                <p className="text-xs text-gray-500 font-semibold">— James T., Streetsville</p>
+                <p className="text-xs text-gray-500 font-semibold">
+                  — James T., Streetsville
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-500">⭐</span>
+                    <span key={i} className="text-blue-500">
+                      ⭐
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">
-                  "Removed painted popcorn from our entire Erin Mills home. Daily updates, zero mess, and the finish is flawless. Worth every penny."
+                  "Removed painted popcorn from our entire Erin Mills home.
+                  Daily updates, zero mess, and the finish is flawless. Worth
+                  every penny."
                 </p>
-                <p className="text-xs text-gray-500 font-semibold">— Priya K., Erin Mills</p>
+                <p className="text-xs text-gray-500 font-semibold">
+                  — Priya K., Erin Mills
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-500">⭐</span>
+                    <span key={i} className="text-blue-500">
+                      ⭐
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">
-                  "Completed our Clarkson semi in 2 days. HEPA system really works—no dust anywhere else in the house. Very impressed with the quality."
+                  "Completed our Clarkson semi in 2 days. HEPA system really
+                  works—no dust anywhere else in the house. Very impressed with
+                  the quality."
                 </p>
-                <p className="text-xs text-gray-500 font-semibold">— Mike R., Clarkson</p>
+                <p className="text-xs text-gray-500 font-semibold">
+                  — Mike R., Clarkson
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-500">⭐</span>
+                    <span key={i} className="text-blue-500">
+                      ⭐
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">
-                  "Needed asbestos test first—they handled everything and kept us informed. Cooksville townhouse ceilings look brand new. Great communication."
+                  "Needed asbestos test first—they handled everything and kept
+                  us informed. Cooksville townhouse ceilings look brand new.
+                  Great communication."
                 </p>
-                <p className="text-xs text-gray-500 font-semibold">— Linda C., Cooksville</p>
+                <p className="text-xs text-gray-500 font-semibold">
+                  — Linda C., Cooksville
+                </p>
               </div>
 
-              <div className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-blue-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-amber-500">⭐</span>
+                    <span key={i} className="text-blue-500">
+                      ⭐
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-700 text-sm mb-4">
-                  "Vaulted ceilings in Churchill Meadows—they set up proper scaffolding and the result is perfect. Pricing was fair and transparent."
+                  "Vaulted ceilings in Churchill Meadows—they set up proper
+                  scaffolding and the result is perfect. Pricing was fair and
+                  transparent."
                 </p>
-                <p className="text-xs text-gray-500 font-semibold">— David L., Churchill Meadows</p>
+                <p className="text-xs text-gray-500 font-semibold">
+                  — David L., Churchill Meadows
+                </p>
               </div>
             </div>
 
@@ -558,8 +761,12 @@ export default function Page() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 active:bg-blue-800 transition-colors shadow-lg"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
                 Read Google Reviews
               </a>
@@ -567,10 +774,14 @@ export default function Page() {
                 href="https://www.homestars.com/profile/2872320-epf-pro-services"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-amber-800 px-8 py-4 font-semibold text-white hover:bg-amber-900 active:bg-amber-950 transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-8 py-4 font-semibold text-white hover:bg-orange-700 active:bg-orange-800 transition-colors shadow-lg"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
                 View HomeStars Profile
               </a>
@@ -584,11 +795,12 @@ export default function Page() {
             <div className="rounded-3xl border bg-white p-6 shadow-lg ring-1 ring-black/5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
+                  <p className="text-xs uppercase tracking-[0.3em] text-blue-600">
                     Field photos
                   </p>
                   <h2 className="mt-2 text-2xl font-semibold">
-                    Recent Mississauga popcorn ceilings removal
+                    Recent Mississauga Popcorn, Stipple & Stucco Ceiling Removal
+                    Projects
                   </h2>
                 </div>
               </div>
@@ -600,7 +812,9 @@ export default function Page() {
                   >
                     <img
                       src={src}
-                      alt={`Mississauga popcorn ceiling removal ${idx + 1}`}
+                      alt={`Mississauga ${
+                        ["popcorn", "stipple", "stucco"][idx % 3]
+                      } ceiling removal before and after ${idx + 1}`}
                       className="h-44 w-full object-cover transition duration-500 hover:scale-105"
                       loading="lazy"
                     />
@@ -609,15 +823,16 @@ export default function Page() {
               </div>
             </div>
             <div className="rounded-3xl border bg-slate-900 p-6 text-white shadow-lg ring-1 ring-black/5">
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-300">
+              <p className="text-xs uppercase tracking-[0.3em] text-blue-300">
                 What to expect
               </p>
               <h2 className="mt-3 text-2xl font-semibold">
-                Concierge popcorn removal
+                Mississauga Concierge Popcorn Removal
               </h2>
               <p className="mt-3 text-sm text-slate-200">
-                Every Mississauga project gets a dedicated lead, daily
-                text/photo updates, and full clean downs before we leave.
+                Whether your Mississauga home has popcorn, stipple, or stucco
+                ceilings, every project gets a dedicated lead, daily text/photo
+                updates, and full clean downs before we leave.
               </p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li className="flex gap-3">
@@ -657,7 +872,11 @@ export default function Page() {
                 </li>
               </ul>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a className="btn-cta" href={phoneHref} aria-label={phoneAriaLabel}>
+                <a
+                  className="btn-cta"
+                  href={phoneHref}
+                  aria-label={phoneAriaLabel}
+                >
                   📞 {phoneDisplay}
                 </a>
                 <a className="btn-cta" href="/quote/">
@@ -671,12 +890,32 @@ export default function Page() {
         {/* WHY US */}
         <section id="why-us" className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
-              Why Mississauga homeowners book us
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-600">
+              Why Choose Us in Mississauga
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
-              Dust-controlled, Level 5 ceilings without drama
+              Mississauga's Trusted Popcorn, Stipple & Stucco Ceiling
+              Specialists
             </h2>
+            <p className="mt-3 text-gray-600 leading-relaxed">
+              From Port Credit waterfront condos to Churchill Meadows family
+              homes, we deliver dust-controlled, Level 5 ceiling transformations
+              without the drama. Learn more about our{" "}
+              <Link
+                href="/our-process/"
+                className="text-blue-600 underline underline-offset-2 hover:text-blue-700"
+              >
+                dust containment process
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/services/popcorn-ceiling-removal/"
+                className="text-blue-600 underline underline-offset-2 hover:text-blue-700"
+              >
+                Level 5 finishing standards
+              </Link>
+              .
+            </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {sellingPoints.map((point) => (
                 <div
@@ -685,6 +924,15 @@ export default function Page() {
                 >
                   <h3 className="text-lg font-semibold">{point.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{point.body}</p>
+                  {point.href && (
+                    <Link
+                      href={point.href}
+                      className="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-blue-600 hover:text-blue-700"
+                    >
+                      {point.cta}
+                      <span className="text-xs">→</span>
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
@@ -694,7 +942,7 @@ export default function Page() {
         {/* PROCESS */}
         <section id="process" className="container-x px-4">
           <div className="rounded-3xl border bg-slate-900 p-6 text-white shadow-xl ring-1 ring-black/5">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-300">
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-300">
               Proven workflow
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
@@ -721,7 +969,7 @@ export default function Page() {
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
+                <p className="text-xs uppercase tracking-[0.3em] text-blue-600">
                   Pricing outlook
                 </p>
                 <h2 className="mt-1 text-3xl font-semibold">
@@ -733,7 +981,11 @@ export default function Page() {
                 </p>
               </div>
               <div className="flex gap-3">
-                <a className="btn-cta" href={phoneHref} aria-label={phoneAriaLabel}>
+                <a
+                  className="btn-cta"
+                  href={phoneHref}
+                  aria-label={phoneAriaLabel}
+                >
                   Call {phoneDisplay}
                 </a>
                 <a className="btn-cta" href="/quote/">
@@ -767,69 +1019,117 @@ export default function Page() {
                 </ul>
               </div>
             </div>
-            <div className="mt-6 rounded-2xl border border-dashed border-amber-300 bg-amber-50/60 p-5 text-sm text-amber-900">
-              People search for: popcorn ceiling removal Mississauga, stucco
-              ceiling scraping Mississauga, stipple removal cost per square
-              foot, dustless popcorn removal, Level 5 skim coat contractors,{" "}
-              <strong>popcorn ceiling removal cost Mississauga</strong>,
-              pot-light coordination, and asbestos testing referrals. If that is
-              you, send a few photos and we’ll confirm the right plan.
+            <div className="mt-6 rounded-2xl border border-dashed border-blue-300 bg-blue-50/60 p-5 text-sm text-slate-700">
+              <p className="font-semibold text-blue-900 mb-2">
+                Common Mississauga Searches:
+              </p>
+              <p>
+                Homeowners search for: popcorn ceiling removal Mississauga,{" "}
+                <strong>stucco ceiling removal Mississauga</strong>,{" "}
+                <strong>stipple ceiling removal Mississauga</strong>, dustless
+                popcorn removal, Level 5 skim coat contractors,{" "}
+                <strong>popcorn ceiling removal cost Mississauga</strong>,
+                pot-light coordination, textured ceiling removal, and asbestos
+                testing referrals. For detailed pricing breakdowns, see our{" "}
+                <Link
+                  href="/blog/popcorn-ceiling-removal-cost-timeline/"
+                  className="text-blue-700 underline underline-offset-2 hover:text-blue-800"
+                >
+                  cost & timeline guide
+                </Link>
+                . Send photos and we'll confirm the right plan for your specific
+                ceiling type.
+              </p>
             </div>
 
             {/* COST SNAPSHOT */}
             <div className="mt-6 rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">💰</span>
-                <h3 className="text-2xl font-bold text-gray-900">Cost Snapshot</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Cost Snapshot
+                </h3>
               </div>
-              
+
               <p className="text-gray-700 mb-4">
-                <strong>Most Mississauga projects land around $6–$9/sq ft</strong> depending on painted texture, ceiling height, repairs, and access. Here's a quick breakdown:
+                <strong>
+                  Most Mississauga projects land around $6–$9/sq ft
+                </strong>{" "}
+                depending on painted texture, ceiling height, repairs, and
+                access. Here's a quick breakdown:
               </p>
 
               <div className="overflow-x-auto mb-4">
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="bg-blue-100 border-b-2 border-blue-300">
-                      <th className="text-left p-3 font-bold text-gray-900">Project Type</th>
-                      <th className="text-left p-3 font-bold text-gray-900">Typical Range</th>
-                      <th className="text-left p-3 font-bold text-gray-900">What's Included</th>
+                      <th className="text-left p-3 font-bold text-gray-900">
+                        Project Type
+                      </th>
+                      <th className="text-left p-3 font-bold text-gray-900">
+                        Typical Range
+                      </th>
+                      <th className="text-left p-3 font-bold text-gray-900">
+                        What's Included
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     <tr className="hover:bg-blue-50 transition">
-                      <td className="p-3 font-semibold text-gray-900">Unpainted Texture</td>
+                      <td className="p-3 font-semibold text-gray-900">
+                        Unpainted Texture
+                      </td>
                       <td className="p-3 text-gray-700">$6–$7/sq ft</td>
-                      <td className="p-3 text-gray-600">Scrape, Level 5 skim, prime</td>
+                      <td className="p-3 text-gray-600">
+                        Scrape, Level 5 skim, prime
+                      </td>
                     </tr>
                     <tr className="hover:bg-blue-50 transition">
-                      <td className="p-3 font-semibold text-gray-900">Painted Popcorn</td>
+                      <td className="p-3 font-semibold text-gray-900">
+                        Painted Popcorn
+                      </td>
                       <td className="p-3 text-gray-700">$8–$9/sq ft</td>
-                      <td className="p-3 text-gray-600">Encapsulation, full skim, prime</td>
+                      <td className="p-3 text-gray-600">
+                        Encapsulation, full skim, prime
+                      </td>
                     </tr>
                     <tr className="hover:bg-blue-50 transition">
-                      <td className="p-3 font-semibold text-gray-900">High/Vaulted Ceilings</td>
+                      <td className="p-3 font-semibold text-gray-900">
+                        High/Vaulted Ceilings
+                      </td>
                       <td className="p-3 text-gray-700">+30–50%</td>
-                      <td className="p-3 text-gray-600">Scaffolding, extended labor</td>
+                      <td className="p-3 text-gray-600">
+                        Scaffolding, extended labor
+                      </td>
                     </tr>
                     <tr className="hover:bg-blue-50 transition">
-                      <td className="p-3 font-semibold text-gray-900">Paint Add-On</td>
+                      <td className="p-3 font-semibold text-gray-900">
+                        Paint Add-On
+                      </td>
                       <td className="p-3 text-gray-700">+$2–$3/sq ft</td>
-                      <td className="p-3 text-gray-600">Two coats premium ceiling paint</td>
+                      <td className="p-3 text-gray-600">
+                        Two coats premium ceiling paint
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               <div className="bg-white rounded-xl p-4 border border-blue-200">
-                <p className="text-sm font-semibold text-gray-900 mb-2">Need area-specific pricing?</p>
+                <p className="text-sm font-semibold text-gray-900 mb-2">
+                  Need area-specific pricing?
+                </p>
                 <p className="text-xs text-gray-600">
-                  Each neighborhood above has detailed cost breakdowns based on local property types, ceiling heights, and common project scopes. Click any neighborhood link for location-specific pricing.
+                  Each neighborhood above has detailed cost breakdowns based on
+                  local property types, ceiling heights, and common project
+                  scopes. Click any neighborhood link for location-specific
+                  pricing.
                 </p>
               </div>
 
               <p className="mt-4 text-xs text-gray-600 italic">
-                * Ranges are estimates. Send photos for accurate pricing based on your specific ceiling condition, height, and access.
+                * Ranges are estimates. Send photos for accurate pricing based
+                on your specific ceiling condition, height, and access.
               </p>
             </div>
           </div>
@@ -838,12 +1138,23 @@ export default function Page() {
         {/* SERVICE COMBOS */}
         <section className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-600">
               Stack services
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
               Extend the refresh beyond ceilings
             </h2>
+            <p className="mt-3 text-gray-600 leading-relaxed">
+              Mississauga homeowners often bundle ceiling smoothing with other
+              finishing services for maximum value. Explore our full range of{" "}
+              <Link
+                href="/services/"
+                className="text-blue-600 underline underline-offset-2 hover:text-blue-700"
+              >
+                interior finishing services
+              </Link>
+              .
+            </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {serviceCombos.map((combo) => (
                 <div
@@ -852,6 +1163,15 @@ export default function Page() {
                 >
                   <h3 className="text-lg font-semibold">{combo.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{combo.body}</p>
+                  {combo.href && (
+                    <Link
+                      href={combo.href}
+                      className="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-blue-600 hover:text-blue-700"
+                    >
+                      Learn more
+                      <span className="text-xs">→</span>
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
@@ -861,7 +1181,7 @@ export default function Page() {
         {/* FAQ */}
         <section id="faqs" className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <p className="text-xs uppercase tracking-[0.3em] text-amber-800">
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-600">
               Mississauga FAQs
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
@@ -934,14 +1254,14 @@ export default function Page() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
-                  className="inline-flex items-center justify-center rounded-full bg-amber-800 px-6 py-3 font-semibold text-white hover:bg-amber-900 active:bg-amber-950 transition-colors"
+                  className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700 active:bg-blue-800 transition-colors"
                   href={phoneHref}
                   aria-label={phoneAriaLabel}
                 >
                   📞 {phoneDisplay}
                 </a>
-                <a 
-                className="inline-flex items-center justify-center rounded-full bg-amber-800 px-6 py-3 font-semibold text-white hover:bg-amber-900 active:bg-amber-950 transition-colors"
+                <a
+                  className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700 active:bg-blue-800 transition-colors"
                   href="/quote/"
                 >
                   Start my quote
@@ -957,121 +1277,305 @@ export default function Page() {
             <h2 className="text-3xl font-bold mb-6">
               Mississauga Popcorn Ceiling Removal Services
             </h2>
-            
+
             <div className="prose prose-slate max-w-none">
               <p className="text-gray-700 leading-relaxed mb-4">
-                As Ontario's third-largest city and a major commercial hub in the Greater Toronto Area, Mississauga presents unique challenges for <strong>popcorn ceiling removal</strong>. Our specialized teams understand the diverse architectural landscape—from vintage 1960s-1980s homes near historic Port Credit to modern high-rise developments along the Hurontario LRT corridor and sprawling residential communities in Churchill Meadows and Erin Mills.
+                As Ontario's third-largest city and a major commercial hub in
+                the Greater Toronto Area, Mississauga presents unique challenges
+                for <strong>popcorn ceiling removal</strong>. Whether you have
+                popcorn, stipple, or stucco textured ceilings, our specialized
+                teams understand the diverse architectural landscape—from
+                vintage 1960s-1980s homes near historic Port Credit to modern
+                high-rise developments along the Hurontario LRT corridor and
+                sprawling residential communities in Churchill Meadows and Erin
+                Mills.
               </p>
 
               {/* Collapsed Accordion for Deep Dive Content */}
               <details className="mt-8 rounded-2xl border-2 border-slate-200 bg-slate-50">
                 <summary className="cursor-pointer p-6 text-xl font-bold text-gray-900 hover:bg-slate-100 transition-colors">
-                  📋 Local Popcorn ceiling removal details for homeowners who want the deep dive
-                  <span className="float-right text-amber-800">▼</span>
+                  📋 Mississauga Popcorn Ceiling Removal Details – Complete
+                  Local Guide
+                  <span className="float-right text-blue-600">▼</span>
                 </summary>
-                
+
                 <div className="p-6 pt-0 border-t border-slate-200">
                   <h3 className="text-2xl font-semibold mt-6 mb-4">
                     Why Mississauga Homes Need Professional Ceiling Services
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Mississauga's rapid growth from a collection of villages to Canada's sixth most populous city means homes span six decades of construction styles. Older neighborhoods like Malton,{" "}
+                    Mississauga's rapid growth from a collection of villages to
+                    Canada's sixth most populous city means homes span six
+                    decades of construction styles. Older neighborhoods like
+                    Malton,{" "}
                     <Link
                       href="/popcorn-ceiling-removal/mississauga/cooksville/"
                       className="text-blue-600 underline"
                     >
                       Cooksville
                     </Link>
-                    , and Lakeview often feature original popcorn ceilings from the 1970s and 1980s that now clash with modern design expectations. Meanwhile, newer areas like East Credit and Meadowvale Village frequently have painted stipple textures that require specialized skim coating rather than simple scraping.
+                    , and Lakeview often feature original popcorn, stipple, or
+                    stucco ceilings from the 1970s and 1980s that now clash with
+                    modern design expectations. Meanwhile, newer areas like East
+                    Credit and Meadowvale Village frequently have painted
+                    stipple or stucco textures that require specialized skim
+                    coating rather than simple scraping.
                   </p>
 
                   <h3 className="text-2xl font-semibold mt-8 mb-4">
                     Navigating Mississauga's Building Regulations
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Working across Mississauga means understanding local requirements and logistics that affect every ceiling project:
+                    Working across Mississauga means understanding local
+                    requirements and logistics that affect every ceiling
+                    project:
                   </p>
                   <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                    <li><strong>Peel Region waste management:</strong> Proper disposal of texture material through designated facilities, with documentation for environmental compliance</li>
-                    <li><strong>Condo corporation rules:</strong> Strict elevator booking systems, insurance requirements, and noise bylaws at high-density developments near Square One and City Centre</li>
-                    <li><strong>Heritage district considerations:</strong> Older Port Credit and Streetsville properties that may require asbestos testing before disturbing ceiling materials</li>
-                    <li><strong>Transit-oriented development standards:</strong> Coordinating with building managers at new LRT-adjacent towers along Hurontario Street</li>
-                    <li><strong>Municipal inspection protocols:</strong> Compliance with City of Mississauga building codes when ceiling work involves structural repairs or modifications</li>
+                    <li>
+                      <strong>Peel Region waste management:</strong> Proper
+                      disposal of texture material through designated
+                      facilities, with documentation for environmental
+                      compliance
+                    </li>
+                    <li>
+                      <strong>Condo corporation rules:</strong> Strict elevator
+                      booking systems, insurance requirements, and noise bylaws
+                      at high-density developments near Square One and City
+                      Centre
+                    </li>
+                    <li>
+                      <strong>Heritage district considerations:</strong> Older
+                      Port Credit and Streetsville properties that may require
+                      asbestos testing before disturbing ceiling materials
+                    </li>
+                    <li>
+                      <strong>Transit-oriented development standards:</strong>{" "}
+                      Coordinating with building managers at new LRT-adjacent
+                      towers along Hurontario Street
+                    </li>
+                    <li>
+                      <strong>Municipal inspection protocols:</strong>{" "}
+                      Compliance with City of Mississauga building codes when
+                      ceiling work involves structural repairs or modifications
+                    </li>
                   </ul>
 
                   <h3 className="text-2xl font-semibold mt-8 mb-4">
                     Mississauga's Diverse Housing Stock
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    The city's evolution from suburban sprawl to urban center creates a complex residential landscape. <strong>Popcorn ceiling removal in Mississauga</strong> isn't one-size-fits-all:
+                    The city's evolution from suburban sprawl to urban center
+                    creates a complex residential landscape.{" "}
+                    <strong>
+                      Popcorn, stipple, and stucco ceiling removal in
+                      Mississauga
+                    </strong>{" "}
+                    isn't one-size-fits-all:
                   </p>
                   <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                    <li><strong>Waterfront luxury condos:</strong> Port Credit's lakeside towers like The Sail and Bridgewater demand meticulous dust control and pristine finishes—bright natural light from Lake Ontario reveals every imperfection</li>
-                    <li><strong>Mid-century single-family homes:</strong> Established neighborhoods throughout central Mississauga feature post-war construction with challenging access, low basements, and textured ceilings that may contain asbestos</li>
-                    <li><strong>New construction developments:</strong> Erin Mills and Churchill Meadows see ongoing builder projects where we coordinate with other trades during final finishing phases</li>
-                    <li><strong>Townhouse complexes:</strong> High-density residential areas require careful staging, shared wall considerations, and coordination with condo boards for common area protection</li>
-                    <li><strong>Commercial-residential mixed use:</strong> Downtown core properties along Burnhamthorpe and Hurontario often have challenging parking, elevator logistics, and tight scheduling windows</li>
+                    <li>
+                      <strong>Waterfront luxury condos:</strong> Port Credit's
+                      lakeside towers like The Sail and Bridgewater demand
+                      meticulous dust control and pristine finishes—bright
+                      natural light from Lake Ontario reveals every imperfection
+                    </li>
+                    <li>
+                      <strong>Mid-century single-family homes:</strong>{" "}
+                      Established neighborhoods throughout central Mississauga
+                      feature post-war construction with challenging access, low
+                      basements, and textured ceilings that may contain asbestos
+                    </li>
+                    <li>
+                      <strong>New construction developments:</strong> Erin Mills
+                      and Churchill Meadows see ongoing builder projects where
+                      we coordinate with other trades during final finishing
+                      phases
+                    </li>
+                    <li>
+                      <strong>Townhouse complexes:</strong> High-density
+                      residential areas require careful staging, shared wall
+                      considerations, and coordination with condo boards for
+                      common area protection
+                    </li>
+                    <li>
+                      <strong>Commercial-residential mixed use:</strong>{" "}
+                      Downtown core properties along Burnhamthorpe and
+                      Hurontario often have challenging parking, elevator
+                      logistics, and tight scheduling windows
+                    </li>
                   </ul>
 
                   <h3 className="text-2xl font-semibold mt-8 mb-4">
                     Local Market Knowledge
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Our Mississauga expertise extends beyond just technical execution. We understand how ceiling upgrades affect property values in different submarkets. Port Credit waterfront properties command premium pricing, so Level 5 finishes are non-negotiable for pre-sale renovations. Streetsville's heritage character attracts buyers seeking character homes—smooth ceilings help modernize dated interiors while preserving charm. Erin Mills family neighborhoods prioritize quick turnarounds so homes aren't disrupted during school years.
+                    Our Mississauga expertise extends beyond just technical
+                    execution. We understand how ceiling upgrades affect
+                    property values in different submarkets. Port Credit
+                    waterfront properties command premium pricing, so Level 5
+                    finishes are non-negotiable for pre-sale renovations.
+                    Streetsville's heritage character attracts buyers seeking
+                    character homes—smooth ceilings help modernize dated
+                    interiors while preserving charm. Erin Mills family
+                    neighborhoods prioritize quick turnarounds so homes aren't
+                    disrupted during school years.
                   </p>
 
                   <h3 className="text-2xl font-semibold mt-8 mb-4">
                     Coordinating with Mississauga Trades
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    We partner with local Mississauga suppliers and contractors to ensure seamless project delivery:
+                    We partner with local Mississauga suppliers and contractors
+                    to ensure seamless project delivery:
                   </p>
                   <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                    <li><strong>Material suppliers:</strong> Direct relationships with Mississauga drywall and paint suppliers mean competitive pricing and same-day material availability</li>
-                    <li><strong>Licensed electricians:</strong> Coordinated pot light installation with local electrical contractors familiar with Peel Region inspection requirements</li>
-                    <li><strong>Painting contractors:</strong> Partnership with Mississauga-based painting crews for turnkey ceiling and wall finishing packages</li>
-                    <li><strong>Waste management:</strong> Established protocols with Peel Region transfer stations for environmentally responsible disposal</li>
-                    <li><strong>Equipment rental:</strong> Local access to scaffolding, lifts, and specialized tools from Mississauga industrial suppliers</li>
+                    <li>
+                      <strong>Material suppliers:</strong> Direct relationships
+                      with Mississauga drywall and paint suppliers mean
+                      competitive pricing and same-day material availability
+                    </li>
+                    <li>
+                      <strong>Licensed electricians:</strong> Coordinated pot
+                      light installation with local electrical contractors
+                      familiar with Peel Region inspection requirements
+                    </li>
+                    <li>
+                      <strong>Painting contractors:</strong> Partnership with
+                      Mississauga-based painting crews for turnkey ceiling and
+                      wall finishing packages
+                    </li>
+                    <li>
+                      <strong>Waste management:</strong> Established protocols
+                      with Peel Region transfer stations for environmentally
+                      responsible disposal
+                    </li>
+                    <li>
+                      <strong>Equipment rental:</strong> Local access to
+                      scaffolding, lifts, and specialized tools from Mississauga
+                      industrial suppliers
+                    </li>
                   </ul>
 
                   <h3 className="text-2xl font-semibold mt-8 mb-4">
                     Transit and Accessibility
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    Mississauga's extensive transit network affects how we schedule and execute projects. GO Transit stations at Port Credit, Cooksville, Streetsville, Meadowvale, Lisgar, and Erindale provide crew access without parking headaches. MiWay bus routes throughout the city mean we can maintain consistent scheduling even during rush hour congestion on the 403, QEW, and Hurontario corridor. The new Hazel McCallion LRT line will improve access to downtown core projects starting in 2024.
+                    Mississauga's extensive transit network affects how we
+                    schedule and execute projects. GO Transit stations at Port
+                    Credit, Cooksville, Streetsville, Meadowvale, Lisgar, and
+                    Erindale provide crew access without parking headaches.
+                    MiWay bus routes throughout the city mean we can maintain
+                    consistent scheduling even during rush hour congestion on
+                    the 403, QEW, and Hurontario corridor. The new Hazel
+                    McCallion LRT line will improve access to downtown core
+                    projects starting in 2024.
                   </p>
 
                   <h3 className="text-2xl font-semibold mt-8 mb-4">
                     Cost Considerations for Mississauga Projects
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    <strong>Popcorn ceiling removal cost in Mississauga</strong> varies significantly by property type and location:
+                    <strong>Popcorn ceiling removal cost in Mississauga</strong>{" "}
+                    varies significantly by property type and location:
                   </p>
                   <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                    <li><strong>High-rise condos:</strong> Elevator booking fees ($150-300), extended insurance requirements, and common area protection add 15-25% to base pricing</li>
-                    <li><strong>Heritage homes:</strong> Pre-1990 properties often require mandatory asbestos testing ($300-500) and specialized removal protocols if positive</li>
-                    <li><strong>New construction:</strong> Coordination with builders and other trades may include scheduling premiums but offers efficiencies through bulk material purchasing</li>
-                    <li><strong>Vaulted ceilings:</strong> Common in Erin Mills and Meadowvale homes, requiring scaffolding and extended labor adds 30-50% to standard per-square-foot rates</li>
-                    <li><strong>Painted texture:</strong> Prevalent in 2000s-era developments, requiring full skim coating rather than scraping increases material costs by approximately 40%</li>
+                    <li>
+                      <strong>High-rise condos:</strong> Elevator booking fees
+                      ($150-300), extended insurance requirements, and common
+                      area protection add 15-25% to base pricing
+                    </li>
+                    <li>
+                      <strong>Heritage homes:</strong> Pre-1990 properties often
+                      require mandatory asbestos testing ($300-500) and
+                      specialized removal protocols if positive
+                    </li>
+                    <li>
+                      <strong>New construction:</strong> Coordination with
+                      builders and other trades may include scheduling premiums
+                      but offers efficiencies through bulk material purchasing
+                    </li>
+                    <li>
+                      <strong>Vaulted ceilings:</strong> Common in Erin Mills
+                      and Meadowvale homes, requiring scaffolding and extended
+                      labor adds 30-50% to standard per-square-foot rates
+                    </li>
+                    <li>
+                      <strong>Painted texture:</strong> Prevalent in 2000s-era
+                      developments, requiring full skim coating rather than
+                      scraping increases material costs by approximately 40%
+                    </li>
                   </ul>
 
                   <h3 className="text-2xl font-semibold mt-8 mb-4">
                     Regional Context
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    While Mississauga is our primary service hub, our teams regularly work throughout Peel Region and neighboring municipalities. We're equally equipped to handle ceiling projects in <Link href="/popcorn-ceiling-removal/brampton/" className="text-blue-600 font-semibold hover:underline">Brampton</Link> to the north, <Link href="/popcorn-ceiling-removal/oakville/" className="text-blue-600 font-semibold hover:underline">Oakville</Link> and <Link href="/popcorn-ceiling-removal/burlington/" className="text-blue-600 font-semibold hover:underline">Burlington</Link> along the lakeshore, or <Link href="/popcorn-ceiling-removal/milton/" className="text-blue-600 font-semibold hover:underline">Milton</Link> to the west. Property owners with multiple locations across the Greater Toronto Area appreciate our regional consistency and centralized project management.
+                    While Mississauga is our primary service hub, our teams
+                    regularly work throughout Peel Region and neighboring
+                    municipalities. We're equally equipped to handle ceiling
+                    projects in{" "}
+                    <Link
+                      href="/popcorn-ceiling-removal/brampton/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Brampton
+                    </Link>{" "}
+                    to the north,{" "}
+                    <Link
+                      href="/popcorn-ceiling-removal/oakville/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Oakville
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/popcorn-ceiling-removal/burlington/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Burlington
+                    </Link>{" "}
+                    along the lakeshore, or{" "}
+                    <Link
+                      href="/popcorn-ceiling-removal/milton/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Milton
+                    </Link>{" "}
+                    to the west. Property owners with multiple locations across
+                    the Greater Toronto Area appreciate our regional consistency
+                    and centralized project management.
                   </p>
                 </div>
               </details>
 
               <h3 className="text-2xl font-semibold mt-8 mb-4">
-                Schedule Your Mississauga Ceiling Project
+                Schedule Your Mississauga Popcorn, Stipple & Stucco Ceiling
+                Removal Project
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Whether you're renovating a Port Credit condo for resale, updating a Streetsville family home, or preparing an Erin Mills property for new tenants, professional <strong>popcorn ceiling removal</strong> transforms dated spaces into modern, marketable homes. Our Mississauga-based teams understand local building practices, municipal requirements, and real estate expectations that make ceiling projects succeed.
+                Whether you're renovating a Port Credit condo for resale,
+                updating a Streetsville family home, or preparing an Erin Mills
+                property for new tenants, professional{" "}
+                <strong>
+                  popcorn, stipple, and stucco ceiling removal Mississauga
+                </strong>{" "}
+                transforms dated textured spaces into modern, marketable homes.
+                Our Mississauga-based teams understand local building practices,
+                municipal requirements, and real estate expectations that make
+                ceiling projects succeed. Explore our{" "}
+                <Link
+                  href="/our-work/"
+                  className="text-blue-600 underline underline-offset-2 hover:text-blue-700"
+                >
+                  portfolio of completed Mississauga projects
+                </Link>{" "}
+                to see the quality of work you can expect.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                <Link href="/quote/" className="text-blue-600 font-semibold hover:underline">
+                <Link
+                  href="/quote/"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
                   Request a detailed quote
                 </Link>{" "}
                 with photos and measurements, or call{" "}
@@ -1084,7 +1588,22 @@ export default function Page() {
                 </a>{" "}
                 to discuss your specific project requirements. Most Mississauga
                 estimates are delivered within 4 hours with firm pricing, clear
-                timelines, and detailed scope documentation.
+                timelines, and detailed scope documentation. For more
+                information about our process, visit our{" "}
+                <Link
+                  href="/our-process/"
+                  className="text-blue-600 underline underline-offset-2 hover:text-blue-700"
+                >
+                  dust-control methodology page
+                </Link>{" "}
+                or browse{" "}
+                <Link
+                  href="/blog/"
+                  className="text-blue-600 underline underline-offset-2 hover:text-blue-700"
+                >
+                  ceiling renovation tips
+                </Link>
+                .
               </p>
             </div>
           </div>
