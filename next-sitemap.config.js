@@ -26,7 +26,8 @@ module.exports = {
             { loc: "/services/popcorn-ceiling-removal/", changefreq: "weekly", priority: 1.0, lastmod: now },
             { loc: "/services/interior-painting/", changefreq: "weekly", priority: 0.8, lastmod: now },
             { loc: "/services/wallpaper-removal/", changefreq: "weekly", priority: 0.8, lastmod: now },
-            { loc: "/services/drywall-installation/", changefreq: "weekly", priority: 0.8, lastmod: now }
+            { loc: "/services/drywall-installation/", changefreq: "weekly", priority: 0.8, lastmod: now },
+            { loc: "/services/drywall-repair/", changefreq: "weekly", priority: 0.8, lastmod: now }
         );
 
         // City pages for popcorn ceiling removal
@@ -99,6 +100,31 @@ module.exports = {
                 priority: 0.85,
                 lastmod: now,
             });
+        });
+
+        const drywallCities = [
+            "burlington",
+            "grimsby",
+            "hamilton",
+            "mississauga",
+            "oakville",
+        ];
+
+        drywallCities.forEach((city) => {
+            paths.push(
+                {
+                    loc: `/services/drywall-installation/${city}/`,
+                    changefreq: "weekly",
+                    priority: 0.85,
+                    lastmod: now,
+                },
+                {
+                    loc: `/services/drywall-repair/${city}/`,
+                    changefreq: "weekly",
+                    priority: 0.85,
+                    lastmod: now,
+                }
+            );
         });
 
         // Blog posts
