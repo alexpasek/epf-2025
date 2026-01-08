@@ -1648,9 +1648,29 @@ export default function Page() {
                   Drywall Repair Burlington
                 </Link>
 
+                <Link
+                  href="/services/drywall-repair/milton/"
+                  className="rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 text-sm font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-500 transition-all hover:shadow-md"
+                >
+                  Drywall Repair Milton
+                </Link>
+
+                <Link
+                  href="/services/drywall-repair/oakville/"
+                  className="rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 text-sm font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-500 transition-all hover:shadow-md"
+                >
+                  Drywall Repair Oakville
+                </Link>
+
                 {cities
                   .filter(
-                    (city) => !["Mississauga", "Burlington"].includes(city.name)
+                    (city) =>
+                      ![
+                        "Mississauga",
+                        "Burlington",
+                        "Milton",
+                        "Oakville",
+                      ].includes(city.name)
                   )
                   .map((city) => (
                     <div
