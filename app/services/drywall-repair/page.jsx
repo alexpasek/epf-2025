@@ -1662,6 +1662,20 @@ export default function Page() {
                   Drywall Repair Oakville
                 </Link>
 
+                <Link
+                  href="/services/drywall-repair/hamilton/"
+                  className="rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 text-sm font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-500 transition-all hover:shadow-md"
+                >
+                  Drywall Repair Hamilton
+                </Link>
+
+                <Link
+                  href="/services/drywall-repair/grimsby/"
+                  className="rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 text-sm font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-500 transition-all hover:shadow-md"
+                >
+                  Drywall Repair Grimsby
+                </Link>
+
                 {cities
                   .filter(
                     (city) =>
@@ -1670,6 +1684,8 @@ export default function Page() {
                         "Burlington",
                         "Milton",
                         "Oakville",
+                        "Hamilton",
+                        "Grimsby",
                       ].includes(city.name)
                   )
                   .map((city) => (
@@ -1688,10 +1704,7 @@ export default function Page() {
                 Extended Niagara Region Coverage
               </h4>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
-                {[
-                  "Drywall Repair Grimsby",
-                  "Drywall Repair St. Catharines",
-                ].map((text) => (
+                {["Drywall Repair St. Catharines"].map((text) => (
                   <div
                     key={text}
                     className="rounded-2xl border border-blue-200 bg-blue-50 p-4 text-sm font-semibold text-gray-700"
