@@ -8,32 +8,24 @@ import QuoteForm from "@/components/QuoteForm";
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Popcorn Ceiling Removal Hamilton | Level 5 Smooth Ceilings + HEPA Dust Control",
+  title: "Popcorn Ceiling Removal Hamilton | Professional Ceiling Contractors",
   description:
-    "Professional popcorn ceiling removal contractor in Hamilton. Expert ceiling texture removal, stipple ceiling removal, and ceiling resurfacing with dust control & Level 5 smooth finish. Serving Ancaster, Dundas, Westdale, Waterdown, Stoney Creek.",
+    "Professional popcorn ceiling removal in Hamilton. Expert ceiling texture removal, Level 5 smooth finish, HEPA dust control. Serving Ancaster, Dundas, Westdale, Stoney Creek. Free quotes, 3-year warranty.",
   keywords: [
     "popcorn ceiling removal hamilton",
-    "popcorn ceiling contractor hamilton",
-    "popcorn ceiling removal contractor hamilton",
-    "professional popcorn ceiling removal hamilton",
-    "smooth ceiling contractor hamilton",
+    "ceiling contractor hamilton",
+    "remove popcorn ceiling hamilton",
     "ceiling texture removal hamilton",
+    "smooth ceiling hamilton",
     "stipple ceiling removal hamilton",
-    "ceiling resurfacing hamilton",
-    "painted popcorn ceiling removal hamilton",
-    "stucco ceiling removal hamilton",
-    "popcorn ceiling removal cost hamilton",
-    "cost to remove popcorn ceiling hamilton",
-    "popcorn removal cost hamilton",
-    "cost to scrape popcorn ceiling hamilton",
   ],
   alternates: {
     canonical: "/popcorn-ceiling-removal/hamilton/",
   },
   openGraph: {
-    title: "Popcorn Ceiling Removal Hamilton | Level 5 Smooth Ceilings + HEPA Dust Control",
+    title: "Popcorn Ceiling Removal Hamilton | Professional Ceiling Contractors",
     description:
-      "Professional popcorn/stipple ceiling removal in Hamilton. HEPA dust control, Level 5 skim coat, 3-year warranty, painted texture specialists. Free quote, same-day response.",
+      "Professional popcorn ceiling removal in Hamilton. Level 5 smooth finish, HEPA dust control, 3-year warranty. Serving all Hamilton neighbourhoods.",
     url: "/popcorn-ceiling-removal/hamilton/",
     type: "website",
   },
@@ -221,33 +213,23 @@ export default function Page() {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Professional
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                  Popcorn Ceiling Removal
-                </span>
-                <br />
-                Hamilton
+                Popcorn Ceiling Removal in Hamilton – Smooth, Modern Ceilings
+                by Local Professionals
               </h1>
 
               <p className="text-xl text-gray-200 mb-6 leading-relaxed">
-                Your trusted{" "}
-                <strong>popcorn ceiling removal contractor Hamilton</strong>{" "}
-                specializing in
-                <strong> ceiling texture removal</strong>,{" "}
-                <strong>stipple ceiling removal</strong>, and
-                <strong> ceiling resurfacing Hamilton</strong> with
-                industry-leading dust control.
+                Looking to remove popcorn ceilings in Hamilton? Whether your
+                ceiling is painted, cracked, or original stipple from the 80s or
+                90s, our team helps homeowners transform outdated textured
+                ceilings into smooth, modern finishes.
               </p>
-              <p className="text-sm text-gray-200 mb-6">
-                Get the complete workflow on our{" "}
-                <Link
-                  href="/services/popcorn-ceiling-removal/"
-                  className="underline underline-offset-2"
-                >
-                  popcorn ceiling removal services
-                </Link>{" "}
-                page.
+              <p className="text-lg text-gray-200 mb-6 leading-relaxed">
+                EPF Pro Services provides professional popcorn ceiling removal
+                across Hamilton, including Stoney Creek, Ancaster, Dundas, and
+                surrounding neighbourhoods. From careful preparation and dust
+                control to full refinishing and painting, we handle the entire
+                process so your ceilings are ready to enjoy — clean, smooth, and
+                long-lasting.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
@@ -329,17 +311,10 @@ export default function Page() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Professional Popcorn Ceiling Removal Services in Hamilton
+                Professional Ceiling Removal Services in Hamilton
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                As your local{" "}
-                <strong>smooth ceiling contractor Hamilton</strong>, we provide
-                complete
-                <strong>
-                  {" "}
-                  professional popcorn ceiling removal Hamilton
-                </strong>{" "}
-                services
+                Complete popcorn ceiling removal services for Hamilton homeowners
               </p>
             </div>
 
@@ -352,12 +327,8 @@ export default function Page() {
                   Popcorn Ceiling Removal
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Expert{" "}
-                  <strong>popcorn ceiling removal contractor Hamilton</strong>{" "}
-                  service. From{" "}
-                  <strong>scraping popcorn ceiling Hamilton</strong> to complete{" "}
-                  <strong>ceiling texture removal Hamilton</strong>, we handle
-                  it all with precision.
+                  Expert popcorn ceiling removal service in Hamilton. From scraping to complete
+                  texture removal, we handle it all with precision and care.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -383,10 +354,8 @@ export default function Page() {
                   Stipple & Stucco Removal
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Specialized <strong>stipple ceiling removal Hamilton</strong>{" "}
-                  and <strong>stucco ceiling removal Hamilton</strong>. Expert{" "}
-                  <strong>removing stucco ceiling Hamilton</strong> with minimal
-                  mess.
+                  Specialized stipple and stucco ceiling removal in Hamilton with minimal
+                  mess and professional results.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -412,10 +381,8 @@ export default function Page() {
                   Ceiling Resurfacing
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Complete <strong>ceiling resurfacing Hamilton</strong> with
-                  Level 5 smooth finish. Whether{" "}
-                  <strong>taking off popcorn ceiling</strong> or refinishing, we
-                  deliver perfection.
+                  Complete ceiling resurfacing with Level 5 smooth finish. Professional
+                  skim coating and refinishing for flawless results.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -441,11 +408,8 @@ export default function Page() {
                   Painted Popcorn Removal
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Specialized{" "}
-                  <strong>painted popcorn ceiling removal Hamilton</strong>.
-                  Safe methods for
-                  <strong> stripping popcorn ceiling</strong> that's been
-                  painted multiple times.
+                  Specialized painted popcorn ceiling removal in Hamilton.
+                  Safe methods for ceilings that have been painted multiple times.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -471,11 +435,8 @@ export default function Page() {
                   Dust-Controlled Process
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Our{" "}
-                  <strong>professional popcorn ceiling removal Hamilton</strong>{" "}
-                  includes complete containment. Whether{" "}
-                  <strong>taking down popcorn ceiling</strong>, we keep your
-                  home clean.
+                  Professional popcorn ceiling removal with complete containment.
+                  We keep your home clean throughout the entire process.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -498,13 +459,11 @@ export default function Page() {
                   🏅
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                  Smooth Ceiling Contractor
+                  Smooth Ceiling Finishing
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Trusted <strong>smooth ceiling contractor Hamilton</strong>{" "}
-                  delivering flawless Level 5 finishes. From{" "}
-                  <strong>take out popcorn ceiling</strong> to final paint, we
-                  perfect every detail.
+                  Trusted smooth ceiling contractor delivering flawless Level 5 finishes. 
+                  From removal to final paint, we perfect every detail.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
@@ -526,16 +485,32 @@ export default function Page() {
         </div>
       </section>
 
+      {/* WHY CHOOSE US - INTENT BLENDING */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+              Professional Popcorn Ceiling Removal for Hamilton Homes
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Removing popcorn ceilings is more than just scraping texture. Done incorrectly, it can damage drywall, leave visible lines, or create unnecessary dust throughout your home. Our experienced team uses proven methods to safely remove popcorn ceilings while protecting your space and delivering a smooth, even finish.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Homeowners across Hamilton choose us because we focus on quality, safety, and results — whether it's a single room, an entire house, or a ceiling that has already been painted.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* GALLERY WITH BEFORE/AFTER SLIDER */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-              Ceiling Texture & Stipple Ceiling Removal in Hamilton
+              Hamilton Popcorn Ceiling Removal Projects
             </h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-              Recent <strong>popcorn removal Hamilton</strong> projects
-              transforming Hamilton homes from outdated texture to modern smooth
+              Recent Hamilton projects transforming homes from outdated texture to modern smooth
               ceilings
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -574,14 +549,11 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-              Our Hamilton Popcorn Ceiling Removal Process
+              Our Popcorn Ceiling Removal Process
             </h2>
             <p className="text-center text-lg text-gray-600 mb-16 max-w-3xl mx-auto">
-              Tailored <strong>ceiling resurfacing Hamilton</strong> workflows
-              for character homes and modern builds. From{" "}
-              <strong>taking off popcorn ceiling</strong> to{" "}
-              <strong>stripping popcorn ceiling</strong>, Level 5 perfection
-              every time.
+              Tailored workflows for Hamilton character homes and modern builds. From preparation to
+              final finishing, we deliver Level 5 smooth ceilings every time.
             </p>
 
             <div className="relative">
@@ -594,25 +566,25 @@ export default function Page() {
                   {
                     num: "01",
                     title: "Assessment & Protection",
-                    desc: "Free consultation, texture testing, and complete home protection. Floors, furniture, HVAC sealed for dust control during popcorn ceiling Hamilton work.",
+                    desc: "Free consultation, texture testing, and complete home protection. Floors, furniture, and HVAC sealed for dust control.",
                     color: "from-blue-500 to-blue-600",
                   },
                   {
                     num: "02",
                     title: "Strategic Removal",
-                    desc: "Expert taking down popcorn ceiling using controlled scraping or safe encapsulation for painted surfaces. HEPA extraction throughout.",
+                    desc: "Expert popcorn ceiling removal using controlled scraping or safe encapsulation for painted surfaces. HEPA extraction throughout.",
                     color: "from-cyan-500 to-cyan-600",
                   },
                   {
                     num: "03",
                     title: "Surface Repair",
-                    desc: "Fix all cracks, seams, water damage. Removing stucco ceiling Hamilton and cottage cheese ceiling removal Hamilton with precision.",
+                    desc: "Fix all cracks, seams, water damage, and imperfections. Complete ceiling preparation for smooth finishing.",
                     color: "from-blue-600 to-cyan-600",
                   },
                   {
                     num: "04",
                     title: "Level 5 Skim Coating",
-                    desc: "Full-field application by our smooth ceiling contractor Hamilton team. Multiple passes for perfectly flat results.",
+                    desc: "Full-field application by our expert team. Multiple passes for perfectly flat, paint-ready results.",
                     color: "from-cyan-600 to-blue-700",
                   },
                   {
@@ -677,12 +649,8 @@ export default function Page() {
                 Popcorn Ceiling Removal Cost in Hamilton
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Transparent{" "}
-                <strong>popcorn ceiling removal cost Hamilton</strong> and{" "}
-                <strong>popcorn removal cost Hamilton</strong> estimates. Get
-                accurate{" "}
-                <strong>cost to scrape popcorn ceiling Hamilton</strong> pricing
-                today.
+                Transparent pricing for your popcorn ceiling removal project.
+                Get accurate estimates based on your specific needs.
               </p>
             </div>
 
@@ -932,11 +900,10 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-              Hamilton Service Areas & Neighbourhoods
+              Serving Hamilton Neighbourhoods
             </h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-              Professional <strong>popcorn ceiling removal Hamilton</strong>{" "}
-              throughout all neighbourhoods
+              Professional popcorn ceiling removal throughout all Hamilton areas
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {hoods.map((n) => (
@@ -945,12 +912,150 @@ export default function Page() {
                   href={`/popcorn-ceiling-removal/hamilton/${n.slug}/`}
                   className="group bg-white p-6 rounded-2xl border-2 border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all text-center"
                 >
-                  <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors mb-2">
                     {n.name}
                   </h3>
-                  <p className="text-sm text-gray-500 mt-1">View Details →</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Popcorn ceiling removal in {n.name}
+                  </p>
                 </Link>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL RESOURCES */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-widest text-green-600 font-bold mb-3">
+                LOCAL RESOURCES
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Hamilton Homeowner Resources
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Trusted links for permits, paint supplies, and recycling programs in Hamilton
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <span className="text-3xl">🎨</span> Quality Paint Stores
+                </h3>
+                <ul className="space-y-4">
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">Hamilton Decorating Centre</h4>
+                    <p className="text-sm text-gray-600 mb-1">Benjamin Moore Premium Dealer</p>
+                    <p className="text-sm text-blue-600">256 Ottawa St N, Hamilton, ON L8H 3Z7</p>
+                  </li>
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">Sherwin-Williams</h4>
+                    <p className="text-sm text-gray-600 mb-1">Professional Paint Supplies</p>
+                    <p className="text-sm text-blue-600">1575 Upper Ottawa St Unit 1, Hamilton, ON L8W 3E2</p>
+                  </li>
+                  <li>
+                    <h4 className="font-bold text-gray-900 mb-1">The Home Depot Hamilton</h4>
+                    <p className="text-sm text-gray-600 mb-1">Centennial Parkway Location</p>
+                    <p className="text-sm text-blue-600">350 Centennial Pkwy N, Hamilton, ON L8E 2X4</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-50 to-white border-2 border-green-100 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <span className="text-3xl">🏛️</span> City Permits & Inspections
+                </h3>
+                <ul className="space-y-4">
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">City of Hamilton Building Division</h4>
+                    <p className="text-sm text-gray-600 mb-1">Permits & inspection services</p>
+                    <p className="text-sm text-blue-600">Building permit applications online</p>
+                  </li>
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">Hamilton Heritage Permits</h4>
+                    <p className="text-sm text-gray-600 mb-1">Required for heritage district homes</p>
+                    <p className="text-sm text-blue-600">Durand, Kirkendall & downtown areas</p>
+                  </li>
+                  <li>
+                    <h4 className="font-bold text-gray-900 mb-1">ESA Electrical Inspection</h4>
+                    <p className="text-sm text-gray-600 mb-1">For pot light installations</p>
+                    <p className="text-sm text-blue-600">Coordinate with licensed electricians</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-50 to-white border-2 border-purple-100 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <span className="text-3xl">♻️</span> Waste & Recycling
+                </h3>
+                <ul className="space-y-4">
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">Hamilton Transfer Stations</h4>
+                    <p className="text-sm text-gray-600 mb-1">Drywall & construction waste disposal</p>
+                    <p className="text-sm text-blue-600">Glanbrook & Central locations</p>
+                  </li>
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">Drywall Recycling Programs</h4>
+                    <p className="text-sm text-gray-600 mb-1">Environmentally responsible disposal</p>
+                    <p className="text-sm text-blue-600">We handle all waste removal</p>
+                  </li>
+                  <li>
+                    <h4 className="font-bold text-gray-900 mb-1">Paint Disposal</h4>
+                    <p className="text-sm text-gray-600 mb-1">Hamilton household hazardous waste depots</p>
+                    <p className="text-sm text-blue-600">Proper disposal of old paint & primers</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-amber-50 to-white border-2 border-amber-100 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <span className="text-3xl">🔧</span> Local Contractors & Services
+                </h3>
+                <ul className="space-y-4">
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">Licensed Electricians</h4>
+                    <p className="text-sm text-gray-600 mb-1">ESA-certified for pot light installation</p>
+                    <p className="text-sm text-blue-600">We can coordinate or refer trusted partners</p>
+                  </li>
+                  <li className="border-b border-gray-200 pb-4">
+                    <h4 className="font-bold text-gray-900 mb-1">Asbestos Testing Labs</h4>
+                    <p className="text-sm text-gray-600 mb-1">Professional testing for pre-1990 homes</p>
+                    <p className="text-sm text-blue-600">Fast turnaround & documentation</p>
+                  </li>
+                  <li>
+                    <h4 className="font-bold text-gray-900 mb-1">Interior Painting Services</h4>
+                    <p className="text-sm text-gray-600 mb-1">Complete ceiling & wall painting packages</p>
+                    <p className="text-sm text-blue-600">Seamless project coordination</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 text-white text-center">
+              <h3 className="text-2xl font-bold mb-4">
+                🏘️ Complete Local Support
+              </h3>
+              <p className="text-lg text-gray-300 mb-6 max-w-3xl mx-auto">
+                From coordinating with Hamilton Building Department to arranging waste disposal and material delivery, we handle all the local logistics for your ceiling project. Our team knows Hamilton suppliers, regulations, and best practices.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#quote-form"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-lg hover:scale-105"
+                >
+                  📋 Get Local Quote
+                </a>
+                <a
+                  href={phoneHref}
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 font-bold rounded-full transition-all shadow-lg"
+                >
+                  📞 Ask About Resources
+                </a>
+              </div>
             </div>
           </div>
         </div>
