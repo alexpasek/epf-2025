@@ -27,7 +27,8 @@ module.exports = {
             { loc: "/services/interior-painting/", changefreq: "weekly", priority: 0.8, lastmod: now },
             { loc: "/services/wallpaper-removal/", changefreq: "weekly", priority: 0.8, lastmod: now },
             { loc: "/services/drywall-installation/", changefreq: "weekly", priority: 0.8, lastmod: now },
-            { loc: "/services/drywall-repair/", changefreq: "weekly", priority: 0.8, lastmod: now }
+            { loc: "/services/drywall-repair/", changefreq: "weekly", priority: 0.8, lastmod: now },
+            { loc: "/services/baseboard-installation/", changefreq: "weekly", priority: 0.85, lastmod: now }
         );
 
         // City pages for popcorn ceiling removal
@@ -125,6 +126,28 @@ module.exports = {
                     lastmod: now,
                 }
             );
+        });
+
+        const baseboardCities = [
+            "toronto",
+            "mississauga",
+            "oakville",
+            "burlington",
+            "hamilton",
+            "etobicoke",
+            "milton",
+            "north-york",
+            "grimsby",
+            "st-catharines",
+        ];
+
+        baseboardCities.forEach((city) => {
+            paths.push({
+                loc: `/services/baseboard-installation/${city}/`,
+                changefreq: "weekly",
+                priority: 0.85,
+                lastmod: now,
+            });
         });
 
         // Blog posts
