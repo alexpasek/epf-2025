@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT } from "@/app/config";
+import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
 import QuoteForm from "@/components/QuoteForm";
 
@@ -8,6 +8,11 @@ export const revalidate = 86400;
 const CITY = "Mississauga";
 const SERVICE = "Drywall Installation";
 const SLUG = "/services/drywall-installation/mississauga/";
+const BASE_URL = (SITE_URL || "https://epfproservices.com").replace(/\/$/, "");
+const ABSOLUTE_URL = `${BASE_URL}${SLUG}`;
+const SERVICES_URL = `${BASE_URL}/services/`;
+const INSTALL_URL = `${BASE_URL}/services/drywall-installation/`;
+const QUOTE_URL = `${BASE_URL}/quote/`;
 
 const CORE_KEYWORDS = [
   "drywall installation Mississauga",
@@ -101,7 +106,7 @@ export const metadata = {
     title: "Drywall Installation Services Mississauga | EPF Pro Services",
     description:
       "Full-service drywall installation services Mississauga covering residential, commercial, and condo projects with Level 5 finish quality.",
-    url: SLUG,
+    url: ABSOLUTE_URL,
     type: "website",
     images: [
       {
@@ -154,11 +159,11 @@ function JsonLd() {
           "@type": "Offer",
           priceCurrency: "CAD",
           availability: "https://schema.org/InStock",
-          url: SLUG,
+          url: ABSOLUTE_URL,
         },
         potentialAction: {
           "@type": "RequestQuoteAction",
-          target: "/quote/",
+          target: QUOTE_URL,
         },
       },
       {
@@ -172,24 +177,24 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+          { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "/services/",
+            item: SERVICES_URL,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Drywall Installation",
-            item: "/services/drywall-installation/",
+            item: INSTALL_URL,
           },
           {
             "@type": "ListItem",
             position: 4,
             name: CITY,
-            item: SLUG,
+            item: ABSOLUTE_URL,
           },
         ],
       },
