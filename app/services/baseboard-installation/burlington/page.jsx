@@ -98,17 +98,16 @@ export default function Page() {
               </h1>
 
               <p className="text-xl text-gray-200 mb-6 leading-relaxed">
-                Looking for expert baseboard installation in Burlington? Our
-                professional contractors specialize in baseboard installation,
-                baseboard replacement, and shoe moulding for homes throughout
-                Burlington's waterfront and established neighborhoods—from
-                Aldershot to Downtown Burlington, Orchard to Palmer.
+                Need baseboards installed after new flooring or a renovation in
+                Burlington? We handle new installs, replacements, and shoe
+                moulding for condos, townhomes, and detached homes across
+                Aldershot, Orchard, Millcroft, and the waterfront.
               </p>
               <p className="text-lg text-gray-200 mb-6 leading-relaxed">
-                With over 550 completed baseboard projects across Burlington, we
-                deliver precise craftsmanship including coped corners, tight
-                miter joints, seamless caulking, and paint-ready finishing that
-                transforms your space.
+                Expect tight coped corners, clean returns, and a paint-ready
+                finish. We match existing profiles in older Burlington homes
+                and recommend moisture-resistant materials for lakeside
+                properties.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
@@ -223,54 +222,38 @@ export default function Page() {
                 {
                   icon: "🏗️",
                   title: "New Baseboard Installation",
-                  desc: "Professional installation of brand new baseboards throughout Burlington. We work with MDF, hardwood, and PVC profiles with perfect coped inside corners.",
-                  features: ["MDF & hardwood", "All profiles", "Coped corners"],
+                  desc: "Install new baseboards after flooring or renovations, sized for ceiling height with crisp coped corners.",
+                  features: ["After flooring installs", "Profile selection", "Coped corners"],
                 },
                 {
                   icon: "🔄",
                   title: "Baseboard Replacement",
-                  desc: "Complete removal of old damaged baseboards in Burlington homes and installation of new trim with proper wall prep.",
-                  features: [
-                    "Old trim removal",
-                    "Wall repair",
-                    "New installation",
-                  ],
+                  desc: "Remove worn trim, patch walls, and reset new baseboards to match your floors and paint.",
+                  features: ["Safe removal", "Wall patching", "Straight runs"],
                 },
                 {
                   icon: "👞",
                   title: "Shoe Moulding",
-                  desc: "Add shoe moulding or quarter round to Burlington homes to complement baseboards and cover floor expansion gaps.",
-                  features: [
-                    "Shoe moulding",
-                    "Quarter round",
-                    "Floor transitions",
-                  ],
+                  desc: "Add shoe moulding to cover expansion gaps after flooring changes or uneven subfloors.",
+                  features: ["Covers floor gaps", "Tidy transitions", "Flexible profiles"],
                 },
                 {
                   icon: "📏",
                   title: "Tall Baseboards",
-                  desc: "Modern tall baseboards (6-8 inches) installation for contemporary Burlington homes with high ceilings.",
-                  features: [
-                    "6-8 inch profiles",
-                    "Modern styles",
-                    "High ceilings",
-                  ],
+                  desc: "6-8 inch profiles for modern builds and higher ceilings common in newer Burlington neighborhoods.",
+                  features: ["6-8 inch profiles", "Modern styles", "High ceilings"],
                 },
                 {
                   icon: "🖌️",
                   title: "Caulking & Finishing",
-                  desc: "Professional caulking of all seams for Burlington projects, nail hole filling, and smooth sanding for paint-ready finish.",
+                  desc: "Seam caulking, nail-hole fill, and sanding for a smooth, paint-ready edge.",
                   features: ["Seamless caulk", "Hole filling", "Paint-ready"],
                 },
                 {
                   icon: "🎨",
                   title: "Painting & Staining",
-                  desc: "Complete priming and painting service for Burlington baseboard projects or staining for wood baseboards.",
-                  features: [
-                    "Primer & paint",
-                    "Wood staining",
-                    "Color matching",
-                  ],
+                  desc: "Prime and paint baseboards or stain hardwood to match your trim package.",
+                  features: ["Primer & paint", "Wood staining", "Color matching"],
                 },
               ].map((service) => (
                 <div
@@ -320,32 +303,32 @@ export default function Page() {
                 {
                   step: "1",
                   title: "Room Assessment & Measurement",
-                  desc: "Precise measurements and profile selection for your Burlington home. We account for lakeside humidity, wall conditions, and Burlington's unique architectural styles.",
+                  desc: "Confirm linear footage, profile height, door casing returns, and transitions. We account for older walls near Downtown and larger layouts in newer neighborhoods.",
                 },
                 {
                   step: "2",
                   title: "Remove Existing Trim",
-                  desc: "Careful removal of old baseboards and shoe moulding without damaging walls in Burlington properties. All debris hauled away and disposed.",
+                  desc: "Protect floors, remove old baseboards and shoe moulding, set nails, and haul debris away.",
                 },
                 {
                   step: "3",
                   title: "Wall Preparation",
-                  desc: "Level check, fill gaps, and prep surfaces for perfect baseboard alignment in Burlington waterfront and inland homes.",
+                  desc: "Patch gaps, skim rough areas, and snap a straight reference line for consistent reveals.",
                 },
                 {
                   step: "4",
                   title: "Precision Installation",
-                  desc: "Coped inside corners, mitered outside corners, and seamless scarf joints. Professional techniques for Burlington's established home stock.",
+                  desc: "Coped inside corners, tight outside miters, and scarf joints on long runs for a seamless look.",
                 },
                 {
                   step: "5",
                   title: "Finishing & Caulking",
-                  desc: "Fill nail holes, caulk top and bottom edges, sand smooth for paint-ready finish across Burlington properties.",
+                  desc: "Fill nail holes, caulk top edges and shoe moulding, and sand smooth for paint.",
                 },
                 {
                   step: "6",
                   title: "Paint & Final Inspection",
-                  desc: "Optional primer and finish coats. Final walkthrough ensuring quality standards for every Burlington baseboard project.",
+                  desc: "Prime and paint or stain on request, then a final walkthrough to confirm clean lines.",
                 },
               ].map((item) => (
                 <div
@@ -508,20 +491,17 @@ export default function Page() {
               Why Burlington Homeowners Choose Us for Baseboard Installation
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Baseboard installation in Burlington requires understanding the
-              city's unique character—from waterfront properties near Spencer
-              Smith Park to established family neighborhoods in Aldershot,
-              modern homes in Orchard to heritage properties in Downtown
-              Burlington. Our experienced contractors deliver professional
-              results using proper techniques for coping, mitering, and
-              finishing that work for Burlington's diverse architectural styles.
+              Burlington homes range from heritage properties near Brant Street
+              to newer builds in Orchard, Alton Village, and Millcroft, plus
+              waterfront homes along Lakeshore. Each needs the right profile,
+              material, and prep. We handle uneven walls in older homes and
+              humidity considerations near the lake.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Burlington homeowners choose us because we focus on craftsmanship
-              and customer satisfaction. Whether it's a lakeside home needing
-              moisture-resistant PVC baseboards or a family home in Brant Hills
-              requiring elegant hardwood trim, we deliver consistent quality and
-              clean installation every time throughout Burlington.
+              Homeowners choose us for crisp miters, straight runs, and tidy
+              sites. Whether you need PVC for moisture, tall profiles for modern
+              interiors, or matching trim for an addition, we deliver consistent
+              results and a clean handoff.
             </p>
           </div>
         </div>
@@ -577,190 +557,121 @@ export default function Page() {
           <div className="max-w-6xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-4xl font-bold mb-6">
-                Professional Baseboard Installation in Burlington, Ontario
+                Burlington baseboard installation with clear scope and local fit
               </h2>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                Looking for expert{" "}
-                <strong>baseboard installation in Burlington</strong>? Our
-                professional contractors specialize in new baseboard
-                installation, baseboard replacement, and complete trim finishing
-                for homes throughout Burlington. Whether you're renovating a
-                waterfront home near Spencer Smith Park, updating an Aldershot
-                family property, or finishing a new build in Orchard, we deliver
-                precise craftsmanship and paint-ready results that transform
-                your Burlington home.
+                Whether you are upgrading one room or finishing a full renovation,
+                we focus on tight corners, straight lines, and a paint-ready
+                finish that suits Burlington homes. We work in condos near
+                Downtown, townhomes in Orchard, and detached homes in Aldershot,
+                Millcroft, and Tyandaga.
               </p>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
-                Burlington's Trusted Baseboard Contractors
+                Replacement vs new installation
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Baseboard installation Burlington</strong> requires
-                understanding the city's unique characteristics and housing
-                stock. Our team has completed over 550 baseboard projects
-                throughout Burlington, mastering techniques for lakeside homes
-                (moisture-resistant materials), established neighborhoods
-                (matching heritage profiles), and modern developments
-                (contemporary tall baseboards). We work with MDF, solid
-                hardwood, and PVC baseboards to match any Burlington style and
-                budget.
+                If you are replacing old trim, we remove baseboards carefully,
+                set nails, and patch walls before new installation. For new
+                builds or post-flooring installs, we confirm profile height,
+                door casing returns, and transitions so the trim looks intentional
+                in every room.
               </p>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
-                Baseboard Installation After Popcorn Ceiling Removal
+                Material choice for Burlington homes
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Many Burlington homeowners bundle{" "}
-                <Link
-                  href="/services/popcorn-ceiling-removal/burlington/"
-                  className="text-blue-600 font-semibold hover:underline"
-                >
-                  popcorn ceiling removal
-                </Link>{" "}
-                with baseboard installation for a complete room transformation.
-                When you're already protecting floors and furniture for ceiling
-                work in your Burlington home, it's the perfect time to upgrade
-                baseboards. This coordination saves on setup costs and delivers
-                a cohesive finished space throughout your Burlington property.
+                Primed MDF is the most common option for painted interiors.
+                Hardwood (oak, maple, poplar) is best when you want a stained
+                finish. For waterfront homes or basements, PVC resists humidity
+                and will not swell or rot.
+              </p>
+
+              <h3 className="text-2xl font-bold mb-4 mt-8">Pricing and estimates</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Most Burlington projects price by linear foot, typically $8-15/ft
+                depending on profile height, material, wall conditions, and
+                whether painting is included. Share room sizes and a few photos
+                for a written quote.
               </p>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
-                Burlington Baseboard Installation Cost
+                Scheduling, access, and timeline
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Baseboard installation cost Burlington</strong>{" "}
-                typically ranges $8-15 per linear foot installed, depending on
-                material choice, profile height, and finishing requirements. A
-                standard Burlington bedroom (12x14) with 50 linear feet costs
-                $400-750 including removal of old trim, installation, caulking,
-                and paint-ready finishing. Lakeside homes may benefit from PVC
-                moisture-resistant baseboards ($10-14/ft) for long-term
-                durability. We provide transparent written quotes after
-                reviewing your Burlington room sizes and photos.
+                A single room often takes 4-6 hours; a full home is usually
+                2-3 days. For condos, we coordinate elevator bookings and quiet
+                hours so work stays compliant.
+              </p>
+
+              <h3 className="text-2xl font-bold mb-4 mt-8">
+                Sequence with flooring and painting
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Baseboards are typically installed after flooring and before
+                final paint coats. We can prime and paint on site or coordinate
+                with your painter for a clean finish.
               </p>
 
               <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6 my-8">
                 <h4 className="text-xl font-bold mb-4">
-                  Our Burlington Services Include:
+                  Common Burlington requests we handle
                 </h4>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-1">✓</span>
-                    <span>
-                      <strong>New baseboard installation:</strong> MDF,
-                      hardwood, PVC with coped corners for Burlington homes
-                    </span>
+                    <span>Trim replacement during flooring updates</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-1">✓</span>
-                    <span>
-                      <strong>Baseboard replacement:</strong> Remove old damaged
-                      trim and install fresh baseboards throughout Burlington
-                      properties
-                    </span>
+                    <span>Matching profiles for additions or partial rooms</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-1">✓</span>
-                    <span>
-                      <strong>Shoe moulding installation:</strong> Quarter round
-                      and shoe moulding for Burlington floor transitions
-                    </span>
+                    <span>PVC baseboards for waterfront or basement humidity</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-1">✓</span>
-                    <span>
-                      <strong>Lakeside moisture protection:</strong> PVC
-                      baseboards for Burlington waterfront homes
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-1">✓</span>
-                    <span>
-                      <strong>Painting & staining:</strong> Complete finishing
-                      to match your Burlington home's design
-                    </span>
+                    <span>Caulk, fill, and paint-ready finishing</span>
                   </li>
                 </ul>
               </div>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
-                Burlington Neighborhoods We Serve for Baseboard Installation
+                Bundling with other upgrades
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Our{" "}
-                <strong>baseboard installation services in Burlington</strong>{" "}
-                cover every neighborhood from the waterfront to inland
-                communities. In <strong>Aldershot</strong>, we work on family
-                homes and townhomes requiring durable, family-friendly finishes.{" "}
-                <strong>Downtown Burlington</strong> clients appreciate our
-                experience with heritage properties and condo buildings near
-                Brant Street. <strong>Orchard</strong> and{" "}
-                <strong>Palmer</strong> homeowners trust us for modern baseboard
-                profiles in newer developments.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Brant Hills</strong> and <strong>Tyandaga</strong>{" "}
-                residents often upgrade baseboards as part of larger Burlington
-                renovations, while <strong>Roseland</strong> and{" "}
-                <strong>Freeman</strong> homeowners value our efficient
-                installation process. Whether you're in <strong>Headon</strong>,{" "}
-                <strong>Longmoor</strong>, <strong>Millcroft</strong>, or{" "}
-                <strong>Appleby</strong>, we deliver consistent quality
-                baseboard installation throughout Burlington.
-              </p>
-
-              <h3 className="text-2xl font-bold mb-4 mt-8">
-                Waterfront Home Baseboard Installation in Burlington
-              </h3>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Burlington waterfront baseboard installation</strong>{" "}
-                requires special considerations due to lakeside humidity and
-                moisture exposure. We recommend PVC moisture-resistant
-                baseboards for Burlington homes near Lake Ontario, offering
-                superior performance in high-humidity environments. These
-                baseboards never rot, warp, or deteriorate—perfect for
-                Burlington's lakeside living. Professional caulking and
-                finishing ensure water-tight seals that protect walls while
-                maintaining beautiful aesthetics throughout your Burlington
-                waterfront home.
-              </p>
-
-              <h3 className="text-2xl font-bold mb-4 mt-8">
-                Coordinating with Other Burlington Services
-              </h3>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                We coordinate baseboard installation with{" "}
+                Many Burlington clients combine baseboard work with{" "}
+                <Link
+                  href="/popcorn-ceiling-removal/burlington/"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  popcorn ceiling removal
+                </Link>{" "}
+                or{" "}
                 <Link
                   href="/services/interior-painting/"
                   className="text-blue-600 font-semibold hover:underline"
                 >
                   interior painting
-                </Link>
-                ,{" "}
-                <Link
-                  href="/services/drywall-installation/"
-                  className="text-blue-600 font-semibold hover:underline"
-                >
-                  drywall repairs
-                </Link>
-                , and flooring contractors to ensure seamless project flow.
-                Baseboards are typically installed after flooring and before
-                final paint coats for optimal results in Burlington homes. Many
-                Burlington clients appreciate our ability to manage multiple
-                trades and deliver turnkey room transformations across their
-                property.
+                </Link>{" "}
+                for a clean, finished look.
               </p>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
-                Burlington Permits and Regulations
+                Waterfront moisture considerations
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Most{" "}
-                <strong>baseboard installation projects in Burlington</strong>{" "}
-                don't require building permits. However, if your baseboard work
-                is part of a larger Burlington renovation involving structural
-                changes, you may need approval from the{" "}
+                For homes near the lake, we recommend PVC and careful caulking
+                to manage seasonal humidity and keep joints tight over time.
+              </p>
+
+              <h3 className="text-2xl font-bold mb-4 mt-8">Permits and regulations</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Baseboard work typically does not require a permit unless it is
+                part of a larger renovation. If needed, we can point you to the{" "}
                 <a
                   href="https://www.burlington.ca/en/services-for-you/building-permits.aspx"
                   target="_blank"
@@ -769,19 +680,16 @@ export default function Page() {
                 >
                   City of Burlington Building Department
                 </a>
-                . We help Burlington homeowners understand permit requirements
-                and can coordinate with your contractor for comprehensive
-                renovation compliance.
+                .
               </p>
 
               <div className="bg-gradient-to-br from-blue-600 to-cyan-600 text-white rounded-3xl p-8 my-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">
-                  Ready for Professional Baseboard Installation in Burlington?
+                  Ready for a Burlington baseboard quote?
                 </h3>
                 <p className="text-blue-100 mb-6 text-lg">
-                  Get your free Burlington baseboard installation quote today.
-                  Same-day estimates for waterfront and family homes throughout
-                  Burlington.
+                  Same-day estimates for waterfront and family homes across the
+                  city. Share room sizes or photos and we will respond quickly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
@@ -814,36 +722,36 @@ export default function Page() {
           <div className="space-y-4">
             {[
               {
-                q: "How much does baseboard installation cost in Burlington?",
-                a: "Baseboard installation cost in Burlington typically ranges $8-15 per linear foot installed. A standard bedroom costs $400-750 including old trim removal, installation, caulking, and paint-ready finishing. Waterfront homes may benefit from PVC moisture-resistant baseboards at $10-14/ft.",
+                q: "What does baseboard installation cost in Burlington?",
+                a: "Most projects are priced by linear foot, typically $8-15/ft depending on material, profile height, wall conditions, and whether paint or stain is included. Share room sizes and photos for a written quote.",
               },
               {
-                q: "Do you install moisture-resistant baseboards for Burlington lakeside homes?",
-                a: "Yes. We recommend and install PVC moisture-resistant baseboards for Burlington waterfront properties. These baseboards never rot, warp, or deteriorate in high-humidity lakeside environments.",
+                q: "Do you remove old baseboards and repair walls?",
+                a: "Yes. We remove existing trim, set nails, patch drywall, and prep surfaces before installing new baseboards.",
               },
               {
-                q: "What types of baseboards do you install in Burlington?",
-                a: "We install MDF (paint-ready), solid wood (oak, maple, poplar for staining), and PVC (moisture-resistant) baseboards for Burlington homes. We help you choose based on location, budget, and style preferences.",
+                q: "Which material should I choose for my Burlington home?",
+                a: "Primed MDF is the most common choice for painted rooms. Hardwood works best for stained finishes, while PVC is ideal near the waterfront or in basements where humidity is higher.",
               },
               {
-                q: "Do you remove old baseboards in Burlington homes?",
-                a: "Yes. We carefully remove existing baseboards from Burlington properties, patch wall imperfections, and haul away all debris for proper disposal.",
+                q: "How long does a typical job take?",
+                a: "A single room often takes 4-6 hours. A full home is usually 2-3 days depending on scope, profile complexity, and finishing.",
               },
               {
-                q: "How long does baseboard installation take in Burlington?",
-                a: "A typical Burlington home (2000 sq ft) takes 2-3 days depending on profile complexity and whether painting is included. Single rooms can be completed in 4-6 hours.",
-              },
-              {
-                q: "Can you match existing baseboards in my Burlington home?",
-                a: "Yes. We can source matching profiles for Burlington homes or mill custom pieces to blend with existing trim in other rooms throughout your property.",
+                q: "Can you match existing baseboard profiles?",
+                a: "Yes. We source matching profiles or mill close matches so new trim blends cleanly with existing rooms.",
               },
               {
                 q: "Do you work in Burlington condo buildings?",
-                a: "Yes. We coordinate with Burlington condo property management for building access, elevator bookings, and noise restrictions to ensure smooth installation.",
+                a: "Yes. We coordinate with property management for elevator bookings, access, and quiet hours.",
               },
               {
-                q: "What's the best baseboard material for Burlington homes?",
-                a: "For most Burlington homes, primed MDF offers the best value. For waterfront properties, PVC moisture-resistant baseboards are ideal. For luxury finishes, solid hardwood with staining provides premium durability and beauty.",
+                q: "When should baseboards be installed relative to flooring and painting?",
+                a: "Baseboards are typically installed after flooring and before final paint coats. We can prime and paint as part of the job.",
+              },
+              {
+                q: "Do you install shoe moulding or quarter round?",
+                a: "Yes. We install shoe moulding to cover expansion gaps and create clean transitions along flooring.",
               },
             ].map((faq) => (
               <details
@@ -928,7 +836,7 @@ export default function Page() {
             href="/services/baseboard-installation/"
             className="inline-flex items-center text-blue-600 font-semibold hover:underline text-lg"
           >
-            ← Back to Baseboard Installation Hub
+            Baseboard Installation
           </Link>
         </div>
       </section>

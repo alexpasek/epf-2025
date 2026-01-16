@@ -607,7 +607,7 @@ export default function Page() {
               <p className="text-gray-700 leading-relaxed mb-6">
                 Many Mississauga homeowners bundle{" "}
                 <Link
-                  href="/services/popcorn-ceiling-removal/mississauga/"
+                  href="/popcorn-ceiling-removal/mississauga/"
                   className="text-blue-600 font-semibold hover:underline"
                 >
                   popcorn ceiling removal
@@ -1044,7 +1044,7 @@ export default function Page() {
             href="/services/baseboard-installation/"
             className="inline-flex items-center text-blue-600 font-semibold hover:underline text-lg"
           >
-            ← Back to Baseboard Installation Hub
+            Baseboard Installation
           </Link>
         </div>
       </section>
