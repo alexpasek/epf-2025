@@ -119,19 +119,19 @@ export default function City() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: SITE_URL,
+        item: { "@id": SITE_URL },
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Popcorn Removal",
-        item: `${SITE_URL}/popcorn-removal/`,
+        item: { "@id": `${SITE_URL}/popcorn-removal/` },
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Mississauga",
-        item: PAGE_URL,
+        item: { "@id": PAGE_URL },
       },
     ],
   };

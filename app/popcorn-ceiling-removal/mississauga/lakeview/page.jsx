@@ -41,9 +41,9 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Popcorn Ceiling Removal", item: "/services/popcorn-ceiling-removal/" },
-          { "@type": "ListItem", position: 2, name: "Mississauga", item: "/popcorn-ceiling-removal/mississauga/" },
-          { "@type": "ListItem", position: 3, name: "Lakeview", item: "/popcorn-ceiling-removal/mississauga/lakeview/" },
+          { "@type": "ListItem", position: 1, name: "Popcorn Ceiling Removal", item: { "@id": "https://epfproservices.com/services/popcorn-ceiling-removal/" } },
+          { "@type": "ListItem", position: 2, name: "Mississauga", item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/mississauga/" } },
+          { "@type": "ListItem", position: 3, name: "Lakeview", item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/mississauga/lakeview/" } },
         ],
       },
       {

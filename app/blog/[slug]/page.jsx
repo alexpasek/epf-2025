@@ -52,7 +52,8 @@ export default async function Post({ params }) {
     );
   }
   const path = `/blog/${post.slug}/`;
-  const url = SITE_URL ? `${SITE_URL}${path}` : path;
+  const baseUrl = SITE_URL || "https://epfproservices.com";
+  const url = `${baseUrl}${path}`;
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   const getParagraphText = (para) => {
@@ -112,9 +113,14 @@ export default async function Post({ params }) {
         "@type": "ListItem",
         position: 1,
         name: "Blog",
-        item: SITE_URL ? `${SITE_URL}/blog/` : "/blog/",
+        item: { "@id": `${baseUrl}/blog/` },
       },
-      { "@type": "ListItem", position: 2, name: post.title, item: url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: post.title,
+        item: { "@id": url },
+      },
     ],
   };
 

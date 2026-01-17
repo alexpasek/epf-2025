@@ -177,24 +177,29 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: { "@id": `${BASE_URL}/` },
+          },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: SERVICES_URL,
+            item: { "@id": SERVICES_URL },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Drywall Installation",
-            item: INSTALL_URL,
+            item: { "@id": INSTALL_URL },
           },
           {
             "@type": "ListItem",
             position: 4,
             name: CITY,
-            item: ABSOLUTE_URL,
+            item: { "@id": ABSOLUTE_URL },
           },
         ],
       },

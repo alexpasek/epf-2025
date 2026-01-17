@@ -191,18 +191,25 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: { "@id": "https://epfproservices.com/" },
+          },
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: "/services",
+            item: { "@id": "https://epfproservices.com/services/" },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Popcorn Ceiling Removal",
-            item: "/services/popcorn-ceiling-removal/",
+            item: {
+              "@id": "https://epfproservices.com/services/popcorn-ceiling-removal/",
+            },
           },
         ],
       },
