@@ -101,7 +101,7 @@ export const metadata = {
   description:
     "Professional drywall installation contractor Mississauga for basements, ceilings, condos, and office buildouts. Expert hanging, taping, and Level 5 finishing.",
   keywords: KEYWORDS,
-  alternates: { canonical: SLUG },
+  alternates: { canonical: ABSOLUTE_URL },
   openGraph: {
     title: "Drywall Installation Services Mississauga | EPF Pro Services",
     description:
@@ -110,10 +110,10 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/services/drywall/1.webp",
+        url: "/gallery/drywall-installation/drywall-instalation-mississauga/drywall-instalation-mississdauga.webp",
         width: 1200,
         height: 630,
-        alt: "Drywall installation Mississauga crew working in modern condo",
+        alt: "Drywall installation Mississauga project completed by EPF Pro Services",
       },
     ],
   },
@@ -147,7 +147,7 @@ function JsonLd() {
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "4.9",
-            reviewCount: "127",
+            reviewCount: "107",
           },
           address: {
             "@type": "PostalAddress",
@@ -216,10 +216,10 @@ export default function Page() {
   const mississauga = cities.find((city) => city.slug === "mississauga");
   const neighborhoods = mississauga?.neighborhoods || [];
 
-  const images = Array.from(
-    { length: 6 },
-    (_, i) => `/services/drywall/${i + 1}.webp`
-  );
+  const images = [
+    "/gallery/drywall-installation/drywall-instalation-mississauga/drywall-instalation-mississdauga.webp",
+    ...Array.from({ length: 5 }, (_, i) => `/services/drywall/${i + 1}.webp`),
+  ];
 
   return (
     <>
@@ -250,17 +250,17 @@ export default function Page() {
               </h1>
 
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                From downtown high-rises to suburban estates, we deliver drywall
-                installation services Mississauga for condos, homes, and office
-                spaces. Our drywall installation contractor Mississauga teams
-                bring precision hanging, Level 5 finishing, and condo-friendly
-                logistics.
+                Mississauga is a mix of Square One high-rises, Port Credit
+                waterfront condos, and Meadowvale family homes. We provide
+                drywall installation services Mississauga with condo-ready
+                coordination, clean job sites, and a finish level that stands up
+                to bright LED lighting.
               </p>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Our crews handle basement drywall installation Mississauga,
-                ceiling drywall installation Mississauga, and commercial
-                buildouts with elevator protection, quiet-hour scheduling, and
-                daily cleanup.
+                Our drywall installation contractor Mississauga teams handle
+                basement drywall installation Mississauga, ceiling drywall
+                installation Mississauga, and airport-area commercial buildouts
+                with lift equipment, off-hour scheduling, and daily cleanup.
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -319,10 +319,10 @@ export default function Page() {
 
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 max-w-[220px]">
                 <div className="text-4xl font-bold text-purple-600 mb-1">
-                  2,000+
+                  2,400+
                 </div>
                 <div className="text-sm text-gray-600 font-semibold">
-                  Projects completed
+                  Rooms delivered across Mississauga
                 </div>
               </div>
             </div>
@@ -415,7 +415,8 @@ export default function Page() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Condo-ready crews, Level 5 quality, and flexible scheduling for
-              drywall installation Mississauga
+              drywall installation Mississauga across busy towers, lakefront
+              homes, and commercial sites
             </p>
           </div>
 
@@ -423,28 +424,28 @@ export default function Page() {
             {[
               {
                 icon: "🏆",
-                title: "Condo Specialists",
-                text: `Expert condo drywall installation Mississauga with COI compliance, elevator protection, and quiet-hour scheduling for high-rise projects.`,
+                title: "Condo & High-Rise Logistics",
+                text: `Condo drywall installation Mississauga teams coordinate COI approvals, elevator padding, and after-hours work near Square One and the Lakeshore corridor.`,
                 bullets: [
-                  "Building insurance documentation",
-                  "Elevator padding & protection",
-                  "Hallway containment systems",
+                  "Quiet-hour scheduling & hallway protection",
+                  "Secure material staging for tower sites",
+                  "COI + WSIB compliance packages",
                 ],
               },
               {
                 icon: "🛠️",
                 title: "Professional Hanging",
-                text: `Precision drywall hanging Mississauga with laser layout, mechanical lifts, and quality materials for all ceiling heights.`,
+                text: `Precision drywall hanging Mississauga with laser layout, board lifts, and measured spacing for consistent drywall board installation Mississauga.`,
                 bullets: [
                   "hang drywall Mississauga",
-                  "drywall board installation Mississauga",
                   "sheetrock installation Mississauga",
+                  "gypsum board installation Mississauga",
                 ],
               },
               {
                 icon: "✨",
                 title: "Premium Finishing",
-                text: `Exceptional drywall finishing Mississauga from level 4 finish Mississauga to level 5 finish Mississauga with HEPA-controlled sanding.`,
+                text: `Exceptional drywall finishing Mississauga from level 4 finish Mississauga to level 5 finish Mississauga with HEPA-controlled sanding for clean turnovers.`,
                 bullets: [
                   "drywall taping and mudding Mississauga",
                   "drywall sanding Mississauga",
@@ -454,7 +455,7 @@ export default function Page() {
               {
                 icon: "🏗️",
                 title: "Renovation Ready",
-                text: `Complete drywall replacement Mississauga for renovations, water damage, and demolition projects with insurance coordination.`,
+                text: `Complete drywall replacement Mississauga for renovations, water damage, and demolition projects with clear documentation.`,
                 bullets: [
                   "remove and replace drywall Mississauga",
                   "drywall installation after demolition Mississauga",
@@ -464,7 +465,7 @@ export default function Page() {
               {
                 icon: "🏢",
                 title: "Commercial Expertise",
-                text: `Professional drywall installation for commercial buildouts Mississauga with night shifts, lift equipment, and fast turnarounds.`,
+                text: `Professional drywall installation for commercial buildouts Mississauga near Airport Corporate Centre and Heartland with night shifts and phased handoffs.`,
                 bullets: [
                   "commercial drywall installation Mississauga",
                   "Office buildouts",
@@ -474,11 +475,11 @@ export default function Page() {
               {
                 icon: "🏡",
                 title: "Residential Quality",
-                text: `Complete residential drywall installation Mississauga including basement drywall installation and ceiling installations.`,
+                text: `Complete residential drywall installation Mississauga including basement drywall installation Mississauga and ceiling drywall installation Mississauga.`,
                 bullets: [
-                  "basement drywall installation Mississauga",
-                  "ceiling drywall installation Mississauga",
                   "drywall installation for additions Mississauga",
+                  "Basement rec rooms & home offices",
+                  "Accent walls and smooth ceilings",
                 ],
               },
             ].map((card) => (
@@ -553,7 +554,7 @@ export default function Page() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Six-step workflow for reliable drywall installation services
-              Mississauga
+              Mississauga with condo coordination and commercial staging
             </p>
           </div>
 
@@ -561,11 +562,11 @@ export default function Page() {
             {[
               {
                 title: "Site Preparation",
-                text: "Building coordination, elevator booking, floor protection, and material staging for condo or commercial sites.",
+                text: "Building coordination, elevator booking, floor protection, and material staging for condo or commercial sites near Square One and Port Credit.",
               },
               {
                 title: "Framing Verification",
-                text: "Inspect framing, install backing, verify spacing for precise drywall board installation Mississauga alignment.",
+                text: "Inspect framing, install backing, and verify spacing for precise drywall board installation Mississauga alignment.",
               },
               {
                 title: "Professional Hanging",
@@ -581,7 +582,7 @@ export default function Page() {
               },
               {
                 title: "Prime & Turnover",
-                text: "Optional priming, final punch-list, and complete cleanup for paint-ready surfaces.",
+                text: "Optional priming, final punch-list, and complete cleanup for paint-ready surfaces and handoff scheduling.",
               },
             ].map((step, i) => (
               <div
@@ -608,7 +609,7 @@ export default function Page() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Transparent pricing based on scope, square footage, and finish
-              quality
+              quality for Mississauga homes and condos
             </p>
           </div>
 
@@ -622,13 +623,13 @@ export default function Page() {
                   Affordable
                 </div>
                 <div className="text-sm text-gray-600">
-                  Single rooms & repairs
+                  Single rooms, repairs, and patch work
                 </div>
               </div>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
-                  <span>Small room installations</span>
+                  <span>Drywall repairs and ceiling blends</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
@@ -653,7 +654,7 @@ export default function Page() {
                   Competitive
                 </div>
                 <div className="text-sm text-white/90">
-                  Full basements & condos
+                  Full basements, condos, and additions
                 </div>
               </div>
               <ul className="space-y-3 text-white">
@@ -663,7 +664,7 @@ export default function Page() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-bold">✓</span>
-                  <span>Condo renovations</span>
+                  <span>Condo renovations with elevator booking</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-bold">✓</span>
@@ -685,13 +686,13 @@ export default function Page() {
                   Custom Quote
                 </div>
                 <div className="text-sm text-gray-600">
-                  Commercial & whole-home
+                  Commercial, multi-unit, and whole-home
                 </div>
               </div>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
-                  <span>Commercial buildouts</span>
+                  <span>Commercial buildouts and tenant improvements</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
@@ -709,26 +710,26 @@ export default function Page() {
             <h3 className="text-2xl font-bold mb-6 text-center">
               Cost Factors We Consider
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: "📏",
-                  title: "Square Footage",
-                  text: "Total area and ceiling height impact materials and labor.",
-                },
-                {
-                  icon: "🏗️",
-                  title: "Site Access",
-                  text: "Elevator use, parking, and material delivery logistics.",
-                },
-                {
-                  icon: "💧",
-                  title: "Condition",
-                  text: "Water damage or demolition requires additional prep.",
-                },
-                {
-                  icon: "⚙️",
-                  title: "Finish Level",
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {[
+                    {
+                      icon: "📏",
+                      title: "Square Footage",
+                      text: "Total area and ceiling height impact materials and labor.",
+                    },
+                    {
+                      icon: "🏗️",
+                      title: "Site Access",
+                      text: "Elevator use, parking permits, and delivery logistics.",
+                    },
+                    {
+                      icon: "💧",
+                      title: "Condition",
+                      text: "Water damage or demolition requires additional prep.",
+                    },
+                    {
+                      icon: "⚙️",
+                      title: "Finish Level",
                   text: "Level 4 standard vs Level 5 premium smooth finish.",
                 },
               ].map((item) => (
@@ -779,8 +780,9 @@ export default function Page() {
             <p className="text-lg text-purple-100 mb-8 leading-relaxed max-w-3xl mx-auto">
               Our drywall contractors for installation Mississauga serve the
               entire city with consistent quality, transparent pricing, and
-              professional site management. From Square One condos to Meadowvale
-              homes, we deliver results across all project types.
+              professional site management. From Square One condos to Port
+              Credit homes and Meadowvale additions, we deliver results across
+              all project types.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -803,10 +805,11 @@ export default function Page() {
               Trusted Installation Across Mississauga Neighbourhoods
             </h3>
             <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
-              From Square One high-rises to Churchill Meadows estates, our
-              licensed crews deliver professional drywall installation services
-              throughout Mississauga's diverse communities. Every neighbourhood
-              receives the same quality workmanship and attention to detail.
+              From Square One high-rises to Churchill Meadows estates and
+              Streetsville renovations, our licensed crews deliver professional
+              drywall installation services throughout Mississauga's diverse
+              communities. Every neighbourhood receives the same quality
+              workmanship and attention to detail.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {neighborhoods.map((n) => (
@@ -994,25 +997,24 @@ export default function Page() {
           <div className="max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Professional Drywall Installation Services in Mississauga
-              </h2>
+              Professional Drywall Installation Services in Mississauga
+            </h2>
 
-              <p className="text-gray-700 leading-relaxed mb-6">
-                When Mississauga property owners and contractors need reliable{" "}
-                <strong>drywall installation services Mississauga</strong>, EPF
-                Pro Services delivers professional results across residential,
-                commercial, and condo projects. Our experienced{" "}
-                <strong>
-                  drywall contractors for installation Mississauga
-                </strong>{" "}
-                bring decades of expertise to basement builds, high-rise
-                renovations, commercial tenant improvements, and emergency
-                reconstruction work.
+            <p className="text-gray-700 leading-relaxed mb-6">
+                Mississauga property owners need drywall contractors who can
+                navigate tower rules, lakefront humidity, and busy commercial
+                schedules. Our{" "}
+                <strong>drywall installation services Mississauga</strong>{" "}
+                focus on clean logistics, tight scheduling, and durable
+                finishes that look sharp in bright condo lighting. Experienced{" "}
+                <strong>drywall contractors for installation Mississauga</strong>{" "}
+                handle residential, condo, and commercial scopes without
+                disrupting neighboring units or tenants.
               </p>
 
               <div className="bg-purple-50 border-l-4 border-purple-600 p-6 my-8 rounded-r-xl">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Why Mississauga Builders Choose Our Installation Teams
+                  What Makes Mississauga Projects Different
                 </h3>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start gap-3">
@@ -1020,9 +1022,9 @@ export default function Page() {
                       ✓
                     </span>
                     <span>
-                      <strong>Licensed & insured:</strong> Full WSIB coverage
-                      and $5M liability for every{" "}
-                      <strong>drywall installation Mississauga</strong> project
+                      <strong>Condo access:</strong> We plan elevator bookings,
+                      material staging, and quiet-hour compliance for{" "}
+                      <strong>condo drywall installation Mississauga</strong>.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -1030,9 +1032,9 @@ export default function Page() {
                       ✓
                     </span>
                     <span>
-                      <strong>Condo expertise:</strong> Specialized teams for{" "}
-                      <strong>condo drywall installation Mississauga</strong>{" "}
-                      with building compliance experience
+                      <strong>Traffic-aware scheduling:</strong> Jobs near
+                      Hurontario, the QEW, and the airport require smart
+                      delivery windows and on-site safety protocols.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -1040,9 +1042,9 @@ export default function Page() {
                       ✓
                     </span>
                     <span>
-                      <strong>Quality guarantee:</strong> Every{" "}
+                      <strong>Finish quality:</strong> Every{" "}
                       <strong>new drywall installation Mississauga</strong>{" "}
-                      backed by comprehensive 3-year warranty
+                      includes multi-stage inspections and a 3-year warranty.
                     </span>
                   </li>
                 </ul>
@@ -1061,8 +1063,9 @@ export default function Page() {
                 painting. Whether you need{" "}
                 <strong>basement drywall installation Mississauga</strong>,{" "}
                 <strong>ceiling drywall installation Mississauga</strong>, or{" "}
-                <strong>drywall installation for additions Mississauga</strong>
-                —we deliver consistent results.
+                <strong>drywall installation for additions Mississauga</strong>,
+                we deliver consistent results with clear scheduling and clean
+                handoffs.
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
@@ -1073,7 +1076,8 @@ export default function Page() {
                 aligns perfectly. Our{" "}
                 <strong>drywall board installation Mississauga</strong> process
                 includes laser layout, mechanical lifts for ceilings, and
-                systematic quality checks.
+                systematic quality checks that help keep condo suites and homes
+                on schedule.
               </p>
 
               <h3 className="text-3xl font-bold text-gray-900 mt-12 mb-6">
@@ -1086,8 +1090,8 @@ export default function Page() {
                 offer both <strong>level 4 finish Mississauga</strong> for
                 standard paint applications and{" "}
                 <strong>level 5 finish Mississauga</strong> for ultra-smooth
-                walls with zero visible seams—essential for high-gloss paints
-                and modern LED lighting common in Mississauga condos.
+                walls with zero visible seams—ideal for modern LED lighting in
+                Square One towers and custom homes.
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
@@ -1097,6 +1101,32 @@ export default function Page() {
                 delivers paint-ready surfaces that meet the highest quality
                 standards for Mississauga residential and commercial projects.
               </p>
+
+              <div className="bg-white border-2 border-purple-100 rounded-2xl p-6 my-8">
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">
+                  Mississauga Project Snapshots
+                </h4>
+                <ul className="space-y-3 text-gray-700">
+                  <li>
+                    • Square One condo suite: full{" "}
+                    <strong>drywall installation Mississauga</strong> with
+                    elevator booking, level 5 finish, and low-dust sanding.
+                  </li>
+                  <li>
+                    • Meadowvale basement:{" "}
+                    <strong>basement drywall installation Mississauga</strong>{" "}
+                    with moisture checks and sound-dampening board.
+                  </li>
+                  <li>
+                    • Airport Corporate Centre buildout: commercial partitions
+                    and{" "}
+                    <strong>
+                      drywall installation for commercial buildouts Mississauga
+                    </strong>{" "}
+                    on an accelerated schedule.
+                  </li>
+                </ul>
+              </div>
 
               <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-xl">
                 <h4 className="text-2xl font-bold text-gray-900 mb-3">
