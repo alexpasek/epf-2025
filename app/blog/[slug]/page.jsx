@@ -140,6 +140,14 @@ export async function generateMetadata({ params }) {
   }
   const path = `/blog/${slug}/`;
   const url = SITE_URL ? `${SITE_URL}${path}` : path;
+  const image = post.image || post.photos?.[0]?.src;
+  const imageUrl = image
+    ? image.startsWith("http")
+      ? image
+      : SITE_URL
+        ? `${SITE_URL}${image}`
+        : image
+    : undefined;
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   return {
@@ -154,12 +162,14 @@ export async function generateMetadata({ params }) {
       locale: "en_CA",
       publishedTime: post.date,
       modifiedTime: post.date,
-      authors: ["EPF Pro Services"],
+      authors: [post.author || "EPF Pro Services"],
+      images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description,
+      images: imageUrl ? [imageUrl] : undefined,
     },
   };
 }
@@ -180,6 +190,12 @@ export default async function Post({ params }) {
   const url = `${baseUrl}${path}`;
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
+  const image = post.image || post.photos?.[0]?.src;
+  const imageUrl = image
+    ? image.startsWith("http")
+      ? image
+      : `${baseUrl}${image}`
+    : undefined;
   const getParagraphText = (para) => {
     if (typeof para === "string") return para;
     if (para && typeof para === "object" && "html" in para) {
@@ -218,8 +234,18 @@ export default async function Post({ params }) {
     datePublished: post.date,
     dateModified: post.date,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    author: { "@type": "Organization", name: "EPF Pro Services" },
-    publisher: { "@type": "Organization", name: "EPF Pro Services" },
+    image: imageUrl ? [imageUrl] : undefined,
+    author: post.author
+      ? { "@type": "Person", name: post.author }
+      : { "@type": "Organization", name: "EPF Pro Services" },
+    publisher: {
+      "@type": "Organization",
+      name: "EPF Pro Services",
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/logo.png`,
+      },
+    },
     inLanguage: "en-CA",
     articleSection: "Popcorn ceiling removal",
     keywords: post.keywords?.join(", "),
