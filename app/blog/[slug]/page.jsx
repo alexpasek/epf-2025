@@ -6,6 +6,130 @@ export const dynamic = "force-dynamic";
 export const runtime = "edge";
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
+const UNORDERED_LIST_RE = /^\s*[-*]\s+/;
+const ORDERED_LIST_RE = /^\s*\d+\.\s+/;
+const HEADING_HTML_RE = /^<strong>(.+)<\/strong>$/i;
+
+const isHtmlEntry = (entry) =>
+  entry && typeof entry === "object" && "html" in entry;
+
+const decodeEntities = (value) =>
+  value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+
+const stripHtmlTags = (value) => value.replace(/<[^>]+>/g, "");
+
+const slugifyHeading = (value) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const extractHeading = (entry) => {
+  if (!isHtmlEntry(entry)) return null;
+  const trimmed = entry.html.trim();
+  const match = trimmed.match(HEADING_HTML_RE);
+  if (!match) return null;
+  const innerHtml = match[1].trim();
+  const text = decodeEntities(stripHtmlTags(innerHtml)).trim();
+  if (!text) return null;
+  const level = /^\d+\./.test(text) ? "h3" : "h2";
+  return { innerHtml, text, id: slugifyHeading(text), level };
+};
+
+const getListType = (entry) => {
+  const value = typeof entry === "string" ? entry : isHtmlEntry(entry) ? entry.html : "";
+  if (!value) return null;
+  if (ORDERED_LIST_RE.test(value.trim())) return "ol";
+  if (UNORDERED_LIST_RE.test(value.trim())) return "ul";
+  return null;
+};
+
+const stripListPrefix = (value, listType) => {
+  if (listType === "ol") return value.replace(ORDERED_LIST_RE, "");
+  return value.replace(UNORDERED_LIST_RE, "");
+};
+
+const renderContent = (content) => {
+  const nodes = [];
+  let listItems = [];
+  let listType = null;
+  let keyIndex = 0;
+
+  const flushList = () => {
+    if (!listItems.length || !listType) return;
+    const Tag = listType;
+    nodes.push(
+      <Tag key={`list-${keyIndex++}`}>
+        {listItems.map((item, idx) => {
+          const key = `li-${keyIndex++}-${idx}`;
+          if (typeof item === "string") {
+            return <li key={key}>{stripListPrefix(item.trim(), listType)}</li>;
+          }
+          if (isHtmlEntry(item)) {
+            const html = stripListPrefix(item.html.trim(), listType);
+            return (
+              <li
+                key={key}
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+            );
+          }
+          return <li key={key}>{String(item ?? "")}</li>;
+        })}
+      </Tag>
+    );
+    listItems = [];
+    listType = null;
+  };
+
+  content.forEach((entry) => {
+    const heading = extractHeading(entry);
+    if (heading) {
+      flushList();
+      const HeadingTag = heading.level;
+      nodes.push(
+        <HeadingTag
+          key={`h-${heading.id}-${keyIndex++}`}
+          id={heading.id}
+          dangerouslySetInnerHTML={{ __html: heading.innerHtml }}
+        />
+      );
+      return;
+    }
+    const entryListType = getListType(entry);
+    if (entryListType) {
+      if (listType && listType !== entryListType) {
+        flushList();
+      }
+      listType = entryListType;
+      listItems.push(entry);
+      return;
+    }
+    flushList();
+    if (typeof entry === "string") {
+      nodes.push(<p key={`p-${keyIndex++}`}>{entry}</p>);
+      return;
+    }
+    if (isHtmlEntry(entry)) {
+      nodes.push(
+        <p
+          key={`p-${keyIndex++}`}
+          dangerouslySetInnerHTML={{ __html: entry.html }}
+        />
+      );
+      return;
+    }
+    nodes.push(<p key={`p-${keyIndex++}`}>{String(entry ?? "")}</p>);
+  });
+
+  flushList();
+  return nodes;
+};
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -184,24 +308,11 @@ export default async function Post({ params }) {
       <section className="container-x px-4 -mt-8">
         <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
           <div className="prose-custom max-w-none text-slate-800">
-            {post.content.map((t, i) => {
-              if (typeof t === "string") {
-                return <p key={i}>{t}</p>;
-              }
-              if (t && typeof t === "object" && "html" in t) {
-                return (
-                  <p
-                    key={i}
-                    dangerouslySetInnerHTML={{ __html: t.html }}
-                  />
-                );
-              }
-              return <p key={i}>{String(t ?? "")}</p>;
-            })}
+            {renderContent(post.content || [])}
             {post.links?.length > 0 && (
               <div className="mt-6 space-y-2">
                 <h3 className="text-xl font-semibold text-slate-900">
-                  Authority flow: Mississauga + nearby neighbourhoods
+                  Related local pages
                 </h3>
                 {post.links.map((link, idx) => (
                   <p key={`${link.href}-${idx}`} className="text-slate-700">
