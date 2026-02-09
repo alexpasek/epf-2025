@@ -10,6 +10,7 @@ const CITY = "Mississauga";
 const SERVICE = "Drywall Repair";
 const SLUG = "/services/drywall-repair/mississauga/";
 const BASE_URL = (SITE_URL && SITE_URL.replace(/\/$/, "")) || "";
+const CANONICAL_URL = BASE_URL ? `${BASE_URL}${SLUG}` : SLUG;
 const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 const phoneText = (CONTACT && CONTACT.phone) || "(647) 923-6784";
 
@@ -28,6 +29,39 @@ const NEIGHBOURHOODS = [
   ["applewood", "Applewood", "Mature neighbourhood near QEW", "Residential repairs, renovation support, paint-ready work"],
   ["hurontario", "Hurontario", "LRT corridor with mixed development", "High-rise condos, commercial repairs, transit construction impacts"],
   ["square-one", "Square One", "Urban core with high-rise condos and retail", "Condo towers, commercial repairs, concierge coordination"],
+];
+
+const LOCAL_SNAPSHOTS = [
+  {
+    title: "City Centre and Square One Condos",
+    desc: "Elevator booking, hallway protection, and quiet-hour compliance for high-rise drywall repair.",
+  },
+  {
+    title: "Port Credit and Lakeview Waterfront",
+    desc: "Moisture-aware repair sequencing and stain-block priming for lakefront properties.",
+  },
+  {
+    title: "Erin Mills and Meadowvale Townhomes",
+    desc: "Settlement crack reinforcement, stairwell patching, and paint-ready finishes.",
+  },
+  {
+    title: "Malton and Airport-Area Properties",
+    desc: "Fast turnover repairs for rentals, basements, and commercial bays near Pearson.",
+  },
+];
+
+const CONDO_CHECKLIST = [
+  "COI + WSIB documents ready for property management",
+  "Elevator booking and loading protection scheduled in advance",
+  "Quiet-hour compliance and hallway floor protection",
+  "HEPA sanding and daily cleanup to protect common areas",
+];
+
+const QUOTE_CHECKLIST = [
+  "Wide shots + close-ups of the damaged areas",
+  "Room size, ceiling height, and access notes",
+  "Timeline and any building rules or permits",
+  "Active leaks or moisture issues already stopped",
 ];
 
 const FAQS = [
@@ -89,12 +123,12 @@ export const metadata = {
     "residential drywall repair Mississauga",
     "commercial drywall repair Mississauga",
   ],
-  alternates: { canonical: SLUG },
+  alternates: { canonical: CANONICAL_URL },
   openGraph: {
     title: `${SERVICE} in ${CITY} | Professional Seamless Finish`,
     description:
       "Emergency water damage repair, seamless patching, Level 5 finish. WSIB insured drywall contractors serving all Mississauga neighbourhoods.",
-    url: SLUG,
+    url: CANONICAL_URL,
     type: "website",
   },
   robots: { index: true, follow: true },
@@ -473,6 +507,75 @@ export default function Page() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL REPAIR SNAPSHOT */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-sm uppercase tracking-widest text-blue-600 font-bold mb-3">
+              LOCAL INSIGHTS
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Mississauga Drywall Repair Scenarios We See Often
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Mississauga combines high-rise condos, lakefront homes, and
+              family townhomes. Our crews adapt repair methods to match each
+              building type and management rule set.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {LOCAL_SNAPSHOTS.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition"
+              >
+                <h3 className="text-lg font-bold text-slate-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 grid lg:grid-cols-2 gap-6">
+            <div className="rounded-3xl border border-blue-100 bg-white p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-slate-900">
+                Mississauga Condo Access Checklist
+              </h3>
+              <ul className="mt-4 space-y-2 text-slate-700">
+                {CONDO_CHECKLIST.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-blue-600 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-slate-900">
+                What Speeds Up a Mississauga Quote
+              </h3>
+              <ul className="mt-4 space-y-2 text-slate-700">
+                {QUOTE_CHECKLIST.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-blue-600 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm text-slate-600">
+                This helps us schedule crews efficiently across City Centre,
+                Hurontario, Port Credit, and the rest of Mississauga.
+              </p>
+            </div>
           </div>
         </div>
       </section>

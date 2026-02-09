@@ -49,6 +49,18 @@ const services = [
     ],
   },
   {
+    slug: "/services/drywall-repair/",
+    name: "Drywall Repair",
+    tagline:
+      "Seamless patching, crack repair, and water damage restoration for paint-ready walls.",
+    bullets: [
+      "Water damage drywall repair with moisture checks and stain-block priming",
+      "Hole patching, crack reinforcement, and tape repairs",
+      "Texture matching and Level 5 finishing where needed",
+      "Condo and commercial scheduling with COI and dust control",
+    ],
+  },
+  {
     slug: "/services/wallpaper/",
     name: "Wallpaper Removal",
     tagline:
@@ -484,6 +496,16 @@ export default function ServicesPage() {
             Request a fast quote
           </Link>{" "}
           or call us.
+        </p>
+        <p className="mt-3 text-sm text-gray-700">
+          Looking for drywall repair in Mississauga?{" "}
+          <Link
+            href="/services/drywall-repair/mississauga/"
+            className="underline"
+          >
+            Drywall repair Mississauga
+          </Link>
+          .
         </p>
       </section>
 

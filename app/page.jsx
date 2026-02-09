@@ -508,6 +508,15 @@ export default function Page() {
           popcorn ceiling removal services across the GTA
             </Link>
           </div>
+          <div className="mt-3">
+            <Link
+              href="/services/drywall-repair/mississauga/"
+              className="text-sm font-semibold text-slate-700 hover:underline"
+              title="Drywall repair in Mississauga"
+            >
+              Drywall repair in Mississauga
+            </Link>
+          </div>
         </div>
       </section>
 
