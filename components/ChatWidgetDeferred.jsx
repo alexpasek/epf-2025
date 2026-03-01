@@ -2,16 +2,22 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
 
 const ChatWidgetAgent = dynamic(() => import("./ChatWidgetAgent"), {
   loading: () => null,
 });
 
 export default function ChatWidgetDeferred() {
+  const pathname = usePathname();
+  const isLanding = isAdsLandingPath(pathname || "");
+
   const [ready, setReady] = useState(false);
   const [openOnMount, setOpenOnMount] = useState(false);
 
   useEffect(() => {
+    if (isLanding) return;
     if (ready) return;
     let idleId;
     if (typeof window !== "undefined" && "requestIdleCallback" in window) {
@@ -22,7 +28,11 @@ export default function ChatWidgetDeferred() {
     }
     const t = setTimeout(() => setReady(true), 2000);
     return () => clearTimeout(t);
-  }, [ready]);
+  }, [ready, isLanding]);
+
+  if (isLanding) {
+    return null;
+  }
 
   if (!ready) {
     return (

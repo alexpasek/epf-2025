@@ -4,6 +4,7 @@
 import GoogleReviews from "@/components/GoogleReviews";
 import { SERVICE_AREAS } from "@/app/config";
 import { usePathname } from "next/navigation";
+import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
 
 /** Contact + Locations */
 const CONTACT = {
@@ -72,6 +73,10 @@ const LOCATIONS = [
 
 export default function Footer() {
   const pathname = usePathname();
+  if (isAdsLandingPath(pathname || "")) {
+    return null;
+  }
+
   const hideReviews = pathname === "/";
 
   return (

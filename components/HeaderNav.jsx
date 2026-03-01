@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
+import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
 
 /* Accent used only for nav/dropdowns (CTAs unchanged) */
 const ACCENT = {
@@ -106,6 +107,8 @@ function BreadcrumbJsonLd({ crumbs }) {
 
 export default function HeaderNav() {
   const pathname = usePathname();
+  const isLanding = isAdsLandingPath(pathname || "");
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false);
@@ -185,6 +188,10 @@ export default function HeaderNav() {
   ];
 
   const crumbs = buildCrumbs(pathname);
+
+  if (isLanding) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50">

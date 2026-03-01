@@ -26,18 +26,6 @@ const nextConfig = {
                 destination: "/popcorn-ceiling-removal/:path*/",
                 permanent: true,
             },
-
-            // 2) /locations/popcorn-ceiling-removal-:city -> /popcorn-ceiling-removal/:city/
-            {
-                source: "/locations/popcorn-ceiling-removal-:city",
-                destination: "/popcorn-ceiling-removal/:city/",
-                permanent: true,
-            },
-            {
-                source: "/locations/popcorn-ceiling-removal-:city/:path*",
-                destination: "/popcorn-ceiling-removal/:city/:path*/",
-                permanent: true,
-            },
         ];
     },
 
@@ -54,6 +42,18 @@ const nextConfig = {
                 source: "/service-areas/:path*",
                 headers: [
                     { key: "X-Robots-Tag", value: "noindex, follow" },
+                ],
+            },
+            {
+                source: "/locations/popcorn-ceiling-removal-:city",
+                headers: [
+                    { key: "X-Robots-Tag", value: "noindex, nofollow" },
+                ],
+            },
+            {
+                source: "/locations/popcorn-ceiling-removal-:city/:path*",
+                headers: [
+                    { key: "X-Robots-Tag", value: "noindex, nofollow" },
                 ],
             },
         ];

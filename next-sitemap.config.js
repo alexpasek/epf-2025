@@ -13,7 +13,12 @@ module.exports = {
     autoLastmod: true,
 
     // only exclude things that should never be indexed
-    exclude: ["/api/*", "/404", "/500"],
+    exclude: [
+        "/api/*",
+        "/404",
+        "/500",
+        "/locations/popcorn-ceiling-removal-*",
+    ],
 
     // Add all static and dynamic paths
     additionalPaths: async (config) => {
@@ -189,6 +194,11 @@ module.exports = {
     transform: async(config, path) => {
         // Skip template/bracket routes 
         if (path.includes("[") || path.includes("]")) {
+            return null;
+        }
+
+        // Exclude paid-ads landing pages from indexing/sitemaps
+        if (path.startsWith("/locations/popcorn-ceiling-removal-")) {
             return null;
         }
 
