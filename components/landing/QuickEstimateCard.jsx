@@ -75,11 +75,13 @@ export default function QuickEstimateCard({ city }) {
       });
 
       const thankYouUrl = `/thank-you/?source=google-ads&city=${encodeURIComponent(city)}`;
-      if (typeof window !== "undefined" && typeof window.gtag_report_conversion === "function") {
-        window.gtag_report_conversion(thankYouUrl);
-      } else {
-        router.push(thankYouUrl);
+      if (
+        typeof window !== "undefined" &&
+        typeof window.gtag_report_conversion === "function"
+      ) {
+        window.gtag_report_conversion();
       }
+      router.push(thankYouUrl);
     } catch {
       setStatus("Network issue. Please call us now and we can quote by phone.");
     } finally {
