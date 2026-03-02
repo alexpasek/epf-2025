@@ -321,278 +321,111 @@ export default function Page() {
 
   return (
     <>
-      <div className="space-y-12 pb-12">
+      <div className="ads-look space-y-12 pb-12">
         <JsonLd />
 
         {/* HERO */}
-        <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white">
-          <div className="container-x px-4 py-14">
-            <div className="max-w-7xl mx-auto">
-              {/* Hero Content */}
-              <div className="max-w-4xl mb-12">
-                <p className="text-xs uppercase tracking-[0.3em] text-blue-300 font-semibold">
-                  Mississauga • Dust-controlled popcorn removal
-                </p>
-                <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-                  Popcorn Ceiling Removal Mississauga
-                </h1>
-                <p className="mt-4 text-xl text-slate-200 max-w-3xl">
-                  We convert popcorn, stipple, and stucco ceilings to flat white
-                  surfaces with HEPA containment, Level 5 skim coating, and
-                  concierge-style communication. Most Mississauga quotes are
-                  turned around the same day you send photos.
-                </p>
-              </div>
-
-              {/* Two Column Grid - Advantages + Quick Nav */}
-              <div className="grid lg:grid-cols-2 gap-8 mb-10">
-                {/* MISSISSAUGA-SPECIFIC ADVANTAGES */}
-                <div className="rounded-2xl border-2 border-blue-400 bg-blue-900/20 p-6">
-                  <p className="text-sm font-bold text-blue-300 mb-4 uppercase tracking-wider">
-                    ✓ Why Mississauga Homeowners Choose Us
-                  </p>
-                  <ul className="space-y-3 text-sm text-white">
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">✓</span>
-                      <span>
-                        <strong className="text-blue-300">
-                          Condo-ready logistics:
-                        </strong>{" "}
-                        Elevator bookings, insurance coordination, and hallway
-                        protection for Square One towers, Port Credit
-                        high-rises, and Hurontario condos
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">✓</span>
-                      <span>
-                        <strong className="text-blue-300">
-                          Local Mississauga team:
-                        </strong>{" "}
-                        Dispatched from Port Credit covering Streetsville, Erin
-                        Mills, Churchill Meadows, Clarkson, and all 17
-                        neighborhoods daily
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">✓</span>
-                      <span>
-                        <strong className="text-blue-300">
-                          4-hour photo quotes:
-                        </strong>{" "}
-                        Text ceiling pictures and measurements—get detailed
-                        pricing before lunch, confirmed availability by dinner
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">✓</span>
-                      <span>
-                        <strong className="text-blue-300">
-                          HEPA dust containment:
-                        </strong>{" "}
-                        Sealed work zones, vacuum-assisted sanding, and daily
-                        cleanup—rest of your home stays livable during the
-                        project
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">✓</span>
-                      <span>
-                        <strong className="text-blue-300">
-                          Painted texture expertise:
-                        </strong>{" "}
-                        Full skim coating for stubborn painted popcorn common in
-                        2000s-era Meadowvale and East Credit developments
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 font-bold text-lg">✓</span>
-                      <span>
-                        <strong className="text-blue-300">
-                          Trade coordination:
-                        </strong>{" "}
-                        Sync with your Mississauga electrician for pot lights or
-                        our painting crews for turnkey ceiling-to-walls packages
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* QUICK JUMP MENU */}
-                <div className="rounded-2xl border-2 border-blue-400 bg-blue-900/20 p-6">
-                  <p className="text-xs uppercase tracking-wider text-blue-300 font-bold mb-4">
-                    📋 Quick Navigation
-                  </p>
-                  <nav className="flex flex-wrap gap-3">
-                    {anchorLinks.map(([href, label]) => (
-                      <a
-                        key={href}
-                        href={href}
-                        className="inline-flex items-center gap-2 rounded-full border-2 border-blue-400/50 bg-blue-900/40 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-800/60 hover:border-blue-300 transition-all"
-                      >
-                        {label}
-                      </a>
-                    ))}
-                  </nav>
-
-                  <div className="mt-6 pt-6 border-t border-blue-400/30">
-                    <p className="text-sm text-slate-200 mb-4">
-                      Need the full workflow? Explore our{" "}
-                      <Link
-                        href="/services/popcorn-ceiling-removal/"
-                        className="text-blue-300 underline underline-offset-2 hover:text-blue-200"
-                      >
-                        comprehensive popcorn ceiling removal guide
-                      </Link>{" "}
-                      for detailed process information, or check our{" "}
-                      <Link
-                        href="/blog/popcorn-ceiling-removal-cost-timeline/"
-                        className="text-blue-300 underline underline-offset-2 hover:text-blue-200"
-                      >
-                        cost & timeline breakdown
-                      </Link>
-                      .
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Feature Bullets */}
-              <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-slate-200 mb-10">
-                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-2xl">🧼</span>
-                  <span>
-                    Full containment, zipper walls, and HEPA sanding to keep
-                    dust out of the rest of your home.
-                  </span>
-                </li>
-                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-2xl">🪜</span>
-                  <span>
-                    Level 5 skim coating + primer so ceilings are ready for
-                    finish paint right away.
-                  </span>
-                </li>
-                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-2xl">🗓️</span>
-                  <span>
-                    Predictable scheduling and clean wrap-ups in Port Credit,
-                    Sheridan, Clarkson, Streetsville, and every pocket in
-                    between.
-                  </span>
-                </li>
-                <li className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <span className="text-2xl">📸</span>
-                  <span>
-                    Share photos below for pricing or text us directly if that's
-                    faster.
-                  </span>
-                </li>
-              </ul>
-
-              {/* Stats + CTA Buttons */}
-              <div className="flex flex-col lg:flex-row gap-8 items-center justify-between">
-                <div className="grid grid-cols-3 gap-6 flex-1">
-                  {heroStats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center shadow-lg"
-                    >
-                      <div className="text-3xl font-bold text-white">
-                        {stat.value}
-                      </div>
-                      <p className="text-xs uppercase tracking-wide text-slate-300 mt-2">
-                        {stat.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="#quote"
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-xl text-lg"
-                  >
-                    <span>📋</span> Get Free Quote
-                  </a>
-                  <a
-                    href={phoneHref}
-                    aria-label={phoneAriaLabel}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/30 hover:border-white hover:bg-white/10 text-white font-bold rounded-full transition-all shadow-xl text-lg"
-                  >
-                    <span>📞</span> {phoneDisplay}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <section className="border-y border-[#ce4520] bg-[#e24f26] py-2 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-white md:text-[1.05rem]">
+            FREE SAME-DAY QUOTE • SAFE & DUST-FREE CEILING REMOVAL
+          </p>
         </section>
 
-        {/* QUOTE FORM SECTION - Separate */}
-        <section id="quote" className="container-x -mt-8 px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Left Column - Info */}
+        <section className="border-b border-[#2f6a58] bg-[radial-gradient(circle_at_12%_8%,#2f7b68_0,#0d5b47_45%,#0b4b39_100%)] text-white">
+          <div className="container-x px-4 py-8 md:py-10">
+            <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.25fr_.9fr] lg:gap-8">
               <div>
-                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
-                  FAST & ACCURATE QUOTES
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                  Get Your Mississauga Quote
-                </h2>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Upload photos, ceiling heights, and timing. We reply the same
-                  day with square-foot guidance and availability.
+                <h1 className="text-[3.3rem] font-bold uppercase leading-[0.92] text-white md:text-[7rem] md:leading-[0.9]">
+                  Popcorn Ceiling
+                  <br />
+                  Removal <span className="text-[#ffd03f]">Mississauga</span>
+                </h1>
+                <p className="mt-3 text-[2.1rem] italic leading-tight text-[#eaf7f1] md:text-[4.4rem]">
+                  From Popcorn to
+                  <br />
+                  Smooth in No Time!
                 </p>
 
-                <div className="space-y-4">
-                  {[
-                    {
-                      icon: "💧",
-                      title: "Water damage & ceilings",
-                      desc: "Moisture mapping and ceiling water damage repair Mississauga insurance adjusters trust.",
-                    },
-                    {
-                      icon: "🧱",
-                      title: "Trade cut-outs",
-                      desc: "Coordinated popcorn removal after pot light installation, HVAC upgrades, and electrical work.",
-                    },
-                    {
-                      icon: "✨",
-                      title: "Finish perfection",
-                      desc: "Level 5 skim coat and sanding for no visible texture lines Mississauga homeowners demand.",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.title}
-                      className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"
-                    >
-                      <div className="text-3xl">{item.icon}</div>
-                      <div>
-                        <h3 className="font-bold text-gray-900 mb-1">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-gray-600">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+                <div className="mt-5 overflow-hidden rounded-sm border border-white/30 bg-[#184f42]/60 p-2">
+                  <div className="grid grid-cols-2 gap-1.5">
+                    <figure className="relative overflow-hidden border border-white/20 bg-black">
+                      <img
+                        src="/gallery/popcorn-ceiling-removal4.jpeg"
+                        alt="Stucco ceiling being sanded before removal in Mississauga"
+                        className="h-56 w-full object-cover md:h-72"
+                        loading="eager"
+                      />
+                      <figcaption className="absolute bottom-3 left-0 bg-[#143f33]/90 px-3 py-1 text-2xl font-bold text-white md:text-[2rem]">
+                        Before
+                      </figcaption>
+                    </figure>
+                    <figure className="relative overflow-hidden border border-white/20 bg-black">
+                      <img
+                        src="/gallery/popcorn-ceiling-removal.jpeg"
+                        alt="Mississauga popcorn ceiling after removal"
+                        className="h-56 w-full object-cover md:h-72"
+                        loading="eager"
+                      />
+                      <figcaption className="absolute bottom-3 left-0 bg-[#e2542e]/95 px-3 py-1 text-2xl font-bold text-white md:text-[2rem]">
+                        After
+                      </figcaption>
+                    </figure>
+                  </div>
                 </div>
-              </div>
 
-              {/* Right Column - Form */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border-2 border-blue-200 p-8 shadow-xl">
-                <QuoteForm />
-                <div className="mt-6 pt-6 border-t border-blue-200 text-center">
-                  <p className="text-sm text-gray-600 mb-3">
-                    Need immediate help?
-                  </p>
+                <div className="mt-4 flex flex-wrap gap-3">
                   <a
                     href={phoneHref}
                     aria-label={phoneAriaLabel}
-                    className="inline-flex items-center gap-2 text-xl font-bold text-blue-600 hover:text-blue-700"
+                    className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-b from-[#f26437] to-[#df4b22] px-7 py-3.5 text-xl font-bold text-white shadow-[0_14px_24px_-15px_rgba(0,0,0,.65)]"
                   >
-                    📞 {phoneDisplay}
+                    📞 Call for Free Quote
                   </a>
+                  <a
+                    href="#quote"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-[#81a696] bg-[#145640] px-7 py-3.5 text-xl font-bold text-white"
+                  >
+                    ✎ Get Quote Online
+                  </a>
+                </div>
+
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-base font-semibold text-white">
+                  <span>✓ Dust-Free Process</span>
+                  <span className="h-5 w-px bg-white/35" />
+                  <span>✓ Proven Results</span>
+                  <span className="h-5 w-px bg-white/35" />
+                  <span>✓ Satisfaction Guaranteed</span>
+                </div>
+              </div>
+
+              <div id="quote" className="space-y-3 lg:pt-1">
+                <div className="rounded-2xl border border-[#b9c8c0] bg-[#f0f2ee] p-5 text-[#1e3f35] shadow-[0_18px_28px_-18px_rgba(0,0,0,.62)]">
+                  <h2 className="text-[2.1rem] font-bold uppercase md:text-[2.5rem]">
+                    Typical Pricing & Timeline
+                  </h2>
+                  <ul className="mt-2 space-y-1.5 text-[1.15rem] leading-relaxed md:text-[1.45rem]">
+                    <li>Most single-room projects: 1-2 days.</li>
+                    <li>Main floors and larger homes: 2-5 days.</li>
+                    <li>
+                      Pricing depends on size, height, painted texture, and repair level.
+                    </li>
+                  </ul>
+                  <p className="mt-2 text-[1rem] font-medium text-[#4b6058] md:text-[1.12rem]">
+                    Get a same-day estimate from photos and room sizes, then a written final
+                    scope.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[#b9c8c0] bg-[#f0f2ee] p-5 text-[#1e3f35] shadow-[0_18px_28px_-18px_rgba(0,0,0,.62)]">
+                  <h2 className="text-center text-[2.35rem] font-bold uppercase md:text-[3.1rem]">
+                    Get Your Free Quote!
+                  </h2>
+                  <p className="mt-1 text-center text-[1.35rem] font-semibold md:text-[1.9rem]">
+                    Request Your Fast & Free Estimate
+                  </p>
+                  <div className="mt-4">
+                    <QuoteForm />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1609,6 +1442,77 @@ export default function Page() {
           </div>
         </section>
       </div>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `.ads-look {
+  background: #ecede8;
+}
+
+.ads-look h1,
+.ads-look h2,
+.ads-look h3 {
+  font-family: "Arial Narrow Bold", "Franklin Gothic Medium", Impact, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.ads-look [class*="bg-slate-900"] {
+  background: linear-gradient(180deg, #0b4b39 0%, #0d5b47 50%, #08372c 100%) !important;
+  border-color: #2f6a58 !important;
+}
+
+.ads-look [class*="bg-blue-600"] {
+  background: linear-gradient(180deg, #f26537 0%, #df4b23 100%) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+
+.ads-look [class*="hover:bg-blue-700"]:hover,
+.ads-look [class*="active:bg-blue-800"]:active {
+  background: #cf441e !important;
+}
+
+.ads-look [class*="text-blue-300"],
+.ads-look [class*="text-blue-600"],
+.ads-look [class*="text-blue-700"],
+.ads-look [class*="text-blue-800"] {
+  color: #145640 !important;
+}
+
+.ads-look [class*="border-blue-"] {
+  border-color: #81a696 !important;
+}
+
+.ads-look [class*="bg-blue-50"],
+.ads-look [class*="bg-blue-100"],
+.ads-look [class*="bg-blue-900"],
+.ads-look [class*="from-blue-50"],
+.ads-look [class*="to-indigo-50"] {
+  background: #f0f2ee !important;
+}
+
+.ads-look [class*="text-slate-600"],
+.ads-look [class*="text-slate-500"],
+.ads-look [class*="text-gray-600"],
+.ads-look [class*="text-gray-700"] {
+  color: #33413d !important;
+}
+
+.ads-look .btn-cta {
+  background: linear-gradient(180deg, #f26537 0%, #df4b23 100%) !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 14px 24px -15px rgba(0, 0, 0, 0.65);
+}
+
+.ads-look .btn-cta:hover {
+  background: linear-gradient(180deg, #f4784f 0%, #d74520 100%) !important;
+}
+
+.ads-look [class*="ring-black/5"] {
+  box-shadow: 0 18px 28px -18px rgba(0, 0, 0, 0.62) !important;
+}`,
+        }}
+      />
     </>
   );
 }
