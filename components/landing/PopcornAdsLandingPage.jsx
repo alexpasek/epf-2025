@@ -4,7 +4,8 @@ import LandingGoogleReviewCards from "@/components/landing/LandingGoogleReviewCa
 import QuickEstimateCard from "@/components/landing/QuickEstimateCard";
 
 const titleFont = {
-  fontFamily: '"Arial Narrow Bold", "Franklin Gothic Medium", Impact, sans-serif',
+  fontFamily:
+    '"Arial Narrow Bold", "Franklin Gothic Medium", Impact, sans-serif',
 };
 
 function ShieldIcon({ className = "h-4 w-4" }) {
@@ -71,7 +72,9 @@ function BeforeAfterPanel({ landing, compact = false }) {
             fetchPriority="high"
             width="1200"
             height="800"
-            className={compact ? "h-32 w-full object-cover" : "h-56 w-full object-cover"}
+            className={
+              compact ? "h-32 w-full object-cover" : "h-56 w-full object-cover"
+            }
           />
           <figcaption className="absolute bottom-3 left-0 bg-[#143f33]/90 px-3 py-1 text-2xl font-bold text-white md:text-[2rem]">
             Before
@@ -85,7 +88,9 @@ function BeforeAfterPanel({ landing, compact = false }) {
             fetchPriority="high"
             width="1200"
             height="800"
-            className={compact ? "h-32 w-full object-cover" : "h-56 w-full object-cover"}
+            className={
+              compact ? "h-32 w-full object-cover" : "h-56 w-full object-cover"
+            }
           />
           <figcaption className="absolute bottom-3 left-0 bg-[#e2542e]/95 px-3 py-1 text-2xl font-bold text-white md:text-[2rem]">
             After
@@ -104,7 +109,10 @@ function DesktopHeader({ landing }) {
           <img src="/logo.png" alt="EPP Pro Services" className="h-12 w-auto" />
         </a>
 
-        <nav className="flex items-center text-[1.08rem] font-medium text-[#2f4d43]" aria-label="In-page">
+        <nav
+          className="flex items-center text-[1.08rem] font-medium text-[#2f4d43]"
+          aria-label="In-page"
+        >
           <a href="#hero" className="px-4 py-2 hover:text-[#0b5a44]">
             Home
           </a>
@@ -163,7 +171,8 @@ function MobileHeader({ landing }) {
 
 export default function PopcornAdsLandingPage({ landing }) {
   const promoText =
-    landing.topPromoText || "FREE SAME-DAY QUOTE • PROVEN DUST-FREE CEILING REMOVAL";
+    landing.topPromoText ||
+    "FREE SAME-DAY QUOTE • PROVEN DUST-FREE CEILING REMOVAL";
 
   return (
     <div className="scroll-smooth bg-[#ecede8] pb-[84px] md:pb-0">
@@ -199,7 +208,8 @@ export default function PopcornAdsLandingPage({ landing }) {
               </h1>
 
               <p className="mt-2 text-[1.7rem] italic leading-tight text-[#eaf7f1] md:max-w-[94%] md:text-[4.1rem]">
-                {landing.heroSubline || "Get a Smooth, Modern Ceiling in No Time!"}
+                {landing.heroSubline ||
+                  "Get a Smooth, Modern Ceiling in No Time!"}
               </p>
 
               <div className="mt-4 hidden md:block">
@@ -228,7 +238,9 @@ export default function PopcornAdsLandingPage({ landing }) {
                   "Satisfaction Guaranteed",
                 ].map((item, idx) => (
                   <div key={item} className="flex items-center gap-2">
-                    {idx > 0 ? <span className="mx-2 h-5 w-px bg-white/35" /> : null}
+                    {idx > 0 ? (
+                      <span className="mx-2 h-5 w-px bg-white/35" />
+                    ) : null}
                     <span className="text-[#8fcab4]">
                       <ShieldIcon />
                     </span>
@@ -239,7 +251,10 @@ export default function PopcornAdsLandingPage({ landing }) {
 
               <div className="mt-4 md:hidden">
                 <div className="rounded-2xl border border-white/35 bg-white/95 p-2.5 shadow-lg">
-                  <h2 className="text-[1.85rem] font-bold text-[#173f35]" style={titleFont}>
+                  <h2
+                    className="text-[1.85rem] font-bold text-[#173f35]"
+                    style={titleFont}
+                  >
                     See the difference
                   </h2>
                   <p className="text-lg text-[#324741]">
@@ -258,7 +273,10 @@ export default function PopcornAdsLandingPage({ landing }) {
                   </div>
                   <div className="mt-3 grid grid-cols-1 gap-2 text-[1.04rem] text-[#1d3f35]">
                     {landing.heroStats?.map((item) => (
-                      <p key={item} className="flex items-center gap-2 font-medium">
+                      <p
+                        key={item}
+                        className="flex items-center gap-2 font-medium"
+                      >
                         <span className="text-[#185441]">
                           <ShieldIcon className="h-5 w-5" />
                         </span>
@@ -279,11 +297,13 @@ export default function PopcornAdsLandingPage({ landing }) {
                   <li>Most single-room projects: 1-2 days.</li>
                   <li>Main floors and larger homes: 2-5 days.</li>
                   <li>
-                    Pricing depends on size, height, painted texture, and repair level.
+                    Pricing depends on size, height, painted texture, and repair
+                    level.
                   </li>
                 </ul>
                 <p className="mt-2 text-[0.85rem] font-medium text-[#50645d] md:text-sm">
-                  Get a same-day estimate from photos and room sizes, then a written final scope.
+                  Get a same-day estimate from photos and room sizes, then a
+                  written final scope.
                 </p>
               </div>
               <QuickEstimateCard city={landing.city} />
@@ -306,19 +326,22 @@ export default function PopcornAdsLandingPage({ landing }) {
                 className="mt-3 max-w-4xl text-[2.15rem] font-bold leading-[0.95] text-[#163f35] md:text-[4.2rem]"
                 style={titleFont}
               >
-                Experience a Modern, <span className="italic">Smooth Ceiling Finish</span>
+                Experience a Modern,{" "}
+                <span className="italic">Smooth Ceiling Finish</span>
               </h2>
               <p className="mt-3 max-w-2xl text-base text-[#2c463f] md:text-xl">
-                We remove dated texture with controlled prep and deliver a clean, even
-                surface ready for paint.
+                We remove dated texture with controlled prep and deliver a
+                clean, even surface ready for paint.
               </p>
 
               <ul className="mt-5 space-y-2.5">
-                {(landing.servicesIncluded || [
-                  "Quick & Clean Removal",
-                  "Expert Setup for Lived-In Homes",
-                  "Paint-Ready Smooth Finish",
-                ]).map((item) => (
+                {(
+                  landing.servicesIncluded || [
+                    "Quick & Clean Removal",
+                    "Expert Setup for Lived-In Homes",
+                    "Paint-Ready Smooth Finish",
+                  ]
+                ).map((item) => (
                   <li
                     key={item}
                     className="flex items-center gap-3 rounded-xl border border-[#d4dad4] bg-white px-4 py-3 shadow-[0_10px_22px_-18px_rgba(0,0,0,.55)]"
@@ -404,7 +427,9 @@ export default function PopcornAdsLandingPage({ landing }) {
                 loading="lazy"
                 className="h-52 w-full object-cover md:h-56"
               />
-              <figcaption className="p-3 text-sm text-[#3a4a45]">{item.caption}</figcaption>
+              <figcaption className="p-3 text-sm text-[#3a4a45]">
+                {item.caption}
+              </figcaption>
             </figure>
           ))}
         </div>
@@ -417,10 +442,15 @@ export default function PopcornAdsLandingPage({ landing }) {
         >
           Customer Reviews
         </h2>
-        <LandingGoogleReviewCards fallbackReviews={landing.featuredReviews || []} />
+        <LandingGoogleReviewCards
+          fallbackReviews={landing.featuredReviews || []}
+        />
       </section>
 
-      <section id="other-services" className="scroll-mt-28 border-y border-[#cfd6cf] bg-[#f7f8f4]">
+      <section
+        id="other-services"
+        className="scroll-mt-28 border-y border-[#cfd6cf] bg-[#f7f8f4]"
+      >
         <div className="container-x py-10">
           <h2
             className="text-center text-[2rem] font-bold uppercase text-[#114c3a] md:text-[3.2rem]"
@@ -429,7 +459,8 @@ export default function PopcornAdsLandingPage({ landing }) {
             Other Services We Provide
           </h2>
           <p className="mt-2 text-center text-lg text-[#2b473f] md:text-2xl">
-            Need more details? Ask us about full-service options while we quote your ceiling.
+            Need more details? Ask us about full-service options while we quote
+            your ceiling.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -490,8 +521,16 @@ export default function PopcornAdsLandingPage({ landing }) {
             {landing.heroPromise || landing.servingLine}
           </p>
           <div className="mt-3 flex flex-wrap gap-3 text-sm">
-            {["Same-Day Response", "No Obligation", "Licensed & Insured", "3-Year Warranty"].map((t) => (
-              <span key={t} className="rounded-full border border-[#2d6d58] bg-[#145640] px-3 py-1 text-[#9fd4bf] font-semibold">
+            {[
+              "Same-Day Response",
+              "No Obligation",
+              "Licensed & Insured",
+              "3-Year Warranty",
+            ].map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-[#2d6d58] bg-[#145640] px-3 py-1 text-[#9fd4bf] font-semibold"
+              >
                 ✓ {t}
               </span>
             ))}
@@ -509,12 +548,17 @@ export default function PopcornAdsLandingPage({ landing }) {
 
       <footer className="border-t border-[#c8d0c4] bg-[#f7f8f4]">
         <div className="container-x py-6 text-sm text-[#44524d]">
-          <p className="font-semibold uppercase tracking-wide text-[#0f4f3a]">Service areas</p>
+          <p className="font-semibold uppercase tracking-wide text-[#0f4f3a]">
+            Service areas
+          </p>
           <p>{landing.servingLine}</p>
           <p className="mt-2">Hours: Mon-Sun, 8:00 AM - 9:00 PM</p>
-          <p className="mt-2">Insurance: Fully insured crew with protected setup.</p>
           <p className="mt-2">
-            Privacy: Form details are used only to prepare your quote and project follow-up.
+            Insurance: Fully insured crew with protected setup.
+          </p>
+          <p className="mt-2">
+            Privacy: Form details are used only to prepare your quote and
+            project follow-up.
           </p>
         </div>
       </footer>
