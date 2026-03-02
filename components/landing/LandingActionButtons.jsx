@@ -9,6 +9,13 @@ function track(event, payload) {
   }
 }
 
+function firePhoneConversion(href) {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag_report_call_conversion === "function") {
+    window.gtag_report_call_conversion(href);
+  }
+}
+
 export default function LandingActionButtons({
   city,
   phoneHref,
@@ -41,13 +48,14 @@ export default function LandingActionButtons({
       {showCall && (
         <a
           href={phoneHref}
-          onClick={() =>
+          onClick={() => {
             track("ads_phone_click", {
               city,
               service: "popcorn-ceiling-removal",
               location: "landing-page",
-            })
-          }
+            });
+            firePhoneConversion(phoneHref);
+          }}
           className={callClassName}
         >
           {phoneLabel}
@@ -56,4 +64,3 @@ export default function LandingActionButtons({
     </div>
   );
 }
-

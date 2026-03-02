@@ -48,6 +48,40 @@ gtag('js', new Date());
 gtag('config', 'AW-17986124771');`,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function gtag_report_call_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17986124771/D3QWCO__qIEcEOP3uYBD',
+      'value': 1.0,
+      'currency': 'CAD',
+      'event_callback': callback
+  });
+  return false;
+}`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17986124771/O6CgCNeNqIEcEOP3uYBD',
+      'event_callback': callback
+  });
+  return false;
+}`,
+          }}
+        />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"

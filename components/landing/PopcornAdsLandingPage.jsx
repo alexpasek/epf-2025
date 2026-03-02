@@ -217,18 +217,26 @@ export default function PopcornAdsLandingPage({ landing }) {
               </div>
 
               <div className="mt-4 hidden md:flex flex-wrap gap-3">
-                <a
-                  href={PHONE_HREF}
-                  className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-b from-[#f26437] to-[#df4b22] px-7 py-3.5 text-xl font-bold text-white shadow-[0_14px_24px_-15px_rgba(0,0,0,.65)]"
-                >
-                  <PhoneIcon className="h-5 w-5" /> Call for Free Quote
-                </a>
-                <a
-                  href="#quick-quote"
-                  className="inline-flex items-center gap-2 rounded-2xl border border-[#81a696] bg-[#145640] px-7 py-3.5 text-xl font-bold text-white"
-                >
-                  <EditIcon className="h-5 w-5" /> Get Quote Online
-                </a>
+                <LandingActionButtons
+                  city={landing.city}
+                  phoneHref={PHONE_HREF}
+                  quoteHref="#quick-quote"
+                  className="flex flex-wrap gap-3"
+                  phoneLabel={
+                    <span className="inline-flex items-center gap-2">
+                      <PhoneIcon className="h-5 w-5" />
+                      <span>Call for Free Quote</span>
+                    </span>
+                  }
+                  quoteLabel={
+                    <span className="inline-flex items-center gap-2">
+                      <EditIcon className="h-5 w-5" />
+                      <span>Get Quote Online</span>
+                    </span>
+                  }
+                  callClassName="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-b from-[#f26437] to-[#df4b22] px-7 py-3.5 text-xl font-bold text-white shadow-[0_14px_24px_-15px_rgba(0,0,0,.65)]"
+                  quoteClassName="inline-flex items-center gap-2 rounded-2xl border border-[#81a696] bg-[#145640] px-7 py-3.5 text-xl font-bold text-white"
+                />
               </div>
 
               <div className="mt-3 hidden items-center justify-start gap-0.5 rounded-md bg-[#0f4a3a]/92 px-3 py-2 text-base font-semibold text-white md:flex">
