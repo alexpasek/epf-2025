@@ -301,6 +301,17 @@ export default async function Post({ params }) {
       description: photo.description || fallback.description,
     };
   });
+  const isBurlingtonCostGuide =
+    post.slug === "popcorn-ceiling-removal-cost-burlington-2026-price-guide";
+  const keywordPanelTitle = isBurlingtonCostGuide
+    ? "Common Burlington terms homeowners use"
+    : "Mississauga ceiling terminology to know";
+  const keywordPanelDescription = isBurlingtonCostGuide
+    ? "Skim these before you call so your quote scope, neighborhood access, and timeline stay clear."
+    : "Skim these phrases before you call so conversations with our crew stay clear and focused.";
+  const quoteLocationLine = isBurlingtonCostGuide
+    ? "Share photos, ceiling heights, and timing. We reply the same day with Burlington neighborhood availability."
+    : "Share photos, ceiling heights, and timing. We reply the same day with Mississauga, Oakville, and GTA availability.";
 
   return (
     <div className="space-y-12 pb-12">
@@ -401,13 +412,8 @@ export default async function Post({ params }) {
       {post.keywords?.length > 0 && (
         <section className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
-            <h2 className="text-2xl font-semibold">
-              Mississauga ceiling terminology to know
-            </h2>
-            <p className="text-sm text-slate-500">
-              Skim these phrases before you call so conversations with our crew
-              stay clear and focused.
-            </p>
+            <h2 className="text-2xl font-semibold">{keywordPanelTitle}</h2>
+            <p className="text-sm text-slate-500">{keywordPanelDescription}</p>
             <ul className="mt-4 flex flex-wrap gap-2 text-sm text-slate-700">
               {post.keywords.map((k, idx) => (
                 <li
@@ -431,10 +437,7 @@ export default async function Post({ params }) {
             <h2 className="mt-2 text-3xl font-semibold">
               Get a popcorn ceiling quote today
             </h2>
-            <p className="mt-3 text-slate-600">
-              Share photos, ceiling heights, and timing. We reply the same day
-              with Mississauga, Oakville, and GTA availability.
-            </p>
+            <p className="mt-3 text-slate-600">{quoteLocationLine}</p>
             <div className="mt-4 space-y-2 text-sm text-slate-500">
               <p>• HEPA dust control and Level 5 skim finishing</p>
               <p>• Pot-light coordination and interior painting add-ons</p>
