@@ -1,5 +1,6 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
+import PopcornCeilingCostCalculator from "@/components/blog/PopcornCeilingCostCalculator";
 import { getPostBySlug } from "@/lib/posts";
 
 export const dynamic = "force-dynamic";
@@ -303,14 +304,21 @@ export default async function Post({ params }) {
   });
   const isBurlingtonCostGuide =
     post.slug === "popcorn-ceiling-removal-cost-burlington-2026-price-guide";
+  const showCostCalculator = post.slug === "popcorn-ceiling-removal-cost";
   const keywordPanelTitle = isBurlingtonCostGuide
     ? "Common Burlington terms homeowners use"
+    : showCostCalculator
+      ? "GTA popcorn ceiling cost terms homeowners search"
     : "Mississauga ceiling terminology to know";
   const keywordPanelDescription = isBurlingtonCostGuide
     ? "Skim these before you call so your quote scope, neighborhood access, and timeline stay clear."
+    : showCostCalculator
+      ? "These are the local authority phrases this guide covers across Toronto, Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke, and North York."
     : "Skim these phrases before you call so conversations with our crew stay clear and focused.";
   const quoteLocationLine = isBurlingtonCostGuide
     ? "Share photos, ceiling heights, and timing. We reply the same day with Burlington neighborhood availability."
+    : showCostCalculator
+      ? "Share photos, ceiling heights, and the cities you need priced. We reply the same day with GTA availability and a tighter written scope."
     : "Share photos, ceiling heights, and timing. We reply the same day with Mississauga, Oakville, and GTA availability.";
 
   return (
@@ -342,7 +350,13 @@ export default async function Post({ params }) {
         </div>
       </section>
 
-      <section className="container-x px-4 -mt-8">
+      {showCostCalculator ? (
+        <section className="container-x px-4 -mt-8">
+          <PopcornCeilingCostCalculator />
+        </section>
+      ) : null}
+
+      <section className={`container-x px-4 ${showCostCalculator ? "" : "-mt-8"}`}>
         <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
           <div className="prose-custom max-w-none text-slate-800">
             {renderContent(post.content || [])}

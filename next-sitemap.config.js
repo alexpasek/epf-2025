@@ -158,6 +158,7 @@ module.exports = {
         // Blog posts
         paths.push(
             { loc: "/blog/", changefreq: "weekly", priority: 0.8, lastmod: now },
+            { loc: "/blog/popcorn-ceiling-removal-cost/", changefreq: "monthly", priority: 0.7, lastmod: now },
             { loc: "/blog/popcorn-ceiling-removal-cost-timeline/", changefreq: "monthly", priority: 0.7, lastmod: now }
         );
 
