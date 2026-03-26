@@ -13,6 +13,17 @@ const ABSOLUTE_URL = `${BASE_URL}${SLUG}`;
 const SERVICES_URL = `${BASE_URL}/services/`;
 const INSTALL_URL = `${BASE_URL}/services/drywall-installation/`;
 const QUOTE_URL = `${BASE_URL}/quote/`;
+const EMAIL = CONTACT?.email || "info@epfproservices.com";
+const SERVICE_HUB_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "6855 Glen Erin Dr #33",
+  addressLocality: "Mississauga",
+  addressRegion: "ON",
+  postalCode: "L5N 1P6",
+  addressCountry: "CA",
+};
+const PROVIDER_DESCRIPTION =
+  "EPF Pro Services is a Mississauga drywall installation contractor handling board hanging, taping, sanding, and Level 4 to Level 5 finishing for condos, homes, basements, additions, and commercial buildouts.";
 
 const CORE_KEYWORDS = [
   "drywall installation Mississauga",
@@ -71,28 +82,24 @@ const KEYWORDS = [
 
 const FAQS = [
   {
-    q: "What does drywall installation cost in Mississauga?",
-    a: "Drywall installation Mississauga pricing depends on square footage, ceiling height, finish level, and project scope. Every project is unique—send drawings or photos for accurate itemized estimates tailored to your specific needs.",
+    q: "How much does drywall installation cost in Mississauga?",
+    a: "Drywall installation cost in Mississauga depends on square footage, ceiling height, finish level, board type, and access. A basement, condo, or commercial suite all price differently, so we quote from photos, drawings, or a site visit and spell out hanging, taping, mudding, sanding, and any primer or paint.",
   },
   {
-    q: "Do you handle both hanging and finishing?",
-    a: "Yes. Our drywall contractors for installation Mississauga manage complete projects: framing verification, drywall hanging Mississauga, drywall taping and mudding Mississauga, drywall sanding Mississauga, and optional painting. Choose level 4 finish Mississauga or level 5 finish Mississauga.",
+    q: "Do you install drywall in basements?",
+    a: "Yes. We handle basement drywall installation in Mississauga for rec rooms, bedrooms, home offices, rental suites, and utility-room transitions. That includes bulkheads, soffits, stair details, ceiling board, and the finish level needed for modern pot lights.",
   },
   {
-    q: "Can you replace damaged drywall?",
-    a: "We specialize in drywall replacement Mississauga for water damage, fire restoration, and renovations. Services include remove and replace drywall Mississauga, drywall installation after water damage Mississauga, and drywall installation after demolition Mississauga with insurance documentation.",
+    q: "Do you handle taping and mudding too?",
+    a: "Yes. Our Mississauga drywall crews handle the full installation scope: layout checks, board hanging, taping, mudding, sanding, and Level 4 or Level 5 finishing. If you want a paint-ready handoff, we build the quote around that exact standard instead of leaving the finish vague.",
   },
   {
-    q: "What project types do you handle?",
-    a: "Our teams complete basement drywall installation Mississauga, ceiling drywall installation Mississauga, drywall installation for additions Mississauga, and drywall installation for commercial buildouts Mississauga. We serve condos, homes, offices, and retail spaces.",
+    q: "Do you work in occupied homes and condos?",
+    a: "We do. For occupied homes and condo units in Mississauga we plan dust control, hallway protection, elevator bookings, quiet-hour work windows, and daily cleanup so the property stays manageable while the drywall install moves forward.",
   },
   {
-    q: "Do you work in high-rise condos?",
-    a: "Absolutely. We provide condo drywall installation Mississauga with building COI requirements, elevator bookings, quiet-hour compliance, and hallway protection—standard for Square One towers and Lakeshore condominiums.",
-  },
-  {
-    q: "Do you offer specialty finishes?",
-    a: "Yes. Every new drywall installation Mississauga can include skim coat Mississauga for ultra-smooth walls, perfect for modern lighting and high-gloss finishes. We also provide sheetrock installation Mississauga and gypsum board installation Mississauga.",
+    q: "Do you install drywall after plumbing/electrical rough-ins?",
+    a: "Yes. That is the normal sequence for most Mississauga renovations. We verify that plumbing, electrical, HVAC, backing, and inspections are ready before board goes up, then install drywall, tape, mud, sand, and prepare the space for the finishing trades.",
   },
 ];
 
@@ -134,14 +141,18 @@ function JsonLd() {
       {
         "@type": "Service",
         name: `${SERVICE} in ${CITY}`,
+        description:
+          "Drywall installation contractor in Mississauga for condos, homes, basements, ceilings, and office buildouts with hanging, taping, sanding, and Level 5 finishing.",
         serviceType: KEYWORDS,
         areaServed,
         provider: {
           "@type": "LocalBusiness",
           name: "EPF Pro Services",
+          description: PROVIDER_DESCRIPTION,
           telephone: phoneText,
+          email: EMAIL,
           url: "https://epfproservices.com",
-          image: "/logo.png",
+          image: `${BASE_URL}/logo.png`,
           sameAs: ["https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"],
           priceRange: "$$",
           aggregateRating: {
@@ -149,11 +160,7 @@ function JsonLd() {
             ratingValue: "4.9",
             reviewCount: "107",
           },
-          address: {
-            "@type": "PostalAddress",
-            addressRegion: "ON",
-            addressCountry: "CA",
-          },
+          address: SERVICE_HUB_ADDRESS,
         },
         offers: {
           "@type": "Offer",
@@ -224,6 +231,48 @@ export default function Page() {
   const images = [
     "/gallery/drywall-installation/drywall-instalation-mississauga/drywall-instalation-mississdauga.webp",
     ...Array.from({ length: 5 }, (_, i) => `/services/drywall/${i + 1}.webp`),
+  ];
+  const galleryAlts = [
+    "Drywall installation crew working in a Mississauga condo suite",
+    "Basement drywall installation in Mississauga with bulkheads and straight ceiling lines",
+    "Mississauga ceiling drywall installation after rough-ins were completed",
+    "Commercial drywall installation in Mississauga during fit-out framing stage",
+    "Level 5 drywall finishing in Mississauga before primer and paint",
+    "Completed Mississauga drywall installation ready for trim and paint",
+  ];
+  const authorityGuides = [
+    {
+      href: "/blog/basement-drywall-installation-mississauga/",
+      title: "Basement drywall installation Mississauga",
+      text: "Bulkheads, ceiling height, sound control, and finish expectations.",
+    },
+    {
+      href: "/blog/ceiling-drywall-installation-mississauga/",
+      title: "Ceiling drywall installation Mississauga",
+      text: "Pot-light planning, flat ceilings, and no wavy joints.",
+    },
+    {
+      href: "/blog/drywall-installation-after-water-damage-mississauga/",
+      title: "Drywall installation after water damage Mississauga",
+      text: "Replacement scope, drying, sealing, and paint-ready finishing.",
+    },
+    {
+      href: "/blog/commercial-drywall-installation-mississauga/",
+      title: "Commercial drywall installation Mississauga",
+      text: "Offices, clinics, retail units, and turnover planning.",
+    },
+  ];
+  const authorityProjects = [
+    {
+      href: "/blog/basement-drywall-install-mississauga-project/",
+      title: "Basement drywall install in Mississauga",
+      text: "Project notes from a full reframe with bulkheads and pot lights.",
+    },
+    {
+      href: "/blog/ceiling-rebuild-after-leak-oakville-project/",
+      title: "Ceiling rebuild after leak in Oakville",
+      text: "Real leak-driven replacement sequencing from opening to final finish.",
+    },
   ];
 
   return (
@@ -303,7 +352,7 @@ export default function Page() {
                   href="#quote-form"
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-white text-gray-900 hover:bg-gray-100 transition shadow-lg hover:shadow-2xl"
                 >
-                  Get Free Estimate
+                  Request Drywall Quote
                 </a>
               </div>
             </div>
@@ -531,7 +580,7 @@ export default function Page() {
               >
                 <img
                   src={src}
-                  alt={`Drywall installation Mississauga project ${index + 1}`}
+                  alt={galleryAlts[index % galleryAlts.length]}
                   className="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
                   loading="lazy"
                 />
@@ -601,6 +650,47 @@ export default function Page() {
                 <p className="text-gray-600">{step.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Pricing, Process, and Timeline in Mississauga
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A tighter drywall installation scope starts with a realistic price
+              range, a defined workflow, and a schedule that matches the site.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <article className="rounded-2xl border-2 border-purple-100 bg-purple-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Pricing</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Mississauga drywall pricing changes with board count, ceiling
+                height, finish level, elevator access, and whether the scope is
+                a basement, condo, or commercial unit.
+              </p>
+            </article>
+            <article className="rounded-2xl border-2 border-indigo-100 bg-indigo-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Process</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We check framing and rough-ins first, hang board, tape and mud,
+                sand under controlled dust conditions, then hand off for primer
+                or paint-ready finishing.
+              </p>
+            </article>
+            <article className="rounded-2xl border-2 border-blue-100 bg-blue-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Timeline</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Small rooms may move in a few working days. Full basements,
+                condo suites, and commercial scopes take longer because drying
+                time, staging, and inspections affect the schedule.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -794,20 +884,20 @@ export default function Page() {
                 href={phoneHref}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 rounded-full font-bold transition-all shadow-xl hover:scale-105"
               >
-                📞 Call for Free Quote
+                📞 Call Drywall Team
               </a>
               <a
                 href="#quote-form"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur border-2 border-white text-white hover:bg-white/30 rounded-full font-bold transition-all"
               >
-                Get Estimate
+                Request Drywall Quote
               </a>
             </div>
           </div>
 
           <div className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200">
             <h3 className="text-2xl font-bold text-center mb-4">
-              Trusted Installation Across Mississauga Neighbourhoods
+              Areas We Serve in Mississauga
             </h3>
             <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
               From Square One high-rises to Churchill Meadows estates and
@@ -825,6 +915,79 @@ export default function Page() {
                   {n.name}
                 </span>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Mississauga Drywall Guides and Project Pages
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Use the local guides below to move from the main drywall hub into
+              basement, ceiling, water-damage, and commercial install topics,
+              then back into the service page when you are ready for pricing.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+            <div className="rounded-3xl border-2 border-purple-100 bg-white p-8 shadow-sm">
+              <div className="flex items-center justify-between gap-4 mb-6">
+                <h3 className="text-2xl font-bold">Supporting drywall guides</h3>
+                <Link
+                  href="/services/drywall-installation/"
+                  className="text-purple-600 font-semibold hover:underline"
+                >
+                  Back to drywall hub
+                </Link>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {authorityGuides.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-2xl border border-gray-200 p-5 hover:border-purple-400 hover:shadow-md transition"
+                  >
+                    <p className="font-bold text-gray-900">{item.title}</p>
+                    <p className="mt-2 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border-2 border-indigo-100 bg-white p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6">
+                Project examples and nearby city pages
+              </h3>
+              <div className="space-y-4 mb-6">
+                {authorityProjects.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-2xl border border-gray-200 p-5 hover:border-indigo-400 hover:shadow-md transition"
+                  >
+                    <p className="font-bold text-gray-900">{item.title}</p>
+                    <p className="mt-2 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Link
+                  href="/services/drywall-installation/burlington/"
+                  className="rounded-2xl bg-purple-50 p-4 font-semibold text-purple-700 hover:bg-purple-100 transition"
+                >
+                  Drywall Installation Burlington
+                </Link>
+                <Link
+                  href="/services/drywall-installation/hamilton/"
+                  className="rounded-2xl bg-purple-50 p-4 font-semibold text-purple-700 hover:bg-purple-100 transition"
+                >
+                  Drywall Installation Hamilton
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -970,7 +1133,7 @@ export default function Page() {
                 href="#quote-form"
                 className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400 transition shadow-2xl hover:shadow-3xl border-2 border-white/30"
               >
-                Get Free Estimate
+                Request Drywall Quote
               </a>
             </div>
 
@@ -1155,7 +1318,7 @@ export default function Page() {
                     href="#quote-form"
                     className="inline-flex items-center px-6 py-3 border-2 border-purple-600 text-purple-600 font-semibold rounded-full hover:bg-purple-50 transition-all shadow-lg"
                   >
-                    Get Free Estimate
+                    Request Drywall Quote
                   </a>
                 </div>
               </div>
@@ -1184,13 +1347,13 @@ export default function Page() {
               href={phoneHref}
               className="flex-1 text-center px-6 py-3 bg-white text-purple-600 font-bold rounded-full hover:bg-gray-100 transition shadow-lg"
             >
-              📞 Call Now
+              📞 Call Drywall Team
             </a>
             <a
               href="#quote-form"
               className="flex-1 text-center px-6 py-3 bg-white/20 backdrop-blur text-white font-bold rounded-full hover:bg-white/30 transition border-2 border-white/30"
             >
-              Get Quote
+              Drywall Quote
             </a>
           </div>
         </div>

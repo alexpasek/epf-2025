@@ -1,6 +1,6 @@
 // app/services/page.jsx
 import Link from "next/link";
-import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
+import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
 
 export const revalidate = 86400;
 
@@ -61,7 +61,7 @@ const services = [
     ],
   },
   {
-    slug: "/services/wallpaper/",
+    slug: "/services/wallpaper-removal/",
     name: "Wallpaper Removal",
     tagline:
       "Score, soften, remove backing & adhesive, wall skim to Level 5, bond prime.",
@@ -88,17 +88,17 @@ const services = [
     slug: "/services/baseboard-installation/",
     name: "Baseboard Installation & Finishing",
     tagline:
-      "Popcorn ceiling removal clean-up plus new baseboards, shoe moulding, caulk and paint-ready delivery.",
+      "Trim replacement, shoe moulding, caulking, and paint-ready baseboard installation for homes and condos.",
     bullets: [
       "Measure, cut and cope MDF/wood baseboards for tight inside corners",
       "Finish nail, fill, sand and caulk joints for a seamless look",
-      "Match profiles after popcorn removal or flooring upgrades",
+      "Match profiles after flooring upgrades, drywall repairs, or trim replacement",
       "Optional spray/brush finish so trim is ready when walls are painted",
     ],
   },
 ];
 
-const cities = [
+const popcornCities = [
   {
     href: "/popcorn-ceiling-removal/mississauga/",
     label: "Popcorn ceiling removal Mississauga",
@@ -146,14 +146,98 @@ const cities = [
   },
 ];
 
+const drywallInstallCities = [
+  {
+    href: "/services/drywall-installation/mississauga/",
+    label: "Drywall installation Mississauga",
+  },
+  {
+    href: "/services/drywall-installation/burlington/",
+    label: "Drywall installation Burlington",
+  },
+  {
+    href: "/services/drywall-installation/hamilton/",
+    label: "Drywall installation Hamilton",
+  },
+];
+
+const drywallRepairCities = [
+  {
+    href: "/services/drywall-repair/mississauga/",
+    label: "Drywall repair Mississauga",
+  },
+  {
+    href: "/services/drywall-repair/oakville/",
+    label: "Drywall repair Oakville",
+  },
+  {
+    href: "/services/drywall-repair/burlington/",
+    label: "Drywall repair Burlington",
+  },
+  {
+    href: "/services/drywall-repair/hamilton/",
+    label: "Drywall repair Hamilton",
+  },
+  {
+    href: "/services/drywall-repair/milton/",
+    label: "Drywall repair Milton",
+  },
+  {
+    href: "/services/drywall-repair/grimsby/",
+    label: "Drywall repair Grimsby",
+  },
+];
+
+const drywallSnippets = [
+  {
+    title: "Mississauga condo turnover",
+    quote:
+      "Board, tape, skim, and final touch-ups all stayed aligned so painting started right on schedule.",
+    href: "/services/drywall-installation/mississauga/",
+  },
+  {
+    title: "Oakville kitchen patching",
+    quote:
+      "The patch lines disappeared under cabinet lighting. Exactly the kind of finish we needed.",
+    href: "/services/drywall-repair/oakville/",
+  },
+  {
+    title: "Hamilton addition finishing",
+    quote:
+      "New room seams were invisible after finishing and the crew kept the work area clean every day.",
+    href: "/services/drywall-installation/hamilton/",
+  },
+];
+
+const drywallThumbs = [
+  {
+    src: "/gallery/drywall-installation/drywall-installation-hero.webp",
+    alt: "Drywall installation project in Mississauga ready for Level 5 finishing",
+    href: "/services/drywall-installation/mississauga/",
+    label: "Mississauga drywall installation",
+  },
+  {
+    src: "/gallery/drywall-repair/drywall-repair-service00004.webp",
+    alt: "Drywall repair and skim coat project in Oakville",
+    href: "/services/drywall-repair/oakville/",
+    label: "Oakville drywall repair",
+  },
+  {
+    src: "/gallery/drywall-repair/drywall-repair-service00002.webp",
+    alt: "Hamilton ceiling water damage drywall repair",
+    href: "/services/drywall-repair/hamilton/",
+    label: "Hamilton drywall repair",
+  },
+];
+
 function JsonLd() {
   const serviceNodes = services.map((s) => ({
     "@type": "Service",
     "@id": `${s.slug}#service`,
     name: s.name,
     serviceType: s.name,
-    provider: { "@id": "/#business" },
-    areaServed: cities.map((c) => c.city || c.label),
+    provider: { "@id": `${SITE_URL}/#org` },
+    areaServed: popcornCities.map((c) => c.city || c.label),
     url: s.slug,
     description: s.tagline,
   }));
@@ -205,7 +289,7 @@ function JsonLd() {
             name: "Do you work in my area?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes. We serve Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines.",
+              text: "Yes. We serve Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines, with dedicated drywall city pages for core markets.",
             },
           },
           {
@@ -359,6 +443,97 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="mt-10 grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
+        <div className="card p-6 bg-white">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-semibold">Drywall city pages</h2>
+            <p className="mt-2 text-gray-700">
+              Drywall is not tucked under popcorn here. Use the install and repair
+              hubs below for direct city-specific scopes, proof, and contact paths.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div>
+              <h3 className="text-lg font-semibold">Drywall installation hubs</h3>
+              <div className="mt-3 grid gap-3">
+                {drywallInstallCities.map((city) => (
+                  <Link
+                    key={city.href}
+                    href={city.href}
+                    className="rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition"
+                  >
+                    {city.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold">Drywall repair hubs</h3>
+              <div className="mt-3 grid gap-3">
+                {drywallRepairCities.map((city) => (
+                  <Link
+                    key={city.href}
+                    href={city.href}
+                    className="rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition"
+                  >
+                    {city.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="card p-6 bg-white">
+          <h2 className="text-2xl font-semibold">Drywall proof points</h2>
+          <div className="mt-4 space-y-4">
+            {drywallSnippets.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-xl border border-slate-200 bg-slate-50 p-4"
+              >
+                <p className="text-sm text-gray-700">“{item.quote}”</p>
+                <p className="mt-2 font-semibold">{item.title}</p>
+                <Link
+                  href={item.href}
+                  className="mt-2 inline-flex text-sm font-semibold text-blue-700 hover:underline"
+                >
+                  Open drywall page →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-10 card p-6 bg-white">
+        <h2 className="text-2xl font-semibold">Recent drywall thumbnails</h2>
+        <p className="mt-2 text-gray-700">
+          Direct paths into drywall installation and repair pages, not popcorn-first routes.
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {drywallThumbs.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition"
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="p-4 text-sm font-semibold text-slate-800">
+                {item.label}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* WHY CHOOSE US + HOW WE WORK */}
       <section id="why-us" className="mt-10 grid gap-6 md:grid-cols-2">
         <div className="card p-6 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100">
@@ -475,20 +650,55 @@ export default function ServicesPage() {
       <section id="areas" className="mt-10 card p-6 bg-white">
         <h2 className="text-2xl font-semibold">Local service areas</h2>
         <p className="mt-2 text-gray-700">
-          We provide popcorn ceiling removal, drywall finishing, wallpaper
-          removal, and interior painting across:
+          We provide popcorn ceiling removal, drywall installation, drywall repair,
+          wallpaper removal, and interior painting across the GTA and Niagara.
         </p>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {cities.map((c) => (
-            <Link
-              key={c.href}
-              href={c.href}
-              className="block rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition"
-              title={c.label}
-            >
-              {c.label}
-            </Link>
-          ))}
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          <div>
+            <h3 className="text-lg font-semibold">Popcorn city hubs</h3>
+            <div className="mt-3 grid gap-3">
+              {popcornCities.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className="block rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition"
+                  title={c.label}
+                >
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">Drywall installation</h3>
+            <div className="mt-3 grid gap-3">
+              {drywallInstallCities.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className="block rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition"
+                  title={c.label}
+                >
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">Drywall repair</h3>
+            <div className="mt-3 grid gap-3">
+              {drywallRepairCities.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className="block rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition"
+                  title={c.label}
+                >
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
         <p className="mt-3 text-sm text-gray-600">
           Need a quick schedule check in your city?{" "}
@@ -498,14 +708,8 @@ export default function ServicesPage() {
           or call us.
         </p>
         <p className="mt-3 text-sm text-gray-700">
-          Looking for drywall repair in Mississauga?{" "}
-          <Link
-            href="/services/drywall-repair/mississauga/"
-            className="underline"
-          >
-            Drywall repair Mississauga
-          </Link>
-          .
+          Drywall install and repair city pages are live sitewide, so users can
+          jump straight to the right scope instead of routing through popcorn pages.
         </p>
       </section>
 
@@ -605,7 +809,8 @@ export default function ServicesPage() {
 function anchorFor(name) {
   const id = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   if (id.includes("popcorn")) return "popcorn";
-  if (id.includes("drywall")) return "drywall";
+  if (id.includes("drywall-installation")) return "drywall-installation";
+  if (id.includes("drywall-repair")) return "drywall-repair";
   if (id.includes("wallpaper")) return "wallpaper";
   if (id.includes("painting")) return "painting";
   return id;

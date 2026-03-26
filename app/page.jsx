@@ -15,14 +15,14 @@ import {
 export const revalidate = 86400;
 
 export const metadata = {
-  title: "Popcorn Ceiling Removal & Interior Finishing — GTA",
+  title: "Popcorn Ceiling Removal, Drywall & Interior Finishing — GTA",
   description:
-    "EPF Pro Services removes popcorn ceilings, wallpaper, and finishes drywall + paint with dust control and Level 5 smoothness. Serving Toronto, Mississauga, Oakville, Burlington, Hamilton and beyond.",
+    "EPF Pro Services handles popcorn ceiling removal, drywall installation, drywall repair, wallpaper removal, and paint-ready interior finishing with dust control and Level 5 smoothness across the GTA.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Popcorn Ceiling Removal & Interior Finishing — GTA",
+    title: "Popcorn Ceiling Removal, Drywall & Interior Finishing — GTA",
     description:
-      "Dust-contained popcorn ceiling removal, drywall finishing, wallpaper removal, and painting with Level 5 results throughout the GTA.",
+      "Dust-contained popcorn ceiling removal, drywall installation, drywall repair, wallpaper removal, and painting with Level 5 results throughout the GTA.",
     url: "/",
     type: "website",
   },
@@ -48,13 +48,15 @@ function JsonLd() {
           name: "Greater Toronto Area",
         },
         description:
-          "Dust-controlled popcorn ceiling removal, wallpaper stripping, drywall repair and interior painting finished to Level 5 smoothness across the GTA.",
+          "Dust-controlled popcorn ceiling removal, drywall installation, drywall repair, wallpaper stripping, and interior painting finished to Level 5 smoothness across the GTA.",
       },
       {
         "@type": "Service",
-        name: "Popcorn Ceiling Removal & Finishing",
+        name: "Popcorn Ceiling Removal, Drywall & Interior Finishing",
         serviceType: [
           "Popcorn Ceiling Removal",
+          "Drywall Installation",
+          "Drywall Repair",
           "Wallpaper Removal",
           "Drywall Taping & Skim Coat (Level 5)",
           "Interior Painting",
@@ -131,6 +133,84 @@ export default function Page() {
     href: videoPagePath(video),
   }));
 
+  const drywallInstallHubs = [
+    {
+      href: "/services/drywall-installation/mississauga/",
+      title: "Drywall Installation Mississauga",
+      copy: "Condos, basements, and commercial builds with hanging, taping, and Level 5 finishing.",
+    },
+    {
+      href: "/services/drywall-installation/burlington/",
+      title: "Drywall Installation Burlington",
+      copy: "Residential additions, tenant fit-outs, and smooth wall packages for Burlington homes.",
+    },
+    {
+      href: "/services/drywall-installation/hamilton/",
+      title: "Drywall Installation Hamilton",
+      copy: "Basements, lofts, industrial fit-outs, and renovation-ready board + finish scopes.",
+    },
+  ];
+
+  const drywallRepairHubs = [
+    {
+      href: "/services/drywall-repair/mississauga/",
+      title: "Drywall Repair Mississauga",
+      copy: "Emergency leak repairs, seam fixes, trade cut-outs, and paint-ready patching.",
+    },
+    {
+      href: "/services/drywall-repair/oakville/",
+      title: "Drywall Repair Oakville",
+      copy: "Premium finishing for estates, condos, and waterfront homes with critical-light checks.",
+    },
+    {
+      href: "/services/drywall-repair/burlington/",
+      title: "Drywall Repair Burlington",
+      copy: "Fast patching, water damage restoration, and condo-friendly scheduling.",
+    },
+    {
+      href: "/services/drywall-repair/hamilton/",
+      title: "Drywall Repair Hamilton",
+      copy: "Water damage, cracks, and commercial repair scopes across Hamilton and Stoney Creek.",
+    },
+    {
+      href: "/services/drywall-repair/milton/",
+      title: "Drywall Repair Milton",
+      copy: "Builder deficiency touch-ups, water damage restoration, and family-home patching.",
+    },
+    {
+      href: "/services/drywall-repair/grimsby/",
+      title: "Drywall Repair Grimsby",
+      copy: "Homeowner-friendly service for cracks, leaks, and clean paint-ready repairs.",
+    },
+  ];
+
+  const drywallTestimonials = [
+    {
+      name: "Marco R.",
+      location: "Oakville renovation",
+      quote:
+        "Bulkhead repairs blended perfectly. Ready for paint with a smooth Level 5 finish.",
+      href: "/services/drywall-repair/oakville/",
+      cta: "See Oakville drywall repair",
+    },
+    {
+      name: "Marta W.",
+      location: "Stoney Creek addition",
+      quote:
+        "New bedroom added and the seams disappeared after finishing. On schedule and professional.",
+      href: "/services/drywall-installation/hamilton/",
+      cta: "See Hamilton drywall installation",
+    },
+    {
+      name: "Trade client",
+      location: "Mississauga condo turnover",
+      quote:
+        "Board, tape, skim, and repair coordination all stayed on timeline so paint could roll immediately.",
+      href: "/services/drywall-installation/mississauga/",
+      cta: "See Mississauga drywall installation",
+    },
+  ];
+
   const galleryItems = [
     {
       src: "/home/1.webp",
@@ -141,7 +221,8 @@ export default function Page() {
       headline: "Leslieville Condo",
       blurb: "Ceiling encapsulation and Level 5 skim in a high-rise bedroom.",
       bullets: ["Night work schedule", "Encapsulated elevators"],
-      href: "/services/popcorn-ceiling-removal/", // ✅ Link to service hub
+      href: "/services/popcorn-ceiling-removal/",
+      ctaLabel: "Toronto popcorn ceiling removal →",
     },
     {
       src: "/home/2.webp",
@@ -152,18 +233,20 @@ export default function Page() {
       headline: "Port Credit Family Room",
       blurb: "Painted popcorn removed, joints repaired, bright repaint.",
       bullets: ["Dust control", "Pot light layout"],
-      href: "/services/popcorn-ceiling-removal/", // ✅ Link to service hub
+      href: "/services/popcorn-ceiling-removal/",
+      ctaLabel: "Mississauga popcorn ceiling removal →",
     },
     {
-      src: "/home/3.webp",
-      alt: "Oakville kitchen with ceiling repaired and painted",
-      city: "Oakville",
-      nbh: "Joshua Creek",
-      service: "Drywall & Paint",
-      headline: "Oakville Kitchen",
-      blurb: "Kitchen reno patched, skimmed and painted to match cabinets.",
-      bullets: ["Cabinet protection", "Colour matching"],
-      href: "/services/drywall-installation/", // ✅ Link to drywall service
+      src: "/gallery/drywall-installation/drywall-installation-hero.webp",
+      alt: "Drywall installation crew hanging and finishing new board in Mississauga",
+      city: "Mississauga",
+      nbh: "City Centre",
+      service: "Drywall Installation",
+      headline: "Mississauga Condo Build-Out",
+      blurb: "Board hanging, taping, and Level 5 finishing for a multi-room condo refresh.",
+      bullets: ["Condo logistics", "Paint-ready handoff"],
+      href: "/services/drywall-installation/mississauga/",
+      ctaLabel: "Mississauga drywall installation →",
     },
     {
       src: "/home/4.webp",
@@ -174,19 +257,20 @@ export default function Page() {
       headline: "Roseland Stucco ceiling removal",
       blurb: "Tall foyer scraped, skimmed and painted with scaffolding.",
       bullets: ["Two-storey access", "Critical-light inspection"],
-      href: "/services/popcorn-ceiling-removal/", // ✅ Link to service hub
+      href: "/services/popcorn-ceiling-removal/",
+      ctaLabel: "Burlington popcorn ceiling removal →",
     },
     {
-      src: "/home/5.webp",
-      alt: "Smooth ceiling with recessed lights installed",
-      city: "Milton",
-      nbh: "Bronte Meadows",
-      service: "Electrical coordination",
-      headline: "Milton Lighting Upgrade",
-      blurb:
-        "Removed texture, added pot lights and delivered a Level 5 finish.",
-      bullets: ["Trades coordination", "Same-week turnaround"],
-      href: "/services/interior-painting/", // ✅ Link to painting service
+      src: "/gallery/drywall-repair/drywall-repair-service00004.webp",
+      alt: "Drywall repair and skim coat finishing in Oakville kitchen renovation",
+      city: "Oakville",
+      nbh: "Joshua Creek",
+      service: "Drywall Repair",
+      headline: "Oakville Kitchen Patch + Skim",
+      blurb: "Kitchen reno patched, skimmed, and blended for a clean repaint under cabinet lighting.",
+      bullets: ["Cabinet protection", "Invisible patch lines"],
+      href: "/services/drywall-repair/oakville/",
+      ctaLabel: "Oakville drywall repair →",
     },
     {
       src: "/home/6.webp",
@@ -198,22 +282,55 @@ export default function Page() {
       blurb:
         "Multi-layer wallpaper stripped, skimmed and painted calm neutrals.",
       bullets: ["Adhesive washing", "Colour consultation"],
-      href: "/services/wallpaper-removal/", // ✅ Link to wallpaper service
+      href: "/services/wallpaper-removal/",
+      ctaLabel: "Hamilton wallpaper removal →",
+    },
+    {
+      src: "/gallery/drywall-repair/drywall-repair-service00002.webp",
+      alt: "Hamilton ceiling water damage drywall repair with seamless finish",
+      city: "Hamilton",
+      nbh: "Stoney Creek",
+      service: "Drywall Repair",
+      headline: "Hamilton Leak Recovery",
+      blurb: "Ceiling water damage repair, stain blocking, and final Level 5-ready surface.",
+      bullets: ["Moisture checks", "Same-week repair slot"],
+      href: "/services/drywall-repair/hamilton/",
+      ctaLabel: "Hamilton drywall repair →",
+    },
+    {
+      src: "/gallery/drywall-repair/drywall-repair-service00001.webp",
+      alt: "Drywall installation and finishing in Burlington addition",
+      city: "Burlington",
+      nbh: "Roseland",
+      service: "Drywall Installation",
+      headline: "Burlington Addition Finish",
+      blurb: "Fresh board, taped corners, and Level 5 prep for a bright family-room addition.",
+      bullets: ["Board + finish", "Renovation scheduling"],
+      href: "/services/drywall-installation/burlington/",
+      ctaLabel: "Burlington drywall installation →",
     },
   ];
 
   const serviceHighlights = [
     {
       title: "Popcorn Ceiling Removal",
-      copy: "Scrape or encapsulate, skim-coat, sanding with HEPA vacuums, prime and paint-ready finish. Ideal for condos, bungalows and tall foyers.",
+      copy: "Scrape or encapsulate, skim-coat, sand with HEPA vacuums, then hand off a bright paint-ready finish for condos, bungalows, and tall foyers.",
+      href: "/services/popcorn-ceiling-removal/",
     },
     {
-      title: "Level 5 Smooth Finish",
-      copy: "Multiple skim passes, vacuum sanding, critical-light inspection and primer so ceilings look perfect from every angle.",
+      title: "Drywall Installation",
+      copy: "Board hanging, taping, bulkheads, ceilings, and Level 4/5 finishing for basements, additions, condos, and commercial fit-outs.",
+      href: "/services/drywall-installation/",
     },
     {
-      title: "Lighting & Repairs",
-      copy: "Coordinate pot lights, fixtures, fan boxes, crack repairs and water stains all before we paint so it’s turnkey.",
+      title: "Drywall Repair",
+      copy: "Water damage, cracks, trade cut-outs, and invisible patching for walls and ceilings that need a true seamless blend.",
+      href: "/services/drywall-repair/",
+    },
+    {
+      title: "Wallpaper Removal",
+      copy: "Adhesive wash, skim, and primer so stripped walls are actually ready for paint instead of needing another trade later.",
+      href: "/services/wallpaper-removal/",
     },
   ];
 
@@ -247,8 +364,9 @@ export default function Page() {
       href: "/services/popcorn-ceiling-removal/",
       current: true,
     },
+    { label: "Drywall Installation", href: "/services/drywall-installation/" },
+    { label: "Drywall Repair", href: "/services/drywall-repair/" },
     { label: "Wallpaper Removal", href: "/services/wallpaper-removal/" },
-    { label: "Drywall Finishing", href: "/services/drywall-installation/" },
     { label: "Interior Painting", href: "/services/interior-painting/" },
     { label: "Our Work", href: "/our-work/" },
   ];
@@ -263,15 +381,15 @@ export default function Page() {
           <div className="grid gap-10 lg:grid-cols-[3fr_2fr]">
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-amber-700 font-semibold">
-                Popcorn ceiling removal • Level 5 smooth
+                Popcorn ceilings • Drywall • Paint-ready finishing
               </p>
               <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
-                Popcorn ceiling removal without the mess.
+                Popcorn ceilings, drywall, and paint-ready interiors without the mess.
               </h1>
               <p className="mt-4 text-lg text-slate-700">
-                EPF Pro Services removes popcorn ceilings throughout the GTA
-                with dust containment, Level 5 skim coating, and concierge-level
-                communication.
+                EPF Pro Services handles popcorn ceiling removal, drywall installation,
+                drywall repair, wallpaper removal, and Level 5 finishing throughout
+                the GTA with dust containment and concierge-level communication.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a href={PHONE_HREF} className="btn-cta">
@@ -315,9 +433,16 @@ export default function Page() {
                 <Link
                   href="/services/drywall-installation/"
                   className="pill"
-                  title="Drywall finishing services"
+                  title="Drywall installation services"
                 >
-                  Drywall Finishing
+                  Drywall Installation
+                </Link>
+                <Link
+                  href="/services/drywall-repair/"
+                  className="pill"
+                  title="Drywall repair services"
+                >
+                  Drywall Repair
                 </Link>
                 <Link
                   href="/services/interior-painting/"
@@ -363,12 +488,12 @@ export default function Page() {
             Video walk-throughs
           </p>
           <h2 className="mt-2 text-3xl font-semibold">
-            Watch how we prep, skim and deliver Level 5 ceilings
+            Watch how we prep, skim, board, and deliver Level 5 finishes
           </h2>
           <p className="mt-3 text-slate-600">
-            Quick clips from recent popcorn ceiling projects show our
-            containment, sanding, and final handoffs. Every job follows the same
-            playbook.
+            Quick clips from recent popcorn ceiling and drywall projects show our
+            containment, sanding, board prep, and final handoffs. Every job follows
+            the same quality playbook.
           </p>
           <div className="mt-3">
             <Link
@@ -420,8 +545,8 @@ export default function Page() {
         <OurWorkGallery
           items={galleryItems}
           menuItems={galleryMenu}
-          title="Real popcorn ceiling removal & interior finishing results"
-          description="Bright, dust-free projects across Toronto, Mississauga, Oakville, Burlington, Milton, Hamilton and more."
+          title="Real popcorn ceiling, drywall, wallpaper & paint-ready results"
+          description="Bright, dust-controlled projects across Toronto, Mississauga, Oakville, Burlington, Milton, Hamilton and more."
           areas={cities.map((c) => c.name)}
           business={{
             name: BUSINESS_NAME,
@@ -438,14 +563,14 @@ export default function Page() {
             What’s included
           </p>
           <h2 className="mt-2 text-3xl font-semibold">
-            Popcorn ceiling removal done end-to-end
+            Core finishing services, clearly separated
           </h2>
           <p className="mt-3 text-slate-600">
-            One crew handles containment, removal, Level 5 skim and paint, so
-            you don’t juggle multiple trades.
+            Popcorn ceilings, drywall installation, drywall repair, and wallpaper
+            removal each have their own workflow, scope, and city pages.
           </p>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {serviceHighlights.map((service) => (
             <article
               key={service.title}
@@ -455,8 +580,95 @@ export default function Page() {
                 {service.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{service.copy}</p>
+              <Link
+                href={service.href}
+                className="mt-4 inline-flex text-sm font-semibold text-amber-700 hover:underline"
+              >
+                Explore service →
+              </Link>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="container-x">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-700 font-semibold">
+              Drywall Installation Hubs
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold">
+              Drywall installation city pages
+            </h2>
+            <div className="mt-6 grid gap-4">
+              {drywallInstallHubs.map((hub) => (
+                <Link
+                  key={hub.href}
+                  href={hub.href}
+                  className="rounded-2xl border border-slate-200 p-5 hover:border-blue-300 hover:bg-slate-50 transition"
+                >
+                  <div className="font-semibold text-slate-900">{hub.title}</div>
+                  <p className="mt-1 text-sm text-slate-600">{hub.copy}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-700 font-semibold">
+              Drywall Repair Hubs
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold">
+              Drywall repair city pages
+            </h2>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {drywallRepairHubs.map((hub) => (
+                <Link
+                  key={hub.href}
+                  href={hub.href}
+                  className="rounded-2xl border border-slate-200 p-5 hover:border-blue-300 hover:bg-slate-50 transition"
+                >
+                  <div className="font-semibold text-slate-900">{hub.title}</div>
+                  <p className="mt-1 text-sm text-slate-600">{hub.copy}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-x">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
+              Drywall Review Snippets
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold">
+              Drywall clients mention finish quality, not patch lines
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {drywallTestimonials.map((item) => (
+              <article
+                key={item.name + item.location}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
+              >
+                <p className="text-sm leading-7 text-slate-700">“{item.quote}”</p>
+                <p className="mt-4 text-sm font-semibold text-slate-900">
+                  {item.name}
+                </p>
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                  {item.location}
+                </p>
+                <Link
+                  href={item.href}
+                  className="mt-4 inline-flex text-sm font-semibold text-blue-700 hover:underline"
+                >
+                  {item.cta}
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -464,7 +676,7 @@ export default function Page() {
       <section className="container-x grid gap-8 lg:grid-cols-2">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">
-            Our 4-step popcorn ceiling plan
+            Our 4-step finishing plan
           </h2>
           <ul className="mt-4 space-y-3 text-slate-700">
             {processSteps.map((step, idx) => (
@@ -477,8 +689,8 @@ export default function Page() {
             ))}
           </ul>
           <div className="mt-6 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600">
-            Need electrical, pot lights or crown? We coordinate with trusted
-            partners so the ceiling is ready before paint.
+            Need electrical, pot lights, drywall replacement, or crown? We coordinate
+            scopes so ceilings and walls are ready before paint.
           </div>
         </div>
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -505,16 +717,25 @@ export default function Page() {
               className="text-sm font-semibold text-amber-700 hover:underline"
               title="Popcorn ceiling removal services across the GTA"
             >
-          popcorn ceiling removal services across the GTA
+              Popcorn ceiling removal services across the GTA
             </Link>
           </div>
           <div className="mt-3">
             <Link
-              href="/services/drywall-repair/mississauga/"
+              href="/services/drywall-installation/mississauga/"
               className="text-sm font-semibold text-slate-700 hover:underline"
-              title="Drywall repair in Mississauga"
+              title="Drywall installation in Mississauga"
             >
-              Drywall repair in Mississauga
+              Drywall installation in Mississauga
+            </Link>
+          </div>
+          <div className="mt-3">
+            <Link
+              href="/services/drywall-repair/oakville/"
+              className="text-sm font-semibold text-slate-700 hover:underline"
+              title="Drywall repair in Oakville"
+            >
+              Drywall repair in Oakville
             </Link>
           </div>
         </div>

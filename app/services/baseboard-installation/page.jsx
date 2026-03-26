@@ -1,12 +1,17 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
-import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
+import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
 import { BASEBOARD_SERVICE_AREAS } from "./service-areas";
+import {
+  absoluteServiceUrl,
+  buildBaseboardHubGraph,
+} from "./schema";
 
 export const revalidate = 86400;
 
 const SERVICE_URL = "/services/baseboard-installation/";
+const ABSOLUTE_SERVICE_URL = absoluteServiceUrl(SERVICE_URL);
 const HERO_IMG = "/services/baseboard-installation.jpg";
 const HERO_IMAGE =
   "/gallery/baseboard-installation/baseboard-installation00003.jpg";
@@ -24,14 +29,14 @@ export const metadata = {
     "shoe moulding installation",
     "baseboards near me",
   ],
-  alternates: { canonical: SERVICE_URL },
+  alternates: { canonical: ABSOLUTE_SERVICE_URL },
   openGraph: {
     title: "Baseboard Installation GTA | Professional Baseboard Contractors",
     description:
       "Professional baseboard installation across the Greater Toronto Area. Expert baseboard installation, baseboard replacement, shoe moulding. Licensed contractor.",
-    url: SERVICE_URL,
+    url: ABSOLUTE_SERVICE_URL,
     type: "website",
-    images: HERO_IMG ? [{ url: HERO_IMG }] : [],
+    images: HERO_IMG ? [{ url: `${SITE_URL}${HERO_IMG}` }] : [],
   },
   robots: { index: true, follow: true },
 };
@@ -99,7 +104,7 @@ const FAQS = [
     a: "Cost depends on linear footage, profile type (MDF vs hardwood), ceiling height, and complexity. Most GTA homes range $8-15 per linear foot installed. Share room dimensions for an accurate quote.",
   },
   {
-    q: "Can you install baseboards after popcorn ceiling removal?",
+    q: "Can you install baseboards after flooring, painting, or drywall work?",
     a: "Yes. Once ceilings are Level 5 smooth and primed we install new trim while protection is still in place, so there's no dust on fresh baseboards.",
   },
   {
@@ -129,27 +134,18 @@ const FAQS = [
 ];
 
 function JsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Baseboard Installation & Trim Finishing",
-    serviceType: "Baseboard installation",
-    url: SERVICE_URL,
-    provider: { "@id": "/#business" },
+  const data = buildBaseboardHubGraph({
+    serviceUrl: ABSOLUTE_SERVICE_URL,
     description:
-      "Baseboard installation, shoe moulding, caulk and paint-ready trim after popcorn ceiling removal across the Greater Toronto Area.",
-    areaServed: BASEBOARD_SERVICE_AREAS.map((area) => area.name),
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "CAD",
-      availabilityStarts: new Date().toISOString(),
-      url: SERVICE_URL,
-    },
-  };
+      "Professional baseboard installation, baseboard replacement, shoe moulding, quarter round, caulking, and paint-ready trim finishing across the Greater Toronto Area.",
+    areas: BASEBOARD_SERVICE_AREAS,
+    faqs: FAQS,
+  });
 
   return (
     <script
       type="application/ld+json"
+      suppressHydrationWarning
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
@@ -610,16 +606,16 @@ export default function BaseboardInstallationPage() {
               </Link>
 
               <Link
-                href="/blog/baseboard-installation-after-popcorn-ceiling-removal/"
+                href="/services/baseboard-installation/mississauga/"
                 className="group bg-white p-6 rounded-2xl border-2 border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all"
               >
                 <div className="text-4xl mb-4">🏠</div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
-                  After Ceiling Removal
+                  Mississauga City Guide
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Why baseboard installation pairs perfectly with ceiling
-                  smoothing projects
+                  Local neighborhoods, pricing guidance, and trim-installation
+                  details for Mississauga homes and condos
                 </p>
               </Link>
 

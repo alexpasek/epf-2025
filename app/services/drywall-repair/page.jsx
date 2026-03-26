@@ -25,7 +25,7 @@ const CORE_KEYWORDS = [
 
 export const metadata = {
   title:
-    "Drywall Repair Services | Seamless Patching & Water Damage Specialists",
+    "Drywall Repair Services | Seamless Patching & Water Damage Specialists | EPF Pro Services",
   description:
     "Professional drywall repair company GTA. Expert patching, crack fixes, water damage repair. HEPA sanding, Level 5 finish. Free quote.",
   keywords: [
@@ -68,7 +68,7 @@ export const metadata = {
   ],
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "GTA Drywall Repair Services | Seamless, Paint-Ready Finish",
+    title: "GTA Drywall Repair Services | Seamless, Paint-Ready Finish | EPF Pro Services",
     description:
       "Professional drywall repair company for holes, cracks, water damage, and trade cut-outs. Seamless, paint-ready drywall repair across the GTA.",
     url: PAGE_URL,
@@ -1616,7 +1616,7 @@ export default function Page() {
           {/* SERVICE AREAS */}
           <section className="rounded-3xl border bg-white p-6 shadow-sm">
             <h3 className="text-2xl font-semibold">
-              Drywall repair across the GTA & Golden Horseshoe
+              Drywall Repair Near You
             </h3>
             <p className="mt-2 text-gray-600">
               Same team, different neighborhoods: Mississauga condos, Burlington
@@ -1729,13 +1729,47 @@ export default function Page() {
             </div>
             <p className="mt-4 text-gray-600 text-sm">
               Professional <strong>drywall repair services</strong> available in
-              all GTA regions. For specialized popcorn ceiling removal services,
-              visit our{" "}
+              all GTA regions. Start with our local repair hubs in{" "}
               <Link
-                href="/services/popcorn-ceiling-removal/"
+                href="/services/drywall-repair/mississauga/"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                main service page
+                Mississauga
+              </Link>
+              ,{" "}
+              <Link
+                href="/services/drywall-repair/burlington/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Burlington
+              </Link>
+              ,{" "}
+              <Link
+                href="/services/drywall-repair/oakville/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Oakville
+              </Link>
+              ,{" "}
+              <Link
+                href="/services/drywall-repair/hamilton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Hamilton
+              </Link>
+              ,{" "}
+              <Link
+                href="/services/drywall-repair/milton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Milton
+              </Link>
+              , or{" "}
+              <Link
+                href="/services/drywall-repair/grimsby/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Grimsby
               </Link>
               .
             </p>

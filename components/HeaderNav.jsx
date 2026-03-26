@@ -28,6 +28,7 @@ const SLUG_LABELS = {
   "popcorn-ceiling-removal": "Popcorn Ceiling Removal",
   popcorn: "Popcorn Ceiling Removal",
   "drywall-installation": "Drywall Installation",
+  "baseboard-installation": "Baseboard Installation",
   wallpaper: "Wallpaper Removal",
   "interior-painting": "Interior Painting",
   "our-work": "Our Work",
@@ -108,6 +109,12 @@ function BreadcrumbJsonLd({ crumbs }) {
 export default function HeaderNav() {
   const pathname = usePathname();
   const isLanding = isAdsLandingPath(pathname || "");
+  const isDrywallInstallationPage = pathname?.startsWith(
+    "/services/drywall-installation"
+  );
+  const isBaseboardInstallationPage = pathname?.startsWith(
+    "/services/baseboard-installation"
+  );
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -148,44 +155,121 @@ export default function HeaderNav() {
     },
   ];
 
-  const locations = [
-    {
-      href: "/popcorn-ceiling-removal/mississauga/",
-      label: "Popcorn Ceiling Removal Mississauga",
-    },
-    {
-      href: "/popcorn-ceiling-removal/toronto/",
-      label: "Popcorn Ceiling Removal Toronto",
-    },
-    {
-      href: "/popcorn-ceiling-removal/oakville/",
-      label: "Popcorn Ceiling Removal Oakville",
-    },
-    {
-      href: "/popcorn-ceiling-removal/burlington/",
-      label: "Popcorn Ceiling Removal Burlington",
-    },
-    {
-      href: "/popcorn-ceiling-removal/hamilton/",
-      label: "Popcorn Ceiling Removal Hamilton",
-    },
-    {
-      href: "/popcorn-ceiling-removal/milton/",
-      label: "Popcorn Ceiling Removal Milton",
-    },
-    {
-      href: "/popcorn-ceiling-removal/etobicoke/",
-      label: "Popcorn Ceiling Removal Etobicoke",
-    },
-    {
-      href: "/popcorn-ceiling-removal/grimsby/",
-      label: "Popcorn Ceiling Removal Grimsby",
-    },
-    {
-      href: "/popcorn-ceiling-removal/st-catharines/",
-      label: "Popcorn Ceiling Removal St. Catharines",
-    },
-  ];
+  const locations = isDrywallInstallationPage
+    ? [
+        {
+          href: "/services/drywall-installation/",
+          label: "Drywall Installation Service Hub",
+        },
+        {
+          href: "/services/drywall-installation/mississauga/",
+          label: "Drywall Installation Mississauga",
+        },
+        {
+          href: "/services/drywall-installation/burlington/",
+          label: "Drywall Installation Burlington",
+        },
+        {
+          href: "/services/drywall-installation/hamilton/",
+          label: "Drywall Installation Hamilton",
+        },
+      ]
+    : isBaseboardInstallationPage
+      ? [
+          {
+            href: "/services/baseboard-installation/",
+            label: "Baseboard Installation Service Hub",
+          },
+          {
+            href: "/services/baseboard-installation/mississauga/",
+            label: "Baseboard Installation Mississauga",
+          },
+          {
+            href: "/services/baseboard-installation/toronto/",
+            label: "Baseboard Installation Toronto",
+          },
+          {
+            href: "/services/baseboard-installation/oakville/",
+            label: "Baseboard Installation Oakville",
+          },
+          {
+            href: "/services/baseboard-installation/burlington/",
+            label: "Baseboard Installation Burlington",
+          },
+          {
+            href: "/services/baseboard-installation/hamilton/",
+            label: "Baseboard Installation Hamilton",
+          },
+          {
+            href: "/services/baseboard-installation/etobicoke/",
+            label: "Baseboard Installation Etobicoke",
+          },
+          {
+            href: "/services/baseboard-installation/milton/",
+            label: "Baseboard Installation Milton",
+          },
+          {
+            href: "/services/baseboard-installation/north-york/",
+            label: "Baseboard Installation North York",
+          },
+          {
+            href: "/services/baseboard-installation/grimsby/",
+            label: "Baseboard Installation Grimsby",
+          },
+          {
+            href: "/services/baseboard-installation/st-catharines/",
+            label: "Baseboard Installation St. Catharines",
+          },
+        ]
+    : [
+        {
+          href: "/popcorn-ceiling-removal/mississauga/",
+          label: "Popcorn Ceiling Removal Mississauga",
+        },
+        {
+          href: "/popcorn-ceiling-removal/toronto/",
+          label: "Popcorn Ceiling Removal Toronto",
+        },
+        {
+          href: "/popcorn-ceiling-removal/oakville/",
+          label: "Popcorn Ceiling Removal Oakville",
+        },
+        {
+          href: "/popcorn-ceiling-removal/burlington/",
+          label: "Popcorn Ceiling Removal Burlington",
+        },
+        {
+          href: "/popcorn-ceiling-removal/hamilton/",
+          label: "Popcorn Ceiling Removal Hamilton",
+        },
+        {
+          href: "/popcorn-ceiling-removal/milton/",
+          label: "Popcorn Ceiling Removal Milton",
+        },
+        {
+          href: "/popcorn-ceiling-removal/etobicoke/",
+          label: "Popcorn Ceiling Removal Etobicoke",
+        },
+        {
+          href: "/popcorn-ceiling-removal/grimsby/",
+          label: "Popcorn Ceiling Removal Grimsby",
+        },
+        {
+          href: "/popcorn-ceiling-removal/st-catharines/",
+          label: "Popcorn Ceiling Removal St. Catharines",
+        },
+      ];
+  const isTrimFocusedPage =
+    isDrywallInstallationPage || isBaseboardInstallationPage;
+  const brandTitle = isTrimFocusedPage
+    ? "EPF Pro Services — Home"
+    : "Popcorn ceiling Removal EPF Pro Services — Home";
+  const brandAlt = isTrimFocusedPage
+    ? "EPF Pro Services"
+    : "Popcorn ceiling removal EPF Pro Services";
+  const brandText = isTrimFocusedPage
+    ? "EPF Pro Services"
+    : "Popcorn Ceiling Removal";
 
   const crumbs = buildCrumbs(pathname);
 
@@ -206,15 +290,15 @@ export default function HeaderNav() {
           <Link
             href="/"
             className="flex items-center gap-2 min-w-0"
-            title="Popcorn ceiling Removal EPF Pro Services — Home"
+            title={brandTitle}
           >
             <img
               src="/logo.png"
-              alt="Popcorn ceiling removal EPF Pro Services"
+              alt={brandAlt}
               className="w-auto h-14 md:h-16 object-contain"
             />
             <span className="underline decoration-red-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
-              Popcorn Ceiling Removal
+              {brandText}
             </span>
           </Link>
 
@@ -223,16 +307,32 @@ export default function HeaderNav() {
             <a
               href={PHONE_HREF}
               className="btn-cta whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
-              title="Call for a fast popcorn ceiling removal estimate"
+              title={
+                isDrywallInstallationPage
+                  ? "Call for a fast drywall installation estimate"
+                  : isBaseboardInstallationPage
+                    ? "Call for a fast baseboard installation estimate"
+                  : "Call for a fast popcorn ceiling removal estimate"
+              }
             >
               📞 {PHONE_NUMBER}
             </a>
             <Link
               href="/quote/"
               className="btn-cta whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
-              title="Get a free popcorn ceiling removal quote"
+              title={
+                isDrywallInstallationPage
+                  ? "Get a drywall installation quote"
+                  : isBaseboardInstallationPage
+                    ? "Get a baseboard installation quote"
+                  : "Get a free popcorn ceiling removal quote"
+              }
             >
-              Get Quote
+              {isDrywallInstallationPage
+                ? "Drywall Quote"
+                : isBaseboardInstallationPage
+                  ? "Baseboard Quote"
+                  : "Get Quote"}
             </Link>
           </div>
 
@@ -315,9 +415,29 @@ export default function HeaderNav() {
           >
             <Panel>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-                <DropdownLink href="/service-areas/" label="All Areas →" bold />
+                <DropdownLink
+                  href={
+                    isDrywallInstallationPage
+                      ? "/services/drywall-installation/"
+                      : isBaseboardInstallationPage
+                        ? "/services/baseboard-installation/"
+                      : "/service-areas/"
+                  }
+                  label={
+                    isDrywallInstallationPage
+                      ? "All Drywall Areas →"
+                      : isBaseboardInstallationPage
+                        ? "All Baseboard Areas →"
+                      : "All Areas →"
+                  }
+                  bold
+                />
                 {locations.map((l) => (
-                  <MenuItemCard key={l.href} href={l.href} label={l.label} />
+                  <MenuItemCard
+                    key={`${l.href}-${l.label}`}
+                    href={l.href}
+                    label={l.label}
+                  />
                 ))}
               </div>
             </Panel>
@@ -418,7 +538,18 @@ export default function HeaderNav() {
               open={mobileLocationsOpen}
               setOpen={setMobileLocationsOpen}
               items={[
-                { href: "/service-areas/", label: "All Areas" },
+                {
+                  href: isDrywallInstallationPage
+                    ? "/services/drywall-installation/"
+                    : isBaseboardInstallationPage
+                      ? "/services/baseboard-installation/"
+                    : "/service-areas/",
+                  label: isDrywallInstallationPage
+                    ? "All Drywall Areas"
+                    : isBaseboardInstallationPage
+                      ? "All Baseboard Areas"
+                    : "All Areas",
+                },
                 ...locations,
               ]}
               isActive={(href) => isActive(href)}
@@ -663,7 +794,11 @@ function MobileDisclosure({ label, open, setOpen, items, isActive }) {
         <div className="p-1 pt-0">
           {items.map((i) => (
             <Link
-              key={"href" in i ? i.href : i.label}
+              key={
+                "href" in i
+                  ? `${i.href}-${"label" in i ? i.label : ""}`
+                  : i.label
+              }
               href={"href" in i ? i.href : "#"}
               className={[
                 "block px-3 py-2 rounded-lg text-[15px]",

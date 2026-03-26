@@ -13,11 +13,6 @@ const nextConfig = {
     trailingSlash: true,
     images: { unoptimized: true },
     outputFileTracingRoot: __dirname,
-    experimental: {
-        devtoolSegmentExplorer: false,
-        // Drop legacy browser transforms/polyfills; target modern browsers only
-        legacyBrowsers: false,
-    },
     async redirects() {
         return [
             // 1) popcorn-removal -> popcorn-ceiling-removal (ALL paths)

@@ -31,7 +31,10 @@ function Stars({ value = 5, size = 14 }) {
   );
 }
 
-export default function GoogleReviews({ className = "" }) {
+export default function GoogleReviews({
+  className = "",
+  intent = "general",
+}) {
   const [data, setData] = useState({
     ok: false,
     reviews: [],
@@ -94,6 +97,27 @@ export default function GoogleReviews({ className = "" }) {
   }, []);
 
   const { ok, reviews = [], rating = 5, count = 0, mapsUrl } = data;
+  const isDrywallInstallation = intent === "drywall-installation";
+  const isBaseboardInstallation = intent === "baseboard-installation";
+  const businessName =
+    isDrywallInstallation || isBaseboardInstallation
+      ? "EPF Pro Services"
+      : BUSINESS_NAME;
+  const businessDescription = isDrywallInstallation
+    ? "Drywall installation contractors for board hanging, taping, sanding, and Level 4 to Level 5 finishing across Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, St. Catharines, and Toronto."
+    : isBaseboardInstallation
+      ? "Baseboard installation contractors for trim replacement, MDF and wood baseboards, shoe moulding, caulking, and paint-ready finishing across Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, North York, Grimsby, and St. Catharines."
+    : "Popcorn ceiling removal, drywall installation, drywall repair, wallpaper removal, and interior painting trusted by GTA homeowners.";
+  const introText = isDrywallInstallation
+    ? `${Number(rating).toFixed(1)}★ on Google (${count}+ reviews) — drywall installation contractors for basements, additions, ceilings, condo renovations, and commercial buildouts across Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, St. Catharines, and Toronto.`
+    : isBaseboardInstallation
+      ? `${Number(rating).toFixed(1)}★ on Google (${count}+ reviews) — baseboard installation contractors for trim replacement, shoe moulding, caulking, and paint-ready finishing across Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, North York, Grimsby, and St. Catharines.`
+    : `${Number(rating).toFixed(1)}★ on Google (${count}+ reviews) — popcorn ceiling removal, drywall installation, drywall repair, wallpaper removal, and interior painting across Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, St. Catharines, and Toronto.`;
+  const trustText = isDrywallInstallation
+    ? "Verified feedback on drywall installation quality, cleanliness, and on-time completion."
+    : isBaseboardInstallation
+      ? "Verified feedback on baseboard installation quality, finish carpentry, cleanliness, and on-time completion."
+    : "Verified feedback — quality, cleanliness, and on-time completion.";
 
   const scroll = (dir) => {
     const el = stripRef.current;
@@ -109,13 +133,13 @@ export default function GoogleReviews({ className = "" }) {
   const itemReviewed = {
     "@type": "LocalBusiness",
     "@id": businessId,
-    name: BUSINESS_NAME,
+    name: businessName,
     url: SITE_URL,
   };
   const business = {
     "@type": "LocalBusiness",
     "@id": businessId,
-    name: BUSINESS_NAME,
+    name: businessName,
     url: SITE_URL,
     telephone: "+1-647-923-6784",
     areaServed: [
@@ -129,8 +153,7 @@ export default function GoogleReviews({ className = "" }) {
       "Grimsby",
       "St. Catharines",
     ],
-    description:
-      "Popcorn ceiling removal, Level 5 drywall finishing, and interior painting trusted by GTA homeowners.",
+    description: businessDescription,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: Number(rating).toFixed(1),
@@ -170,7 +193,13 @@ export default function GoogleReviews({ className = "" }) {
   return (
     <section
       id="google-reviews"
-      aria-label="Customer reviews"
+      aria-label={
+        isDrywallInstallation
+          ? "Drywall installation customer reviews"
+          : isBaseboardInstallation
+            ? "Baseboard installation customer reviews"
+          : "Customer reviews"
+      }
       className={["py-12 md:py-16 bg-slate-50", className].join(" ")}
     >
       {jsonLd ? (
@@ -187,10 +216,7 @@ export default function GoogleReviews({ className = "" }) {
             Real Reviews from GTA Homeowners
           </h2>
           <p className="mt-1 text-base text-slate-600">
-            {Number(rating).toFixed(1)}★ on Google ({count}+ reviews) — popcorn
-            ceiling removal, drywall finishing & interior painting across
-            Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke,
-            Grimsby, St. Catharines, and Toronto.
+            {introText}
           </p>
         </div>
 
@@ -206,7 +232,7 @@ export default function GoogleReviews({ className = "" }) {
             />
             <Stars value={rating} />
             <span className="text-sm text-slate-700">
-              Verified feedback — quality, cleanliness, and on-time completion.
+              {trustText}
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-2">
@@ -289,7 +315,11 @@ export default function GoogleReviews({ className = "" }) {
             rel="noopener noreferrer"
             className="btn-ghost"
           >
-            View more Google reviews
+            {isDrywallInstallation
+              ? "View drywall reviews"
+              : isBaseboardInstallation
+                ? "View baseboard reviews"
+                : "View more Google reviews"}
           </a>
           <a
             href="https://share.google/sqRKpoYNmcALdmjrP"
@@ -300,19 +330,52 @@ export default function GoogleReviews({ className = "" }) {
             Write a review
           </a>
           <a href="/contact#estimate" className="btn-cta">
-            Free estimate
+            {isDrywallInstallation
+              ? "Free drywall estimate"
+              : isBaseboardInstallation
+                ? "Free baseboard estimate"
+                : "Free estimate"}
           </a>
         </div>
 
         {/* SEO paragraph (visible copy) */}
         <p className="mx-auto mt-6 max-w-4xl text-sm leading-relaxed text-slate-600">
-          EPF Pro Services provides dust-controlled{" "}
-          <strong>popcorn ceiling removal</strong>, smooth
-          <strong> Level 5 drywall finishing</strong>, and meticulous{" "}
-          <strong>interior painting</strong>. Homeowners across the{" "}
-          <strong>Greater Toronto Area</strong> choose us for clean prep,
-          careful protection, reliable timelines, and beautiful results in
-          living rooms, kitchens, hallways, bedrooms, and basements.
+          {isDrywallInstallation ? (
+            <>
+              EPF Pro Services provides professional{" "}
+              <strong>drywall installation</strong>, precise{" "}
+              <strong>board hanging</strong>, clean{" "}
+              <strong>taping and sanding</strong>, and paint-ready{" "}
+              <strong>Level 4 and Level 5 finishing</strong>. Homeowners,
+              builders, and property managers across the{" "}
+              <strong>Greater Toronto Area</strong> choose us for careful
+              protection, reliable timelines, and straight walls and ceilings
+              ready for primer, trim, and final paint.
+            </>
+          ) : isBaseboardInstallation ? (
+            <>
+              EPF Pro Services provides professional{" "}
+              <strong>baseboard installation</strong>, accurate{" "}
+              <strong>trim replacement</strong>, clean{" "}
+              <strong>shoe moulding installation</strong>, and paint-ready{" "}
+              <strong>caulking and finishing</strong>. Homeowners, condo
+              owners, and renovators across the{" "}
+              <strong>Greater Toronto Area</strong> choose us for straight
+              runs, tight inside corners, clean miters, and tidy work areas
+              that are ready for final paint.
+            </>
+          ) : (
+            <>
+              EPF Pro Services provides dust-controlled{" "}
+              <strong>popcorn ceiling removal</strong>, smooth
+              <strong> drywall installation and repair</strong>, clean{" "}
+              <strong>wallpaper removal</strong>, and meticulous{" "}
+              <strong>interior painting</strong>. Homeowners across the{" "}
+              <strong>Greater Toronto Area</strong> choose us for clean prep,
+              careful protection, reliable timelines, and beautiful results in
+              living rooms, kitchens, hallways, bedrooms, and basements.
+            </>
+          )}
         </p>
       </div>
 

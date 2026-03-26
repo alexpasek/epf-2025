@@ -119,7 +119,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Milton Ontario | New Build & Water Damage Specialists`,
+  title: `Drywall Repair Milton Ontario | New Build & Water Damage Specialists | EPF Pro Services`,
   description:
     "Professional drywall repair Milton Ontario for new builds, family homes & commercial. Water damage restoration, seamless finishing, Level 5 quality. Serving Dempsey, Hawthorne Village, Timberlea & all Milton neighborhoods. Tarion warranty work.",
   keywords: [

@@ -143,7 +143,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Oakville Ontario | Premium Finishing & Water Damage`,
+  title: `Drywall Repair Oakville Ontario | Premium Finishing & Water Damage | EPF Pro Services`,
   description:
     "Premium drywall repair Oakville Ontario for lakefront estates, Glen Abbey homes & Uptown condos. Water damage restoration, seamless finishing, Level 5 quality. Serving Bronte Village, River Oaks & all Oakville neighbourhoods.",
   keywords: [

@@ -14,6 +14,17 @@ const ABSOLUTE_URL = `${BASE_URL}${SLUG}`;
 const SERVICES_URL = `${BASE_URL}/services/`;
 const INSTALL_URL = `${BASE_URL}/services/drywall-installation/`;
 const QUOTE_URL = `${BASE_URL}/quote/`;
+const EMAIL = CONTACT?.email || "info@epfproservices.com";
+const SERVICE_HUB_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "37 Dalegrove Crescent",
+  addressLocality: "Stoney Creek",
+  addressRegion: "ON",
+  postalCode: "L8J 3R5",
+  addressCountry: "CA",
+};
+const PROVIDER_DESCRIPTION =
+  "EPF Pro Services is a Hamilton drywall installation contractor handling board hanging, taping, sanding, and Level 4 to Level 5 finishing for lofts, basements, additions, homes, and commercial fit-outs.";
 
 const CORE_KEYWORDS = [
   "drywall installation Hamilton",
@@ -72,28 +83,24 @@ const KEYWORDS = [
 
 const FAQS = [
   {
-    q: "Do you handle both industrial and residential drywall in Hamilton?",
-    a: "Yes. Our drywall contractors for installation Hamilton run separate crews for industrial loft conversions, downtown condo drywall installation Hamilton, and suburban custom homes. Each quote lists manpower, staging areas, and site-specific safety requirements.",
+    q: "How much does drywall installation cost in Hamilton?",
+    a: "Drywall installation cost in Hamilton depends on square footage, ceiling height, finish level, access, and whether the scope is a basement, condo, addition, or commercial fit-out. We quote from photos, plans, or a site visit and list the real install scope so there is less guesswork later.",
   },
   {
-    q: "How fast can you mobilize for drywall replacement Hamilton?",
-    a: "Emergency remove and replace drywall Hamilton services are available in 24 hours for fire or water claims. We document moisture levels, complete drywall installation after water damage Hamilton, and supply reports for insurance adjusters.",
+    q: "Do you install drywall in basements?",
+    a: "Yes. We install basement drywall in Hamilton for rec rooms, rental suites, offices, gyms, and full lower-level renovations. That includes bulkheads, low ceiling details, stair transitions, and the finish quality needed for open basement layouts.",
   },
   {
-    q: "What finish levels do you provide?",
-    a: "We deliver drywall finishing Hamilton from level 4 finish Hamilton to level 5 finish Hamilton plus skim coat Hamilton for gallery lighting. Every project receives dust-controlled drywall sanding Hamilton and spotlight inspections.",
+    q: "Do you handle taping and mudding too?",
+    a: "Yes. Our Hamilton drywall crews handle the full install sequence: board hanging, taping, mudding, sanding, and Level 4 or Level 5 finishing. If a project needs a cleaner paint-ready result, we scope that explicitly instead of treating finishing as an afterthought.",
   },
   {
-    q: "Can you take on drywall installation after demolition Hamilton projects?",
-    a: "Absolutely. Our teams coordinate with demo contractors, clean studs, and install new drywall for renovation Hamilton whether it is a Barton Village storefront or an Ancaster addition.",
+    q: "Do you work in occupied homes and condos?",
+    a: "We do. Occupied Hamilton homes and condo units get dust control, floor protection, cleanup, and schedule planning around the people still using the property. For condos, we also work around elevator windows, hallway rules, and building access requirements.",
   },
   {
-    q: "Do you work on commercial buildouts?",
-    a: "We routinely complete drywall installation for commercial buildouts Hamilton at business parks, hospitals, and university spaces. Expect WSIB compliance, COR-friendly paperwork, and night shifts when requested.",
-  },
-  {
-    q: "What areas do you serve?",
-    a: "We serve all Hamilton neighbourhoods including Ancaster, Dundas, Stoney Creek, Waterdown, Hamilton Mountain, and Binbrook. We also support Burlington, Grimsby, and Niagara when projects need the same new drywall installation Hamilton quality.",
+    q: "Do you install drywall after plumbing/electrical rough-ins?",
+    a: "Yes. Most Hamilton installs begin once plumbing, electrical, HVAC, backing, and required inspections are ready. We confirm the rough-ins, then move through board installation, taping, mudding, sanding, and final prep for the next trades.",
   },
 ];
 
@@ -103,7 +110,7 @@ export const metadata = {
   description:
     "Trusted drywall installation contractor Hamilton for basements, ceilings, additions, and commercial buildouts. Skilled hanging, taping, and Level 5 finishing.",
   keywords: KEYWORDS,
-  alternates: { canonical: SLUG },
+  alternates: { canonical: ABSOLUTE_URL },
   openGraph: {
     title: "Drywall Installation Services Hamilton | EPF Pro Services",
     description:
@@ -136,14 +143,18 @@ function JsonLd() {
       {
         "@type": "Service",
         name: `${SERVICE} in ${CITY}`,
+        description:
+          "Drywall installation contractor in Hamilton for basements, lofts, additions, and commercial buildouts with board hanging, taping, sanding, and Level 4 to Level 5 finishing.",
         serviceType: KEYWORDS,
         areaServed,
         provider: {
           "@type": "LocalBusiness",
           name: "EPF Pro Services",
+          description: PROVIDER_DESCRIPTION,
           telephone: phoneText,
+          email: EMAIL,
           url: "https://epfproservices.com",
-          image: "/logo.png",
+          image: `${BASE_URL}/logo.png`,
           sameAs: ["https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"],
           priceRange: "$$",
           aggregateRating: {
@@ -151,11 +162,7 @@ function JsonLd() {
             ratingValue: "4.9",
             reviewCount: "127",
           },
-          address: {
-            "@type": "PostalAddress",
-            addressRegion: "ON",
-            addressCountry: "CA",
-          },
+          address: SERVICE_HUB_ADDRESS,
         },
         offers: {
           "@type": "Offer",
@@ -227,6 +234,43 @@ export default function Page() {
     { length: 6 },
     (_, i) => `/services/drywall/${i + 1}.webp`
   );
+  const galleryAlts = [
+    "Hamilton drywall crew installing board in a residential renovation",
+    "Basement drywall installation in Hamilton with boxed bulkheads",
+    "Ceiling drywall installation in Hamilton around mechanical rough-ins",
+    "Commercial drywall installation in Hamilton during fit-out stage",
+    "Hamilton drywall finishing under critical light before primer",
+    "Completed Hamilton drywall installation ready for paint",
+  ];
+  const authorityGuides = [
+    {
+      href: "/blog/drywall-hanging-taping-finishing-gta/",
+      title: "Drywall hanging, taping and finishing GTA",
+      text: "A practical guide to what each stage should include on a real scope.",
+    },
+    {
+      href: "/blog/level-4-vs-level-5-drywall-finish-gta/",
+      title: "Level 4 vs Level 5 drywall finish GTA",
+      text: "When the finish upgrade makes sense on walls and ceilings.",
+    },
+    {
+      href: "/blog/drywall-installation-after-water-damage-mississauga/",
+      title: "Drywall installation after water damage",
+      text: "Replacement sequencing for leak-driven or reconstruction work.",
+    },
+  ];
+  const authorityProjects = [
+    {
+      href: "/blog/commercial-fit-out-drywall-project-burlington/",
+      title: "Commercial fit-out drywall project",
+      text: "Useful if your Hamilton scope includes offices, clinics, or retail partitions.",
+    },
+    {
+      href: "/blog/ceiling-rebuild-after-leak-oakville-project/",
+      title: "Ceiling rebuild after leak project",
+      text: "Real project notes covering removal, drying, reboarding, and finishing.",
+    },
+  ];
 
   return (
     <>
@@ -257,12 +301,11 @@ export default function Page() {
               </h1>
 
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                From Barton Street storefronts to Ancaster estates, we provide
-                drywall installation services Hamilton that keep framing,
-                {` `}
-                {HANGING_KEYWORDS[0]}, and {FINISH_KEYWORDS[0]} under one roof.
-                Expect tight joints, air-sealed bulkheads, and quick punch-list
-                responses.
+                From Barton Street storefronts to Ancaster estates and downtown
+                condo units, we provide drywall installation services Hamilton
+                for homes, condos, basements, and commercial fit-outs. Expect
+                tight joints, air-sealed bulkheads, and one crew handling
+                hanging, finishing, and punch-list follow-up.
               </p>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Our crews handle {PROJECT_KEYWORDS[0]}, {PROJECT_KEYWORDS[1]},
@@ -309,7 +352,7 @@ export default function Page() {
                   href="#quote-form"
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-white text-gray-900 hover:bg-gray-100 transition shadow-lg hover:shadow-2xl"
                 >
-                  Request Quote
+                  Request Drywall Quote
                 </a>
               </div>
             </div>
@@ -537,7 +580,7 @@ export default function Page() {
               >
                 <img
                   src={src}
-                  alt={`Drywall installation Hamilton project ${index + 1}`}
+                  alt={galleryAlts[index % galleryAlts.length]}
                   className="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
                   loading="lazy"
                 />
@@ -607,6 +650,47 @@ export default function Page() {
                 <p className="text-gray-600">{step.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Pricing, Process, and Timeline in Hamilton
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Hamilton drywall installs stay smoother when the price, finish
+              standard, and scheduling assumptions are stated up front.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <article className="rounded-2xl border-2 border-blue-100 bg-blue-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Pricing</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Hamilton pricing changes with room count, ceiling height,
+                finish level, access, and whether the install is residential,
+                condo, basement, or commercial.
+              </p>
+            </article>
+            <article className="rounded-2xl border-2 border-cyan-100 bg-cyan-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Process</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We verify rough-ins and framing, hang board, tape and mud,
+                sand under controlled dust conditions, then hand off for primer
+                or the next finishing trade.
+              </p>
+            </article>
+            <article className="rounded-2xl border-2 border-slate-100 bg-slate-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Timeline</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Smaller rooms move fast, while basements, lofts, and commercial
+                fit-outs need added time for drying, site logistics, and trade
+                coordination.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -800,20 +884,20 @@ export default function Page() {
                 href={phoneHref}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-amber-600 hover:bg-gray-100 rounded-full font-bold transition-all shadow-xl hover:scale-105"
               >
-             Call for Free Quote
+                📞 Call Drywall Team
               </a>
               <a
                 href="#quote-form"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur border-2 border-white text-white hover:bg-white/30 rounded-full font-bold transition-all"
               >
-                Get Estimate
+                Request Drywall Quote
               </a>
             </div>
           </div>
 
           <div className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200">
             <h3 className="text-2xl font-bold text-center mb-4">
-              Trusted Installation Across Hamilton Neighbourhoods
+              Areas We Serve in Hamilton
             </h3>
             <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
               From industrial loft conversions in Barton Village to custom homes
@@ -831,6 +915,79 @@ export default function Page() {
                   {n.name}
                 </span>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Hamilton Drywall Guides and Project Pages
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              This keeps the Hamilton install page tied into the drywall hub,
+              supporting finish-level content, and project pages that show real
+              sequencing instead of generic contractor copy.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+            <div className="rounded-3xl border-2 border-blue-100 bg-white p-8 shadow-sm">
+              <div className="flex items-center justify-between gap-4 mb-6">
+                <h3 className="text-2xl font-bold">Drywall info pages</h3>
+                <Link
+                  href="/services/drywall-installation/"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  Back to drywall hub
+                </Link>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {authorityGuides.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-2xl border border-gray-200 p-5 hover:border-blue-400 hover:shadow-md transition"
+                  >
+                    <p className="font-bold text-gray-900">{item.title}</p>
+                    <p className="mt-2 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border-2 border-cyan-100 bg-white p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6">
+                Project pages and nearby install hubs
+              </h3>
+              <div className="space-y-4 mb-6">
+                {authorityProjects.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-2xl border border-gray-200 p-5 hover:border-cyan-400 hover:shadow-md transition"
+                  >
+                    <p className="font-bold text-gray-900">{item.title}</p>
+                    <p className="mt-2 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Link
+                  href="/services/drywall-installation/mississauga/"
+                  className="rounded-2xl bg-blue-50 p-4 font-semibold text-blue-700 hover:bg-blue-100 transition"
+                >
+                  Drywall Installation Mississauga
+                </Link>
+                <Link
+                  href="/services/drywall-installation/burlington/"
+                  className="rounded-2xl bg-blue-50 p-4 font-semibold text-blue-700 hover:bg-blue-100 transition"
+                >
+                  Drywall Installation Burlington
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -902,7 +1059,7 @@ export default function Page() {
                 href={phoneHref}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-full font-bold transition shadow-lg hover:shadow-xl"
               >
-                <span className="text-2xl"></span>
+                <span className="text-2xl">📞</span>
                 <span>Call for Quote</span>
                 <span>→</span>
               </a>
@@ -976,7 +1133,7 @@ export default function Page() {
                 href="#quote-form"
                 className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full bg-cyan-500 hover:bg-cyan-400 transition shadow-2xl hover:shadow-3xl border-2 border-white/30"
               >
-                Book Free Estimate
+                Request Drywall Quote
               </a>
             </div>
 
@@ -1133,7 +1290,7 @@ export default function Page() {
                     href="#quote-form"
                     className="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all shadow-lg"
                   >
-                    Get Free Estimate
+                    Request Drywall Quote
                   </a>
                 </div>
               </div>
@@ -1162,13 +1319,13 @@ export default function Page() {
               href={phoneHref}
               className="flex-1 text-center px-6 py-3 bg-white text-blue-600 font-bold rounded-full hover:bg-gray-100 transition shadow-lg"
             >
-              📞 Call Now
+              📞 Call Drywall Team
             </a>
             <a
               href="#quote-form"
               className="flex-1 text-center px-6 py-3 bg-white/20 backdrop-blur text-white font-bold rounded-full hover:bg-white/30 transition border-2 border-white/30"
             >
-              Get Quote
+              Drywall Quote
             </a>
           </div>
         </div>

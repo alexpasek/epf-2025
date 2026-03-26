@@ -13,6 +13,17 @@ const ABSOLUTE_URL = `${
 const PHONE_TEXT = CONTACT?.phone || "(647) 923-6784";
 const PHONE_HREF = CONTACT?.phoneHref || "tel:+16479236784";
 const PHONE_ARIA = `Call EPF Pro Services at ${PHONE_TEXT}`;
+const EMAIL = CONTACT?.email || "info@epfproservices.com";
+const PRIMARY_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "6855 Glen Erin Dr #33",
+  addressLocality: "Mississauga",
+  addressRegion: "ON",
+  postalCode: "L5N 1P6",
+  addressCountry: "CA",
+};
+const PROVIDER_DESCRIPTION =
+  "EPF Pro Services is a drywall installation contractor serving the GTA with board hanging, taping, sanding, and Level 4 to Level 5 finishing for basements, additions, ceilings, condo renovations, and commercial buildouts.";
 
 const CORE_KEYWORDS = [
   "drywall installation",
@@ -84,7 +95,7 @@ export const metadata = {
   ],
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "GTA Drywall Installation Contractors | Hanging to Level 5",
+    title: "GTA Drywall Installation Contractors | Hanging to Level 5 | EPF Pro Services",
     description:
       "Drywall hanging, taping, sanding, and Level 5 finishing for renovations, basements, ceilings, and commercial spaces across the GTA.",
     url: PAGE_URL,
@@ -119,14 +130,18 @@ function JsonLd() {
       {
         "@type": "Service",
         name: "Professional Drywall Installation Services",
+        description:
+          "Drywall installation contractors for basements, additions, ceilings, and commercial buildouts across the GTA with board hanging, taping, sanding, and Level 4 to Level 5 finishing.",
         serviceType: serviceTypes,
         areaServed,
         provider: {
           "@type": "LocalBusiness",
           name: "EPF Pro Services",
+          description: PROVIDER_DESCRIPTION,
           telephone: PHONE_TEXT,
+          email: EMAIL,
           url: SITE_URL,
-          image: "/logo.png",
+          image: `${SITE_URL}/logo.png`,
           sameAs: ["https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"],
           priceRange: "$$",
           aggregateRating: {
@@ -134,11 +149,7 @@ function JsonLd() {
             ratingValue: "4.9",
             reviewCount: "127",
           },
-          address: {
-            "@type": "PostalAddress",
-            addressRegion: "ON",
-            addressCountry: "CA",
-          },
+          address: PRIMARY_ADDRESS,
         },
         offers: {
           "@type": "Offer",
@@ -177,7 +188,7 @@ function JsonLd() {
           {
             "@type": "ListItem",
             position: 3,
-            name: "Drywall Repair",
+            name: "Drywall Installation",
             item: { "@id": ABSOLUTE_URL },
           },
         ],
@@ -218,6 +229,64 @@ const faqItems = [
 ];
 
 export default function Page() {
+  const authorityGroups = {
+    cities: [
+      {
+        href: "/services/drywall-installation/mississauga/",
+        title: "Drywall Installation Mississauga",
+        text: "Homes, condos, basements, and commercial buildouts.",
+      },
+      {
+        href: "/services/drywall-installation/burlington/",
+        title: "Drywall Installation Burlington",
+        text: "Basements, additions, fit-outs, and paint-ready finishing.",
+      },
+      {
+        href: "/services/drywall-installation/hamilton/",
+        title: "Drywall Installation Hamilton",
+        text: "Basements, lofts, commercial spaces, and rebuild work.",
+      },
+    ],
+    guides: [
+      {
+        href: "/blog/basement-drywall-installation-mississauga/",
+        title: "Basement drywall installation Mississauga",
+        text: "Bulkheads, headroom, and what a clean basement scope should include.",
+      },
+      {
+        href: "/blog/ceiling-drywall-installation-mississauga/",
+        title: "Ceiling drywall installation Mississauga",
+        text: "Flat ceilings, pot-light planning, and finish expectations.",
+      },
+      {
+        href: "/blog/drywall-installation-after-water-damage-mississauga/",
+        title: "Drywall installation after water damage",
+        text: "Replacement sequencing from moisture testing to final finishing.",
+      },
+      {
+        href: "/blog/level-4-vs-level-5-drywall-finish-gta/",
+        title: "Level 4 vs Level 5 drywall finish GTA",
+        text: "Where the finish upgrade is worth it and where it is not.",
+      },
+    ],
+    projects: [
+      {
+        href: "/blog/basement-drywall-install-mississauga-project/",
+        title: "Basement drywall install in Mississauga",
+        text: "Project notes from a reframe, bulkhead, and pot-light layout.",
+      },
+      {
+        href: "/blog/condo-drywall-installation-toronto-project/",
+        title: "Condo drywall installation in Toronto",
+        text: "A real condo scope with building logistics and finish details.",
+      },
+      {
+        href: "/blog/commercial-fit-out-drywall-project-burlington/",
+        title: "Commercial fit-out drywall project in Burlington",
+        text: "A commercial drywall handoff with staged finish levels by area.",
+      },
+    ],
+  };
   const gallery = [
     {
       src: "/gallery/drywall-repair/drywall-repair-service00001.webp",
@@ -389,7 +458,7 @@ export default function Page() {
                   href="/quote/"
                   className="inline-flex items-center gap-2 rounded-full border-2 border-blue-600 bg-white px-8 py-4 text-lg font-bold text-blue-600 shadow-lg hover:bg-blue-50 transition-all"
                 >
-                  <span className="text-xl">📋</span> Free Quote
+                  <span className="text-xl">📋</span> Request Drywall Quote
                 </a>
               </div>
               <p className="text-sm text-gray-500">
@@ -1346,7 +1415,7 @@ export default function Page() {
         {/* SERVICE AREAS */}
         <section className="rounded-3xl border bg-white p-6 shadow-sm">
           <h3 className="text-2xl font-semibold">
-            Drywall installation across the GTA & Golden Horseshoe
+            Drywall Installation Near You
           </h3>
           <p className="mt-2 text-gray-600">
             Same team, different neighborhoods: Mississauga basements, Burlington
@@ -1444,16 +1513,99 @@ export default function Page() {
             >
               Visit our drywall repair service
             </Link>
-            . For specialized popcorn ceiling removal services,
-            visit our{" "}
+            . Looking for a local install hub? Start with{" "}
             <Link
-              href="/services/popcorn-ceiling-removal/"
+              href="/services/drywall-installation/mississauga/"
               className="text-blue-600 font-semibold hover:underline"
             >
-              main service page
+              Mississauga
+            </Link>
+            ,{" "}
+            <Link
+              href="/services/drywall-installation/burlington/"
+              className="text-blue-600 font-semibold hover:underline"
+            >
+              Burlington
+            </Link>
+            , or{" "}
+            <Link
+              href="/services/drywall-installation/hamilton/"
+              className="text-blue-600 font-semibold hover:underline"
+            >
+              Hamilton
             </Link>
             .
           </p>
+        </section>
+
+        <section className="rounded-3xl border bg-white p-6 shadow-sm">
+          <div className="flex flex-col gap-2 mb-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-600">
+              Authority Flow
+            </p>
+            <h3 className="text-3xl font-bold">
+              Drywall city pages, guides, and project stories
+            </h3>
+            <p className="text-gray-600">
+              This hub now feeds the drywall city pages, supporting drywall
+              guides, and project pages so the section has its own internal
+              loop instead of borrowing authority from popcorn content.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-3">
+            <div className="rounded-2xl border border-gray-200 p-5">
+              <h4 className="text-xl font-semibold mb-4">Drywall city pages</h4>
+              <div className="space-y-3">
+                {authorityGroups.cities.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-xl border border-gray-200 p-4 hover:border-blue-400 hover:bg-blue-50 transition"
+                  >
+                    <p className="font-semibold text-gray-900">{item.title}</p>
+                    <p className="mt-1 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-gray-200 p-5">
+              <h4 className="text-xl font-semibold mb-4">
+                Supporting drywall guides
+              </h4>
+              <div className="space-y-3">
+                {authorityGroups.guides.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-xl border border-gray-200 p-4 hover:border-blue-400 hover:bg-blue-50 transition"
+                  >
+                    <p className="font-semibold text-gray-900">{item.title}</p>
+                    <p className="mt-1 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-gray-200 p-5">
+              <h4 className="text-xl font-semibold mb-4">
+                Drywall project pages
+              </h4>
+              <div className="space-y-3">
+                {authorityGroups.projects.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-xl border border-gray-200 p-4 hover:border-blue-400 hover:bg-blue-50 transition"
+                  >
+                    <p className="font-semibold text-gray-900">{item.title}</p>
+                    <p className="mt-1 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* FAQ */}
@@ -1486,7 +1638,7 @@ export default function Page() {
               href="/quote/"
               className="btn-cta bg-white text-blue-600 border border-blue-600"
             >
-              Start plan review
+              Request drywall quote
             </a>
           </div>
         </section>
@@ -1518,7 +1670,7 @@ export default function Page() {
               href="/quote/"
               className="inline-flex items-center rounded-full border border-white px-6 py-3 font-semibold text-white hover:bg-white/10"
             >
-              Secure my spot
+              Request drywall quote
             </a>
           </div>
         </section>

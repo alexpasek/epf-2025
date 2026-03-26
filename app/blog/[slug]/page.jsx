@@ -42,6 +42,182 @@ const extractHeading = (entry) => {
   return { innerHtml, text, id: slugifyHeading(text), level };
 };
 
+const CITY_LABELS = {
+  mississauga: "Mississauga",
+  toronto: "Toronto",
+  oakville: "Oakville",
+  burlington: "Burlington",
+  hamilton: "Hamilton",
+  milton: "Milton",
+  etobicoke: "Etobicoke",
+  grimsby: "Grimsby",
+  "st-catharines": "St. Catharines",
+};
+
+const cityToAreaServed = (name) => ({
+  "@type": "City",
+  name,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: name,
+    addressRegion: "ON",
+    addressCountry: "CA",
+  },
+});
+
+const deriveAreaServed = (post) => {
+  const slug = post.slug || "";
+  const matches = Object.entries(CITY_LABELS)
+    .filter(([citySlug]) => slug.includes(citySlug))
+    .map(([, name]) => cityToAreaServed(name));
+
+  if (matches.length) return matches;
+
+  if (slug.includes("gta")) {
+    return ["Mississauga", "Toronto", "Oakville", "Burlington", "Hamilton"].map(
+      cityToAreaServed
+    );
+  }
+
+  return undefined;
+};
+
+const getPostContext = (post) => {
+  const haystack = [
+    post.slug,
+    post.title,
+    post.articleSection,
+    post.serviceType,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  const isDrywall = haystack.includes("drywall");
+  const isWallpaper = haystack.includes("wallpaper");
+  const isProject =
+    haystack.includes("project spotlight") || haystack.includes("project");
+
+  const fallbackGallery = isDrywall
+    ? [
+        {
+          src: "/gallery/drywall-installation/drywall-installation-hero.webp",
+          alt: "Drywall installation project detail",
+          description:
+            "Professional drywall hanging and finishing ready for primer.",
+        },
+        {
+          src: "/gallery/drywall-repair/drywall-repair-service00003.webp",
+          alt: "Drywall taping and finish work",
+          description:
+            "Multiple coats, sanding, and final checks before paint.",
+        },
+        {
+          src: "/services/drywall/6.webp",
+          alt: "Paint-ready drywall finish",
+          description:
+            "Straight walls and ceilings prepared for final paint.",
+        },
+      ]
+    : [
+        {
+          src: "/services/popcorn-ceiling-removal/1.webp",
+          alt: "Popcorn ceiling removal project detail",
+          description: "Dust-controlled popcorn removal with ceiling protection.",
+        },
+        {
+          src: "/services/popcorn-ceiling-removal/2.webp",
+          alt: "Before and after ceiling smoothing",
+          description: "Level 5 skim coat inspection under raking light.",
+        },
+        {
+          src: "/services/popcorn-ceiling-removal/3.webp",
+          alt: "Ceiling primed and paint-ready",
+          description: "Primer + finish coats for a bright Oakville living room.",
+        },
+      ];
+
+  let cityName = null;
+  for (const [slug, label] of Object.entries(CITY_LABELS)) {
+    if ((post.slug || "").includes(slug)) {
+      cityName = label;
+      break;
+    }
+  }
+
+  const articleSection = post.articleSection
+    || (isDrywall
+      ? "Drywall installation"
+      : isWallpaper
+        ? "Wallpaper removal"
+        : "Popcorn ceiling removal");
+
+  const serviceType = post.serviceType || articleSection;
+  const about = post.about || serviceType;
+
+  const keywordPanelTitle = isDrywall
+    ? "Drywall terms this page covers"
+    : isWallpaper
+      ? "Wallpaper removal terms this page covers"
+      : "Popcorn ceiling terms this page covers";
+
+  const keywordPanelDescription = isDrywall
+    ? "Useful terms to compare scopes, finish levels, and scheduling before you book."
+    : isWallpaper
+      ? "Useful terms to compare prep, removal, skim coating, and repaint scope."
+      : "Useful terms to compare removal, skim coating, and finish scope before you book.";
+
+  let quoteLocationLine;
+  if (isDrywall && cityName && isProject) {
+    quoteLocationLine = `Share photos, room sizes, and a short note about your ${cityName} drywall scope. We reply the same day with availability and a cleaner written scope.`;
+  } else if (isDrywall && cityName) {
+    quoteLocationLine = `Share photos, room sizes, and timing. We reply the same day with ${cityName} drywall availability and a clearer written scope.`;
+  } else if (isDrywall) {
+    quoteLocationLine = "Share photos, room sizes, and timing. We reply the same day with GTA drywall availability and a clearer written scope.";
+  } else if (cityName) {
+    quoteLocationLine = `Share photos, ceiling heights, and timing. We reply the same day with ${cityName} availability.`;
+  } else {
+    quoteLocationLine = "Share photos, ceiling heights, and timing. We reply the same day with Mississauga, Oakville, and GTA availability.";
+  }
+
+  const quoteEyebrow = isDrywall
+    ? "Plan your drywall scope"
+    : isWallpaper
+      ? "Plan your wallpaper removal"
+      : "Ready to plan your ceilings?";
+
+  const quoteHeading = isDrywall
+    ? "Get a drywall quote today"
+    : isWallpaper
+      ? "Get a wallpaper removal quote today"
+      : "Get a popcorn ceiling quote today";
+
+  const quoteBullets = isDrywall
+    ? [
+        "Clear finish-level scope and drywall sequencing",
+        "Basements, ceilings, condos, and commercial buildouts",
+        "Flexible scheduling for occupied homes, condos, and active sites",
+      ]
+    : [
+        "HEPA dust control and Level 5 skim finishing",
+        "Pot-light coordination and interior painting add-ons",
+        "Flexible scheduling for condos and single-family homes",
+      ];
+
+  return {
+    articleSection,
+    serviceType,
+    about,
+    fallbackGallery,
+    keywordPanelTitle,
+    keywordPanelDescription,
+    quoteEyebrow,
+    quoteHeading,
+    quoteBullets,
+    quoteLocationLine,
+  };
+};
+
 const getListType = (entry) => {
   const value = typeof entry === "string" ? entry : isHtmlEntry(entry) ? entry.html : "";
   if (!value) return null;
@@ -137,7 +313,7 @@ export async function generateMetadata({ params }) {
   const slug = resolvedParams?.slug;
   const post = await getPostBySlug(slug);
   if (!post) {
-    return { title: "Post — Popcorn Ceiling Removal Pro" };
+    return { title: "Post — EPF Pro Services" };
   }
   const path = `/blog/${slug}/`;
   const url = SITE_URL ? `${SITE_URL}${path}` : path;
@@ -152,7 +328,7 @@ export async function generateMetadata({ params }) {
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   return {
-    title: `${post.title} — Popcorn Ceiling Removal Pro`,
+    title: `${post.title} — EPF Pro Services`,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -191,6 +367,7 @@ export default async function Post({ params }) {
   const url = `${baseUrl}${path}`;
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
+  const context = getPostContext(post);
   const image = post.image || post.photos?.[0]?.src;
   const imageUrl = image
     ? image.startsWith("http")
@@ -213,20 +390,7 @@ export default async function Post({ params }) {
     return sum + words;
   }, 0);
   const articleBody = plainParagraphs.join(" ");
-  const areaServed = post.slug.includes("mississauga")
-    ? [
-        {
-          "@type": "City",
-          name: "Mississauga",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Mississauga",
-            addressRegion: "ON",
-            addressCountry: "CA",
-          },
-        },
-      ]
-    : undefined;
+  const areaServed = deriveAreaServed(post);
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -248,13 +412,13 @@ export default async function Post({ params }) {
       },
     },
     inLanguage: "en-CA",
-    articleSection: "Popcorn ceiling removal",
+    articleSection: context.articleSection,
     keywords: post.keywords?.join(", "),
     wordCount,
     articleBody,
     areaServed,
-    about: "Popcorn ceiling removal",
-    serviceType: "Popcorn ceiling removal",
+    about: context.about,
+    serviceType: context.serviceType,
   };
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -275,27 +439,11 @@ export default async function Post({ params }) {
     ],
   };
 
-  const fallbackGallery = [
-    {
-      src: "/services/popcorn-ceiling-removal/1.webp",
-      alt: "Popcorn ceiling removal project detail",
-      description: "Dust-controlled popcorn removal with ceiling protection.",
-    },
-    {
-      src: "/services/popcorn-ceiling-removal/2.webp",
-      alt: "Before and after ceiling smoothing",
-      description: "Level 5 skim coat inspection under raking light.",
-    },
-    {
-      src: "/services/popcorn-ceiling-removal/3.webp",
-      alt: "Ceiling primed and paint-ready",
-      description: "Primer + finish coats for a bright Oakville living room.",
-    },
-  ];
   const basePhotos =
-    post.photos && post.photos.length > 0 ? post.photos : fallbackGallery;
+    post.photos && post.photos.length > 0 ? post.photos : context.fallbackGallery;
   const gallery = basePhotos.map((photo, idx) => {
-    const fallback = fallbackGallery[idx % fallbackGallery.length];
+    const fallback =
+      context.fallbackGallery[idx % context.fallbackGallery.length];
     return {
       src: photo.src || fallback.src,
       alt: photo.alt || fallback.alt,
@@ -309,17 +457,15 @@ export default async function Post({ params }) {
     ? "Common Burlington terms homeowners use"
     : showCostCalculator
       ? "GTA popcorn ceiling cost terms homeowners search"
-    : "Mississauga ceiling terminology to know";
+      : context.keywordPanelTitle;
   const keywordPanelDescription = isBurlingtonCostGuide
     ? "Skim these before you call so your quote scope, neighborhood access, and timeline stay clear."
     : showCostCalculator
       ? "These are the local authority phrases this guide covers across Toronto, Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke, and North York."
-    : "Skim these phrases before you call so conversations with our crew stay clear and focused.";
-  const quoteLocationLine = isBurlingtonCostGuide
-    ? "Share photos, ceiling heights, and timing. We reply the same day with Burlington neighborhood availability."
-    : showCostCalculator
-      ? "Share photos, ceiling heights, and the cities you need priced. We reply the same day with GTA availability and a tighter written scope."
-    : "Share photos, ceiling heights, and timing. We reply the same day with Mississauga, Oakville, and GTA availability.";
+      : context.keywordPanelDescription;
+  const quoteLocationLine = showCostCalculator
+    ? "Share photos, ceiling heights, and the cities you need priced. We reply the same day with GTA availability and a tighter written scope."
+    : context.quoteLocationLine;
 
   return (
     <div className="space-y-12 pb-12">
@@ -446,16 +592,16 @@ export default async function Post({ params }) {
         <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5 grid gap-8 lg:grid-cols-[3fr_2fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
-              Ready to plan your ceilings?
+              {context.quoteEyebrow}
             </p>
             <h2 className="mt-2 text-3xl font-semibold">
-              Get a popcorn ceiling quote today
+              {context.quoteHeading}
             </h2>
             <p className="mt-3 text-slate-600">{quoteLocationLine}</p>
             <div className="mt-4 space-y-2 text-sm text-slate-500">
-              <p>• HEPA dust control and Level 5 skim finishing</p>
-              <p>• Pot-light coordination and interior painting add-ons</p>
-              <p>• Flexible scheduling for condos and single-family homes</p>
+              {context.quoteBullets.map((bullet) => (
+                <p key={bullet}>• {bullet}</p>
+              ))}
             </div>
           </div>
           <div className="rounded-2xl border border-slate-200 p-4 shadow-inner">

@@ -3,11 +3,14 @@ import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { BASEBOARD_SERVICE_SLUG } from "./service-areas";
+import { absoluteServiceUrl, buildBaseboardCityGraph } from "./schema";
 
 // DEPRECATED: Each city now has its own unique static page
 // This file is kept for reference only and should not be used for new cities
 
 const HERO_IMAGES = {
+  hamilton: "/gallery/baseboard-installation/baseboard-installation00002.jpg",
+  etobicoke: "/gallery/baseboard-installation/baseboard-installation00004.jpg",
   "north-york": "/gallery/baseboard-installation/baseboard-installation00001.jpg",
   grimsby: "/gallery/baseboard-installation/baseboard-installation00002.jpg",
   milton: "/gallery/baseboard-installation/baseboard-installation00003.jpg",
@@ -21,6 +24,7 @@ const getHeroImage = (citySlug) =>
 
 export function buildBaseboardMetadata(cityName, citySlug) {
   const slug = `${BASEBOARD_SERVICE_SLUG}${citySlug}/`;
+  const absoluteSlug = absoluteServiceUrl(slug);
   const heroImage = getHeroImage(citySlug);
 
   return {
@@ -36,73 +40,25 @@ export function buildBaseboardMetadata(cityName, citySlug) {
       "trim installation",
       "baseboard repair",
     ],
-    alternates: { canonical: slug },
+    alternates: { canonical: absoluteSlug },
     openGraph: {
       title: `Baseboard Installation ${cityName} | Trim Carpenter`,
       description: `Baseboard installation in ${cityName} with clean lines, tight corners, and paint-ready finishing.`,
-      url: slug,
+      url: absoluteSlug,
       type: "website",
-      images: heroImage ? [{ url: heroImage }] : [],
+      images: heroImage ? [{ url: absoluteServiceUrl(heroImage) }] : [],
     },
     robots: { index: true, follow: true },
   };
 }
 
 function SeoJsonLd({ cityName, serviceUrl, hubUrl, faqs }) {
-  const data = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name: `Baseboard Installation in ${cityName}`,
-      serviceType: [
-        "Baseboard Installation",
-        "Baseboard Replacement",
-        "Shoe Moulding",
-        "Trim Carpentry",
-        "Caulking and Finishing",
-      ],
-      areaServed: { "@type": "City", name: `${cityName}, ON` },
-      url: serviceUrl,
-      provider: { "@id": "/#business" },
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "CAD",
-        availability: "https://schema.org/InStock",
-        url: serviceUrl,
-      },
-      potentialAction: {
-        "@type": "RequestQuoteAction",
-        target: "/quote/",
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.q,
-        acceptedAnswer: { "@type": "Answer", text: faq.a },
-      })),
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Baseboard Installation",
-          item: { "@id": hubUrl },
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: cityName,
-          item: { "@id": serviceUrl },
-        },
-      ],
-    },
-  ];
+  const data = buildBaseboardCityGraph({
+    cityName,
+    serviceUrl,
+    description: `Baseboard installation in ${cityName} with clean lines, tight corners, shoe moulding options, and paint-ready finishing for homes and condos.`,
+    faqs,
+  });
 
   return (
     <script
@@ -119,7 +75,7 @@ export function BaseboardCityPage({ cityName, citySlug, signals }) {
   const slug = `${BASEBOARD_SERVICE_SLUG}${citySlug}/`;
   const heroImage = getHeroImage(citySlug);
   const baseUrl = (SITE_URL && SITE_URL.replace(/\/$/, "")) || "";
-  const serviceUrl = baseUrl ? `${baseUrl}${slug}` : slug;
+  const serviceUrl = absoluteServiceUrl(slug);
   const hubUrl = baseUrl
     ? `${baseUrl}${BASEBOARD_SERVICE_SLUG}`
     : BASEBOARD_SERVICE_SLUG;
@@ -416,15 +372,15 @@ export function BaseboardCityPage({ cityName, citySlug, signals }) {
                   project starts with accurate measurements and profile
                   selection. We account for wall irregularities, out-of-square
                   corners, and ceiling heights to ensure your trim fits the
-                  scale and style of your rooms. Whether you're doing a{" "}
+                  scale and style of your rooms. Whether you're finishing after{" "}
                   <Link
-                    href="/services/popcorn-ceiling-removal/"
+                    href="/services/drywall-installation/"
                     className="text-blue-600 font-semibold hover:underline"
                   >
-                    popcorn ceiling removal
+                    drywall installation
                   </Link>{" "}
-                  project or upgrading after new flooring, we coordinate with
-                  your renovation timeline.
+                  or upgrading after new flooring, we coordinate with your
+                  renovation timeline.
                 </p>
               </div>
 
@@ -512,10 +468,10 @@ export function BaseboardCityPage({ cityName, citySlug, signals }) {
                 </p>
                 <p className="mt-3">
                   Many {cityName} homeowners bundle baseboard installation with{" "}
-                  <strong>popcorn ceiling removal</strong>—once ceilings are
-                  smooth and painted, fresh baseboards complete the
-                  transformation. We can handle both services with a single crew
-                  and timeline for maximum efficiency.
+                  <strong>drywall repairs, repainting, or flooring updates</strong>
+                  . Once the walls and floors are ready, fresh baseboards
+                  complete the transformation. We can coordinate multiple
+                  services with a single timeline for maximum efficiency.
                 </p>
               </div>
 
@@ -552,12 +508,12 @@ export function BaseboardCityPage({ cityName, citySlug, signals }) {
                     <ul className="space-y-2 text-sm">
                       <li>
                         <Link
-                          href="/services/popcorn-ceiling-removal/"
+                          href="/services/drywall-installation/"
                           className="text-blue-600 font-semibold hover:underline"
                         >
-                          Popcorn Ceiling Removal
+                          Drywall Installation
                         </Link>{" "}
-                        — Smooth ceilings first
+                        — Straight walls and clean trim transitions
                       </li>
                       <li>
                         <Link
@@ -811,21 +767,26 @@ export function BaseboardCityPage({ cityName, citySlug, signals }) {
             </p>
 
             <h3 className="text-2xl font-bold mb-4 mt-8">
-              Baseboard Installation After Ceiling Removal
+              Baseboard Installation After Flooring, Painting, or Wall Repairs
             </h3>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Many {cityName} homeowners bundle{" "}
+              Many {cityName} homeowners schedule baseboard installation with{" "}
               <Link
-                href="/services/popcorn-ceiling-removal/"
+                href="/services/drywall-installation/"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                popcorn ceiling removal
+                drywall installation
               </Link>{" "}
-              with baseboard installation for a complete room transformation.
-              When you're already protecting floors and furniture for ceiling
-              work, it's the perfect time to upgrade baseboards. This
-              coordination saves on setup costs and delivers a cohesive finished
-              space.
+              or{" "}
+              <Link
+                href="/services/interior-painting/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                interior painting
+              </Link>{" "}
+              for a complete room transformation. When floors, walls, and trim
+              are sequenced properly, the finished space looks cleaner and
+              avoids duplicated setup work.
             </p>
 
             <h3 className="text-2xl font-bold mb-4 mt-8">
@@ -943,16 +904,16 @@ export function BaseboardCityPage({ cityName, citySlug, signals }) {
             </Link>
 
             <Link
-              href="/blog/baseboard-installation-after-popcorn-ceiling-removal/"
+              href={`${BASEBOARD_SERVICE_SLUG}mississauga/`}
               className="group bg-white p-6 rounded-2xl border-2 border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all"
             >
               <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
-                After Ceiling Removal
+                Local City Hub
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                Why baseboard installation pairs perfectly with ceiling
-                smoothing projects
+                See a full baseboard installation landing page with service
+                details, local neighborhoods, and quote guidance
               </p>
             </Link>
 

@@ -104,7 +104,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Mississauga | Emergency Water Damage & Seamless Patching`,
+  title: `Drywall Repair Mississauga | Emergency Water Damage & Seamless Patching | EPF Pro Services`,
   description:
     "Professional drywall repair services in Mississauga. Expert patching, water damage restoration, crack repair, Level 5 finish. WSIB insured. Fast quotes.",
   keywords: [

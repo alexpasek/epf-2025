@@ -9,13 +9,13 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata = {
   title:
-    "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready",
+    "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready | EPF Pro Services",
   description:
     "Pro wallpaper removal across the GTA. Full adhesive wash, drywall repairs, skim-coat, primer and a smooth, paint-ready finish. Tidy crews, HEPA control, 3-year warranty.",
   alternates: { canonical: PAGE_PATH },
   openGraph: {
     title:
-      "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready",
+      "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready | EPF Pro Services",
     description:
       "Pro wallpaper removal across the GTA. Full adhesive wash, drywall repairs, skim-coat, primer and a smooth, paint-ready finish.",
     url: PAGE_PATH,
@@ -251,7 +251,7 @@ export default function Page() {
 
       {/* SERVICE AREAS PROMO (keep chips off this page, link to hub) */}
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold">Areas We Serve</h2>
+        <h2 className="text-2xl font-semibold">Wallpaper Removal Near You</h2>
         <p className="mt-2 text-gray-700">
           We work across the GTA — including{" "}
           {cityLinks.map((c, idx) => (
@@ -307,7 +307,7 @@ export default function Page() {
               category: "Home Improvement",
               provider: {
                 "@type": "LocalBusiness",
-                name: "Popcorn Ceiling Removal Pro",
+                name: "EPF Pro Services",
               },
               areaServed: "Greater Toronto Area, Canada",
               url: PAGE_URL,

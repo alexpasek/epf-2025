@@ -68,7 +68,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Burlington | Expert Patching, Water Damage & Seamless Finish`,
+  title: `Drywall Repair Burlington | Expert Patching, Water Damage & Seamless Finish | EPF Pro Services`,
   description:
     "Professional drywall repair Burlington. Expert contractors for holes, cracks, water damage, Level 5 finish. WSIB insured. Emergency service available.",
   keywords: [

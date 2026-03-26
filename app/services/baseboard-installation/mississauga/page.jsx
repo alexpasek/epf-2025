@@ -3,12 +3,14 @@ import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
 import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 import { cities } from "@/data/cities";
+import { absoluteServiceUrl, buildBaseboardCityGraph } from "../schema";
 
 export const revalidate = 86400;
 
 const CITY_NAME = "Mississauga";
 const CITY_SLUG = "mississauga";
 const SERVICE_URL = `/services/baseboard-installation/${CITY_SLUG}/`;
+const ABSOLUTE_SERVICE_URL = absoluteServiceUrl(SERVICE_URL);
 const HERO_IMAGE =
   "/gallery/baseboard-installation/baseboard-installation00001.jpg";
 
@@ -26,42 +28,56 @@ export const metadata = {
     "shoe moulding installation",
     "baseboards near me",
   ],
-  alternates: { canonical: SERVICE_URL },
+  alternates: { canonical: ABSOLUTE_SERVICE_URL },
   openGraph: {
     title: `Baseboard Installation Mississauga | Professional Baseboard Contractors`,
     description:
       "Professional baseboard installation in Mississauga. Expert baseboard installation, baseboard replacement, shoe moulding.",
-    url: SERVICE_URL,
+    url: ABSOLUTE_SERVICE_URL,
     type: "website",
+    images: [{ url: absoluteServiceUrl(HERO_IMAGE) }],
   },
   robots: { index: true, follow: true },
 };
 
 function JsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: `Baseboard Installation in ${CITY_NAME}`,
-    serviceType: [
-      "Baseboard Installation",
-      "Baseboard Replacement",
-      "Shoe Moulding",
-      "Caulking and Finishing",
+  const data = buildBaseboardCityGraph({
+    cityName: CITY_NAME,
+    serviceUrl: ABSOLUTE_SERVICE_URL,
+    description:
+      "Professional baseboard installation in Mississauga for trim replacement, shoe moulding, caulking, and paint-ready finishing in homes, condos, and renovations.",
+    neighborhoods: [
+      "Port Credit",
+      "Streetsville",
+      "Erin Mills",
+      "Clarkson",
+      "Meadowvale",
+      "Cooksville",
     ],
-    areaServed: { "@type": "City", name: `${CITY_NAME}, ON` },
-    url: SERVICE_URL,
-    provider: { "@id": "/#business" },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "CAD",
-      availability: "https://schema.org/InStock",
-      url: SERVICE_URL,
-    },
-  };
+    faqs: [
+      {
+        q: `How much does baseboard installation cost in ${CITY_NAME}?`,
+        a: `Pricing in ${CITY_NAME} depends on linear footage, profile height, material choice, and whether old trim removal and painting are included.`,
+      },
+      {
+        q: `Do you install baseboards after flooring or drywall work in ${CITY_NAME}?`,
+        a: `Yes. We regularly schedule baseboard installation after flooring, drywall repair, or repainting so the final trim package fits the finished room cleanly.`,
+      },
+      {
+        q: `Do you handle caulking and nail-hole filling too?`,
+        a: `Yes. Our baseboard scopes include fitment, fastening, filling, caulking, sanding, and a paint-ready handoff.`,
+      },
+      {
+        q: `Do you work in occupied homes and condos in ${CITY_NAME}?`,
+        a: `Yes. We protect finished floors, contain dust, and sequence work carefully so occupied spaces stay usable.`,
+      },
+    ],
+  });
 
   return (
     <script
       type="application/ld+json"
+      suppressHydrationWarning
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
@@ -601,21 +617,27 @@ export default function Page() {
               </p>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
-                Baseboard Installation After Popcorn Ceiling Removal
+                Baseboard Installation After Flooring, Painting, or Wall Repairs
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Many Mississauga homeowners bundle{" "}
+                Many Mississauga homeowners schedule baseboard installation with{" "}
                 <Link
-                  href="/popcorn-ceiling-removal/mississauga/"
+                  href="/services/drywall-installation/"
                   className="text-blue-600 font-semibold hover:underline"
                 >
-                  popcorn ceiling removal
+                  drywall installation
                 </Link>{" "}
-                with baseboard installation for a complete room transformation.
-                When you're already protecting floors and furniture for ceiling
-                work, it's the perfect time to upgrade baseboards. This
-                coordination saves on setup costs and delivers a cohesive
-                finished space throughout your Mississauga home.
+                or{" "}
+                <Link
+                  href="/services/interior-painting/"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  interior painting
+                </Link>{" "}
+                for a complete room transformation. When floors, walls, and
+                trim are sequenced properly, the finished space looks cleaner,
+                touches up faster, and avoids duplicate setup costs throughout
+                your Mississauga home.
               </p>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
@@ -933,8 +955,8 @@ export default function Page() {
                 a: "Baseboard installation cost in Mississauga typically ranges $8-15 per linear foot installed. A standard bedroom costs $400-750 including old trim removal, installation, caulking, and paint-ready finishing. Share room dimensions for accurate Mississauga pricing.",
               },
               {
-                q: "Can you install baseboards after popcorn ceiling removal in Mississauga?",
-                a: "Yes. Once ceilings are Level 5 smooth and primed in your Mississauga home, we install new baseboards while protection is still in place, so there's no dust on fresh trim.",
+                q: "Can you install baseboards after flooring or drywall work in Mississauga?",
+                a: "Yes. We regularly install new baseboards after flooring, drywall repair, or repainting in Mississauga homes so the final trim package fits the finished room cleanly.",
               },
               {
                 q: "What types of baseboards do you install in Mississauga?",

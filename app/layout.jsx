@@ -24,8 +24,8 @@ export const runtime = "edge";
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Popcorn Ceiling Removal Pro — GTA",
-    template: "%s — Popcorn Ceiling Removal Pro",
+    default: "EPF Pro Services — GTA",
+    template: "%s — EPF Pro Services",
   },
   description:
     "Wallpaper removal, popcorn ceiling removal, drywall installation & repair, and interior painting across the GTA.",

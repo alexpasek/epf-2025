@@ -95,7 +95,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Grimsby Ontario | Homeowner-Friendly Service`,
+  title: `Drywall Repair Grimsby Ontario | Homeowner-Friendly Service | EPF Pro Services`,
   description:
     "Drywall repair Grimsby Ontario homeowners trust. Water damage, holes, cracks, and seamless finishing. Clear pricing, minimal mess, 3-year warranty. Serving Grimsby Beach, Casablanca & Mountain areas.",
   keywords: [

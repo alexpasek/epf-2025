@@ -3,12 +3,14 @@ import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
 import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 import { cities } from "@/data/cities";
+import { absoluteServiceUrl, buildBaseboardCityGraph } from "../schema";
 
 export const revalidate = 86400;
 
 const CITY_NAME = "Toronto";
 const CITY_SLUG = "toronto";
 const SERVICE_URL = `/services/baseboard-installation/${CITY_SLUG}/`;
+const ABSOLUTE_SERVICE_URL = absoluteServiceUrl(SERVICE_URL);
 const HERO_IMAGE =
   "/gallery/baseboard-installation/baseboard-installation00002.jpg";
 
@@ -26,42 +28,48 @@ export const metadata = {
     "shoe moulding installation toronto",
     "baseboards near me toronto",
   ],
-  alternates: { canonical: SERVICE_URL },
+  alternates: { canonical: ABSOLUTE_SERVICE_URL },
   openGraph: {
     title: `Baseboard Installation Toronto | Professional Baseboard Contractors`,
     description:
       "Professional baseboard installation in Toronto. Expert baseboard installation, baseboard replacement, shoe moulding. Licensed contractor.",
-    url: SERVICE_URL,
+    url: ABSOLUTE_SERVICE_URL,
     type: "website",
+    images: [{ url: absoluteServiceUrl(HERO_IMAGE) }],
   },
   robots: { index: true, follow: true },
 };
 
 function JsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: `Baseboard Installation in ${CITY_NAME}`,
-    serviceType: [
-      "Baseboard Installation",
-      "Baseboard Replacement",
-      "Shoe Moulding",
-      "Caulking and Finishing",
+  const data = buildBaseboardCityGraph({
+    cityName: CITY_NAME,
+    serviceUrl: ABSOLUTE_SERVICE_URL,
+    description:
+      "Professional baseboard installation in Toronto for trim replacement, shoe moulding, caulking, and paint-ready finishing in houses, condos, and renovation projects.",
+    faqs: [
+      {
+        q: `How much does baseboard installation cost in ${CITY_NAME}?`,
+        a: `Pricing in ${CITY_NAME} depends on linear footage, profile height, material choice, and whether old trim removal and painting are included.`,
+      },
+      {
+        q: `Do you install baseboards after flooring or drywall work in ${CITY_NAME}?`,
+        a: `Yes. We regularly schedule baseboard installation after flooring, drywall repair, or repainting so the final trim package fits the finished room cleanly.`,
+      },
+      {
+        q: `Do you handle caulking and nail-hole filling too?`,
+        a: `Yes. Our baseboard scopes include fitment, fastening, filling, caulking, sanding, and a paint-ready handoff.`,
+      },
+      {
+        q: `Do you work in occupied homes and condos in ${CITY_NAME}?`,
+        a: `Yes. We protect finished floors, contain dust, and sequence work carefully so occupied spaces stay usable.`,
+      },
     ],
-    areaServed: { "@type": "City", name: `${CITY_NAME}, ON` },
-    url: SERVICE_URL,
-    provider: { "@id": "/#business" },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "CAD",
-      availability: "https://schema.org/InStock",
-      url: SERVICE_URL,
-    },
-  };
+  });
 
   return (
     <script
       type="application/ld+json"
+      suppressHydrationWarning
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );

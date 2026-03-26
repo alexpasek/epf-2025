@@ -15,7 +15,7 @@ const CONTACT = {
   ],
 };
 
-/** Helper: build /locations/popcorn-ceiling-removal-{city} slugs */
+/** Helper: build /popcorn-ceiling-removal/{city}/ slugs */
 const slugifyCity = (city) => {
   const slug = city
     .toLowerCase()
@@ -29,9 +29,106 @@ const slugifyCity = (city) => {
   return `/popcorn-ceiling-removal/${slug}/`;
 };
 
+const DRYWALL_INSTALL_LINKS = [
+  {
+    href: "/services/drywall-installation/",
+    label: "Drywall installation service hub",
+  },
+  {
+    href: "/services/drywall-installation/mississauga/",
+    label: "Drywall installation Mississauga",
+  },
+  {
+    href: "/services/drywall-installation/burlington/",
+    label: "Drywall installation Burlington",
+  },
+  {
+    href: "/services/drywall-installation/hamilton/",
+    label: "Drywall installation Hamilton",
+  },
+];
+
+const DRYWALL_REPAIR_LINKS = [
+  {
+    href: "/services/drywall-repair/",
+    label: "Drywall repair service hub",
+  },
+  {
+    href: "/services/drywall-repair/mississauga/",
+    label: "Drywall repair Mississauga",
+  },
+  {
+    href: "/services/drywall-repair/oakville/",
+    label: "Drywall repair Oakville",
+  },
+  {
+    href: "/services/drywall-repair/burlington/",
+    label: "Drywall repair Burlington",
+  },
+  {
+    href: "/services/drywall-repair/hamilton/",
+    label: "Drywall repair Hamilton",
+  },
+  {
+    href: "/services/drywall-repair/milton/",
+    label: "Drywall repair Milton",
+  },
+  {
+    href: "/services/drywall-repair/grimsby/",
+    label: "Drywall repair Grimsby",
+  },
+];
+
+const BASEBOARD_LINKS = [
+  {
+    href: "/services/baseboard-installation/",
+    label: "Baseboard installation service hub",
+  },
+  {
+    href: "/services/baseboard-installation/mississauga/",
+    label: "Baseboard installation Mississauga",
+  },
+  {
+    href: "/services/baseboard-installation/toronto/",
+    label: "Baseboard installation Toronto",
+  },
+  {
+    href: "/services/baseboard-installation/oakville/",
+    label: "Baseboard installation Oakville",
+  },
+  {
+    href: "/services/baseboard-installation/burlington/",
+    label: "Baseboard installation Burlington",
+  },
+  {
+    href: "/services/baseboard-installation/hamilton/",
+    label: "Baseboard installation Hamilton",
+  },
+  {
+    href: "/services/baseboard-installation/etobicoke/",
+    label: "Baseboard installation Etobicoke",
+  },
+  {
+    href: "/services/baseboard-installation/milton/",
+    label: "Baseboard installation Milton",
+  },
+  {
+    href: "/services/baseboard-installation/north-york/",
+    label: "Baseboard installation North York",
+  },
+  {
+    href: "/services/baseboard-installation/grimsby/",
+    label: "Baseboard installation Grimsby",
+  },
+  {
+    href: "/services/baseboard-installation/st-catharines/",
+    label: "Baseboard installation St. Catharines",
+  },
+];
+
 const LOCATIONS = [
   {
-    label: "Mississauga (Popcorn Ceiling Removal)",
+    label: "Mississauga Service Hub",
     phone: "647.923.6784",
     phoneHref: "+16479236784",
     address: {
@@ -51,7 +148,7 @@ const LOCATIONS = [
     geo: { lat: 43.591024471105115, lng: -79.76399362333954 },
   },
   {
-    label: "Stoney Creek / Hamilton",
+    label: "Stoney Creek / Hamilton Service Hub",
     phone: "647.824.3723",
     phoneHref: "+16478243723",
     address: {
@@ -78,6 +175,131 @@ export default function Footer() {
   }
 
   const hideReviews = pathname === "/";
+  const isDrywallInstallationPage = pathname?.startsWith(
+    "/services/drywall-installation"
+  );
+  const isBaseboardInstallationPage = pathname?.startsWith(
+    "/services/baseboard-installation"
+  );
+  const seoLine = isDrywallInstallationPage ? (
+    <>
+      <span className="font-semibold">EPF Pro Services</span>: drywall
+      installation contractors for board hanging, taping, sanding, and
+      paint-ready Level 4 to Level 5 finishing. Visit our drywall service hubs
+      at 6855 Glen Erin Dr #33, Mississauga ON L5N 1P6 and 37 Dalegrove
+      Crescent, Stoney Creek ON L8J 3R5. Serving {SERVICE_AREAS.join(", ")}.
+    </>
+  ) : isBaseboardInstallationPage ? (
+    <>
+      <span className="font-semibold">EPF Pro Services</span>: baseboard
+      installation contractors for trim replacement, shoe moulding, caulking,
+      and paint-ready finishing. Visit our service hubs at 6855 Glen Erin Dr
+      #33, Mississauga ON L5N 1P6 and 37 Dalegrove Crescent, Stoney Creek ON
+      L8J 3R5. Serving {SERVICE_AREAS.join(", ")}.
+    </>
+  ) : (
+    <>
+      <span className="font-semibold">EPF Pro Services</span>: popcorn ceiling
+      removal, drywall installation, drywall repair, wallpaper removal, and
+      paint-ready finishing with dust control and Level 5 standards. Visit our
+      crews at 6855 Glen Erin Dr #33, Mississauga ON L5N 1P6 and 37 Dalegrove
+      Crescent, Stoney Creek ON L8J 3R5. Serving {SERVICE_AREAS.join(", ")}.
+    </>
+  );
+  const contactLinks = isDrywallInstallationPage ? (
+    <p className="mt-3 text-gray-700">
+      Need drywall installation scope details?{" "}
+      <a
+        href="/services/drywall-installation/"
+        className="font-semibold hover:underline"
+      >
+        Service hub
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/drywall-installation/mississauga/"
+        className="font-semibold hover:underline"
+      >
+        Mississauga
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/drywall-installation/burlington/"
+        className="font-semibold hover:underline"
+      >
+        Burlington
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/drywall-installation/hamilton/"
+        className="font-semibold hover:underline"
+      >
+        Hamilton
+      </a>
+    </p>
+  ) : isBaseboardInstallationPage ? (
+    <p className="mt-3 text-gray-700">
+      Need baseboard installation scope details?{" "}
+      <a
+        href="/services/baseboard-installation/"
+        className="font-semibold hover:underline"
+      >
+        Service hub
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/baseboard-installation/mississauga/"
+        className="font-semibold hover:underline"
+      >
+        Mississauga
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/baseboard-installation/toronto/"
+        className="font-semibold hover:underline"
+      >
+        Toronto
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/baseboard-installation/oakville/"
+        className="font-semibold hover:underline"
+      >
+        Oakville
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/baseboard-installation/burlington/"
+        className="font-semibold hover:underline"
+      >
+        Burlington
+      </a>
+    </p>
+  ) : (
+    <p className="mt-3 text-gray-700">
+      Need scope details?{" "}
+      <a
+        href="/services/drywall-installation/"
+        className="font-semibold hover:underline"
+      >
+        Drywall installation
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/drywall-repair/"
+        className="font-semibold hover:underline"
+      >
+        drywall repair
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/popcorn-ceiling-removal/"
+        className="font-semibold hover:underline"
+      >
+        popcorn ceiling removal
+      </a>
+    </p>
+  );
 
   return (
     <footer
@@ -87,19 +309,21 @@ export default function Footer() {
     >
 
       {/* Google Reviews */}
-      {!hideReviews && <GoogleReviews />}
+      {!hideReviews && (
+        <GoogleReviews
+          intent={
+            isDrywallInstallationPage
+              ? "drywall-installation"
+              : isBaseboardInstallationPage
+                ? "baseboard-installation"
+                : "general"
+          }
+        />
+      )}
 
       {/* SEO line */}
       <div className="container-x pt-6">
-        <p className="text-sm text-gray-700">
-          <span className="font-semibold">
-            Popcorn Ceiling Removal — EPF Pro Services
-          </span>
-          : dust-controlled scraping, Level 5 skim + HEPA sanding, primer-ready
-          smooth ceilings. Visit our crews at 6855 Glen Erin Dr #33, Mississauga
-          ON L5N 1P6 and 37 Dalegrove Crescent, Stoney Creek ON L8J 3R5. Serving{" "}
-          {SERVICE_AREAS.join(", ")}.
-        </p>
+        <p className="text-sm text-gray-700">{seoLine}</p>
       </div>
 
       {/* Main footer grid */}
@@ -107,7 +331,7 @@ export default function Footer() {
         {/* Brand + Hours + Contact */}
         <div>
           <div className="font-semibold text-lg" itemProp="name">
-            Popcorn Ceiling Removal — EPF Pro Services
+            EPF Pro Services
           </div>
           <p className="mt-2 text-sm text-gray-600">
             Serving {SERVICE_AREAS.join(" · ")}
@@ -156,19 +380,17 @@ export default function Footer() {
                 {CONTACT.email}
               </a>
             </div>
-            <p className="mt-3 text-gray-700">
-              Need scope details?{" "}
-              <a
-                href="/services/popcorn-ceiling-removal/"
-                className="font-semibold hover:underline"
-              >
-                Popcorn ceiling removal services
-              </a>
-            </p>
+            {contactLinks}
           </div>
 
           <div className="mt-4 text-sm">
-            <div className="font-medium text-gray-900">Service hubs</div>
+            <div className="font-medium text-gray-900">
+              {isDrywallInstallationPage
+                ? "Drywall installation service hubs"
+                : isBaseboardInstallationPage
+                  ? "Baseboard installation service hubs"
+                : "Service hubs"}
+            </div>
             <ul className="mt-2 space-y-2 text-gray-700">
               {LOCATIONS.map((loc) => (
                 <li key={loc.label}>
@@ -194,10 +416,33 @@ export default function Footer() {
 
         {/* Branded, fancy maps */}
         <div className="lg:col-span-2">
-          <div className="font-semibold text-lg">Our Locations</div>
+          <div className="font-semibold text-lg">
+            {isDrywallInstallationPage
+              ? "Drywall Installation Service Hubs"
+              : isBaseboardInstallationPage
+                ? "Baseboard Installation Service Hubs"
+              : "Our Locations"}
+          </div>
           <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
             {LOCATIONS.map((loc, i) => (
-              <MapCard key={i} loc={loc} />
+              <MapCard
+                key={i}
+                loc={loc}
+                statusLabel={
+                  isDrywallInstallationPage
+                    ? "Drywall installation hub"
+                    : isBaseboardInstallationPage
+                      ? "Baseboard installation hub"
+                    : "Local service hub"
+                }
+                statusNote={
+                  isDrywallInstallationPage
+                    ? "Board hanging, taping, sanding"
+                    : isBaseboardInstallationPage
+                      ? "Trim carpentry and finishing"
+                    : "Interior finishing crew"
+                }
+              />
             ))}
           </ul>
         </div>
@@ -205,118 +450,242 @@ export default function Footer() {
 
       {/* Local service links for internal linking (SEO) */}
       <div className="container-x pb-8">
-        <div className="rounded-2xl border bg-gray-50 p-4">
-          <div className="font-semibold text-sm mb-2">
-            Popcorn Ceiling Removal Near You
-          </div>
-          <ul className="text-sm flex flex-wrap gap-3">
-            {/* Priority cities with direct links */}
-            <li>
-              <a
-                href="/services/popcorn-ceiling-removal/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal service hub
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/mississauga/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Mississauga
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/burlington/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Burlington
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/toronto/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Toronto
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/oakville/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Oakville
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/hamilton/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Hamilton
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/milton/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Milton
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/etobicoke/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Etobicoke
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/grimsby/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal Grimsby
-              </a>
-            </li>
-            <li>
-              <a
-                href="/popcorn-ceiling-removal/st-catharines/"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Popcorn ceiling removal St. Catharines
-              </a>
-            </li>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {isDrywallInstallationPage ? (
+            <>
+              <div className="rounded-2xl border bg-gray-50 p-4">
+                <div className="font-semibold text-sm mb-2">
+                  Drywall Installation Near You
+                </div>
+                <ul className="text-sm flex flex-wrap gap-3">
+                  {DRYWALL_INSTALL_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-blue-600 font-semibold hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Remaining cities using slugifyCity */}
-            {SERVICE_AREAS.filter(
-              (city) =>
-                city !== "Mississauga" &&
-                city !== "Burlington" &&
-                city !== "Toronto" &&
-                city !== "Oakville" &&
-                city !== "Hamilton" &&
-                city !== "Milton" &&
-                city !== "Etobicoke" &&
-                city !== "Grimsby" &&
-                city !== "St. Catharines"
-            )
-              .slice(0, 6)
-              .map((city) => (
-                <li key={city}>
-                  <a
-                    href={slugifyCity(city)}
-                    className="text-gray-700 hover:underline"
-                  >
-                    {`Popcorn ceiling removal ${city}`}
-                  </a>
-                </li>
-              ))}
-          </ul>
+              <div className="rounded-2xl border bg-gray-50 p-4">
+                <div className="font-semibold text-sm mb-2">
+                  Drywall Repair Near You
+                </div>
+                <ul className="text-sm flex flex-wrap gap-3">
+                  {DRYWALL_REPAIR_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-gray-700 hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ) : isBaseboardInstallationPage ? (
+            <>
+              <div className="rounded-2xl border bg-gray-50 p-4">
+                <div className="font-semibold text-sm mb-2">
+                  Baseboard Installation Near You
+                </div>
+                <ul className="text-sm flex flex-wrap gap-3">
+                  {BASEBOARD_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-blue-600 font-semibold hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border bg-gray-50 p-4">
+                <div className="font-semibold text-sm mb-2">
+                  Related Interior Services
+                </div>
+                <ul className="text-sm flex flex-wrap gap-3">
+                  {DRYWALL_INSTALL_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-blue-600 font-semibold hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                  <li>
+                    <a
+                      href="/services/interior-painting/"
+                      className="text-gray-700 hover:underline"
+                    >
+                      Interior painting
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/services/wallpaper-removal/"
+                      className="text-gray-700 hover:underline"
+                    >
+                      Wallpaper removal
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="rounded-2xl border bg-gray-50 p-4">
+                <div className="font-semibold text-sm mb-2">
+                  Popcorn Ceiling Removal Near You
+                </div>
+                <ul className="text-sm flex flex-wrap gap-3">
+                  <li>
+                    <a
+                      href="/services/popcorn-ceiling-removal/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal service hub
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/mississauga/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Mississauga
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/burlington/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Burlington
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/toronto/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Toronto
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/oakville/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Oakville
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/hamilton/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Hamilton
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/milton/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Milton
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/etobicoke/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Etobicoke
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/grimsby/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal Grimsby
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/popcorn-ceiling-removal/st-catharines/"
+                      className="text-blue-600 font-semibold hover:underline"
+                    >
+                      Popcorn ceiling removal St. Catharines
+                    </a>
+                  </li>
+
+                  {SERVICE_AREAS.filter(
+                    (city) =>
+                      city !== "Mississauga" &&
+                      city !== "Burlington" &&
+                      city !== "Toronto" &&
+                      city !== "Oakville" &&
+                      city !== "Hamilton" &&
+                      city !== "Milton" &&
+                      city !== "Etobicoke" &&
+                      city !== "Grimsby" &&
+                      city !== "St. Catharines"
+                  )
+                    .slice(0, 6)
+                    .map((city) => (
+                      <li key={city}>
+                        <a
+                          href={slugifyCity(city)}
+                          className="text-gray-700 hover:underline"
+                        >
+                          {`Popcorn ceiling removal ${city}`}
+                        </a>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border bg-gray-50 p-4">
+                <div className="font-semibold text-sm mb-2">
+                  Drywall Services Near You
+                </div>
+                <ul className="text-sm flex flex-wrap gap-3">
+                  {DRYWALL_INSTALL_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-blue-600 font-semibold hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                  {DRYWALL_REPAIR_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-gray-700 hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
@@ -344,7 +713,11 @@ export default function Footer() {
 
 /* -------- Fancy Map Card -------- */
 /* -------- Map Card — clean, neutral, blue accent -------- */
-function MapCard({ loc }) {
+function MapCard({
+  loc,
+  statusLabel = "Local service hub",
+  statusNote = "Interior finishing crew",
+}) {
   return (
     <li
       className="relative rounded-2xl border border-gray-200 bg-white shadow-sm"
@@ -411,8 +784,9 @@ function MapCard({ loc }) {
             Open 8–21
           </span>
           <span className="text-[11px] text-gray-500">
-            Local popcorn ceiling crew
+            {statusLabel}
           </span>
+          <span className="text-[11px] text-gray-500">{statusNote}</span>
         </div>
       </div>
 

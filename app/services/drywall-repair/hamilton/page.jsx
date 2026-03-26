@@ -132,7 +132,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Hamilton | Water Damage, Patching & Seamless Finish`,
+  title: `Drywall Repair Hamilton | Water Damage, Patching & Seamless Finish | EPF Pro Services`,
   description:
     "Drywall repair Hamilton specialists. Water damage, cracks, holes, trade cut-outs, and Level 5 finishing across Hamilton, Ancaster, Stoney Creek & Dundas.",
   keywords: [

@@ -14,6 +14,17 @@ const ABSOLUTE_URL = `${BASE_URL}${SLUG}`;
 const SERVICES_URL = `${BASE_URL}/services/`;
 const INSTALL_URL = `${BASE_URL}/services/drywall-installation/`;
 const QUOTE_URL = `${BASE_URL}/quote/`;
+const EMAIL = CONTACT?.email || "info@epfproservices.com";
+const SERVICE_HUB_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "37 Dalegrove Crescent",
+  addressLocality: "Stoney Creek",
+  addressRegion: "ON",
+  postalCode: "L8J 3R5",
+  addressCountry: "CA",
+};
+const PROVIDER_DESCRIPTION =
+  "EPF Pro Services is a Burlington-area drywall installation contractor handling board hanging, taping, sanding, and Level 4 to Level 5 finishing for basements, additions, homes, condos, and commercial buildouts.";
 
 const CORE_KEYWORDS = [
   "drywall installation Burlington",
@@ -72,28 +83,24 @@ const KEYWORDS = [
 
 const FAQS = [
   {
-    q: "What does drywall installation cost in Burlington?",
-    a: "Drywall installation Burlington pricing is based on square footage, wall height, board thickness, finish level, and how many phases we handle (framing, hanging, drywall taping and mudding Burlington, sanding, primer, paint). Typical small rooms start around $1,200-$1,800, basements from $6,500+, and commercial suites depend on schedule and access. Send drawings or photos for an itemized quote.",
+    q: "How much does drywall installation cost in Burlington?",
+    a: "Drywall installation cost in Burlington depends on square footage, ceiling height, board thickness, finish level, and job access. A basement, condo, or commercial suite will not price the same, so we quote from drawings, photos, or a site visit and spell out the real scope instead of giving one vague line item.",
   },
   {
-    q: "Do you handle both drywall hanging and finishing?",
-    a: "Yes. Our drywall contractors for installation Burlington handle complete scopes: layout, drywall hanging Burlington, hang drywall Burlington crews, drywall finishing Burlington, drywall sanding Burlington, and optional primer/paint. You can choose level 4 finish Burlington for most living spaces or level 5 finish Burlington for ultra-smooth walls and ceilings.",
+    q: "Do you install drywall in basements?",
+    a: "Yes. We install drywall in Burlington basements for rec rooms, bedrooms, home offices, and in-law layouts. That includes soffits, bulkheads, stair transitions, ceiling board, and the finish level needed for cleaner lighting conditions.",
   },
   {
-    q: "Can you remove and replace damaged drywall?",
-    a: "We perform drywall replacement Burlington for flood damage, demo work, or upgrades. Services include remove and replace drywall Burlington, drywall installation after demolition Burlington, drywall installation after water damage Burlington, and new drywall for renovation Burlington with moisture testing and documentation for insurance.",
+    q: "Do you handle taping and mudding too?",
+    a: "Yes. We handle the full drywall installation sequence in Burlington: framing checks, board hanging, taping, mudding, sanding, and Level 4 or Level 5 finishing. If you want a paint-ready surface, we quote to that standard directly.",
   },
   {
-    q: "What project types do you specialize in?",
-    a: "Our crews complete basement drywall installation Burlington, ceiling drywall installation Burlington, drywall installation for additions Burlington, and drywall installation for commercial buildouts Burlington. We understand condo logistics, fire code requirements, and the detailed coordination renovations require.",
+    q: "Do you work in occupied homes and condos?",
+    a: "We do. Occupied Burlington homes and condo units get floor protection, dust control, scheduled deliveries, elevator coordination where needed, and daily cleanup so the install stays organized instead of taking over the property.",
   },
   {
-    q: "Do you install board in condos and commercial spaces?",
-    a: "Absolutely. We provide residential drywall installation Burlington, commercial drywall installation Burlington, and condo drywall installation Burlington. Expect material deliveries scheduled with property management, elevator padding, WSIB coverage, and daily cleanup so shared areas stay tidy.",
-  },
-  {
-    q: "Do you offer skim coating and specialty finishes?",
-    a: "Yes. Every new drywall installation Burlington can bring skim coat Burlington upgrades for glass-smooth surfaces. We also deliver drywall taping and mudding Burlington, sheetrock installation Burlington, gypsum board installation Burlington, and corner bead/trim profiles that make accent walls stand out.",
+    q: "Do you install drywall after plumbing/electrical rough-ins?",
+    a: "Yes. Most Burlington projects are boarded after plumbing, electrical, HVAC, backing, and inspections are ready. Once the rough-ins are confirmed, we hang drywall, tape, mud, sand, and prepare the room for primer or paint.",
   },
 ];
 
@@ -102,7 +109,7 @@ export const metadata = {
   description:
     "Licensed drywall installation contractor Burlington for basements, ceilings, additions, and commercial buildouts. Fast quotes, precise hanging, and flawless finishing.",
   keywords: KEYWORDS,
-  alternates: { canonical: SLUG },
+  alternates: { canonical: ABSOLUTE_URL },
   openGraph: {
     title: "Drywall Installation Services Burlington | EPF Pro Services",
     description:
@@ -135,14 +142,18 @@ function JsonLd() {
       {
         "@type": "Service",
         name: `${SERVICE} in ${CITY}`,
+        description:
+          "Drywall installation contractor in Burlington for basements, ceilings, additions, condos, and commercial spaces with framing coordination, board hanging, taping, sanding, and Level 4 to Level 5 finishing.",
         serviceType: KEYWORDS,
         areaServed,
         provider: {
           "@type": "LocalBusiness",
           name: "EPF Pro Services",
+          description: PROVIDER_DESCRIPTION,
           telephone: phoneText,
+          email: EMAIL,
           url: "https://epfproservices.com",
-          image: "/logo.png",
+          image: `${BASE_URL}/logo.png`,
           sameAs: ["https://maps.app.goo.gl/QkkUQQPZc6oSyvJy9"],
           priceRange: "$$",
           aggregateRating: {
@@ -150,11 +161,7 @@ function JsonLd() {
             ratingValue: "4.9",
             reviewCount: "127",
           },
-          address: {
-            "@type": "PostalAddress",
-            addressRegion: "ON",
-            addressCountry: "CA",
-          },
+          address: SERVICE_HUB_ADDRESS,
         },
         offers: {
           "@type": "Offer",
@@ -226,6 +233,43 @@ export default function Page() {
     { length: 6 },
     (_, i) => `/services/drywall/${i + 1}.webp`
   );
+  const galleryAlts = [
+    "Burlington drywall crew hanging board for a residential renovation",
+    "Basement drywall installation in Burlington before final sanding",
+    "Ceiling drywall installation in Burlington around lights and vents",
+    "Commercial drywall fit-out work in Burlington during boarding stage",
+    "Level 5 drywall finishing in Burlington before primer",
+    "Completed Burlington drywall installation ready for paint and trim",
+  ];
+  const authorityGuides = [
+    {
+      href: "/blog/drywall-hanging-taping-finishing-gta/",
+      title: "Drywall hanging, taping and finishing GTA",
+      text: "What each stage should include when the quote is written properly.",
+    },
+    {
+      href: "/blog/level-4-vs-level-5-drywall-finish-gta/",
+      title: "Level 4 vs Level 5 drywall finish GTA",
+      text: "Where the upgrade is worth it for open walls and ceilings.",
+    },
+    {
+      href: "/blog/commercial-drywall-installation-mississauga/",
+      title: "Commercial drywall installation guide",
+      text: "Scope, scheduling, access, and turnover notes for tenant buildouts.",
+    },
+  ];
+  const authorityProjects = [
+    {
+      href: "/blog/commercial-fit-out-drywall-project-burlington/",
+      title: "Commercial fit-out drywall project in Burlington",
+      text: "Real project notes on staging, finish levels, and handoff timing.",
+    },
+    {
+      href: "/blog/basement-drywall-install-mississauga-project/",
+      title: "Basement drywall install project",
+      text: "A useful reference for bulkheads, lighting, and finish-level decisions.",
+    },
+  ];
 
   return (
     <>
@@ -310,7 +354,7 @@ export default function Page() {
                   href="#quote-form"
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full bg-white text-gray-900 hover:bg-gray-100 transition shadow-lg hover:shadow-2xl"
                 >
-                  Get Free Estimate
+                  Request Drywall Quote
                 </a>
               </div>
             </div>
@@ -614,9 +658,7 @@ export default function Page() {
               >
                 <img
                   src={src}
-                  alt={`Drywall installation project ${
-                    index + 1
-                  } in Burlington`}
+                  alt={galleryAlts[index % galleryAlts.length]}
                   className="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
                   loading="lazy"
                 />
@@ -686,6 +728,47 @@ export default function Page() {
                 <p className="text-gray-600">{step.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Pricing, Process, and Timeline in Burlington
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Burlington drywall jobs move better when the budget, finish
+              standard, and schedule are written clearly from day one.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <article className="rounded-2xl border-2 border-blue-100 bg-blue-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Pricing</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We price Burlington drywall installs based on square footage,
+                ceiling height, finish level, and site access, whether the job
+                is a basement, condo unit, addition, or commercial space.
+              </p>
+            </article>
+            <article className="rounded-2xl border-2 border-cyan-100 bg-cyan-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Process</h3>
+              <p className="text-gray-700 leading-relaxed">
+                The work starts with framing and rough-in checks, then board
+                hanging, taping, mudding, sanding, inspection, and a clean
+                handoff for primer or paint.
+              </p>
+            </article>
+            <article className="rounded-2xl border-2 border-slate-100 bg-slate-50 p-8">
+              <h3 className="text-2xl font-bold mb-3">Timeline</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Small rooms move quickly, while basements and commercial suites
+                need more time for drying, cleanup, staging, and coordination
+                with other trades.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -876,20 +959,20 @@ export default function Page() {
                 href={phoneHref}
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 hover:bg-gray-100 rounded-full font-bold transition-all shadow-xl hover:scale-105"
               >
-                📞 Call for Free Quote
+                📞 Call Drywall Team
               </a>
               <a
                 href="#quote-form"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/20 backdrop-blur border-2 border-white text-white hover:bg-white/30 rounded-full font-bold transition-all"
               >
-                Get Estimate
+                Request Drywall Quote
               </a>
             </div>
           </div>
 
           <div className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200">
             <h3 className="text-2xl font-bold text-center mb-4">
-              Trusted Drywall Installation Across Burlington Neighbourhoods
+              Areas We Serve in Burlington
             </h3>
             <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
               From Aldershot waterfront condos to Millcroft custom homes, our licensed crews deliver professional drywall installation services throughout Burlington's diverse communities. Every neighbourhood receives the same quality workmanship and attention to detail.
@@ -903,6 +986,79 @@ export default function Page() {
                   {n.name}
                 </span>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Burlington Drywall Guides and Project Pages
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              These pages connect the Burlington install template to the broader
+              drywall hub, finish guides, and real project examples so Google
+              sees a separate drywall cluster, not a generic finishing page.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+            <div className="rounded-3xl border-2 border-blue-100 bg-white p-8 shadow-sm">
+              <div className="flex items-center justify-between gap-4 mb-6">
+                <h3 className="text-2xl font-bold">Drywall info pages</h3>
+                <Link
+                  href="/services/drywall-installation/"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  Back to drywall hub
+                </Link>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {authorityGuides.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-2xl border border-gray-200 p-5 hover:border-blue-400 hover:shadow-md transition"
+                  >
+                    <p className="font-bold text-gray-900">{item.title}</p>
+                    <p className="mt-2 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border-2 border-cyan-100 bg-white p-8 shadow-sm">
+              <h3 className="text-2xl font-bold mb-6">
+                Project pages and nearby install hubs
+              </h3>
+              <div className="space-y-4 mb-6">
+                {authorityProjects.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-2xl border border-gray-200 p-5 hover:border-cyan-400 hover:shadow-md transition"
+                  >
+                    <p className="font-bold text-gray-900">{item.title}</p>
+                    <p className="mt-2 text-sm text-gray-600">{item.text}</p>
+                  </Link>
+                ))}
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Link
+                  href="/services/drywall-installation/mississauga/"
+                  className="rounded-2xl bg-blue-50 p-4 font-semibold text-blue-700 hover:bg-blue-100 transition"
+                >
+                  Drywall Installation Mississauga
+                </Link>
+                <Link
+                  href="/services/drywall-installation/hamilton/"
+                  className="rounded-2xl bg-blue-50 p-4 font-semibold text-blue-700 hover:bg-blue-100 transition"
+                >
+                  Drywall Installation Hamilton
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -974,7 +1130,7 @@ export default function Page() {
                 href={phoneHref}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-full font-bold transition shadow-lg hover:shadow-xl"
               >
-                <span className="text-2xl">�</span>
+                <span className="text-2xl">📞</span>
                 <span>Call for Quote</span>
                 <span>→</span>
               </a>
@@ -1049,7 +1205,7 @@ export default function Page() {
                 href="#quote-form"
                 className="inline-flex items-center justify-center px-10 py-5 text-xl font-bold rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 transition shadow-2xl hover:shadow-3xl border-2 border-white/30"
               >
-                Get Free Estimate
+                Request Drywall Quote
               </a>
             </div>
 
@@ -1304,7 +1460,7 @@ export default function Page() {
                     href="#quote-form"
                     className="inline-flex items-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all shadow-lg"
                   >
-                    Get Free Estimate
+                    Request Drywall Quote
                   </a>
                 </div>
               </div>
@@ -1333,13 +1489,13 @@ export default function Page() {
               href={phoneHref}
               className="flex-1 text-center px-6 py-3 bg-white text-blue-600 font-bold rounded-full hover:bg-gray-100 transition shadow-lg"
             >
-              📞 Call Now
+              📞 Call Drywall Team
             </a>
             <a
               href="#quote-form"
               className="flex-1 text-center px-6 py-3 bg-white/20 backdrop-blur text-white font-bold rounded-full hover:bg-white/30 transition border-2 border-white/30"
             >
-              Get Quote
+              Drywall Quote
             </a>
           </div>
         </div>
