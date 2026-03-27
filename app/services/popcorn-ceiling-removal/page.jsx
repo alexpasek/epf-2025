@@ -811,6 +811,57 @@ export default function Page() {
               </p>
             </div>
           </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-3xl border-2 border-amber-200 bg-amber-50 p-8">
+              <div className="max-w-4xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
+                  Painted Ceiling Guide
+                </p>
+                <h3 className="mt-3 text-2xl md:text-3xl font-bold text-slate-900">
+                  Painted popcorn ceilings usually need a different finish plan
+                </h3>
+                <p className="mt-3 text-slate-700 leading-relaxed">
+                  If your ceiling has paint on the texture, the real decision is
+                  rarely just removal. It is whether controlled scraping is still
+                  safe or whether a skim-coat resurfacing approach will deliver a
+                  cleaner final result.
+                </p>
+                <div className="mt-5">
+                  <Link
+                    href="/blog/painted-popcorn-ceiling-removal-scrape-or-skim-coat/"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-800 transition"
+                  >
+                    Read: Painted Popcorn Ceiling Removal - Scrape or Skim Coat?
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border-2 border-sky-200 bg-sky-50 p-8">
+              <div className="max-w-4xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
+                  Finish Level Guide
+                </p>
+                <h3 className="mt-3 text-2xl md:text-3xl font-bold text-slate-900">
+                  Removal is only half the job. Finish level decides the result.
+                </h3>
+                <p className="mt-3 text-slate-700 leading-relaxed">
+                  After popcorn removal, the big question becomes Level 4 or
+                  Level 5. That choice affects whether seams, patches, and light
+                  streaks stay visible once the ceiling is primed and painted.
+                </p>
+                <div className="mt-5">
+                  <Link
+                    href="/blog/level-4-vs-level-5-finish-after-popcorn-ceiling-removal/"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-800 transition"
+                  >
+                    Read: Level 4 vs Level 5 Finish After Popcorn Ceiling Removal
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
