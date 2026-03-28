@@ -249,6 +249,11 @@ export default function Page() {
     ],
     guides: [
       {
+        href: "/blog/drywall-contractors-near-me/",
+        title: "Drywall contractors near me",
+        text: "What to check in quotes, photos, and finish expectations before you book.",
+      },
+      {
         href: "/blog/basement-drywall-installation-mississauga/",
         title: "Basement drywall installation Mississauga",
         text: "Bulkheads, headroom, and what a clean basement scope should include.",

@@ -812,7 +812,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
             <div className="rounded-3xl border-2 border-amber-200 bg-amber-50 p-8">
               <div className="max-w-4xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
@@ -857,6 +857,30 @@ export default function Page() {
                     className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-800 transition"
                   >
                     Read: Level 4 vs Level 5 Finish After Popcorn Ceiling Removal
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border-2 border-emerald-200 bg-emerald-50 p-8">
+              <div className="max-w-4xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                  Process Guide
+                </p>
+                <h3 className="mt-3 text-2xl md:text-3xl font-bold text-slate-900">
+                  Taking popcorn off the ceiling is a full process, not one step.
+                </h3>
+                <p className="mt-3 text-slate-700 leading-relaxed">
+                  Prep, testing, scrape-vs-skim decisions, repairs, sanding, and
+                  primer all matter. This guide explains the actual order of work
+                  behind a clean smooth-ceiling result.
+                </p>
+                <div className="mt-5">
+                  <Link
+                    href="/blog/taking-off-popcorn-ceiling-how-the-process-actually-works/"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-800 transition"
+                  >
+                    Read: Taking Off Popcorn Ceiling
                   </Link>
                 </div>
               </div>
