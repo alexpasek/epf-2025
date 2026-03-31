@@ -2,8 +2,7 @@ import Link from 'next/link';
 import { getPosts } from '@/lib/posts';
 
 export const metadata={title:'Blog'};
-export const dynamic='force-dynamic';
-export const runtime='edge';
+export const revalidate = 86400;
 
 export default async function Blog(){
   const posts=await getPosts();
@@ -13,6 +12,16 @@ export default async function Blog(){
     <div className='mt-6 grid gap-4 sm:grid-cols-2'>
       {posts.map(p=>(
         <article key={p.slug} className='card p-5 bg-white'>
+          {p.image ? (
+            <Link href={`/blog/${p.slug}/`} className='block overflow-hidden rounded-2xl'>
+              <img
+                src={p.image}
+                alt={p.title}
+                className='h-52 w-full object-cover'
+                loading='lazy'
+              />
+            </Link>
+          ) : null}
           <h2 className='text-xl font-semibold'>
             <Link href={`/blog/${p.slug}/`} className='hover:underline'>{p.title}</Link>
           </h2>

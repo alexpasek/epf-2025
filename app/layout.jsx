@@ -18,9 +18,6 @@ import ReviewScroller from "@/components/ReviewScroller";
 import HeaderNav from "@/components/HeaderNav"; // ✅ NEW
 import Footer from "@/components/Footer";
 
-// Cloudflare/edge runtime for all routes
-export const runtime = "edge";
-
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {

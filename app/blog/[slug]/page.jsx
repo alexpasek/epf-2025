@@ -1,10 +1,12 @@
 import Link from "next/link";
-import QuoteForm from "@/components/QuoteForm";
+import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 import PopcornCeilingCostCalculator from "@/components/blog/PopcornCeilingCostCalculator";
-import { getPostBySlug } from "@/lib/posts";
+import {
+  getPostBySlug,
+  getPosts,
+} from "@/lib/posts";
 
-export const dynamic = "force-dynamic";
-export const runtime = "edge";
+export const revalidate = 86400;
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
 const UNORDERED_LIST_RE = /^\s*[-*]\s+/;
@@ -381,6 +383,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
 export default async function Post({ params }) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
@@ -676,8 +683,29 @@ export default async function Post({ params }) {
               ))}
             </div>
           </div>
-          <div className="rounded-2xl border border-slate-200 p-4 shadow-inner">
-            <QuoteForm />
+          <div className="rounded-2xl border border-slate-200 p-5 shadow-inner">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+              Quick next step
+            </p>
+            <p className="mt-3 text-slate-700">
+              Send photos and room sizes through the main quote page, or call for
+              a same-day reply.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <Link href="/quote/" className="btn-cta text-center">
+                Go to quote page
+              </Link>
+              <a
+                href={PHONE_HREF}
+                className="inline-flex items-center justify-center rounded-2xl border border-slate-300 px-5 py-3 font-semibold text-slate-900 transition hover:bg-slate-50"
+              >
+                Call {PHONE_NUMBER}
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-slate-500">
+              Keeping the form on the main quote page helps this article stay
+              lighter and faster.
+            </p>
           </div>
         </div>
       </section>

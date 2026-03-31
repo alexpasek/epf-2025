@@ -371,7 +371,7 @@ export default function Page() {
                 </Link>
               ))}
               <Link
-                href="/popcorn-ceiling-removal/"
+                href="/services/popcorn-ceiling-removal/"
                 className="px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 backdrop-blur border border-blue-400/30 rounded-full text-blue-300 text-sm font-semibold transition"
               >
                 View All Areas →
@@ -819,7 +819,7 @@ export default function Page() {
                   Benefits Guide
                 </p>
                 <h3 className="mt-3 text-2xl md:text-3xl font-bold text-slate-900">
-                  Why homeowners remove stucco ceilings and choose a smooth finish
+                  Benefits of removing popcorn ceilings and going smooth
                 </h3>
                 <p className="mt-3 text-slate-700 leading-relaxed">
                   If you are still deciding whether the update is worth it, this
@@ -828,10 +828,10 @@ export default function Page() {
                 </p>
                 <div className="mt-5">
                   <Link
-                    href="/blog/why-remove-stucco-ceiling/"
+                    href="/blog/benefits-of-removing-popcorn-ceilings/"
                     className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-800 transition"
                   >
-                    Read: Why Remove a Stucco Ceiling?
+                    Read: Benefits of Removing Popcorn Ceilings
                   </Link>
                 </div>
               </div>
@@ -1184,7 +1184,7 @@ export default function Page() {
             </div>
             <div className="mt-8 text-center">
               <Link
-                href="/popcorn-ceiling-removal/"
+                href="/services/popcorn-ceiling-removal/"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold rounded-full transition shadow-lg hover:shadow-xl"
               >
                 Browse All Service Areas →
