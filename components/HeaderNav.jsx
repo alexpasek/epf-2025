@@ -20,6 +20,14 @@ const SAFE_VW_PX = 24; // safe padding from viewport edges
 const SERVICES_PANEL_W = 420; // narrow column for Services
 const LOCATIONS_MEGA_W = 860; // roomy grid for Locations
 
+const DRYWALL_BLOG_PATTERNS = [
+  /^\/blog\/.*drywall.*\/?$/,
+  /^\/blog\/ceiling-rebuild-after-leak-oakville-project\/?$/,
+];
+
+const isDrywallEditorialPath = (pathname = "") =>
+  DRYWALL_BLOG_PATTERNS.some((pattern) => pattern.test(pathname));
+
 /* ---------- Breadcrumb helpers ---------- */
 
 /** Map slugs to pretty labels when we know them */
@@ -109,9 +117,9 @@ function BreadcrumbJsonLd({ crumbs }) {
 export default function HeaderNav() {
   const pathname = usePathname();
   const isLanding = isAdsLandingPath(pathname || "");
-  const isDrywallInstallationPage = pathname?.startsWith(
-    "/services/drywall-installation"
-  );
+  const isDrywallInstallationPage =
+    pathname?.startsWith("/services/drywall-installation") ||
+    isDrywallEditorialPath(pathname || "");
   const isBaseboardInstallationPage = pathname?.startsWith(
     "/services/baseboard-installation"
   );

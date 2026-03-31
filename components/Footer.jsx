@@ -126,6 +126,14 @@ const BASEBOARD_LINKS = [
   },
 ];
 
+const DRYWALL_BLOG_PATTERNS = [
+  /^\/blog\/.*drywall.*\/?$/,
+  /^\/blog\/ceiling-rebuild-after-leak-oakville-project\/?$/,
+];
+
+const isDrywallEditorialPath = (pathname = "") =>
+  DRYWALL_BLOG_PATTERNS.some((pattern) => pattern.test(pathname));
+
 const LOCATIONS = [
   {
     label: "Mississauga Service Hub",
@@ -175,9 +183,9 @@ export default function Footer() {
   }
 
   const hideReviews = pathname === "/";
-  const isDrywallInstallationPage = pathname?.startsWith(
-    "/services/drywall-installation"
-  );
+  const isDrywallInstallationPage =
+    pathname?.startsWith("/services/drywall-installation") ||
+    isDrywallEditorialPath(pathname || "");
   const isBaseboardInstallationPage = pathname?.startsWith(
     "/services/baseboard-installation"
   );

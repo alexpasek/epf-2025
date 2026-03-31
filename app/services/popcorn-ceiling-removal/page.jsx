@@ -812,7 +812,31 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 lg:grid-cols-4">
+            <div className="rounded-3xl border-2 border-violet-200 bg-violet-50 p-8">
+              <div className="max-w-4xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-700">
+                  Benefits Guide
+                </p>
+                <h3 className="mt-3 text-2xl md:text-3xl font-bold text-slate-900">
+                  Why homeowners remove stucco ceilings and choose a smooth finish
+                </h3>
+                <p className="mt-3 text-slate-700 leading-relaxed">
+                  If you are still deciding whether the update is worth it, this
+                  guide explains the real benefits: brighter rooms, easier
+                  cleaning, cleaner repairs, and a more modern look.
+                </p>
+                <div className="mt-5">
+                  <Link
+                    href="/blog/why-remove-stucco-ceiling/"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-semibold text-white hover:bg-slate-800 transition"
+                  >
+                    Read: Why Remove a Stucco Ceiling?
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             <div className="rounded-3xl border-2 border-amber-200 bg-amber-50 p-8">
               <div className="max-w-4xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">

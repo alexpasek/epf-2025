@@ -1,7 +1,28 @@
+const fs = require("fs");
+const path = require("path");
+
 /** @type {import('next-sitemap').IConfig} */
 
 const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://epfproservices.com";
+
+function extractBlogSlugs(relativePath) {
+    try {
+        const source = fs.readFileSync(path.join(__dirname, relativePath), "utf8");
+        return Array.from(source.matchAll(/slug:\s*"([^"]+)"/g), (match) => match[1]);
+    } catch (error) {
+        console.warn(`Could not read blog slugs from ${relativePath}:`, error);
+        return [];
+    }
+}
+
+const blogSlugs = Array.from(
+    new Set([
+        ...extractBlogSlugs("lib/posts.js"),
+        ...extractBlogSlugs("lib/drywallClusterPosts.js"),
+        ...extractBlogSlugs("lib/drywallRepairClusterPosts.js"),
+    ])
+);
 
 module.exports = {
     siteUrl, // real domain comes from env in production
@@ -161,6 +182,15 @@ module.exports = {
             { loc: "/blog/popcorn-ceiling-removal-cost/", changefreq: "monthly", priority: 0.7, lastmod: now },
             { loc: "/blog/popcorn-ceiling-removal-cost-timeline/", changefreq: "monthly", priority: 0.7, lastmod: now }
         );
+
+        blogSlugs.forEach((slug) => {
+            paths.push({
+                loc: `/blog/${slug}/`,
+                changefreq: "weekly",
+                priority: 0.72,
+                lastmod: now,
+            });
+        });
 
         // Other important pages
         paths.push(

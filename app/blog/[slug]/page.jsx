@@ -10,9 +10,13 @@ const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
 const UNORDERED_LIST_RE = /^\s*[-*]\s+/;
 const ORDERED_LIST_RE = /^\s*\d+\.\s+/;
 const HEADING_HTML_RE = /^<strong>(.+)<\/strong>$/i;
+const BLOCK_HTML_RE = /^<(figure|div|section)\b/i;
 
 const isHtmlEntry = (entry) =>
   entry && typeof entry === "object" && "html" in entry;
+
+const isFigureEntry = (entry) =>
+  entry && typeof entry === "object" && "figure" in entry;
 
 const decodeEntities = (value) =>
   value
@@ -265,6 +269,30 @@ const renderContent = (content) => {
   };
 
   content.forEach((entry) => {
+    if (isFigureEntry(entry)) {
+      flushList();
+      const figure = entry.figure || {};
+      nodes.push(
+        <figure
+          key={`figure-${keyIndex++}`}
+          className="my-8 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm"
+        >
+          <img
+            src={figure.src}
+            alt={figure.alt}
+            className="w-full"
+            loading="lazy"
+          />
+          {figure.caption ? (
+            <figcaption className="px-5 py-4 text-sm text-slate-600">
+              {figure.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      );
+      return;
+    }
+
     const heading = extractHeading(entry);
     if (heading) {
       flushList();
@@ -293,8 +321,10 @@ const renderContent = (content) => {
       return;
     }
     if (isHtmlEntry(entry)) {
+      const isBlockHtml = BLOCK_HTML_RE.test(entry.html.trim());
+      const Tag = isBlockHtml ? "div" : "p";
       nodes.push(
-        <p
+        <Tag
           key={`p-${keyIndex++}`}
           dangerouslySetInnerHTML={{ __html: entry.html }}
         />
@@ -313,7 +343,7 @@ export async function generateMetadata({ params }) {
   const slug = resolvedParams?.slug;
   const post = await getPostBySlug(slug);
   if (!post) {
-    return { title: "Post — EPF Pro Services" };
+    return { title: "Post" };
   }
   const path = `/blog/${slug}/`;
   const url = SITE_URL ? `${SITE_URL}${path}` : path;
@@ -328,7 +358,7 @@ export async function generateMetadata({ params }) {
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   return {
-    title: `${post.title} — EPF Pro Services`,
+    title: post.title,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -438,6 +468,21 @@ export default async function Post({ params }) {
       },
     ],
   };
+  const faqJsonLd =
+    post.faqs?.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.a,
+            },
+          })),
+        }
+      : null;
 
   const basePhotos =
     post.photos && post.photos.length > 0 ? post.photos : context.fallbackGallery;
@@ -461,7 +506,7 @@ export default async function Post({ params }) {
   const keywordPanelDescription = isBurlingtonCostGuide
     ? "Skim these before you call so your quote scope, neighborhood access, and timeline stay clear."
     : showCostCalculator
-      ? "These are the local authority phrases this guide covers across Toronto, Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke, and North York."
+      ? "These are the local authority phrases this guide covers across Toronto, Mississauga, Oakville, Burlington, Hamilton, Milton, and North York."
       : context.keywordPanelDescription;
   const quoteLocationLine = showCostCalculator
     ? "Share photos, ceiling heights, and the cities you need priced. We reply the same day with GTA availability and a tighter written scope."
@@ -477,6 +522,12 @@ export default async function Post({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      ) : null}
 
       <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white">
         <div className="container-x px-4 py-12">
@@ -527,6 +578,27 @@ export default async function Post({ params }) {
           </div>
         </div>
       </section>
+
+      {post.faqs?.length > 0 && (
+        <section className="container-x px-4">
+          <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
+            <h2 className="text-2xl font-semibold text-slate-900">FAQ</h2>
+            <div className="mt-6 space-y-4">
+              {post.faqs.map((faq) => (
+                <details
+                  key={faq.q}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
+                >
+                  <summary className="cursor-pointer font-semibold text-slate-900">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-3 text-slate-700">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {gallery?.length > 0 && (
         <section className="container-x px-4">

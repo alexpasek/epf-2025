@@ -1775,6 +1775,100 @@ export default function Page() {
             </p>
           </section>
 
+          <section className="rounded-3xl border bg-white p-6 shadow-sm">
+            <div className="flex flex-col gap-2">
+              <p className="text-xs uppercase tracking-[0.3em] text-blue-600">
+                Repair Guides
+              </p>
+              <h3 className="text-3xl font-bold">
+                Learn before you book drywall repair
+              </h3>
+              <p className="text-gray-600 max-w-3xl">
+                These repair guides answer the common homeowner questions that
+                sit just before a quote request: can this be patched, does the
+                wall need new board, and when is DIY still realistic?
+              </p>
+            </div>
+
+            <div className="mt-6 grid gap-5 lg:grid-cols-4">
+              <Link
+                href="/blog/how-to-patch-drywall/"
+                className="rounded-3xl border-2 border-blue-200 bg-blue-50 p-6 transition hover:border-blue-300 hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-700">
+                  Patching Guide
+                </p>
+                <h4 className="mt-3 text-2xl font-bold text-slate-900">
+                  How to patch drywall for small and large holes
+                </h4>
+                <p className="mt-3 text-slate-700">
+                  The best repair method changes with hole size, edge condition,
+                  and how clean the wall needs to look after paint.
+                </p>
+                <p className="mt-5 font-semibold text-blue-700">
+                  Read guide →
+                </p>
+              </Link>
+
+              <Link
+                href="/blog/how-to-repair-large-drywall-holes-properly/"
+                className="rounded-3xl border-2 border-emerald-200 bg-emerald-50 p-6 transition hover:border-emerald-300 hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
+                  Large Hole Guide
+                </p>
+                <h4 className="mt-3 text-2xl font-bold text-slate-900">
+                  When a large drywall hole needs more than a patch
+                </h4>
+                <p className="mt-3 text-slate-700">
+                  A straight look at backing, cut-out replacement, and what
+                  makes larger repairs show after primer.
+                </p>
+                <p className="mt-5 font-semibold text-emerald-700">
+                  Read guide →
+                </p>
+              </Link>
+
+              <Link
+                href="/blog/diy-drywall-repair-vs-hiring-a-professional/"
+                className="rounded-3xl border-2 border-amber-200 bg-amber-50 p-6 transition hover:border-amber-300 hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
+                  DIY vs Pro
+                </p>
+                <h4 className="mt-3 text-2xl font-bold text-slate-900">
+                  When drywall repair is still a DIY job
+                </h4>
+                <p className="mt-3 text-slate-700">
+                  Small repairs are one thing. Ceilings, trade cut-outs, and
+                  visible walls are where most homeowner patches fall apart.
+                </p>
+                <p className="mt-5 font-semibold text-amber-700">
+                  Read guide →
+                </p>
+              </Link>
+
+              <Link
+                href="/blog/drywall-repair-complete-guide/"
+                className="rounded-3xl border-2 border-slate-200 bg-slate-50 p-6 transition hover:border-slate-300 hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-700">
+                  Main Guide
+                </p>
+                <h4 className="mt-3 text-2xl font-bold text-slate-900">
+                  Complete drywall repair guide
+                </h4>
+                <p className="mt-3 text-slate-700">
+                  The broader repair overview for holes, cracks, water damage,
+                  tools, timing, and when to bring in a crew.
+                </p>
+                <p className="mt-5 font-semibold text-slate-700">
+                  Read guide →
+                </p>
+              </Link>
+            </div>
+          </section>
+
           {/* FAQ */}
           <section
             id="faq"

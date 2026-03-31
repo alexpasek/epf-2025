@@ -172,7 +172,7 @@ export default function PopcornCeilingCostCalculator() {
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600">
             Built for Toronto, Mississauga, Oakville, Burlington, Hamilton, Milton,
-            Etobicoke, and North York homeowners who want a fast starting range before
+            and North York homeowners who want a fast starting range before
             requesting a proper quote.
           </p>
         </div>
