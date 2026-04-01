@@ -9,10 +9,34 @@ import {
 export const revalidate = 86400;
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
+const DEFAULT_SITE_URL = "https://epfproservices.com";
+const SITE_HOSTS = new Set(["epfproservices.com", "www.epfproservices.com"]);
 const UNORDERED_LIST_RE = /^\s*[-*]\s+/;
 const ORDERED_LIST_RE = /^\s*\d+\.\s+/;
 const HEADING_HTML_RE = /^<strong>(.+)<\/strong>$/i;
 const BLOCK_HTML_RE = /^<(figure|div|section)\b/i;
+
+if (SITE_URL) {
+  try {
+    SITE_HOSTS.add(new URL(SITE_URL).hostname);
+  } catch {}
+}
+
+const isAllowedBlogImageSrc = (src) => {
+  if (!src || typeof src !== "string") return false;
+  if (src.startsWith("/")) return true;
+
+  try {
+    return SITE_HOSTS.has(new URL(src).hostname);
+  } catch {
+    return false;
+  }
+};
+
+const toAbsoluteBlogImageUrl = (src, baseUrl = SITE_URL || DEFAULT_SITE_URL) => {
+  if (!isAllowedBlogImageSrc(src)) return undefined;
+  return src.startsWith("/") ? `${baseUrl}${src}` : src;
+};
 
 const isHtmlEntry = (entry) =>
   entry && typeof entry === "object" && "html" in entry;
@@ -274,13 +298,15 @@ const renderContent = (content) => {
     if (isFigureEntry(entry)) {
       flushList();
       const figure = entry.figure || {};
+      const safeFigureSrc = isAllowedBlogImageSrc(figure.src) ? figure.src : null;
+      if (!safeFigureSrc) return;
       nodes.push(
         <figure
           key={`figure-${keyIndex++}`}
           className="my-8 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm"
         >
           <img
-            src={figure.src}
+            src={safeFigureSrc}
             alt={figure.alt}
             className="w-full"
             loading="lazy"
@@ -350,13 +376,7 @@ export async function generateMetadata({ params }) {
   const path = `/blog/${slug}/`;
   const url = SITE_URL ? `${SITE_URL}${path}` : path;
   const image = post.image || post.photos?.[0]?.src;
-  const imageUrl = image
-    ? image.startsWith("http")
-      ? image
-      : SITE_URL
-        ? `${SITE_URL}${image}`
-        : image
-    : undefined;
+  const imageUrl = toAbsoluteBlogImageUrl(image, SITE_URL || DEFAULT_SITE_URL);
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   return {
@@ -406,11 +426,7 @@ export default async function Post({ params }) {
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   const context = getPostContext(post);
   const image = post.image || post.photos?.[0]?.src;
-  const imageUrl = image
-    ? image.startsWith("http")
-      ? image
-      : `${baseUrl}${image}`
-    : undefined;
+  const imageUrl = toAbsoluteBlogImageUrl(image, baseUrl);
   const getParagraphText = (para) => {
     if (typeof para === "string") return para;
     if (para && typeof para === "object" && "html" in para) {
@@ -496,8 +512,9 @@ export default async function Post({ params }) {
   const gallery = basePhotos.map((photo, idx) => {
     const fallback =
       context.fallbackGallery[idx % context.fallbackGallery.length];
+    const src = isAllowedBlogImageSrc(photo.src) ? photo.src : fallback.src;
     return {
-      src: photo.src || fallback.src,
+      src,
       alt: photo.alt || fallback.alt,
       description: photo.description || fallback.description,
     };

@@ -4,6 +4,22 @@ import { getPosts } from '@/lib/posts';
 export const metadata={title:'Blog'};
 export const revalidate = 86400;
 
+const ALLOWED_BLOG_IMAGE_HOSTS = new Set([
+  'epfproservices.com',
+  'www.epfproservices.com',
+]);
+
+const isAllowedBlogImageSrc = (src) => {
+  if (!src || typeof src !== 'string') return false;
+  if (src.startsWith('/')) return true;
+
+  try {
+    return ALLOWED_BLOG_IMAGE_HOSTS.has(new URL(src).hostname);
+  } catch {
+    return false;
+  }
+};
+
 export default async function Blog(){
   const posts=await getPosts();
 
@@ -12,7 +28,7 @@ export default async function Blog(){
     <div className='mt-6 grid gap-4 sm:grid-cols-2'>
       {posts.map(p=>(
         <article key={p.slug} className='card p-5 bg-white'>
-          {p.image ? (
+          {isAllowedBlogImageSrc(p.image) ? (
             <Link href={`/blog/${p.slug}/`} className='block overflow-hidden rounded-2xl'>
               <img
                 src={p.image}
