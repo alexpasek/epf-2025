@@ -215,7 +215,7 @@ export default function Page() {
 
   const images = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`,
   );
 
   const nearby =
@@ -452,6 +452,25 @@ export default function Page() {
               fill="white"
             />
           </svg>
+        </div>
+      </section>
+
+      <section className="py-6 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-gray-700 text-lg leading-relaxed text-center">
+              For larger homes or multi-room projects spanning more than Dundas,
+              see our{" "}
+              <Link
+                href="/popcorn-ceiling-removal/hamilton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Hamilton popcorn ceiling removal service
+              </Link>{" "}
+              page for broader neighbourhood coverage, logistics, and city-level
+              pricing context.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1247,6 +1266,17 @@ export default function Page() {
               . Heritage home expertise, dust-free process, Level 5 smooth
               finish, and 3-year warranty.
             </p>
+            <p className="text-base text-gray-400 mb-8 max-w-3xl mx-auto">
+              Need the broader city view before you book? Compare this area with
+              our{" "}
+              <Link
+                href="/popcorn-ceiling-removal/hamilton/"
+                className="text-blue-300 font-semibold hover:underline"
+              >
+                full Hamilton popcorn ceiling removal
+              </Link>
+              .
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <a
@@ -1312,7 +1342,13 @@ export default function Page() {
       {/* Bottom Navigation Links */}
       <nav className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center">
+          <div className="text-center flex flex-wrap justify-center gap-6">
+            <Link
+              href="/popcorn-ceiling-removal/hamilton/"
+              className="text-blue-600 font-bold hover:text-blue-700 hover:underline text-base transition-colors"
+            >
+              Hamilton popcorn ceiling removal
+            </Link>
             <Link
               href="/services/popcorn-ceiling-removal/"
               className="text-blue-600 font-bold hover:text-blue-700 hover:underline text-base transition-colors"

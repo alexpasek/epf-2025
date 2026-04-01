@@ -1171,6 +1171,17 @@ export default function Page() {
               Ancaster, Grimsby, Vaughan, Richmond Hill, Markham, and
               surrounding areas.
             </p>
+            <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+              Looking for local service? See our{" "}
+              <Link
+                href="/popcorn-ceiling-removal/hamilton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                popcorn ceiling removal in Hamilton
+              </Link>{" "}
+              page for neighbourhood coverage, project context, and city-specific
+              pricing notes across Ancaster, Dundas, and Stoney Creek.
+            </p>
             <div className="flex flex-wrap justify-center gap-3">
               {cities.map((c) => (
                 <Link

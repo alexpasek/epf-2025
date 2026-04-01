@@ -374,7 +374,7 @@ export default function Page() {
             service: "Popcorn Ceiling Removal",
             headline: "Popcorn Ceiling Removal — Hamilton (Ancaster)",
             blurb:
-              "Ancaster, Hamilton heavy texture removal with crack repair and Level 5 skim for a clean, modern ceiling.",
+              "Level 5 ceiling smoothing in Ancaster with crack repairs, full containment, and a bright paint-ready finish.",
             bullets: [
               "Crack repair & taping",
               "Level 5 skim coat",
@@ -390,7 +390,7 @@ export default function Page() {
             service: "Popcorn Ceiling Removal",
             headline: "Popcorn Removal — Hamilton (Stoney Creek)",
             blurb:
-              "Stoney Creek, Hamilton painted popcorn removal with careful masking and a bright, uniform Level 5 result.",
+              "Painted popcorn ceiling removal in Stoney Creek with careful masking, HEPA sanding, and an even Level 5 finish.",
             bullets: [
               "Painted popcorn removal",
               "HEPA sanding & clean-up",
@@ -406,7 +406,7 @@ export default function Page() {
             service: "Popcorn Ceiling Removal",
             headline: "Popcorn Ceiling Removal — Hamilton (Dundas)",
             blurb:
-              "Dundas, Hamilton ceiling smoothing to Level 5 with neat cut-ins, consistent sheen, and professional coatings.",
+              "Dundas ceiling resurfacing with neat cut-ins, Level 5 skim coating, and a consistent painted finish.",
             bullets: [
               "Neat cut-ins at transitions",
               "Level 5 skim throughout",

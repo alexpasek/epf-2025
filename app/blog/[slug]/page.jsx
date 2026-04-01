@@ -379,12 +379,13 @@ export async function generateMetadata({ params }) {
   const imageUrl = toAbsoluteBlogImageUrl(image, SITE_URL || DEFAULT_SITE_URL);
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
+  const seoTitle = post.metaTitle || post.title;
   return {
-    title: post.title,
+    title: seoTitle,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: seoTitle,
       description,
       url,
       type: "article",
@@ -396,7 +397,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: seoTitle,
       description,
       images: imageUrl ? [imageUrl] : undefined,
     },
@@ -424,6 +425,7 @@ export default async function Post({ params }) {
   const url = `${baseUrl}${path}`;
   const description =
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
+  const pageTitle = post.h1 || post.title;
   const context = getPostContext(post);
   const image = post.image || post.photos?.[0]?.src;
   const imageUrl = toAbsoluteBlogImageUrl(image, baseUrl);
@@ -447,7 +449,7 @@ export default async function Post({ params }) {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
+    headline: pageTitle,
     description,
     datePublished: post.date,
     dateModified: post.date,
@@ -486,7 +488,7 @@ export default async function Post({ params }) {
       {
         "@type": "ListItem",
         position: 2,
-        name: post.title,
+        name: pageTitle,
         item: { "@id": url },
       },
     ],
@@ -519,6 +521,17 @@ export default async function Post({ params }) {
       description: photo.description || fallback.description,
     };
   });
+  const featuredPhoto = isAllowedBlogImageSrc(image)
+    ? {
+        src: image,
+        alt:
+          basePhotos.find((photo) => photo.src === image)?.alt || pageTitle,
+        description:
+          basePhotos.find((photo) => photo.src === image)?.description ||
+          post.excerpt ||
+          description,
+      }
+    : null;
   const isBurlingtonCostGuide =
     post.slug === "popcorn-ceiling-removal-cost-burlington-2026-price-guide";
   const showCostCalculator = post.slug === "popcorn-ceiling-removal-cost";
@@ -559,10 +572,10 @@ export default async function Post({ params }) {
             <Link href="/blog/" className="hover:text-white">
               Blog
             </Link>{" "}
-            / {post.title}
+            / {pageTitle}
           </nav>
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-            {post.title}
+            {pageTitle}
           </h1>
           <p className="mt-3 text-sm text-slate-300">{post.date}</p>
           {post.excerpt && (
@@ -570,6 +583,25 @@ export default async function Post({ params }) {
           )}
         </div>
       </section>
+
+      {featuredPhoto ? (
+        <section className="container-x px-4 -mt-8">
+          <figure className="mx-auto max-w-5xl overflow-hidden rounded-3xl border bg-white shadow-xl ring-1 ring-black/5">
+            <img
+              src={featuredPhoto.src}
+              alt={featuredPhoto.alt}
+              className="mx-auto max-h-[520px] w-full bg-slate-100 object-contain p-4 md:p-6"
+              loading="eager"
+              fetchPriority="high"
+            />
+            {featuredPhoto.description ? (
+              <figcaption className="border-t border-slate-100 bg-slate-50 px-6 py-4 text-sm text-slate-600">
+                {featuredPhoto.description}
+              </figcaption>
+            ) : null}
+          </figure>
+        </section>
+      ) : null}
 
       {showCostCalculator ? (
         <section className="container-x px-4 -mt-8">

@@ -195,7 +195,7 @@ function SeoJsonLd() {
 export default function Page() {
   const images = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`,
   );
 
   const process = [
@@ -801,11 +801,18 @@ export default function Page() {
                   options, review our{" "}
                   <Link
                     className="text-blue-600 font-semibold hover:underline"
+                    href="/popcorn-ceiling-removal/hamilton/"
+                  >
+                    Hamilton popcorn ceiling removal service
+                  </Link>{" "}
+                  for city-wide coverage details, or our{" "}
+                  <Link
+                    className="text-blue-600 font-semibold hover:underline"
                     href="/services/popcorn-ceiling-removal/"
                   >
                     complete popcorn ceiling removal services
                   </Link>{" "}
-                  or book a quick site visit through the{" "}
+                  page before you book a quick site visit through the{" "}
                   <Link
                     className="text-blue-600 font-semibold hover:underline"
                     href="/quote/"
@@ -1190,6 +1197,16 @@ export default function Page() {
                 Or call {phoneText}
               </a>
             </div>
+            <p className="mt-4 text-gray-600">
+              Need a broader comparison first? Review the{" "}
+              <Link
+                className="text-blue-700 font-semibold hover:underline"
+                href="/popcorn-ceiling-removal/hamilton/"
+              >
+                full Hamilton popcorn ceiling removal
+              </Link>{" "}
+              for surrounding neighbourhood coverage.
+            </p>
           </div>
         </div>
       </section>

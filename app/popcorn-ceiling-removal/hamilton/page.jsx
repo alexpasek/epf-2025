@@ -1304,6 +1304,17 @@ export default function Page() {
             <p className="text-gray-700 leading-relaxed mb-4">
               For accurate <strong>popcorn removal cost Hamilton</strong> estimates, we provide detailed quotes after assessing your specific project. Most Hamilton homeowners find our <strong>cost to remove popcorn ceiling Hamilton</strong> competitive and transparent compared to general contractors who lack ceiling-specific expertise.
             </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              If pricing is your main question, review our{" "}
+              <Link
+                href="/blog/cost-to-remove-popcorn-ceiling-hamilton/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                Hamilton popcorn ceiling cost guide
+              </Link>{" "}
+              for planning ranges, neighbourhood examples, and the factors that
+              usually move quotes higher or lower before you send photos.
+            </p>
 
             <h3 className="text-2xl font-semibold mt-8 mb-4">
               Schedule Your Hamilton Ceiling Project

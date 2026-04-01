@@ -1038,6 +1038,18 @@ export default function Page() {
                 whole-home projects with the same project manager so you have
                 one contact even when multiple trades overlap.
               </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                If the same renovation still has dated textured ceilings, we
+                also handle{" "}
+                <Link
+                  href="/popcorn-ceiling-removal/hamilton/"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  popcorn ceiling removal in Hamilton
+                </Link>{" "}
+                so the walls and ceilings can move into primer and final paint
+                on one coordinated schedule.
+              </p>
 
               <h3 className="text-3xl font-bold text-gray-900 mt-12 mb-6">
                 Water Damage & Insurance Documentation
