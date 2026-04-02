@@ -545,6 +545,18 @@ export default function Page() {
               <strong> drywall replacement</strong> after demolition or water
               damage.
             </p>
+            <p className="mt-4 text-sm text-gray-600">
+              If you are comparing broader crews for repair, skim coating, and
+              mixed wall-and-ceiling scopes, see our{" "}
+              <Link
+                href="/services/drywall-contractor/"
+                className="text-blue-600 font-semibold hover:underline"
+              >
+                drywall contractor
+              </Link>{" "}
+              page. This installation page stays focused on new board hanging
+              and full install handoffs.
+            </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 text-sm text-gray-700">
               {CORE_KEYWORDS.map((kw) => (
                 <li key={kw} className="flex items-start gap-2">

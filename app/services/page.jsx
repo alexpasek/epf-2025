@@ -49,6 +49,18 @@ const services = [
     ],
   },
   {
+    slug: "/services/drywall-contractor/",
+    name: "Drywall Contractor Services",
+    tagline:
+      "One contractor for installation, repair, skim coating, and paint-ready drywall handoffs.",
+    bullets: [
+      "Drywall installation, replacement, and rebuild scopes",
+      "Patch work, crack repair, and water-damage drywall correction",
+      "Level 4 and Level 5 finishing for walls and ceilings",
+      "Residential, condo, basement, and commercial coordination",
+    ],
+  },
+  {
     slug: "/services/drywall-repair/",
     name: "Drywall Repair",
     tagline:

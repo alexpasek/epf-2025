@@ -18,6 +18,8 @@ import ReviewScroller from "@/components/ReviewScroller";
 import HeaderNav from "@/components/HeaderNav"; // ✅ NEW
 import Footer from "@/components/Footer";
 
+const SHOW_CHAT_WIDGET = process.env.NEXT_PUBLIC_SHOW_CHAT_WIDGET === "1";
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -100,7 +102,7 @@ gtag('config', 'AW-17986124771');`,
         <SEOJsonLd />
       </head>
       <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-        <ChatWidgetDeferred />
+        {SHOW_CHAT_WIDGET ? <ChatWidgetDeferred /> : null}
         <HeaderNav /> {/* ✅ use the client header */}
         <TrustBar />
         <main className="flex-1">{children}</main>

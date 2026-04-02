@@ -448,7 +448,7 @@ export default async function Post({ params }) {
   const areaServed = deriveAreaServed(post);
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": post.schemaType || "Article",
     headline: pageTitle,
     description,
     datePublished: post.date,
