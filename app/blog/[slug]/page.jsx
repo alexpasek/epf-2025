@@ -33,6 +33,11 @@ const isAllowedBlogImageSrc = (src) => {
   }
 };
 
+const isAfterFaqPhoto = (photo) =>
+  photo?.placement === "afterFaq" ||
+  photo?.description ===
+    "Shared drywall repair image used at the bottom of the cluster article.";
+
 const toAbsoluteBlogImageUrl = (src, baseUrl = SITE_URL || DEFAULT_SITE_URL) => {
   if (!isAllowedBlogImageSrc(src)) return undefined;
   return src.startsWith("/") ? `${baseUrl}${src}` : src;
@@ -509,9 +514,12 @@ export default async function Post({ params }) {
         }
       : null;
 
-  const basePhotos =
-    post.photos && post.photos.length > 0 ? post.photos : context.fallbackGallery;
-  const gallery = basePhotos.map((photo, idx) => {
+  const hasCustomPhotos = post.photos && post.photos.length > 0;
+  const rawPhotos = hasCustomPhotos ? post.photos : context.fallbackGallery;
+  const galleryPhotos = rawPhotos.filter((photo) => !isAfterFaqPhoto(photo));
+  const afterFaqPhotos = rawPhotos.filter(isAfterFaqPhoto);
+  const photosForGallery = hasCustomPhotos ? galleryPhotos : context.fallbackGallery;
+  const gallery = photosForGallery.map((photo, idx) => {
     const fallback =
       context.fallbackGallery[idx % context.fallbackGallery.length];
     const src = isAllowedBlogImageSrc(photo.src) ? photo.src : fallback.src;
@@ -521,13 +529,13 @@ export default async function Post({ params }) {
       description: photo.description || fallback.description,
     };
   });
-  const featuredPhoto = isAllowedBlogImageSrc(image)
+  const featuredPhoto = !post.hideFeaturedImage && isAllowedBlogImageSrc(image)
     ? {
         src: image,
         alt:
-          basePhotos.find((photo) => photo.src === image)?.alt || pageTitle,
+          rawPhotos.find((photo) => photo.src === image)?.alt || pageTitle,
         description:
-          basePhotos.find((photo) => photo.src === image)?.description ||
+          rawPhotos.find((photo) => photo.src === image)?.description ||
           post.excerpt ||
           description,
       }
@@ -652,6 +660,26 @@ export default async function Post({ params }) {
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {afterFaqPhotos.length > 0 && (
+        <section className="container-x px-4">
+          <div className="space-y-6">
+            {afterFaqPhotos.map((photo, idx) => (
+              <figure
+                key={`${photo.src}-${idx}`}
+                className="overflow-hidden rounded-3xl border bg-white shadow-xl ring-1 ring-black/5"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt || pageTitle}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </figure>
+            ))}
           </div>
         </section>
       )}
