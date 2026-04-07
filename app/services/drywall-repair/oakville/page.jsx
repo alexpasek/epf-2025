@@ -942,6 +942,35 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto rounded-3xl border-2 border-blue-100 bg-blue-50 p-8 md:p-10 shadow-sm">
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-sm uppercase tracking-[0.3em] text-blue-700 font-bold">
+                  Local Repair Guide
+                </p>
+                <h2 className="mt-3 text-3xl md:text-4xl font-bold text-slate-900">
+                  Why walls and ceilings start cracking or bubbling in Oakville homes
+                </h2>
+                <p className="mt-4 text-lg text-slate-700">
+                  If your walls crack more in winter, bubble in humid months,
+                  or keep reopening in the same places, read our Oakville guide
+                  on why those problems keep coming back and when a proper
+                  repair is better than another touch-up.
+                </p>
+              </div>
+              <Link
+                href="/blog/how-seasonal-humidity-and-temperature-changes-affect-drywall-oakville/"
+                className="inline-flex items-center justify-center rounded-full bg-blue-600 px-7 py-3 font-semibold text-white transition hover:bg-blue-700 shadow-lg"
+              >
+                Read the guide
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ SECTION */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">

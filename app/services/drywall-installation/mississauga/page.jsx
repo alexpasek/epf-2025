@@ -242,6 +242,11 @@ export default function Page() {
   ];
   const authorityGuides = [
     {
+      href: "/blog/drywall-installation-mistakes-uneven-walls/",
+      title: "Drywall installation mistakes that cause uneven walls later",
+      text: "Why seams, joints, and corners often look worse only after primer and paint.",
+    },
+    {
       href: "/blog/drywall-contractors-near-me/",
       title: "Drywall contractors near me",
       text: "What to compare before booking a local drywall crew.",
@@ -952,15 +957,16 @@ export default function Page() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Use the local guides below to move from the main drywall hub into
-              basement, ceiling, water-damage, and commercial install topics,
-              then back into the service page when you are ready for pricing.
+              mistake diagnosis, basement, ceiling, water-damage, and
+              commercial install topics, then back into the service page when
+              you are ready for pricing.
             </p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
             <div className="rounded-3xl border-2 border-purple-100 bg-white p-8 shadow-sm">
               <div className="flex items-center justify-between gap-4 mb-6">
-                <h3 className="text-2xl font-bold">Supporting drywall guides</h3>
+                <h3 className="text-2xl font-bold">Helpful drywall installation guides</h3>
                 <Link
                   href="/services/drywall-installation/"
                   className="text-purple-600 font-semibold hover:underline"
