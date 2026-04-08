@@ -24,6 +24,12 @@ const getBlogCardImage = (post) => (
   isAllowedBlogImageSrc(post?.image) ? post.image : null
 );
 
+const getBlogCardImageClassName = (post) => (
+  post?.cardImageMode === 'contain'
+    ? 'h-full w-full object-contain p-3 transition duration-500 group-hover:scale-[1.015]'
+    : 'h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]'
+);
+
 export default async function Blog(){
   const posts=await getPosts();
 
@@ -50,7 +56,7 @@ export default async function Blog(){
                         <img
                           src={imageSrc}
                           alt={p.title}
-                          className='h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]'
+                          className={getBlogCardImageClassName(p)}
                           loading='lazy'
                         />
                       </div>
