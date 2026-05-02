@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { existsSync } from "fs";
+import path from "path";
 import { notFound } from "next/navigation";
 import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -6,10 +8,24 @@ import { buildPopcornHoodCopy } from "@/lib/seoCopy";
 
 export const dynamic = "force-static";
 
+function hasExplicitNeighborhoodPage(city, neighborhood) {
+  return existsSync(
+    path.join(
+      process.cwd(),
+      "app",
+      "popcorn-ceiling-removal",
+      city,
+      neighborhood,
+      "page.jsx"
+    )
+  );
+}
+
 export function generateStaticParams() {
   const out = [];
   for (const c of cities) {
     for (const n of c.neighborhoods || []) {
+      if (hasExplicitNeighborhoodPage(c.slug, n.slug)) continue;
       out.push({ city: c.slug, neighborhood: n.slug });
     }
   }

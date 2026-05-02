@@ -160,7 +160,6 @@ export default function GoogleReviews({
       reviewCount: count,
       bestRating: 5,
       worstRating: 1,
-      itemReviewed: { "@id": businessId },
     },
   };
 

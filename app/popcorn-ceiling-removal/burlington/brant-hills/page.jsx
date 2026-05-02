@@ -358,8 +358,6 @@ export default function Page() {
       </section>
 
       <div className="container-x mx-auto px-4 py-10">
-      <JsonLd />
-
       {/* HERO */}
       <header className="max-w-6xl">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

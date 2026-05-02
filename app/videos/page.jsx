@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   videoLibrary,
+  videoEmbedUrl,
   videoPagePath,
   videoThumbnailUrl,
   videoPageUrl,
@@ -28,6 +29,7 @@ function JsonLd() {
       description: video.description,
       thumbnailUrl: videoThumbnailUrl(video),
       uploadDate: video.uploadDate,
+      embedUrl: videoEmbedUrl(video),
     })),
   };
 
