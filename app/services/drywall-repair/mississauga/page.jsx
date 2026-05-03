@@ -64,6 +64,72 @@ const QUOTE_CHECKLIST = [
   "Active leaks or moisture issues already stopped",
 ];
 
+const CLUSTER_GUIDES = [
+  [
+    "/blog/drywall-repair-cost-mississauga/",
+    "Drywall Repair Cost in Mississauga",
+    "Pricing factors for holes, cracks, ceiling leaks, patch repairs, sanding, priming, and paint-ready finish.",
+  ],
+  [
+    "/blog/ceiling-drywall-repair-mississauga/",
+    "Ceiling Drywall Repair in Mississauga",
+    "How ceiling stains, sagging board, leak damage, and overhead sanding are handled properly.",
+  ],
+  [
+    "/blog/drywall-patch-repair-mississauga/",
+    "Drywall Patch Repair in Mississauga",
+    "Holes, dents, nail pops, TV mount damage, and trade cut-outs repaired for a clean wall finish.",
+  ],
+  [
+    "/blog/water-damaged-drywall-repair-mississauga/",
+    "Water Damaged Drywall Repair in Mississauga",
+    "What happens after a leak, when drywall should be replaced, and why stain-block primer matters.",
+  ],
+  [
+    "/blog/condo-drywall-repair-mississauga/",
+    "Condo Drywall Repair in Mississauga",
+    "Square One, City Centre, Port Credit, Erin Mills, and high-rise repair planning.",
+  ],
+  [
+    "/blog/drywall-crack-repair-mississauga/",
+    "Drywall Crack Repair in Mississauga",
+    "Recurring cracks, ceiling lines, stairwells, settlement movement, and paint-ready repair.",
+  ],
+  [
+    "/blog/dustless-drywall-repair-mississauga/",
+    "Dustless Drywall Repair in Mississauga",
+    "Protection, containment, HEPA sanding, cleanup, primer, and cleaner repairs in occupied spaces.",
+  ],
+  [
+    "/blog/drywall-repair-after-electrical-plumbing-mississauga/",
+    "Drywall Repair After Electrical or Plumbing Work in Mississauga",
+    "Patch openings left by plumbers, electricians, HVAC work, pot lights, fixtures, and access cuts.",
+  ],
+];
+
+const RECENT_REPAIR_EXAMPLES = [
+  {
+    title: "Square One condo drywall patch after plumbing access",
+    desc: "A bathroom wall was opened for valve access, then backed, patched, taped, sanded with protection, and left ready for repainting in a high-rise unit.",
+  },
+  {
+    title: "Erin Mills ceiling repair after leak stain",
+    desc: "A firm but stained ceiling area was cleaned, skimmed where needed, sealed with stain-block primer, and prepared for a full ceiling paint blend.",
+  },
+  {
+    title: "Port Credit wall repair after fixture relocation",
+    desc: "Old fixture holes and wiring access marks were patched, feathered wide, sanded smooth, and primed so the wall could be repainted cleanly.",
+  },
+  {
+    title: "Streetsville drywall crack and seam repair",
+    desc: "A recurring seam crack near a hallway transition was opened, reinforced, mudded in controlled coats, sanded, and left paint-ready.",
+  },
+  {
+    title: "Meadowvale basement drywall water damage repair",
+    desc: "Damaged lower-wall drywall was cut back after the source was addressed, replaced with new board, taped, sanded, primed, and prepared for paint.",
+  },
+];
+
 const FAQS = [
   {
     q: `How much does drywall repair cost in ${CITY}?`,
@@ -466,6 +532,81 @@ export default function Page() {
             >
              Drywall Repair
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SUPPORTING GUIDES */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-sm uppercase tracking-widest text-blue-600 font-bold mb-3">
+              MISSISSAUGA REPAIR GUIDES
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Mississauga Drywall Repair Guides
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Use these local guides to plan the repair before you book. They
+              explain cost, patch strength, ceiling leaks, condo access, dust
+              protection, crack repair, trade cut-outs, primer, and paint-ready
+              finishing for Mississauga homes and condos.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {CLUSTER_GUIDES.map(([href, title, desc]) => (
+              <Link
+                key={href}
+                href={href}
+                className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition"
+              >
+                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700">
+                  {title}
+                </h3>
+                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                  {desc}
+                </p>
+                <span className="mt-4 inline-flex text-sm font-semibold text-blue-600">
+                  Read guide →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RECENT LOCAL EXAMPLES */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mb-12">
+            <p className="text-sm uppercase tracking-widest text-blue-600 font-bold mb-3">
+              RECENT LOCAL REPAIR EXAMPLES
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Recent Mississauga repair examples
+            </h2>
+            <p className="text-xl text-gray-600">
+              Every drywall repair depends on access, damage size, finish level,
+              moisture history, and painting needs. These examples show the kind
+              of practical repair planning we handle across Mississauga.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+            {RECENT_REPAIR_EXAMPLES.map((example) => (
+              <div
+                key={example.title}
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-bold text-slate-900">
+                  {example.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  {example.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

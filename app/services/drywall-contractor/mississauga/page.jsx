@@ -234,8 +234,8 @@ export default function Page() {
     },
     {
       href: "/services/drywall-repair/mississauga/",
-      title: "Drywall repair Mississauga",
-      text: "Local repair page for holes, cracks, water damage, and patch-driven jobs.",
+      title: "Mississauga drywall repair contractor",
+      text: "Local repair page for holes, cracks, water damage, and patch-driven wall or ceiling jobs.",
     },
     {
       href: "/blog/drywall-contractors-near-me/",
@@ -340,6 +340,17 @@ export default function Page() {
                 for homes, condos, basements, and commercial interiors that need
                 more than a simple patch but are not purely full installation
                 either.
+              </p>
+              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+                If the scope is mainly holes, cracks, ceiling stains, or trade
+                cut-outs, our{" "}
+                <Link
+                  href="/services/drywall-repair/mississauga/"
+                  className="font-semibold underline underline-offset-2"
+                >
+                  Mississauga drywall repair contractor
+                </Link>{" "}
+                page is the more specific starting point.
               </p>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
                 For the broader GTA hub and non-city intent, start with our{" "}

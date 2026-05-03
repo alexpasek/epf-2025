@@ -610,6 +610,14 @@ export default function Page() {
               <p className="text-gray-600 mb-4">
                 Full-service <strong>ceiling resurfacing</strong> including
                 repairs, pot light coordination, and optional finish painting.
+                For damaged drywall below a leak or fixture cut-out, see our{" "}
+                <Link
+                  href="/services/drywall-repair/mississauga/"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
+                  wall and ceiling repair in Mississauga
+                </Link>
+                .
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -1337,7 +1345,10 @@ export default function Page() {
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
-                <span>Can you remove painted popcorn ceiling texture?</span>
+                <span>
+                  Can you remove painted or multiple-layer popcorn ceiling
+                  texture?
+                </span>
                 <span className="text-2xl group-open:rotate-180 transition-transform">
                   ⌄
                 </span>
@@ -1388,7 +1399,10 @@ export default function Page() {
 
             <details className="group bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-300 transition cursor-pointer">
               <summary className="font-bold text-lg flex items-center justify-between cursor-pointer">
-                <span>Do you handle stipple and stucco ceiling removal?</span>
+                <span>
+                  Do you handle stipple ceiling removal and stucco ceiling
+                  removal?
+                </span>
                 <span className="text-2xl group-open:rotate-180 transition-transform">
                   ⌄
                 </span>
@@ -1421,7 +1435,15 @@ export default function Page() {
                 full-field Level 5 skim coating, HEPA sanding, stain-block
                 primer, and paint-ready finish. Optional services include pot
                 light coordination and professional ceiling painting with 2
-                finish coats.
+                finish coats. Mississauga ceiling projects with broader cracks,
+                leaks, or patching can also start with our{" "}
+                <Link
+                  href="/services/drywall-repair/mississauga/"
+                  className="font-semibold text-blue-600 hover:underline"
+                >
+                  drywall patch and ceiling repair in Mississauga
+                </Link>{" "}
+                service.
               </p>
             </details>
 

@@ -327,6 +327,17 @@ export default function Page() {
                 the room actually needs.
               </p>
               <p className="text-sm text-purple-100/90 mb-8">
+                If the drywall is already installed and you only need damaged
+                areas repaired, compare this page with our{" "}
+                <Link
+                  href="/services/drywall-repair/mississauga/"
+                  className="font-semibold underline underline-offset-2"
+                >
+                  wall and ceiling repair in Mississauga
+                </Link>{" "}
+                service before booking a full installation scope.
+              </p>
+              <p className="text-sm text-purple-100/90 mb-8">
                 Looking at a specific kind of project? Explore{" "}
                 <Link href="/blog/basement-drywall-installation-mississauga/" className="font-semibold underline underline-offset-2">
                   basement drywall installation

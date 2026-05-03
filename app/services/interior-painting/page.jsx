@@ -134,7 +134,15 @@ export default function Page() {
             <p className="mt-3 text-gray-700">
               Sharp lines, durable finishes, and modern colours for walls, trim,
               and ceilings. Careful prep, Level 5 smoothing where needed, and a
-              clean, guaranteed result.
+              clean, guaranteed result. If the walls need more than paint prep,
+              review our{" "}
+              <Link
+                href="/services/drywall-repair/mississauga/"
+                className="font-semibold text-blue-600 hover:underline"
+              >
+                drywall patch and ceiling repair in Mississauga
+              </Link>{" "}
+              before final coating.
             </p>
           </div>
           <div className="flex gap-3">
@@ -267,7 +275,7 @@ export default function Page() {
         <h2 className="text-2xl font-semibold">FAQ</h2>
         <details className="card p-6 bg-white mt-4">
           <summary className="font-medium">
-            How do you ensure sharp lines?
+            How do you keep lines sharp and finishes durable?
           </summary>
           <p className="mt-2 text-gray-700">
             Proper tape techniques, steady cut-ins, and controlling wet edges to
@@ -275,7 +283,7 @@ export default function Page() {
           </p>
         </details>
         <details className="card p-6 bg-white mt-4">
-          <summary className="font-medium">What products do you use?</summary>
+          <summary className="font-medium">Is prep dust-controlled?</summary>
           <p className="mt-2 text-gray-700">
             High-adhesion primers and durable topcoats matched to each room’s
             traffic and moisture needs.
@@ -283,15 +291,23 @@ export default function Page() {
         </details>
         <details className="card p-6 bg-white mt-4">
           <summary className="font-medium">
-            Do you repair minor drywall issues first?
+            Do you handle ceilings, trim, and doors too?
           </summary>
           <p className="mt-2 text-gray-700">
             Yes—holes, dents, tape lifts, and stains are addressed before
-            priming and painting.
+            priming and painting. For larger repair scope, we route Mississauga
+            clients to our{" "}
+            <Link
+              href="/services/drywall-repair/mississauga/"
+              className="font-semibold text-blue-600 hover:underline"
+            >
+              drywall repair Mississauga
+            </Link>{" "}
+            page before paint is scheduled.
           </p>
         </details>
         <details className="card p-6 bg-white mt-4">
-          <summary className="font-medium">How fast is the estimate?</summary>
+          <summary className="font-medium">How fast can I get a quote?</summary>
           <p className="mt-2 text-gray-700">
             Same-day photo estimate; on-site visit to confirm final scope and
             schedule.
