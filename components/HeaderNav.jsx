@@ -471,7 +471,7 @@ export default function HeaderNav() {
           <BreadcrumbJsonLd crumbs={crumbs} />
           <div
             className={[
-              "border-b border-[#0B76AC] bg-[#005F87] text-white transition-transform duration-300 sticky top-0 z-30",
+              "bg-[#005F87] text-white transition-transform duration-300 sticky top-0 z-30",
               isCollapsed ? "-translate-y-24" : "translate-y-0",
             ].join(" ")}
           >
@@ -514,7 +514,7 @@ export default function HeaderNav() {
       {/* Mobile drawer */}
       <div
         className={[
-          "lg:hidden border-b bg-white/95 backdrop-blur transition-[max-height] overflow-hidden",
+          "lg:hidden bg-white/95 backdrop-blur transition-[max-height] overflow-hidden",
           mobileOpen ? "max-h-[75vh]" : "max-h-0",
         ].join(" ")}
       >

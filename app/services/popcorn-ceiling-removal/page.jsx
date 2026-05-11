@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
+import AuthorityClusterBlock from "@/components/AuthorityClusterBlock/AuthorityClusterBlock";
 import { ServiceCopy } from "@/components/LocalSEOCopy";
 import { cities } from "@/data/cities";
 import QuoteForm from "@/components/QuoteForm";
@@ -249,7 +250,7 @@ export default function Page() {
       <JsonLd />
 
       {/* FULL-WIDTH HERO with Split Layout */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+      <section className="relative -mb-px bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -328,7 +329,7 @@ export default function Page() {
 
             {/* Right: Hero Image */}
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl md:border-4 md:border-white/20">
                 <img
                   src={images[0]}
                   alt="Professional popcorn ceiling removal contractor - before and after"
@@ -384,7 +385,7 @@ export default function Page() {
       {/* QUOTE FORM SECTION */}
       <section
         id="quote-form"
-        className="py-20 bg-gradient-to-b from-gray-50 to-white"
+        className="relative z-10 -mt-px py-20 bg-gradient-to-b from-gray-50 to-white"
       >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -1294,6 +1295,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <AuthorityClusterBlock />
 
       {/* FAQ SECTION */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">

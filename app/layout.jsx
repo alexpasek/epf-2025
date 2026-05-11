@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@/components/AuthorityClusterBlock/AuthorityClusterBlock.css";
 import Link from "next/link";
 import StickyCTA from "@/components/StickyCTA";
 import TrustBar from "@/components/TrustBar";

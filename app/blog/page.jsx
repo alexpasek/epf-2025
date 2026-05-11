@@ -30,6 +30,19 @@ const getBlogCardImageClassName = (post) => (
     : 'h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]'
 );
 
+const formatPostDate = (date) => {
+  if (!date) return null;
+  const parsed = new Date(`${date}T12:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) return null;
+
+  return new Intl.DateTimeFormat('en-CA', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(parsed);
+};
+
 export default async function Blog(){
   const posts=await getPosts();
 
@@ -44,6 +57,7 @@ export default async function Blog(){
           <div className='grid gap-x-4 gap-y-5 sm:grid-cols-2 lg:grid-cols-3'>
             {posts.map((p) => {
               const imageSrc = getBlogCardImage(p);
+              const formattedDate = formatPostDate(p.date);
 
               return(
                 <article key={p.slug} className='h-full'>
@@ -65,6 +79,14 @@ export default async function Blog(){
                     )}
 
                     <div className='flex flex-1 flex-col bg-[#eef2f6] px-6 pb-5 pt-4'>
+                      {formattedDate ? (
+                        <time
+                          dateTime={p.date}
+                          className='mb-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[#6b7f91]'
+                        >
+                          {formattedDate}
+                        </time>
+                      ) : null}
                       <h2 className='line-clamp-2 text-[1.02rem] font-semibold leading-[1.12] tracking-[-0.025em] text-[#324a65] sm:text-[1.08rem]'>
                         {p.title}
                       </h2>
