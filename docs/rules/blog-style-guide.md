@@ -176,6 +176,32 @@ Avoid:
 - Overly technical explanations
 - Repeating the same point many times
 
+## Blog page design style
+
+All new EPF blog pages, across every service topic, should look like professional contractor field guides.
+
+Match the design direction used on the newly created drywall patch guide, but adapt the content, images, field note, diagnostic section, local links, and CTAs to the specific service topic:
+
+- Dark hero section with a strong image.
+- Soft neutral page background.
+- White or light neutral cards.
+- Rounded cards with clean borders.
+- Clear CTA buttons.
+- Trust badges near CTAs.
+- Early quick-answer card.
+- Diagnostic tables or checklists near the top.
+- Field note card for contractor insight related to the topic.
+- Local service section when relevant.
+- Related articles shown as cards.
+- Author/trust block near the bottom.
+- Strong bottom CTA.
+
+Do not make any new EPF blog look like a plain text article.
+
+Do not add design elements that make the page feel like a generic marketing landing page.
+
+The page should feel useful first, then conversion-focused.
+
 ## EPF content examples
 
 Use these ideas naturally:

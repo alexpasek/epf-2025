@@ -30,6 +30,7 @@ Confirm:
 - SEO title is included.
 - Meta description is included.
 - One H1 only.
+- Direct answer appears within the first 150 words.
 - H2/H3 structure is logical.
 - Main keyword is used naturally.
 - Related terms are used naturally.
@@ -40,7 +41,10 @@ Confirm:
 - Featured image or image prompt is included.
 - URL slug is clean if a new page was created.
 - Article/BlogPosting schema is added if the project supports it.
+- BreadcrumbList schema is added when the layout has breadcrumbs.
+- Service schema is added for service-support blogs when appropriate and supported.
 - FAQPage schema is added only if supported and visible FAQ exists.
+- FAQ schema matches the visible FAQ exactly.
 - Main entity, service type, city, and related terms are used naturally.
 - The article covers pricing, process, mistakes, DIY limits, professional help, and quote-prep details where relevant.
 
@@ -84,6 +88,7 @@ For new blogs, confirm:
 - Supporting images included or prompts created.
 - File names are lowercase and hyphenated.
 - Alt text describes the actual image.
+- Every image has unique alt text.
 - Captions are added where helpful.
 - No fake logos.
 - No text baked into images unless requested.
@@ -103,6 +108,14 @@ Confirm:
 - Mobile layout considered.
 - Metadata pattern matches existing project.
 - Images use existing image component/pattern where available.
+- New blog visually matches the field-guide design benchmark from `/blog/why-drywall-patches-show-through-paint/`, adapted to the current service topic.
+- Hero includes breadcrumb, H1, direct answer, primary CTA, phone CTA, trust badges, and image.
+- Quick answer card appears directly after the hero.
+- Diagnostic table/checklist/comparison appears near the top.
+- Field note, local service block, author/trust block, related article cards, and bottom CTA are present where relevant.
+- Hero CTA, mid-page CTA, and bottom CTA are present where layout supports it.
+- Related articles are displayed as cards where layout supports it.
+- Tables stack cleanly on mobile.
 
 ## Final response required
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
+import DrywallPatchShowingGuide from "@/components/blog/DrywallPatchShowingGuide";
 import PopcornCeilingCostCalculator from "@/components/blog/PopcornCeilingCostCalculator";
 import {
   getPostBySlug,
@@ -434,6 +435,11 @@ export default async function Post({ params }) {
   const context = getPostContext(post);
   const image = post.image || post.photos?.[0]?.src;
   const imageUrl = toAbsoluteBlogImageUrl(image, baseUrl);
+
+  if (post.slug === "why-drywall-patches-show-through-paint") {
+    return <DrywallPatchShowingGuide />;
+  }
+
   const getParagraphText = (para) => {
     if (typeof para === "string") return para;
     if (para && typeof para === "object" && "html" in para) {

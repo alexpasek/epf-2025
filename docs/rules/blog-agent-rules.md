@@ -207,15 +207,68 @@ Most blogs should use this structure:
 1. SEO title
 2. Meta description
 3. H1
-4. Intro
-5. Short answer / quick summary
-6. Main H2 sections
-7. Practical examples
-8. Topical cluster links
-9. Internal links
-10. FAQ
-11. CTA
-12. Image plan or image prompts, if requested
+4. Hero section with breadcrumb, H1, short direct answer, CTA, call button, trust badges, and one strong image
+5. Quick answer card near the top
+6. Diagnostic section such as a problem/cause/fix table, checklist, cost table, timeline table, or DIY vs pro comparison
+7. Main H2/H3 sections
+8. Practical examples and contractor field notes
+9. Service connection and local service section where relevant
+10. Topical cluster links
+11. Internal links
+12. FAQ
+13. Author/trust block
+14. Related article cards
+15. Bottom CTA
+16. Image plan or image prompts, if requested
+
+## Blog design rules
+
+Every full blog, for every EPF service topic, should feel like a helpful contractor field guide, not a basic text article.
+
+Use the newly created `/blog/why-drywall-patches-show-through-paint/` page as the design benchmark for all future new blog posts across every service category.
+
+Future new blogs about popcorn ceiling removal, smooth ceiling refinishing, drywall repair, drywall installation, interior painting, wallpaper removal, baseboard installation, local service areas, cost guides, process guides, comparison guides, and repair guides should match that page's structure and visual rhythm:
+
+- Dark professional hero with breadcrumb, H1, short direct answer, CTA buttons, trust badges, and one strong image.
+- Quick answer card overlapping or directly following the hero.
+- Early diagnostic table, checklist, cost table, timeline table, or DIY/pro comparison.
+- White or soft-neutral cards with clean borders and restrained shadows.
+- Clear section spacing, short paragraphs, and readable line length.
+- Contractor field note card adapted to the service topic.
+- Local service block with only real existing city/service links.
+- Photo/quote checklist CTA.
+- Related problems or service list presented as cards, not a keyword dump.
+- FAQ accordion/details section.
+- Related article cards with title, short description, image, and link.
+- Author/trust block.
+- Strong bottom CTA with trust badges.
+
+Use:
+
+- Hero section with breadcrumb, H1, short direct answer, primary CTA, phone CTA, trust badges, and one strong image.
+- Quick answer card directly after the hero.
+- Diagnostic section near the top.
+- Short paragraphs and clear H2/H3 hierarchy.
+- Cards, callouts, checklists, tables, and related article cards.
+- A local service section when the topic supports a paid service.
+- An author/trust block with EPF Pro Services as the author/reviewer unless a real person is confirmed.
+- Three CTA placements: above the fold, middle of page, and bottom of page.
+- Mobile-first table/card layouts.
+- Reusable components or a slug-specific component when the shared blog renderer cannot support the field-guide layout safely.
+
+Avoid:
+
+- Huge walls of text
+- Keyword-dump sections
+- Footer-only SEO links
+- Repeated images or repeated alt text
+- Fake reviews, fake photos, fake certifications, or fake project details
+- Aggressive sales language
+- "No pressure" wording
+
+Do not redesign existing blog posts unless the user explicitly asks for that exact post.
+
+For every new blog post, create the field-guide layout at creation time instead of publishing a plain article and redesigning it later.
 
 ## Content quality rules
 

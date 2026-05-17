@@ -263,6 +263,10 @@ If the project supports structured data, add Article or BlogPosting schema.
 
 For FAQ sections, add FAQPage schema only if the project supports it and the FAQ content is visible on the page.
 
+For service-support blogs, add Service schema when the project pattern supports it.
+
+For redesigned guide pages, include BreadcrumbList schema that matches the visible breadcrumb.
+
 Article schema should include when possible:
 
 - headline
@@ -272,6 +276,21 @@ Article schema should include when possible:
 - author or organization
 - image
 - mainEntityOfPage
+
+Do not add fake AggregateRating, fake reviews, fake ratings, or fake credentials.
+
+## Author and trust
+
+Every full blog should include a visible author/trust block when the layout supports it.
+
+Use:
+
+- Written by: EPF Pro Services
+- Reviewed by: EPF Pro Services drywall finishing team, ceiling finishing team, painting team, or the relevant confirmed service team
+- Last updated: actual current update date
+- Service areas: relevant real service areas
+
+Do not invent individual names, licenses, credentials, certifications, reviews, or project claims.
 
 ## URL slug
 
@@ -307,6 +326,9 @@ Before finishing, confirm:
 - FAQ added if useful
 - Featured image or image prompt added
 - Schema added if supported
+- Author/trust block added where layout supports it
+- CTAs added above the fold, mid-page, and bottom where layout supports it
+- Related articles displayed as cards where layout supports it
 - Image alt text added if images exist
 - No duplicate/city-swapped content
 - No fake claims

@@ -28,6 +28,21 @@ The image plan should include:
 6. Alt text
 7. Caption suggestions when useful
 
+For full service-support blogs, include useful image coverage when available:
+
+- One close-up or problem image
+- One wide room or context image
+- One process image
+- One finished or paint-ready result image
+
+Never repeat the same alt text.
+
+Never repeat generic captions.
+
+Do not claim a photo is from an EPF job unless that is confirmed.
+
+If using generated, stock, placeholder, or generic site images, describe what is visible without calling it a real EPF project photo.
+
 ## Image types by blog
 
 ### Cost guide image
@@ -192,6 +207,8 @@ When adding images, include:
 - Width/height attributes if the project supports them
 - Lazy loading for non-hero images
 - Priority loading only for the main hero/featured image if the project supports it
+- Compressed images where possible
+- Unique alt text for every image
 
 ## Image prompt examples
 
