@@ -16,6 +16,13 @@ const UNORDERED_LIST_RE = /^\s*[-*]\s+/;
 const ORDERED_LIST_RE = /^\s*\d+\.\s+/;
 const HEADING_HTML_RE = /^<strong>(.+)<\/strong>$/i;
 const BLOCK_HTML_RE = /^<(figure|div|section)\b/i;
+const FIELD_GUIDE_TRUST_BADGES = [
+  "Trusted since 2005",
+  "Fully insured",
+  "Dust-controlled sanding",
+  "Paint-ready finishing",
+  "3-year workmanship warranty",
+];
 
 if (SITE_URL) {
   try {
@@ -66,6 +73,19 @@ const slugifyHeading = (value) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
+const formatPostDate = (date) => {
+  if (!date) return null;
+  const parsed = new Date(`${date}T12:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) return null;
+
+  return new Intl.DateTimeFormat("en-CA", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(parsed);
+};
+
 const extractHeading = (entry) => {
   if (!isHtmlEntry(entry)) return null;
   const trimmed = entry.html.trim();
@@ -84,6 +104,7 @@ const CITY_LABELS = {
   oakville: "Oakville",
   burlington: "Burlington",
   hamilton: "Hamilton",
+  ancaster: "Ancaster",
   milton: "Milton",
   etobicoke: "Etobicoke",
   grimsby: "Grimsby",
@@ -562,6 +583,193 @@ export default async function Post({ params }) {
   const quoteLocationLine = showCostCalculator
     ? "Share photos, ceiling heights, and the cities you need priced. We reply the same day with GTA availability and a tighter written scope."
     : context.quoteLocationLine;
+  const isFieldGuideLayout = post.fieldGuideLayout === true;
+  const quickAnswer =
+    post.quickAnswer ||
+    post.excerpt ||
+    description ||
+    "Review the main conditions, quote factors, and finish details before planning the work.";
+
+  if (isFieldGuideLayout) {
+    return (
+      <main className="bg-[#f7f8f6] pb-14 text-slate-900">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+        {faqJsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        ) : null}
+
+        <section className="bg-slate-950 text-white">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-14">
+            <div>
+              <nav className="text-sm text-slate-300">
+                <Link href="/blog/" className="hover:text-white">
+                  Blog
+                </Link>{" "}
+                / Popcorn ceiling guide
+              </nav>
+              <h1 className="mt-5 max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                {pageTitle}
+              </h1>
+              <p className="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-amber-300">
+                Updated {formatPostDate(post.date) || post.date}
+              </p>
+              {post.excerpt ? (
+                <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-200">
+                  {post.excerpt}
+                </p>
+              ) : null}
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/quote/"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#f59e0b] px-5 py-3 text-sm font-bold text-slate-950 shadow-sm transition hover:bg-[#fbbf24]"
+                >
+                  Request Popcorn Ceiling Quote
+                </Link>
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-slate-100"
+                >
+                  Call {PHONE_NUMBER}
+                </a>
+              </div>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {FIELD_GUIDE_TRUST_BADGES.map((badge) => (
+                  <li
+                    key={badge}
+                    className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold text-white"
+                  >
+                    {badge}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {featuredPhoto ? (
+              <figure className="overflow-hidden rounded-xl border border-white/10 bg-slate-900 shadow-2xl">
+                <img
+                  src={featuredPhoto.src}
+                  alt={featuredPhoto.alt}
+                  width="1600"
+                  height="900"
+                  className="h-auto w-full object-cover"
+                  fetchPriority="high"
+                />
+              </figure>
+            ) : null}
+          </div>
+        </section>
+
+        <section className="mx-auto -mt-6 max-w-5xl px-4">
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-6 shadow-lg">
+            <h2 className="text-2xl font-bold text-slate-950">Quick Answer</h2>
+            <p className="mt-3 leading-8 text-slate-700">{quickAnswer}</p>
+          </div>
+        </section>
+
+        <section className="mx-auto mt-12 max-w-5xl px-4">
+          <div className="prose-custom max-w-none space-y-5 text-base leading-8 text-slate-700">
+            {renderContent(post.content || [])}
+          </div>
+        </section>
+
+        {post.faqs?.length > 0 ? (
+          <section className="mx-auto mt-12 max-w-5xl px-4">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+              FAQ
+            </h2>
+            <div className="mt-6 grid gap-4">
+              {post.faqs.map((faq) => (
+                <details
+                  key={faq.q}
+                  className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+                >
+                  <summary className="cursor-pointer font-bold text-slate-950">
+                    {faq.q}
+                  </summary>
+                  <p className="mt-3 leading-8 text-slate-700">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {post.links?.length > 0 ? (
+          <section className="mx-auto mt-12 max-w-6xl px-4">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
+              Related Guides
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+              Keep Planning Your Ceiling Project
+            </h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {post.links.slice(0, 8).map((link, idx) => (
+                <Link
+                  key={`${link.href}-${idx}`}
+                  href={link.href}
+                  className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300"
+                >
+                  <h3 className="font-bold text-slate-950">{link.anchor}</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    {link.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        <section className="mx-auto mt-12 max-w-6xl px-4">
+          <div className="grid gap-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-[3fr_2fr]">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
+                Ready to plan your ceilings?
+              </p>
+              <h2 className="mt-2 text-3xl font-bold text-slate-950">
+                Get a popcorn ceiling quote today
+              </h2>
+              <p className="mt-3 leading-8 text-slate-700">
+                Send photos, room sizes, ceiling height, building type, and timing.
+                We will review the condition and recommend the right removal,
+                repair, skim coat, primer, and paint scope.
+              </p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">
+                Quick next step
+              </p>
+              <div className="mt-5 flex flex-col gap-3">
+                <Link href="/quote/" className="btn-cta text-center">
+                  Go to quote page
+                </Link>
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 font-bold text-slate-900 transition hover:bg-slate-50"
+                >
+                  Call {PHONE_NUMBER}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto mt-10 max-w-6xl px-4">
+          <Link href="/blog/" className="btn-cta">
+            Back to blog
+          </Link>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <div className="space-y-12 pb-12">
