@@ -15,6 +15,7 @@ const SITE_HOSTS = new Set(["epfproservices.com", "www.epfproservices.com"]);
 const UNORDERED_LIST_RE = /^\s*[-*]\s+/;
 const ORDERED_LIST_RE = /^\s*\d+\.\s+/;
 const HEADING_HTML_RE = /^<strong>(.+)<\/strong>$/i;
+const HEADING_TAG_HTML_RE = /^<h([2-3])(?:\s+[^>]*)?>(.+)<\/h\1>$/i;
 const BLOCK_HTML_RE = /^<(figure|div|section)\b/i;
 const FIELD_GUIDE_TRUST_BADGES = [
   "Trusted since 2005",
@@ -73,6 +74,13 @@ const slugifyHeading = (value) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
+const getUniqueHeadingId = (baseId, counts) => {
+  const safeBaseId = baseId || "section";
+  const currentCount = counts.get(safeBaseId) || 0;
+  counts.set(safeBaseId, currentCount + 1);
+  return currentCount === 0 ? safeBaseId : `${safeBaseId}-${currentCount + 1}`;
+};
+
 const formatPostDate = (date) => {
   if (!date) return null;
   const parsed = new Date(`${date}T12:00:00Z`);
@@ -89,13 +97,28 @@ const formatPostDate = (date) => {
 const extractHeading = (entry) => {
   if (!isHtmlEntry(entry)) return null;
   const trimmed = entry.html.trim();
-  const match = trimmed.match(HEADING_HTML_RE);
-  if (!match) return null;
-  const innerHtml = match[1].trim();
+  const strongMatch = trimmed.match(HEADING_HTML_RE);
+  const tagMatch = trimmed.match(HEADING_TAG_HTML_RE);
+  if (!strongMatch && !tagMatch) return null;
+  const innerHtml = (strongMatch?.[1] || tagMatch?.[2] || "").trim();
   const text = decodeEntities(stripHtmlTags(innerHtml)).trim();
   if (!text) return null;
-  const level = /^\d+\./.test(text) ? "h3" : "h2";
-  return { innerHtml, text, id: slugifyHeading(text), level };
+  const level = tagMatch ? `h${tagMatch[1]}` : /^\d+\./.test(text) ? "h3" : "h2";
+  return { innerHtml, text, baseId: slugifyHeading(text), level };
+};
+
+const buildTocItems = (content = []) => {
+  const counts = new Map();
+  return content
+    .map((entry) => {
+      const heading = extractHeading(entry);
+      if (!heading) return null;
+      return {
+        ...heading,
+        id: getUniqueHeadingId(heading.baseId, counts),
+      };
+    })
+    .filter(Boolean);
 };
 
 const CITY_LABELS = {
@@ -283,6 +306,10 @@ const getListType = (entry) => {
   return null;
 };
 
+const getFaqQuestion = (faq) => faq?.q || faq?.question || "";
+const getFaqAnswer = (faq) => faq?.a || faq?.answer || "";
+const getFaqKey = (faq, idx) => getFaqQuestion(faq) || `faq-${idx}`;
+
 const stripListPrefix = (value, listType) => {
   if (listType === "ol") return value.replace(ORDERED_LIST_RE, "");
   return value.replace(UNORDERED_LIST_RE, "");
@@ -293,6 +320,7 @@ const renderContent = (content) => {
   let listItems = [];
   let listType = null;
   let keyIndex = 0;
+  const headingCounts = new Map();
 
   const flushList = () => {
     if (!listItems.length || !listType) return;
@@ -352,10 +380,11 @@ const renderContent = (content) => {
     if (heading) {
       flushList();
       const HeadingTag = heading.level;
+      const headingId = getUniqueHeadingId(heading.baseId, headingCounts);
       nodes.push(
         <HeadingTag
-          key={`h-${heading.id}-${keyIndex++}`}
-          id={heading.id}
+          key={`h-${headingId}-${keyIndex++}`}
+          id={headingId}
           dangerouslySetInnerHTML={{ __html: heading.innerHtml }}
         />
       );
@@ -532,10 +561,10 @@ export default async function Post({ params }) {
           "@type": "FAQPage",
           mainEntity: post.faqs.map((faq) => ({
             "@type": "Question",
-            name: faq.q,
+            name: getFaqQuestion(faq),
             acceptedAnswer: {
               "@type": "Answer",
-              text: faq.a,
+              text: getFaqAnswer(faq),
             },
           })),
         }
@@ -589,6 +618,10 @@ export default async function Post({ params }) {
     post.excerpt ||
     description ||
     "Review the main conditions, quote factors, and finish details before planning the work.";
+  const tocItems = buildTocItems(post.content || []);
+  const authorName = post.author || "EPF Pro Services";
+  const reviewerName = post.reviewedBy || "EPF Pro Services";
+  const updatedDate = formatPostDate(post.date) || post.date;
 
   if (isFieldGuideLayout) {
     return (
@@ -676,6 +709,31 @@ export default async function Post({ params }) {
           </div>
         </section>
 
+        {tocItems.length > 1 ? (
+          <section className="mx-auto mt-8 max-w-5xl px-4">
+            <nav
+              aria-label="Table of contents"
+              className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
+                On this page
+              </p>
+              <ol className="mt-4 grid gap-3 text-sm font-semibold text-slate-700 sm:grid-cols-2">
+                {tocItems.map((item) => (
+                  <li
+                    key={item.id}
+                    className={item.level === "h3" ? "pl-4 text-slate-600" : ""}
+                  >
+                    <a href={`#${item.id}`} className="hover:text-[#b45309]">
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          </section>
+        ) : null}
+
         <section className="mx-auto mt-12 max-w-5xl px-4">
           <div className="prose-custom max-w-none space-y-5 text-base leading-8 text-slate-700">
             {renderContent(post.content || [])}
@@ -688,15 +746,17 @@ export default async function Post({ params }) {
               FAQ
             </h2>
             <div className="mt-6 grid gap-4">
-              {post.faqs.map((faq) => (
+              {post.faqs.map((faq, idx) => (
                 <details
-                  key={faq.q}
+                  key={getFaqKey(faq, idx)}
                   className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
                 >
                   <summary className="cursor-pointer font-bold text-slate-950">
-                    {faq.q}
+                    {getFaqQuestion(faq)}
                   </summary>
-                  <p className="mt-3 leading-8 text-slate-700">{faq.a}</p>
+                  <p className="mt-3 leading-8 text-slate-700">
+                    {getFaqAnswer(faq)}
+                  </p>
                 </details>
               ))}
             </div>
@@ -706,7 +766,7 @@ export default async function Post({ params }) {
         {post.links?.length > 0 ? (
           <section className="mx-auto mt-12 max-w-6xl px-4">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
-              Related Guides
+              Related Local Pages and Guides
             </p>
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
               Keep Planning Your Ceiling Project
@@ -727,6 +787,69 @@ export default async function Post({ params }) {
             </div>
           </section>
         ) : null}
+
+        {gallery?.length > 0 ? (
+          <section className="mx-auto mt-12 max-w-6xl px-4">
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
+                    Field Photos
+                  </p>
+                  <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
+                    What the Work Can Look Like
+                  </h2>
+                </div>
+                <Link
+                  href="/our-work/"
+                  className="text-sm font-bold text-[#b45309] hover:underline"
+                >
+                  Browse our work
+                </Link>
+              </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {gallery.slice(0, 5).map((photo, idx) => (
+                  <figure
+                    key={`${photo.src}-${idx}`}
+                    className="overflow-hidden rounded-xl border border-slate-100 bg-slate-50"
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="h-48 w-full object-cover"
+                      loading="lazy"
+                    />
+                    <figcaption className="p-3 text-sm leading-6 text-slate-600">
+                      {photo.description}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="mx-auto mt-12 max-w-5xl px-4">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
+              Article Review
+            </p>
+            <div className="mt-4 grid gap-4 text-sm leading-7 text-slate-700 sm:grid-cols-3">
+              <p>
+                <span className="block font-bold text-slate-950">Author</span>
+                {authorName}
+              </p>
+              <p>
+                <span className="block font-bold text-slate-950">Reviewed by</span>
+                {reviewerName}
+              </p>
+              <p>
+                <span className="block font-bold text-slate-950">Updated</span>
+                {updatedDate}
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="mx-auto mt-12 max-w-6xl px-4">
           <div className="grid gap-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-[3fr_2fr]">
@@ -831,7 +954,41 @@ export default async function Post({ params }) {
         </section>
       ) : null}
 
-      <section className={`container-x px-4 ${showCostCalculator ? "" : "-mt-8"}`}>
+      <section className="container-x px-4">
+        <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6 shadow-xl ring-1 ring-amber-100">
+          <h2 className="text-2xl font-semibold text-slate-950">
+            Quick Answer
+          </h2>
+          <p className="mt-3 leading-8 text-slate-700">{quickAnswer}</p>
+        </div>
+      </section>
+
+      {tocItems.length > 1 ? (
+        <section className="container-x px-4">
+          <nav
+            aria-label="Table of contents"
+            className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5"
+          >
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+              On this page
+            </p>
+            <ol className="mt-4 grid gap-3 text-sm font-semibold text-slate-700 md:grid-cols-2">
+              {tocItems.map((item) => (
+                <li
+                  key={item.id}
+                  className={item.level === "h3" ? "pl-4 text-slate-600" : ""}
+                >
+                  <a href={`#${item.id}`} className="hover:text-amber-700">
+                    {item.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </section>
+      ) : null}
+
+      <section className="container-x px-4">
         <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
           <div className="prose-custom max-w-none text-slate-800">
             {renderContent(post.content || [])}
@@ -862,15 +1019,15 @@ export default async function Post({ params }) {
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
             <h2 className="text-2xl font-semibold text-slate-900">FAQ</h2>
             <div className="mt-6 space-y-4">
-              {post.faqs.map((faq) => (
+              {post.faqs.map((faq, idx) => (
                 <details
-                  key={faq.q}
+                  key={getFaqKey(faq, idx)}
                   className="rounded-2xl border border-slate-200 bg-slate-50 p-5"
                 >
                   <summary className="cursor-pointer font-semibold text-slate-900">
-                    {faq.q}
+                    {getFaqQuestion(faq)}
                   </summary>
-                  <p className="mt-3 text-slate-700">{faq.a}</p>
+                  <p className="mt-3 text-slate-700">{getFaqAnswer(faq)}</p>
                 </details>
               ))}
             </div>
@@ -957,6 +1114,30 @@ export default async function Post({ params }) {
           </div>
         </section>
       )}
+
+      <section className="container-x px-4">
+        <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-600">
+            Article Review
+          </p>
+          <div className="mt-4 grid gap-4 text-sm leading-7 text-slate-700 sm:grid-cols-3">
+            <p>
+              <span className="block font-semibold text-slate-950">Author</span>
+              {authorName}
+            </p>
+            <p>
+              <span className="block font-semibold text-slate-950">
+                Reviewed by
+              </span>
+              {reviewerName}
+            </p>
+            <p>
+              <span className="block font-semibold text-slate-950">Updated</span>
+              {updatedDate}
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="container-x px-4">
         <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5 grid gap-8 lg:grid-cols-[3fr_2fr]">

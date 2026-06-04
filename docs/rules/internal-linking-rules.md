@@ -164,6 +164,8 @@ Add a "Related guides" or "Related local pages" section when useful.
 
 Keep it short and relevant.
 
+For important full blogs, include a related local pages/service links section when the article supports local service intent. This section should connect the reader to the matching service page, city page, related cluster guides, calculator when relevant, and quote/contact page.
+
 Example:
 
 Related guides:

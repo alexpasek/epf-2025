@@ -35,6 +35,10 @@ For full service-support blogs, include useful image coverage when available:
 - One process image
 - One finished or paint-ready result image
 
+Important full blogs should aim for 3-5 useful photos when images are requested or available. Use real EPF/site photos when confirmed, generated realistic renovation photos when requested, or approved existing site images when appropriate.
+
+Use local/service-specific alt text where the article has local intent, but do not invent local claims or say an image is from a real EPF job unless confirmed.
+
 Never repeat the same alt text.
 
 Never repeat generic captions.

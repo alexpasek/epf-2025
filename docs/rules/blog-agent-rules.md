@@ -221,6 +221,23 @@ Most blogs should use this structure:
 15. Bottom CTA
 16. Image plan or image prompts, if requested
 
+## Important blog elements
+
+Every important full blog or service-support blog must include these elements unless the user explicitly asks for a short/simple article:
+
+- Top quick answer box near the beginning.
+- Table of contents with links to major sections.
+- Cost table, timeline table, diagnostic table, checklist, or comparison table near the top when the topic supports it.
+- 3-5 useful real, generated, or approved site photos with descriptive local/service-specific alt text when images are requested or available.
+- Related local pages and related guide links.
+- Clear "send photos for quote" CTA near the bottom.
+- Visible FAQ section and FAQ schema when the project supports it.
+- Breadcrumb schema when the project supports it.
+- Author/reviewer block and updated date.
+- Internal links to the relevant calculator, service page, city page, related blog, and quote/contact page where useful.
+
+Do not add a "60-second quote" button or similar urgency-style CTA unless the user specifically asks for it.
+
 ## Blog design rules
 
 Every full blog, for every EPF service topic, should feel like a helpful contractor field guide, not a basic text article.

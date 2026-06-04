@@ -189,12 +189,17 @@ Match the design direction used on the newly created drywall patch guide, but ad
 - Clear CTA buttons.
 - Trust badges near CTAs.
 - Early quick-answer card.
+- Table of contents for long-form blogs.
 - Diagnostic tables or checklists near the top.
 - Field note card for contractor insight related to the topic.
 - Local service section when relevant.
 - Related articles shown as cards.
 - Author/trust block near the bottom.
 - Strong bottom CTA.
+
+Important full blogs should not feel like plain articles. They should combine the quick answer, table of contents, useful table/checklist, photos, related local pages, FAQ, author/reviewer block, updated date, and send-photos CTA into one clear homeowner guide.
+
+Do not add a "60-second quote" button unless the user specifically requests that CTA.
 
 Do not make any new EPF blog look like a plain text article.
 

@@ -181,13 +181,18 @@ Every full blog should:
 - Be at least 2,200 words unless the user explicitly requests a short support article.
 - Cover the topic more completely than generic competitor pages.
 - Include a direct short answer near the top.
+- Include a table of contents for long-form articles.
+- Include a useful table, checklist, or comparison block near the top when the topic involves cost, timeline, process, mistakes, or decision-making.
 - Include practical trade details that prove real service knowledge.
 - Include related entities and terms naturally, not as keyword stuffing.
 - Include original examples based on real renovation logic, not fake case studies.
 - Include an FAQ section that answers long-tail homeowner questions.
 - Include a featured image with descriptive alt text.
+- Include 3-5 supporting photos when images are requested or available.
 - Include Article or BlogPosting schema if supported.
 - Include FAQPage schema only when visible FAQs are present and the project supports it.
+- Include BreadcrumbList schema when the project supports it.
+- Include author/reviewer information and an updated date when the template supports it.
 - Link to the correct pillar/money page.
 - Link to related cluster posts.
 - Link to adjacent services only when the next step is useful for the reader.
