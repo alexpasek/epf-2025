@@ -9,6 +9,7 @@ export async function POST(req) {
                 email = "",
                 phone = "",
                 details = "",
+                attachments = [],
         } = await req.json();
 
         // 🔒 Read & sanitize env
@@ -39,6 +40,15 @@ Phone: ${phone}
 Details:
 ${details}
 `,
+            attachments: Array.isArray(attachments) && attachments.length
+                ? attachments
+                    .filter((item) => item && item.filename && item.content)
+                    .slice(0, 3)
+                    .map((item) => ({
+                        filename: String(item.filename).slice(0, 120),
+                        content: item.content,
+                    }))
+                : undefined,
             reply_to: email || undefined,
         };
 

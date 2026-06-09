@@ -9,6 +9,62 @@ const conditions = [
   { key: "not-sure", label: "Not Sure" },
 ];
 
+const roomRanges = {
+  "1 room": [950, 1800],
+  "2-3 rooms": [2400, 3800],
+  "4+ rooms": [4500, 8500],
+  "whole home": [6500, 12500],
+};
+
+const roomHints = {
+  "1 room": "Bedroom, office, or small living room",
+  "2-3 rooms": "A few bedrooms, hallway, or main living areas",
+  "4+ rooms": "Main floor or multiple larger spaces",
+  "whole home": "Full-home ceiling update",
+};
+
+const finishOptions = [
+  { key: "paint-no", label: "No" },
+  { key: "paint-yes", label: "Yes" },
+  { key: "paint-not-sure", label: "Not Sure" },
+];
+
+function formatMoney(value) {
+  return new Intl.NumberFormat("en-CA", {
+    style: "currency",
+    currency: "CAD",
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+function getEstimateRange({ rooms, squareFeet, condition, height, furnished, painting }) {
+  const base = squareFeet
+    ? [Math.max(850, squareFeet * 4.2), Math.max(1400, squareFeet * 6.4)]
+    : roomRanges[rooms];
+  if (!base) return null;
+
+  let multiplier = 1;
+  if (condition === "painted") multiplier += 0.18;
+  if (condition === "not-sure") multiplier += 0.08;
+  if (height === "10+ ft") multiplier += 0.12;
+  if (height === "vaulted or cathedral") multiplier += 0.22;
+  if (furnished === "furnished") multiplier += 0.08;
+  if (painting === "paint-yes") multiplier += 0.16;
+
+  return base.map((value) => Math.round((value * multiplier) / 50) * 50);
+}
+
+function getAdjustmentLabels({ condition, height, furnished, painting }) {
+  const labels = [];
+  if (condition === "painted") labels.push("Painted texture");
+  if (condition === "not-sure") labels.push("Condition check needed");
+  if (height === "10+ ft") labels.push("10+ ft ceilings");
+  if (height === "vaulted or cathedral") labels.push("Vaulted / cathedral areas");
+  if (furnished === "furnished") labels.push("Furniture protection");
+  if (painting === "paint-yes") labels.push("Painting included");
+  return labels;
+}
+
 function track(event, payload) {
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer || [];
@@ -18,11 +74,24 @@ function track(event, payload) {
   }
 }
 
-export default function QuickEstimateCard({ city }) {
+export default function QuickEstimateCard({ city, enhanced = false }) {
   const router = useRouter();
   const [condition, setCondition] = useState("unpainted");
+  const [rooms, setRooms] = useState("");
+  const [squareFeet, setSquareFeet] = useState(500);
+  const [height, setHeight] = useState("");
+  const [furnished, setFurnished] = useState("furnished");
+  const [painting, setPainting] = useState("paint-not-sure");
+  const [pre1982, setPre1982] = useState(false);
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState("");
+
+  const estimateRange = enhanced
+    ? getEstimateRange({ rooms, squareFeet, condition, height, furnished, painting })
+    : null;
+  const adjustmentLabels = enhanced
+    ? getAdjustmentLabels({ condition, height, furnished, painting })
+    : [];
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -38,7 +107,14 @@ export default function QuickEstimateCard({ city }) {
       conditions.find((item) => item.key === selectedCondition)?.label || selectedCondition;
     const rooms = (form.get("rooms") || "").toString();
     const height = (form.get("height") || "").toString();
+    const squareFeet = (form.get("squareFeet") || "").toString();
+    const furnishedStatus = (form.get("furnished") || "").toString();
+    const paintingStatus = (form.get("painting") || "").toString();
+    const asbestosFlag = form.get("pre1982") ? "Yes" : "No";
     const notes = (form.get("notes") || "").toString();
+    const displayedEstimate = estimateRange
+      ? `${formatMoney(estimateRange[0])} - ${formatMoney(estimateRange[1])}`
+      : "Not shown";
 
     const details = [
       "Lead source: Google Ads landing page",
@@ -46,7 +122,12 @@ export default function QuickEstimateCard({ city }) {
       `City landing page: ${city}`,
       `Ceiling condition: ${conditionLabel}`,
       `Rooms/size: ${rooms}`,
+      `Approx. square feet: ${squareFeet || "N/A"}`,
       `Ceiling height: ${height}`,
+      `Furnished/vacant: ${furnishedStatus || "N/A"}`,
+      `Painting included: ${paintingStatus || "N/A"}`,
+      `Built before 1982 / asbestos note: ${asbestosFlag}`,
+      `Displayed rough estimate: ${displayedEstimate}`,
       `Notes: ${notes || "N/A"}`,
     ].join("\n");
 
@@ -101,10 +182,12 @@ export default function QuickEstimateCard({ city }) {
             '"Arial Narrow Bold", "Franklin Gothic Medium", Impact, sans-serif',
         }}
       >
-        Get your free quote!
+        {enhanced ? "Get Your Price Range" : "Get your free quote!"}
       </h3>
       <p className="mt-1 text-center text-[1.1rem] font-semibold text-[#3e4a45] md:text-[1.8rem]">
-        Request Your Fast &amp; Free Estimate
+        {enhanced
+          ? "Free, fast, and email optional"
+          : "Request Your Fast & Free Estimate"}
       </p>
 
       <form onSubmit={onSubmit} className="mt-4 grid grid-cols-1 gap-2.5 md:grid-cols-2 md:gap-3">
@@ -146,7 +229,8 @@ export default function QuickEstimateCard({ city }) {
         <select
           name="rooms"
           required
-          defaultValue=""
+          value={rooms}
+          onChange={(e) => setRooms(e.target.value)}
           className="h-11 rounded-xl border border-[#b9c3bb] bg-white px-3 text-sm text-[#1d3e34] md:h-12 md:text-[1.22rem]"
         >
           <option value="" disabled>
@@ -161,7 +245,8 @@ export default function QuickEstimateCard({ city }) {
         <select
           name="height"
           required
-          defaultValue=""
+          value={height}
+          onChange={(e) => setHeight(e.target.value)}
           className="h-11 rounded-xl border border-[#b9c3bb] bg-white px-3 text-sm text-[#1d3e34] md:h-12 md:text-[1.22rem]"
         >
           <option value="" disabled>
@@ -172,6 +257,120 @@ export default function QuickEstimateCard({ city }) {
           <option value="vaulted or cathedral">Vaulted / cathedral</option>
           <option value="not sure">Not sure</option>
         </select>
+
+        {enhanced ? (
+          <>
+            <div className="md:col-span-2 rounded-2xl border border-[#d4ddd6] bg-white p-3">
+              <div className="flex items-center justify-between gap-3">
+                <label
+                  htmlFor="squareFeet"
+                  className="text-sm font-bold uppercase tracking-[0.08em] text-[#164b3b] md:text-base"
+                >
+                  Approx. ceiling area
+                </label>
+                <span className="rounded-full bg-[#145542] px-3 py-1 text-sm font-bold text-white">
+                  {squareFeet.toLocaleString("en-CA")} sq ft
+                </span>
+              </div>
+              <input
+                id="squareFeet"
+                name="squareFeet"
+                type="range"
+                min="100"
+                max="3000"
+                step="50"
+                value={squareFeet}
+                onChange={(e) => setSquareFeet(Number(e.target.value))}
+                className="mt-3 w-full accent-[#df4b23]"
+              />
+              <div className="mt-1 flex justify-between text-xs font-semibold text-[#65736e]">
+                <span>100</span>
+                <span>800</span>
+                <span>1,500</span>
+                <span>3,000 sq ft</span>
+              </div>
+              <p className="mt-2 text-xs font-medium text-[#56655f] md:text-sm">
+                {rooms ? roomHints[rooms] : "Pick rooms or slide to the rough ceiling size."}
+              </p>
+            </div>
+
+            <select
+              name="furnished"
+              value={furnished}
+              onChange={(e) => setFurnished(e.target.value)}
+              className="h-11 rounded-xl border border-[#b9c3bb] bg-white px-3 text-sm text-[#1d3e34] md:h-12 md:text-[1.22rem]"
+            >
+              <option value="furnished">Furnished room</option>
+              <option value="vacant">Vacant room</option>
+            </select>
+
+            <select
+              name="painting"
+              value={painting}
+              onChange={(e) => setPainting(e.target.value)}
+              className="h-11 rounded-xl border border-[#b9c3bb] bg-white px-3 text-sm text-[#1d3e34] md:h-12 md:text-[1.22rem]"
+            >
+              {finishOptions.map((item) => (
+                <option key={item.key} value={item.key}>
+                  Paint included? {item.label}
+                </option>
+              ))}
+            </select>
+
+            <label className="md:col-span-2 flex cursor-pointer gap-3 rounded-2xl border border-[#e2c580] bg-[#fff8e6] p-3 text-[#4b3511]">
+              <input
+                type="checkbox"
+                name="pre1982"
+                checked={pre1982}
+                onChange={(e) => setPre1982(e.target.checked)}
+                className="mt-1 h-4 w-4 accent-[#df4b23]"
+              />
+              <span>
+                <span className="block text-sm font-bold md:text-base">
+                  My home may have been built before 1982
+                </span>
+                <span className="mt-1 block text-xs font-medium md:text-sm">
+                  Older texture can require asbestos testing before removal.
+                  We can explain the next step when we review your photos.
+                </span>
+              </span>
+            </label>
+
+            <div className="md:col-span-2 rounded-2xl border border-[#e4b965] bg-[#fff7df] p-3 text-[#163f35]">
+              <p className="text-xs font-bold uppercase tracking-[0.13em] text-[#9a5a12] md:text-sm">
+                Rough Estimate
+              </p>
+              {estimateRange ? (
+                <p className="mt-1 text-[1.65rem] font-black leading-tight md:text-[2.15rem]">
+                  {formatMoney(estimateRange[0])} - {formatMoney(estimateRange[1])}
+                </p>
+              ) : (
+                <p className="mt-1 text-base font-bold md:text-xl">
+                  Choose rooms and ceiling height to see a range.
+                </p>
+              )}
+              <p className="mt-1 text-xs font-medium text-[#5d4b23] md:text-sm">
+                Final pricing depends on painted texture, ceiling height,
+                patching, access, and whether painting is included.
+              </p>
+              <div className="mt-3 rounded-xl border border-[#ecd38d] bg-white/70 p-2">
+                <p className="text-xs font-bold uppercase tracking-[0.1em] text-[#9a5a12]">
+                  Price adjustments applied
+                </p>
+                <p className="mt-1 text-sm font-semibold text-[#31453e]">
+                  {adjustmentLabels.length
+                    ? adjustmentLabels.join(" · ")
+                    : "Standard-height, accessible ceiling"}
+                </p>
+              </div>
+              <p className="mt-3 rounded-xl bg-[#145542] px-3 py-2 text-sm font-semibold text-white">
+                Payment options: e-transfer, credit card, and staged payments
+                for larger projects. Exact scope is confirmed after photos or a
+                site visit.
+              </p>
+            </div>
+          </>
+        ) : null}
 
         <input
           name="name"
@@ -203,7 +402,11 @@ export default function QuickEstimateCard({ city }) {
           disabled={sending}
           className="md:col-span-2 rounded-xl bg-gradient-to-b from-[#f26537] to-[#df4b23] px-4 py-3 text-[1.3rem] font-bold uppercase tracking-wide text-white shadow-md transition hover:from-[#f4784f] hover:to-[#d74520] disabled:opacity-70 md:mt-1 md:text-[2.15rem]"
         >
-          {sending ? "Sending..." : "Get My Quote »"}
+          {sending
+            ? "Sending..."
+            : enhanced
+              ? "Get My Popcorn Ceiling Price »"
+              : "Get My Quote »"}
         </button>
         <p className="md:col-span-2 text-center text-xs text-[#4f615b] md:text-sm">
           By submitting, you agree to our{" "}

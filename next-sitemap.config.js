@@ -17,6 +17,8 @@ module.exports = {
         "/api/*",
         "/404",
         "/500",
+        "/locations/drywall-repair",
+        "/locations/popcorn-ceiling-removal",
         "/locations/popcorn-ceiling-removal-*",
     ],
 
@@ -28,7 +30,11 @@ module.exports = {
         }
 
         // Exclude paid-ads landing pages from indexing/sitemaps
-        if (path.startsWith("/locations/popcorn-ceiling-removal-")) {
+        if (
+            path === "/locations/drywall-repair" ||
+            path === "/locations/popcorn-ceiling-removal" ||
+            path.startsWith("/locations/popcorn-ceiling-removal-")
+        ) {
             return null;
         }
 

@@ -46,6 +46,18 @@ const nextConfig = {
                 ],
             },
             {
+                source: "/locations/popcorn-ceiling-removal",
+                headers: [
+                    { key: "X-Robots-Tag", value: "noindex, nofollow" },
+                ],
+            },
+            {
+                source: "/locations/drywall-repair",
+                headers: [
+                    { key: "X-Robots-Tag", value: "noindex, nofollow" },
+                ],
+            },
+            {
                 source: "/locations/popcorn-ceiling-removal-:city/:path*",
                 headers: [
                     { key: "X-Robots-Tag", value: "noindex, nofollow" },

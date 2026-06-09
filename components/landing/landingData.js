@@ -187,6 +187,41 @@ const cityReviews = {
 };
 
 export const cityLandingData = {
+    general: {
+        slug: "popcorn-ceiling-removal",
+        city: "GTA & Nearby Areas",
+        metaTitle: "Popcorn Ceiling Removal | Fast Price Range & Smooth Finish",
+        metaDescription: "General popcorn ceiling removal ad landing page with a quick price range, dust-controlled setup, smooth finish options, and fast quote follow-up.",
+        topPromoText: "GET A ROUGH PRICE RANGE • SAME-DAY QUOTE • DUST-CONTROLLED SETUP",
+        heroSubline: "From Outdated Texture to a Smooth Modern Ceiling.",
+        heroPromise: "Get quick price guidance, protected setup, and a smooth ceiling finish without renovation chaos.",
+        intro: "Popcorn ceiling removal for homeowners who want a clear price range before booking. We protect the work area, remove or stabilize texture, repair the ceiling, and finish it smooth.",
+        servingLine: "Serving Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, North York, Grimsby, St. Catharines, and nearby GTA areas.",
+        enhancedAdsPage: true,
+        heroStats: [
+            "15+ years experience",
+            "700+ projects done",
+            "Fully insured",
+        ],
+        servicesIncluded: [
+            "Popcorn removal",
+            "Ceiling repairs where needed",
+            "Skim coat / smoothing",
+            "Sanding, primer, optional paint",
+        ],
+        galleryCaptions: [
+            "Main floor ceiling upgrade with full dust-controlled setup.",
+            "Condo ceiling stripped and prepared for a smooth finish.",
+            "Family room before/after popcorn texture removal.",
+            "Open-concept ceiling skimmed for an even paint-ready surface.",
+            "Bedroom ceiling detail after texture removal and sanding.",
+            "Hallway transition blended to a smooth modern finish.",
+            "Kitchen ceiling cleaned up for brighter overhead lighting.",
+            "Open living area after removal and final prep.",
+            "Dining space with flat finished ceiling and clean edges.",
+            "Renovation ceiling staged for optional paint coat.",
+        ],
+    },
     mississauga: {
         slug: "popcorn-ceiling-removal-mississauga",
         city: "Mississauga",
@@ -285,7 +320,7 @@ export function getLandingData(key) {
     const cityData = cityLandingData[key];
     if (!cityData) return null;
 
-    const reviews = cityReviews[cityData.city];
+    const reviews = cityReviews[cityData.city] || cityReviews.Mississauga;
     return {
         ...cityData,
         heroStats: cityData.heroStats || baseHeroStats,

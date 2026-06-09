@@ -173,6 +173,22 @@ export default function PopcornAdsLandingPage({ landing }) {
   const promoText =
     landing.topPromoText ||
     "FREE SAME-DAY QUOTE • PROVEN DUST-FREE CEILING REMOVAL";
+  const enhanced = Boolean(landing.enhancedAdsPage);
+  const trustBadges = enhanced
+    ? [
+        "15+ Years Experience",
+        "700+ Projects Done",
+        "Fully Insured",
+        "3-Year Warranty",
+        "Dust-Controlled Setup",
+        "Same-Day Quote",
+      ]
+    : [
+        "LICENSED & INSURED",
+        "3-YEAR WARRANTY",
+        "DUST-FREE GUARANTEED",
+        "700+ PROJECTS DONE",
+      ];
 
   return (
     <div className="scroll-smooth bg-[#ecede8] pb-[84px] md:pb-0">
@@ -231,7 +247,11 @@ export default function PopcornAdsLandingPage({ landing }) {
                   quoteLabel={
                     <span className="inline-flex items-center gap-2">
                       <EditIcon className="h-5 w-5" />
-                      <span>Get Quote Online</span>
+                      <span>
+                        {enhanced
+                          ? "Get My Popcorn Ceiling Price"
+                          : "Get Quote Online"}
+                      </span>
                     </span>
                   }
                   callClassName="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-b from-[#f26437] to-[#df4b22] px-7 py-3.5 text-xl font-bold text-white shadow-[0_14px_24px_-15px_rgba(0,0,0,.65)]"
@@ -241,9 +261,9 @@ export default function PopcornAdsLandingPage({ landing }) {
 
               <div className="mt-3 hidden items-center justify-start gap-0.5 rounded-md bg-[#0f4a3a]/92 px-3 py-2 text-base font-semibold text-white md:flex">
                 {[
-                  "Dust-Free Process",
-                  "Proven Results",
-                  "Satisfaction Guaranteed",
+                  enhanced ? "Dust-Controlled Setup" : "Dust-Free Process",
+                  enhanced ? "3-Year Warranty" : "Proven Results",
+                  enhanced ? "Same-Day Quote" : "Satisfaction Guaranteed",
                 ].map((item, idx) => (
                   <div key={item} className="flex items-center gap-2">
                     {idx > 0 ? (
@@ -256,6 +276,59 @@ export default function PopcornAdsLandingPage({ landing }) {
                   </div>
                 ))}
               </div>
+
+              {enhanced ? (
+                <div className="mt-4 hidden grid-cols-[1fr_.9fr] gap-4 md:grid">
+                  <div className="rounded-2xl border border-white/20 bg-white/10 p-5 text-white shadow-[0_18px_36px_-28px_rgba(0,0,0,.65)] backdrop-blur">
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#ffd03f]">
+                      Before You Book
+                    </p>
+                    <h2 className="mt-2 text-3xl font-black leading-tight">
+                      Know the rough price, scope, and timeline first.
+                    </h2>
+                    <ul className="mt-4 space-y-3 text-lg font-semibold text-[#eaf7f1]">
+                      {[
+                        "Photos + ceiling size help us tighten the range",
+                        "Painted popcorn and high ceilings are flagged early",
+                        "You get a written scope before work starts",
+                      ].map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-1 text-[#ffd03f]">
+                            <CheckIcon className="h-4 w-4" />
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-[#ffd03f]/35 bg-[#fff7df] p-5 text-[#153f35] shadow-[0_18px_36px_-28px_rgba(0,0,0,.65)]">
+                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#9a5a12]">
+                      Typical Ranges
+                    </p>
+                    <div className="mt-3 space-y-3">
+                      {[
+                        ["1 room", "$950-$1,800"],
+                        ["2-3 rooms", "$2,400-$3,800"],
+                        ["Main floor", "$4,500-$8,500"],
+                      ].map(([label, price]) => (
+                        <div
+                          key={label}
+                          className="flex items-center justify-between gap-3 rounded-xl border border-[#ead08b] bg-white/75 px-3 py-2"
+                        >
+                          <span className="font-bold">{label}</span>
+                          <span className="text-lg font-black text-[#df4f26]">
+                            {price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-3 text-sm font-semibold text-[#5d4b23]">
+                      Use the calculator for a better range based on size,
+                      paint, height, and furniture.
+                    </p>
+                  </div>
+                </div>
+              ) : null}
 
               <div className="mt-4 md:hidden">
                 <div className="rounded-2xl border border-white/35 bg-white/95 p-2.5 shadow-lg">
@@ -273,6 +346,7 @@ export default function PopcornAdsLandingPage({ landing }) {
                     phoneHref={PHONE_HREF}
                     quoteHref="#quick-quote"
                     className="mt-3 grid grid-cols-2 gap-2"
+                    quoteLabel={enhanced ? "Get Price" : "Get Quote"}
                     quoteClassName="inline-flex items-center justify-center rounded-xl bg-gradient-to-b from-[#f16537] to-[#df4b23] px-2 py-2.5 text-[1.15rem] font-bold uppercase text-white"
                     callClassName="inline-flex items-center justify-center rounded-xl bg-gradient-to-b from-[#2a6c5a] to-[#1b4a3d] px-2 py-2.5 text-[1.15rem] font-bold uppercase text-white"
                   />
@@ -299,26 +373,109 @@ export default function PopcornAdsLandingPage({ landing }) {
             <div className="md:ml-auto md:w-full md:max-w-[40.5rem] md:self-start md:pt-0">
               <div className="mb-3 rounded-2xl border border-[#b9c8c0] bg-[#f6f8f6] p-4 shadow-sm">
                 <h2 className="text-[1.32rem] font-bold uppercase text-[#114c3a] md:text-[2rem]">
-                  Typical Pricing & Timeline
+                  {enhanced ? "Fast Price Guidance" : "Typical Pricing & Timeline"}
                 </h2>
                 <ul className="mt-2 space-y-1.5 text-[0.96rem] text-[#2e4841] md:text-[1.08rem]">
-                  <li>Most single-room projects: 1-2 days.</li>
-                  <li>Main floors and larger homes: 2-5 days.</li>
+                  <li>
+                    {enhanced
+                      ? "Single rooms commonly start around 1-2 days."
+                      : "Most single-room projects: 1-2 days."}
+                  </li>
+                  <li>
+                    {enhanced
+                      ? "Main floors and full-home projects are quoted from photos or a site visit."
+                      : "Main floors and larger homes: 2-5 days."}
+                  </li>
                   <li>
                     Pricing depends on size, height, painted texture, and repair
                     level.
                   </li>
                 </ul>
                 <p className="mt-2 text-[0.85rem] font-medium text-[#50645d] md:text-sm">
-                  Get a same-day estimate from photos and room sizes, then a
-                  written final scope.
+                  {enhanced
+                    ? "Use the quick range tool, then send photos for a written final scope."
+                    : "Get a same-day estimate from photos and room sizes, then a written final scope."}
                 </p>
               </div>
-              <QuickEstimateCard city={landing.city} />
+              <QuickEstimateCard city={landing.city} enhanced={enhanced} />
             </div>
           </div>
         </div>
       </section>
+
+      {enhanced ? (
+        <section className="border-b border-[#d7ded6] bg-white">
+          <div className="container-x grid gap-4 py-6 md:grid-cols-3">
+            <article className="rounded-2xl border border-[#d0d8cf] bg-[#f7f8f4] p-5">
+              <h2 className="text-2xl font-bold text-[#124d3b]">
+                Worried About Mess?
+              </h2>
+              <p className="mt-2 text-[#31453e]">
+                We protect floors, seal work areas, remove the texture, repair
+                the ceiling, and leave a smooth finish ready for paint.
+              </p>
+            </article>
+            <article className="rounded-2xl border border-[#d0d8cf] bg-[#f7f8f4] p-5">
+              <h2 className="text-2xl font-bold text-[#124d3b]">
+                Painted Popcorn?
+              </h2>
+              <p className="mt-2 text-[#31453e]">
+                Not sure if your ceiling is painted? No problem. Painted texture
+                usually takes more labour because it is sealed and harder to
+                remove.
+              </p>
+            </article>
+            <article className="rounded-2xl border border-[#d0d8cf] bg-[#f7f8f4] p-5">
+              <h2 className="text-2xl font-bold text-[#124d3b]">
+                Payment Options
+              </h2>
+              <p className="mt-2 text-[#31453e]">
+                E-transfer, credit card, and staged payments are available for
+                larger projects. Ask about options for full-home ceiling work.
+              </p>
+            </article>
+          </div>
+        </section>
+      ) : null}
+
+      {enhanced ? (
+        <section className="border-b border-[#cfd6cf] bg-[#f7f8f4]">
+          <div className="container-x py-8">
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  step: "01",
+                  title: "See a rough range",
+                  text: "Use square footage, ceiling height, paint condition, and furniture status to get quick guidance.",
+                },
+                {
+                  step: "02",
+                  title: "Send photos",
+                  text: "We review the texture, edges, lights, patches, and access before confirming a written scope.",
+                },
+                {
+                  step: "03",
+                  title: "Lock the schedule",
+                  text: "Once the scope is clear, we set protection, removal, finishing, cleanup, and optional paint timing.",
+                },
+              ].map((item) => (
+                <article
+                  key={item.step}
+                  className="rounded-2xl border border-[#d2dbd2] bg-white p-5 shadow-sm"
+                >
+                  <p className="text-sm font-black text-[#df4f26]">
+                    STEP {item.step}
+                  </p>
+                  <h2 className="mt-1 text-2xl font-bold text-[#124d3b]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-2 text-[#334841]">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section
         id="services"
@@ -363,6 +520,31 @@ export default function PopcornAdsLandingPage({ landing }) {
                   </li>
                 ))}
               </ul>
+              {enhanced ? (
+                <div className="mt-5 rounded-2xl border border-[#d3dcd2] bg-white p-5">
+                  <h3 className="text-xl font-bold uppercase text-[#124d3b]">
+                    Included in our smooth ceiling process
+                  </h3>
+                  <div className="mt-3 grid gap-2 text-[#253f37] sm:grid-cols-2">
+                    {[
+                      "Popcorn removal",
+                      "Ceiling repairs where needed",
+                      "Skim coat / smoothing",
+                      "Sanding",
+                      "Primer",
+                      "Optional ceiling paint",
+                      "Full protection and cleanup",
+                    ].map((item) => (
+                      <p key={item} className="flex items-center gap-2">
+                        <span className="text-[#df4f26]">
+                          <CheckIcon className="h-4 w-4" />
+                        </span>
+                        <span className="font-semibold">{item}</span>
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </div>
 
             <div className="relative overflow-hidden rounded-2xl border border-[#d0d7cf] bg-[#dfe5df] shadow-[0_24px_40px_-28px_rgba(0,0,0,.5)]">
@@ -393,12 +575,7 @@ export default function PopcornAdsLandingPage({ landing }) {
 
       <section className="border-b border-[#2a6655] bg-[#0f4f3a]">
         <div className="container-x grid gap-2 py-3 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "LICENSED & INSURED",
-            "3-YEAR WARRANTY",
-            "DUST-FREE GUARANTEED",
-            "700+ PROJECTS DONE",
-          ].map((item) => (
+          {trustBadges.map((item) => (
             <div
               key={item}
               className="flex items-center justify-center gap-2 rounded-xl border border-[#2d6d58] bg-[#145640] px-3 py-2 text-[13px] font-bold tracking-wide text-white md:text-base"
@@ -454,6 +631,45 @@ export default function PopcornAdsLandingPage({ landing }) {
           fallbackReviews={landing.featuredReviews || []}
         />
       </section>
+
+      {enhanced ? (
+        <section className="border-y border-[#cfd6cf] bg-white">
+          <div className="container-x py-10">
+            <p className="text-center text-sm font-bold uppercase tracking-[0.16em] text-[#df4f26]">
+              Common Project Types
+            </p>
+            <h2
+              className="mt-2 text-center text-[2rem] font-bold uppercase text-[#114c3a] md:text-[3.2rem]"
+              style={titleFont}
+            >
+              Every Type Of Ceiling Situation
+            </h2>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                "Full room removal",
+                "Stucco / stipple texture",
+                "Smooth skim coat finish",
+                "Water-stained ceilings",
+                "Basement ceilings",
+                "Hallways and staircases",
+                "Priming and painting",
+                "Move-in ready finish",
+              ].map((item, idx) => (
+                <a
+                  key={item}
+                  href="#quick-quote"
+                  className="rounded-2xl border border-[#d3dcd2] bg-[#f7f8f4] p-4 font-bold text-[#153f35] shadow-sm hover:border-[#df4f26]"
+                >
+                  <span className="mr-2 text-[#df4f26]">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section
         id="other-services"
@@ -548,6 +764,9 @@ export default function PopcornAdsLandingPage({ landing }) {
             phoneHref={PHONE_HREF}
             quoteHref="#quick-quote"
             className="mt-6 flex flex-wrap gap-3"
+            quoteLabel={
+              enhanced ? "Get My Popcorn Ceiling Price" : "Get My Quote"
+            }
             quoteClassName="inline-flex items-center rounded-xl bg-gradient-to-b from-[#f36537] to-[#df4c24] px-5 py-3 text-lg font-bold uppercase tracking-wide text-white"
             callClassName="inline-flex items-center rounded-xl border border-[#81a696] px-5 py-3 text-lg font-bold uppercase tracking-wide text-white hover:bg-[#0b3f2f]"
           />
@@ -583,13 +802,15 @@ export default function PopcornAdsLandingPage({ landing }) {
           phoneLabel={
             <span className="inline-flex items-center gap-1.5">
               <PhoneIcon className="h-4 w-4" />
-              <span>Call for instant quote</span>
+              <span>
+                {enhanced ? "Text photos / call" : "Call for instant quote"}
+              </span>
             </span>
           }
           quoteLabel={
             <span className="inline-flex items-center gap-1.5">
               <EditIcon className="h-4 w-4" />
-              <span>Get estimate online</span>
+              <span>{enhanced ? "Get price range" : "Get estimate online"}</span>
             </span>
           }
           callClassName="inline-flex items-center justify-center rounded-xl border border-[#3f7a66] bg-gradient-to-b from-[#2c6f5d] to-[#1e4f42] px-2 py-3 text-sm font-bold text-white"
