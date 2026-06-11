@@ -67,6 +67,34 @@ const FAQS = [
   },
 ];
 
+const CLUSTER_GUIDES = [
+  [
+    "/blog/ceiling-drywall-repair-burlington-water-damage/",
+    "Ceiling Drywall Repair in Burlington",
+    "Leaks, plumbing cutouts, basement ceiling patches, cracks, texture damage, and quote photos.",
+  ],
+  [
+    "/blog/drywall-repair-after-plumbing-electrical-work/",
+    "Drywall Repair After Plumbing or Electrical Work",
+    "Patch trade openings, compare access panels, and plan primer-ready or paint-ready repair.",
+  ],
+  [
+    "/blog/basement-drywall-repair-burlington/",
+    "Basement Drywall Repair Burlington",
+    "Burlington basement leaks, plumbing access holes, ceiling patches, and paint-ready finishing.",
+  ],
+  [
+    "/blog/drywall-repair-vs-replacement/",
+    "Drywall Repair vs Replacement",
+    "Decide when to patch, cut out damaged drywall, replace a section, or refinish before paint.",
+  ],
+  [
+    "/blog/how-seasonal-humidity-and-temperature-changes-affect-drywall-burlington/",
+    "Seasonal Drywall Problems in Burlington",
+    "Why cracks, bubbling paint, and seam problems can return through winter and humid weather.",
+  ],
+];
+
 export const metadata = {
   title: `Drywall Repair Burlington | Expert Patching, Water Damage & Seamless Finish | EPF Pro Services`,
   description:
@@ -628,6 +656,46 @@ export default function Page() {
               >
                 Read the guide
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <p className="text-sm uppercase tracking-widest text-blue-600 font-bold mb-3">
+                BURLINGTON REPAIR GUIDES
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Plan Your Burlington Drywall Repair
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                These guides explain ceiling leaks, trade cutouts, patching
+                decisions, replacement choices, dust control, and paint-ready
+                finishing before you book a repair.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {CLUSTER_GUIDES.map(([href, title, desc]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition"
+                >
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                    {desc}
+                  </p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-600">
+                    Read guide →
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

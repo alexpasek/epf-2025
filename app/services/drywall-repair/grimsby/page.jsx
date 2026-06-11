@@ -1049,6 +1049,50 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <p className="text-sm uppercase tracking-widest text-blue-600 font-bold mb-3">
+                DRYWALL REPAIR GUIDES
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Helpful Guides Before You Book
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Compare repair options for ceiling cracks, water damage, trade
+                openings, visible patch lines, and repair-versus-replacement
+                decisions.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                ["/blog/drywall-repair-vs-replacement/", "Repair vs Replacement", "When damaged drywall should be patched, cut out, or replaced."],
+                ["/blog/ceiling-crack-drywall-repair/", "Ceiling Crack Repair", "Why ceiling cracks return after paint and how proper repair prevents it."],
+                ["/blog/drywall-repair-after-plumbing-electrical-work/", "Plumbing & Electrical Cutouts", "How drywall openings are patched after trade work."],
+                ["/blog/why-drywall-patches-show-through-paint/", "Patch Lines After Paint", "How sanding, primer, feathering, and finish level affect the final look."],
+              ].map(([href, title, desc]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition"
+                >
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                    {desc}
+                  </p>
+                  <span className="mt-4 inline-flex text-sm font-semibold text-blue-600">
+                    Read guide →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="container mx-auto px-4">

@@ -1676,6 +1676,13 @@ export default function Page() {
                   Drywall Repair Grimsby
                 </Link>
 
+                <Link
+                  href="/services/drywall-repair/etobicoke/"
+                  className="rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 text-sm font-semibold text-blue-700 hover:bg-blue-100 hover:border-blue-500 transition-all hover:shadow-md"
+                >
+                  Drywall Repair Etobicoke
+                </Link>
+
                 {cities
                   .filter(
                     (city) =>
@@ -1686,6 +1693,7 @@ export default function Page() {
                         "Oakville",
                         "Hamilton",
                         "Grimsby",
+                        "Etobicoke",
                       ].includes(city.name)
                   )
                   .map((city) => (

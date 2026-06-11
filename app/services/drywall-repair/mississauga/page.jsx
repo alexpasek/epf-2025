@@ -105,6 +105,16 @@ const CLUSTER_GUIDES = [
     "Drywall Repair After Electrical or Plumbing Work in Mississauga",
     "Patch openings left by plumbers, electricians, HVAC work, pot lights, fixtures, and access cuts.",
   ],
+  [
+    "/blog/drywall-repair-after-plumbing-electrical-work/",
+    "Drywall Repair After Plumbing or Electrical Work",
+    "How trade access holes are patched, when an access panel makes sense, and what paint-ready repair includes.",
+  ],
+  [
+    "/blog/drywall-repair-vs-replacement/",
+    "Drywall Repair vs Replacement",
+    "When to patch, cut out damaged board, replace a section, or refinish the surface before painting.",
+  ],
 ];
 
 const RECENT_REPAIR_EXAMPLES = [
