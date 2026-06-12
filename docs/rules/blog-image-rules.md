@@ -8,11 +8,19 @@ Images should look realistic and connected to EPF Pro Services work.
 
 ## Image requirement for new blogs
 
-Every new blog should include a realistic featured image or a detailed featured image prompt.
+Every new blog post must include a new, unique, realistic featured image generated for that specific post unless the user explicitly says not to generate images.
 
-If image generation is available and the user has not said to skip images, generate or add one realistic featured image for the blog.
+The generated image must match the blog's main keyword, search intent, service topic, and target city or service area when the post is local.
+
+Do not reuse the same featured image across multiple newly created blog posts.
+
+Do not use a generic placeholder image when image generation is available.
+
+If image generation is available and the user has not said to skip images, generate and add one realistic featured image for each new blog post.
 
 If image generation is unavailable, include a complete image plan and featured image prompt so the asset can be created later.
+
+When multiple posts are created in the same task, generate a different image for every post. Each image should have its own file name, alt text, and prompt tied to that post's SEO intent.
 
 ## When images are requested
 
@@ -144,6 +152,8 @@ Use this prompt structure:
 The featured image should:
 
 - Clearly match the blog topic
+- Clearly match the main keyword and search intent
+- Clearly match the target city or service area when local intent is part of the post
 - Work in a wide format
 - Look trustworthy
 - Not be too busy
@@ -151,6 +161,7 @@ The featured image should:
 - Not include fake logos or fake watermarks
 - Have a descriptive file name
 - Have descriptive alt text
+- Be unique to that post and not reused for another newly created post
 
 ## File naming
 
@@ -206,6 +217,8 @@ When adding images, include:
 
 - Descriptive file name
 - Descriptive alt text
+- Search-intent-specific subject matter that supports the post topic
+- Local/service-specific visual context when the post targets a city
 - Relevant caption when useful
 - Optimized image format, preferably WebP if supported
 - Width/height attributes if the project supports them

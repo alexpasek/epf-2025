@@ -151,13 +151,20 @@ If a topic involves asbestos, safety, electrical work, structural damage, mold, 
 
 ## Image rules
 
-Every new blog should include a featured image or a featured image generation prompt.
+Every new blog must include a new, unique, realistic generated featured image unless the user explicitly says not to generate images.
+
+The image must match the blog's main keyword, search intent, service topic, and target city or service area when the post is local.
+
+Do not reuse the same featured image across multiple newly created posts.
+
+If image generation is unavailable, add a complete featured image prompt, file name suggestion, and alt text so the image can be generated later.
 
 When the user asks for images, image prompts, blog images, featured images, or visual assets:
 
 - Follow docs/rules/blog-image-rules.md.
 - Create an image plan first.
 - Use realistic home renovation photography style.
+- Generate a different realistic featured image for every new blog post.
 - Do not add fake text, fake logos, fake watermarks, or fake brand labels inside images.
 - Do not include people's faces unless specifically requested.
 - Always include file name suggestions and alt text.
