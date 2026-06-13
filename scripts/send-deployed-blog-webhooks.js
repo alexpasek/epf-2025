@@ -16,6 +16,37 @@ const webhookUrl =
 const secret =
   process.env.EPF_WEBHOOK_SECRET || process.env.GMB_POSTER_WEBHOOK_SECRET;
 
+function log(message, details = {}) {
+  console.log("[blog-webhook]", message, details);
+}
+
+function warn(message, details = {}) {
+  console.warn("[blog-webhook]", message, details);
+}
+
+function safeWebhookTarget(url) {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.origin}${parsed.pathname}`;
+  } catch (error) {
+    return "invalid webhook URL";
+  }
+}
+
+function parseJsonOrNull(text) {
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    return null;
+  }
+}
+
+function isDuplicateAccepted(response, text) {
+  if (response.status !== 409) return false;
+  const json = parseJsonOrNull(text);
+  return json?.error === "Duplicate blog url" && Boolean(json?.duplicate);
+}
+
 function readJson(file, fallback) {
   if (!fs.existsSync(file)) return fallback;
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -58,10 +89,13 @@ function buildPayload(post) {
 }
 
 async function verifyLiveUrl(url) {
+  log("Verifying live blog URL", { url });
   let response = await fetch(url, { method: "HEAD", redirect: "follow" });
   if (response.status === 405) {
+    log("HEAD returned 405; retrying with GET", { url });
     response = await fetch(url, { method: "GET", redirect: "follow" });
   }
+  log("Live blog URL verification finished", { url, status: response.status });
   return {
     ok: response.status >= 200 && response.status < 400,
     status: response.status,
@@ -70,6 +104,13 @@ async function verifyLiveUrl(url) {
 
 async function sendWebhook(post, { dryRun = false } = {}) {
   const payload = buildPayload(post);
+  log("Preparing webhook", {
+    slug: post.slug,
+    title: post.title,
+    url: payload.url,
+    dryRun,
+    webhookTarget: safeWebhookTarget(webhookUrl),
+  });
   const verification = await verifyLiveUrl(payload.url);
   if (!verification.ok) {
     return {
@@ -85,6 +126,11 @@ async function sendWebhook(post, { dryRun = false } = {}) {
     return { ok: true, dryRun: true, status: verification.status, url: payload.url };
   }
 
+  log("Sending webhook request", {
+    slug: post.slug,
+    url: payload.url,
+    webhookTarget: safeWebhookTarget(webhookUrl),
+  });
   const response = await fetch(webhookUrl, {
     method: "POST",
     headers: {
@@ -94,8 +140,21 @@ async function sendWebhook(post, { dryRun = false } = {}) {
     body: JSON.stringify(payload),
   });
   const text = await response.text();
-  return response.ok
-    ? { ok: true, status: response.status, url: payload.url }
+  const duplicateAccepted = isDuplicateAccepted(response, text);
+  log("Webhook response received", {
+    slug: post.slug,
+    status: response.status,
+    ok: response.ok,
+    duplicateAccepted,
+    response: text.slice(0, 500),
+  });
+  return response.ok || duplicateAccepted
+    ? {
+        ok: true,
+        status: response.status,
+        url: payload.url,
+        duplicate: duplicateAccepted,
+      }
     : {
         ok: false,
         status: response.status,
@@ -112,6 +171,18 @@ async function run() {
   const posts = readJson(dataPath, []);
   const sent = readJson(sentPath, {});
 
+  log("Starting deployed blog webhook sender", {
+    siteUrl,
+    dataPath,
+    sentPath,
+    postCount: posts.length,
+    sentCount: Object.keys(sent).length,
+    args,
+    hasWebhookUrl: Boolean(webhookUrl),
+    hasSecret: Boolean(secret),
+    webhookTarget: safeWebhookTarget(webhookUrl),
+  });
+
   const selected = posts
     .filter((post) => {
       if (!post || !post.slug) return false;
@@ -121,9 +192,18 @@ async function run() {
     .slice(0, args.limit);
 
   if (!selected.length) {
-    console.log("No deployed blog webhooks to send.");
+    log("No deployed blog webhooks to send", {
+      requestedSlugs: args.slugs,
+      limit: args.limit,
+      force: args.force,
+    });
     return;
   }
+
+  log("Selected posts for webhook", {
+    count: selected.length,
+    slugs: selected.map((post) => post.slug),
+  });
 
   let failures = 0;
   for (const post of selected) {
@@ -135,22 +215,30 @@ async function run() {
         sent[post.slug] = {
           url: result.url,
           sentAt: new Date().toISOString(),
+          duplicate: Boolean(result.duplicate),
         };
-        console.log(`Webhook sent: ${result.url}`);
+        console.log(
+          result.duplicate
+            ? `Webhook already accepted by poster agent: ${result.url}`
+            : `Webhook sent: ${result.url}`
+        );
       }
     } else {
       failures += 1;
-      console.warn(
-        `Webhook not sent for ${post.slug}: ${result.error || result.status}`,
-        result.verification || ""
-      );
+      warn("Webhook not sent", {
+        slug: post.slug,
+        error: result.error || result.status,
+        verification: result.verification || null,
+      });
     }
   }
 
   if (!args.dryRun) {
     fs.writeFileSync(sentPath, JSON.stringify(sent, null, 2));
+    log("Updated webhook sent-state file", { sentPath });
   }
   if (failures) process.exit(1);
+  log("Deployed blog webhook sender finished", { failures });
 }
 
 run().catch((error) => {
