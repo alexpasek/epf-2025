@@ -17,7 +17,7 @@ if(!OPENAI_API_KEY){
 const MODEL=process.env.OPENAI_MODEL||'gpt-4.1-mini';
 const OUTPUT_LIMIT=parseInt(process.env.BLOG_SECTION_COUNT??'5',10);
 const dataPath=path.join(process.cwd(),'data','generated-posts.json');
-const siteUrl=process.env.NEXT_PUBLIC_SITE_URL||'https://epfproservices.com';
+const siteUrl=(process.env.NEXT_PUBLIC_SITE_URL||'https://epfproservices.com').replace(/\/$/,'');
 
 const INTERNAL_LINK_OPTIONS=[
   {id:'popcornService',href:'/services/popcorn-ceiling-removal',anchor:'Popcorn Ceiling Removal Service',description:'Step-by-step removal process and pricing info.'},
@@ -123,6 +123,98 @@ function resolveInternalLinks(ids){
   }).filter(Boolean);
 }
 
+function getBlogPostUrl(entry){
+  return `${siteUrl}/blog/${entry.slug}/`;
+}
+
+function buildBlogCreatedWebhookPayload(entry){
+  return {
+    event:'BLOG_POST_CREATED',
+    url:getBlogPostUrl(entry),
+    title:entry.title,
+    excerpt:entry.excerpt,
+    city:entry.city||'',
+    service:entry.service||'Popcorn Ceiling Removal',
+    publishedAt:entry.publishedAt||new Date(`${entry.date}T12:00:00Z`).toISOString()
+  };
+}
+
+async function verifyBlogUrl(url){
+  try{
+    let response=await fetch(url,{method:'HEAD',redirect:'follow'});
+    if(response.status===405){
+      response=await fetch(url,{method:'GET',redirect:'follow'});
+    }
+    return {
+      ok:response.status>=200&&response.status<400,
+      status:response.status
+    };
+  }catch(error){
+    return {ok:false,error:error.message||'Unable to verify blog URL'};
+  }
+}
+
+async function sendBlogCreatedWebhook(entry){
+  const webhookUrl=process.env.GMB_POSTER_WEBHOOK_URL||process.env.BLOG_CREATED_WEBHOOK_URL;
+  const secret=process.env.EPF_WEBHOOK_SECRET||process.env.GMB_POSTER_WEBHOOK_SECRET;
+
+  if(!webhookUrl){
+    console.warn('Blog created webhook skipped: GMB_POSTER_WEBHOOK_URL is not set');
+    return {ok:false,skipped:true,error:'GMB_POSTER_WEBHOOK_URL is not set'};
+  }
+
+  if(!secret){
+    console.warn('Blog created webhook skipped: EPF_WEBHOOK_SECRET is not set');
+    return {ok:false,skipped:true,error:'EPF_WEBHOOK_SECRET is not set'};
+  }
+
+  const payload=buildBlogCreatedWebhookPayload(entry);
+  const verification=await verifyBlogUrl(payload.url);
+  if(!verification.ok){
+    console.warn(
+      `Blog created webhook skipped: blog URL is not live (${payload.url})`,
+      verification,
+    );
+    return {
+      ok:false,
+      skipped:true,
+      error:'Blog URL is not live',
+      url:payload.url,
+      verification
+    };
+  }
+
+  try{
+    const response=await fetch(webhookUrl,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json',
+        'x-epf-webhook-secret':secret
+      },
+      body:JSON.stringify(payload)
+    });
+    const text=await response.text();
+    if(!response.ok){
+      console.error(`Blog created webhook failed: ${response.status} ${text}`);
+      return {ok:false,status:response.status,error:text||response.statusText};
+    }
+    console.log(`Blog created webhook sent: ${payload.url}`);
+    return {ok:true,status:response.status};
+  }catch(error){
+    console.error(`Blog created webhook error: ${error.message}`);
+    return {ok:false,error:error.message};
+  }
+}
+
+async function sendBlogCreatedWebhooks(entries){
+  const items=Array.isArray(entries)?entries:[entries];
+  const results=[];
+  for(const entry of items.filter(Boolean)){
+    results.push(await sendBlogCreatedWebhook(entry));
+  }
+  return results;
+}
+
 async function run(){
   const post=await callOpenAI();
   const baseSlug=slugify(`${post.city}-${post.neighborhood}-${post.title}`);
@@ -131,7 +223,10 @@ async function run(){
     title:post.title,
     slug:datedSlug,
     date:new Date().toISOString().split('T')[0],
+    publishedAt:new Date().toISOString(),
     excerpt:post.excerpt,
+    city:post.city,
+    service:'Popcorn Ceiling Removal',
     content:post.sections.map(s=>`${s.heading}. ${s.body}`),
     keywords:post.localKeywords,
     photos:post.photoIdeas,
@@ -145,6 +240,7 @@ async function run(){
   existing.unshift(entry);
   fs.writeFileSync(dataPath,JSON.stringify(existing,null,2));
   console.log(`Created blog post: ${entry.title} (${entry.slug})`);
+  await sendBlogCreatedWebhooks([entry]);
 }
 
 run().catch(err=>{

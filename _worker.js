@@ -9,6 +9,7 @@ const INTERNAL_LINK_OPTIONS=[
 ];
 
 const POSTS_KEY='generated-posts';
+const DEFAULT_SITE_URL='https://epfproservices.com';
 
 function slugify(str){
   return str.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);
@@ -17,6 +18,99 @@ function slugify(str){
 function resolveInternalLinks(ids){
   const map=new Map(INTERNAL_LINK_OPTIONS.map(opt=>[opt.id,opt]));
   return ids.map(id=>map.get(id)).filter(Boolean);
+}
+
+function getSiteUrl(env){
+  return String(env.NEXT_PUBLIC_SITE_URL||DEFAULT_SITE_URL).replace(/\/$/,'');
+}
+
+function getBlogPostUrl(env,post){
+  return `${getSiteUrl(env)}/blog/${post.slug}/`;
+}
+
+function buildBlogCreatedWebhookPayload(env,post){
+  return {
+    event:'BLOG_POST_CREATED',
+    url:getBlogPostUrl(env,post),
+    title:post.title,
+    excerpt:post.excerpt,
+    city:post.city||'',
+    service:post.service||'Popcorn Ceiling Removal',
+    publishedAt:post.publishedAt||new Date(`${post.date}T12:00:00Z`).toISOString()
+  };
+}
+
+async function verifyBlogUrl(url){
+  try{
+    let response=await fetch(url,{method:'HEAD',redirect:'follow'});
+    if(response.status===405){
+      response=await fetch(url,{method:'GET',redirect:'follow'});
+    }
+    return {
+      ok:response.status>=200&&response.status<400,
+      status:response.status
+    };
+  }catch(error){
+    return {ok:false,error:error?.message||'Unable to verify blog URL'};
+  }
+}
+
+async function sendBlogCreatedWebhook(env,post){
+  const webhookUrl=env.GMB_POSTER_WEBHOOK_URL||env.BLOG_CREATED_WEBHOOK_URL;
+  const secret=env.EPF_WEBHOOK_SECRET||env.GMB_POSTER_WEBHOOK_SECRET;
+
+  if(!webhookUrl){
+    console.warn('Blog created webhook skipped: GMB_POSTER_WEBHOOK_URL is not set');
+    return {ok:false,skipped:true,error:'GMB_POSTER_WEBHOOK_URL is not set'};
+  }
+
+  if(!secret){
+    console.warn('Blog created webhook skipped: EPF_WEBHOOK_SECRET is not set');
+    return {ok:false,skipped:true,error:'EPF_WEBHOOK_SECRET is not set'};
+  }
+
+  const payload=buildBlogCreatedWebhookPayload(env,post);
+  const verification=await verifyBlogUrl(payload.url);
+  if(!verification.ok){
+    console.warn('Blog created webhook skipped: blog URL is not live',payload.url,verification);
+    return {
+      ok:false,
+      skipped:true,
+      error:'Blog URL is not live',
+      url:payload.url,
+      verification
+    };
+  }
+
+  try{
+    const response=await fetch(webhookUrl,{
+      method:'POST',
+      headers:{
+        'content-type':'application/json',
+        'x-epf-webhook-secret':secret
+      },
+      body:JSON.stringify(payload)
+    });
+    const text=await response.text();
+    if(!response.ok){
+      console.error('Blog created webhook failed',response.status,text);
+      return {ok:false,status:response.status,error:text||response.statusText};
+    }
+    console.log('Blog created webhook sent',payload.url);
+    return {ok:true,status:response.status};
+  }catch(error){
+    console.error('Blog created webhook error',error);
+    return {ok:false,error:error?.message||'Webhook request failed'};
+  }
+}
+
+async function sendBlogCreatedWebhooks(env,posts){
+  const items=Array.isArray(posts)?posts:[posts];
+  const results=[];
+  for(const post of items.filter(Boolean)){
+    results.push(await sendBlogCreatedWebhook(env,post));
+  }
+  return results;
 }
 
 async function fetchGeneratedPosts(env){
@@ -131,7 +225,10 @@ async function generatePost(env){
     title:post.title,
     slug:datedSlug,
     date:new Date().toISOString().split('T')[0],
+    publishedAt:new Date().toISOString(),
     excerpt:post.excerpt,
+    city:post.city,
+    service:'Popcorn Ceiling Removal',
     content:post.sections.map(s=>`${s.heading}. ${s.body}`),
     keywords:post.localKeywords,
     photos:post.photoIdeas,
@@ -150,7 +247,8 @@ async function refreshGeneratedPosts(env){
   const limit=parseInt(env.BLOG_POST_LIMIT||'30',10);
   const next=[newPost,...existing].slice(0,limit);
   await saveGeneratedPosts(env,next);
-  return newPost;
+  const webhooks=await sendBlogCreatedWebhooks(env,[newPost]);
+  return {...newPost,webhook:webhooks[0]||null};
 }
 
 export default {

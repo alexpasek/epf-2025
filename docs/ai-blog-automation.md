@@ -9,9 +9,12 @@
    - `NEXT_PUBLIC_SITE_URL` *(required so copy links to the live domain)*  
    - `BLOG_POST_LIMIT` *(optional, number as a string, default `30`)*  
    - `BLOG_CRON_TOKEN` *(optional bearer token to protect the manual refresh endpoint)*
+   - `GMB_POSTER_WEBHOOK_URL` *(optional, full GMB poster webhook endpoint)*
+   - `EPF_WEBHOOK_SECRET` *(optional, sent as `x-epf-webhook-secret`)*
 3. **Cron trigger** – `functions/wrangler.toml` already declares `crons = ["0 6 */3 * *"]`, so once deployed Cloudflare will call the worker every 3 days at 06:00 UTC.
 4. **What happens**  
    - `_worker.js` now implements both the site request handler and a `scheduled` handler. Each run requests a new popcorn ceiling article from OpenAI (keywords, internal links, GTA focus, photo ideas), prepends it to `BLOG_KV`, and trims to `BLOG_POST_LIMIT`.  
+   - After a post is saved, the worker sends a blog-created webhook to the GMB poster when `GMB_POSTER_WEBHOOK_URL` and `EPF_WEBHOOK_SECRET` are configured. Webhook failure is logged but does not delete or roll back the generated blog post.
    - The worker exposes `GET /api/generated-posts` so the Next.js blog can read the current list, and `POST /api/generated-posts/refresh` so you can trigger an immediate update (requires the optional `BLOG_CRON_TOKEN` if set).
 5. **Manual trigger example**
 
@@ -23,7 +26,36 @@ curl -X POST https://epfproservices.com/api/generated-posts/refresh \
 ## Local development fallback
 
 - `app/blog` now fetches generated posts dynamically; if the Cloudflare endpoint is unreachable (e.g., offline dev), it falls back to `/data/generated-posts.json`.
-- `npm run blog:generate` still creates a post locally using the `.env.local` OpenAI key so you can preview layouts. Production ignores the JSON file because the runtime pulls from `/api/generated-posts`.
+- `npm run blog:generate` still creates a post locally using the `.env.local` OpenAI key so you can preview layouts. It also sends the same GMB poster webhook when `GMB_POSTER_WEBHOOK_URL` and `EPF_WEBHOOK_SECRET` are set. Production ignores the JSON file because the runtime pulls from `/api/generated-posts`.
+
+## Blog-created webhook
+
+Configure:
+
+```
+GMB_POSTER_WEBHOOK_URL=https://YOUR-GMB-POSTER-DOMAIN.com/api/webhooks/blog-created
+EPF_WEBHOOK_SECRET=YOUR_SECRET_KEY
+```
+
+Payload:
+
+```json
+{
+  "event": "BLOG_POST_CREATED",
+  "url": "https://epfproservices.com/blog/example-post/",
+  "title": "Popcorn Ceiling Removal in Burlington",
+  "excerpt": "Short blog description here...",
+  "city": "Burlington",
+  "service": "Popcorn Ceiling Removal",
+  "publishedAt": "2026-06-12T18:00:00.000Z"
+}
+```
+
+Request header:
+
+```
+x-epf-webhook-secret: YOUR_SECRET_KEY
+```
 
 ## Rendering changes
 
