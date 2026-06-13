@@ -1,92 +1,188 @@
 # AI blog automation
 
-## Correct production flow for EPF blog to GBP
+## Production rule
 
-The live EPF site is the Cloudflare Pages project `epf-2025`, served at `https://epfproservices.com`.
+The live EPF Pro Services website is:
 
-The GBP/poster webhook must receive the real EPF URL only after that blog URL is live.
-
-Correct flow:
-
-1. Generate or add the blog in this repository.
-2. Commit/push/deploy the site to the Cloudflare Pages project `epf-2025`.
-3. Verify the final URL returns `200`, for example `https://epfproservices.com/blog/example-slug/`.
-4. Send the webhook to the poster agent.
-
-Use:
-
+```text
+https://epfproservices.com
 ```
+
+The Cloudflare Pages project is:
+
+```text
+epf-2025
+```
+
+The blog-to-GMB/poster webhook must send the final live EPF URL only:
+
+```text
+https://epfproservices.com/blog/example-slug/
+```
+
+Do not send `wallpaper-removal-pro.webtoronto22.workers.dev` URLs for EPF blog promotion. That URL belongs to the separate Worker/testing path and is not the real customer-facing EPF website.
+
+## Correct blog-to-GMB flow
+
+Use this order:
+
+1. Create or generate the blog in this repository.
+2. Commit and push the blog change.
+3. Wait for Cloudflare Pages project `epf-2025` to deploy.
+4. Confirm the blog URL is live on `https://epfproservices.com/blog/.../`.
+5. Send the webhook to the GMB/poster agent.
+
+The webhook intentionally runs after deployment. It should not run immediately when a blog is generated, because the final URL may still return `404` until Cloudflare Pages finishes deploying.
+
+## Commands
+
+Generate a local AI blog entry:
+
+```bash
+npm run blog:generate
+```
+
+After the blog is committed, pushed, and deployed, send one specific blog to the poster agent:
+
+```bash
 npm run blog:webhook -- --slug example-slug
 ```
 
-For the newest not-yet-notified post:
+Send the newest not-yet-sent deployed blog:
 
-```
+```bash
 npm run blog:webhook
 ```
 
-Do not send `wallpaper-removal-pro.webtoronto22.workers.dev` URLs to the poster agent for EPF blog promotion. That Worker URL is only for the separate Worker deployment/testing path. The GBP/poster workflow should use `https://epfproservices.com/blog/...`.
+Send all not-yet-sent deployed blogs:
 
-## Cloudflare-native scheduler (production)
-
-1. **KV storage** – make sure a namespace is bound to `BLOG_KV` (configured in `functions/wrangler.toml`). It stores the generated posts and the last-run timestamp.
-2. **Secrets / vars** (Cloudflare Pages → Settings → Functions → Environment Variables)  
-   - `OPENAI_API_KEY` *(required)*  
-   - `OPENAI_MODEL` *(optional, default `gpt-4.1-mini`)*  
-   - `NEXT_PUBLIC_SITE_URL` *(required so copy links to the live domain)*  
-   - `BLOG_POST_LIMIT` *(optional, number as a string, default `30`)*  
-   - `BLOG_CRON_TOKEN` *(optional bearer token to protect the manual refresh endpoint)*
-   - `GMB_POSTER_WEBHOOK_URL` *(optional, full GMB poster webhook endpoint)*
-   - `EPF_WEBHOOK_SECRET` *(optional, sent as `x-epf-webhook-secret`)*
-3. **Cron trigger** – `functions/wrangler.toml` already declares `crons = ["0 6 */3 * *"]`, so once deployed Cloudflare will call the worker every 3 days at 06:00 UTC.
-4. **What happens**  
-   - `_worker.js` now implements both the site request handler and a `scheduled` handler. Each run requests a new popcorn ceiling article from OpenAI (keywords, internal links, GTA focus, photo ideas), prepends it to `BLOG_KV`, and trims to `BLOG_POST_LIMIT`.  
-   - After a post is saved, the worker sends a blog-created webhook to the GMB poster when `GMB_POSTER_WEBHOOK_URL` and `EPF_WEBHOOK_SECRET` are configured. Webhook failure is logged but does not delete or roll back the generated blog post.
-   - The worker exposes `GET /api/generated-posts` so the Next.js blog can read the current list, and `POST /api/generated-posts/refresh` so you can trigger an immediate update (requires the optional `BLOG_CRON_TOKEN` if set).
-5. **Manual trigger example**
-
-```
-curl -X POST https://epfproservices.com/api/generated-posts/refresh \
-     -H "Authorization: Bearer $BLOG_CRON_TOKEN"
+```bash
+npm run blog:webhook -- --all
 ```
 
-## Local development fallback
+Test without sending the webhook:
 
-- `app/blog` now fetches generated posts dynamically; if the Cloudflare endpoint is unreachable (e.g., offline dev), it falls back to `/data/generated-posts.json`.
-- `npm run blog:generate` still creates a post locally using the `.env.local` OpenAI key so you can preview layouts. It also sends the same GMB poster webhook when `GMB_POSTER_WEBHOOK_URL` and `EPF_WEBHOOK_SECRET` are set. Production ignores the JSON file because the runtime pulls from `/api/generated-posts`.
-
-## Blog-created webhook
-
-Configure:
-
-```
-GMB_POSTER_WEBHOOK_URL=https://YOUR-GMB-POSTER-DOMAIN.com/api/webhooks/blog-created
-EPF_WEBHOOK_SECRET=YOUR_SECRET_KEY
+```bash
+npm run blog:webhook -- --slug example-slug --dry-run --force
 ```
 
-Payload:
+## Required environment variables
+
+The webhook sender reads `.env.local`, then `.env`.
+
+Required:
+
+```text
+GMB_POSTER_WEBHOOK_URL=https://poster-agent.example.com/api/webhooks/blog-created
+EPF_WEBHOOK_SECRET=your-shared-secret
+```
+
+Optional:
+
+```text
+NEXT_PUBLIC_SITE_URL=https://epfproservices.com
+BLOG_CREATED_WEBHOOK_URL=alternate-name-for-GMB_POSTER_WEBHOOK_URL
+GMB_POSTER_WEBHOOK_SECRET=alternate-name-for-EPF_WEBHOOK_SECRET
+```
+
+Keep `NEXT_PUBLIC_SITE_URL` set to `https://epfproservices.com` for production.
+
+## Webhook payload
+
+The poster agent receives this JSON:
 
 ```json
 {
   "event": "BLOG_POST_CREATED",
-  "url": "https://epfproservices.com/blog/example-post/",
-  "title": "Popcorn Ceiling Removal in Burlington",
-  "excerpt": "Short blog description here...",
-  "city": "Burlington",
+  "url": "https://epfproservices.com/blog/example-slug/",
+  "title": "Blog title",
+  "excerpt": "Short blog description",
+  "city": "Oakville",
   "service": "Popcorn Ceiling Removal",
-  "publishedAt": "2026-06-12T18:00:00.000Z"
+  "publishedAt": "2026-06-13T12:00:00.000Z"
 }
 ```
 
-Request header:
+The request includes this header:
 
+```text
+x-epf-webhook-secret: your-shared-secret
 ```
-x-epf-webhook-secret: YOUR_SECRET_KEY
+
+## Where to make future changes
+
+Blog generation:
+
+```text
+scripts/generate-popcorn-post.js
 ```
 
-## Rendering changes
+Use this file if you need to change how AI-generated blog entries are created, including title, slug, city, service, internal links, or saved blog data.
 
-- Blog listing and detail pages are now dynamic (`dynamic = 'force-dynamic'`) so newly generated posts appear immediately without redeploying.
-- Each post detail view surfaces the AI-provided keyword list, suggested photos (with alt text cues), and related internal links to reinforce local SEO signals.
+Webhook sending after deployment:
 
-Once this deployment reaches Cloudflare Pages, the cron scheduler keeps the popcorn ceiling blog fresh every three days with no manual commits, while still giving you local tools for previews or emergency triggers.
+```text
+scripts/send-deployed-blog-webhooks.js
+```
+
+Use this file if you need to change the webhook payload, the live URL check, duplicate-send tracking, command-line flags, webhook headers, or the destination environment variable names.
+
+Blog data file:
+
+```text
+data/generated-posts.json
+```
+
+Generated blog entries are saved here.
+
+Webhook sent-state file:
+
+```text
+.blog-webhook-sent.json
+```
+
+This file is local and gitignored. It prevents sending the same blog webhook multiple times from the same machine.
+
+NPM commands:
+
+```text
+package.json
+```
+
+Use this file if you need to rename or add commands such as `blog:generate` or `blog:webhook`.
+
+Cloudflare Pages deployment:
+
+```text
+Cloudflare Pages project: epf-2025
+Production domain: https://epfproservices.com
+Git branch: prod-stable
+```
+
+Use Cloudflare Pages deployment status to confirm the blog is live before running the webhook command.
+
+## Important behavior
+
+`npm run blog:generate` does not send the webhook by default. It prints the command to run after deployment.
+
+To force old immediate behavior for local testing only:
+
+```bash
+SEND_BLOG_WEBHOOK_IMMEDIATELY=1 npm run blog:generate
+```
+
+Do not use immediate sending for normal production publishing, because the final EPF blog URL may not exist yet.
+
+`npm run blog:webhook` verifies the live blog URL before sending. If the URL is not live, it skips the webhook and exits with a failure so the poster agent does not receive a broken link.
+
+## Future development checklist
+
+Before changing this automation, confirm:
+
+1. The webhook still sends `https://epfproservices.com/blog/.../`.
+2. The script still verifies the live URL before sending.
+3. The webhook is still sent after Cloudflare Pages deploys, not before.
+4. The payload still includes `event`, `url`, `title`, `excerpt`, `city`, `service`, and `publishedAt`.
+5. Secrets are read from environment variables and are not committed.
+6. Test with `--dry-run --force` before sending real webhook traffic.
+
