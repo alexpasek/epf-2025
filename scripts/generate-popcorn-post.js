@@ -240,7 +240,15 @@ async function run(){
   existing.unshift(entry);
   fs.writeFileSync(dataPath,JSON.stringify(existing,null,2));
   console.log(`Created blog post: ${entry.title} (${entry.slug})`);
-  await sendBlogCreatedWebhooks([entry]);
+  if(process.env.SEND_BLOG_WEBHOOK_IMMEDIATELY==='1'){
+    await sendBlogCreatedWebhooks([entry]);
+  }else{
+    console.log(
+      'Blog webhook deferred: deploy the site, then run `npm run blog:webhook -- --slug ' +
+      entry.slug +
+      '` after the epfproservices.com URL is live.'
+    );
+  }
 }
 
 run().catch(err=>{

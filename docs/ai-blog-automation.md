@@ -1,5 +1,32 @@
 # AI blog automation
 
+## Correct production flow for EPF blog to GBP
+
+The live EPF site is the Cloudflare Pages project `epf-2025`, served at `https://epfproservices.com`.
+
+The GBP/poster webhook must receive the real EPF URL only after that blog URL is live.
+
+Correct flow:
+
+1. Generate or add the blog in this repository.
+2. Commit/push/deploy the site to the Cloudflare Pages project `epf-2025`.
+3. Verify the final URL returns `200`, for example `https://epfproservices.com/blog/example-slug/`.
+4. Send the webhook to the poster agent.
+
+Use:
+
+```
+npm run blog:webhook -- --slug example-slug
+```
+
+For the newest not-yet-notified post:
+
+```
+npm run blog:webhook
+```
+
+Do not send `wallpaper-removal-pro.webtoronto22.workers.dev` URLs to the poster agent for EPF blog promotion. That Worker URL is only for the separate Worker deployment/testing path. The GBP/poster workflow should use `https://epfproservices.com/blog/...`.
+
 ## Cloudflare-native scheduler (production)
 
 1. **KV storage** – make sure a namespace is bound to `BLOG_KV` (configured in `functions/wrangler.toml`). It stores the generated posts and the last-run timestamp.
