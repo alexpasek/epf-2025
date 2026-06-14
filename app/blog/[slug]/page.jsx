@@ -175,10 +175,32 @@ const getPostContext = (post) => {
 
   const isDrywall = haystack.includes("drywall");
   const isWallpaper = haystack.includes("wallpaper");
+  const isBaseboard = haystack.includes("baseboard");
   const isProject =
     haystack.includes("project spotlight") || haystack.includes("project");
 
-  const fallbackGallery = isDrywall
+  const fallbackGallery = isBaseboard
+    ? [
+        {
+          src: "/gallery/baseboard-installation/baseboard-installation00001.jpg",
+          alt: "Finished white baseboard installation along a clean wall",
+          description:
+            "Baseboard installation with straight runs, filled nail holes, and clean paint-ready edges.",
+        },
+        {
+          src: "/gallery/baseboard-installation/baseboard-installation00002.jpg",
+          alt: "Baseboard trim detail around a room corner",
+          description:
+            "Trim detail showing corner fitment and a clean transition at the floor.",
+        },
+        {
+          src: "/gallery/baseboard-installation/baseboard-installation00003.jpg",
+          alt: "New baseboards installed beside finished flooring",
+          description:
+            "New baseboards installed after flooring work with a consistent reveal.",
+        },
+      ]
+    : isDrywall
     ? [
         {
           src: "/gallery/drywall-installation/drywall-installation-hero.webp",
@@ -226,7 +248,9 @@ const getPostContext = (post) => {
   }
 
   const articleSection = post.articleSection
-    || (isDrywall
+    || (isBaseboard
+      ? "Baseboard installation"
+      : isDrywall
       ? "Drywall installation"
       : isWallpaper
         ? "Wallpaper removal"
@@ -237,12 +261,16 @@ const getPostContext = (post) => {
 
   const keywordPanelTitle = isDrywall
     ? "Drywall terms this page covers"
+    : isBaseboard
+      ? "Baseboard installation terms this page covers"
     : isWallpaper
       ? "Wallpaper removal terms this page covers"
       : "Popcorn ceiling terms this page covers";
 
   const keywordPanelDescription = isDrywall
     ? "Useful terms to compare scopes, finish levels, and scheduling before you book."
+    : isBaseboard
+      ? "Useful terms to compare materials, linear footage, finishing, and quote scope before you book."
     : isWallpaper
       ? "Useful terms to compare prep, removal, skim coating, and repaint scope."
       : "Useful terms to compare removal, skim coating, and finish scope before you book.";
@@ -254,6 +282,10 @@ const getPostContext = (post) => {
     quoteLocationLine = `Share photos, room sizes, and timing. We reply the same day with ${cityName} drywall availability and a clearer written scope.`;
   } else if (isDrywall) {
     quoteLocationLine = "Share photos, room sizes, and timing. We reply the same day with GTA drywall availability and a clearer written scope.";
+  } else if (isBaseboard && cityName) {
+    quoteLocationLine = `Share photos, room sizes, linear footage if you have it, profile preference, and timing. We reply with ${cityName} baseboard installation availability and a clearer written scope.`;
+  } else if (isBaseboard) {
+    quoteLocationLine = "Share room photos, linear footage if you have it, profile preference, and timing. We reply with GTA baseboard installation availability and a clearer written scope.";
   } else if (cityName) {
     quoteLocationLine = `Share photos, ceiling heights, and timing. We reply the same day with ${cityName} availability.`;
   } else {
@@ -262,12 +294,16 @@ const getPostContext = (post) => {
 
   const quoteEyebrow = isDrywall
     ? "Plan your drywall scope"
+    : isBaseboard
+      ? "Plan your baseboard scope"
     : isWallpaper
       ? "Plan your wallpaper removal"
       : "Ready to plan your ceilings?";
 
   const quoteHeading = isDrywall
     ? "Get a drywall quote today"
+    : isBaseboard
+      ? "Get a baseboard installation quote today"
     : isWallpaper
       ? "Get a wallpaper removal quote today"
       : "Get a popcorn ceiling quote today";
@@ -278,6 +314,12 @@ const getPostContext = (post) => {
         "Basements, ceilings, condos, and commercial buildouts",
         "Flexible scheduling for occupied homes, condos, and active sites",
       ]
+    : isBaseboard
+      ? [
+          "Trim removal, installation, caulking, and paint-ready finishing",
+          "MDF, wood, PVC, shoe moulding, and profile-matching options",
+          "Floor protection and careful sequencing after flooring or painting",
+        ]
     : [
         "HEPA dust control and Level 5 skim finishing",
         "Pot-light coordination and interior painting add-ons",
@@ -648,7 +690,7 @@ export default async function Post({ params }) {
                 <Link href="/blog/" className="hover:text-white">
                   Blog
                 </Link>{" "}
-                / Popcorn ceiling guide
+                / {context.articleSection} guide
               </nav>
               <h1 className="mt-5 max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 {pageTitle}
@@ -666,7 +708,7 @@ export default async function Post({ params }) {
                   href="/quote/"
                   className="inline-flex items-center justify-center rounded-lg bg-[#f59e0b] px-5 py-3 text-sm font-bold text-slate-950 shadow-sm transition hover:bg-[#fbbf24]"
                 >
-                  Request Popcorn Ceiling Quote
+                  Request {context.serviceType} Quote
                 </Link>
                 <a
                   href={PHONE_HREF}
@@ -855,15 +897,13 @@ export default async function Post({ params }) {
           <div className="grid gap-8 rounded-xl border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-[3fr_2fr]">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
-                Ready to plan your ceilings?
+                {context.quoteEyebrow}
               </p>
               <h2 className="mt-2 text-3xl font-bold text-slate-950">
-                Get a popcorn ceiling quote today
+                {context.quoteHeading}
               </h2>
               <p className="mt-3 leading-8 text-slate-700">
-                Send photos, room sizes, ceiling height, building type, and timing.
-                We will review the condition and recommend the right removal,
-                repair, skim coat, primer, and paint scope.
+                {quoteLocationLine}
               </p>
             </div>
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">

@@ -161,6 +161,38 @@ Git branch: prod-stable
 
 Use Cloudflare Pages deployment status to confirm the blog is live before running the webhook command.
 
+## How to check logs
+
+Cloudflare Pages live Function logs:
+
+```bash
+npx wrangler pages deployment tail --project-name epf-2025 --environment production --format pretty
+```
+
+Then trigger the blog refresh or webhook action. In Cloudflare logs, look for:
+
+```text
+[blog-automation]
+```
+
+Local/manual webhook logs:
+
+```bash
+npm run blog:webhook -- --slug example-slug
+```
+
+Dry-run local/manual webhook logs without sending to the poster agent:
+
+```bash
+npm run blog:webhook -- --slug example-slug --dry-run --force
+```
+
+In local terminal logs, look for:
+
+```text
+[blog-webhook]
+```
+
 ## Important behavior
 
 `npm run blog:generate` does not send the webhook by default. It prints the command to run after deployment.
@@ -185,4 +217,3 @@ Before changing this automation, confirm:
 4. The payload still includes `event`, `url`, `title`, `excerpt`, `city`, `service`, and `publishedAt`.
 5. Secrets are read from environment variables and are not committed.
 6. Test with `--dry-run --force` before sending real webhook traffic.
-

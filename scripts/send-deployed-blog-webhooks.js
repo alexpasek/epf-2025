@@ -8,6 +8,7 @@ for (const file of [".env.local", ".env"]) {
 }
 
 const dataPath = path.join(process.cwd(), "data", "generated-posts.json");
+const staticPostsPath = path.join(process.cwd(), "lib", "posts.js");
 const sentPath = path.join(process.cwd(), ".blog-webhook-sent.json");
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://epfproservices.com")
   .replace(/\/$/, "");
@@ -50,6 +51,74 @@ function isDuplicateAccepted(response, text) {
 function readJson(file, fallback) {
   if (!fs.existsSync(file)) return fallback;
   return JSON.parse(fs.readFileSync(file, "utf8"));
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function readStringField(source, key) {
+  const pattern = new RegExp(`${key}:\\s*(["'\`])([\\s\\S]*?)\\1`);
+  const match = source.match(pattern);
+  return match ? match[2] : "";
+}
+
+function cityFromSlug(slug) {
+  const cityMap = {
+    mississauga: "Mississauga",
+    toronto: "Toronto",
+    oakville: "Oakville",
+    burlington: "Burlington",
+    hamilton: "Hamilton",
+    milton: "Milton",
+    etobicoke: "Etobicoke",
+    grimsby: "Grimsby",
+    "north-york": "North York",
+    "st-catharines": "St. Catharines",
+  };
+  return Object.entries(cityMap).find(([citySlug]) => slug.includes(citySlug))?.[1] || "";
+}
+
+function readStaticPostBySlug(slug) {
+  if (!fs.existsSync(staticPostsPath)) return null;
+  const source = fs.readFileSync(staticPostsPath, "utf8");
+  const slugPattern = new RegExp(`slug:\\s*(["'\`])${escapeRegExp(slug)}\\1`);
+  const slugMatch = source.match(slugPattern);
+  if (!slugMatch || slugMatch.index === undefined) return null;
+
+  const objectStart = source.lastIndexOf("\n    {", slugMatch.index);
+  const nextObjectStart = source.indexOf("\n    {", slugMatch.index + slugMatch[0].length);
+  const objectSource = source.slice(
+    objectStart >= 0 ? objectStart : Math.max(0, slugMatch.index - 4000),
+    nextObjectStart >= 0 ? nextObjectStart : Math.min(source.length, slugMatch.index + 12000)
+  );
+
+  return {
+    slug,
+    title: readStringField(objectSource, "title") || slug,
+    date: readStringField(objectSource, "date") || new Date().toISOString().split("T")[0],
+    publishedAt: readStringField(objectSource, "publishedAt") || "",
+    excerpt: readStringField(objectSource, "excerpt") || "",
+    city: readStringField(objectSource, "city") || cityFromSlug(slug),
+    service:
+      readStringField(objectSource, "service") ||
+      readStringField(objectSource, "serviceType") ||
+      readStringField(objectSource, "articleSection") ||
+      "",
+  };
+}
+
+function mergeStaticSlugPosts(posts, slugs) {
+  if (!slugs.length) return posts;
+  const bySlug = new Map(posts.map((post) => [post.slug, post]));
+  for (const slug of slugs) {
+    if (!slug || bySlug.has(slug)) continue;
+    const staticPost = readStaticPostBySlug(slug);
+    if (staticPost) {
+      bySlug.set(slug, staticPost);
+    }
+  }
+  return Array.from(bySlug.values());
 }
 
 function parseArgs(argv) {
@@ -168,12 +237,13 @@ async function run() {
   if (!secret) throw new Error("Missing EPF_WEBHOOK_SECRET");
 
   const args = parseArgs(process.argv.slice(2));
-  const posts = readJson(dataPath, []);
+  const posts = mergeStaticSlugPosts(readJson(dataPath, []), args.slugs);
   const sent = readJson(sentPath, {});
 
   log("Starting deployed blog webhook sender", {
     siteUrl,
     dataPath,
+    staticPostsPath,
     sentPath,
     postCount: posts.length,
     sentCount: Object.keys(sent).length,
