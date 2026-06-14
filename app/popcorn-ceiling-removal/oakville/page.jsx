@@ -386,6 +386,24 @@ export default function Page() {
         </p>
       </section>
 
+      {/* RELATED GUIDE */}
+      <section className="mt-10 bg-white rounded-2xl p-6 border">
+        <h2 className="text-2xl font-semibold">
+          Planning Budget and Finish Quality?
+        </h2>
+        <p className="text-gray-700 mt-2">
+          If you are comparing quotes, read our{" "}
+          <Link
+            className="underline font-semibold"
+            href="/blog/popcorn-removal-oakville-cost-finish-guide/"
+          >
+            Popcorn Removal Oakville Cost Guide
+          </Link>{" "}
+          for the cost factors behind painted texture, dust control, skim
+          coating, primer, and smooth ceiling finish quality.
+        </p>
+      </section>
+
       {/* LOCAL CONTENT & SIGNALS */}
       <section className="mt-10 bg-white rounded-2xl p-6 border">
         <h2 className="text-2xl font-semibold">Local Fit for Oakville Homes</h2>
