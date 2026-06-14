@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const DEFAULT_REPO = "alexpasek/epf-2025";
 const DEFAULT_BRANCH = "main";

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-export const runtime = "edge"; // must be edge on Cloudflare Pages
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic"; // avoid caching
 
 export async function POST(req) {

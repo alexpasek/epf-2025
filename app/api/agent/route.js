@@ -7,7 +7,7 @@ import {
   setContact,
 } from "@/lib/chatStore";
 
-export const runtime = "edge"; // Cloudflare: "edge"; local: "nodejs" if needed
+export const runtime = "nodejs";
 
 // Model
 var MODEL =
