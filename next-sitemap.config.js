@@ -17,6 +17,7 @@ module.exports = {
         "/api/*",
         "/404",
         "/500",
+        "/seo-blog-agent",
         "/locations/drywall-repair",
         "/locations/popcorn-ceiling-removal",
         "/locations/popcorn-ceiling-removal-*",
@@ -26,6 +27,11 @@ module.exports = {
     transform: async(config, path) => {
         // Skip template/bracket routes 
         if (path.includes("[") || path.includes("]")) {
+            return null;
+        }
+
+        // Keep hidden internal tools out of public sitemap output.
+        if (path === "/seo-blog-agent") {
             return null;
         }
 
