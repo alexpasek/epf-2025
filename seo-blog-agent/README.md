@@ -1,4 +1,4 @@
-# EPF SEO Blog Agent
+# EPF SEO
 
 Hidden internal tool for researching blog topics, checking competitor pages for content gaps, creating draft blog packages, manually approving drafts, and publishing approved posts into the existing EPF blog loader.
 
@@ -7,7 +7,7 @@ Hidden internal tool for researching blog topics, checking competitor pages for 
 Visit:
 
 ```txt
-/seo-blog-agent
+/seo
 ```
 
 The page exports `robots: noindex, nofollow` and is not linked from public navigation. In production, set `SEO_BLOG_AGENT_KEY` or `SITE_ADMIN_API_KEY`; the UI sends that value as a bearer token to the API.

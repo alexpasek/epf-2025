@@ -39,7 +39,8 @@ function localKeywordVariants(job, competitorPages = []) {
     `${base} ${city}`,
     `${base} cost ${city}`,
     `${base} contractor ${city}`,
-    `dustless ${base} ${city}`,
+    `${base} quote ${city}`,
+    `${base} process ${city}`,
     `how long does ${base} take`,
     `what affects ${base} price`,
     `best finish after ${base}`,
@@ -62,7 +63,44 @@ function localKeywordVariants(job, competitorPages = []) {
       `drywall crack repair ${city}`,
       `ceiling drywall repair ${city}`,
       `drywall repair before painting ${city}`,
+      `dust controlled drywall repair ${city}`,
       `water damaged drywall repair ${city}`,
+    );
+  }
+
+  if (serviceKey === "drywall_installation") {
+    variants.push(
+      `drywall contractor ${city}`,
+      `basement drywall installation ${city}`,
+      `ceiling drywall installation ${city}`,
+      `level 5 drywall finish ${city}`,
+    );
+  }
+
+  if (serviceKey === "painting") {
+    variants.push(
+      `interior painting prep ${city}`,
+      `interior painting quote ${city}`,
+      `wall painting and trim painting ${city}`,
+      `drywall repair before interior painting ${city}`,
+    );
+  }
+
+  if (serviceKey === "wallpaper") {
+    variants.push(
+      `wallpaper removal before painting ${city}`,
+      `wall repair after wallpaper removal ${city}`,
+      `remove wallpaper from drywall ${city}`,
+      `wallpaper removal contractor ${city}`,
+    );
+  }
+
+  if (serviceKey === "baseboard") {
+    variants.push(
+      `baseboard replacement ${city}`,
+      `baseboard installation cost ${city}`,
+      `baseboard caulking and painting ${city}`,
+      `trim installation contractor ${city}`,
     );
   }
 

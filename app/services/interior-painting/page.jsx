@@ -5,16 +5,47 @@ import { cities } from "@/data/cities";
 
 export const revalidate = 86400;
 
+const localPaintingGuides = [
+  {
+    city: "Mississauga",
+    slug: "mississauga",
+    href: "/blog/interior-painting-mississauga-prep-finish-guide/",
+    title: "Interior painting in Mississauga",
+  },
+  {
+    city: "Burlington",
+    slug: "burlington",
+    href: "/blog/interior-painting-burlington-walls-trim-ceilings-guide/",
+    title: "Interior painting in Burlington",
+  },
+  {
+    city: "Oakville",
+    slug: "oakville",
+    href: "/blog/interior-painting-oakville-premium-finish-prep-guide/",
+    title: "Interior painting in Oakville",
+  },
+  {
+    city: "Ancaster",
+    slug: "ancaster",
+    href: "/blog/interior-painting-ancaster-older-home-prep-guide/",
+    title: "Interior painting in Ancaster",
+  },
+];
+
+const localPaintingGuideBySlug = new Map(
+  localPaintingGuides.map((guide) => [guide.slug, guide])
+);
+
 export const metadata = {
-  title: "Interior Painting — Popcorn Ceiling Removal Pro",
+  title: "Interior Painting Services | EPF Pro Services",
   description:
     "GTA interior painting with sharp lines and durable finishes. Walls, trim, and ceilings—dust-controlled prep, Level 5 surfaces, and a clean, guaranteed result.",
-  alternates: { canonical: "/services/painting" },
+  alternates: { canonical: "/services/interior-painting/" },
   openGraph: {
     title: "Interior Painting — Clean Lines & Durable Finishes (GTA)",
     description:
       "Professional interior painting for walls, trim, and ceilings. Careful prep, smooth surfaces, premium coatings, tidy work, and a written warranty.",
-    url: "/services/painting",
+    url: "/services/interior-painting/",
     type: "article",
   },
   robots: { index: true, follow: true },
@@ -98,7 +129,7 @@ function JsonLd() {
             "@type": "ListItem",
             position: 3,
             name: "Interior Painting",
-            item: { "@id": "https://epfproservices.com/services/painting" },
+            item: { "@id": "https://epfproservices.com/services/interior-painting/" },
           },
         ],
       },
@@ -160,7 +191,10 @@ export default function Page() {
           {cities.map((c) => (
             <Link
               key={c.slug}
-              href={`/popcorn-ceiling-removal/${c.slug}/`}
+              href={
+                localPaintingGuideBySlug.get(c.slug)?.href ||
+                `/quote/?service=interior-painting&city=${c.slug}`
+              }
               className="pill"
             >
               {c.name}
@@ -250,6 +284,27 @@ export default function Page() {
         </p>
       </section>
 
+      <section className="mt-10 card p-6 bg-white">
+        <h2 className="text-2xl font-semibold">
+          Interior Painting Planning Guides
+        </h2>
+        <p className="mt-2 text-gray-700">
+          Compare prep, drywall repair, ceilings, trim, primer, sheen, and
+          quote scope before booking a local repaint.
+        </p>
+        <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {localPaintingGuides.map((guide) => (
+            <Link
+              key={guide.slug}
+              href={guide.href}
+              className="rounded-xl border border-gray-200 p-4 font-semibold text-blue-700 hover:border-blue-300 hover:bg-blue-50"
+            >
+              {guide.title}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="mt-10 card p-6 bg-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
@@ -285,8 +340,9 @@ export default function Page() {
         <details className="card p-6 bg-white mt-4">
           <summary className="font-medium">Is prep dust-controlled?</summary>
           <p className="mt-2 text-gray-700">
-            High-adhesion primers and durable topcoats matched to each room’s
-            traffic and moisture needs.
+            Yes. We use protection, containment where needed, floor and vent
+            masking, vacuum-assist sanding, and tidy cleanup so wall prep does
+            not spread through the home.
           </p>
         </details>
         <details className="card p-6 bg-white mt-4">

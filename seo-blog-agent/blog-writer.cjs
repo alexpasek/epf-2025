@@ -48,12 +48,37 @@ const RELATED_GUIDES = {
       anchor: "interior painting services",
       description: "Painting, prep, cut lines, trim, ceilings, and finish coats.",
     },
+    {
+      href: "/services/drywall-repair/",
+      anchor: "drywall repair before painting",
+      description: "Repair dents, cracks, tape lines, and patches before finish coats.",
+    },
+    {
+      href: "/services/baseboard-installation/",
+      anchor: "baseboard installation and trim finishing",
+      description: "Coordinate trim, caulking, and paint-ready finishing with room painting.",
+    },
+    {
+      href: "/blog/why-drywall-patches-show-through-paint/",
+      anchor: "why drywall patches show through paint",
+      description: "Drywall prep issues that can show after primer and paint.",
+    },
   ],
   wallpaper: [
     {
       href: "/services/wallpaper-removal/",
       anchor: "wallpaper removal services",
       description: "Wallpaper removal, wall repair, prep, and painting handoff.",
+    },
+    {
+      href: "/services/drywall-repair/",
+      anchor: "drywall repair after wallpaper removal",
+      description: "Repair torn drywall paper, dents, seams, and wall damage before painting.",
+    },
+    {
+      href: "/services/interior-painting/",
+      anchor: "interior painting after wallpaper removal",
+      description: "Finish cleaned and repaired walls with primer and paint.",
     },
   ],
 };
@@ -85,23 +110,35 @@ function titleFromKeyword(keyword, city, serviceLabel, blogType) {
     return `Painted Popcorn Ceiling Removal in ${city}: Scrape or Skim Coat?`;
   }
   if (text.includes("dust")) {
-    return `Dust-Controlled ${serviceLabel} in ${city}: What Homeowners Should Know`;
+    return `Dust-Controlled ${titleService} in ${city}: What Homeowners Should Know`;
   }
   if (blogType === "Process guide") {
-    return `${serviceLabel} Timeline in ${city}: Process, Prep, and Cleanup`;
+    return `${titleService} Timeline in ${city}: Process, Prep, and Cleanup`;
   }
   if (blogType === "Problem/solution guide") {
-    return `${serviceLabel} in ${city}: Repair Options and Finish Quality`;
+    return `${titleService} in ${city}: Repair Options and Finish Quality`;
   }
-  return `${serviceLabel} in ${city}: A Practical Homeowner Guide`;
+  return `${titleService} in ${city}: A Practical Homeowner Guide`;
 }
 
 function cleanList(items) {
   return [...new Set(items.map((item) => String(item || "").trim()).filter(Boolean))];
 }
 
+function asList(value) {
+  if (Array.isArray(value)) return value;
+  if (typeof value === "string") return value.trim() ? [value.trim()] : [];
+  return [];
+}
+
 function linkHtml(href, anchor) {
   return `<a href="${href}" class="text-blue-600 font-semibold hover:underline">${anchor}</a>`;
+}
+
+function lowerFirst(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  return `${text.charAt(0).toLowerCase()}${text.slice(1)}`;
 }
 
 function serviceSpecificTerms(serviceKey) {
@@ -175,6 +212,20 @@ function serviceSpecificTerms(serviceKey) {
       ],
     };
   }
+  if (serviceKey === "painting") {
+    return {
+      surface: "wall, trim, ceiling, or room",
+      result: "clean interior paint finish",
+      work: "floor protection, wall repair, sanding, caulking, primer where needed, cut lines, finish coats, cleanup, and final checks",
+      caution: "Peeling paint, stains, moisture issues, active leaks, mold concerns, or failing drywall should be corrected before finish coats are applied.",
+      tableRows: [
+        ["Wall damage", "Dents, nail holes, cracks, and patch ridges can show through new paint", "Confirm repair, sanding, and primer before comparing prices"],
+        ["Trim and doors", "Fresh walls can make old trim look yellowed or chipped", "Clarify whether trim, doors, caulking, and touch-ups are included"],
+        ["Ceilings", "Ceiling stains, patch marks, and old flat paint can stand out beside fresh walls", "Separate ceiling paint from wall paint in the quote"],
+        ["Occupied home", "Furniture, floors, pets, and daily cleanup affect setup time", "Ask about room-by-room sequencing and protection"],
+      ],
+    };
+  }
   return {
     surface: "room",
     result: "clean interior finish",
@@ -187,6 +238,16 @@ function serviceSpecificTerms(serviceKey) {
       ["Occupied home", "Furniture, floors, and daily cleanup need planning", "Confirm room-by-room sequencing"],
     ],
   };
+}
+
+function uniqueLinksByHref(links) {
+  const seen = new Set();
+  return links.filter((link) => {
+    const href = String(link?.href || "").trim();
+    if (!href || seen.has(href)) return false;
+    seen.add(href);
+    return true;
+  });
 }
 
 function buildDiagnosticTable(serviceLabel, terms) {
@@ -255,12 +316,16 @@ function buildContent({
   const cityLink = linkHtml(cityServicePage, `${service.label.toLowerCase()} in ${city}`);
   const quoteLink = linkHtml("/quote/", "request a quote with photos");
   const primaryGap = gaps[0] || "what is included in a proper contractor scope";
+  const primaryGapPhrase = String(primaryGap).replace(/[.!?]+$/g, "");
   const guideFocus = gaps.length
-    ? `This guide puts extra attention on ${primaryGap.toLowerCase()}, because that is one of the details homeowners need to understand before comparing quotes.`
+    ? `This guide puts extra attention on ${lowerFirst(primaryGapPhrase)}, because that is one of the details homeowners need to understand before comparing quotes.`
     : `This guide focuses on the practical quote questions homeowners usually have around ${selectedKeyword.keyword}.`;
   const relatedLinkHtml = relatedLinks
     .map((link) => `<li><a href="${link.href}" class="font-semibold text-blue-600 hover:underline">${link.anchor}</a>: ${link.description}</li>`)
     .join("");
+  const aiContentGaps = asList(comparison?.ai_content_gaps_to_cover);
+  const recommendedAngles = asList(comparison?.recommended_blog_angles);
+  const quoteDetailsToClarify = aiContentGaps.length ? aiContentGaps : recommendedAngles;
 
   return [
     `${city} homeowners usually start with a simple question: what should I expect before booking ${service.label.toLowerCase()}? The honest answer depends on the condition of the ${terms.surface}, how much protection is needed, the finish standard, and whether the work is only a basic task or a full paint-ready scope.`,
@@ -268,7 +333,7 @@ function buildContent({
     { html: `<strong>Quick answer for ${city} homeowners</strong>` },
     `A good ${service.label.toLowerCase()} quote should explain preparation, protection, the main work stage, repairs, finish quality, sanding or cleanup control, primer or paint handoff, and what photos are needed before pricing. The lowest price is not always the best value if it leaves rough patches, visible seams, poor paint readiness, weak trim lines, or cleanup problems after the crew leaves.`,
     { html: `<strong>What this guide covers</strong>` },
-    `This is a ${blogType.toLowerCase()} written for ${searchIntent.toLowerCase()}. It covers what changes the scope, how preparation and finish quality affect the result, and how to send details that lead to a cleaner written estimate. ${guideFocus}`,
+    `The sections below explain what changes the scope, how preparation and finish quality affect the result, and how to send details that lead to a cleaner written estimate. ${guideFocus}`,
     buildDiagnosticTable(service.label, terms),
     { html: `<strong>Why the scope changes from home to home</strong>` },
     `Two homes in ${city} can ask for the same service and still need different pricing. Room size matters, but it is only one part of the estimate. Access, height, furniture, flooring, lighting, repairs, previous work, and how the final surface will be finished all change the amount of labour.`,
@@ -305,13 +370,13 @@ function buildContent({
     { html: `<strong>What a complete quote should explain</strong>` },
     `A thin quote may name the service without explaining the details homeowners need to compare real scopes. A complete quote should explain protection, dust control, repair after the first work stage, finish level, primer or paint handoff, timeline, cleanup, and what photos to send. Those details are exactly what determine whether a project feels organized or stressful.`,
     `Fast, affordable, and professional are not enough by themselves. A homeowner needs to know what happens in the room, what is included, what can change the price, and how the final surface will be judged. This guide is built around those practical questions rather than a list of sales claims.`,
-    (comparison?.ai_content_gaps_to_cover?.length || comparison?.recommended_blog_angles?.length)
+    quoteDetailsToClarify.length
       ? {
           html: `<strong>Details to clarify before comparing quotes</strong>`,
         }
       : "",
-    (comparison?.ai_content_gaps_to_cover?.length || comparison?.recommended_blog_angles?.length)
-      ? `Before comparing prices, clarify ${(comparison.ai_content_gaps_to_cover?.length ? comparison.ai_content_gaps_to_cover : comparison.recommended_blog_angles).slice(0, 5).map((item) => String(item).toLowerCase()).join(", ")}. Those details help separate a basic scope from a cleaner plan for protection, dust control, repairs, primer, paint readiness, and finish quality.`
+    quoteDetailsToClarify.length
+      ? `Before comparing prices, clarify ${quoteDetailsToClarify.slice(0, 5).map((item) => String(item).toLowerCase()).join(", ")}. Those details help separate a basic scope from a cleaner plan for protection, dust control, repairs, primer, paint readiness, and finish quality.`
       : "",
     { html: `<strong>Timeline and disruption</strong>` },
     `Timeline depends on the number of rooms, drying time, access, repairs, finish level, and whether the home is occupied. Some small scopes can be completed quickly. Larger scopes may need multiple visits because compound, caulk, primer, or paint needs time to dry properly before the next step.`,
@@ -342,7 +407,9 @@ function buildDraft(job, keywordIdeas = [], competitorPages = [], comparison = n
   const serviceKey = normalizeService(job.service);
   const service = SERVICES[serviceKey];
   const city = cityLabel(job.city);
+  const aiMainKeyword = String(comparison?.ai_research?.main_keyword || comparison?.main_keyword || "").trim();
   const selectedKeyword =
+    (aiMainKeyword ? { keyword: aiMainKeyword, intent_score: 100, selected: true, source: "ai_research" } : null) ||
     keywordIdeas.find((item) => item.selected) ||
     [...keywordIdeas].sort((a, b) => b.intent_score - a.intent_score)[0] ||
     { keyword: `${service.label} ${city}`, intent_score: 60, source: "fallback" };
@@ -352,34 +419,38 @@ function buildDraft(job, keywordIdeas = [], competitorPages = [], comparison = n
   const slug = slugify(title);
   const terms = serviceSpecificTerms(serviceKey);
   const comparisonGaps = cleanList([
-    ...(comparison?.ai_content_gaps_to_cover || []),
-    ...((comparison?.competitor_covered_but_epf_missing || []).map((item) => item.gap)),
+    ...asList(comparison?.ai_content_gaps_to_cover),
+    ...asList(comparison?.competitor_covered_but_epf_missing).map((item) => item.gap || item),
   ]);
   const gaps = comparisonGaps.length
     ? comparisonGaps
     : cleanList(competitorPages.flatMap((page) => page.gaps_found || []));
   const cityServicePage = job.main_page_url || serviceCityPath(serviceKey, city);
-  const relatedLinks = [
-    {
-      href: cityServicePage,
-      anchor: `${service.label} in ${city}`,
-      description: "Local service page for the target city and service.",
-    },
+  const relatedLinks = uniqueLinksByHref([
+    ...(cityServicePage !== service.servicePage
+      ? [
+          {
+            href: cityServicePage,
+            anchor: `${service.label} in ${city}`,
+            description: "Local service page for the target city and service.",
+          },
+        ]
+      : []),
     {
       href: service.servicePage,
       anchor: `${service.label} service`,
       description: "Main service page for this service.",
     },
     ...(RELATED_GUIDES[serviceKey] || []),
-  ];
-  const internalLinks = [
+  ]);
+  const internalLinks = uniqueLinksByHref([
     ...relatedLinks,
     {
       href: "/quote/",
       anchor: "request a quote with photos",
       description: "Contact path for homeowners who want a clearer written scope.",
     },
-  ];
+  ]);
   const content = buildContent({
     title,
     selectedKeyword,

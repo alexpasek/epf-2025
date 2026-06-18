@@ -45,6 +45,31 @@ function splitLines(value) {
     .filter(Boolean);
 }
 
+function asArray(value) {
+  if (Array.isArray(value)) return value;
+  if (typeof value === "string") return value.trim() ? [value.trim()] : [];
+  if (value && typeof value === "object") return [value];
+  return [];
+}
+
+function displayText(value) {
+  if (value == null) return "";
+  if (typeof value === "string" || typeof value === "number") return String(value);
+  if (typeof value === "object") {
+    return String(
+      value.title ||
+        value.keyword ||
+        value.gap ||
+        value.reason ||
+        value.purpose ||
+        value.homeowner_focus ||
+        value.url ||
+        "",
+    );
+  }
+  return String(value);
+}
+
 function StatusPill({ status }) {
   return (
     <span className="rounded-full border border-slate-300 bg-white px-2.5 py-1 text-xs font-semibold text-slate-700">
@@ -311,7 +336,7 @@ export default function SeoBlogAgentClient() {
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-red-300">
               Hidden internal tool
             </p>
-            <h1 className="mt-2 text-3xl font-bold tracking-tight">EPF SEO Blog Agent</h1>
+            <h1 className="mt-2 text-3xl font-bold tracking-tight">EPF SEO</h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">
               Research keywords, inspect competitor gaps, create blog drafts, approve manually,
               publish to the existing blog store, and prepare a GBP post draft.
@@ -499,6 +524,14 @@ export default function SeoBlogAgentClient() {
                     {(() => {
                       const epfPage = epfPages.find((item) => item.job_id === job.id);
                       const comparison = comparisons.find((item) => item.job_id === job.id);
+                      const competitorGaps = asArray(comparison?.competitor_covered_but_epf_missing);
+                      const searchQueries = asArray(comparison?.search_queries);
+                      const discoveredUrls = asArray(comparison?.discovered_competitor_urls);
+                      const acceptedUrls = asArray(comparison?.accepted_competitor_urls);
+                      const rejectedUrls = asArray(comparison?.rejected_competitor_urls);
+                      const aiNotes = asArray(comparison?.ai_notes_for_human_review);
+                      const searchErrors = asArray(comparison?.search_errors);
+                      const recommendedAngles = asArray(comparison?.recommended_blog_angles);
                       return (
                         <>
                     <div className="flex flex-wrap items-start justify-between gap-3">
@@ -536,22 +569,24 @@ export default function SeoBlogAgentClient() {
                             </div>
                           </div>
                         </div>
-                        {comparison.competitor_covered_but_epf_missing?.length ? (
+                        {competitorGaps.length ? (
                           <div className="mt-3">
                             <p className="text-xs font-bold uppercase tracking-[0.12em] text-blue-200">Support gaps to cover in blog</p>
                             <ul className="mt-2 grid gap-1 text-sm text-slate-300 md:grid-cols-2">
-                              {comparison.competitor_covered_but_epf_missing.slice(0, 6).map((item) => (
-                                <li key={item.gap}>{item.gap} ({item.competitor_count})</li>
+                              {competitorGaps.slice(0, 6).map((item, index) => (
+                                <li key={`${displayText(item) || "gap"}-${index}`}>
+                                  {displayText(item)} {item.competitor_count ? `(${item.competitor_count})` : null}
+                                </li>
                               ))}
                             </ul>
                           </div>
                         ) : null}
-                        {comparison.search_queries?.length ? (
+                        {searchQueries.length ? (
                           <div className="mt-3">
                             <p className="text-xs font-bold uppercase tracking-[0.12em] text-blue-200">Automatic search queries</p>
                             <ul className="mt-2 space-y-1 text-sm text-slate-300">
-                              {comparison.search_queries.map((query) => (
-                                <li key={query}>{query}</li>
+                              {searchQueries.map((query, index) => (
+                                <li key={`${displayText(query) || "query"}-${index}`}>{displayText(query)}</li>
                               ))}
                             </ul>
                           </div>
@@ -569,69 +604,69 @@ export default function SeoBlogAgentClient() {
                             </p>
                           )}
                         </div>
-                        {comparison.discovered_competitor_urls?.length ? (
+                        {discoveredUrls.length ? (
                           <div className="mt-3">
                             <p className="text-xs font-bold uppercase tracking-[0.12em] text-blue-200">Discovered candidate pages</p>
                             <ul className="mt-2 space-y-1 text-sm text-slate-300">
-                              {comparison.discovered_competitor_urls.map((url) => (
-                                <li key={url} className="break-all">{url}</li>
+                              {discoveredUrls.map((url, index) => (
+                                <li key={`${displayText(url) || "discovered"}-${index}`} className="break-all">{displayText(url)}</li>
                               ))}
                             </ul>
                           </div>
                         ) : null}
-                        {comparison.accepted_competitor_urls?.length ? (
+                        {acceptedUrls.length ? (
                           <div className="mt-3">
                             <p className="text-xs font-bold uppercase tracking-[0.12em] text-emerald-200">Accepted competitors used</p>
                             <ul className="mt-2 space-y-1 text-sm text-slate-300">
-                              {comparison.accepted_competitor_urls.map((url) => (
-                                <li key={url} className="break-all">{url}</li>
+                              {acceptedUrls.map((url, index) => (
+                                <li key={`${displayText(url) || "accepted"}-${index}`} className="break-all">{displayText(url)}</li>
                               ))}
                             </ul>
                           </div>
                         ) : null}
-                        {comparison.rejected_competitor_urls?.length ? (
+                        {rejectedUrls.length ? (
                           <details className="mt-3 rounded-md border border-slate-700 p-3">
                             <summary className="cursor-pointer text-xs font-bold uppercase tracking-[0.12em] text-amber-200">
                               Rejected links for correction
                             </summary>
                             <ul className="mt-2 space-y-2 text-sm text-slate-300">
-                              {comparison.rejected_competitor_urls.map((item) => (
-                                <li key={item.url}>
-                                  <span className="break-all">{item.url}</span>
+                              {rejectedUrls.map((item, index) => (
+                                <li key={`${displayText(item.url || item.reason || item) || "rejected"}-${index}`}>
+                                  <span className="break-all">{displayText(item.url || item.reason || item)}</span>
                                   <span className="block text-xs text-slate-500">
-                                    Score {item.relevance_score || 0}: {item.reason || item.relevance_reasons?.join(", ") || "Rejected"}
+                                    Score {item.relevance_score || 0}: {item.reason || asArray(item.relevance_reasons).join(", ") || "Rejected"}
                                   </span>
                                 </li>
                               ))}
                             </ul>
                           </details>
                         ) : null}
-                        {comparison.ai_notes_for_human_review?.length ? (
+                        {aiNotes.length ? (
                           <div className="mt-3">
                             <p className="text-xs font-bold uppercase tracking-[0.12em] text-blue-200">Human review notes</p>
                             <ul className="mt-2 space-y-1 text-sm text-slate-300">
-                              {comparison.ai_notes_for_human_review.map((note) => (
-                                <li key={note}>{note}</li>
+                              {aiNotes.map((note, index) => (
+                                <li key={`${displayText(note) || "note"}-${index}`}>{displayText(note)}</li>
                               ))}
                             </ul>
                           </div>
                         ) : null}
-                        {comparison.search_errors?.length ? (
+                        {searchErrors.length ? (
                           <div className="mt-3">
                             <p className="text-xs font-bold uppercase tracking-[0.12em] text-amber-200">Search issues</p>
                             <ul className="mt-2 space-y-1 text-sm text-amber-200">
-                              {comparison.search_errors.map((error) => (
-                                <li key={error}>{error}</li>
+                              {searchErrors.map((error, index) => (
+                                <li key={`${displayText(error) || "error"}-${index}`}>{displayText(error)}</li>
                               ))}
                             </ul>
                           </div>
                         ) : null}
-                        {comparison.recommended_blog_angles?.length ? (
+                        {recommendedAngles.length ? (
                           <div className="mt-3">
                             <p className="text-xs font-bold uppercase tracking-[0.12em] text-blue-200">Recommended blog angles</p>
                             <ul className="mt-2 space-y-1 text-sm text-slate-300">
-                              {comparison.recommended_blog_angles.slice(0, 5).map((angle) => (
-                                <li key={angle}>{angle}</li>
+                              {recommendedAngles.slice(0, 5).map((angle, index) => (
+                                <li key={`${displayText(angle) || "angle"}-${index}`}>{displayText(angle)}</li>
                               ))}
                             </ul>
                           </div>

@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import SeoBlogAgentClient from "./SeoBlogAgentClient";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +15,6 @@ export const metadata = {
   },
 };
 
-export default function SeoBlogAgentRedirectPage() {
-  redirect("/seo");
+export default function SeoPage() {
+  return <SeoBlogAgentClient />;
 }

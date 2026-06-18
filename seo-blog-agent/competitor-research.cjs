@@ -1,5 +1,5 @@
 const { makeId } = require("./models.cjs");
-const { runAiCompetitionResearch } = require("./ai-research.cjs");
+const { runAiCompetitionResearch, runAiCompetitorDiscovery } = require("./ai-research.cjs");
 
 const GAP_CHECKS = [
   "Painted vs unpainted texture difficulty",
@@ -166,6 +166,48 @@ function resolveUrl(url) {
   if (/^https?:\/\//i.test(value)) return value;
   const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://epfproservices.com").replace(/\/$/, "");
   return `${base}${value.startsWith("/") ? value : `/${value}`}`;
+}
+
+function toStringArray(value) {
+  if (Array.isArray(value)) {
+    return [...new Set(value.map((item) => {
+      if (item && typeof item === "object") {
+        return String(item.title || item.keyword || item.gap || item.reason || item.purpose || item.homeowner_focus || item.url || "").trim();
+      }
+      return String(item || "").trim();
+    }).filter(Boolean))];
+  }
+  if (value && typeof value === "object") {
+    const text = String(value.title || value.keyword || value.gap || value.reason || value.purpose || value.homeowner_focus || value.url || "").trim();
+    return text ? [text] : [];
+  }
+  if (typeof value === "string") {
+    return value
+      .split(/\n|;/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
+function toRejectedUrlArray(value) {
+  if (!Array.isArray(value)) {
+    return typeof value === "string" && value.trim()
+      ? [{ url: "", reason: value.trim() }]
+      : [];
+  }
+  return value
+    .map((item) => {
+      if (typeof item === "string") {
+        return { url: item.trim(), reason: "Rejected by AI research" };
+      }
+      if (!item || typeof item !== "object") return null;
+      return {
+        url: String(item.url || "").trim(),
+        reason: String(item.reason || "Rejected by AI research").trim(),
+      };
+    })
+    .filter((item) => item && (item.url || item.reason));
 }
 
 function decodeHtmlEntities(value) {
@@ -393,7 +435,7 @@ function extractSearchUrls(job, html) {
 async function fetchSearchResults(url) {
   const response = await fetch(url, {
     headers: {
-      "user-agent": "Mozilla/5.0 EPF SEO Blog Agent/1.0",
+      "user-agent": "Mozilla/5.0 EPF SEO/1.0",
       accept: "text/html,application/xhtml+xml",
     },
     signal: AbortSignal.timeout(12000),
@@ -428,6 +470,7 @@ async function discoverCompetitorUrls(job, limit = 6) {
     .map((query) => `${query} ${exclusions}`.trim());
   const discovered = [];
   const errors = [];
+  let aiDiscovery = null;
 
   for (const query of queries) {
     const encoded = encodeURIComponent(`${query} -epfproservices`);
@@ -448,10 +491,19 @@ async function discoverCompetitorUrls(job, limit = 6) {
     if ([...new Set(discovered)].length >= limit) break;
   }
 
+  if (![...new Set(discovered)].length) {
+    aiDiscovery = await runAiCompetitorDiscovery(job);
+    if (aiDiscovery.competitor_urls?.length) {
+      discovered.push(...aiDiscovery.competitor_urls.filter((url) => isUsefulCompetitorUrl(url)));
+    }
+    if (aiDiscovery.error) errors.push(`OpenAI web search: ${aiDiscovery.error}`);
+  }
+
   return {
     queries,
     urls: [...new Set(discovered)].slice(0, limit),
     errors: [...new Set(errors)].slice(0, 6),
+    ai_discovery: aiDiscovery,
   };
 }
 
@@ -477,7 +529,7 @@ async function analyzePage(job, url, source) {
   try {
     if (!resolvedUrl) throw new Error("Missing URL");
     const response = await fetch(resolvedUrl, {
-      headers: { "user-agent": "EPF SEO Blog Agent/1.0" },
+      headers: { "user-agent": "EPF SEO/1.0" },
       signal: AbortSignal.timeout(10000),
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -587,25 +639,26 @@ async function analyzeCompetition(job) {
       .sort((a, b) => b.relevance_score - a.relevance_score)
       .slice(0, 6);
   const ruleComparison = compareEpfToCompetitors(researchJob, epfPage, relevantPages);
-  const aiResearch = await runAiCompetitionResearch({
-    job: researchJob,
-    epfPage,
-    candidatePages: candidatePagesWithAngles,
-    comparison: ruleComparison,
-  });
-  const aiAcceptedUrls = new Set(
-    Array.isArray(aiResearch.accepted_competitor_urls)
-      ? aiResearch.accepted_competitor_urls
-      : [],
-  );
+  const aiResearch = candidatePagesWithAngles.length
+    ? await runAiCompetitionResearch({
+        job: researchJob,
+        epfPage,
+        candidatePages: candidatePagesWithAngles,
+        comparison: ruleComparison,
+      })
+    : {
+        used_ai: false,
+        error: "No real competitor pages were found after automatic and AI-assisted discovery",
+      };
+  const aiAcceptedUrls = new Set(toStringArray(aiResearch.accepted_competitor_urls));
   const aiSelectedPages = aiResearch.used_ai && aiAcceptedUrls.size
     ? candidatePagesWithAngles.filter((page) => aiAcceptedUrls.has(page.url) && !page.fetch_error && page.relevance_score >= 55)
     : relevantPages;
   const finalCompetitorPages = aiSelectedPages.length ? aiSelectedPages : relevantPages;
   const aiRejectedByUrl = new Map(
-    Array.isArray(aiResearch.rejected_competitor_urls)
-      ? aiResearch.rejected_competitor_urls.map((item) => [item.url, item.reason || "Rejected by AI research"])
-      : [],
+    toRejectedUrlArray(aiResearch.rejected_competitor_urls)
+      .filter((item) => item.url)
+      .map((item) => [item.url, item.reason || "Rejected by AI research"]),
   );
   const rejectedPages = candidatePagesWithAngles
     .filter((page) => !finalCompetitorPages.some((accepted) => accepted.url === page.url))
@@ -624,11 +677,15 @@ async function analyzeCompetition(job) {
     rejected_competitor_urls: rejectedPages,
     search_queries: discovery.queries,
     search_errors: discovery.errors,
+    ai_competitor_discovery: discovery.ai_discovery,
     discovery_mode: Array.isArray(job.competitor_urls) && job.competitor_urls.length ? "manual_urls" : "automatic_search",
     ai_research: aiResearch,
-    ai_summary: aiResearch.used_ai ? aiResearch.summary : "",
-    ai_content_gaps_to_cover: aiResearch.used_ai ? aiResearch.content_gaps_to_cover || [] : [],
-    ai_notes_for_human_review: aiResearch.used_ai ? aiResearch.notes_for_human_review || [] : [],
+    ai_summary: aiResearch.used_ai ? String(aiResearch.summary || "") : "",
+    ai_content_gaps_to_cover: aiResearch.used_ai ? toStringArray(aiResearch.content_gaps_to_cover) : [],
+    ai_notes_for_human_review: aiResearch.used_ai ? toStringArray(aiResearch.notes_for_human_review) : [],
+    recommended_blog_angles: aiResearch.used_ai && toStringArray(aiResearch.recommended_blog_angles).length
+      ? toStringArray(aiResearch.recommended_blog_angles)
+      : ruleComparison.recommended_blog_angles,
   };
   return { epfPage, competitorPages: finalCompetitorPages, comparison, discovery };
 }

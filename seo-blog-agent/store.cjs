@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const path = require("path");
 
-const STORE_PATH = path.join(__dirname, "data", "store.json");
+const STORE_PATH = path.join(process.cwd(), "seo-blog-agent", "data", "store.json");
 const DEFAULT_STORE = {
   jobs: [],
   keywordIdeas: [],
