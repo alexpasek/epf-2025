@@ -1,6 +1,7 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { CONTACT, SITE_URL } from "@/app/config";
+import SkylightPopcornBacklinkBlock from "@/components/SkylightPopcornBacklinkBlock";
 
 const BASE_URL = (SITE_URL || "https://epfproservices.com").replace(/\/$/, "");
 const PAGE_PATH = "/popcorn-ceiling-removal/mississauga/";
@@ -1442,6 +1443,7 @@ export default function Page() {
           </div>
         </section>
       </div>
+      <SkylightPopcornBacklinkBlock city="Mississauga" slug="mississauga" />
       <style
         dangerouslySetInnerHTML={{
           __html: `.ads-look {

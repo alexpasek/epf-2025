@@ -1,5 +1,6 @@
 // app/popcorn-ceiling-removal/oakville/page.jsx
 import Link from "next/link";
+import SkylightPopcornBacklinkBlock from "@/components/SkylightPopcornBacklinkBlock";
 import { CONTACT } from "@/app/config";
 
 export const revalidate = 86400;
@@ -496,6 +497,8 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <SkylightPopcornBacklinkBlock city="Oakville" slug="oakville" />
 
       {/* FAQ */}
       <section id="faq" className="mt-10">

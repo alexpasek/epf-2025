@@ -4,6 +4,7 @@ import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
 import LocalSignals from "@/components/LocalSignals";
 import QuoteForm from "@/components/QuoteForm";
+import SkylightPopcornBacklinkBlock from "@/components/SkylightPopcornBacklinkBlock";
 
 export const revalidate = 86400;
 
@@ -1368,6 +1369,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <SkylightPopcornBacklinkBlock city="Hamilton" slug="hamilton" />
 
       {/* FINAL CTA */}
       <section className="py-20 bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900 text-white">

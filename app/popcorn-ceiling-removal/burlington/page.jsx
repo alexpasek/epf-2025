@@ -2,6 +2,7 @@
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { BRAND_NAME, CONTACT, SITE_URL } from "@/app/config";
+import SkylightPopcornBacklinkBlock from "@/components/SkylightPopcornBacklinkBlock";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
@@ -1157,6 +1158,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <SkylightPopcornBacklinkBlock city="Burlington" slug="burlington" />
 
       {/* FAQ + CTA */}
       <section className="py-20 bg-gray-50" id="faq">
