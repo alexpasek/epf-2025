@@ -23,7 +23,8 @@ export const skylightRepairCities = [
     relatedPopcornPage: "/popcorn-ceiling-removal/hamilton/",
     relatedDrywallPage: "/services/drywall-repair/hamilton/",
     relatedPaintingPage: "/services/interior-painting/",
-    heroImage: "/gallery/drywall-repair/drywall-repair-service00002.webp",
+    heroImage:
+      "/services/skylight-drywall-repair/skylight-drywall-repair-hamilton.jpg",
     imageAlt:
       "Hamilton skylight drywall repair and ceiling water damage restoration near a light well",
   },
@@ -51,7 +52,8 @@ export const skylightRepairCities = [
     relatedPopcornPage: "/popcorn-ceiling-removal/burlington/",
     relatedDrywallPage: "/services/drywall-repair/burlington/",
     relatedPaintingPage: "/services/interior-painting/",
-    heroImage: "/services/popcorn-ceiling-removal/3.webp",
+    heroImage:
+      "/services/skylight-drywall-repair/skylight-drywall-repair-burlington.jpg",
     imageAlt:
       "Burlington popcorn ceiling removal and drywall repair around a skylight opening",
   },
@@ -79,7 +81,8 @@ export const skylightRepairCities = [
     relatedPopcornPage: "/popcorn-ceiling-removal/oakville/",
     relatedDrywallPage: "/services/drywall-repair/oakville/",
     relatedPaintingPage: "/services/interior-painting/",
-    heroImage: "/gallery/drywall-installation/drywall-installation-hero.webp",
+    heroImage:
+      "/services/skylight-drywall-repair/skylight-drywall-repair-oakville.jpg",
     imageAlt:
       "Oakville skylight shaft repair and smooth ceiling refinishing preparation",
   },
@@ -108,7 +111,8 @@ export const skylightRepairCities = [
     relatedPopcornPage: "/popcorn-ceiling-removal/mississauga/",
     relatedDrywallPage: "/services/drywall-repair/mississauga/",
     relatedPaintingPage: "/services/interior-painting/",
-    heroImage: "/services/painting/3.webp",
+    heroImage:
+      "/services/skylight-drywall-repair/skylight-drywall-repair-mississauga.jpg",
     imageAlt:
       "Mississauga skylight drywall repair with primer and smooth ceiling painting prep",
   },

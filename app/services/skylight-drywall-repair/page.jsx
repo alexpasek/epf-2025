@@ -27,7 +27,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/services/popcorn-ceiling-removal/2.webp",
+        url: "/services/skylight-drywall-repair/skylight-drywall-repair-hero.jpg",
         width: 1200,
         height: 630,
         alt: "Skylight drywall repair and ceiling damage repair around a light well",

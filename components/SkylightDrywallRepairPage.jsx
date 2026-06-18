@@ -11,7 +11,8 @@ const phoneText = CONTACT?.phone || "(647) 923-6784";
 const email = CONTACT?.email || "info@epfproservices.com";
 
 const hubPath = "/services/skylight-drywall-repair/";
-const hubHeroImage = "/services/popcorn-ceiling-removal/2.webp";
+const hubHeroImage =
+  "/services/skylight-drywall-repair/skylight-drywall-repair-hero.jpg";
 const hubHeroAlt =
   "Skylight drywall repair, ceiling water damage repair, and smooth finish preparation around a light well";
 const serviceNames = [
