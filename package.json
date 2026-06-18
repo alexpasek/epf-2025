@@ -8,7 +8,10 @@
         "start": "next start",
         "postbuild": "next-sitemap",
         "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-        "deploy:cf": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+        "build:cloudflare": "opennextjs-cloudflare build",
+        "deploy:cloudflare": "opennextjs-cloudflare deploy",
+        "deploy:cf": "npm run build:cloudflare && npm run deploy:cloudflare",
+        "deploy": "npm run deploy:cf",
         "blog:generate": "node scripts/generate-popcorn-post.js",
         "blog:webhook": "node scripts/send-deployed-blog-webhooks.js"
     },
