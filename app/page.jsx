@@ -328,6 +328,11 @@ export default function Page() {
       href: "/services/drywall-repair/",
     },
     {
+      title: "Skylight Drywall Repair",
+      copy: "Interior drywall, ceiling stain, popcorn texture, and smooth finish repair around skylights after the leak source is fixed.",
+      href: "/services/skylight-drywall-repair/",
+    },
+    {
       title: "Wallpaper Removal",
       copy: "Adhesive wash, skim, and primer so stripped walls are actually ready for paint instead of needing another trade later.",
       href: "/services/wallpaper-removal/",
@@ -443,6 +448,13 @@ export default function Page() {
                   title="Drywall repair services"
                 >
                   Drywall Repair
+                </Link>
+                <Link
+                  href="/services/skylight-drywall-repair/"
+                  className="pill"
+                  title="Skylight drywall repair services"
+                >
+                  Skylight Drywall Repair
                 </Link>
                 <Link
                   href="/services/interior-painting/"

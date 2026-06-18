@@ -79,6 +79,29 @@ const DRYWALL_REPAIR_LINKS = [
   },
 ];
 
+const SKYLIGHT_REPAIR_LINKS = [
+  {
+    href: "/services/skylight-drywall-repair/",
+    label: "Skylight drywall repair service hub",
+  },
+  {
+    href: "/skylight-drywall-repair/mississauga/",
+    label: "Skylight drywall repair Mississauga",
+  },
+  {
+    href: "/skylight-drywall-repair/oakville/",
+    label: "Skylight drywall repair Oakville",
+  },
+  {
+    href: "/skylight-drywall-repair/burlington/",
+    label: "Skylight drywall repair Burlington",
+  },
+  {
+    href: "/skylight-drywall-repair/hamilton/",
+    label: "Skylight drywall repair Hamilton",
+  },
+];
+
 const BASEBOARD_LINKS = [
   {
     href: "/services/baseboard-installation/",
@@ -305,6 +328,13 @@ export default function Footer() {
         className="font-semibold hover:underline"
       >
         popcorn ceiling removal
+      </a>{" "}
+      •{" "}
+      <a
+        href="/services/skylight-drywall-repair/"
+        className="font-semibold hover:underline"
+      >
+        skylight drywall repair
       </a>
     </p>
   );
@@ -485,6 +515,16 @@ export default function Footer() {
                 </div>
                 <ul className="text-sm flex flex-wrap gap-3">
                   {DRYWALL_REPAIR_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-gray-700 hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                  {SKYLIGHT_REPAIR_LINKS.map((link) => (
                     <li key={link.href}>
                       <a
                         href={link.href}
