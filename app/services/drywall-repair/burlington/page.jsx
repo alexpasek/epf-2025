@@ -69,6 +69,16 @@ const FAQS = [
 
 const CLUSTER_GUIDES = [
   [
+    "/blog/drywall-contractor-burlington-guide/",
+    "Drywall Contractor Burlington Guide",
+    "Compare repair, installation, taping, finishing, dust control, and quote scope before booking.",
+  ],
+  [
+    "/blog/drywall-repair-or-installation-burlington/",
+    "Drywall Repair or Installation Burlington",
+    "Decide when a Burlington wall or ceiling needs patching, replacement board, or a larger install scope.",
+  ],
+  [
     "/blog/ceiling-drywall-repair-burlington-water-damage/",
     "Ceiling Drywall Repair in Burlington",
     "Leaks, plumbing cutouts, basement ceiling patches, cracks, texture damage, and quote photos.",

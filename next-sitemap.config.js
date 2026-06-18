@@ -1,7 +1,54 @@
+const fs = require("fs");
+const path = require("path");
+
 /** @type {import('next-sitemap').IConfig} */
 
 const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://epfproservices.com";
+
+function collectBlogSlugs() {
+    const root = __dirname;
+    const generatedPostsPath = path.join(root, "data/generated-posts.json");
+    const jsSources = fs
+        .readdirSync(path.join(root, "lib"))
+        .filter((file) => file === "posts.js" || /Posts\.js$/.test(file))
+        .map((file) => path.join(root, "lib", file));
+    const slugs = new Set();
+
+    if (fs.existsSync(generatedPostsPath)) {
+        try {
+            const generatedPosts = JSON.parse(
+                fs.readFileSync(generatedPostsPath, "utf8"),
+            );
+            if (Array.isArray(generatedPosts)) {
+                for (const post of generatedPosts) {
+                    if (post?.slug && post?.title) slugs.add(post.slug);
+                }
+            }
+        } catch {}
+    }
+
+    for (const source of jsSources) {
+        if (!fs.existsSync(source)) continue;
+        const content = fs.readFileSync(source, "utf8");
+        const pattern = /(?:^|[,{]\s*)slug\s*:\s*["']([^"']+)["']/gm;
+        let match;
+        while ((match = pattern.exec(content)) !== null) {
+            const before = content.slice(Math.max(0, match.index - 800), match.index);
+            const after = content.slice(match.index, match.index + 1200);
+            const nearby = `${before}\n${after}`;
+            if (
+                /title\s*:/.test(nearby) &&
+                /(metaTitle|metaDescription|excerpt|quickAnswer|date)\s*:/.test(nearby) &&
+                match[1]
+            ) {
+                slugs.add(match[1]);
+            }
+        }
+    }
+
+    return [...slugs].sort();
+}
 
 module.exports = {
     siteUrl, // real domain comes from env in production
@@ -17,6 +64,7 @@ module.exports = {
         "/api/*",
         "/404",
         "/500",
+        "/seo",
         "/seo-blog-agent",
         "/locations/drywall-repair",
         "/locations/popcorn-ceiling-removal",
@@ -31,7 +79,7 @@ module.exports = {
         }
 
         // Keep hidden internal tools out of public sitemap output.
-        if (path === "/seo-blog-agent") {
+        if (path === "/seo" || path === "/seo-blog-agent") {
             return null;
         }
 
@@ -60,6 +108,14 @@ module.exports = {
             lastmod: new Date().toISOString(),
         };
     },
+
+    additionalPaths: async() =>
+        collectBlogSlugs().map((slug) => ({
+            loc: `/blog/${slug}/`,
+            changefreq: "weekly",
+            priority: 0.7,
+            lastmod: new Date().toISOString(),
+        })),
 
     robotsTxtOptions: {
         policies: [{

@@ -243,6 +243,16 @@ export default function Page() {
   ];
   const authorityGuides = [
     {
+      href: "/blog/drywall-contractor-burlington-guide/",
+      title: "Drywall contractor Burlington guide",
+      text: "Compare repair, installation, taping, finishing, dust control, and quote scope.",
+    },
+    {
+      href: "/blog/drywall-repair-or-installation-burlington/",
+      title: "Repair or installation Burlington",
+      text: "How to decide whether a Burlington project needs patching or new board.",
+    },
+    {
       href: "/blog/drywall-hanging-taping-finishing-gta/",
       title: "Drywall hanging, taping and finishing GTA",
       text: "What each stage should include when the quote is written properly.",

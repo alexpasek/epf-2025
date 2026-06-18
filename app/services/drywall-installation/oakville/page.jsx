@@ -311,7 +311,19 @@ export default function Page() {
               <h2 className="text-3xl font-bold text-slate-900">
                 Related pages
               </h2>
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+                <Link
+                  href="/blog/drywall-contractor-oakville-guide/"
+                  className="rounded-2xl bg-white p-5 font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  Oakville drywall contractor guide
+                </Link>
+                <Link
+                  href="/blog/level-5-drywall-finishing-oakville/"
+                  className="rounded-2xl bg-white p-5 font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  Level 5 drywall finishing Oakville
+                </Link>
                 <Link
                   href={INSTALL_URL}
                   className="rounded-2xl bg-white p-5 font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"

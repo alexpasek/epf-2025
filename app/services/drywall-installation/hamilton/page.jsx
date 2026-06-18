@@ -244,6 +244,16 @@ export default function Page() {
   ];
   const authorityGuides = [
     {
+      href: "/blog/drywall-contractor-hamilton-guide/",
+      title: "Drywall contractor Hamilton guide",
+      text: "How to compare installation, repair, taping, sanding, and paint-ready scope.",
+    },
+    {
+      href: "/blog/basement-drywall-contractor-hamilton/",
+      title: "Basement drywall contractor Hamilton",
+      text: "Board hanging, bulkheads, taping, dust control, and smooth basement finishing.",
+    },
+    {
       href: "/blog/drywall-hanging-taping-finishing-gta/",
       title: "Drywall hanging, taping and finishing GTA",
       text: "A practical guide to what each stage should include on a real scope.",

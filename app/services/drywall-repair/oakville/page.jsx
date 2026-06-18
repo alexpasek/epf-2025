@@ -1193,6 +1193,8 @@ export default function Page() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
+                ["/blog/drywall-contractor-oakville-guide/", "Drywall Contractor Oakville", "Smooth repair, installation, taping, sanding, and finish-level planning for Oakville homes."],
+                ["/blog/level-5-drywall-finishing-oakville/", "Level 5 Drywall Finishing Oakville", "When bright rooms, smooth ceilings, and side light justify a higher drywall finish."],
                 ["/blog/drywall-repair-vs-replacement/", "Repair vs Replacement", "When to patch, cut out damaged drywall, or refinish a visible area."],
                 ["/blog/ceiling-crack-drywall-repair/", "Ceiling Crack Repair", "Why ceiling cracks come back after paint and how to repair them properly."],
                 ["/blog/drywall-repair-after-plumbing-electrical-work/", "Plumbing & Electrical Cutouts", "What happens after trades leave openings in walls and ceilings."],

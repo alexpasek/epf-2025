@@ -4,10 +4,10 @@ import DrywallPatchShowingGuide from "@/components/blog/DrywallPatchShowingGuide
 import PopcornCeilingCostCalculator from "@/components/blog/PopcornCeilingCostCalculator";
 import {
   getPostBySlug,
-  getPosts,
 } from "@/lib/posts";
 
 export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
 const DEFAULT_SITE_URL = "https://epfproservices.com";
@@ -176,6 +176,7 @@ const getPostContext = (post) => {
   const isDrywall = haystack.includes("drywall");
   const isWallpaper = haystack.includes("wallpaper");
   const isBaseboard = haystack.includes("baseboard");
+  const isPainting = haystack.includes("painting");
   const isProject =
     haystack.includes("project spotlight") || haystack.includes("project");
 
@@ -219,6 +220,27 @@ const getPostContext = (post) => {
           alt: "Paint-ready drywall finish",
           description:
             "Straight walls and ceilings prepared for final paint.",
+        },
+      ]
+    : isPainting
+    ? [
+        {
+          src: "/services/painting/1.webp",
+          alt: "Interior painting room preparation with protected floors and trim",
+          description:
+            "Protected floors, surface prep, and clean masking before interior painting.",
+        },
+        {
+          src: "/services/painting/3.webp",
+          alt: "Freshly painted interior wall with clean trim lines",
+          description:
+            "Smooth wall finish, consistent coverage, and sharp trim transitions.",
+        },
+        {
+          src: "/services/painting/6.webp",
+          alt: "Finished interior painting with clean wall and ceiling transitions",
+          description:
+            "Final painted surfaces checked for cut lines, sheen, and clean handoff.",
         },
       ]
     : [
@@ -265,6 +287,8 @@ const getPostContext = (post) => {
       ? "Baseboard installation terms this page covers"
     : isWallpaper
       ? "Wallpaper removal terms this page covers"
+    : isPainting
+      ? "Interior painting terms this page covers"
       : "Popcorn ceiling terms this page covers";
 
   const keywordPanelDescription = isDrywall
@@ -273,6 +297,8 @@ const getPostContext = (post) => {
       ? "Useful terms to compare materials, linear footage, finishing, and quote scope before you book."
     : isWallpaper
       ? "Useful terms to compare prep, removal, skim coating, and repaint scope."
+    : isPainting
+      ? "Useful terms to compare prep, primer, trim, ceilings, sheen, and quote scope before you book."
       : "Useful terms to compare removal, skim coating, and finish scope before you book.";
 
   let quoteLocationLine;
@@ -286,6 +312,10 @@ const getPostContext = (post) => {
     quoteLocationLine = `Share photos, room sizes, linear footage if you have it, profile preference, and timing. We reply with ${cityName} baseboard installation availability and a clearer written scope.`;
   } else if (isBaseboard) {
     quoteLocationLine = "Share room photos, linear footage if you have it, profile preference, and timing. We reply with GTA baseboard installation availability and a clearer written scope.";
+  } else if (isPainting && cityName) {
+    quoteLocationLine = `Share room photos, close-ups of wall damage, trim and ceiling photos, surfaces included, and timing. We reply with ${cityName} interior painting availability and a clearer written scope.`;
+  } else if (isPainting) {
+    quoteLocationLine = "Share room photos, close-ups of wall damage, trim and ceiling photos, surfaces included, and timing. We reply with GTA interior painting availability and a clearer written scope.";
   } else if (cityName) {
     quoteLocationLine = `Share photos, ceiling heights, and timing. We reply the same day with ${cityName} availability.`;
   } else {
@@ -298,6 +328,8 @@ const getPostContext = (post) => {
       ? "Plan your baseboard scope"
     : isWallpaper
       ? "Plan your wallpaper removal"
+    : isPainting
+      ? "Plan your painting scope"
       : "Ready to plan your ceilings?";
 
   const quoteHeading = isDrywall
@@ -306,6 +338,8 @@ const getPostContext = (post) => {
       ? "Get a baseboard installation quote today"
     : isWallpaper
       ? "Get a wallpaper removal quote today"
+    : isPainting
+      ? "Get an interior painting quote today"
       : "Get a popcorn ceiling quote today";
 
   const quoteBullets = isDrywall
@@ -319,6 +353,12 @@ const getPostContext = (post) => {
           "Trim removal, installation, caulking, and paint-ready finishing",
           "MDF, wood, PVC, shoe moulding, and profile-matching options",
           "Floor protection and careful sequencing after flooring or painting",
+        ]
+    : isPainting
+      ? [
+          "Wall repair, sanding, caulking, primer, and finish coats",
+          "Walls, ceilings, trim, doors, and occupied-home protection",
+          "Clear photo-based scope for rooms, repairs, sheen, and timing",
         ]
     : [
         "HEPA dust control and Level 5 skim finishing",
@@ -502,11 +542,6 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export async function generateStaticParams() {
-  const posts = await getPosts();
-  return posts.map((post) => ({ slug: post.slug }));
-}
-
 export default async function Post({ params }) {
   const resolvedParams = await params;
   const slug = resolvedParams?.slug;
@@ -664,6 +699,23 @@ export default async function Post({ params }) {
   const authorName = post.author || "EPF Pro Services";
   const reviewerName = post.reviewedBy || "EPF Pro Services";
   const updatedDate = formatPostDate(post.date) || post.date;
+  const relatedLinkContext = `${context.articleSection || ""} ${context.serviceType || ""}`.toLowerCase();
+  const isDrywallRelatedPost = relatedLinkContext.includes("drywall");
+  const isPaintingRelatedPost = relatedLinkContext.includes("painting");
+  const relatedLinksEyebrow =
+    post.relatedLinksEyebrow ||
+    (isDrywallRelatedPost
+      ? "Drywall service pages and guides"
+      : isPaintingRelatedPost
+        ? "Painting service pages and guides"
+        : "Related local pages and guides");
+  const relatedLinksHeading =
+    post.relatedLinksHeading ||
+    (isDrywallRelatedPost
+      ? "Plan the Right Drywall Service Next"
+      : isPaintingRelatedPost
+        ? "Plan the Right Painting Service Next"
+        : "Keep Planning Your Project");
 
   if (isFieldGuideLayout) {
     return (
@@ -808,10 +860,10 @@ export default async function Post({ params }) {
         {post.links?.length > 0 ? (
           <section className="mx-auto mt-12 max-w-6xl px-4">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
-              Related Local Pages and Guides
+              {relatedLinksEyebrow}
             </p>
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
-              Keep Planning Your Ceiling Project
+              {relatedLinksHeading}
             </h2>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {post.links.slice(0, 8).map((link, idx) => (

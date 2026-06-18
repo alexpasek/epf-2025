@@ -4,6 +4,10 @@
   "name": "wallpaper-removal-pro",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "routes": [
+    { "pattern": "epfproservices.com/*", "zone_name": "epfproservices.com" },
+    { "pattern": "www.epfproservices.com/*", "zone_name": "epfproservices.com" }
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"

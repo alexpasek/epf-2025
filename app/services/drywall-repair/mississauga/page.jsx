@@ -66,6 +66,16 @@ const QUOTE_CHECKLIST = [
 
 const CLUSTER_GUIDES = [
   [
+    "/blog/drywall-contractor-mississauga-guide/",
+    "Drywall Contractor Mississauga Guide",
+    "Installation, repair, taping, Level 5 finishing, dust control, and quote scope for Mississauga homes.",
+  ],
+  [
+    "/blog/drywall-contractor-basement-renovation-mississauga/",
+    "Basement Drywall Contractor Mississauga",
+    "Board installation, bulkheads, taping, sanding, cleanup, and paint-ready basement finishing.",
+  ],
+  [
     "/blog/drywall-repair-cost-mississauga/",
     "Drywall Repair Cost in Mississauga",
     "Pricing factors for holes, cracks, ceiling leaks, patch repairs, sanding, priming, and paint-ready finish.",

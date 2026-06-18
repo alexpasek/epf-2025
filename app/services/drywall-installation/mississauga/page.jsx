@@ -242,6 +242,16 @@ export default function Page() {
   ];
   const authorityGuides = [
     {
+      href: "/blog/drywall-contractor-mississauga-guide/",
+      title: "Drywall contractor Mississauga guide",
+      text: "Installation, repair, taping, Level 5 finishing, dust control, and quote planning.",
+    },
+    {
+      href: "/blog/drywall-contractor-basement-renovation-mississauga/",
+      title: "Basement drywall contractor Mississauga",
+      text: "Board installation, bulkheads, taping, finishing, cleanup, and basement quote scope.",
+    },
+    {
       href: "/blog/drywall-installation-mistakes-uneven-walls/",
       title: "Drywall installation mistakes that cause uneven walls later",
       text: "Why seams, joints, and corners often look worse only after primer and paint.",
