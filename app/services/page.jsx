@@ -835,6 +835,7 @@ function anchorFor(name) {
   const id = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   if (id.includes("popcorn")) return "popcorn";
   if (id.includes("drywall-installation")) return "drywall-installation";
+  if (id.includes("skylight-drywall-repair")) return "skylight-drywall-repair";
   if (id.includes("drywall-repair")) return "drywall-repair";
   if (id.includes("wallpaper")) return "wallpaper";
   if (id.includes("painting")) return "painting";
