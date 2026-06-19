@@ -12,15 +12,55 @@ const email = CONTACT?.email || "info@epfproservices.com";
 
 const hubPath = "/services/skylight-drywall-repair/";
 const hubHeroImage =
-  "/services/skylight-drywall-repair/skylight-drywall-repair-hero.jpg";
+  "/services/skylight-drywall-repair/skylight-drywall-repair-clean-hero-v2.jpg";
 const hubHeroAlt =
-  "Skylight drywall repair, ceiling water damage repair, and smooth finish preparation around a light well";
+  "Clean skylight drywall repair, popcorn texture removal, and smooth ceiling preparation around a bright light well";
 const serviceNames = [
   "Skylight Drywall Repair",
   "Drywall Repair Around Skylights",
   "Skylight Shaft Repair",
+  "Light Well Drywall Repair",
   "Popcorn Ceiling Removal Around Skylights",
+  "Stipple Removal Around Skylights",
   "Ceiling Water Damage Repair After Skylight Leak",
+  "Smooth Ceiling Around Skylights",
+];
+
+const heroHighlights = [
+  "Skylight drywall repair",
+  "Popcorn or stipple removal",
+  "Ceiling stain repair after leaks",
+  "Smooth paint-ready finish",
+];
+
+const defaultCommonRequests = [
+  "Drywall repair around skylight shafts and inside corners",
+  "Ceiling water damage repair after the leak source is fixed",
+  "Popcorn ceiling removal around skylight openings",
+  "Skim coat, sanding, primer, and smooth ceiling preparation",
+];
+
+const repairOutcomeCards = [
+  {
+    title: "Interior repair, not roof replacement",
+    body:
+      "EPF restores the inside ceiling, drywall, skylight shaft, primer, and paint-ready finish after the leak source is repaired or confirmed.",
+  },
+  {
+    title: "Built for critical daylight",
+    body:
+      "Skylights show every wave, tape edge, patch line, and sanding mark. We focus on clean feathering and smooth repair work that still looks right in natural light.",
+  },
+  {
+    title: "Texture removal around tight corners",
+    body:
+      "Popcorn and stipple around skylight shafts need detailed scraping, skim coating, and sanding because the corners and returns are more visible than a flat ceiling.",
+  },
+  {
+    title: "Dust-controlled handoff",
+    body:
+      "Floors, furniture, walls, vents, and access paths are protected before repair. The goal is a clean work area and a ceiling ready for primer or finish paint.",
+  },
 ];
 
 const processSteps = [
@@ -115,19 +155,19 @@ const serviceBlocks = [
 
 const photos = [
   {
-    src: "/services/popcorn-ceiling-removal/3.webp",
-    alt: "Ceiling refinishing and popcorn removal detail around a bright ceiling area",
-    caption: "Texture removal and ceiling refinishing need more care around bright openings.",
+    src: "/services/skylight-drywall-repair/skylight-drywall-repair-burlington-clean-v2.jpg",
+    alt: "Popcorn ceiling removal and skim coating around a skylight opening",
+    caption: "Popcorn and stipple texture need careful detail work around skylight returns.",
   },
   {
-    src: "/gallery/drywall-repair/drywall-repair-service00003.webp",
-    alt: "Drywall compound and taping repair before sanding",
-    caption: "Failed tape, cracks, and patches need proper compound work before paint.",
+    src: "/services/skylight-drywall-repair/skylight-drywall-repair-hamilton-clean-v2.jpg",
+    alt: "Skylight shaft drywall repair in a protected hallway",
+    caption: "Light wells and hallway skylights show patch lines, failed tape, and sanding marks.",
   },
   {
-    src: "/services/painting/3.webp",
-    alt: "Finished interior painting after wall and ceiling preparation",
-    caption: "Primer and paint are the final handoff after the ceiling is smooth.",
+    src: "/services/skylight-drywall-repair/skylight-drywall-repair-oakville-clean-v2.jpg",
+    alt: "Smooth ceiling preparation around a large skylight shaft",
+    caption: "Smooth ceiling finishing around skylights needs clean feathering under daylight.",
   },
 ];
 
@@ -157,6 +197,7 @@ export function getSkylightRepairJsonLd({ city, path }) {
       serviceType: serviceNames,
       description:
         "Interior drywall repair, ceiling water damage repair, popcorn ceiling removal, skylight shaft refinishing, skim coating, primer, and paint-ready finishing around skylights.",
+      image: `${BASE_URL}${city?.heroImage || hubHeroImage}`,
       provider: {
         "@type": "LocalBusiness",
         name: COMPANY_NAME,
@@ -224,7 +265,7 @@ function JsonLd({ city, path }) {
 
 function CtaButtons({ city }) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
+    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
       <Link
         href="/quote/"
         className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-base font-bold text-white shadow-lg transition hover:bg-blue-700"
@@ -233,7 +274,7 @@ function CtaButtons({ city }) {
       </Link>
       <a
         href={phoneHref}
-        className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-base font-bold text-white transition hover:bg-white/20"
+        className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/40 bg-white/10 px-6 py-3 text-base font-bold text-white transition hover:bg-white/20"
       >
         {phoneText}
       </a>
@@ -253,6 +294,11 @@ function RelatedLinksBlock({ city }) {
           href: city.relatedDrywallPage,
           title: `drywall repair in ${city.city}`,
           body: "Local drywall repair page for stains, cracks, patches, ceiling damage, and paint-ready repair.",
+        },
+        {
+          href: city.relatedPaintingPage,
+          title: "interior painting after skylight repair",
+          body: "Primer, ceiling painting, wall painting, and clean finish coats after drywall and skim coat preparation.",
         },
       ]
     : skylightRepairCities.map((item) => ({
@@ -321,42 +367,136 @@ export default function SkylightDrywallRepairPage({ city = null }) {
     : "Water stains, cracked drywall, peeling paint, or popcorn texture damage around a skylight? EPF Pro Services repairs the interior drywall, ceiling finish, and texture around skylights and light wells.";
   const heroImage = city?.heroImage || hubHeroImage;
   const heroAlt = city?.imageAlt || hubHeroAlt;
+  const commonRequests = city?.commonRequests || defaultCommonRequests;
+  const finishFocus =
+    city?.finishFocus ||
+    "Skylight repair needs a cleaner finish than ordinary patching because direct daylight exposes texture edges, tape lines, rough sanding, water stains, and uneven skim coating.";
 
   return (
     <main className="bg-slate-50 text-slate-900">
       <JsonLd city={city} path={path} />
 
-      <section className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0 opacity-25">
+      <section className="relative overflow-hidden bg-black text-white">
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.98),rgba(0,0,0,0.94)_45%,rgba(15,23,42,0.86))]" />
+        <div className="absolute inset-0 opacity-35 lg:hidden">
           <Image
             src={heroImage}
-            alt={heroAlt}
+            alt=""
             fill
-            priority
             sizes="100vw"
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-900/70" />
-        <div className="relative container mx-auto px-4 py-20 md:py-28">
-          <div className="max-w-4xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-black lg:hidden" />
+        <div className="relative container mx-auto grid gap-10 px-4 py-16 md:py-24 lg:grid-cols-[0.92fr,1.08fr] lg:items-center">
+          <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.28em] text-blue-300">
-              Interior skylight damage repair
+              Interior skylight drywall & ceiling repair
             </p>
             <h1 className="mt-5 text-4xl font-black leading-tight md:text-6xl">
               {heroTitle}
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200 md:text-xl">
+            <p className="mt-6 text-lg leading-8 text-slate-200 md:text-xl">
               {heroSubtitle}
             </p>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-              Dust-controlled protection, drywall repair, skim coating, primer,
-              and smooth paint-ready finish. Active skylight leaks should be
-              repaired or confirmed before final drywall finishing.
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              We restore the inside finish around skylights: drywall repair,
+              skylight shaft refinishing, popcorn or stipple removal, skim
+              coating, stain-block primer, sanding, and smooth paint-ready
+              ceiling preparation. Active leaks should be fixed before final
+              drywall finishing.
             </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {heroHighlights.map((highlight) => (
+                <span
+                  key={highlight}
+                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-slate-100"
+                >
+                  {highlight}
+                </span>
+              ))}
+            </div>
             <div className="mt-8">
               <CtaButtons city={city} />
             </div>
+          </div>
+
+          <div className="relative min-h-[360px] overflow-hidden rounded-[28px] border border-white/10 bg-slate-900 shadow-2xl md:min-h-[520px]">
+            <Image
+              src={heroImage}
+              alt={heroAlt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/5" />
+            <div className="absolute left-4 right-4 bottom-4 grid gap-3 sm:grid-cols-3">
+              {[
+                ["Drywall", "Repair around skylight shafts"],
+                ["Texture", "Popcorn and stipple removal"],
+                ["Finish", "Smooth ceiling prep"],
+              ].map(([label, detail]) => (
+                <div
+                  key={label}
+                  className="rounded-2xl border border-white/15 bg-black/55 p-4 backdrop-blur"
+                >
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-200">
+                    {label}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold leading-5 text-white">
+                    {detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-14">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr,1.1fr]">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-blue-700">
+                Skylight interior finish specialists
+              </p>
+              <h2 className="mt-3 text-3xl font-bold leading-tight text-slate-950 md:text-4xl">
+                We Fix the Ceiling, Shaft, Texture, and Smooth Finish Around Skylights
+              </h2>
+              <p className="mt-5 leading-8 text-slate-700">{finishFocus}</p>
+              <p className="mt-4 leading-8 text-slate-700">
+                This is the right service when the skylight itself is staying in
+                place, but the interior drywall, popcorn texture, ceiling stain,
+                peeling paint, or light-well finish needs to be restored.
+              </p>
+            </div>
+            <div className="grid gap-3">
+              {commonRequests.map((request) => (
+                <div
+                  key={request}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-4"
+                >
+                  <p className="font-semibold leading-7 text-slate-900">
+                    {request}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mx-auto mt-10 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {repairOutcomeCards.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-3xl border border-slate-200 bg-slate-950 p-6 text-white"
+              >
+                <h3 className="text-lg font-bold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  {item.body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
