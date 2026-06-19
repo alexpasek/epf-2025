@@ -7,7 +7,7 @@ import {
   setContact,
 } from "@/lib/chatStore";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 // Model
 var MODEL =

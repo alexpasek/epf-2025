@@ -2,6 +2,8 @@
 
 Hidden internal tool for researching blog topics, checking competitor pages for content gaps, creating draft blog packages, manually approving drafts, and publishing approved posts into the existing EPF blog loader.
 
+The browser UI lives inside the public website, but the backend agent runs separately through `seo-agent-service/`. The public route `/api/seo-blog-agent/*` is an Edge proxy and should not import these Node modules directly.
+
 ## Hidden UI
 
 Visit:
@@ -24,6 +26,18 @@ POST /api/seo-blog-agent/jobs/:jobId/draft
 POST /api/seo-blog-agent/drafts/:draftId/approve
 POST /api/seo-blog-agent/drafts/:draftId/reject
 POST /api/seo-blog-agent/drafts/:draftId/publish
+```
+
+In production, the public site must set:
+
+```txt
+SEO_AGENT_API_URL=https://YOUR_AGENT_HOST/api/seo-blog-agent
+```
+
+The standalone backend can be started locally with:
+
+```bash
+npm run seo:agent
 ```
 
 ## Storage
@@ -75,7 +89,7 @@ Optional GitHub publishing credentials:
 GITHUB_TOKEN=
 SITE_ADMIN_GITHUB_TOKEN=
 GITHUB_REPO=alexpasek/epf-2025
-GITHUB_BRANCH=main
+GITHUB_BRANCH=prod-stable
 ```
 
 Use either `GITHUB_TOKEN` or `SITE_ADMIN_GITHUB_TOKEN` when approved posts should be committed to GitHub. Without a GitHub token, approved publishing writes to the local `data/generated-posts.json` file during development.

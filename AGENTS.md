@@ -32,6 +32,14 @@ Main service areas:
 
 Always follow the rules in this file before making changes.
 
+When the task is related to the SEO agent, agent automation, competitor research automation, or the hidden `/seo` interface, also follow:
+
+- seo-blog-agent/AGENTS.md
+- seo-agent-service/AGENTS.md
+- docs/seo-agent-architecture.md
+
+The SEO agent backend must stay separate from the public Next.js app. The public route at `app/api/seo-blog-agent/[[...path]]/route.js` is an Edge proxy only.
+
 When the task is related to blogs, articles, guides, SEO support content, cost guides, local service support content, or image planning for blog posts, follow these files:
 
 - docs/rules/blog-agent-rules.md

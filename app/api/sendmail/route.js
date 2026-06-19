@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-export const runtime = "nodejs";
+export const runtime = "edge";
 export const dynamic = "force-dynamic"; // avoid caching
 
 export async function POST(req) {

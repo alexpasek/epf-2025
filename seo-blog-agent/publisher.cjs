@@ -3,10 +3,13 @@ const path = require("path");
 const { makeId, nowIso } = require("./models.cjs");
 const { createGmbDraft } = require("./gmb-handoff.cjs");
 
-const POSTS_PATH = path.join(process.cwd(), "data", "generated-posts.json");
+const SITE_ROOT = process.env.EPF_SITE_ROOT
+  ? path.resolve(process.env.EPF_SITE_ROOT)
+  : process.cwd();
+const POSTS_PATH = path.join(SITE_ROOT, "data", "generated-posts.json");
 const POSTS_REPO_PATH = "data/generated-posts.json";
 const DEFAULT_REPO = "alexpasek/epf-2025";
-const DEFAULT_BRANCH = "main";
+const DEFAULT_BRANCH = "prod-stable";
 
 async function readPosts() {
   try {

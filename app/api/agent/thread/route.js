@@ -8,7 +8,7 @@ import {
   setContact,
 } from "@/lib/chatStore";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 // --- helpers (old-school, no optional chaining) ---
 function msgFor(key) {

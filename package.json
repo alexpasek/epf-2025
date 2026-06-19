@@ -13,7 +13,8 @@
         "deploy:cf": "npm run build:cloudflare && npm run deploy:cloudflare",
         "deploy": "npm run deploy:cf",
         "blog:generate": "node scripts/generate-popcorn-post.js",
-        "blog:webhook": "node scripts/send-deployed-blog-webhooks.js"
+        "blog:webhook": "node scripts/send-deployed-blog-webhooks.js",
+        "seo:agent": "node seo-agent-service/server.cjs"
     },
     "dependencies": {
         "@opennextjs/cloudflare": "^1.9.1",

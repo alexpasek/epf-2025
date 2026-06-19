@@ -97,12 +97,12 @@ function getConfigStatus() {
         ? "Approved posts can be committed to GitHub."
         : "Publishing writes locally during development until GitHub credentials are set.",
       repo: process.env.GITHUB_REPO || "alexpasek/epf-2025",
-      branch: process.env.GITHUB_BRANCH || "main",
+      branch: process.env.GITHUB_BRANCH || "prod-stable",
       keys: [
         { key: "GITHUB_TOKEN", configured: hasEnv("GITHUB_TOKEN"), required: false },
         { key: "SITE_ADMIN_GITHUB_TOKEN", configured: hasEnv("SITE_ADMIN_GITHUB_TOKEN"), required: false },
         { key: "GITHUB_REPO", configured: hasEnv("GITHUB_REPO"), required: false, default: "alexpasek/epf-2025" },
-        { key: "GITHUB_BRANCH", configured: hasEnv("GITHUB_BRANCH"), required: false, default: "main" },
+        { key: "GITHUB_BRANCH", configured: hasEnv("GITHUB_BRANCH"), required: false, default: "prod-stable" },
       ],
     },
     automation: {

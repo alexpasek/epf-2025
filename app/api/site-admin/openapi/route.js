@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 export async function GET(req) {
   const url = new URL(req.url);
@@ -47,7 +47,7 @@ export async function GET(req) {
             branch: {
               type: "string",
               description:
-                "Optional GitHub branch. Defaults to GITHUB_BRANCH or main.",
+                "Optional GitHub branch. Defaults to GITHUB_BRANCH or prod-stable.",
             },
             ref: {
               type: "string",

@@ -1,7 +1,9 @@
 const fs = require("fs/promises");
 const path = require("path");
 
-const STORE_PATH = path.join(process.cwd(), "seo-blog-agent", "data", "store.json");
+const STORE_PATH = process.env.SEO_BLOG_AGENT_STORE_PATH
+  ? path.resolve(process.env.SEO_BLOG_AGENT_STORE_PATH)
+  : path.join(process.cwd(), "seo-blog-agent", "data", "store.json");
 const DEFAULT_STORE = {
   jobs: [],
   keywordIdeas: [],
