@@ -17,7 +17,7 @@ Edge proxy forwards to SEO_AGENT_API_URL
 Standalone Node SEO agent service
         |
         v
-Research, draft, approve, publish to GitHub prod-stable
+Research, draft, approve, publish to GitHub main
         |
         v
 Cloudflare Pages rebuilds the public site from GitHub
@@ -75,7 +75,7 @@ SEO_BLOG_AGENT_KEY=
 OPENAI_API_KEY=
 GITHUB_TOKEN=
 GITHUB_REPO=alexpasek/epf-2025
-GITHUB_BRANCH=prod-stable
+GITHUB_BRANCH=main
 NEXT_PUBLIC_SITE_URL=https://epfproservices.com
 ```
 
@@ -95,6 +95,6 @@ SEO_BLOG_AGENT_STORE_PATH=/absolute/path/to/store.json
 - Keep `app/api/seo-blog-agent/[[...path]]/route.js` as an Edge proxy.
 - Keep the Node backend in `seo-agent-service/` and `seo-blog-agent/`.
 - Never publish unapproved drafts.
-- Keep GitHub publishing pointed at `prod-stable`.
+- Keep GitHub publishing pointed at the Cloudflare Pages production branch `main` unless the owner intentionally changes the deployment branch.
 - Follow the root `AGENTS.md` and `docs/rules/*` before generating or changing blog content.
 - The UI should show research steps and outcomes so the owner can correct the agent before publishing.

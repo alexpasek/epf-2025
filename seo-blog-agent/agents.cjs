@@ -6,6 +6,8 @@ const { buildDraft } = require("./blog-writer.cjs");
 const { publishDraftLocally } = require("./publisher.cjs");
 const { DEFAULT_RESEARCH_MODEL } = require("./ai-research.cjs");
 
+const DEFAULT_PUBLISH_BRANCH = "main";
+
 const DEFAULT_AUTOMATION_TOPICS = [
   { service: "popcorn", city: "Mississauga", seedKeywords: ["popcorn ceiling removal cost Mississauga", "painted popcorn ceiling removal Mississauga"] },
   { service: "popcorn", city: "Oakville", seedKeywords: ["popcorn ceiling removal Oakville", "smooth ceiling Oakville"] },
@@ -76,8 +78,8 @@ function getConfigStatus() {
       configured: hasEnv("OPENAI_API_KEY"),
       required: true,
       note: hasEnv("OPENAI_API_KEY")
-        ? "AI competitor review is enabled."
-        : "Without this key, research falls back to rule-based competitor scoring.",
+        ? "AI competitor discovery and competitor review are enabled."
+        : "Without this key, automatic competitor discovery is limited and research falls back to rule-based scoring.",
       model: process.env.OPENAI_RESEARCH_MODEL || DEFAULT_RESEARCH_MODEL,
       keys: [
         { key: "OPENAI_API_KEY", configured: hasEnv("OPENAI_API_KEY"), required: true },
@@ -97,12 +99,12 @@ function getConfigStatus() {
         ? "Approved posts can be committed to GitHub."
         : "Publishing writes locally during development until GitHub credentials are set.",
       repo: process.env.GITHUB_REPO || "alexpasek/epf-2025",
-      branch: process.env.GITHUB_BRANCH || "prod-stable",
+      branch: process.env.GITHUB_BRANCH || DEFAULT_PUBLISH_BRANCH,
       keys: [
         { key: "GITHUB_TOKEN", configured: hasEnv("GITHUB_TOKEN"), required: false },
         { key: "SITE_ADMIN_GITHUB_TOKEN", configured: hasEnv("SITE_ADMIN_GITHUB_TOKEN"), required: false },
         { key: "GITHUB_REPO", configured: hasEnv("GITHUB_REPO"), required: false, default: "alexpasek/epf-2025" },
-        { key: "GITHUB_BRANCH", configured: hasEnv("GITHUB_BRANCH"), required: false, default: "prod-stable" },
+        { key: "GITHUB_BRANCH", configured: hasEnv("GITHUB_BRANCH"), required: false, default: DEFAULT_PUBLISH_BRANCH },
       ],
     },
     automation: {

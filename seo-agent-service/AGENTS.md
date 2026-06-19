@@ -15,14 +15,14 @@ Keep this service separate from the public Next.js website. The public site must
 - Agent business logic: `seo-blog-agent/*.cjs`
 - Local agent store: `seo-blog-agent/data/store.json` or `SEO_BLOG_AGENT_STORE_PATH`
 - Published blog data: `data/generated-posts.json`
-- GitHub publishing target: `alexpasek/epf-2025`, branch `prod-stable`
+- GitHub publishing target: `alexpasek/epf-2025`, production branch `main`
 
 ## Rules For AI/Codex Changes
 
 - Do not move the SEO agent backend back into `app/api/seo-blog-agent`.
 - Do not change the public site proxy to `runtime = "nodejs"`.
 - Keep the public website deployable without Node filesystem access.
-- Keep `GITHUB_BRANCH` defaulting to `prod-stable`.
+- Keep `GITHUB_BRANCH` defaulting to `main`, matching the Cloudflare Pages production branch.
 - Keep publishing limited to approved drafts.
 - Do not auto-publish daily automation output.
 - Do not overwrite existing blog slugs or existing approved posts.
@@ -37,7 +37,7 @@ Keep this service separate from the public Next.js website. The public site must
 4. Create a draft using EPF blog rules and internal linking rules.
 5. Wait for human review.
 6. Publish only after approval.
-7. Publish by committing the updated blog data to GitHub on `prod-stable`.
+7. Publish by committing the updated blog data to GitHub on `main`.
 
 ## Required Production Variables
 
@@ -46,7 +46,7 @@ SEO_BLOG_AGENT_KEY=
 OPENAI_API_KEY=
 GITHUB_TOKEN=
 GITHUB_REPO=alexpasek/epf-2025
-GITHUB_BRANCH=prod-stable
+GITHUB_BRANCH=main
 NEXT_PUBLIC_SITE_URL=https://epfproservices.com
 ```
 

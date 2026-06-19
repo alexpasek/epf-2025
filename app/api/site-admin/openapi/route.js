@@ -47,7 +47,7 @@ export async function GET(req) {
             branch: {
               type: "string",
               description:
-                "Optional GitHub branch. Defaults to GITHUB_BRANCH or prod-stable.",
+                "Optional GitHub branch. Defaults to GITHUB_BRANCH or main.",
             },
             ref: {
               type: "string",

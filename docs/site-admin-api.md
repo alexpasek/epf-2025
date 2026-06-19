@@ -15,7 +15,7 @@ Set these in Cloudflare Pages or the deployment environment:
 - `SITE_ADMIN_API_KEY`: long private bearer token used by ChatGPT Actions.
 - `SITE_ADMIN_GITHUB_TOKEN` or `GITHUB_TOKEN`: GitHub fine-grained token with contents read/write access for the repo.
 - `GITHUB_REPO`: optional, defaults to `alexpasek/epf-2025`.
-- `GITHUB_BRANCH`: optional, defaults to `prod-stable`.
+- `GITHUB_BRANCH`: optional, defaults to `main`.
 - `SITE_ADMIN_MAX_BYTES`: optional max file size, defaults to `4000000`.
 
 Use a fine-grained GitHub token scoped only to this repository. Do not use a personal token with broad account access.

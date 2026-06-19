@@ -73,7 +73,7 @@ Required for AI competition research:
 OPENAI_API_KEY=
 ```
 
-Without `OPENAI_API_KEY`, the agent still runs but falls back to rule-based competitor scoring.
+Without `OPENAI_API_KEY`, the agent still runs, but automatic competitor discovery is limited by public search result access and the research falls back to rule-based competitor scoring.
 
 Optional model override:
 
@@ -89,7 +89,7 @@ Optional GitHub publishing credentials:
 GITHUB_TOKEN=
 SITE_ADMIN_GITHUB_TOKEN=
 GITHUB_REPO=alexpasek/epf-2025
-GITHUB_BRANCH=prod-stable
+GITHUB_BRANCH=main
 ```
 
 Use either `GITHUB_TOKEN` or `SITE_ADMIN_GITHUB_TOKEN` when approved posts should be committed to GitHub. Without a GitHub token, approved publishing writes to the local `data/generated-posts.json` file during development.
@@ -143,4 +143,4 @@ To customize the topic rotation, set `SEO_BLOG_AGENT_DAILY_TOPICS` to a JSON arr
 - Drafts cannot publish unless `approved_by_user` is true and status is `approved`.
 - Daily automation creates drafts for review only; it does not publish.
 - Competitor pages are analyzed only for title, headings, word count, and missing-topic gaps. Content is not copied.
-- OpenAI is optional but recommended for AI research. If `OPENAI_API_KEY` is missing, the agent falls back to rule-based competitor scoring.
+- OpenAI is optional but strongly recommended for automatic competitor discovery and AI research. If `OPENAI_API_KEY` is missing, the agent falls back to public-search discovery where available and rule-based competitor scoring.

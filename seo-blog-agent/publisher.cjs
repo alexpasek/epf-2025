@@ -9,7 +9,7 @@ const SITE_ROOT = process.env.EPF_SITE_ROOT
 const POSTS_PATH = path.join(SITE_ROOT, "data", "generated-posts.json");
 const POSTS_REPO_PATH = "data/generated-posts.json";
 const DEFAULT_REPO = "alexpasek/epf-2025";
-const DEFAULT_BRANCH = "prod-stable";
+const DEFAULT_BRANCH = "main";
 
 async function readPosts() {
   try {

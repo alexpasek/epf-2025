@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export const runtime = "edge";
 
 const DEFAULT_REPO = "alexpasek/epf-2025";
-const DEFAULT_BRANCH = "prod-stable";
+const DEFAULT_BRANCH = "main";
 const MAX_CONTENT_BYTES = Number(process.env.SITE_ADMIN_MAX_BYTES || 4_000_000);
 
 const ALLOWED_ROOTS = [

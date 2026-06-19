@@ -106,6 +106,9 @@ function titleFromKeyword(keyword, city, serviceLabel, blogType) {
   if (blogType === "Cost guide") {
     return `${titleService} Cost in ${city}: What Affects the Quote?`;
   }
+  if (text.includes("prep") || text.includes("prepare")) {
+    return `${titleService} Prep in ${city}: What to Fix Before Painting`;
+  }
   if (text.includes("painted") && serviceLabel.includes("Popcorn")) {
     return `Painted Popcorn Ceiling Removal in ${city}: Scrape or Skim Coat?`;
   }
@@ -133,6 +136,10 @@ function asList(value) {
 
 function linkHtml(href, anchor) {
   return `<a href="${href}" class="text-blue-600 font-semibold hover:underline">${anchor}</a>`;
+}
+
+function articleFor(value) {
+  return /^[aeiou]/i.test(String(value || "").trim()) ? "an" : "a";
 }
 
 function lowerFirst(value) {
@@ -275,11 +282,12 @@ function estimateWordCount(content) {
 }
 
 function buildImagePlan(service, serviceKey, city, title, slug, terms) {
+  const cityArticle = articleFor(city);
   return [
     {
       role: "Featured image",
       file_name: `${slug}-featured.webp`,
-      alt: `${service.label} planning in a ${city} home with protected work area`,
+      alt: `${service.label} planning in ${cityArticle} ${city} home with protected work area`,
       prompt: `Realistic professional home renovation photo of ${service.label.toLowerCase()} planning in a clean ${city} area Ontario/GTA home. Show protected floors, practical tools, and the ${terms.surface} ready for contractor review. Natural daylight, high detail, wide-angle editorial style. Avoid text, logos, fake watermarks, unsafe work, people's faces, exaggerated luxury design, and unrealistic glossy surfaces.`,
     },
     {
@@ -313,6 +321,7 @@ function buildContent({
   relatedLinks,
 }) {
   const mainServiceLink = linkHtml(service.servicePage, `${service.label} service`);
+  const hasDedicatedCityPage = cityServicePage && cityServicePage !== service.servicePage;
   const cityLink = linkHtml(cityServicePage, `${service.label.toLowerCase()} in ${city}`);
   const quoteLink = linkHtml("/quote/", "request a quote with photos");
   const primaryGap = gaps[0] || "what is included in a proper contractor scope";
@@ -329,7 +338,11 @@ function buildContent({
 
   return [
     `${city} homeowners usually start with a simple question: what should I expect before booking ${service.label.toLowerCase()}? The honest answer depends on the condition of the ${terms.surface}, how much protection is needed, the finish standard, and whether the work is only a basic task or a full paint-ready scope.`,
-    { html: `If you are comparing options for <strong>${selectedKeyword.keyword}</strong>, this guide explains the practical details behind the quote. For the service page connected to this topic, start with ${cityLink}. You can also compare the broader workflow on the ${mainServiceLink}.` },
+    {
+      html: hasDedicatedCityPage
+        ? `If you are comparing options for <strong>${selectedKeyword.keyword}</strong>, this guide explains the practical details behind the quote. For the service page connected to this topic, start with ${cityLink}. You can also compare the broader workflow on the ${mainServiceLink}.`
+        : `If you are comparing options for <strong>${selectedKeyword.keyword}</strong>, this guide explains the practical details behind the quote. For the service page connected to this topic, start with the ${mainServiceLink}.`,
+    },
     { html: `<strong>Quick answer for ${city} homeowners</strong>` },
     `A good ${service.label.toLowerCase()} quote should explain preparation, protection, the main work stage, repairs, finish quality, sanding or cleanup control, primer or paint handoff, and what photos are needed before pricing. The lowest price is not always the best value if it leaves rough patches, visible seams, poor paint readiness, weak trim lines, or cleanup problems after the crew leaves.`,
     { html: `<strong>What this guide covers</strong>` },
@@ -383,7 +396,9 @@ function buildContent({
     `Rushing drying time is one of the easiest ways to create visible defects later. Joint compound can shrink. Primer can reveal scratches. Caulk can split if painted too soon. A cleaner schedule allows the crew to check the surface under real lighting and correct issues before calling the room finished.`,
     `The quote should also explain how the project affects daily life. Which rooms are unavailable? Can furniture stay? Is there a sanding stage? Will there be daily cleanup? Are there odour, noise, access, or parking concerns? These details matter in finished homes, condos, and busy family spaces.`,
     { html: `<strong>Local service connection in ${city}</strong>` },
-    `EPF Pro Services works with homeowners across ${city} and nearby GTA service areas. The goal is not only to complete the visible task, but to leave the space protected, cleaned up, and ready for the next finish step. For local service details, use the ${cityLink}.`,
+    hasDedicatedCityPage
+      ? `EPF Pro Services works with homeowners across ${city} and nearby GTA service areas. The goal is not only to complete the visible task, but to leave the space protected, cleaned up, and ready for the next finish step. For local service details, use the ${cityLink}.`
+      : `EPF Pro Services works with homeowners across ${city} and nearby GTA service areas. The goal is not only to complete the visible task, but to leave the space protected, cleaned up, and ready for the next finish step. For service details, use the ${mainServiceLink}.`,
     `Local work should not be city-swapped filler. The useful local point is practical: homes differ by age, room layout, access, lighting, renovation history, and whether the family is living in the space during the work. Those details matter more than broad claims about the city.`,
     { html: `<strong>What to send for a clearer quote</strong>` },
     `For the most accurate next step, send wide photos of each room, close photos of the problem areas, rough dimensions, ceiling height where relevant, whether the home is occupied, and any timing constraints. Mention stains, cracks, previous patches, pot lights, vents, crown moulding, cabinets, flooring, stair access, or building rules.`,
@@ -474,7 +489,7 @@ function buildDraft(job, keywordIdeas = [], competitorPages = [], comparison = n
         "Cost depends on room size, access, surface condition, repairs, protection, finish level, cleanup, and whether primer or painting is included. Photos and rough dimensions help narrow the quote.",
     },
     {
-      question: `What should I send for a ${service.label.toLowerCase()} quote?`,
+      question: `What should I send for ${articleFor(service.label)} ${service.label.toLowerCase()} quote?`,
       answer:
         "Send wide room photos, close photos of problem areas, approximate dimensions, height where relevant, whether the home is occupied, and any timing, access, parking, or building rules.",
     },

@@ -36,7 +36,7 @@ Before changing research, writing, publishing, or image planning logic, read and
 - Drafts must include useful internal links to the correct service or city pages.
 - Daily automation can create research jobs and drafts, but must stop before publishing.
 - A draft can publish only when `approved_by_user` is true and the draft status is `approved`.
-- Publishing must target GitHub repo `alexpasek/epf-2025` and branch `prod-stable` unless the user explicitly says otherwise.
+- Publishing must target GitHub repo `alexpasek/epf-2025` and the production Cloudflare Pages branch `main` unless the user explicitly says otherwise.
 
 ## Required Keys
 
@@ -45,7 +45,7 @@ SEO_BLOG_AGENT_KEY=
 OPENAI_API_KEY=
 GITHUB_TOKEN=
 GITHUB_REPO=alexpasek/epf-2025
-GITHUB_BRANCH=prod-stable
+GITHUB_BRANCH=main
 NEXT_PUBLIC_SITE_URL=https://epfproservices.com
 ```
 

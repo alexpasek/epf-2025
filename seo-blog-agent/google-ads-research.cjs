@@ -36,6 +36,7 @@ function localKeywordVariants(job, competitorPages = []) {
   const seedKeywords = Array.isArray(job.seed_keywords) ? job.seed_keywords : [];
   const competitorAngles = competitorPages.flatMap((page) => page.keyword_angles || []);
   const variants = [
+    ...seedKeywords,
     `${base} ${city}`,
     `${base} cost ${city}`,
     `${base} contractor ${city}`,
@@ -44,7 +45,6 @@ function localKeywordVariants(job, competitorPages = []) {
     `how long does ${base} take`,
     `what affects ${base} price`,
     `best finish after ${base}`,
-    ...seedKeywords,
     ...competitorAngles,
   ];
 
@@ -111,21 +111,30 @@ async function researchKeywords(job, options = {}) {
   const serviceKey = normalizeService(job.service);
   const service = SERVICES[serviceKey];
   const city = cityLabel(job.city);
+  const seedSet = new Set(
+    (Array.isArray(job.seed_keywords) ? job.seed_keywords : [])
+      .map((value) => String(value).trim().toLowerCase())
+      .filter(Boolean),
+  );
   const keywords = localKeywordVariants(job, options.competitorPages || []);
   const scored = keywords.map((keyword, index) => {
     const avgMonthlySearches = Math.max(10, 90 - index * 7);
+    const isSeedKeyword = seedSet.has(String(keyword).trim().toLowerCase());
+    const isCompetitorAngle = (options.competitorPages || []).some((page) => (page.keyword_angles || []).includes(keyword));
     return {
       id: makeId("kw"),
       job_id: job.id,
       keyword,
       avg_monthly_searches: avgMonthlySearches,
       competition: index < 3 ? "HIGH" : index < 7 ? "MEDIUM" : "LOW",
-      source: (options.competitorPages || []).some((page) => (page.keyword_angles || []).includes(keyword))
+      source: isSeedKeyword
+        ? "seed_keyword"
+        : isCompetitorAngle
         ? "competitor_angle"
         : "local_fallback",
-      intent_score: scoreKeyword(keyword, city, service.label, {
+      intent_score: Math.min(100, scoreKeyword(keyword, city, service.label, {
         avgMonthlySearches,
-      }),
+      }) + (isSeedKeyword ? 10 : 0)),
       selected: false,
       clicks: 0,
       cost_micros: 0,

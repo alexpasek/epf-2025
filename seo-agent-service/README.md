@@ -31,13 +31,15 @@ SEO_BLOG_AGENT_KEY=
 OPENAI_API_KEY=
 GITHUB_TOKEN=
 GITHUB_REPO=alexpasek/epf-2025
-GITHUB_BRANCH=prod-stable
+GITHUB_BRANCH=main
 NEXT_PUBLIC_SITE_URL=https://epfproservices.com
 ```
 
 `SITE_ADMIN_API_KEY` can be used instead of `SEO_BLOG_AGENT_KEY`.
 
 `SITE_ADMIN_GITHUB_TOKEN` can be used instead of `GITHUB_TOKEN`.
+
+`OPENAI_API_KEY` is strongly recommended for automatic competitor discovery. Without it, the service can still accept manually supplied competitor URLs and score them, but public search discovery may be limited.
 
 Optional:
 

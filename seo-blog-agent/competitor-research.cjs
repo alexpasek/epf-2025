@@ -632,12 +632,11 @@ async function analyzeCompetition(job) {
     keyword_angles: extractKeywordAngles(page, job),
   }));
   const isManual = Array.isArray(job.competitor_urls) && job.competitor_urls.length;
-  const relevantPages = isManual
-    ? candidatePagesWithAngles
-    : candidatePagesWithAngles
-      .filter((page) => !page.fetch_error && page.relevance_score >= 45)
-      .sort((a, b) => b.relevance_score - a.relevance_score)
-      .slice(0, 6);
+  const relevanceThreshold = isManual ? 35 : 45;
+  const relevantPages = candidatePagesWithAngles
+    .filter((page) => !page.fetch_error && page.relevance_score >= relevanceThreshold)
+    .sort((a, b) => b.relevance_score - a.relevance_score)
+    .slice(0, 6);
   const ruleComparison = compareEpfToCompetitors(researchJob, epfPage, relevantPages);
   const aiResearch = candidatePagesWithAngles.length
     ? await runAiCompetitionResearch({
@@ -652,7 +651,7 @@ async function analyzeCompetition(job) {
       };
   const aiAcceptedUrls = new Set(toStringArray(aiResearch.accepted_competitor_urls));
   const aiSelectedPages = aiResearch.used_ai && aiAcceptedUrls.size
-    ? candidatePagesWithAngles.filter((page) => aiAcceptedUrls.has(page.url) && !page.fetch_error && page.relevance_score >= 55)
+    ? candidatePagesWithAngles.filter((page) => aiAcceptedUrls.has(page.url) && !page.fetch_error && page.relevance_score >= relevanceThreshold)
     : relevantPages;
   const finalCompetitorPages = aiSelectedPages.length ? aiSelectedPages : relevantPages;
   const aiRejectedByUrl = new Map(

@@ -156,7 +156,7 @@ Cloudflare Pages deployment:
 ```text
 Cloudflare Pages project: epf-2025
 Production domain: https://epfproservices.com
-Git branch: prod-stable
+Git branch: main
 ```
 
 Use Cloudflare Pages deployment status to confirm the blog is live before running the webhook command.
