@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
+import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
+import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
 
 /* Accent used only for nav/dropdowns (CTAs unchanged) */
 const ACCENT = {
@@ -19,6 +20,14 @@ const SAFE_VW_PX = 24; // safe padding from viewport edges
 const SERVICES_PANEL_W = 420; // narrow column for Services
 const LOCATIONS_MEGA_W = 860; // roomy grid for Locations
 
+const DRYWALL_BLOG_PATTERNS = [
+  /^\/blog\/.*drywall.*\/?$/,
+  /^\/blog\/ceiling-rebuild-after-leak-oakville-project\/?$/,
+];
+
+const isDrywallEditorialPath = (pathname = "") =>
+  DRYWALL_BLOG_PATTERNS.some((pattern) => pattern.test(pathname));
+
 /* ---------- Breadcrumb helpers ---------- */
 
 /** Map slugs to pretty labels when we know them */
@@ -27,6 +36,8 @@ const SLUG_LABELS = {
   "popcorn-ceiling-removal": "Popcorn Ceiling Removal",
   popcorn: "Popcorn Ceiling Removal",
   "drywall-installation": "Drywall Installation",
+  "skylight-drywall-repair": "Skylight Drywall Repair",
+  "baseboard-installation": "Baseboard Installation",
   wallpaper: "Wallpaper Removal",
   "interior-painting": "Interior Painting",
   "our-work": "Our Work",
@@ -65,11 +76,15 @@ function buildCrumbs(pathname) {
   const crumbs = [{ href: "/", label: "Home" }];
   let acc = "";
   for (let i = 0; i < parts.length; i++) {
-    acc += `/${parts[i]}`;
+    const slug = parts[i];
+    acc += `/${slug}`;
     const isLast = i === parts.length - 1;
+    let href = `${acc}/`;
+    if (slug === "popcorn-ceiling-removal")
+      href = "/services/popcorn-ceiling-removal/";
     crumbs.push({
-      href: acc + "/", // keep your trailing slash style
-      label: labelFromSlug(decodeURIComponent(parts[i])),
+      href, // keep your trailing slash style
+      label: labelFromSlug(decodeURIComponent(slug)),
       current: isLast,
     });
   }
@@ -78,6 +93,7 @@ function buildCrumbs(pathname) {
 
 /** JSON-LD for breadcrumbs */
 function BreadcrumbJsonLd({ crumbs }) {
+  const base = (SITE_URL || "").replace(/\/$/, "");
   const data = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -85,7 +101,7 @@ function BreadcrumbJsonLd({ crumbs }) {
       "@type": "ListItem",
       position: idx + 1,
       name: c.label,
-      item: c.href, // relative is OK; absolute even better if you set site URL
+      item: `${base}${c.href}`,
     })),
   };
   return (
@@ -101,15 +117,34 @@ function BreadcrumbJsonLd({ crumbs }) {
 
 export default function HeaderNav() {
   const pathname = usePathname();
+  const isLanding = isAdsLandingPath(pathname || "");
+  const isDrywallInstallationPage =
+    pathname?.startsWith("/services/drywall-installation") ||
+    isDrywallEditorialPath(pathname || "");
+  const isBaseboardInstallationPage = pathname?.startsWith(
+    "/services/baseboard-installation"
+  );
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     setMobileOpen(false);
     setMobileServicesOpen(false);
     setMobileLocationsOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const handler = () => {
+      const shouldCollapse = window.scrollY > 80;
+      setIsCollapsed(shouldCollapse);
+    };
+    handler();
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -119,42 +154,164 @@ export default function HeaderNav() {
       href: "/services/popcorn-ceiling-removal/",
       label: "Popcorn Ceiling Removal",
     },
+    { href: "/services/drywall-repair/", label: "Drywall Repair" },
     { href: "/services/drywall-installation/", label: "Drywall Installation" },
+    {
+      href: "/services/skylight-drywall-repair/",
+      label: "Skylight Drywall Repair",
+    },
     { href: "/services/wallpaper-removal/", label: "Wallpaper Removal" },
     { href: "/services/interior-painting/", label: "Interior Painting" },
+    {
+      href: "/services/baseboard-installation/",
+      label: "Baseboard Installation",
+    },
   ];
 
-  const locations = [
-    { href: "/popcorn-removal/mississauga/", label: "Mississauga" },
-    { href: "/popcorn-ceiling-removal/toronto/", label: "Toronto" },
-    { href: "/popcorn-ceiling-removal/oakville/", label: "Oakville" },
-    { href: "/popcorn-ceiling-removal/burlington/", label: "Burlington" },
-    { href: "/popcorn-ceiling-removal/hamilton/", label: "Hamilton" },
-    { href: "/popcorn-ceiling-removal/milton/", label: "Milton" },
-    { href: "/popcorn-ceiling-removal/etobicoke/", label: "Etobicoke" },
-    { href: "/grimsby/", label: "Grimsby" },
-    { href: "/st-catharines/", label: "St. Catharines" },
-  ];
+  const locations = isDrywallInstallationPage
+    ? [
+        {
+          href: "/services/drywall-installation/",
+          label: "Drywall Installation Service Hub",
+        },
+        {
+          href: "/services/drywall-installation/mississauga/",
+          label: "Drywall Installation Mississauga",
+        },
+        {
+          href: "/services/drywall-installation/burlington/",
+          label: "Drywall Installation Burlington",
+        },
+        {
+          href: "/services/drywall-installation/hamilton/",
+          label: "Drywall Installation Hamilton",
+        },
+      ]
+    : isBaseboardInstallationPage
+      ? [
+          {
+            href: "/services/baseboard-installation/",
+            label: "Baseboard Installation Service Hub",
+          },
+          {
+            href: "/services/baseboard-installation/mississauga/",
+            label: "Baseboard Installation Mississauga",
+          },
+          {
+            href: "/services/baseboard-installation/toronto/",
+            label: "Baseboard Installation Toronto",
+          },
+          {
+            href: "/services/baseboard-installation/oakville/",
+            label: "Baseboard Installation Oakville",
+          },
+          {
+            href: "/services/baseboard-installation/burlington/",
+            label: "Baseboard Installation Burlington",
+          },
+          {
+            href: "/services/baseboard-installation/hamilton/",
+            label: "Baseboard Installation Hamilton",
+          },
+          {
+            href: "/services/baseboard-installation/etobicoke/",
+            label: "Baseboard Installation Etobicoke",
+          },
+          {
+            href: "/services/baseboard-installation/milton/",
+            label: "Baseboard Installation Milton",
+          },
+          {
+            href: "/services/baseboard-installation/north-york/",
+            label: "Baseboard Installation North York",
+          },
+          {
+            href: "/services/baseboard-installation/grimsby/",
+            label: "Baseboard Installation Grimsby",
+          },
+          {
+            href: "/services/baseboard-installation/st-catharines/",
+            label: "Baseboard Installation St. Catharines",
+          },
+        ]
+    : [
+        {
+          href: "/popcorn-ceiling-removal/mississauga/",
+          label: "Popcorn Ceiling Removal Mississauga",
+        },
+        {
+          href: "/popcorn-ceiling-removal/toronto/",
+          label: "Popcorn Ceiling Removal Toronto",
+        },
+        {
+          href: "/popcorn-ceiling-removal/oakville/",
+          label: "Popcorn Ceiling Removal Oakville",
+        },
+        {
+          href: "/popcorn-ceiling-removal/burlington/",
+          label: "Popcorn Ceiling Removal Burlington",
+        },
+        {
+          href: "/popcorn-ceiling-removal/hamilton/",
+          label: "Popcorn Ceiling Removal Hamilton",
+        },
+        {
+          href: "/popcorn-ceiling-removal/milton/",
+          label: "Popcorn Ceiling Removal Milton",
+        },
+        {
+          href: "/popcorn-ceiling-removal/etobicoke/",
+          label: "Popcorn Ceiling Removal Etobicoke",
+        },
+        {
+          href: "/popcorn-ceiling-removal/grimsby/",
+          label: "Popcorn Ceiling Removal Grimsby",
+        },
+        {
+          href: "/popcorn-ceiling-removal/st-catharines/",
+          label: "Popcorn Ceiling Removal St. Catharines",
+        },
+      ];
+  const isTrimFocusedPage =
+    isDrywallInstallationPage || isBaseboardInstallationPage;
+  const brandTitle = isTrimFocusedPage
+    ? "EPF Pro Services — Home"
+    : "Popcorn ceiling Removal EPF Pro Services — Home";
+  const brandAlt = isTrimFocusedPage
+    ? "EPF Pro Services"
+    : "Popcorn ceiling removal EPF Pro Services";
+  const brandText = isTrimFocusedPage
+    ? "EPF Pro Services"
+    : "Popcorn Ceiling Removal";
 
   const crumbs = buildCrumbs(pathname);
+
+  if (isLanding) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50">
       {/* Row 1: taller + stylish glassy header */}
-      <div className="border-b bg-gradient-to-r from-white via-white to-red-50/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_10px_30px_-20px_rgba(0,0,0,.55)]">
+      <div
+        className={[
+          "border-b bg-gradient-to-r from-white via-white to-red-50/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_10px_30px_-20px_rgba(0,0,0,.55)] transition-transform duration-300",
+          isCollapsed ? "lg:-translate-y-full" : "",
+        ].join(" ")}
+      >
         <div className="container-x py-2 md:py-3 flex h-24 md:h-28 items-center gap-3">
           <Link
             href="/"
             className="flex items-center gap-2 min-w-0"
-            title="Popcorn ceiling Removal EPF Pro Services — Home"
+            title={brandTitle}
           >
             <img
               src="/logo.png"
-              alt="Popcorn ceiling removal EPF Pro Services"
+              alt={brandAlt}
               className="w-auto h-14 md:h-16 object-contain"
             />
             <span className="underline decoration-red-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
-              Popcorn Ceiling Removal
+              {brandText}
             </span>
           </Link>
 
@@ -163,16 +320,32 @@ export default function HeaderNav() {
             <a
               href={PHONE_HREF}
               className="btn-cta whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
-              title="Call for a fast popcorn ceiling removal estimate"
+              title={
+                isDrywallInstallationPage
+                  ? "Call for a fast drywall installation estimate"
+                  : isBaseboardInstallationPage
+                    ? "Call for a fast baseboard installation estimate"
+                  : "Call for a fast popcorn ceiling removal estimate"
+              }
             >
               📞 {PHONE_NUMBER}
             </a>
             <Link
               href="/quote/"
               className="btn-cta whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
-              title="Get a free popcorn ceiling removal quote"
+              title={
+                isDrywallInstallationPage
+                  ? "Get a drywall installation quote"
+                  : isBaseboardInstallationPage
+                    ? "Get a baseboard installation quote"
+                  : "Get a free popcorn ceiling removal quote"
+              }
             >
-              Get Quote
+              {isDrywallInstallationPage
+                ? "Drywall Quote"
+                : isBaseboardInstallationPage
+                  ? "Baseboard Quote"
+                  : "Get Quote"}
             </Link>
           </div>
 
@@ -197,7 +370,12 @@ export default function HeaderNav() {
       </div>
 
       {/* Row 2: right-aligned menu */}
-      <div className="hidden lg:block border-b bg-gradient-to-r from-red-50/60 via-white to-red-50/60">
+      <div
+        className={[
+          "hidden lg:block border-b bg-gradient-to-r from-red-50/60 via-white to-red-50/60 sticky top-0 z-40 transition-transform duration-300",
+          isCollapsed ? "-translate-y-24" : "translate-y-0",
+        ].join(" ")}
+      >
         <nav
           className="container-x py-3 flex items-center gap-2 text-[15px] justify-end"
           aria-label="Primary navigation"
@@ -211,6 +389,7 @@ export default function HeaderNav() {
             active={isActive("/services/")}
             align="right"
             widthPx={SERVICES_PANEL_W}
+            closeKey={pathname}
           >
             <Panel>
               <div className="flex flex-col gap-2 max-h-[70vh] overflow-auto pr-1">
@@ -245,12 +424,33 @@ export default function HeaderNav() {
             }
             align="right"
             widthPx={LOCATIONS_MEGA_W}
+            closeKey={pathname}
           >
             <Panel>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-                <DropdownLink href="/service-areas/" label="All Areas →" bold />
+                <DropdownLink
+                  href={
+                    isDrywallInstallationPage
+                      ? "/services/drywall-installation/"
+                      : isBaseboardInstallationPage
+                        ? "/services/baseboard-installation/"
+                      : "/service-areas/"
+                  }
+                  label={
+                    isDrywallInstallationPage
+                      ? "All Drywall Areas →"
+                      : isBaseboardInstallationPage
+                        ? "All Baseboard Areas →"
+                      : "All Areas →"
+                  }
+                  bold
+                />
                 {locations.map((l) => (
-                  <MenuItemCard key={l.href} href={l.href} label={l.label} />
+                  <MenuItemCard
+                    key={`${l.href}-${l.label}`}
+                    href={l.href}
+                    label={l.label}
+                  />
                 ))}
               </div>
             </Panel>
@@ -274,7 +474,12 @@ export default function HeaderNav() {
       {pathname !== "/" && (
         <>
           <BreadcrumbJsonLd crumbs={crumbs} />
-          <div className="border-b border-[#3EC5F1] bg-[#00AEEF] text-slate-100">
+          <div
+            className={[
+              "bg-[#005F87] text-white transition-transform duration-300 sticky top-0 z-30",
+              isCollapsed ? "-translate-y-24" : "translate-y-0",
+            ].join(" ")}
+          >
             <nav
               aria-label="Breadcrumb"
               className="container-x py-1 text-[13px] leading-5"
@@ -287,7 +492,7 @@ export default function HeaderNav() {
                       {i > 0 && <span className="mx-2 opacity-70">/</span>}
                       {isLast ? (
                         <span
-                          className="font-semibold"
+                          className="font-semibold text-white"
                           aria-current="page"
                           title={c.label}
                         >
@@ -296,7 +501,7 @@ export default function HeaderNav() {
                       ) : (
                         <Link
                           href={c.href}
-                          className="underline decoration-slate-900/30 underline-offset-2 hover:decoration-slate-900/60 hover:text-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20 rounded"
+                          className="text-white underline decoration-white/70 underline-offset-2 hover:decoration-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
                           title={c.label}
                         >
                           {c.label}
@@ -314,10 +519,9 @@ export default function HeaderNav() {
       {/* Mobile drawer */}
       <div
         className={[
-          "lg:hidden border-b bg-white/95 backdrop-blur transition-[max-height] overflow-hidden",
+          "lg:hidden bg-white/95 backdrop-blur transition-[max-height] overflow-hidden",
           mobileOpen ? "max-h-[75vh]" : "max-h-0",
         ].join(" ")}
-        aria-hidden={!mobileOpen}
       >
         <div className="container-x py-3">
           <nav className="space-y-1 text-[16px]" aria-label="Mobile">
@@ -347,7 +551,18 @@ export default function HeaderNav() {
               open={mobileLocationsOpen}
               setOpen={setMobileLocationsOpen}
               items={[
-                { href: "/service-areas/", label: "All Areas" },
+                {
+                  href: isDrywallInstallationPage
+                    ? "/services/drywall-installation/"
+                    : isBaseboardInstallationPage
+                      ? "/services/baseboard-installation/"
+                    : "/service-areas/",
+                  label: isDrywallInstallationPage
+                    ? "All Drywall Areas"
+                    : isBaseboardInstallationPage
+                      ? "All Baseboard Areas"
+                    : "All Areas",
+                },
                 ...locations,
               ]}
               isActive={(href) => isActive(href)}
@@ -402,6 +617,7 @@ function SmoothDropdown({
   children,
   align = "right",
   widthPx = 860,
+  closeKey,
 }) {
   const [open, setOpen] = useState(false);
   const openTimer = useRef(null);
@@ -415,6 +631,12 @@ function SmoothDropdown({
     clearTimeout(openTimer.current);
     closeTimer.current = setTimeout(() => setOpen(false), 110);
   };
+
+  useEffect(() => {
+    setOpen(false);
+    clearTimeout(openTimer.current);
+    clearTimeout(closeTimer.current);
+  }, [closeKey]);
 
   // right-anchored and constrained to viewport
   const style = {
@@ -464,8 +686,9 @@ function SmoothDropdown({
         ].join(" ")}
         style={style}
         role="menu"
+        aria-label={`${label} menu`}
       >
-        {children}
+        <div role="none">{children}</div>
       </div>
     </div>
   );
@@ -494,7 +717,8 @@ function MenuItemCard({ href, label }) {
     <Link
       href={href}
       title={label}
-      aria-label={label}
+      role="menuitem"
+      tabIndex={-1}
       className={[
         "group p-3 rounded-xl border bg-white",
         ACCENT.border,
@@ -515,6 +739,7 @@ function DropdownLink({ href, label, bold }) {
     <Link
       href={href}
       role="menuitem"
+      tabIndex={-1}
       title={label}
       className={[
         "block px-3 py-2 rounded-xl text-[15px] transition",
@@ -550,6 +775,7 @@ function MobileDisclosure({ label, open, setOpen, items, isActive }) {
         type="button"
         className="w-full flex items-center justify-between px-3 py-2"
         aria-expanded={open}
+        aria-controls={`mobile-disclosure-${label}`}
         onClick={() => setOpen((v) => !v)}
       >
         <span className="font-medium">{label}</span>
@@ -570,16 +796,22 @@ function MobileDisclosure({ label, open, setOpen, items, isActive }) {
         </svg>
       </button>
       <div
+        id={`mobile-disclosure-${label}`}
         className={
           open
             ? "max-h-96 overflow-hidden transition-[max-height]"
             : "max-h-0 overflow-hidden transition-[max-height]"
         }
+        hidden={!open}
       >
         <div className="p-1 pt-0">
           {items.map((i) => (
             <Link
-              key={"href" in i ? i.href : i.label}
+              key={
+                "href" in i
+                  ? `${i.href}-${"label" in i ? i.label : ""}`
+                  : i.label
+              }
               href={"href" in i ? i.href : "#"}
               className={[
                 "block px-3 py-2 rounded-lg text-[15px]",

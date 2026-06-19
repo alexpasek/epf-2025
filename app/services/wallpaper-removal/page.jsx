@@ -1,18 +1,29 @@
 // app/services/wallpaper-removal/page.jsx
 import Link from "next/link";
-import { CONTACT } from "@/app/config";
+import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
 import { ServiceCopy } from "@/components/LocalSEOCopy";
 
+const PAGE_PATH = "/services/wallpaper-removal/";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
 export const metadata = {
   title:
-    "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready",
+    "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready | EPF Pro Services",
   description:
     "Pro wallpaper removal across the GTA. Full adhesive wash, drywall repairs, skim-coat, primer and a smooth, paint-ready finish. Tidy crews, HEPA control, 3-year warranty.",
+  alternates: { canonical: PAGE_PATH },
+  openGraph: {
+    title:
+      "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready | EPF Pro Services",
+    description:
+      "Pro wallpaper removal across the GTA. Full adhesive wash, drywall repairs, skim-coat, primer and a smooth, paint-ready finish.",
+    url: PAGE_PATH,
+    type: "article",
+  },
+  robots: { index: true, follow: true },
 };
 
-const PAGE_URL =
-  "https://wallpaper-final.pages.dev/services/wallpaper-removal/"; // set your custom domain when ready
 const phoneHref = (CONTACT && CONTACT.phoneHref) || "tel:+16479236784";
 
 export default function Page() {
@@ -240,7 +251,7 @@ export default function Page() {
 
       {/* SERVICE AREAS PROMO (keep chips off this page, link to hub) */}
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold">Areas We Serve</h2>
+        <h2 className="text-2xl font-semibold">Wallpaper Removal Near You</h2>
         <p className="mt-2 text-gray-700">
           We work across the GTA — including{" "}
           {cityLinks.map((c, idx) => (
@@ -296,7 +307,7 @@ export default function Page() {
               category: "Home Improvement",
               provider: {
                 "@type": "LocalBusiness",
-                name: "Wallpaper Removal Pro",
+                name: "EPF Pro Services",
               },
               areaServed: "Greater Toronto Area, Canada",
               url: PAGE_URL,
@@ -410,19 +421,19 @@ export default function Page() {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: PAGE_URL.replace("/services/wallpaper-removal/", "/"),
+                  item: { "@id": SITE_URL },
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Services",
-                  item: PAGE_URL.replace("/wallpaper-removal/", ""),
+                  item: { "@id": `${SITE_URL}/services/` },
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Wallpaper Removal",
-                  item: PAGE_URL,
+                  item: { "@id": PAGE_URL },
                 },
               ],
             },

@@ -1,12 +1,18 @@
 // app/contact/page.tsx — Next.js App Router
 import Link from "next/link";
 import Image from "next/image";
-import { CONTACT } from "@/app/config"; // { phoneHref, phoneNumber, email }
+import { CONTACT, SITE_URL } from "@/app/config"; // { phoneHref, phoneNumber, email }
 import QuoteForm from "@/components/QuoteForm";
 
 export const revalidate = 86400;
 
 const BRAND = "EPF Pro Services";
+const BASE_URL = (SITE_URL || "https://epfproservices.com").replace(/\/$/, "");
+const PAGE_PATH = "/contact/";
+const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
+const ORG_ID = `${BASE_URL}/#org`;
+const LOC_MISS_ID = `${BASE_URL}/#loc-mississauga`;
+const LOC_STONEY_ID = `${BASE_URL}/#loc-stoney`;
 const HERO_IMG = "/contact/popcorn-ceiling-removal.png";
 
 export const metadata = {
@@ -26,12 +32,12 @@ export const metadata = {
     "Grimsby",
     "St. Catharines",
   ],
-  alternates: { canonical: "/contact/" },
+  alternates: { canonical: PAGE_PATH },
   openGraph: {
     title: `Contact ${BRAND}`,
     description:
       "Local, insured crew specializing in popcorn ceiling removal with clean containment, Level 5 finishes, and on-time schedules.",
-    url: "/contact/",
+    url: PAGE_URL,
     type: "website",
     images: [{ url: HERO_IMG }],
   },
@@ -45,32 +51,35 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: { "@id": `${BASE_URL}/` },
+          },
           {
             "@type": "ListItem",
             position: 2,
             name: "Contact",
-            item: "/contact/",
+            item: { "@id": PAGE_URL },
           },
         ],
       },
       {
         "@type": "Organization",
-        "@id": "/#org",
+        "@id": ORG_ID,
         name: BRAND,
-        url: "/",
-        email: CONTACT?.email || "info@epfproservices.com",
+        url: `${BASE_URL}/`,
         telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
         sameAs: [],
       },
       {
         "@type": "LocalBusiness",
-        "@id": "/#loc-mississauga",
+        "@id": LOC_MISS_ID,
         name: `${BRAND} — Mississauga`,
-        url: "/contact/",
+        url: PAGE_URL,
         telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
-        email: CONTACT?.email || "info@epfproservices.com",
-        branchOf: { "@id": "/#org" },
+        branchOf: { "@id": ORG_ID },
         address: {
           "@type": "PostalAddress",
           streetAddress: "6855 Glenerin Dr, Unit 33",
@@ -90,12 +99,11 @@ function JsonLd() {
       },
       {
         "@type": "LocalBusiness",
-        "@id": "/#loc-stoney",
+        "@id": LOC_STONEY_ID,
         name: `${BRAND} — Stoney Creek`,
-        url: "/contact/",
+        url: PAGE_URL,
         telephone: CONTACT?.phoneNumber || "+1 (647) 923-6784",
-        email: CONTACT?.email || "info@epfproservices.com",
-        branchOf: { "@id": "/#org" },
+        branchOf: { "@id": ORG_ID },
         address: {
           "@type": "PostalAddress",
           streetAddress: "37 Dalegrove Crescent",
@@ -114,7 +122,7 @@ function JsonLd() {
           "Ceiling Smoothing",
           "Drywall Finishing",
         ],
-        provider: { "@id": "/#org" },
+        provider: { "@id": ORG_ID },
         areaServed: [
           "Mississauga",
           "Toronto",
@@ -130,8 +138,8 @@ function JsonLd() {
       {
         "@type": "ContactPage",
         name: `Contact ${BRAND}`,
-        url: "/contact/",
-        about: { "@id": "/#org" },
+        url: PAGE_URL,
+        about: { "@id": ORG_ID },
       },
     ],
   };
@@ -211,12 +219,6 @@ export default function ContactPage() {
               >
                 📞 {CONTACT.phoneNumber}
               </a>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                className="btn-cta bg-rose-600 hover:bg-rose-700 text-white"
-              >
-                ✉️ {CONTACT.email}
-              </a>
               <Link
                 href="/quote/"
                 className="btn-cta bg-emerald-600 hover:bg-emerald-700 text-white"
@@ -285,7 +287,7 @@ export default function ContactPage() {
       {/* POPCORN CEILING REMOVAL — SEO/sales block */}
       <section className="mt-10 p-6 md:p-8 rounded-2xl bg-gradient-to-br from-rose-50 via-white to-sky-50 ring-1 ring-slate-200">
         <h2 className="text-2xl font-semibold">
-          Popcorn Ceiling Removal — GTA & Niagara
+          Popcorn Ceiling Removal — Epf Pro Services
         </h2>
         <p className="mt-2 text-slate-700">
           We specialize in turning dated textured ceilings into{" "}

@@ -1,20 +1,46 @@
 // app/popcorn-ceiling-removal/oakville/page.jsx
 import Link from "next/link";
+import SkylightPopcornBacklinkBlock from "@/components/SkylightPopcornBacklinkBlock";
 import { CONTACT } from "@/app/config";
 
 export const revalidate = 86400;
 
 export const metadata = {
   title:
-    "Popcorn Ceiling Removal — Oakville | Dustless Skim Coat Level 5, Prime & Paint",
+    "Popcorn Ceiling Removal Oakville | Level 5 Smooth Finish — All Neighbourhoods",
   description:
-    "Oakville popcorn (stucco/stipple) ceiling removal for houses, townhomes & condos: dust-controlled sanding, Level 5 skim coat, stain-block primer, paint-ready. Local, insured, warranty.",
+    "Oakville's trusted popcorn, stucco & stipple ceiling removal specialists. HEPA dust control, Level 5 skim-coat, stain-block primer, pot-light ready. Serving all 15 neighbourhoods with 3-year warranty.",
+  keywords: [
+    "popcorn ceiling removal Oakville",
+    "remove popcorn ceiling Oakville",
+    "stucco ceiling removal Oakville",
+    "stipple ceiling removal Oakville",
+    "ceiling texture removal Oakville",
+    "ceiling smoothing Oakville",
+    "ceiling resurfacing Oakville",
+    "skim coat ceiling Oakville",
+    "Level 5 ceiling finish Oakville",
+    "popcorn ceiling price per square foot Oakville",
+    "popcorn ceiling contractors Oakville",
+    "dustless popcorn removal Oakville",
+    "HEPA sanding ceiling Oakville",
+    "asbestos testing popcorn ceiling Oakville",
+    "pot light installation after popcorn removal Oakville",
+    "ceiling painting after popcorn removal Oakville",
+    "ceiling flattening Oakville",
+    "stain-block primer ceiling Oakville",
+    "Oakville popcorn removal cost",
+    "Glen Abbey popcorn ceiling removal",
+    "Bronte ceiling removal",
+    "Kerr Village popcorn removal",
+    "River Oaks ceiling smoothing",
+    "Downtown Oakville ceiling renovation",
+  ],
   alternates: { canonical: "/popcorn-ceiling-removal/oakville/" },
   openGraph: {
-    title:
-      "Popcorn Ceiling Removal in Oakville | Dustless, Level 5, Pot-Light Ready",
+    title: "Popcorn Ceiling Removal Oakville | Dustless Level 5 Smooth Finish",
     description:
-      "Ceiling texture removal across Oakville: Bronte, Glen Abbey, River Oaks, Falgarwood, Iroquois Ridge & more. Level 5 skim, prime, paint-ready finish.",
+      "Professional ceiling texture removal across all Oakville neighbourhoods. HEPA dust control, Level 5 skim-coat, prime & paint-ready. Fast quotes, tidy crews, 3-year warranty.",
     url: "/popcorn-ceiling-removal/oakville/",
     type: "article",
   },
@@ -48,19 +74,19 @@ function JsonLd() {
           "@type": "ListItem",
           position: 1,
           name: "Service Areas",
-          item: "/service-areas",
+          item: { "@id": "https://epfproservices.com/service-areas" },
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Popcorn Ceiling Removal",
-          item: "/service-areas/popcorn-ceiling-removal",
+          item: { "@id": "https://epfproservices.com/service-areas/popcorn-ceiling-removal" },
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Oakville",
-          item: "/popcorn-ceiling-removal/oakville/",
+          item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/oakville/" },
         },
       ],
     },
@@ -166,6 +192,16 @@ export default function Page() {
               We plan around family schedules, coordinate pot-light work with
               your electrician, and keep hallways and bedrooms usable with tidy
               daily wrap-ups. Insured, WSIB, written warranty.
+            </p>
+            <p className="mt-3 text-sm text-gray-600">
+              Need a full scope overview? Explore our{" "}
+              <Link
+                href="/services/popcorn-ceiling-removal/"
+                className="underline underline-offset-2"
+              >
+                popcorn ceiling removal services
+              </Link>{" "}
+              hub.
             </p>
           </div>
 
@@ -351,6 +387,24 @@ export default function Page() {
         </p>
       </section>
 
+      {/* RELATED GUIDE */}
+      <section className="mt-10 bg-white rounded-2xl p-6 border">
+        <h2 className="text-2xl font-semibold">
+          Planning Budget and Finish Quality?
+        </h2>
+        <p className="text-gray-700 mt-2">
+          If you are comparing quotes, read our{" "}
+          <Link
+            className="underline font-semibold"
+            href="/blog/popcorn-removal-oakville-cost-finish-guide/"
+          >
+            Popcorn Removal Oakville Cost Guide
+          </Link>{" "}
+          for the cost factors behind painted texture, dust control, skim
+          coating, primer, and smooth ceiling finish quality.
+        </p>
+      </section>
+
       {/* LOCAL CONTENT & SIGNALS */}
       <section className="mt-10 bg-white rounded-2xl p-6 border">
         <h2 className="text-2xl font-semibold">Local Fit for Oakville Homes</h2>
@@ -444,6 +498,8 @@ export default function Page() {
         </div>
       </section>
 
+      <SkylightPopcornBacklinkBlock city="Oakville" slug="oakville" />
+
       {/* FAQ */}
       <section id="faq" className="mt-10">
         <h2 className="text-2xl font-semibold">FAQ — Oakville</h2>
@@ -492,10 +548,44 @@ export default function Page() {
         </div>
       </section>
 
+      {/* NEARBY SERVICE AREAS */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="p-8 bg-gray-50 rounded-2xl border border-gray-200">
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Nearby Service Areas
+            </h2>
+            <p className="text-center text-gray-600 mb-6">
+              Professional popcorn ceiling removal in neighboring cities:
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/popcorn-ceiling-removal/burlington/"
+                className="px-6 py-3 bg-white border-2 border-blue-200 rounded-full text-blue-600 font-semibold hover:bg-blue-50 hover:border-blue-400 transition"
+              >
+                Burlington Popcorn Removal
+              </Link>
+              <Link
+                href="/popcorn-ceiling-removal/mississauga/"
+                className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition"
+              >
+                Mississauga Ceiling Services
+              </Link>
+              <Link
+                href="/popcorn-ceiling-removal/milton/"
+                className="px-6 py-3 bg-white border-2 border-gray-200 rounded-full text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition"
+              >
+                Milton Stipple Removal
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom nav */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          ← Back to Popcorn Service Areas
+          ← Popcorn ceiling removal service areas
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
           Main Popcorn Service page →

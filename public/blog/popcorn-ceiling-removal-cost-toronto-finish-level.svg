@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Smooth finish level affects popcorn ceiling removal cost in Toronto</title>
+  <desc id="desc">An illustration comparing a rough patched ceiling with a bright smooth paint-ready ceiling finish in a Toronto room.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+    <linearGradient id="leftRoom" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d1d5db"/>
+      <stop offset="100%" stop-color="#9ca3af"/>
+    </linearGradient>
+    <linearGradient id="rightRoom" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="70" y="88" fill="#fff7ed" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    Finish Level Matters
+  </text>
+  <text x="70" y="142" fill="#ffedd5" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">
+    Basic Removal vs Paint-Ready Ceiling
+  </text>
+  <text x="70" y="186" fill="#fed7aa" font-family="Arial, Helvetica, sans-serif" font-size="22">
+    The cleaner the final finish, the more labour and detail the quote needs to cover.
+  </text>
+
+  <g transform="translate(84,240)">
+    <rect width="470" height="290" rx="30" fill="url(#leftRoom)"/>
+    <rect x="44" y="44" width="382" height="52" rx="16" fill="#e5e7eb"/>
+    <path d="M70 70c42-16 80 18 122 6 38-10 66-6 94 6 36 14 66-16 102-8 18 4 28 8 38 18" fill="none" stroke="#6b7280" stroke-width="8"/>
+    <rect x="54" y="142" width="118" height="108" rx="14" fill="#f3f4f6"/>
+    <rect x="192" y="142" width="118" height="108" rx="14" fill="#f3f4f6"/>
+    <rect x="330" y="142" width="118" height="108" rx="14" fill="#f3f4f6"/>
+    <text x="40" y="274" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+      Removal only
+    </text>
+  </g>
+
+  <g transform="translate(646,240)">
+    <rect width="470" height="290" rx="30" fill="url(#rightRoom)"/>
+    <rect x="44" y="44" width="382" height="52" rx="16" fill="#ffffff"/>
+    <path d="M64 70h342" fill="none" stroke="#cbd5e1" stroke-width="4"/>
+    <circle cx="132" cy="164" r="28" fill="#60a5fa"/>
+    <circle cx="236" cy="164" r="28" fill="#60a5fa"/>
+    <circle cx="340" cy="164" r="28" fill="#60a5fa"/>
+    <rect x="72" y="214" width="326" height="22" rx="11" fill="#dbeafe"/>
+    <text x="40" y="274" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">
+      Smooth paint-ready finish
+    </text>
+  </g>
+</svg>

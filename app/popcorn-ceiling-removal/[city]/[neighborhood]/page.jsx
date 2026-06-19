@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { existsSync } from "fs";
+import path from "path";
 import { notFound } from "next/navigation";
 import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -6,10 +8,24 @@ import { buildPopcornHoodCopy } from "@/lib/seoCopy";
 
 export const dynamic = "force-static";
 
+function hasExplicitNeighborhoodPage(city, neighborhood) {
+  return existsSync(
+    path.join(
+      process.cwd(),
+      "app",
+      "popcorn-ceiling-removal",
+      city,
+      neighborhood,
+      "page.jsx"
+    )
+  );
+}
+
 export function generateStaticParams() {
   const out = [];
   for (const c of cities) {
     for (const n of c.neighborhoods || []) {
+      if (hasExplicitNeighborhoodPage(c.slug, n.slug)) continue;
       out.push({ city: c.slug, neighborhood: n.slug });
     }
   }
@@ -17,7 +33,7 @@ export function generateStaticParams() {
 }
 
 export const revalidate = 86400;
-export const dynamicParams = true; // allow any hood slug
+export const dynamicParams = false;
 
 function titleCase(slug = "") {
   return slug
@@ -184,13 +200,13 @@ export default async function Page({ params }) {
           href={`/popcorn-ceiling-removal/${c.slug}/`}
           className="underline"
         >
-          ← Back to {c.name} Popcorn page
+          ← Popcorn ceiling removal {c.name}
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          Browse all Popcorn service areas →
+          Popcorn ceiling removal service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
+          Popcorn ceiling removal services →
         </Link>
       </nav>
     </div>

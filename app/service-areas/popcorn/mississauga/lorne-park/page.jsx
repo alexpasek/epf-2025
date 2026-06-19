@@ -70,25 +70,25 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Service Areas",
-            item: "/service-areas",
+            item: { "@id": "https://epfproservices.com/service-areas" },
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: { "@id": "https://epfproservices.com/services/popcorn-ceiling-removal/" },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Mississauga",
-            item: "/popcorn-ceiling-removal/mississauga/",
+            item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/mississauga/" },
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Lorne Park",
-            item: "/popcorn-ceiling-removal/mississauga/lorne-park//",
+            item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/mississauga/lorne-park/" },
           },
         ],
       },
@@ -565,13 +565,13 @@ export default function Page() {
           href="/popcorn-ceiling-removal/mississauga/"
           className="underline"
         >
-          ← Back to Mississauga Popcorn page
+          ← Popcorn ceiling removal Mississauga
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          Browse all Popcorn service areas →
+          Popcorn ceiling removal service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
+          Popcorn ceiling removal services →
         </Link>
       </nav>
 

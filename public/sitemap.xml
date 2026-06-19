@@ -1,25 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc></url>
-  <url><loc>/contact/</loc></url>
-  <url><loc>/quote/</loc></url>
-  <url><loc>/services/wallpaper-removal/</loc></url>
-  <url><loc>/services/popcorn-ceiling-removal/</loc></url>
-  <url><loc>/services/drywall-installation/</loc></url>
-  <url><loc>/services/interior-painting/</loc></url>
-  <url><loc>/blog/</loc></url>
-  <url><loc>/blog/wallpaper-removal-toronto-guide/</loc></url>
-  <url><loc>/blog/popcorn-ceiling-removal-cost-timeline/</loc></url>
-  <url><loc>/blog/drywall-installation-steps/</loc></url>
-  <url><loc>/blog/interior-painting-sheen-guide/</loc></url>
-  <url><loc>/blog/dust-control-renovation-gta/</loc></url>
-  <url><loc>/our-work/</loc></url>
-  <url><loc>/toronto/</loc></url>
-  <url><loc>/popcorn-removal/north-york/</loc></url>
-  <url><loc>/popcorn-removal/etobicoke/</loc></url>
-  <url><loc>/popcorn-removal/mississauga/</loc></url>
-  <url><loc>/popcorn-removal/oakville/</loc></url>
-  <url><loc>/popcorn-removal/milton/</loc></url>
-  <url><loc>/popcorn-removal/burlington/</loc></url>
-  <url><loc>/popcorn-removal/hamilton/</loc></url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap><loc>https://epfproservices.com/sitemap-0.xml</loc></sitemap>
+</sitemapindex>

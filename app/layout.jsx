@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@/components/AuthorityClusterBlock/AuthorityClusterBlock.css";
 import Link from "next/link";
 import StickyCTA from "@/components/StickyCTA";
 import TrustBar from "@/components/TrustBar";
@@ -11,28 +12,76 @@ import {
   SERVICE_AREAS,
   PHONE_NUMBER,
   PHONE_HREF,
+  SITE_URL,
 } from "./config";
-import ChatWidgetAgent from "@/components/ChatWidgetAgent";
+import ChatWidgetDeferred from "@/components/ChatWidgetDeferred";
 import ReviewScroller from "@/components/ReviewScroller";
 import HeaderNav from "@/components/HeaderNav"; // ✅ NEW
 import Footer from "@/components/Footer";
+
+const SHOW_CHAT_WIDGET = process.env.NEXT_PUBLIC_SHOW_CHAT_WIDGET === "1";
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Wallpaper Removal Pro — GTA",
-    template: "%s — Wallpaper Removal Pro",
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL || "https://epf-2025.pages.dev"
-    ),
+    default: "EPF Pro Services — GTA",
+    template: "%s — EPF Pro Services",
   },
   description:
     "Wallpaper removal, popcorn ceiling removal, drywall installation & repair, and interior painting across the GTA.",
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17986124771"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17986124771');`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function gtag_report_call_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17986124771/D3QWCO__qIEcEOP3uYBD',
+      'value': 1.0,
+      'currency': 'CAD',
+      'event_callback': callback
+  });
+  return false;
+}`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17986124771/O6CgCNeNqIEcEOP3uYBD',
+      'event_callback': callback
+  });
+  return false;
+}`,
+          }}
+        />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
@@ -54,7 +103,7 @@ export default function RootLayout({ children }) {
         <SEOJsonLd />
       </head>
       <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-        <ChatWidgetAgent />
+        {SHOW_CHAT_WIDGET ? <ChatWidgetDeferred /> : null}
         <HeaderNav /> {/* ✅ use the client header */}
         <TrustBar />
         <main className="flex-1">{children}</main>

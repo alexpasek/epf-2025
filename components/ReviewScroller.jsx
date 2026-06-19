@@ -1,16 +1,53 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* Smooth scroll by one card width */
 function useScroller() {
   const ref = useRef(null);
+  const [step, setStep] = useState(360);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const measure = () => {
+      const card = el.querySelector("[data-card]");
+      if (!card) return;
+      const next = (card.clientWidth || 0) + 16; // card width + gap
+      setStep((prev) => (Math.abs(prev - next) > 0.5 ? next : prev));
+    };
+
+    // measure once and on resize without forcing repeated sync reads
+    let raf = requestAnimationFrame(measure);
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(() => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(measure);
+      });
+      ro.observe(el);
+    } else {
+      window.addEventListener("resize", measure);
+    }
+
+    return () => {
+      cancelAnimationFrame(raf);
+      if (ro) {
+        try {
+          ro.disconnect();
+        } catch (e) {}
+      } else {
+        window.removeEventListener("resize", measure);
+      }
+    };
+  }, []);
+
   const by = (dir = 1) => {
     const el = ref.current;
     if (!el) return;
-    const card = el.querySelector("[data-card]");
-    const step = card ? card.getBoundingClientRect().width + 16 : 360;
     el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
+
   return { ref, by };
 }
 
@@ -20,9 +57,15 @@ function Stars({ count = 5 }) {
     <div
       className="flex items-center gap-0.5"
       aria-label={`${count} star rating`}
+      role="img"
     >
       {Array.from({ length: count }).map((_, i) => (
-        <svg key={i} viewBox="0 0 24 24" className="h-4 w-4 fill-yellow-400">
+        <svg
+          key={i}
+          viewBox="0 0 24 24"
+          className="h-4 w-4 fill-yellow-400"
+          aria-hidden="true"
+        >
           <path d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l4.46 4.73L5.82 21z" />
         </svg>
       ))}

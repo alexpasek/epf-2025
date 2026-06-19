@@ -47,25 +47,25 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Service Areas",
-            item: "/service-areas",
+            item: { "@id": "https://epfproservices.com/service-areas" },
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: { "@id": "https://epfproservices.com/services/popcorn-ceiling-removal/" },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Oakville",
-            item: "/popcorn-ceiling-removal/oakville/",
+            item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/oakville/" },
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Iroquois Ridge North",
-            item: "/popcorn-ceiling-removal/oakville/iroquois-ridge-north/",
+            item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/oakville/iroquois-ridge-north/" },
           },
         ],
       },
@@ -468,13 +468,13 @@ export default function Page() {
       {/* Bottom links */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link href="/popcorn-ceiling-removal/oakville/" className="underline">
-          ← Back to Oakville Popcorn page
+          ← Popcorn ceiling removal Oakville
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          Browse all Popcorn service areas →
+          Popcorn ceiling removal service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
+          Popcorn ceiling removal services →
         </Link>
       </nav>
 

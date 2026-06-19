@@ -66,19 +66,21 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Service Areas",
-            item: "/service-areas",
+            item: { "@id": "https://epfproservices.com/service-areas" },
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: {
+              "@id": "https://epfproservices.com/services/popcorn-ceiling-removal/",
+            },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Toronto",
-            item: "/popcorn-ceiling-removal/toronto/",
+            item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/toronto/" },
           },
         ],
       },
@@ -142,6 +144,16 @@ export default function Page() {
               <strong>Level 5 skim-coat</strong>, stain-block primer and a
               bright, even finish. Floors, stairs and furniture protected;
               predictable schedule; tidy wrap-ups daily.
+            </p>
+            <p className="mt-3 text-sm text-gray-600">
+              Need the complete rundown? Review our{" "}
+              <Link
+                href="/services/popcorn-ceiling-removal/"
+                className="underline underline-offset-2"
+              >
+                popcorn ceiling removal services
+              </Link>{" "}
+              for GTA-wide scope details.
             </p>
           </div>
 
@@ -390,10 +402,10 @@ export default function Page() {
       {/* Bottom links */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          ← Back to Popcorn service areas
+          ← Popcorn ceiling removal service areas
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
+          Popcorn ceiling removal services →
         </Link>
       </nav>
 

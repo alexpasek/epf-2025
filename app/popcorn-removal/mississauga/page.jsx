@@ -2,18 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { CityCopy } from "@/components/LocalSEOCopy";
+import { SITE_URL } from "@/app/config";
+
+const PAGE_PATH = "/popcorn-removal/mississauga/";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/og/mississauga.jpg`;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Page-level metadata (title, description, canonical, OG/Twitter, robots)
 // ─────────────────────────────────────────────────────────────────────────────
 export const metadata = {
-  title: "Mississauga — Wallpaper Removal Pro",
+  title: "Mississauga — Popcorn Ceiling Removal Pro",
   description:
     "Wallpaper removal, dust-free popcorn ceiling removal, drywall installation & repair, and interior painting in Mississauga. Fast quotes and clean results.",
   alternates: {
-    // ⬇️ Replace with your absolute URL for this page
-    canonical:
-      "https://your-domain.com/service-areas/wallpaper-removal/mississauga",
+    canonical: PAGE_PATH,
   },
   robots: {
     index: true,
@@ -22,14 +25,14 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://your-domain.com/service-areas/wallpaper-removal/mississauga",
-    siteName: "Wallpaper Removal Pro",
+    url: PAGE_PATH,
+    siteName: "Popcorn Ceiling Removal Pro",
     title: "Wallpaper & Popcorn Ceiling Removal in Mississauga",
     description:
       "Wallpaper removal, popcorn ceiling smoothing, drywall repair, and painting in Mississauga.",
     images: [
       {
-        url: "https://your-domain.com/og/mississauga.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Smooth ceiling and freshly painted room in Mississauga",
@@ -38,10 +41,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wallpaper & Popcorn Ceiling Removal — Mississauga",
+    title: "Wallpaper & Popcorn Ceiling Removal Mississauga",
     description:
       "Fast, clean results. Wallpaper removal, popcorn ceiling removal, drywall & painting.",
-    images: ["https://your-domain.com/og/mississauga.jpg"],
+    images: [OG_IMAGE],
   },
 };
 
@@ -74,11 +77,11 @@ export default function City() {
   const localBusinessLd = {
     "@context": "https://schema.org",
     "@type": ["HomeAndConstructionBusiness", "HousePainter"],
-    name: "Wallpaper Removal Pro",
-    url: "https://your-domain.com/",
+    name: "Popcorn Ceiling Removal Pro",
+    url: SITE_URL,
     telephone: "+1-647-812-9135",
     priceRange: "$$",
-    image: "https://your-domain.com/logo.png",
+    image: OG_IMAGE,
     address: {
       "@type": "PostalAddress",
       streetAddress: "736 Dundas St E",
@@ -116,19 +119,19 @@ export default function City() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://your-domain.com/",
+        item: { "@id": SITE_URL },
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Service Areas",
-        item: "https://your-domain.com/service-areas/",
+        name: "Popcorn Removal",
+        item: { "@id": `${SITE_URL}/popcorn-removal/` },
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Mississauga",
-        item: "https://your-domain.com/service-areas/wallpaper-removal/mississauga",
+        item: { "@id": PAGE_URL },
       },
     ],
   };
@@ -175,6 +178,13 @@ export default function City() {
       <p className="mt-2 text-gray-700">
         Trusted contractor for wallpaper removal, dust-free popcorn ceiling
         removal, drywall installation & repair, and interior painting in {city}.
+      </p>
+      <p className="mt-3 text-sm text-gray-600">
+        Want the full scope? Explore our{" "}
+        <Link href="/services/popcorn-ceiling-removal/" className="underline">
+          popcorn ceiling removal services
+        </Link>{" "}
+        overview.
       </p>
 
       <p className="mt-1 text-sm">

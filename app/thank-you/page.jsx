@@ -2,7 +2,7 @@ import { PHONE_HREF } from "../config";
 
 // app/thank-you/page.jsx
 export const metadata = {
-  title: "Thank You | Wallpaper Removal Pro",
+  title: "Thank You | Popcorn Ceiling Removal Pro",
   robots: { index: false },
 };
 

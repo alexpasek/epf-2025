@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">What affects popcorn ceiling removal cost in Toronto, Canada</title>
+  <desc id="desc">A clean infographic showing the main factors that change popcorn ceiling removal pricing in Toronto, Canada: painted texture, ceiling height, repairs, prep and protection, condo access, and final finish level.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e5eefc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1030" cy="110" r="120" fill="#38bdf8" opacity="0.14"/>
+  <circle cx="160" cy="520" r="150" fill="#60a5fa" opacity="0.1"/>
+  <text x="72" y="96" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">
+    Popcorn Ceiling Removal Cost In Toronto, Canada
+  </text>
+  <text x="72" y="150" fill="#dbeafe" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700">
+    What Actually Changes The Price?
+  </text>
+  <text x="72" y="194" fill="#bfdbfe" font-family="Arial, Helvetica, sans-serif" font-size="22">
+    Toronto condos, older homes, and taller spaces do not price the same way.
+  </text>
+
+  <g transform="translate(72,246)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">1. Painted Texture</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Painted ceilings often</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">need more skim work.</text>
+  </g>
+
+  <g transform="translate(306,246)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">2. Ceiling Height</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Higher ceilings slow</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">setup and production.</text>
+  </g>
+
+  <g transform="translate(540,246)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">3. Repairs</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Stains, cracks, and old</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">patches add labour.</text>
+  </g>
+
+  <g transform="translate(774,246)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">4. Protection</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Masking, dust control,</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">and occupied rooms matter.</text>
+  </g>
+
+  <g transform="translate(144,404)">
+    <rect width="280" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">5. Condo Access</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Elevators, hallways, and</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">building rules add time.</text>
+  </g>
+
+  <g transform="translate(456,404)">
+    <rect width="600" height="132" rx="26" fill="#082f49" stroke="#60a5fa" stroke-width="2"/>
+    <text x="28" y="42" fill="#e0f2fe" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+      Best quote photos:
+    </text>
+    <text x="28" y="74" fill="#bae6fd" font-family="Arial, Helvetica, sans-serif" font-size="18">
+      One wide room photo, one close-up of the texture, ceiling height,
+    </text>
+    <text x="28" y="98" fill="#bae6fd" font-family="Arial, Helvetica, sans-serif" font-size="18">
+      and any condo access notes or visible repairs.
+    </text>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-export const runtime = "edge"; // must be edge on Cloudflare Pages
+export const runtime = "edge";
 export const dynamic = "force-dynamic"; // avoid caching
 
 export async function POST(req) {
@@ -9,6 +9,7 @@ export async function POST(req) {
                 email = "",
                 phone = "",
                 details = "",
+                attachments = [],
         } = await req.json();
 
         // 🔒 Read & sanitize env
@@ -22,7 +23,7 @@ export async function POST(req) {
         // For first tests use Resend sandbox sender.
         // After you verify epfproservices.com in Resend, switch to e.g. no-reply@epfproservices.com
         const from = (
-            process.env.RESEND_FROM || "Wallpaper Removal Pro <onboarding@resend.dev>"
+            process.env.RESEND_FROM || "Popcorn Ceiling Removal Pro <onboarding@resend.dev>"
         ).trim();
 
         // Build payload
@@ -39,6 +40,15 @@ Phone: ${phone}
 Details:
 ${details}
 `,
+            attachments: Array.isArray(attachments) && attachments.length
+                ? attachments
+                    .filter((item) => item && item.filename && item.content)
+                    .slice(0, 3)
+                    .map((item) => ({
+                        filename: String(item.filename).slice(0, 120),
+                        content: item.content,
+                    }))
+                : undefined,
             reply_to: email || undefined,
         };
 

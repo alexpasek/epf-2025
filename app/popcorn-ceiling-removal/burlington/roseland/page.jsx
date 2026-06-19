@@ -77,25 +77,25 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Service Areas",
-            item: "/service-areas",
+            item: { "@id": "https://epfproservices.com/service-areas" },
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: { "@id": "https://epfproservices.com/services/popcorn-ceiling-removal/" },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Burlington",
-            item: `${CITY_BASE}/`,
+            item: { "@id": `https://epfproservices.com${CITY_BASE}/` },
           },
           {
             "@type": "ListItem",
             position: 4,
             name: NAME,
-            item: `${CITY_BASE}/${SLUG}/`,
+            item: { "@id": `https://epfproservices.com${CITY_BASE}/${SLUG}/` },
           },
         ],
       },
@@ -353,7 +353,7 @@ export default function Page() {
               <li>
                 <Link
                   className="underline"
-                  href="/blog/popcorn-ceiling-removal-cost-timeline"
+                  href="/blog/popcorn-ceiling-removal-cost-timeline/"
                 >
                   Popcorn Removal: Cost & Timeline
                 </Link>

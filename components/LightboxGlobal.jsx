@@ -1,10 +1,16 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { usePathname } from "next/navigation";
+import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
 export default function LightboxGlobal(){
+  const pathname = usePathname();
+  const isLanding = isAdsLandingPath(pathname || "");
+
   const [open, setOpen] = useState(false);
   const [images, setImages] = useState([]);
   const [index, setIndex] = useState(0);
   useEffect(()=>{
+    if (isLanding) return;
     function onClick(e){
       const t = e.target;
       if (t && t.tagName === 'IMG' && t.dataset.lightbox === 'true'){
@@ -19,7 +25,8 @@ export default function LightboxGlobal(){
     }
     document.addEventListener('click', onClick);
     return ()=>document.removeEventListener('click', onClick);
-  },[]);
+  },[isLanding]);
+  if (isLanding) return null;
   if(!open) return null;
   const prev = ()=>setIndex(i=>(i-1+images.length)%images.length);
   const next = ()=>setIndex(i=>(i+1)%images.length);

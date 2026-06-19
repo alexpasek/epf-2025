@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">What affects popcorn ceiling removal cost in Canada</title>
+  <desc id="desc">A clean infographic showing the five main factors that change popcorn ceiling removal pricing: painted texture, ceiling height, repairs, prep and protection, and final finish level.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="120" r="110" fill="#38bdf8" opacity="0.18"/>
+  <circle cx="150" cy="520" r="140" fill="#22c55e" opacity="0.12"/>
+  <text x="72" y="98" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">
+    Popcorn Ceiling Removal Cost In Canada
+  </text>
+  <text x="72" y="150" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">
+    What Actually Changes The Price?
+  </text>
+  <text x="72" y="196" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="22">
+    Homeowners usually see the biggest price swings in these five areas.
+  </text>
+
+  <g transform="translate(72,250)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">1. Painted Texture</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Painted ceilings often</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">need more skim work.</text>
+  </g>
+
+  <g transform="translate(306,250)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">2. Ceiling Height</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">High ceilings slow</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">production and setup.</text>
+  </g>
+
+  <g transform="translate(540,250)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">3. Hidden Repairs</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Cracks, stains, and old</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">patches add labour.</text>
+  </g>
+
+  <g transform="translate(774,250)">
+    <rect width="210" height="132" rx="26" fill="url(#card)"/>
+    <text x="22" y="40" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">4. Prep And Protection</text>
+    <text x="22" y="72" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Masking, dust control,</text>
+    <text x="22" y="96" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">and condo access matter.</text>
+  </g>
+
+  <g transform="translate(189,408)">
+    <rect width="360" height="132" rx="26" fill="url(#card)"/>
+    <text x="24" y="42" fill="#0f172a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">5. Final Finish Standard</text>
+    <text x="24" y="74" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Removal only is not the same as a smooth,</text>
+    <text x="24" y="98" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">paint-ready ceiling with primer and cleanup.</text>
+  </g>
+
+  <g transform="translate(583,408)">
+    <rect width="545" height="132" rx="26" fill="#082f49" stroke="#38bdf8" stroke-width="2"/>
+    <text x="28" y="42" fill="#e0f2fe" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+      Best quote photos:
+    </text>
+    <text x="28" y="74" fill="#bae6fd" font-family="Arial, Helvetica, sans-serif" font-size="18">
+      One wide room photo, one close-up of the texture,
+    </text>
+    <text x="28" y="98" fill="#bae6fd" font-family="Arial, Helvetica, sans-serif" font-size="18">
+      ceiling height, and whether the ceiling has been painted.
+    </text>
+  </g>
+</svg>

@@ -6,7 +6,7 @@ import { buildPopcornHoodCopy } from "@/lib/seoCopy";
 
 export const dynamic = "force-static";
 export const revalidate = 86400;
-export const dynamicParams = true; // allow any hood slug
+export const dynamicParams = false;
 
 function titleCase(slug = "") {
   return slug
@@ -184,13 +184,13 @@ export default async function Page({ params }) {
           href={`/popcorn-ceiling-removal/${c.slug}/`}
           className="underline"
         >
-          ← Back to {c.name} Popcorn page
+          ← Popcorn ceiling removal {c.name}
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          Browse all Popcorn service areas →
+          Popcorn ceiling removal service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
+          Popcorn ceiling removal services →
         </Link>
       </nav>
     </div>

@@ -5,7 +5,9 @@ import { CONTACT } from "@/app/config";
 import LocalSignals from "@/components/LocalSignals";
 import { buildPopcornHoodCopy } from "@/lib/seoCopy";
 
+export const dynamic = "force-static";
 export const revalidate = 86400;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   var out = [];
@@ -158,7 +160,7 @@ export default async function NeighborhoodPopcornPage({ params }) {
                   href={"/popcorn-ceiling-removal/" + c.slug + "/" + x.slug}
                   className="pill"
                 >
-                  {x.name}
+                  {`Popcorn ceiling removal ${x.name}`}
                 </Link>
               );
             })}
@@ -168,7 +170,7 @@ export default async function NeighborhoodPopcornPage({ params }) {
 
       <nav className="mt-10 text-sm text-gray-600">
         <Link href={"/popcorn-ceiling-removal/" + c.slug} className="underline">
-          ← Back to {c.name}
+          ← Popcorn ceiling removal {c.name}
         </Link>
       </nav>
     </div>

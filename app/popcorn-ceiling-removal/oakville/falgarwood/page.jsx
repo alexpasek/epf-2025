@@ -45,25 +45,25 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Service Areas",
-            item: "/service-areas",
+            item: { "@id": "https://epfproservices.com/service-areas" },
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/service-areas/popcorn-ceiling-removal",
+            item: { "@id": "https://epfproservices.com/service-areas/popcorn-ceiling-removal" },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Oakville",
-            item: "/popcorn-ceiling-removal/oakville/",
+            item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/oakville/" },
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Falgarwood",
-            item: "/popcorn-ceiling-removal/oakville/falgarwood/",
+            item: { "@id": "https://epfproservices.com/popcorn-ceiling-removal/oakville/falgarwood/" },
           },
         ],
       },
@@ -349,7 +349,7 @@ export default function Page() {
             href="/popcorn-ceiling-removal/oakville/"
             className="underline underline-offset-2"
           >
-            ← Back to Oakville Popcorn Ceiling Removal
+            ← Popcorn ceiling removal Oakville
           </Link>
         </div>
       </section>

@@ -69,25 +69,34 @@ function JsonLd() {
             "@type": "ListItem",
             position: 1,
             name: "Service Areas",
-            item: "/service-areas",
+            item: { "@id": "https://epfproservices.com/service-areas" },
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Popcorn Ceiling Removal",
-            item: "/popcorn-ceiling-removal/",
+            item: {
+              "@id":
+                "https://epfproservices.com/services/popcorn-ceiling-removal/",
+            },
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "Hamilton",
-            item: "/popcorn-ceiling-removal/hamilton/",
+            item: {
+              "@id":
+                "https://epfproservices.com/popcorn-ceiling-removal/hamilton/",
+            },
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "Ancaster",
-            item: "/popcorn-ceiling-removal/hamilton/ancaster/",
+            item: {
+              "@id":
+                "https://epfproservices.com/popcorn-ceiling-removal/hamilton/ancaster/",
+            },
           },
         ],
       },
@@ -156,7 +165,7 @@ export default function Page() {
 
   const images = Array.from(
     { length: 6 },
-    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`
+    (_, i) => `/services/popcorn-ceiling-removal/${i + 1}.webp`,
   );
 
   // Nearby Hamilton neighborhoods (exclude current)
@@ -275,6 +284,15 @@ export default function Page() {
           <strong>Level 5 skim</strong>
           so ceilings read flat and modern across open sightlines and
           pot-lights.
+        </p>
+        <p>
+          For larger homes or multi-room updates beyond Ancaster alone, review
+          our full{" "}
+          <Link href="/popcorn-ceiling-removal/hamilton/" className="underline">
+            Hamilton popcorn ceiling removal service
+          </Link>{" "}
+          page to compare neighbourhood coverage, logistics, and broader city
+          scheduling.
         </p>
         <p>
           We start with protection: floors and stairs covered, furniture
@@ -428,6 +446,16 @@ export default function Page() {
           <h3 className="text-xl font-semibold">
             Ready for a Level 5 smooth ceiling in Ancaster?
           </h3>
+          <p className="text-gray-600 mt-2">
+            Need wider city coverage too? Start with our{" "}
+            <Link
+              href="/popcorn-ceiling-removal/hamilton/"
+              className="underline"
+            >
+              full Hamilton popcorn ceiling removal
+            </Link>
+            .
+          </p>
         </div>
         <div className="flex gap-3">
           <a className="btn-cta" href={phoneHref}>
@@ -460,13 +488,13 @@ export default function Page() {
       {/* Bottom links */}
       <nav className="mt-8 flex flex-wrap gap-3 text-sm">
         <Link href="/popcorn-ceiling-removal/hamilton/" className="underline">
-          ← Back to Hamilton Popcorn page
+          ← Popcorn ceiling removal Hamilton
         </Link>
         <Link href="/popcorn-ceiling-removal/" className="underline">
-          Browse all Popcorn service areas →
+          Popcorn ceiling removal service areas →
         </Link>
         <Link href="/services/popcorn-ceiling-removal/" className="underline">
-          Main Popcorn service page →
+          Popcorn ceiling removal services →
         </Link>
       </nav>
 

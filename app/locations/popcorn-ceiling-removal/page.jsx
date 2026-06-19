@@ -1,0 +1,20 @@
+import PopcornAdsLandingPage from "@/components/landing/PopcornAdsLandingPage";
+import { getLandingData } from "@/components/landing/landingData";
+
+const landing = getLandingData("general");
+
+export const metadata = {
+  title: landing.metaTitle,
+  description: landing.metaDescription,
+  robots: {
+    index: false,
+    follow: false,
+  },
+  alternates: {
+    canonical: `/locations/${landing.slug}`,
+  },
+};
+
+export default function GeneralPopcornLandingPage() {
+  return <PopcornAdsLandingPage landing={landing} />;
+}

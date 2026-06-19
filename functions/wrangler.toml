@@ -2,6 +2,9 @@ name = "your-pages-app"
 pages_build_output_dir = ".vercel/output/static" # or your build dir
 compatibility_date = "2024-09-23"
 
+[triggers]
+crons = ["0 6 */3 * *"]
+
 [[kv_namespaces]]
 binding = "BLOG_KV"
 # If you already created a namespace, you can paste its IDs; if not, Miniflare
