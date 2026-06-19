@@ -35,7 +35,7 @@ Cloudflare Pages project:
 
 ```txt
 Repository: alexpasek/epf-2025
-Production branch: prod-stable
+Production branch: main
 ```
 
 Recommended Pages build settings for the old GitHub push flow:
@@ -57,6 +57,8 @@ NEXT_PUBLIC_SITE_URL=https://epfproservices.com
 ```
 
 Do not attach the `wallpaper-removal-pro` Worker route to `epfproservices.com/*` if the domain should be served by Cloudflare Pages.
+
+For full production deployment safety rules, follow `docs/deployment-cloudflare-pages-rules.md`.
 
 ## SEO Agent Backend Settings
 

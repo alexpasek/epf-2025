@@ -40,6 +40,12 @@ When the task is related to the SEO agent, agent automation, competitor research
 
 The SEO agent backend must stay separate from the public Next.js app. The public route at `app/api/seo-blog-agent/[[...path]]/route.js` is an Edge proxy only.
 
+When the task is related to deployment, Cloudflare, GitHub publishing, contact forms, environment variables, or production routing, follow:
+
+- docs/deployment-cloudflare-pages-rules.md
+
+The public website must be deployed through the Cloudflare Pages project `epf-2025` from GitHub. Do not attach the old `wallpaper-removal-pro` Worker to `epfproservices.com` or `www.epfproservices.com`.
+
 When the task is related to blogs, articles, guides, SEO support content, cost guides, local service support content, or image planning for blog posts, follow these files:
 
 - docs/rules/blog-agent-rules.md
