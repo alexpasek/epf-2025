@@ -36,7 +36,7 @@ const SLUG_LABELS = {
   "popcorn-ceiling-removal": "Popcorn Ceiling Removal",
   popcorn: "Popcorn Ceiling Removal",
   "drywall-installation": "Drywall Installation",
-  "skylight-drywall-repair": "Skylight Drywall Repair",
+  "skylight-drywall-repair": "Skylight & Cathedral Ceiling Repair",
   "baseboard-installation": "Baseboard Installation",
   wallpaper: "Wallpaper Removal",
   "interior-painting": "Interior Painting",
@@ -158,7 +158,7 @@ export default function HeaderNav() {
     { href: "/services/drywall-installation/", label: "Drywall Installation" },
     {
       href: "/services/skylight-drywall-repair/",
-      label: "Skylight Drywall Repair",
+      label: "Skylight & Cathedral Ceiling Repair",
     },
     { href: "/services/wallpaper-removal/", label: "Wallpaper Removal" },
     { href: "/services/interior-painting/", label: "Interior Painting" },

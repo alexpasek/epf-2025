@@ -9,19 +9,19 @@ export default function SkylightPopcornBacklinkBlock({ city, slug }) {
             Skylight detail work
           </p>
           <h2 className="mt-3 text-3xl font-bold text-slate-950">
-            Need Popcorn Removal Around a Skylight?
+            Need Popcorn Removal Around a Skylight or Cathedral Ceiling?
           </h2>
           <p className="mt-4 max-w-3xl leading-8 text-slate-700">
-            Skylights and light wells require extra detail because natural light
-            shows every ceiling imperfection. EPF Pro Services also provides
-            drywall repair, skim coating, and popcorn ceiling removal around
-            skylights.
+            Skylights, light wells, and cathedral ceiling angles require extra
+            detail because natural light shows every ceiling imperfection. EPF
+            Pro Services also provides drywall repair, skim coating, popcorn
+            ceiling removal, primer, and painting preparation around skylights.
           </p>
           <Link
             href={`/skylight-drywall-repair/${slug}/`}
             className="mt-6 inline-flex rounded-full bg-blue-600 px-6 py-3 font-bold text-white transition hover:bg-blue-700"
           >
-            Learn more about skylight drywall repair in {city}
+            Learn more about skylight and cathedral ceiling repair in {city}
           </Link>
         </div>
       </div>

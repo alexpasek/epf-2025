@@ -14,30 +14,36 @@ const hubPath = "/services/skylight-drywall-repair/";
 const hubHeroImage =
   "/services/skylight-drywall-repair/skylight-drywall-repair-clean-hero-v2.jpg";
 const hubHeroAlt =
-  "Clean skylight drywall repair, popcorn texture removal, and smooth ceiling preparation around a bright light well";
+  "Clean skylight and cathedral ceiling drywall repair with popcorn texture removal and smooth ceiling painting preparation";
 const serviceNames = [
   "Skylight Drywall Repair",
   "Drywall Repair Around Skylights",
   "Skylight Shaft Repair",
   "Light Well Drywall Repair",
+  "Cathedral Ceiling Repair Around Skylights",
+  "Vaulted Ceiling Repair Around Skylights",
   "Popcorn Ceiling Removal Around Skylights",
+  "Popcorn Removal on Cathedral Ceilings",
   "Stipple Removal Around Skylights",
   "Ceiling Water Damage Repair After Skylight Leak",
   "Smooth Ceiling Around Skylights",
+  "Ceiling Painting After Skylight Repair",
 ];
 
 const heroHighlights = [
   "Skylight drywall repair",
+  "Cathedral ceiling repair",
   "Popcorn or stipple removal",
-  "Ceiling stain repair after leaks",
-  "Smooth paint-ready finish",
+  "Ceiling stain repair",
+  "Primer and painting",
 ];
 
 const defaultCommonRequests = [
   "Drywall repair around skylight shafts and inside corners",
+  "Cathedral or vaulted ceiling repair around skylights and light wells",
   "Ceiling water damage repair after the leak source is fixed",
-  "Popcorn ceiling removal around skylight openings",
-  "Skim coat, sanding, primer, and smooth ceiling preparation",
+  "Popcorn ceiling removal around skylight openings and angled ceiling planes",
+  "Skim coat, sanding, primer, ceiling painting, and smooth finish preparation",
 ];
 
 const repairOutcomeCards = [
@@ -54,20 +60,20 @@ const repairOutcomeCards = [
   {
     title: "Texture removal around tight corners",
     body:
-      "Popcorn and stipple around skylight shafts need detailed scraping, skim coating, and sanding because the corners and returns are more visible than a flat ceiling.",
+      "Popcorn and stipple around skylight shafts, cathedral ceilings, and vaulted returns need detailed scraping, skim coating, and sanding because the angles are more visible than a flat ceiling.",
   },
   {
-    title: "Dust-controlled handoff",
+    title: "Paint-ready or painted finish",
     body:
-      "Floors, furniture, walls, vents, and access paths are protected before repair. The goal is a clean work area and a ceiling ready for primer or finish paint.",
+      "Floors, furniture, walls, vents, and access paths are protected before repair. The goal is a clean work area, correct primer, and a ceiling ready for finish paint or completed painting.",
   },
 ];
 
 const processSteps = [
-  "Inspect visible drywall and ceiling damage around the skylight.",
+  "Inspect visible drywall, texture, and ceiling paint damage around the skylight, cathedral ceiling, or vaulted light well.",
   "Confirm the leak source has been repaired or needs to be handled first.",
   "Protect floors, walls, furniture, and the surrounding work area.",
-  "Remove loose texture, damaged drywall, failed tape, or peeling paint.",
+  "Remove loose popcorn texture, damaged drywall, failed tape, or peeling paint.",
   "Repair drywall, inside corners, corner bead, and damaged tape where needed.",
   "Apply skim coats to create a smooth, even finish.",
   "Sand with dust control.",
@@ -86,11 +92,19 @@ const faqs = [
   },
   {
     q: "Can you remove popcorn ceiling around a skylight?",
-    a: "Yes. We remove popcorn or stipple texture around skylights, including detail areas inside the skylight shaft when required.",
+    a: "Yes. We remove popcorn or stipple texture around skylights, cathedral ceiling sections, vaulted returns, and detail areas inside the skylight shaft when required.",
+  },
+  {
+    q: "Can you repair cathedral or vaulted ceilings around skylights?",
+    a: "Yes. We repair angled cathedral and vaulted ceiling areas around skylights, including cracked tape, damaged drywall, old popcorn texture, water stains, and paint-ready skim coating.",
   },
   {
     q: "Can you make the skylight area smooth?",
     a: "Yes. After removal or repair, we can skim coat, sand, prime, and prepare the skylight area for a smooth finish.",
+  },
+  {
+    q: "Can you paint the ceiling after skylight repair or popcorn removal?",
+    a: "Yes. EPF can include stain-block primer, ceiling primer, and finish painting when the ceiling is ready. In some rooms, repainting the full ceiling plane gives a cleaner blend than painting only the repaired area.",
   },
   {
     q: "Why does drywall around skylights show imperfections so much?",
@@ -106,13 +120,14 @@ const serviceBlocks = [
   {
     title: "Drywall Repair Around Skylights",
     body:
-      "Skylights bring in strong natural light, which means every crack, patch, tape line, and uneven ceiling repair becomes easier to see. EPF Pro Services repairs damaged drywall around skylights, including cracked inside corners, failed tape, soft drywall, water stains, peeling paint, and damaged skylight shafts. We protect the surrounding area, remove loose or damaged material, repair tape and corner bead where needed, apply proper drywall compound and skim coats, then sand the area smooth for primer and paint.",
+      "Skylights bring in strong natural light, which means every crack, patch, tape line, and uneven ceiling repair becomes easier to see. EPF Pro Services repairs damaged drywall around skylights, including cracked inside corners, failed tape, soft drywall, water stains, peeling paint, damaged skylight shafts, and angled cathedral ceiling planes. We protect the surrounding area, remove loose or damaged material, repair tape and corner bead where needed, apply proper drywall compound and skim coats, then sand the area smooth for primer and paint.",
     terms: [
       "drywall repair around skylight",
       "skylight drywall repair",
       "skylight shaft repair",
       "light well drywall repair",
       "drywall repair after skylight leak",
+      "cathedral ceiling repair around skylight",
     ],
   },
   {
@@ -130,25 +145,50 @@ const serviceBlocks = [
   {
     title: "Popcorn Ceiling Removal Around Skylights",
     body:
-      "Popcorn and stipple texture around skylights can be difficult to remove cleanly because the area often has inside corners, height, angled drywall, and strong daylight showing every imperfection. EPF Pro Services provides careful popcorn ceiling removal around skylights, including detail work inside the skylight shaft, skim coating, sanding, priming, and smooth finish preparation. For older textured ceilings, asbestos testing may be required before disturbing the ceiling material.",
+      "Popcorn and stipple texture around skylights can be difficult to remove cleanly because the area often has inside corners, height, angled drywall, and strong daylight showing every imperfection. EPF Pro Services provides careful popcorn ceiling removal around skylights and cathedral ceiling sections, including detail work inside the skylight shaft, skim coating, sanding, priming, and smooth finish preparation. For older textured ceilings, asbestos testing may be required before disturbing the ceiling material.",
     terms: [
       "popcorn ceiling removal around skylight",
       "remove popcorn ceiling around skylight",
       "stipple removal around skylight",
       "skylight popcorn ceiling removal",
+      "cathedral ceiling popcorn removal",
       "smooth ceiling around skylight",
     ],
   },
   {
     title: "Skylight Shaft & Light Well Refinishing",
     body:
-      "The skylight shaft, also called a light well, often takes more detailed drywall work than a flat ceiling. Inside corners, narrow openings, daylight exposure, and previous water damage can make the area look rough. We repair and refinish skylight shafts with clean taping, corner repair, skim coating, sanding, and primer-ready finishing. This is a strong service for homes with vaulted ceilings, tall skylight tunnels, or older repairs that no longer look clean.",
+      "The skylight shaft, also called a light well, often takes more detailed drywall work than a flat ceiling. Inside corners, narrow openings, daylight exposure, and previous water damage can make the area look rough. We repair and refinish skylight shafts with clean taping, corner repair, skim coating, sanding, and primer-ready finishing. This is a strong service for homes with cathedral ceilings, vaulted ceilings, tall skylight tunnels, or older repairs that no longer look clean.",
     terms: [
       "skylight shaft repair",
       "light well repair",
       "skylight tunnel drywall repair",
       "drywall repair inside skylight shaft",
       "skylight ceiling repair",
+    ],
+  },
+  {
+    title: "Cathedral Ceiling Repair Around Skylights",
+    body:
+      "Cathedral and vaulted ceilings need careful staging, wide feathering, and a clean paint plan because angled ceiling planes catch natural light differently than standard flat ceilings. EPF repairs cracked tape, damaged drywall, old patches, water stains, popcorn texture, and uneven skim coat areas around skylights on cathedral ceilings. The repair is planned so the skylight shaft, ceiling plane, primer, and finish paint read as one clean surface instead of a visible patch.",
+    terms: [
+      "cathedral ceiling repair",
+      "vaulted ceiling repair around skylight",
+      "cathedral ceiling drywall repair",
+      "cathedral ceiling popcorn removal",
+      "skylight cathedral ceiling repair",
+    ],
+  },
+  {
+    title: "Ceiling Painting After Repair or Popcorn Removal",
+    body:
+      "After drywall repair, popcorn removal, or skim coating, the final ceiling paint determines whether the work blends properly. EPF can include stain-block primer where water marks were present, ceiling primer over fresh compound, and finish painting for the repaired skylight area or full ceiling plane. Full-plane painting is often the better option when the ceiling has strong daylight, cathedral angles, older paint, or a visible transition line.",
+    terms: [
+      "ceiling painting after skylight repair",
+      "painting cathedral ceiling",
+      "ceiling primer after popcorn removal",
+      "paint ceiling around skylight",
+      "stain block primer ceiling repair",
     ],
   },
 ];
@@ -167,7 +207,7 @@ const photos = [
   {
     src: "/services/skylight-drywall-repair/skylight-drywall-repair-oakville-clean-v2.jpg",
     alt: "Smooth ceiling preparation around a large skylight shaft",
-    caption: "Smooth ceiling finishing around skylights needs clean feathering under daylight.",
+    caption: "Smooth ceiling finishing around skylights and cathedral ceiling angles needs clean feathering under daylight.",
   },
 ];
 
@@ -193,10 +233,12 @@ export function getSkylightRepairJsonLd({ city, path }) {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: city ? `Skylight Drywall Repair in ${city.city}` : "Skylight Drywall Repair",
+      name: city
+        ? `Skylight and Cathedral Ceiling Repair in ${city.city}`
+        : "Skylight and Cathedral Ceiling Repair",
       serviceType: serviceNames,
       description:
-        "Interior drywall repair, ceiling water damage repair, popcorn ceiling removal, skylight shaft refinishing, skim coating, primer, and paint-ready finishing around skylights.",
+        "Interior drywall repair, cathedral ceiling repair, ceiling water damage repair, popcorn ceiling removal, skylight shaft refinishing, skim coating, primer, painting, and smooth finishing around skylights.",
       image: `${BASE_URL}${city?.heroImage || hubHeroImage}`,
       provider: {
         "@type": "LocalBusiness",
@@ -224,7 +266,7 @@ export function getSkylightRepairJsonLd({ city, path }) {
         {
           "@type": "ListItem",
           position: 2,
-          name: "Skylight Drywall Repair",
+          name: "Skylight and Cathedral Ceiling Repair",
           item: { "@id": `${BASE_URL}${hubPath}` },
         },
         ...(city
@@ -338,7 +380,7 @@ function RelatedLinksBlock({ city }) {
             Service authority links
           </p>
           <h2 className="mt-3 text-3xl font-bold text-slate-950">
-            Plan the Right Interior Skylight Repair Next
+            Plan the Right Skylight or Cathedral Ceiling Repair Next
           </h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[...cityLinks, ...hubLinks].slice(0, city ? 6 : 8).map((link) => (
@@ -361,10 +403,12 @@ function RelatedLinksBlock({ city }) {
 export default function SkylightDrywallRepairPage({ city = null }) {
   const isCity = Boolean(city);
   const path = isCity ? `/skylight-drywall-repair/${city.slug}/` : hubPath;
-  const heroTitle = isCity ? city.h1 : "Skylight Drywall Repair & Ceiling Damage Repair";
+  const heroTitle = isCity
+    ? city.h1
+    : "Skylight & Cathedral Ceiling Repair Around Light Wells";
   const heroSubtitle = isCity
-    ? `Interior drywall repair, ceiling water damage repair, skylight shaft refinishing, and popcorn ceiling removal around skylights in ${city.city}.`
-    : "Water stains, cracked drywall, peeling paint, or popcorn texture damage around a skylight? EPF Pro Services repairs the interior drywall, ceiling finish, and texture around skylights and light wells.";
+    ? `Interior drywall repair, cathedral ceiling repair, ceiling water damage repair, skylight shaft refinishing, popcorn removal, and ceiling painting around skylights in ${city.city}.`
+    : "Water stains, cracked drywall, peeling paint, or popcorn texture damage around a skylight or cathedral ceiling? EPF Pro Services repairs the interior drywall, ceiling finish, texture, primer, and paint around skylights and light wells.";
   const heroImage = city?.heroImage || hubHeroImage;
   const heroAlt = city?.imageAlt || hubHeroAlt;
   const commonRequests = city?.commonRequests || defaultCommonRequests;
@@ -401,10 +445,10 @@ export default function SkylightDrywallRepairPage({ city = null }) {
             </p>
             <p className="mt-4 text-base leading-7 text-slate-300">
               We restore the inside finish around skylights: drywall repair,
-              skylight shaft refinishing, popcorn or stipple removal, skim
-              coating, stain-block primer, sanding, and smooth paint-ready
-              ceiling preparation. Active leaks should be fixed before final
-              drywall finishing.
+              skylight shaft refinishing, cathedral ceiling repair, popcorn or
+              stipple removal, skim coating, stain-block primer, sanding, and
+              smooth ceiling painting preparation. Active leaks should be fixed
+              before final drywall finishing.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {heroHighlights.map((highlight) => (
@@ -435,7 +479,7 @@ export default function SkylightDrywallRepairPage({ city = null }) {
               {[
                 ["Drywall", "Repair around skylight shafts"],
                 ["Texture", "Popcorn and stipple removal"],
-                ["Finish", "Smooth ceiling prep"],
+                ["Paint", "Primer and ceiling painting"],
               ].map(([label, detail]) => (
                 <div
                   key={label}
@@ -462,13 +506,14 @@ export default function SkylightDrywallRepairPage({ city = null }) {
                 Skylight interior finish specialists
               </p>
               <h2 className="mt-3 text-3xl font-bold leading-tight text-slate-950 md:text-4xl">
-                We Fix the Ceiling, Shaft, Texture, and Smooth Finish Around Skylights
+                We Fix the Ceiling, Shaft, Cathedral Plane, Texture, and Paint Around Skylights
               </h2>
               <p className="mt-5 leading-8 text-slate-700">{finishFocus}</p>
               <p className="mt-4 leading-8 text-slate-700">
                 This is the right service when the skylight itself is staying in
-                place, but the interior drywall, popcorn texture, ceiling stain,
-                peeling paint, or light-well finish needs to be restored.
+                place, but the interior drywall, cathedral ceiling plane,
+                popcorn texture, ceiling stain, peeling paint, or light-well
+                finish needs to be restored.
               </p>
             </div>
             <div className="grid gap-3">
@@ -509,13 +554,14 @@ export default function SkylightDrywallRepairPage({ city = null }) {
                 Local skylight ceiling repair pages
               </p>
               <h2 className="mt-3 text-3xl font-bold text-slate-950">
-                Choose Your City for Skylight Drywall Repair
+                Choose Your City for Skylight and Cathedral Ceiling Repair
               </h2>
               <p className="mt-4 max-w-3xl leading-8 text-slate-700">
-                Start with the main skylight drywall repair service page, then
-                choose the city page that matches your project. Each local page
-                connects skylight interior damage to the matching popcorn
-                ceiling removal, drywall repair, painting, and quote paths.
+                Start with the main skylight and cathedral ceiling repair
+                service page, then choose the city page that matches your
+                project. Each local page connects skylight interior damage to
+                the matching popcorn ceiling removal, drywall repair, painting,
+                and quote paths.
               </p>
               <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                 {skylightRepairCities.map((item) => (
@@ -614,7 +660,7 @@ export default function SkylightDrywallRepairPage({ city = null }) {
       {isCity ? (
         <section className="bg-white py-16">
           <div className="container mx-auto px-4">
-            <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
+            <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-3xl border border-slate-200 p-7">
                 <h2 className="text-2xl font-bold text-slate-950">
                   Popcorn Ceiling Removal Around Skylights in {city.city}
@@ -623,6 +669,16 @@ export default function SkylightDrywallRepairPage({ city = null }) {
                   Popcorn and stipple texture around skylight shafts needs
                   detailed removal, careful corner work, skim coating, sanding,
                   and a finish that still looks clean in daylight.
+                </p>
+              </div>
+              <div className="rounded-3xl border border-slate-200 p-7">
+                <h2 className="text-2xl font-bold text-slate-950">
+                  Cathedral Ceiling Repair Around Skylights in {city.city}
+                </h2>
+                <p className="mt-4 leading-7 text-slate-700">
+                  Cathedral and vaulted ceilings need wide feathering, safe
+                  access planning, clean skylight returns, and smooth painting
+                  prep because angled planes expose poor patch work quickly.
                 </p>
               </div>
               <div className="rounded-3xl border border-slate-200 p-7">
@@ -641,8 +697,9 @@ export default function SkylightDrywallRepairPage({ city = null }) {
                 </h2>
                 <p className="mt-4 leading-7 text-slate-700">
                   The goal is not skylight replacement. It is restoring the
-                  interior ceiling, skylight shaft, drywall, primer, and paint
-                  finish after the source of the damage is handled.
+                  interior ceiling, skylight shaft, cathedral ceiling plane,
+                  drywall, primer, and paint finish after the source of the
+                  damage is handled.
                 </p>
               </div>
             </div>
@@ -662,8 +719,9 @@ export default function SkylightDrywallRepairPage({ city = null }) {
               </h2>
               <p className="mt-4 leading-8 text-slate-300">
                 The best sequence is leak first, interior finish second. EPF
-                restores the ceiling and drywall after the water source is
-                handled, so the repair has a better chance of staying clean.
+                restores the ceiling, drywall, texture, primer, and paint after
+                the water source is handled, so the repair has a better chance
+                of staying clean.
               </p>
             </div>
             <div className="grid gap-3">
@@ -747,8 +805,9 @@ export default function SkylightDrywallRepairPage({ city = null }) {
               </h2>
               <p className="mt-4 leading-8 text-slate-300">
                 Send wide photos of the room, close-ups of the skylight shaft,
-                ceiling height, whether popcorn or stipple is present, and
-                whether the leak has already been fixed.
+                ceiling height, whether the ceiling is flat, vaulted, or
+                cathedral, whether popcorn or stipple is present, and whether
+                the leak has already been fixed.
               </p>
             </div>
             <div className="rounded-3xl bg-white p-6 text-slate-950 shadow-2xl">

@@ -8,15 +8,15 @@ const HERO_IMG = "/services/epf-services-hero.png"; // update to a real image
 
 export const metadata = {
   title:
-    "Services — Popcorn Ceiling Removal, Drywall, Skylight Repair, Painting | EPF Pro Services",
+    "Services — Popcorn Ceiling Removal, Drywall, Skylight & Cathedral Ceiling Repair, Painting | EPF Pro Services",
   description:
-    "Dust-controlled popcorn ceiling removal to Level 5 smooth, drywall installation & finishing, skylight drywall repair, wallpaper removal with wall skim, and interior painting. Local, insured crew serving Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines.",
+    "Dust-controlled popcorn ceiling removal to Level 5 smooth, drywall installation & finishing, skylight and cathedral ceiling repair, wallpaper removal with wall skim, and interior painting. Local, insured crew serving Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines.",
   alternates: { canonical: "/services/" },
   openGraph: {
     title:
-      "EPF Pro Services — Popcorn Ceiling Removal, Drywall, Skylight Repair, Interior Painting",
+      "EPF Pro Services — Popcorn Ceiling Removal, Drywall, Skylight & Cathedral Ceiling Repair, Interior Painting",
     description:
-      "Popcorn ceiling removal (Level 5), drywall finishing, skylight drywall repair, wallpaper removal, and interior painting with clean containment and tidy job sites.",
+      "Popcorn ceiling removal (Level 5), drywall finishing, skylight and cathedral ceiling repair, wallpaper removal, and interior painting with clean containment and tidy job sites.",
     url: "/services/",
     type: "website",
     images: [{ url: HERO_IMG }],
@@ -74,14 +74,14 @@ const services = [
   },
   {
     slug: "/services/skylight-drywall-repair/",
-    name: "Skylight Drywall Repair",
+    name: "Skylight & Cathedral Ceiling Repair",
     tagline:
-      "Interior ceiling and drywall repair around skylights, light wells, and leak-stained openings.",
+      "Interior ceiling and drywall repair around skylights, light wells, cathedral ceiling planes, and leak-stained openings.",
     bullets: [
       "Drywall repair around skylight shafts and inside corners",
       "Ceiling water damage repair after the leak source is fixed",
-      "Popcorn or stipple removal around skylight openings",
-      "Skim coat, stain-block primer, sanding, and smooth paint-ready finishing",
+      "Cathedral ceiling repair and popcorn removal around skylight openings",
+      "Skim coat, stain-block primer, sanding, and smooth ceiling painting prep",
     ],
   },
   {
@@ -362,7 +362,7 @@ export default function ServicesPage() {
             <strong>dust-controlled popcorn ceiling removal</strong> with{" "}
             <strong>Level 5 smooth finishes</strong>,{" "}
             <strong>drywall installation & finishing</strong>,{" "}
-            <strong>skylight drywall repair</strong>,{" "}
+            <strong>skylight and cathedral ceiling repair</strong>,{" "}
             <strong>wallpaper removal</strong>, and{" "}
             <strong>interior painting</strong>. Clean containment, tidy job
             sites, and reliable scheduling from a local, insured crew.

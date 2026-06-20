@@ -328,8 +328,8 @@ export default function Page() {
       href: "/services/drywall-repair/",
     },
     {
-      title: "Skylight Drywall Repair",
-      copy: "Interior drywall, ceiling stain, popcorn texture, and smooth finish repair around skylights after the leak source is fixed.",
+      title: "Skylight & Cathedral Ceiling Repair",
+      copy: "Interior drywall, ceiling stain, popcorn texture removal, primer, painting prep, and smooth finish repair around skylights and cathedral ceilings.",
       href: "/services/skylight-drywall-repair/",
     },
     {
@@ -452,9 +452,9 @@ export default function Page() {
                 <Link
                   href="/services/skylight-drywall-repair/"
                   className="pill"
-                  title="Skylight drywall repair services"
+                  title="Skylight and cathedral ceiling repair services"
                 >
-                  Skylight Drywall Repair
+                  Skylight & Cathedral Ceiling Repair
                 </Link>
                 <Link
                   href="/services/interior-painting/"

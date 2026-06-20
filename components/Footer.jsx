@@ -82,23 +82,23 @@ const DRYWALL_REPAIR_LINKS = [
 const SKYLIGHT_REPAIR_LINKS = [
   {
     href: "/services/skylight-drywall-repair/",
-    label: "Skylight drywall repair service hub",
+    label: "Skylight and cathedral ceiling repair service hub",
   },
   {
     href: "/skylight-drywall-repair/mississauga/",
-    label: "Skylight drywall repair Mississauga",
+    label: "Skylight and cathedral ceiling repair Mississauga",
   },
   {
     href: "/skylight-drywall-repair/oakville/",
-    label: "Skylight drywall repair Oakville",
+    label: "Skylight and cathedral ceiling repair Oakville",
   },
   {
     href: "/skylight-drywall-repair/burlington/",
-    label: "Skylight drywall repair Burlington",
+    label: "Skylight and cathedral ceiling repair Burlington",
   },
   {
     href: "/skylight-drywall-repair/hamilton/",
-    label: "Skylight drywall repair Hamilton",
+    label: "Skylight and cathedral ceiling repair Hamilton",
   },
 ];
 
@@ -334,7 +334,7 @@ export default function Footer() {
         href="/services/skylight-drywall-repair/"
         className="font-semibold hover:underline"
       >
-        skylight drywall repair
+        skylight and cathedral ceiling repair
       </a>
     </p>
   );

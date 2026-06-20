@@ -2,12 +2,12 @@ export const skylightRepairCities = [
   {
     city: "Hamilton",
     slug: "hamilton",
-    title: "Skylight Drywall Repair Hamilton | Ceiling Damage & Popcorn Removal",
+    title: "Skylight & Cathedral Ceiling Repair Hamilton | Popcorn Removal",
     metaDescription:
-      "Hamilton skylight drywall repair for leak stains, cracked shafts, popcorn texture, and smooth ceiling prep after the leak source is fixed.",
-    h1: "Skylight Drywall Repair in Hamilton",
+      "Hamilton skylight and cathedral ceiling repair for leak stains, cracked shafts, popcorn texture, primer, painting, and smooth ceiling prep.",
+    h1: "Skylight & Cathedral Ceiling Repair in Hamilton",
     intro:
-      "EPF Pro Services provides interior skylight ceiling repair in Hamilton, including drywall repair around skylights, skylight shaft refinishing, ceiling water damage repair, and popcorn ceiling removal around skylight openings. Many Hamilton homes have older ceilings, additions, vaulted areas, and previous leak repairs that become very visible under skylight daylight.",
+      "EPF Pro Services provides interior skylight and cathedral ceiling repair in Hamilton, including drywall repair around skylights, skylight shaft refinishing, ceiling water damage repair, popcorn ceiling removal around skylight openings, and ceiling painting preparation. Many Hamilton homes have older ceilings, additions, vaulted areas, cathedral sections, and previous leak repairs that become very visible under skylight daylight.",
     localAreas: [
       "Hamilton Mountain",
       "Stoney Creek",
@@ -19,14 +19,14 @@ export const skylightRepairCities = [
       "Waterdown",
     ],
     cityAngle:
-      "This page is for Hamilton homeowners who already fixed the skylight leak but still need the inside ceiling restored.",
+      "This page is for Hamilton homeowners who already fixed the skylight leak but still need the inside ceiling, cathedral plane, texture, primer, and paint restored.",
     finishFocus:
-      "Hamilton skylight projects often involve older texture, previous patch work, stair or hallway access, and daylight that makes uneven repair work obvious.",
+      "Hamilton skylight projects often involve older texture, previous patch work, stair or hallway access, vaulted or cathedral ceiling planes, and daylight that makes uneven repair work obvious.",
     commonRequests: [
       "Drywall repair around skylight shafts after the leak source is fixed",
       "Ceiling water stain repair with stain-block primer preparation",
-      "Popcorn or stipple removal around skylight openings",
-      "Smooth ceiling refinishing in hallways, additions, and vaulted areas",
+      "Popcorn or stipple removal around skylight openings and cathedral ceiling sections",
+      "Smooth ceiling refinishing, primer, and painting in hallways, additions, and vaulted areas",
     ],
     relatedPopcornPage: "/popcorn-ceiling-removal/hamilton/",
     relatedDrywallPage: "/services/drywall-repair/hamilton/",
@@ -34,17 +34,17 @@ export const skylightRepairCities = [
     heroImage:
       "/services/skylight-drywall-repair/skylight-drywall-repair-hamilton-clean-v2.jpg",
     imageAlt:
-      "Hamilton skylight drywall repair with protected hallway, smooth skim coat, and light well ceiling finishing",
+      "Hamilton skylight and cathedral ceiling repair with protected hallway, smooth skim coat, primer, and light well ceiling finishing",
   },
   {
     city: "Burlington",
     slug: "burlington",
-    title: "Skylight Drywall Repair Burlington | Popcorn Removal Around Skylights",
+    title: "Skylight & Cathedral Ceiling Repair Burlington | Popcorn Removal",
     metaDescription:
-      "Burlington skylight drywall repair, popcorn or stipple removal around skylights, ceiling water stain repair, and smooth finish prep.",
-    h1: "Skylight Drywall Repair in Burlington",
+      "Burlington skylight and cathedral ceiling repair, popcorn or stipple removal around skylights, water stain repair, primer, and painting prep.",
+    h1: "Skylight & Cathedral Ceiling Repair in Burlington",
     intro:
-      "EPF Pro Services repairs interior ceiling and drywall damage around skylights in Burlington. We handle stained drywall, cracked tape, peeling paint, damaged popcorn texture, and uneven skylight shaft finishes. Skylights can make ceilings look brighter, but they also make poor patches and texture problems stand out.",
+      "EPF Pro Services repairs interior ceiling and drywall damage around skylights in Burlington. We handle stained drywall, cracked tape, peeling paint, damaged popcorn texture, cathedral ceiling sections, and uneven skylight shaft finishes. Skylights can make ceilings look brighter, but they also make poor patches, old texture, and paint problems stand out.",
     localAreas: [
       "Roseland",
       "Shoreacres",
@@ -56,14 +56,14 @@ export const skylightRepairCities = [
       "Tyandaga",
     ],
     cityAngle:
-      "This page is for Burlington homeowners upgrading from popcorn or stipple texture to a smooth ceiling finish around skylights.",
+      "This page is for Burlington homeowners upgrading from popcorn or stipple texture to a smooth painted ceiling finish around skylights, light wells, and cathedral ceiling areas.",
     finishFocus:
-      "Burlington skylight repairs commonly combine texture removal, careful inside-corner finishing, and clean protection for finished family rooms.",
+      "Burlington skylight repairs commonly combine texture removal, careful inside-corner finishing, cathedral ceiling blending, primer, painting prep, and clean protection for finished family rooms.",
     commonRequests: [
-      "Popcorn ceiling removal around skylights and light wells",
+      "Popcorn ceiling removal around skylights, light wells, and cathedral ceiling planes",
       "Skim coating after stipple texture is removed near skylight openings",
       "Drywall tape and corner repair where daylight shows rough seams",
-      "Smooth ceiling preparation before primer and painting",
+      "Smooth ceiling preparation before primer and finish painting",
     ],
     relatedPopcornPage: "/popcorn-ceiling-removal/burlington/",
     relatedDrywallPage: "/services/drywall-repair/burlington/",
@@ -71,17 +71,17 @@ export const skylightRepairCities = [
     heroImage:
       "/services/skylight-drywall-repair/skylight-drywall-repair-burlington-clean-v2.jpg",
     imageAlt:
-      "Burlington popcorn ceiling removal and drywall repair around a bright skylight opening with protected floors",
+      "Burlington popcorn ceiling removal and cathedral ceiling repair around a bright skylight opening with protected floors",
   },
   {
     city: "Oakville",
     slug: "oakville",
-    title: "Skylight Drywall Repair Oakville | Skylight Shaft & Ceiling Repair",
+    title: "Skylight & Cathedral Ceiling Repair Oakville | Popcorn & Painting",
     metaDescription:
-      "Oakville skylight drywall repair, light well refinishing, ceiling water damage repair, and smooth ceiling finishing around skylight openings.",
-    h1: "Skylight Drywall Repair in Oakville",
+      "Oakville skylight and cathedral ceiling repair, light well refinishing, popcorn removal, water stain repair, primer, and smooth painting prep.",
+    h1: "Skylight & Cathedral Ceiling Repair in Oakville",
     intro:
-      "EPF Pro Services provides skylight drywall repair and ceiling refinishing in Oakville. We repair skylight shafts, ceiling stains, cracked drywall, failed tape, and popcorn texture around skylight openings. Oakville homes often have bright living rooms, vaulted ceilings, and skylight areas where natural light shows every drywall imperfection.",
+      "EPF Pro Services provides skylight drywall repair, cathedral ceiling repair, and ceiling refinishing in Oakville. We repair skylight shafts, ceiling stains, cracked drywall, failed tape, peeling paint, and popcorn texture around skylight openings. Oakville homes often have bright living rooms, vaulted ceilings, cathedral ceiling areas, and skylights where natural light shows every drywall imperfection.",
     localAreas: [
       "Glen Abbey",
       "Bronte",
@@ -93,12 +93,12 @@ export const skylightRepairCities = [
       "Old Oakville",
     ],
     cityAngle:
-      "This page is for higher-end finish quality, smooth ceiling upgrades, and detail work around bright skylight openings.",
+      "This page is for higher-end finish quality, smooth ceiling upgrades, cathedral ceiling blending, and detail work around bright skylight openings.",
     finishFocus:
-      "Oakville rooms with vaulted ceilings, large windows, and skylights need a cleaner Level 5-style finish because natural light exposes waves, tape lines, and rough sanding.",
+      "Oakville rooms with vaulted or cathedral ceilings, large windows, and skylights need a cleaner Level 5-style finish because natural light exposes waves, tape lines, rough sanding, and uneven paint sheen.",
     commonRequests: [
-      "Premium skylight shaft repair in bright living rooms and vaulted areas",
-      "Smooth ceiling refinishing around skylight openings",
+      "Premium skylight shaft repair in bright living rooms, vaulted areas, and cathedral ceilings",
+      "Smooth ceiling refinishing and painting prep around skylight openings",
       "Light well drywall repair where daylight shows old patch lines",
       "Paint-ready skim coating after leak staining or texture removal",
     ],
@@ -108,17 +108,17 @@ export const skylightRepairCities = [
     heroImage:
       "/services/skylight-drywall-repair/skylight-drywall-repair-oakville-clean-v2.jpg",
     imageAlt:
-      "Oakville skylight shaft repair with smooth ceiling refinishing and clean protected room preparation",
+      "Oakville skylight shaft and cathedral ceiling repair with smooth ceiling refinishing and clean protected room preparation",
   },
   {
     city: "Mississauga",
     slug: "mississauga",
-    title: "Skylight Drywall Repair Mississauga | Ceiling Damage & Smooth Finish",
+    title: "Skylight & Cathedral Ceiling Repair Mississauga | Popcorn Removal",
     metaDescription:
-      "Mississauga skylight drywall repair for ceiling water stains, cracked shafts, popcorn texture around skylights, and smooth ceiling prep.",
-    h1: "Skylight Drywall Repair in Mississauga",
+      "Mississauga skylight and cathedral ceiling repair for water stains, cracked shafts, popcorn texture, primer, painting, and smooth ceiling prep.",
+    h1: "Skylight & Cathedral Ceiling Repair in Mississauga",
     intro:
-      "EPF Pro Services repairs interior drywall and ceiling damage around skylights in Mississauga. We help with water stains, peeling paint, cracked skylight shafts, damaged popcorn texture, and smooth ceiling refinishing. If your skylight leak has been repaired but the ceiling still looks damaged, we can restore the interior finish.",
+      "EPF Pro Services repairs interior drywall and ceiling damage around skylights in Mississauga. We help with water stains, peeling paint, cracked skylight shafts, damaged popcorn texture, cathedral ceiling repair, and smooth ceiling refinishing. If your skylight leak has been repaired but the ceiling still looks damaged, we can restore the interior finish with skim coating, primer, and painting preparation.",
     localAreas: [
       "Lorne Park",
       "Mineola",
@@ -131,14 +131,14 @@ export const skylightRepairCities = [
       "Meadowvale",
     ],
     cityAngle:
-      "This page connects skylight repair damage with EPF's Mississauga popcorn ceiling removal and ceiling refinishing authority.",
+      "This page connects skylight repair damage with EPF's Mississauga popcorn ceiling removal, cathedral ceiling repair, painting, and ceiling refinishing authority.",
     finishFocus:
-      "Mississauga skylight repair often starts after a leak is solved, then moves into drywall patching, stain-blocking, skim coating, and ceiling repaint preparation.",
+      "Mississauga skylight repair often starts after a leak is solved, then moves into drywall patching, cathedral ceiling blending, stain-blocking, skim coating, and ceiling repaint preparation.",
     commonRequests: [
       "Ceiling water damage repair around skylights after leaks",
       "Drywall repair around skylight shafts in homes and townhomes",
-      "Popcorn or stipple removal around skylight openings",
-      "Smooth ceiling and primer preparation before painting",
+      "Popcorn or stipple removal around skylight openings and cathedral ceiling planes",
+      "Smooth ceiling, stain-block primer, and painting preparation",
     ],
     relatedPopcornPage: "/popcorn-ceiling-removal/mississauga/",
     relatedDrywallPage: "/services/drywall-repair/mississauga/",
@@ -146,21 +146,21 @@ export const skylightRepairCities = [
     heroImage:
       "/services/skylight-drywall-repair/skylight-drywall-repair-mississauga-clean-v2.jpg",
     imageAlt:
-      "Mississauga skylight drywall repair with smooth ceiling prep, protected room, and daylight from a clean skylight",
+      "Mississauga skylight and cathedral ceiling repair with smooth ceiling prep, protected room, and daylight from a clean skylight",
   },
 ];
 
 export const skylightRepairImagePrompts = {
   hub:
-    "Realistic professional photo of an Ontario home interior with a clean bright ceiling skylight or light well, protected floor and furniture, drywall skim coat repair around the skylight shaft, smooth ceiling preparation, clean contractor tools, natural daylight through the skylight. No text, logos, watermarks, exterior roof work, skylight replacement, or faces.",
+    "Realistic professional photo of an Ontario home interior with a clean bright ceiling skylight or light well on a cathedral ceiling, protected floor and furniture, drywall skim coat repair around the skylight shaft, smooth ceiling preparation, primer and painting tools, natural daylight through the skylight. No text, logos, watermarks, exterior roof work, skylight replacement, or faces.",
   hamilton:
-    "Realistic professional photo of an older Hamilton Ontario home interior with a skylight shaft over an upper hallway, protected floors, visible drywall repair and skim coat around the skylight opening, practical renovation lighting plus daylight. No text, logos, watermarks, roof work, or faces.",
+    "Realistic professional photo of an older Hamilton Ontario home interior with a skylight shaft over an upper hallway or cathedral ceiling, protected floors, visible drywall repair and skim coat around the skylight opening, primer and ceiling paint tools, practical renovation lighting plus daylight. No text, logos, watermarks, roof work, or faces.",
   burlington:
-    "Realistic professional photo of a Burlington Ontario family home interior with a skylight over a bright room, protected hardwood floor, popcorn or stipple ceiling partly removed around the skylight shaft, skim coat patches visible, neat contractor tools staged. No text, logos, watermarks, or faces.",
+    "Realistic professional photo of a Burlington Ontario family home interior with a skylight over a bright cathedral ceiling room, protected hardwood floor, popcorn or stipple ceiling partly removed around the skylight shaft, skim coat patches visible, neat painting and drywall tools staged. No text, logos, watermarks, or faces.",
   oakville:
-    "Realistic professional photo of a bright Oakville Ontario home interior with a skylight shaft in a vaulted room, smooth drywall finishing underway, protected light wood floor, skim coat and sanding prep visible around skylight corners, strong natural light. No text, logos, watermarks, roof work, or faces.",
+    "Realistic professional photo of a bright Oakville Ontario home interior with a skylight shaft in a vaulted or cathedral room, smooth drywall finishing underway, protected light wood floor, skim coat, primer, and sanding prep visible around skylight corners, strong natural light. No text, logos, watermarks, roof work, or faces.",
   mississauga:
-    "Realistic professional photo of a Mississauga Ontario home or condo interior with skylight or light well, protected floor and furniture, repaired ceiling stain area around skylight, skim coat and primer preparation, clean drywall tools visible. No text, logos, watermarks, roof work, or faces.",
+    "Realistic professional photo of a Mississauga Ontario home or condo interior with skylight or light well on an angled ceiling, protected floor and furniture, repaired ceiling stain area around skylight, skim coat, primer, and ceiling painting preparation, clean drywall tools visible. No text, logos, watermarks, roof work, or faces.",
 };
 
 export const skylightRepairCityMap = new Map(
