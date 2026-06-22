@@ -6,7 +6,7 @@ import { PHONE_HREF, PHONE_NUMBER, BUSINESS_NAME } from "@/app/config";
 export const revalidate = 86400;
 
 // Keep a stable path for the hero image.
-const HERO_IMG = "/about/Popcorn-ceiling-removal-team.png";
+const HERO_IMG = "/about/Popcorn_ceiling_removal_team.png";
 
 export const metadata = {
   title:

@@ -112,22 +112,145 @@ const steps = [
   },
 ];
 
-// ---------- FUNNEL (blue/neutral gradients, + Happy Client) ----------
+// ---------- FUNNEL (blue/green process graphic) ----------
 function Funnel() {
   const bands = [
-    { label: "Plan", icon: "🧭", colors: ["#e0f2fe", "#60a5fa"] },
-    { label: "Protect", icon: "🛡️", colors: ["#dbeafe", "#3b82f6"] },
-    { label: "Remove", icon: "🧹", colors: ["#dbeafe", "#2563eb"] },
-    { label: "Refine", icon: "🧱", colors: ["#e2e8f0", "#94a3b8"] },
-    { label: "Prime", icon: "🪣", colors: ["#f1f5f9", "#cbd5e1"] },
-    { label: "Paint", icon: "🖌️", colors: ["#f8fafc", "#e2e8f0"] },
-    { label: "Clean", icon: "✨", colors: ["#ffffff", "#eef2ff"] },
-    { label: "Happy Client", icon: "😊", colors: ["#dcfce7", "#86efac"] },
+    {
+      label: "Plan",
+      text: "We start with a detailed plan tailored to your needs.",
+      icon: "compass",
+      colors: ["#4f8ff8", "#72adff"],
+    },
+    {
+      label: "Protect",
+      text: "We protect your property and surrounding areas.",
+      icon: "shield",
+      colors: ["#85b9ff", "#a7cdfb"],
+    },
+    {
+      label: "Remove",
+      text: "We remove dirt, debris, and loose or damaged material.",
+      icon: "brush",
+      colors: ["#afd4ff", "#d1e8ff"],
+    },
+    {
+      label: "Refine",
+      text: "We smooth and perfect the surface for a flawless finish.",
+      icon: "blocks",
+      colors: ["#d5edf8", "#e8f8fb"],
+    },
+    {
+      label: "Prime",
+      text: "We apply a high-quality primer for strong, lasting results.",
+      icon: "bucket",
+      colors: ["#def8f8", "#edfdfb"],
+    },
+    {
+      label: "Paint",
+      text: "We apply premium paints with precision and care.",
+      icon: "roller",
+      colors: ["#d8f5f2", "#e9fbf2"],
+    },
+    {
+      label: "Clean",
+      text: "We leave your space spotless and ready to enjoy.",
+      icon: "sparkle",
+      colors: ["#e9f9e6", "#d4f6c7"],
+    },
+    {
+      label: "Happy Client",
+      text: "Your satisfaction is our greatest reward.",
+      icon: "smile",
+      colors: ["#b4eb9f", "#86dc73"],
+    },
   ];
+
+  function Icon({ type, x, y }) {
+    const stroke = type === "smile" || type === "sparkle" ? "#55b94d" : "#1d73f8";
+
+    if (type === "compass") {
+      return (
+        <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="0" cy="0" r="18" />
+          <path d="M-7 8 2 -10 8 -4 -1 13Z" fill="#dbeafe" />
+          <path d="M-3 -14 2 -18 7 -14" />
+        </g>
+      );
+    }
+    if (type === "shield") {
+      return (
+        <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M0 -20 16 -13v11c0 12 -7 20 -16 24 -9 -4 -16 -12 -16 -24v-11Z" fill="#dbeafe" />
+          <path d="m-7 1 5 6 10 -13" />
+        </g>
+      );
+    }
+    if (type === "brush") {
+      return (
+        <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M-13 14c8 2 14 -2 13 -10" />
+          <path d="m0 4 18 -18 -6 -6 -18 18Z" fill="#dbeafe" />
+          <path d="M10 -12 16 -6" />
+        </g>
+      );
+    }
+    if (type === "blocks") {
+      return (
+        <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="2.5" fill="#dbeafe" strokeLinejoin="round">
+          <path d="M-16 -3h14v12h-14Z" />
+          <path d="M2 -3h14v12H2Z" />
+          <path d="M-7 -17H7v12H-7Z" />
+          <path d="M-7 11H7v12H-7Z" />
+        </g>
+      );
+    }
+    if (type === "bucket") {
+      return (
+        <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M-13 -8h26l-3 24h-20Z" fill="#dbeafe" />
+          <path d="M-8 -8c1 -8 15 -8 16 0" />
+          <path d="M-9 3h18" />
+        </g>
+      );
+    }
+    if (type === "roller") {
+      return (
+        <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M-18 -10H8v11h-26Z" fill="#dbeafe" />
+          <path d="M8 -5h9v10H3v8" />
+          <path d="M3 13v10" />
+        </g>
+      );
+    }
+    if (type === "sparkle") {
+      return (
+        <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M-5 -17 0 -5 12 0 0 5 -5 17 -10 5 -22 0 -10 -5Z" fill="#eef9e9" />
+          <path d="M14 -18v10M9 -13h10M17 9v8M13 13h8" />
+        </g>
+      );
+    }
+    return (
+      <g transform={`translate(${x} ${y})`} stroke={stroke} strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="0" cy="0" r="18" fill="#eef9e9" />
+        <path d="M-8 2c3 8 13 8 16 0" />
+        <path d="M-7 -6h.1M7 -6h.1" />
+      </g>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-6xl">
-      <svg viewBox="0 0 1000 580" className="w-full">
+      <svg
+        viewBox="0 0 1000 560"
+        className="w-full"
+        role="img"
+        aria-labelledby="process-funnel-title process-funnel-desc"
+      >
+        <title id="process-funnel-title">EPF Pro Services process funnel</title>
+        <desc id="process-funnel-desc">
+          Eight steps: plan, protect, remove, refine, prime, paint, clean, and happy client.
+        </desc>
         <defs>
           {bands.map((b, i) => (
             <linearGradient id={`band${i}`} key={i} x1="0" y1="0" x2="1" y2="1">
@@ -135,50 +258,98 @@ function Funnel() {
               <stop offset="100%" stopColor={b.colors[1]} />
             </linearGradient>
           ))}
+          <linearGradient id="badgeGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="100%" stopColor="#f4f8ff" />
+          </linearGradient>
           <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="8" stdDeviation="10" floodOpacity="0.18" />
+            <feDropShadow dx="0" dy="8" stdDeviation="10" floodOpacity="0.14" />
+          </filter>
+          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="5" stdDeviation="5" floodOpacity="0.16" />
           </filter>
         </defs>
         {bands.map((b, i) => {
-          const top = 36 + i * 64;
-          const margin = 36 + i * 36; // narrowing → funnel
+          const top = 18 + i * 60;
+          const height = 54;
+          const margin = 78 + i * 19;
           const left = margin;
           const right = 1000 - margin;
-          const nextTop = top + 56;
+          const nextTop = top + height;
+          const iconX = left + 118;
+          const numberX = left + 205;
+          const dividerX = left + 252;
+          const textX = left + 275;
+          const centerY = top + height / 2;
           return (
             <g key={i} filter="url(#cardShadow)">
               <polygon
                 points={`${left},${top} ${right},${top} ${
-                  right - 70
-                },${nextTop} ${left + 70},${nextTop}`}
+                  right - 22
+                },${nextTop} ${left + 22},${nextTop}`}
                 fill={`url(#band${i})`}
-                stroke="#e5e7eb"
+                stroke="rgba(255,255,255,0.74)"
+              />
+              <circle cx={iconX} cy={centerY} r="26" fill="#ffffff" filter="url(#softShadow)" />
+              <Icon type={b.icon} x={iconX} y={centerY} />
+              <circle
+                cx={numberX}
+                cy={centerY}
+                r="18"
+                fill={i < 6 ? "#1477f8" : "#59c34d"}
+                stroke="#dff1ff"
+                strokeWidth="3"
               />
               <text
-                x={(left + right) / 2}
-                y={top + 36}
+                x={numberX}
+                y={centerY + 6}
                 textAnchor="middle"
-                fontSize="26"
+                fontSize="19"
                 fontWeight="800"
-                fill="#0f172a"
+                fill="#ffffff"
               >
-                {b.icon} {b.label}
+                {i + 1}
+              </text>
+              <line
+                x1={dividerX}
+                x2={dividerX}
+                y1={top + 11}
+                y2={nextTop - 11}
+                stroke="#64748b"
+                strokeOpacity="0.34"
+              />
+              <text
+                x={textX}
+                y={centerY - 5}
+                fontSize="28"
+                fontWeight="800"
+                fill="#08111f"
+              >
+                {b.label}
+              </text>
+              <text x={textX} y={centerY + 17} fontSize="13" fill="#111827">
+                {b.text}
               </text>
             </g>
           );
         })}
-        {/* Spout label */}
-        <g>
-          <polygon points={`430,560 570,560 545,580 455,580`} fill="#0ea5e9" />
+        <line x1="376" x2="456" y1="528" y2="528" stroke="#c7d6f2" />
+        <line x1="544" x2="624" y1="528" y2="528" stroke="#c7d6f2" />
+        <g filter="url(#softShadow)">
+          <rect x="456" y="508" width="88" height="38" rx="10" fill="url(#badgeGradient)" stroke="#dbe7fb" />
+          <path
+            d="M478 517 489 513l11 4v8c0 8 -5 13 -11 16 -6 -3 -11 -8 -11 -16Z"
+            fill="#1477f8"
+          />
+          <path d="m484 526 4 4 7 -8" stroke="#ffffff" strokeWidth="2.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           <text
-            x={500}
-            y={575}
-            textAnchor="middle"
+            x={509}
+            y={532}
             fontSize="16"
             fontWeight="700"
-            fill="#ffffff"
+            fill="#1477f8"
           >
-            •Best-Quality•
+            Best Quality
           </text>
         </g>
       </svg>
