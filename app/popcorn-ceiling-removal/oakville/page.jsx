@@ -427,16 +427,90 @@ export default function Page() {
           <div className="mt-10 text-center">
             <Link
               className="font-semibold text-blue-600 hover:underline"
-              href="/blog/popcorn-removal-oakville-cost-finish-guide/"
+              href="/blog/popcorn-ceiling-removal-cost-oakville/"
             >
-              Read the Oakville cost and finish guide →
+              Read the Oakville popcorn ceiling removal cost guide →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* GALLERY */}
+      {/* OAKVILLE GUIDES */}
       <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="max-w-3xl mb-10">
+            <p className="text-sm uppercase tracking-[0.18em] font-bold text-blue-600 mb-3">
+              Helpful Oakville ceiling guides
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Plan Cost, Painted Texture, and Finish Quality Before You Book
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-gray-700">
+              These Oakville guides explain the questions homeowners usually
+              ask before requesting a quote: what affects price, why painted
+              popcorn costs more, and how dust control and Level 5 finishing
+              change the final smooth ceiling.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              [
+                "/blog/popcorn-ceiling-removal-cost-oakville/",
+                "Popcorn Ceiling Removal Cost in Oakville",
+                "Price factors for painted texture, ceiling height, repairs, skim coating, primer, paint, and protection.",
+              ],
+              [
+                "/blog/painted-popcorn-ceiling-removal-oakville/",
+                "Painted Popcorn Ceiling Removal in Oakville",
+                "Why painted stucco or stipple texture usually needs a more careful removal and skim-coat plan.",
+              ],
+              [
+                "/blog/stucco-popcorn-stipple-ceiling-oakville/",
+                "Stucco vs Popcorn vs Stipple Ceiling",
+                "What Oakville homeowners usually mean by each ceiling texture term and how it affects the quote.",
+              ],
+              [
+                "/blog/dustless-popcorn-ceiling-removal-oakville/",
+                "Dustless Popcorn Ceiling Removal in Oakville",
+                "What dust-controlled really means: sealed rooms, protected surfaces, HEPA sanding, and cleanup.",
+              ],
+              [
+                "/blog/popcorn-ceiling-removal-before-selling-oakville-home/",
+                "Before Selling an Oakville Home",
+                "How to prioritize smooth ceiling work before listing photos, staging, and resale preparation.",
+              ],
+              [
+                "/blog/prepare-home-popcorn-ceiling-removal-oakville/",
+                "Prepare Your Oakville Home",
+                "What to move, what photos to send, and what access details to confirm before ceiling work.",
+              ],
+              [
+                "/blog/popcorn-removal-oakville-cost-finish-guide/",
+                "Oakville Cost and Finish Quality Guide",
+                "Existing local guide covering dust control, smooth ceiling finish quality, and quote scope.",
+              ],
+            ].map(([href, title, description]) => (
+              <Link
+                key={href}
+                href={href}
+                className="group rounded-3xl border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-700">
+                  {title}
+                </h3>
+                <p className="mt-4 leading-7 text-gray-700">{description}</p>
+                <span className="mt-5 inline-block font-semibold text-blue-600">
+                  Read guide →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
             Oakville Projects & Results
@@ -853,9 +927,17 @@ export default function Page() {
                 <li>
                   <Link
                     className="text-blue-700 font-semibold hover:underline"
-                    href="/blog/popcorn-removal-oakville-cost-finish-guide/"
+                    href="/blog/popcorn-ceiling-removal-cost-oakville/"
                   >
                     Oakville cost guide →
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-blue-700 font-semibold hover:underline"
+                    href="/blog/painted-popcorn-ceiling-removal-oakville/"
+                  >
+                    Painted popcorn guide →
                   </Link>
                 </li>
                 <li>
