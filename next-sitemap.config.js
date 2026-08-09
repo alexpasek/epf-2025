@@ -47,7 +47,14 @@ function collectBlogSlugs() {
         }
     }
 
-    return [...slugs].sort();
+    return [...slugs]
+        .filter(
+            (slug) =>
+                !fs.existsSync(
+                    path.join(root, "app", "blog", slug, "page.jsx"),
+                ),
+        )
+        .sort();
 }
 
 module.exports = {
