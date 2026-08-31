@@ -10,6 +10,7 @@ const localPaintingGuides = [
     city: "Mississauga",
     slug: "mississauga",
     href: "/blog/interior-painting-mississauga-prep-finish-guide/",
+    serviceHref: "/services/interior-painting/mississauga/",
     title: "Interior painting in Mississauga",
   },
   {
@@ -192,6 +193,7 @@ export default function Page() {
             <Link
               key={c.slug}
               href={
+                localPaintingGuideBySlug.get(c.slug)?.serviceHref ||
                 localPaintingGuideBySlug.get(c.slug)?.href ||
                 `/quote/?service=interior-painting&city=${c.slug}`
               }
@@ -303,6 +305,26 @@ export default function Page() {
             </Link>
           ))}
         </div>
+        <p className="mt-5 text-gray-700">
+          Repainting several connected rooms or a complete home interior? Use our{" "}
+          <Link
+            href="/services/house-painter/mississauga/"
+            className="font-semibold text-blue-700 hover:underline"
+          >
+            house painter Mississauga page
+          </Link>{" "}
+          for whole-home sequencing, occupied-house scheduling, and quote scope.
+        </p>
+        <p className="mt-3 text-gray-700">
+          For a step-by-step homeowner checklist, read the{" "}
+          <Link
+            href="/blog/whole-house-interior-painting-mississauga-planning-guide/"
+            className="font-semibold text-blue-700 hover:underline"
+          >
+            whole-house interior painting Mississauga planning guide
+          </Link>
+          .
+        </p>
       </section>
 
       {/* CTA */}

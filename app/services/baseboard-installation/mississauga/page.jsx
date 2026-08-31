@@ -629,7 +629,7 @@ export default function Page() {
                 </Link>{" "}
                 or{" "}
                 <Link
-                  href="/services/interior-painting/"
+                  href="/services/interior-painting/mississauga/"
                   className="text-blue-600 font-semibold hover:underline"
                 >
                   interior painting
@@ -708,7 +708,7 @@ export default function Page() {
               <p className="text-gray-700 leading-relaxed mb-6">
                 We coordinate baseboard installation with{" "}
                 <Link
-                  href="/services/interior-painting/"
+                  href="/services/interior-painting/mississauga/"
                   className="text-blue-600 font-semibold hover:underline"
                 >
                   interior painting

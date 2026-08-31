@@ -212,6 +212,17 @@ const drywallRepairCities = [
   },
 ];
 
+const paintingCities = [
+  {
+    href: "/services/interior-painting/mississauga/",
+    label: "Interior painter Mississauga",
+  },
+  {
+    href: "/services/house-painter/mississauga/",
+    label: "House painter Mississauga",
+  },
+];
+
 const drywallSnippets = [
   {
     title: "Mississauga condo turnover",
@@ -478,7 +489,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             <div>
               <h3 className="text-lg font-semibold">Drywall installation hubs</h3>
               <div className="mt-3 grid gap-3">
@@ -498,6 +509,20 @@ export default function ServicesPage() {
               <h3 className="text-lg font-semibold">Drywall repair hubs</h3>
               <div className="mt-3 grid gap-3">
                 {drywallRepairCities.map((city) => (
+                  <Link
+                    key={city.href}
+                    href={city.href}
+                    className="rounded-xl border border-slate-200 p-4 hover:bg-slate-50 transition"
+                  >
+                    {city.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Interior painting hubs</h3>
+              <div className="mt-3 grid gap-3">
+                {paintingCities.map((city) => (
                   <Link
                     key={city.href}
                     href={city.href}

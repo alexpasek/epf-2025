@@ -98,6 +98,24 @@ export default async function CityPage({ params }) {
       {/* Local signals */}
       <LocalSignals signals={c.signals} />
 
+      {c.slug === "mississauga" ? (
+        <section className="mt-10 rounded-2xl border border-blue-100 bg-blue-50 p-6">
+          <h2 className="text-2xl font-semibold">Interior painting in Mississauga</h2>
+          <p className="mt-3 max-w-3xl text-gray-700">
+            After wallpaper removal, drywall preparation, or other wall work,
+            plan the final coatings with our dedicated{" "}
+            <Link
+              href="/services/interior-painting/mississauga/"
+              className="font-semibold text-blue-700 hover:underline"
+            >
+              interior painter Mississauga service
+            </Link>
+            . The local page covers walls, ceilings, trim, doors, repairs, condo
+            access, occupied-home scheduling, and photo estimates.
+          </p>
+        </section>
+      ) : null}
+
       {/* CTAs */}
       <div className="mt-10 flex gap-3">
         <a className="btn-cta" href={phoneHref}>

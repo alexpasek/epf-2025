@@ -1329,6 +1329,16 @@ export default function Page() {
                 </Link>{" "}
                 covering the entire GTA region.
               </p>
+              <p className="mt-5 text-gray-700 leading-relaxed">
+                Once repairs are smooth and primed, continue with our{" "}
+                <Link
+                  href="/services/interior-painting/mississauga/"
+                  className="text-blue-600 hover:text-blue-700 font-semibold underline"
+                >
+                  interior painter in Mississauga
+                </Link>{" "}
+                for coordinated wall, ceiling, trim, door, and final cleanup scope.
+              </p>
             </div>
           </div>
         </div>

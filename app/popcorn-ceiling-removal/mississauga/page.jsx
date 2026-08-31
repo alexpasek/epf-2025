@@ -266,7 +266,7 @@ export default function Page() {
     {
       title: "Coordinated trade timing",
       body: "Need pot lights, painting, or built-ins afterward? We sync our schedule with your electrician or painter to keep the reno moving.",
-      href: "/services/interior-painting/",
+      href: "/services/interior-painting/mississauga/",
       cta: "Finish coat options",
     },
     {
@@ -306,7 +306,7 @@ export default function Page() {
     {
       title: "Popcorn removal + interior painting",
       body: "Keep momentum going—our painting team can roll right after primer for a turnkey ceiling refresh.",
-      href: "/services/interior-painting/",
+      href: "/services/interior-painting/mississauga/",
     },
     {
       title: "Ceiling smoothing + drywall repairs",
