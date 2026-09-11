@@ -873,6 +873,16 @@ export default async function Post({ params }) {
                   href={link.href}
                   className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300"
                 >
+                  {isAllowedBlogImageSrc(link.image) ? (
+                    <img
+                      src={link.image}
+                      alt={link.imageAlt || link.anchor}
+                      width={768}
+                      height={432}
+                      loading="lazy"
+                      className="mb-4 aspect-video w-full rounded-lg object-cover"
+                    />
+                  ) : null}
                   <h3 className="font-bold text-slate-950">{link.anchor}</h3>
                   <p className="mt-2 text-sm leading-7 text-slate-600">
                     {link.description}
