@@ -777,6 +777,13 @@ export default function Page() {
             </div>
           </section>
 
+          <section className="rounded-3xl border border-blue-200 bg-blue-50 p-8">
+            <p className="font-semibold text-blue-700">Additional drywall repair service</p>
+            <h2 className="mt-2 text-3xl font-bold">Garage drywall repair and re-taping</h2>
+            <p className="mt-4 max-w-4xl leading-8 text-slate-700">Peeling garage tape, cracked seams, damaged board and rough utility finishing need a defined repair scope. Explore local joint repairs, board replacement where necessary and preparation for a cleaner painted garage.</p>
+            <Link href="/services/garage-drywall-repair/" className="mt-5 inline-flex rounded-full bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800">Explore garage drywall repair</Link>
+          </section>
+
           {/* AUDIENCE */}
           <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-10 shadow-2xl">
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>

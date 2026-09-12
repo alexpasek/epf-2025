@@ -73,6 +73,12 @@ const services = [
     ],
   },
   {
+    slug: "/services/garage-drywall-repair/",
+    name: "Garage Drywall Repair",
+    tagline: "An additional drywall repair service for peeling garage tape, failed seams and rough walls.",
+    bullets: ["Assess loose tape and damaged board", "Re-tape failed wall and ceiling joints", "Improve sound but rough garage finishing", "Prepare for primer or include painting in the scope"],
+  },
+  {
     slug: "/services/skylight-drywall-repair/",
     name: "Skylight & Cathedral Ceiling Repair",
     tagline:
@@ -861,6 +867,7 @@ function anchorFor(name) {
   if (id.includes("popcorn")) return "popcorn";
   if (id.includes("drywall-installation")) return "drywall-installation";
   if (id.includes("skylight-drywall-repair")) return "skylight-drywall-repair";
+  if (id.includes("garage-drywall-repair")) return "garage-drywall-repair";
   if (id.includes("drywall-repair")) return "drywall-repair";
   if (id.includes("wallpaper")) return "wallpaper";
   if (id.includes("painting")) return "painting";

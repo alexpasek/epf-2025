@@ -37,6 +37,7 @@ const SLUG_LABELS = {
   popcorn: "Popcorn Ceiling Removal",
   "drywall-installation": "Drywall Installation",
   "skylight-drywall-repair": "Skylight & Cathedral Ceiling Repair",
+  "garage-drywall-repair": "Garage Drywall Repair",
   "baseboard-installation": "Baseboard Installation",
   wallpaper: "Wallpaper Removal",
   "interior-painting": "Interior Painting",
@@ -118,6 +119,7 @@ function BreadcrumbJsonLd({ crumbs }) {
 export default function HeaderNav() {
   const pathname = usePathname();
   const isLanding = isAdsLandingPath(pathname || "");
+  const isGaragePage = pathname?.startsWith("/services/garage-drywall-repair/") || /^\/blog\/[^/]*garage[^/]*\/?$/.test(pathname || "");
   const isDrywallInstallationPage =
     pathname?.startsWith("/services/drywall-installation") ||
     isDrywallEditorialPath(pathname || "");
@@ -155,6 +157,7 @@ export default function HeaderNav() {
       label: "Popcorn Ceiling Removal",
     },
     { href: "/services/drywall-repair/", label: "Drywall Repair" },
+    { href: "/services/garage-drywall-repair/", label: "Garage Drywall Repair" },
     { href: "/services/drywall-installation/", label: "Drywall Installation" },
     {
       href: "/services/skylight-drywall-repair/",
@@ -168,7 +171,9 @@ export default function HeaderNav() {
     },
   ];
 
-  const locations = isDrywallInstallationPage
+  const locations = isGaragePage
+    ? ["Mississauga", "Oakville", "Burlington", "Hamilton", "Milton", "Toronto", "Etobicoke", "North York", "Grimsby", "St. Catharines"].map(name => ({ href: `/services/garage-drywall-repair/${name.toLowerCase().replace(/\./g, "").replace(/ /g, "-")}/`, label: `Garage Drywall Repair ${name}` }))
+    : isDrywallInstallationPage
     ? [
         {
           href: "/services/drywall-installation/",
@@ -273,7 +278,7 @@ export default function HeaderNav() {
         },
       ];
   const isTrimFocusedPage =
-    isDrywallInstallationPage || isBaseboardInstallationPage;
+    isGaragePage || isDrywallInstallationPage || isBaseboardInstallationPage;
   const brandTitle = isTrimFocusedPage
     ? "EPF Pro Services — Home"
     : "Popcorn ceiling Removal EPF Pro Services — Home";
@@ -321,7 +326,9 @@ export default function HeaderNav() {
               href={PHONE_HREF}
               className="btn-cta whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
               title={
-                isDrywallInstallationPage
+                isGaragePage
+                  ? "Call about garage drywall repair"
+                  : isDrywallInstallationPage
                   ? "Call for a fast drywall installation estimate"
                   : isBaseboardInstallationPage
                     ? "Call for a fast baseboard installation estimate"
@@ -334,14 +341,18 @@ export default function HeaderNav() {
               href="/quote/"
               className="btn-cta whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
               title={
-                isDrywallInstallationPage
+                isGaragePage
+                  ? "Get a garage drywall repair quote"
+                  : isDrywallInstallationPage
                   ? "Get a drywall installation quote"
                   : isBaseboardInstallationPage
                     ? "Get a baseboard installation quote"
                   : "Get a free popcorn ceiling removal quote"
               }
             >
-              {isDrywallInstallationPage
+              {isGaragePage
+                ? "Garage Repair Quote"
+                : isDrywallInstallationPage
                 ? "Drywall Quote"
                 : isBaseboardInstallationPage
                   ? "Baseboard Quote"
@@ -430,14 +441,18 @@ export default function HeaderNav() {
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
                 <DropdownLink
                   href={
-                    isDrywallInstallationPage
+                    isGaragePage
+                      ? "/services/garage-drywall-repair/"
+                      : isDrywallInstallationPage
                       ? "/services/drywall-installation/"
                       : isBaseboardInstallationPage
                         ? "/services/baseboard-installation/"
                       : "/service-areas/"
                   }
                   label={
-                    isDrywallInstallationPage
+                    isGaragePage
+                      ? "All Garage Repair Areas →"
+                      : isDrywallInstallationPage
                       ? "All Drywall Areas →"
                       : isBaseboardInstallationPage
                         ? "All Baseboard Areas →"
@@ -552,12 +567,16 @@ export default function HeaderNav() {
               setOpen={setMobileLocationsOpen}
               items={[
                 {
-                  href: isDrywallInstallationPage
+                  href: isGaragePage
+                    ? "/services/garage-drywall-repair/"
+                    : isDrywallInstallationPage
                     ? "/services/drywall-installation/"
                     : isBaseboardInstallationPage
                       ? "/services/baseboard-installation/"
                     : "/service-areas/",
-                  label: isDrywallInstallationPage
+                  label: isGaragePage
+                    ? "All Garage Repair Areas"
+                    : isDrywallInstallationPage
                     ? "All Drywall Areas"
                     : isBaseboardInstallationPage
                       ? "All Baseboard Areas"
