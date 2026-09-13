@@ -1,4 +1,4 @@
-
+import "./about.css";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { socialImages } from "@/lib/responsiveImages";
 // app/about/page.tsx (Next.js App Router)
@@ -183,12 +183,12 @@ function JsonLd() {
 
 export default function AboutPage() {
   return (
-    <div className="container-x py-10">
+    <div className="epf-about container-x">
       <JsonLd />
 
       {/* HERO */}
-      <header className="grid grid-cols-1 md:grid-cols-[1.2fr,1fr] gap-8 items-center">
-        <div>
+      <header className="epf-about-hero">
+        <div className="epf-about-introduction">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
             About <span className="text-blue-700">EPF Pro Services</span>
           </h1>
@@ -220,22 +220,17 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Stylish figure with gradient frame + glow + caption */}
-        <figure className="relative group">
-          {/* soft glow */}
-          <div className="absolute -inset-4 md:-inset-6 bg-gradient-to-tr from-red-400/10 via-rose-300/10 to-blue-400/10 blur-2xl rounded-[28px] opacity-80 group-hover:opacity-100 transition"></div>
-
-          {/* gradient frame */}
-          <div className="relative rounded-[22px] p-[2px] bg-gradient-to-tr from-red-500/30 via-rose-300/20 to-blue-500/30">
-            <div className="rounded-[20px] overflow-hidden bg-white shadow-[0_40px_120px_-40px_rgba(0,0,0,.35)] ring-1 ring-black/5">
-              <ResponsiveImage
-                src={HERO_IMG}
-                alt="EPF Pro Services crew performing dust-controlled popcorn ceiling removal"
-                loading="eager"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+        <figure className="epf-about-team">
+          <ResponsiveImage
+            src={HERO_IMG}
+            alt="EPF Pro Services crew performing dust-controlled popcorn ceiling removal"
+            loading="eager"
+            priority
+            width={640}
+            height={611}
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 48vw, 600px"
+            className="epf-about-team-image"
+          />
 
           <figcaption className="mt-3 text-sm text-slate-500">
             Dust-controlled <strong>popcorn ceiling removal</strong> to{" "}
@@ -245,7 +240,7 @@ export default function AboutPage() {
       </header>
 
       {/* WHY REMOVE POPCORN CEILINGS */}
-      <section className="mt-12 card p-6 bg-white">
+      <section className="epf-about-benefits mt-12 card p-6 bg-white">
         <h2 className="text-2xl font-semibold">Why remove popcorn ceilings?</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <div className="rounded-xl border border-slate-200 p-4">
@@ -281,7 +276,7 @@ export default function AboutPage() {
       </section>
 
       {/* OUR PROCESS */}
-      <section className="mt-10 card p-6 bg-white">
+      <section className="epf-about-process mt-10 card p-6 bg-white">
         <h2 className="text-2xl font-semibold">Our popcorn removal process</h2>
         <ol className="mt-4 space-y-3 text-gray-700 list-decimal pl-6">
           <li>
@@ -320,7 +315,7 @@ export default function AboutPage() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section className="mt-10">
+      <section className="epf-about-standards mt-10">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="card p-6 bg-white">
             <h3 className="text-xl font-semibold">What’s included</h3>
@@ -356,7 +351,7 @@ export default function AboutPage() {
       </section>
 
       {/* LOCAL AREAS & TIMELINES */}
-      <section className="mt-10 card p-6 bg-white">
+      <section className="epf-about-coverage mt-10 card p-6 bg-white">
         <h2 className="text-2xl font-semibold">
           Local areas & typical timelines
         </h2>
@@ -443,7 +438,7 @@ export default function AboutPage() {
       </section>
 
       {/* CLIENT-FRIENDLY EXTRAS */}
-      <section className="mt-10 card p-6 bg-white">
+      <section className="epf-about-extras mt-10 card p-6 bg-white">
         <h2 className="text-2xl font-semibold">Client-friendly extras</h2>
         <div className="mt-3 grid gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-slate-200 p-4">
@@ -468,11 +463,12 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ (kept, SEO & sales oriented) */}
-      <section className="mt-10">
+      <section className="epf-about-faq mt-10">
         <h2 className="text-2xl font-semibold">
           FAQ — Popcorn Ceiling Removal
         </h2>
 
+        <div className="epf-about-questions">
         <details className="card p-6 bg-white mt-4">
           <summary className="font-medium">
             What’s included in your popcorn ceiling removal service?
@@ -617,10 +613,11 @@ export default function AboutPage() {
             .
           </p>
         </details>
+        </div>
       </section>
 
       {/* CTA BAR */}
-      <section className="mt-10 card p-6 bg-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <section className="epf-about-cta mt-10 card p-6 bg-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h3 className="text-xl font-semibold">
             Ready for smooth, modern ceilings?

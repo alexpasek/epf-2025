@@ -1,0 +1,133 @@
+/* About-page presentation. All original copy, heading levels, metadata and links remain intact. */
+.epf-about {
+  --about-paper: #faf8f4;
+  --about-ink: #262923;
+  --about-muted: #5e6259;
+  --about-red: #a53225;
+  --about-line: #deded4;
+  --about-panel: #efeee6;
+  max-width: none;
+  padding: 48px max(24px, calc((100% - 1216px) / 2)) 72px;
+  background: var(--about-paper);
+  color: var(--about-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.epf-about *, .epf-about *::before, .epf-about *::after { box-sizing: border-box; }
+.epf-about h1, .epf-about h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1.1;
+  color: var(--about-ink);
+  text-wrap: balance;
+}
+.epf-about h1 { font-size: clamp(44px, 5.2vw, 68px); }
+.epf-about h1 span { display: block; color: var(--about-ink); }
+.epf-about h2 { font-size: clamp(30px, 3.2vw, 42px); }
+.epf-about h3 { font-size: 21px; line-height: 1.35; font-weight: 500; color: var(--about-ink); }
+.epf-about p, .epf-about li { line-height: 1.75; }
+.epf-about :is(.text-gray-700, .text-gray-600, .text-slate-500, .text-slate-600) { color: var(--about-muted); }
+.epf-about strong { color: var(--about-ink); font-weight: 600; }
+.epf-about a { text-underline-offset: 4px; }
+.epf-about a:focus-visible, .epf-about summary:focus-visible { outline: 2px solid var(--about-red); outline-offset: 5px; }
+.epf-about .btn-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 12px 21px; border: 1px solid var(--about-red);
+  background: var(--about-red); color: white; border-radius: 3px;
+  box-shadow: none; font-size: 15px; font-weight: 500; line-height: 1.4;
+  transform: none; text-align: center; text-decoration: none;
+}
+.epf-about .btn-cta:hover { background: #84281f; border-color: #84281f; }
+.epf-about .btn-cta[href^="tel:"], .epf-about .btn-cta[href="/our-process/"] { background: transparent; color: var(--about-ink); border-color: #a8aa9f; }
+.epf-about .btn-cta[href^="tel:"]:hover, .epf-about .btn-cta[href="/our-process/"]:hover { background: #ece9e0; }
+.epf-about .flex.gap-3 { flex-wrap: wrap; }
+.epf-about-hero { display: grid; grid-template-columns: 1fr 1.08fr; align-items: center; gap: clamp(28px, 5vw, 64px); padding-bottom: 64px; }
+.epf-about-introduction { min-width: 0; }
+.epf-about-introduction > p { font-size: 16px; margin-top: 22px; }
+.epf-about-introduction em { color: var(--about-red); }
+.epf-about-introduction > .flex { margin-top: 28px; }
+.epf-about-team { min-width: 0; margin: 0; }
+.epf-about-team-image { display: block; width: 100%; height: auto; aspect-ratio: 640 / 611; object-fit: contain; border-radius: 3px; }
+.epf-about-team figcaption { font-size: 12px; line-height: 1.7; padding: 14px 0 0; margin-top: 0; color: var(--about-muted); border-bottom: 1px solid var(--about-line); padding-bottom: 16px; }
+.epf-about > section { margin-top: 0; padding: 56px 0; border: 0; border-top: 1px solid var(--about-line); border-radius: 0; box-shadow: none; background: transparent; }
+.epf-about-benefits > .grid { gap: 30px 44px; margin-top: 32px; }
+.epf-about-benefits > .grid > div { padding: 0 0 0 20px; border: 0; border-left: 2px solid #bcbcaf; border-radius: 0; }
+.epf-about-benefits p { margin-top: 12px; font-size: 15px; }
+.epf-about .epf-about-process { background: var(--about-panel); padding: 44px; border: 0; border-radius: 3px; margin-bottom: 16px; }
+.epf-about-process ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; list-style: none; padding: 0; margin: 34px 0; counter-reset: about-step; }
+.epf-about-process li { margin: 0; font-size: 15px; padding-top: 18px; border-top: 1px solid #bfc1b4; counter-increment: about-step; }
+.epf-about-process li::before { content: counter(about-step, decimal-leading-zero); display: block; color: var(--about-red); font-size: 13px; margin-bottom: 14px; }
+.epf-about-process li strong { display: block; font-size: 17px; font-weight: 500; margin-bottom: 8px; }
+.epf-about-process > .flex { gap: 16px; }
+.epf-about-standards > .grid { gap: 32px; }
+.epf-about-standards .card { padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+.epf-about-standards h3 { padding-bottom: 18px; border-bottom: 1px solid var(--about-line); }
+.epf-about-standards ul { margin-top: 18px; padding-left: 18px; font-size: 15px; }
+.epf-about-standards li { padding-left: 4px; }
+.epf-about-standards li::marker { color: var(--about-red); }
+.epf-about-coverage > p { max-width: 850px; margin-top: 18px; }
+.epf-about-coverage a { text-decoration: underline; text-decoration-color: #b5b4a7; }
+.epf-about-coverage a:hover { color: var(--about-red); }
+.epf-about-coverage > .grid { gap: 0; margin-top: 30px; background: var(--about-panel); border-radius: 3px; }
+.epf-about-coverage > .grid > div { padding: 25px 28px; border: 0; border-right: 1px solid #d2d4c8; border-radius: 0; }
+.epf-about-coverage > .grid > div:last-child { border-right: 0; }
+.epf-about-coverage .text-slate-900 { font-family: Georgia, 'Times New Roman', serif; font-size: 32px; margin-top: 6px; color: var(--about-ink); }
+.epf-about-extras > .grid { margin-top: 30px; gap: 30px; }
+.epf-about-extras > .grid > div { border: 0; padding: 0; border-radius: 0; }
+.epf-about-extras p { font-size: 15px; margin-top: 12px; }
+.epf-about .epf-about-faq { display: grid; grid-template-columns: .85fr 1.4fr; align-items: start; gap: 50px; }
+.epf-about-faq h2 { max-width: 350px; }
+.epf-about-questions { min-width: 0; }
+.epf-about-faq details { border: 0; border-bottom: 1px solid var(--about-line); padding: 20px 0; margin: 0; background: transparent; border-radius: 0; box-shadow: none; }
+.epf-about-faq details:first-child { padding-top: 0; }
+.epf-about-faq summary { cursor: pointer; min-height: 32px; font-size: 16px; line-height: 1.6; color: var(--about-ink); }
+.epf-about-faq summary::marker { color: var(--about-red); }
+.epf-about-faq details[open] summary { color: var(--about-red); }
+.epf-about-faq details > :not(summary) { margin-top: 16px; font-size: 15px; }
+.epf-about .epf-about-cta { background: #eceee4; padding: 36px; border: 0; border-radius: 3px; gap: 28px; }
+.epf-about-cta h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 32px; letter-spacing: -.025em; font-weight: 400; }
+.epf-about-cta p { margin-top: 12px; font-size: 15px; }
+.epf-about-cta > .flex { flex-shrink: 0; }
+/* Shared chrome adopts the homepage palette only while the About page is mounted. */
+body:has(.epf-about) { background: #faf8f4; }
+body:has(.epf-about) > header > div { background: #faf8f4; border-color: #deded4; }
+body:has(.epf-about) > header > div:first-child > .container-x { height: 88px; }
+body:has(.epf-about) > header .btn-cta { background: #a53225; color: white; border: 1px solid #a53225; border-radius: 3px; box-shadow: none; font-size: 15px; transform: none; }
+body:has(.epf-about) > header .btn-cta:hover { background: #84281f; }
+body:has(.epf-about) > header a > span { text-decoration: none; }
+body:has(.epf-about) > header nav[aria-label="Primary navigation"] { font-size: 13px; }
+body:has(.epf-about) > header + div, body:has(.epf-about) > footer { background: #f0eee7; border-color: #deded4; }
+@media (max-width: 1023px) {
+  .epf-about-hero { gap: 32px; }
+  .epf-about-process ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .epf-about-coverage > .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .epf-about-cta { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 767px) {
+  .epf-about { padding: 32px 24px 60px; }
+  .epf-about-hero { grid-template-columns: 1fr; padding-bottom: 40px; }
+  .epf-about h1 { font-size: clamp(42px, 8vw, 58px); }
+  .epf-about > section { padding-top: 36px; padding-bottom: 36px; }
+  .epf-about .epf-about-process { padding: 28px; }
+  .epf-about-process ol { gap: 24px; }
+  .epf-about-standards > .grid { gap: 30px; }
+  .epf-about-coverage > .grid > div { padding: 18px; }
+  .epf-about-coverage .text-slate-900 { font-size: 27px; }
+  .epf-about .epf-about-faq { grid-template-columns: 1fr; gap: 30px; }
+  .epf-about-faq h2 { max-width: 500px; }
+  .epf-about .epf-about-cta { padding: 28px; }
+  body:has(.epf-about) > header > div:first-child > .container-x { height: 80px; }
+}
+@media (max-width: 479px) {
+  .epf-about { padding-left: 20px; padding-right: 20px; }
+  .epf-about .epf-about-process { padding: 24px; }
+  .epf-about-process ol { grid-template-columns: 1fr; }
+  .epf-about-coverage > .grid { grid-template-columns: 1fr; }
+  .epf-about-coverage > .grid > div { border-right: 0; border-bottom: 1px solid #d2d4c8; }
+  .epf-about-coverage > .grid > div:last-child { border-bottom: 0; }
+  .epf-about-cta > .flex { width: 100%; }
+  .epf-about-cta .btn-cta { width: 100%; }
+}
+@media (pointer: coarse) {
+  .epf-about-faq summary { min-height: 44px; }
+}
