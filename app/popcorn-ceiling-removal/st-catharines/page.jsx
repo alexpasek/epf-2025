@@ -1,6 +1,8 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 // app/popcorn-ceiling-removal/st-catharines/page.jsx
 import Link from "next/link";
-import Image from "next/image";
+import { NextResponsiveImage as Image } from "@/components/ResponsiveImage";
 import QuoteForm from "@/components/QuoteForm";
 import { BRAND_NAME, CONTACT, SITE_URL } from "@/app/config";
 
@@ -106,23 +108,23 @@ export const metadata = {
     siteName: "EPF Pro Services",
     locale: "en_CA",
     type: "website",
-    images: [
+    images: socialImages([
       {
-        url: "https://epfproservices.ca/gallery/Popcorn-ceiling-removal-stcatharines/popcorn-ceiling-removal00001.jpg",
+        url: "https://epfproservices.com/gallery/Popcorn-ceiling-removal-stcatharines/popcorn-ceiling-removal00001.jpg",
         width: 1200,
         height: 630,
         alt: "Popcorn ceiling removal St. Catharines project",
       },
-    ],
+    ]),
   },
   twitter: {
     card: "summary_large_image",
     title: `Popcorn Ceiling Removal St. Catharines | Professional Contractor`,
     description:
       "Professional popcorn ceiling removal St. Catharines with Level 5 skim coat, HEPA dust control, and optional painting.",
-    images: [
-      "https://epfproservices.ca/gallery/Popcorn-ceiling-removal-stcatharines/popcorn-ceiling-removal00001.jpg",
-    ],
+    images: socialImages([
+      "https://epfproservices.com/gallery/Popcorn-ceiling-removal-stcatharines/popcorn-ceiling-removal00001.jpg",
+    ]),
   },
   robots: {
     index: true,
@@ -1173,9 +1175,7 @@ export default function Page() {
         id="neighbourhoods"
       >
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            {CITY} Neighbourhoods We Serve
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Popcorn Ceiling Removal St. Catharines — Neighbourhoods We Serve</h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
             Professional popcorn ceiling removal service across all {CITY}{" "}
             areas—from Port Dalhousie to Merritton and wine-route suburbs.

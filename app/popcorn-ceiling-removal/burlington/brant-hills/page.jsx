@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import QuoteForm from "@/components/QuoteForm";
@@ -239,7 +241,7 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-[3rem] blur-3xl transform rotate-6 scale-110"></div>
                 <div className="relative transform hover:scale-105 transition-transform duration-700" style={{ perspective: "1500px" }}>
                   <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-blue-400/30 shadow-2xl shadow-blue-500/30 backdrop-blur-sm bg-gradient-to-br from-blue-900/20 to-indigo-900/20">
-                    <img src="/services/popcorn-ceiling-removal/3.webp" alt="Brant Hills Burlington popcorn ceiling removal Level 5 smooth finish" loading="eager" className="w-full h-auto object-cover aspect-[4/5]" />
+                    <ResponsiveImage src="/services/popcorn-ceiling-removal/3.webp" alt="Brant Hills Burlington popcorn ceiling removal Level 5 smooth finish" loading="eager" className="w-full h-auto object-cover aspect-[4/5]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-transparent to-transparent"></div>
                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/10 via-transparent to-transparent pointer-events-none"></div>
                   </div>
@@ -421,7 +423,7 @@ export default function Page() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {images.map((src, i) => (
-            <img
+            <ResponsiveImage
               key={i}
               src={src}
               alt={`${NAME} Burlington popcorn ceiling removal — project ${
@@ -683,10 +685,7 @@ export default function Page() {
           
           <div className="space-y-6">
             <div className="p-6 bg-white rounded-2xl border-2 border-blue-100 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <span className="text-2xl">📍</span>
-                Serving {NAME} Neighborhoods
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">Popcorn Ceiling Removal Burlington — Nearby Neighbourhoods</h3>
               <p className="text-gray-700 leading-relaxed">
                 We're in and out of {NAME} around <strong>Duncaster Dr</strong>,{" "}
                 <strong>Upper Middle Rd</strong>, and the{" "}
@@ -697,10 +696,7 @@ export default function Page() {
             </div>
 
             <div className="p-6 bg-white rounded-2xl border-2 border-indigo-100 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="text-2xl">🏘️</span>
-                Nearby Burlington Neighborhoods We Serve
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">Popcorn Ceiling Removal Burlington — Nearby Neighbourhoods</h3>
               <p className="text-gray-700 mb-4">
                 Looking for popcorn ceiling removal in nearby Burlington communities? We provide the same professional Level 5 finishing service throughout the region:
               </p>

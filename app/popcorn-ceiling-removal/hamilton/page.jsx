@@ -1,4 +1,5 @@
-import Image from "next/image";
+
+import { NextResponsiveImage as Image } from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -902,9 +903,7 @@ export default function Page() {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-              Serving Hamilton Neighbourhoods
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Popcorn Ceiling Removal Hamilton — Neighbourhoods We Serve</h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
               Professional popcorn ceiling removal throughout all Hamilton areas
             </p>

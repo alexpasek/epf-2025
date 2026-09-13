@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/clarkson/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -356,7 +358,7 @@ export default function Page() {
                 >
                   <div className="relative rounded-[3rem] overflow-hidden border-2 border-white/10 shadow-2xl backdrop-blur-sm bg-white/5">
                     {/* Main Image */}
-                    <img
+                    <ResponsiveImage
                       src="/services/popcorn-ceiling-removal/1.webp"
                       alt="Professional Level 5 smooth ceiling removal in Clarkson Mississauga - Before and after transformation showing HEPA dust control and paint-ready finish"
                       loading="eager"
@@ -532,7 +534,7 @@ export default function Page() {
                   className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                    <img
+                    <ResponsiveImage
                       src={src}
                       alt={altTexts[i]}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

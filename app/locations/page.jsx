@@ -8,7 +8,7 @@ const BASE_URL = (SITE_URL || "https://epfproservices.com").replace(/\/$/, "");
 const PATH = "/locations/";
 
 export const metadata = {
-  title: "Locations | EPF Pro Services",
+  title: { absolute: "Locations | EPF Pro Services" },
   description:
     "Find EPF Pro Services location pages for drywall repair, popcorn ceiling removal, ceiling repair, painting, and wall finishing across Mississauga and the GTA.",
   alternates: { canonical: `${BASE_URL}${PATH}` },

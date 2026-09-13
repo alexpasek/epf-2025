@@ -1,4 +1,6 @@
-import Image from "next/image";
+
+import { socialImages } from "@/lib/responsiveImages";
+import { NextResponsiveImage as Image } from "@/components/ResponsiveImage";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { CONTACT, SITE_URL } from "@/app/config";
@@ -89,14 +91,14 @@ export const metadata = {
       "Professional interior painter in Mississauga for walls, ceilings, trim, doors and drywall repairs. Dust-controlled prep, insured crews and a 3-year warranty.",
     url: PAGE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: HERO_IMAGE,
         width: 1731,
         height: 909,
         alt: "Interior painter Mississauga condo with smooth walls, ceiling, trim and door finish",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -299,7 +301,7 @@ export default function Page() {
               <p className="mt-4 text-lg leading-8 text-blue-100">For an occupied home, work can be sequenced room by room. We discuss furniture movement, usable rooms, drying time, pets or family routines, and daily cleanup before the schedule is set.</p>
             </div>
             <div className="rounded-3xl bg-white p-7 text-slate-900">
-              <h3 className="text-2xl font-bold">Mississauga neighbourhood coverage</h3>
+              <h3 className="text-2xl font-bold">Interior Painting Mississauga — Neighbourhoods We Serve</h3>
               <p className="mt-3 leading-7 text-slate-700">Interior painting is available across Mississauga, including:</p>
               <ul className="mt-5 grid grid-cols-2 gap-3">
                 {neighbourhoods.map((area) => <li key={area} className="rounded-xl bg-slate-100 px-4 py-3 font-semibold">{area}</li>)}

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from 'next/link';
 import { getPosts } from '@/lib/posts';
 
@@ -67,7 +69,7 @@ export default async function Blog(){
                   >
                     {imageSrc ? (
                       <div className='aspect-[1.34/1] overflow-hidden bg-[#dde5ec]'>
-                        <img
+                        <ResponsiveImage
                           src={imageSrc}
                           alt={p.title}
                           className={getBlogCardImageClassName(p)}

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CityCopy } from "@/components/LocalSEOCopy";
 export const metadata = { title: "Oakville — Popcorn Ceiling Removal Pro" };
@@ -40,7 +42,7 @@ export default function City() {
         className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
       >
         {images.map((src, i) => (
-          <img
+          <ResponsiveImage
             data-lightbox="true"
             key={i}
             src={src}

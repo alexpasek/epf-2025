@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
 
@@ -385,7 +387,7 @@ function Section({ eyebrow, title, children, className = "" }) {
 function ImageFigure({ src, alt, caption }) {
   return (
     <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-      <img
+      <ResponsiveImage
         src={src}
         alt={alt}
         width="1200"
@@ -432,7 +434,7 @@ export default function DrywallPatchShowingGuide() {
           </div>
 
           <figure className="overflow-hidden rounded-xl border border-white/10 bg-slate-900 shadow-2xl">
-            <img
+            <ResponsiveImage
               src={heroImage}
               alt="Visible drywall patch showing through paint on an interior wall before professional repair"
               width="1672"
@@ -764,7 +766,7 @@ export default function DrywallPatchShowingGuide() {
               href={article.href}
               className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              <img
+              <ResponsiveImage
                 src={article.image}
                 alt={`${article.title} related guide image`}
                 width="900"

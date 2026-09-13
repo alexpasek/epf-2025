@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
@@ -35,7 +38,7 @@ export const metadata = {
       "Professional baseboard installation in Mississauga. Expert baseboard installation, baseboard replacement, shoe moulding.",
     url: ABSOLUTE_SERVICE_URL,
     type: "website",
-    images: [{ url: absoluteServiceUrl(HERO_IMAGE) }],
+    images: socialImages([{ url: absoluteServiceUrl(HERO_IMAGE) }]),
   },
   robots: { index: true, follow: true },
 };
@@ -182,7 +185,7 @@ export default function Page() {
                 className="overflow-hidden border-2 border-slate-300 bg-white shadow-[0_8px_30px_rgba(0,0,0,.06)]"
                 style={{ height: "320px" }}
               >
-                <img
+                <ResponsiveImage
                   src={HERO_IMAGE}
                   alt={`Finished baseboard installation in ${CITY_NAME}`}
                   className="h-full w-full object-cover transition duration-200 ease-out hover:brightness-110 hover:contrast-110"
@@ -543,7 +546,7 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-              Baseboard Installation Across Mississauga
+              Baseboard Installation Mississauga — Neighbourhoods We Serve
             </h2>
             <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
               Professional baseboard installation in every Mississauga
@@ -728,7 +731,7 @@ export default function Page() {
               </p>
 
               <h3 className="text-2xl font-bold mb-4 mt-8">
-                Mississauga Neighborhoods We Serve for Baseboard Installation
+                Baseboard Installation Mississauga — Local Service Coverage
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Our{" "}

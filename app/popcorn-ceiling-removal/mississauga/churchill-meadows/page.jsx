@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/churchill-meadows/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -195,7 +197,7 @@ export default function Page() {
       {/* MODERN HERO */}
       <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img
+          <ResponsiveImage
             src={images[0]}
             alt="Professional popcorn ceiling removal Churchill Meadows Mississauga"
             className="w-full h-full object-cover"
@@ -390,7 +392,7 @@ export default function Page() {
                   className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                    <img
+                    <ResponsiveImage
                       src={src}
                       alt={altTexts[i]}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // filepath: /Users/alex/EpfProservicesn2025/epfproservices2025build/app/services/drywall-repair/mississauga/page.jsx
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
@@ -190,7 +192,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Mississauga | Emergency Water Damage & Seamless Patching | EPF Pro Services`,
+  title: { absolute: `Drywall Repair Mississauga | Emergency Water Damage & Seamless Patching | EPF Pro Services` },
   description:
     "Professional drywall repair services in Mississauga. Expert patching, water damage restoration, crack repair, Level 5 finish. WSIB insured. Fast quotes.",
   keywords: [
@@ -357,7 +359,7 @@ export default function Page() {
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <ResponsiveImage
             src={images[0]}
             alt={`${CITY} ${SERVICE.toLowerCase()}`}
             className="w-full h-full object-cover"
@@ -749,7 +751,7 @@ export default function Page() {
               CITYWIDE SERVICE
             </p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Drywall Repair in Every Mississauga Neighbourhood
+              Drywall Repair {CITY} — Neighbourhoods We Serve
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Professional <strong>drywall repair company Mississauga</strong>{" "}
@@ -889,7 +891,7 @@ export default function Page() {
                 key={src}
                 className="group overflow-hidden rounded-3xl border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={`Mississauga drywall repair project ${i + 1}`}
                   loading={i < 3 ? "eager" : "lazy"}

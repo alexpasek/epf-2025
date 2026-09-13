@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 export const revalidate = 86400;
@@ -169,7 +171,7 @@ export default function Page() {
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((src, i) => (
-          <img
+          <ResponsiveImage
             key={i}
             src={src}
             alt={`Malton popcorn ceiling removal — project ${i + 1}`}

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/meadowvale/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -189,7 +191,7 @@ export default function Page() {
 
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {imgs.map((src, i) => (
-          <img
+          <ResponsiveImage
             key={i}
             src={src}
             alt={`Popcorn ceiling removal in Meadowvale — project ${i + 1}`}

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/mineola/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -197,7 +199,7 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-[3rem] blur-3xl transform rotate-6 scale-110"></div>
                 <div className="relative transform hover:scale-105 transition-transform duration-700" style={{ perspective: "1500px" }}>
                   <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-blue-400/30 shadow-2xl shadow-blue-500/30 backdrop-blur-sm bg-gradient-to-br from-blue-900/20 to-indigo-900/20">
-                    <img src="/services/popcorn-ceiling-removal/3.webp" alt="Mineola popcorn ceiling removal Level 5 smooth finish" loading="eager" className="w-full h-auto object-cover aspect-[4/5]" />
+                    <ResponsiveImage src="/services/popcorn-ceiling-removal/3.webp" alt="Mineola popcorn ceiling removal Level 5 smooth finish" loading="eager" className="w-full h-auto object-cover aspect-[4/5]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-transparent to-transparent"></div>
                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/10 via-transparent to-transparent pointer-events-none"></div>
                   </div>
@@ -341,7 +343,7 @@ export default function Page() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {gallery.map((src, i) => (
-              <img key={i} src={src} alt={`Popcorn ceiling removal in a Mineola home — project ${i + 1}`} className="w-full h-56 object-cover rounded-2xl border shadow" data-lightbox="true" />
+              <ResponsiveImage key={i} src={src} alt={`Popcorn ceiling removal in a Mineola home — project ${i + 1}`} className="w-full h-56 object-cover rounded-2xl border shadow" data-lightbox="true" />
             ))}
           </div>
         </div>

@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 
@@ -24,9 +27,9 @@ export const metadata = {
     locale: "en_CA",
     publishedTime: PUBLISHED,
     modifiedTime: PUBLISHED,
-    images: [{ url: `${SITE_URL}${HERO}`, width: 565, height: 640, alt: "EPF project example showing a smooth finished ceiling in an empty living area" }],
+    images: socialImages([{ url: `${SITE_URL}${HERO}`, width: 565, height: 640, alt: "EPF project example showing a smooth finished ceiling in an empty living area" }]),
   },
-  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [`${SITE_URL}${HERO}`] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: socialImages([`${SITE_URL}${HERO}`]) },
 };
 
 const photos = [
@@ -55,7 +58,7 @@ const breadcrumbSchema = {
 };
 
 const Section = ({ id, title, children }) => <section id={id} className="scroll-mt-24"><h2 className="text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{title}</h2><div className="mt-4 space-y-4 leading-8 text-slate-700">{children}</div></section>;
-const Photo = ({ photo, priority = false }) => <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><img src={photo.src} width={photo.width} height={photo.height} alt={photo.alt} className="h-auto w-full object-cover" loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} /><figcaption className="px-4 py-3 text-sm leading-6 text-slate-600">{photo.caption}</figcaption></figure>;
+const Photo = ({ photo, priority = false }) => <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><ResponsiveImage src={photo.src} width={photo.width} height={photo.height} alt={photo.alt} className="h-auto w-full object-cover" loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : undefined} /><figcaption className="px-4 py-3 text-sm leading-6 text-slate-600">{photo.caption}</figcaption></figure>;
 
 export default function OakvilleBeforeAfterArticle() {
   return <main className="bg-[#f7f8f6] pb-16 text-slate-900">

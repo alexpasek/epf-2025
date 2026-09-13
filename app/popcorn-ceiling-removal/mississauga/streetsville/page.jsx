@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/streetsville/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -196,7 +198,7 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 to-cyan-600/30 rounded-[3rem] blur-3xl transform rotate-6 scale-110"></div>
                 <div className="relative transform hover:scale-105 transition-transform duration-700" style={{ perspective: "1500px" }}>
                   <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-teal-400/30 shadow-2xl shadow-teal-500/30 backdrop-blur-sm bg-gradient-to-br from-teal-900/20 to-cyan-900/20">
-                    <img src="/services/popcorn-ceiling-removal/1.webp" alt="Streetsville popcorn ceiling removal Level 5 smooth finish" loading="eager" className="w-full h-auto object-cover aspect-[4/5]" />
+                    <ResponsiveImage src="/services/popcorn-ceiling-removal/1.webp" alt="Streetsville popcorn ceiling removal Level 5 smooth finish" loading="eager" className="w-full h-auto object-cover aspect-[4/5]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-teal-900/70 via-transparent to-transparent"></div>
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-transparent pointer-events-none"></div>
                   </div>
@@ -252,7 +254,7 @@ export default function Page() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {gallery.map((src, i) => (
-              <img key={i} src={src} alt={`Popcorn ceiling removal in a Streetsville home — project ${i + 1}`} className="w-full h-56 object-cover rounded-2xl border shadow" data-lightbox="true" />
+              <ResponsiveImage key={i} src={src} alt={`Popcorn ceiling removal in a Streetsville home — project ${i + 1}`} className="w-full h-56 object-cover rounded-2xl border shadow" data-lightbox="true" />
             ))}
           </div>
         </div>

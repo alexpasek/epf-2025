@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import {
   videoLibrary,
@@ -66,7 +68,7 @@ export default function Page() {
             className="card bg-white rounded-2xl border shadow-sm overflow-hidden flex flex-col"
           >
             <Link href={videoPagePath(video)} className="block">
-              <img
+              <ResponsiveImage
                 src={videoThumbnailUrl(video)}
                 alt={video.title}
                 className="w-full h-40 object-cover"

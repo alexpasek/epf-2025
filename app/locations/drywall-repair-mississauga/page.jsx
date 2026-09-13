@@ -21,7 +21,7 @@ const AREAS = [
 ];
 
 export const metadata = {
-  title: "Drywall Repair Mississauga Neighbourhoods | EPF Pro Services",
+  title: { absolute: "Drywall Repair Mississauga Neighbourhoods | EPF Pro Services" },
   description:
     "Neighbourhood drywall repair pages for Mississauga: Port Credit, Streetsville, Erin Mills, City Centre, Cooksville, Meadowvale, Churchill Meadows, Clarkson, and Lorne Park.",
   alternates: { canonical: `${BASE_URL}${PATH}` },

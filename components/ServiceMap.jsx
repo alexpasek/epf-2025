@@ -1,4 +1,6 @@
 "use client";
+import ResponsiveImage from "@/components/ResponsiveImage";
+
 import {
   GoogleMap,
   LoadScript,
@@ -89,7 +91,7 @@ export default function ServiceMap() {
               onCloseClick={() => setSelected(null)}
             >
               <div className="p-2">
-                <img
+                <ResponsiveImage
                   src={selected.photo}
                   alt={`${selected.name} project`}
                   className="w-40 h-24 rounded mb-2 object-cover"

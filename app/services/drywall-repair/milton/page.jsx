@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { CONTACT, SITE_URL } from "@/app/config";
@@ -119,7 +122,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Milton Ontario | New Build & Water Damage Specialists | EPF Pro Services`,
+  title: { absolute: `Drywall Repair Milton Ontario | New Build & Water Damage Specialists | EPF Pro Services` },
   description:
     "Professional drywall repair Milton Ontario for new builds, family homes & commercial. Water damage restoration, seamless finishing, Level 5 quality. Serving Dempsey, Hawthorne Village, Timberlea & all Milton neighborhoods. Tarion warranty work.",
   keywords: [
@@ -170,14 +173,14 @@ export const metadata = {
       "Milton's professional drywall repair specialists. Water damage restoration, seamless finishing for new builds, family homes & commercial. Level 5 quality, WSIB insured, Tarion warranty work.",
     url: SLUG,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: `${BASE_URL}/gallery/drywall-repair/drywall-repair.webp`,
         width: 1200,
         height: 630,
         alt: "Professional drywall repair Milton Ontario",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -468,7 +471,7 @@ export default function Page() {
             {/* Right Column - Hero Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <img
+                <ResponsiveImage
                   src="/gallery/drywall-repair/drywall-repair.webp"
                   alt="Professional drywall repair Milton Ontario - new build specialists Dempsey Hawthorne Village"
                   className="w-full h-[500px] object-cover"
@@ -714,7 +717,7 @@ export default function Page() {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                   {" "}
-                  <img
+                  <ResponsiveImage
                     src={images[0]}
                     alt="Drywall repair Milton Level 5 finish"
                     className="w-full h-full object-cover"
@@ -841,7 +844,7 @@ export default function Page() {
                 key={src}
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={`${CITY} drywall repair project ${i + 1}`}
                   loading={i < 3 ? "eager" : "lazy"}
@@ -863,7 +866,7 @@ export default function Page() {
                 CITYWIDE SERVICE
               </p>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Serving Every {CITY} Neighbourhood
+                Drywall Repair {CITY} — Neighbourhoods We Serve
               </h2>{" "}
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Driveway protection, garage coordination, and builder

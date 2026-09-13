@@ -1,4 +1,6 @@
 "use client";
+import ResponsiveImage from "@/components/ResponsiveImage";
+
 
 import { useEffect, useRef, useState } from "react";
 import { SITE_URL, BUSINESS_NAME } from "@/app/config";
@@ -222,7 +224,7 @@ export default function GoogleReviews({
         {/* Controls */}
         <div className="mb-3 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <img
+            <ResponsiveImage
               src="/brand/google-g.svg"
               alt="Google"
               width="22"
@@ -272,7 +274,7 @@ export default function GoogleReviews({
                   onClick={() => setActive(r)}
                 >
                   <div className="flex items-center gap-3">
-                    <img
+                    <ResponsiveImage
                       src={r.profile_photo_url || "/avatars/user-circle.svg"}
                       alt=""
                       width="40"
@@ -390,7 +392,7 @@ export default function GoogleReviews({
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img
+                <ResponsiveImage
                   src={active.profile_photo_url || "/avatars/user-circle.svg"}
                   alt=""
                   width="44"

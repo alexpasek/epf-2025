@@ -1,5 +1,7 @@
 // /app/components/ChatWidgetAgent.jsx (or where this component lives)
 "use client";
+import ResponsiveImage from "@/components/ResponsiveImage";
+
 import { useEffect, useRef, useState } from "react";
 
 /* linkify & sanitize assistant text */
@@ -308,7 +310,7 @@ export default function ChatWidgetAgent({ defaultOpen = false } = {}) {
           {/* Header with LIVE/FALLBACK badge */}
           <header className="px-4 py-3 flex items-center justify-between gap-3 rounded-t-3xl bg-white border-b border-black/10">
             <div className="flex items-center gap-3">
-              <img
+              <ResponsiveImage
                 src="/logo-mark.svg"
                 alt="Popcorn ceiling removal logo"
                 className="h-16 w-16 rounded-full bg-white p-1 shadow"

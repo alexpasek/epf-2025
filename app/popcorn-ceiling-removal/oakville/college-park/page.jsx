@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 
@@ -203,7 +205,7 @@ export default function Page() {
       {/* GALLERY */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((src, i) => (
-          <img
+          <ResponsiveImage
             key={i}
             src={src}
             alt={`Popcorn ceiling removal in College Park — project ${i + 1}`}
@@ -326,9 +328,7 @@ export default function Page() {
 
       {/* NEIGH LINKS */}
       <section className="mt-10">
-        <h3 className="text-xl font-semibold">
-          Browse Oakville Neighbourhoods
-        </h3>
+        <h3 className="text-xl font-semibold">Popcorn Ceiling Removal Oakville — Nearby Neighbourhoods</h3>
         <div className="mt-3 flex flex-wrap gap-2">
           <Link
             href="/popcorn-ceiling-removal/oakville/old-oakville/"

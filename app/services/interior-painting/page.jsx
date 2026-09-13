@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import { ServiceCopy } from "@/components/LocalSEOCopy";
@@ -38,7 +40,7 @@ const localPaintingGuideBySlug = new Map(
 );
 
 export const metadata = {
-  title: "Interior Painting Services | EPF Pro Services",
+  title: { absolute: "Interior Painting Services | EPF Pro Services" },
   description:
     "GTA interior painting with sharp lines and durable finishes. Walls, trim, and ceilings—dust-controlled prep, Level 5 surfaces, and a clean, guaranteed result.",
   alternates: { canonical: "/services/interior-painting/" },
@@ -233,7 +235,7 @@ export default function Page() {
       {/* GALLERY — unchanged */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((s, i) => (
-          <img
+          <ResponsiveImage
             key={i}
             src={s}
             alt={`Interior Painting project ${i + 1}`}

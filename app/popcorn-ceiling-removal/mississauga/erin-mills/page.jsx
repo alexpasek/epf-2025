@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/erin-mills/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -316,7 +318,7 @@ export default function Page() {
                 >
                   {/* Main image with rounded frame */}
                   <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-teal-400/30 shadow-2xl shadow-teal-500/30 backdrop-blur-sm bg-gradient-to-br from-teal-900/20 to-cyan-900/20">
-                    <img
+                    <ResponsiveImage
                       src="/services/popcorn-ceiling-removal/1.webp"
                       alt="Erin Mills popcorn ceiling removal Level 5 before and after"
                       loading="eager"
@@ -436,7 +438,7 @@ export default function Page() {
                 className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                  <img
+                  <ResponsiveImage
                     src={src}
                     alt={`Erin Mills popcorn ceiling removal — project ${
                       i + 1

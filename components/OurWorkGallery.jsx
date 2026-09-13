@@ -1,5 +1,7 @@
 
 "use client";
+import ResponsiveImage from "@/components/ResponsiveImage";
+
 
 import { useMemo, useState, useEffect } from "react";
 import { BUSINESS_NAME } from "@/app/config";
@@ -257,8 +259,9 @@ export default function OurWorkGallery({
                   onClick={() => setActive(it)}
                   aria-label={`Open ${service} photo`}
                 >
-                  <img
+                  <ResponsiveImage
                     src={it.src}
+                    sizes={`(max-width: ${tileW}px) 100vw, ${tileW}px`}
                     alt={it.alt || `${service} in ${city}`}
                     className="h-full w-full cursor-pointer object-cover transition duration-200 ease-out hover:brightness-110 hover:contrast-110"
                     loading="lazy"
@@ -340,7 +343,7 @@ export default function OurWorkGallery({
           {/* image block (click inside should NOT close) */}
           <div className="relative" onClick={(e) => e.stopPropagation()}>
             <div className="relative">
-              <img
+              <ResponsiveImage
                 src={active.src}
                 alt={
                   active.alt ||

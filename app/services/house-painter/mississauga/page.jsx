@@ -1,4 +1,6 @@
-import Image from "next/image";
+
+import { socialImages } from "@/lib/responsiveImages";
+import { NextResponsiveImage as Image } from "@/components/ResponsiveImage";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { CONTACT, SITE_URL } from "@/app/config";
@@ -71,14 +73,14 @@ export const metadata = {
       "Interior house painting in Mississauga with coordinated walls, ceilings, trim, doors, repairs, protection and cleanup.",
     url: PAGE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: HERO_IMAGE,
         width: 1536,
         height: 1024,
         alt: "House painter Mississauga whole-home interior with protected floors and freshly painted walls, ceiling and trim",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };

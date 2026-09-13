@@ -1,4 +1,6 @@
 'use client';
+import ResponsiveImage from "@/components/ResponsiveImage";
+
 import { useEffect, useState } from 'react';
 import { usePathname } from "next/navigation";
 import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
@@ -17,7 +19,7 @@ export default function LightboxGlobal(){
         e.preventDefault();
         const scope = t.closest('[data-lightbox-scope]') || document;
         const imgs = Array.from(scope.querySelectorAll('img[data-lightbox="true"]'));
-        const srcs = imgs.map(img => img.currentSrc || img.src);
+        const srcs = imgs.map(img => ({ src: img.dataset.imageSource || img.currentSrc || img.src, alt: img.alt }));
         setImages(srcs);
         setIndex(Math.max(0, imgs.indexOf(t)));
         setOpen(true);
@@ -32,7 +34,7 @@ export default function LightboxGlobal(){
   const next = ()=>setIndex(i=>(i+1)%images.length);
   return (<div className="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4" onClick={()=>setOpen(false)}>
     <div className="relative max-w-5xl w-full" onClick={e=>e.stopPropagation()}>
-      <img src={images[index]} alt="" className="w-full h-auto rounded-2xl shadow-2xl"/>
+      <ResponsiveImage src={images[index].src} alt={images[index].alt} sizes="(max-width: 1023px) 100vw, 1024px" className="w-full h-auto max-h-[calc(100dvh-2rem)] object-contain rounded-2xl shadow-2xl"/>
       <button className="absolute top-2 right-2 bg-white/90 rounded-full px-3 py-1 font-semibold" onClick={()=>setOpen(false)}>✕</button>
       <button className="absolute inset-y-1/2 left-2 -translate-y-1/2 bg-white/80 rounded-full px-3 py-1" onClick={prev}>‹</button>
       <button className="absolute inset-y-1/2 right-2 -translate-y-1/2 bg-white/80 rounded-full px-3 py-1" onClick={next}>›</button>

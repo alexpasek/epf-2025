@@ -1,4 +1,5 @@
-import Image from "next/image";
+
+import { NextResponsiveImage as Image } from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import QuoteForm from "@/components/QuoteForm";

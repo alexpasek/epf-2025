@@ -1,5 +1,7 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
-import Image from "next/image";
+import { NextResponsiveImage as Image } from "@/components/ResponsiveImage";
 import Script from "next/script";
 import { CityCopy } from "@/components/LocalSEOCopy";
 import { SITE_URL } from "@/app/config";
@@ -30,21 +32,21 @@ export const metadata = {
     title: "Wallpaper & Popcorn Ceiling Removal in Mississauga",
     description:
       "Wallpaper removal, popcorn ceiling smoothing, drywall repair, and painting in Mississauga.",
-    images: [
+    images: socialImages([
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Smooth ceiling and freshly painted room in Mississauga",
       },
-    ],
+    ]),
   },
   twitter: {
     card: "summary_large_image",
     title: "Wallpaper & Popcorn Ceiling Removal Mississauga",
     description:
       "Fast, clean results. Wallpaper removal, popcorn ceiling removal, drywall & painting.",
-    images: [OG_IMAGE],
+    images: socialImages([OG_IMAGE]),
   },
 };
 

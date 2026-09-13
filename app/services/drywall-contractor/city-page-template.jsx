@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
@@ -327,7 +329,7 @@ export default function DrywallContractorCityPage({ slug }) {
 
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
-                <img
+                <ResponsiveImage
                   src="/gallery/drywall-installation/drywall-installation-hero.webp"
                   alt={`${config.city} drywall contractor handling wall and ceiling work`}
                   className="w-full h-[500px] object-cover"
@@ -604,7 +606,7 @@ export default function DrywallContractorCityPage({ slug }) {
               Neighbourhood Coverage
             </p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Drywall contractor service across {config.city}
+              Drywall Contractor {config.city} — Neighbourhoods We Serve
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {config.neighborhoodSummary}

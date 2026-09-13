@@ -60,7 +60,7 @@ export default async function CityPage({ params }) {
 
       {/* Neighbourhoods */}
       <section className="mt-10">
-        <h2 className="text-2xl font-semibold">Neighbourhoods We Serve</h2>
+        <h2 className="text-2xl font-semibold">Wallpaper Removal {c.name} — Neighbourhoods We Serve</h2>
         <div className="mt-4 flex flex-wrap gap-2">
           {(c.neighborhoods || []).map((n) => (
             <Link

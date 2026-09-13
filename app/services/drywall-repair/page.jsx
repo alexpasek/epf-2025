@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -24,8 +27,7 @@ const CORE_KEYWORDS = [
 ];
 
 export const metadata = {
-  title:
-    "Drywall Repair Services | Seamless Patching & Water Damage Specialists | EPF Pro Services",
+  title: { absolute: "Drywall Repair Services | Seamless Patching & Water Damage Specialists | EPF Pro Services" },
   description:
     "Professional drywall repair company GTA. Expert patching, crack fixes, water damage repair. HEPA sanding, Level 5 finish. Free quote.",
   keywords: [
@@ -73,14 +75,14 @@ export const metadata = {
       "Professional drywall repair company for holes, cracks, water damage, and trade cut-outs. Seamless, paint-ready drywall repair across the GTA.",
     url: PAGE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/gallery/drywall-repair/drywall-repair-service00001.webp",
         width: 1200,
         height: 630,
         alt: "Professional drywall repair services - Level 5 seamless finish by expert GTA drywall contractors",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -475,7 +477,7 @@ export default function Page() {
               {/* Right Column - Hero Image */}
               <div className="relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                  <img
+                  <ResponsiveImage
                     src="/gallery/drywall-repair/drywall-repair.webp"
                     alt="Professional drywall repair services - expert drywall contractors finishing seamless ceiling repair in GTA home"
                     className="w-full h-[500px] object-cover"
@@ -843,7 +845,7 @@ export default function Page() {
                   key={item.src}
                   className="group overflow-hidden rounded-3xl border shadow bg-white flex flex-col"
                 >
-                  <img
+                  <ResponsiveImage
                     src={item.src}
                     alt={
                       item.alt || `Professional drywall repair project ${i + 1}`

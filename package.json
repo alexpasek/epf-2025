@@ -5,6 +5,9 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "prebuild": "npm run images:build && npm run images:check",
+        "images:build": "node scripts/build-responsive-images.cjs",
+        "images:check": "node scripts/check-responsive-images.cjs",
         "start": "next start",
         "postbuild": "next-sitemap",
         "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",

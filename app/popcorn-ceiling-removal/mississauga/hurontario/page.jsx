@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import QuoteForm from "@/components/QuoteForm";
@@ -120,7 +122,7 @@ export default function Page() {
           <div className="absolute -top-24 -left-16 w-72 h-72 bg-purple-500/30 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-28 -right-20 w-80 h-80 bg-indigo-500/30 blur-[120px] pointer-events-none" />
           <div className="absolute inset-0">
-            <img
+            <ResponsiveImage
               src="/services/popcorn-ceiling-removal/5.webp"
               alt="Crew sanding a popcorn ceiling in Hurontario"
               className="h-full w-full object-cover"
@@ -276,7 +278,7 @@ export default function Page() {
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {gallery.map((src, i) => (
           <div key={src} className="rounded-3xl overflow-hidden shadow">
-            <img
+            <ResponsiveImage
               src={src}
               alt={`Hurontario popcorn ceiling removal project ${i + 1}`}
               className="h-56 w-full object-cover"

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import QuoteForm from "@/components/QuoteForm";
@@ -236,7 +238,7 @@ export default function Page() {
                 >
                   {/* Main image with rounded frame */}
                   <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-teal-400/30 shadow-2xl shadow-teal-500/30 backdrop-blur-sm bg-gradient-to-br from-teal-900/20 to-cyan-900/20">
-                    <img
+                    <ResponsiveImage
                       src="/services/popcorn-ceiling-removal/6.webp"
                       alt="Lakeview popcorn ceiling removal Level 5 smooth finish"
                       loading="eager"
@@ -334,7 +336,7 @@ export default function Page() {
                 className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                  <img
+                  <ResponsiveImage
                     src={src}
                     alt={`Lakeview popcorn ceiling removal project ${i + 1}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

@@ -1,3 +1,5 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import QuoteForm from "@/components/QuoteForm";
@@ -171,14 +173,14 @@ export async function generateMetadata({ params }) {
       description: `Local drywall repair near ${area.name} for walls, ceilings, water damage, patching, condo access, and paint-ready repairs.`,
       url,
       type: "website",
-      images: [
+      images: socialImages([
         {
           url: `${BASE_URL}/gallery/drywall-repair/drywall-repair-service00001.webp`,
           width: 1200,
           height: 630,
           alt: `${area.name} drywall repair and paint-ready wall patching in Mississauga`,
         },
-      ],
+      ]),
     },
     robots: { index: true, follow: true },
   };

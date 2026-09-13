@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -30,7 +33,7 @@ export const metadata = {
       "Dundas Hamilton's trusted popcorn ceiling removal experts. Level 5 smooth finish, dust-free process, 3-year warranty. Serving Governor's Road, King Street & all Dundas homes.",
     url: PAGE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: `${
           SITE_URL?.replace(/\/$/, "") || ""
@@ -39,7 +42,7 @@ export const metadata = {
         height: 630,
         alt: "Popcorn ceiling removal Dundas Hamilton - Level 5 smooth finish",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -393,7 +396,7 @@ export default function Page() {
             {/* Right Column - Hero Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <img
+                <ResponsiveImage
                   src="/services/popcorn-ceiling-removal/1.webp"
                   alt="Popcorn ceiling removal Dundas Hamilton - Level 5 smooth finish"
                   className="w-full h-[500px] object-cover"
@@ -549,7 +552,7 @@ export default function Page() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {images.map((src, i) => (
-                <img
+                <ResponsiveImage
                   key={i}
                   src={src}
                   alt={`Popcorn ceiling removal in a Dundas home — project ${
@@ -1204,9 +1207,7 @@ export default function Page() {
               <p className="text-sm uppercase tracking-widest text-purple-600 font-bold mb-3">
                 LOCAL COVERAGE
               </p>
-              <h2 className="text-4xl font-bold mb-4">
-                Serving All Dundas Neighborhoods
-              </h2>
+              <h2 className="text-4xl font-bold mb-4">Popcorn Ceiling Removal Hamilton — Nearby Neighbourhoods</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Professional popcorn ceiling removal throughout Dundas Hamilton
               </p>

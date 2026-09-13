@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // filepath: /Users/alex/EpfProservicesn2025/epfproservices2025build/app/services/drywall-repair/burlington/page.jsx
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
@@ -106,7 +108,7 @@ const CLUSTER_GUIDES = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Burlington | Expert Patching, Water Damage & Seamless Finish | EPF Pro Services`,
+  title: { absolute: `Drywall Repair Burlington | Expert Patching, Water Damage & Seamless Finish | EPF Pro Services` },
   description:
     "Professional drywall repair Burlington. Expert contractors for holes, cracks, water damage, Level 5 finish. WSIB insured. Emergency service available.",
   keywords: [
@@ -511,7 +513,7 @@ export default function Page() {
 
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                  <img
+                  <ResponsiveImage
                     src={images[0]}
                     alt="Professional drywall repair Burlington - expert contractors delivering smooth finish"
                     className="w-full h-full object-cover"
@@ -566,7 +568,7 @@ export default function Page() {
                 key={src}
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={`Burlington drywall repair project ${i + 1}`}
                   loading={i < 3 ? "eager" : "lazy"}
@@ -588,7 +590,7 @@ export default function Page() {
                 CITYWIDE SERVICE
               </p>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Serving Every Burlington Neighbourhood
+                Drywall Repair {CITY} — Neighbourhoods We Serve
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Professional <strong>drywall repair company Burlington</strong> with crews across Aldershot, Headon, Millcroft, Downtown & lakefront areas.

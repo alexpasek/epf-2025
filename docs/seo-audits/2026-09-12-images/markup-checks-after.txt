@@ -1,0 +1,11 @@
+missing 0 occurrences; 0 assets
+[]
+missing alt attribute 0 occurrences; 0 assets
+[]
+no dimensions 9 occurrences; 3 assets
+["https://i.ytimg.com/vi/g8Zl0XlbxBo/hqdefault.jpg", "https://i.ytimg.com/vi/73P8rMOy9pc/hqdefault.jpg", "https://i.ytimg.com/vi/nSnbyGVqbMQ/hqdefault.jpg"]
+over 500KB 0 occurrences; 0 assets
+[]
+OG dimension mismatch 0 occurrences; 0 assets
+[]
+pages 714 unique referenced images 237

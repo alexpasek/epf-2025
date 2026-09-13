@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import QuoteForm from "@/components/QuoteForm";
@@ -347,7 +349,7 @@ export default function Page() {
               key={src}
               className="overflow-hidden rounded-3xl border border-slate-200 bg-white"
             >
-              <img
+              <ResponsiveImage
                 src={src}
                 alt={`${NAME} popcorn ceiling project ${i + 1}`}
                 className="h-56 w-full object-cover"

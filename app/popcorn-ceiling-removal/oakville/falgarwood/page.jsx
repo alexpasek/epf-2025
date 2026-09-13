@@ -315,9 +315,7 @@ export default function Page() {
 
       {/* INTERNAL LINKS */}
       <section id="links" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          Nearby Oakville Neighbourhoods
-        </h2>
+        <h2 className="text-2xl font-semibold">Popcorn Ceiling Removal Oakville — Nearby Neighbourhoods</h2>
         <div className="mt-3 flex flex-wrap gap-2 text-sm">
           {[
             ["Old Oakville", "old-oakville"],

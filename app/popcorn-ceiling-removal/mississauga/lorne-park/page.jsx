@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/lorne-park/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -254,7 +256,7 @@ export default function Page() {
                 >
                   {/* Main image with rounded frame */}
                   <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-teal-400/30 shadow-2xl shadow-teal-500/30 backdrop-blur-sm bg-gradient-to-br from-teal-900/20 to-cyan-900/20">
-                    <img
+                    <ResponsiveImage
                       src="/services/popcorn-ceiling-removal/6.webp"
                       alt="Lorne Park popcorn ceiling removal Level 5 smooth finish"
                       loading="eager"
@@ -339,7 +341,7 @@ export default function Page() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {gallery.map((src, i) => (
-              <img
+              <ResponsiveImage
                 key={i}
                 src={src}
                 alt={`Popcorn ceiling removal in a Lorne Park home — project ${

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { CONTACT, SITE_URL } from "@/app/config";
@@ -54,7 +56,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: "Drywall Repair Etobicoke | Ceiling, Water Damage & Patch Repair | EPF Pro Services",
+  title: { absolute: "Drywall Repair Etobicoke | Ceiling, Water Damage & Patch Repair | EPF Pro Services" },
   description:
     "Drywall repair Etobicoke for holes, cracks, ceiling leaks, water damage, plumbing cutouts, HEPA sanding, Level 5 finishing and paint-ready repairs.",
   alternates: { canonical: CANONICAL_URL },
@@ -156,7 +158,7 @@ export default function Page() {
 
       <section className="relative overflow-hidden bg-slate-950 text-white">
         <div className="absolute inset-0">
-          <img
+          <ResponsiveImage
             src="/gallery/drywall-repair/drywall-repair-service00001.webp"
             alt="Drywall repair Etobicoke wall patch with smooth finish"
             className="h-full w-full object-cover opacity-35"
@@ -293,7 +295,7 @@ export default function Page() {
               </p>
             </div>
             <div className="rounded-3xl bg-slate-900 p-8 text-white">
-              <h3 className="text-2xl font-bold">Areas We Serve in Etobicoke</h3>
+              <h3 className="text-2xl font-bold">Drywall Repair Etobicoke — Neighbourhoods We Serve</h3>
               <div className="mt-6 grid grid-cols-2 gap-3">
                 {AREAS.map((area) => (
                   <div

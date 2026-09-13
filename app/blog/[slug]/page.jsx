@@ -1,3 +1,7 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
+import { imageDimensions } from "@/lib/imageDimensions";
 import Link from "next/link";
 import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 import DrywallPatchShowingGuide from "@/components/blog/DrywallPatchShowingGuide";
@@ -17,7 +21,7 @@ const UNORDERED_LIST_RE = /^\s*[-*]\s+/;
 const ORDERED_LIST_RE = /^\s*\d+\.\s+/;
 const HEADING_HTML_RE = /^<strong>(.+)<\/strong>$/i;
 const HEADING_TAG_HTML_RE = /^<h([2-3])(?:\s+[^>]*)?>(.+)<\/h\1>$/i;
-const BLOCK_HTML_RE = /^<(figure|div|section)\b/i;
+const BLOCK_HTML_RE = /^<(figure|div|section|aside)\b/i;
 const FIELD_GUIDE_TRUST_BADGES = [
   "Trusted since 2005",
   "Fully insured",
@@ -443,8 +447,9 @@ const renderContent = (content) => {
           key={`figure-${keyIndex++}`}
           className="my-8 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm"
         >
-          <img
+          <ResponsiveImage
             src={safeFigureSrc}
+                  {...imageDimensions(safeFigureSrc)}
             alt={figure.alt}
             className="w-full"
             loading="lazy"
@@ -520,7 +525,7 @@ export async function generateMetadata({ params }) {
     post.metaDescription || post.excerpt || post.content?.[0]?.slice(0, 155);
   const seoTitle = post.metaTitle || post.title;
   return {
-    title: seoTitle,
+    title: /\bEPF\s+Pro\b/i.test(seoTitle) ? { absolute: seoTitle } : seoTitle,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -532,13 +537,13 @@ export async function generateMetadata({ params }) {
       publishedTime: post.date,
       modifiedTime: post.date,
       authors: [post.author || "EPF Pro Services"],
-      images: imageUrl ? [{ url: imageUrl }] : undefined,
+      images: socialImages(imageUrl ? [{ url: imageUrl, ...imageDimensions(imageUrl), alt: post.imageAlt || post.photos?.[0]?.alt || post.title }] : undefined),
     },
     twitter: {
       card: "summary_large_image",
       title: seoTitle,
       description,
-      images: imageUrl ? [imageUrl] : undefined,
+      images: socialImages(imageUrl ? [imageUrl] : undefined),
     },
   };
 }
@@ -784,11 +789,11 @@ export default async function Post({ params }) {
 
             {featuredPhoto ? (
               <figure className="overflow-hidden rounded-xl border border-white/10 bg-slate-900 shadow-2xl">
-                <img
+                <ResponsiveImage
                   src={featuredPhoto.src}
+                  sizes="(max-width: 1023px) 100vw, 640px"
+                  {...imageDimensions(featuredPhoto.src)}
                   alt={featuredPhoto.alt}
-                  width="1600"
-                  height="900"
                   className="h-auto w-full object-cover"
                   fetchPriority="high"
                 />
@@ -874,11 +879,10 @@ export default async function Post({ params }) {
                   className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300"
                 >
                   {isAllowedBlogImageSrc(link.image) ? (
-                    <img
+                    <ResponsiveImage
                       src={link.image}
+                  {...imageDimensions(link.image)}
                       alt={link.imageAlt || link.anchor}
-                      width={768}
-                      height={432}
                       loading="lazy"
                       className="mb-4 aspect-video w-full rounded-lg object-cover"
                     />
@@ -918,8 +922,9 @@ export default async function Post({ params }) {
                     key={`${photo.src}-${idx}`}
                     className="overflow-hidden rounded-xl border border-slate-100 bg-slate-50"
                   >
-                    <img
+                    <ResponsiveImage
                       src={photo.src}
+                  {...imageDimensions(photo.src)}
                       alt={photo.alt}
                       className="h-48 w-full object-cover"
                       loading="lazy"
@@ -1035,8 +1040,10 @@ export default async function Post({ params }) {
       {featuredPhoto ? (
         <section className="container-x px-4 -mt-8">
           <figure className="mx-auto max-w-5xl overflow-hidden rounded-3xl border bg-white shadow-xl ring-1 ring-black/5">
-            <img
+            <ResponsiveImage
               src={featuredPhoto.src}
+              sizes="(max-width: 1023px) 100vw, 1024px"
+                  {...imageDimensions(featuredPhoto.src)}
               alt={featuredPhoto.alt}
               className="mx-auto max-h-[520px] w-full bg-slate-100 object-contain p-4 md:p-6"
               loading="eager"
@@ -1146,8 +1153,9 @@ export default async function Post({ params }) {
                 key={`${photo.src}-${idx}`}
                 className="overflow-hidden rounded-3xl border bg-white shadow-xl ring-1 ring-black/5"
               >
-                <img
+                <ResponsiveImage
                   src={photo.src}
+                  {...imageDimensions(photo.src)}
                   alt={photo.alt || pageTitle}
                   className="w-full object-cover"
                   loading="lazy"
@@ -1183,8 +1191,9 @@ export default async function Post({ params }) {
                   key={`${photo.alt}-${idx}`}
                   className="overflow-hidden rounded-2xl border border-slate-100 bg-slate-50"
                 >
-                  <img
+                  <ResponsiveImage
                     src={photo.src}
+                  {...imageDimensions(photo.src)}
                     alt={photo.alt}
                     className="h-48 w-full object-cover"
                     loading="lazy"

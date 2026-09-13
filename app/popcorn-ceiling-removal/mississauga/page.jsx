@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import { CONTACT, SITE_URL } from "@/app/config";
@@ -350,7 +352,7 @@ export default function Page() {
                 <div className="mt-5 overflow-hidden rounded-sm border border-white/30 bg-[#184f42]/60 p-2">
                   <div className="grid grid-cols-2 gap-1.5">
                     <figure className="relative overflow-hidden border border-white/20 bg-black">
-                      <img
+                      <ResponsiveImage
                         src="/gallery/popcorn-ceiling-removal4.jpeg"
                         alt="Stucco ceiling being sanded before removal in Mississauga"
                         className="h-56 w-full object-cover md:h-72"
@@ -361,7 +363,7 @@ export default function Page() {
                       </figcaption>
                     </figure>
                     <figure className="relative overflow-hidden border border-white/20 bg-black">
-                      <img
+                      <ResponsiveImage
                         src="/gallery/popcorn-ceiling-removal.jpeg"
                         alt="Mississauga popcorn ceiling after removal"
                         className="h-56 w-full object-cover md:h-72"
@@ -437,9 +439,7 @@ export default function Page() {
         <section id="coverage" className="container-x px-4">
           <div className="rounded-3xl border bg-white p-6 shadow-xl ring-1 ring-black/5">
             <div>
-              <h2 className="text-2xl font-semibold">
-                Mississauga neighbourhoods we service weekly
-              </h2>
+              <h2 className="text-2xl font-semibold">Popcorn Ceiling Removal Mississauga — Neighbourhoods We Serve</h2>
               <p className="mt-2 text-slate-600">
                 Detached homes, semis, condos, and townhomes across every
                 Mississauga pocket. Jump into a local guide for photos and
@@ -644,7 +644,7 @@ export default function Page() {
                     key={src}
                     className="overflow-hidden rounded-2xl border border-slate-100"
                   >
-                    <img
+                    <ResponsiveImage
                       src={src}
                       alt={`Mississauga ${
                         ["popcorn", "stipple", "stucco"][idx % 3]

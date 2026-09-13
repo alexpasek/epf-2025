@@ -1,9 +1,12 @@
 "use client";
+import ResponsiveImage from "@/components/ResponsiveImage";
+
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
+import { headerServiceLabel } from "@/lib/headerServiceLabel";
 import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
 
 /* Accent used only for nav/dropdowns (CTAs unchanged) */
@@ -277,17 +280,14 @@ export default function HeaderNav() {
           label: "Popcorn Ceiling Removal St. Catharines",
         },
       ];
-  const isTrimFocusedPage =
-    isGaragePage || isDrywallInstallationPage || isBaseboardInstallationPage;
-  const brandTitle = isTrimFocusedPage
-    ? "EPF Pro Services — Home"
-    : "Popcorn ceiling Removal EPF Pro Services — Home";
-  const brandAlt = isTrimFocusedPage
-    ? "EPF Pro Services"
-    : "Popcorn ceiling removal EPF Pro Services";
-  const brandText = isTrimFocusedPage
-    ? "EPF Pro Services"
-    : "Popcorn Ceiling Removal";
+  const brandText = headerServiceLabel(pathname || "");
+  const isPopcornBrand = brandText === "Popcorn Ceiling Removal";
+  const brandTitle = isPopcornBrand
+    ? "Popcorn ceiling Removal EPF Pro Services — Home"
+    : `EPF Pro Services — ${brandText} — Home`;
+  const brandAlt = isPopcornBrand
+    ? "Popcorn ceiling removal EPF Pro Services"
+    : "EPF Pro Services";
 
   const crumbs = buildCrumbs(pathname);
 
@@ -307,15 +307,17 @@ export default function HeaderNav() {
         <div className="container-x py-2 md:py-3 flex h-24 md:h-28 items-center gap-3">
           <Link
             href="/"
-            className="flex items-center gap-2 min-w-0"
+            className={isPopcornBrand ? "flex items-center gap-2 min-w-0" : "flex min-w-0 flex-1 items-center gap-2 md:flex-initial"}
             title={brandTitle}
           >
-            <img
+            <ResponsiveImage
               src="/logo.png"
+              width={200}
+              height={56}
               alt={brandAlt}
-              className="w-auto h-14 md:h-16 object-contain"
+              className={isPopcornBrand ? "w-auto h-14 md:h-16 object-contain" : "h-auto w-36 shrink-0 object-contain sm:w-44 md:w-48"}
             />
-            <span className="underline decoration-red-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800">
+            <span className={isPopcornBrand ? "underline decoration-red-500 text-lg md:text-2xl font-semibold leading-none whitespace-nowrap truncate text-slate-800" : "underline decoration-red-500 text-sm sm:text-lg md:text-2xl font-semibold leading-tight text-slate-800"}>
               {brandText}
             </span>
           </Link>

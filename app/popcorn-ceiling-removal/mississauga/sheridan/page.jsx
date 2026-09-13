@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import QuoteForm from "@/components/QuoteForm";
@@ -222,7 +224,7 @@ export default function Page() {
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {gallery.map((src, i) => (
           <div key={src} className="rounded-3xl overflow-hidden bg-slate-100 shadow">
-            <img
+            <ResponsiveImage
               src={src}
               alt={`Sheridan popcorn ceiling removal project ${i + 1}`}
               className="h-56 w-full object-cover"

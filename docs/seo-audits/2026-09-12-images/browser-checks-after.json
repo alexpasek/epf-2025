@@ -1,0 +1,274 @@
+[
+  {
+    "path": "/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 280,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 15,
+    "responsive": 7,
+    "menu": "opens and closes",
+    "gallery": "opens with decoded image",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 236,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 11,
+    "responsive": 3,
+    "menu": "opens and closes",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/drywall-repair/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 240,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 14,
+    "responsive": 3,
+    "menu": "opens and closes",
+    "gallery": "not present",
+    "lightbox": "opens full responsive source and preserves alt"
+  },
+  {
+    "path": "/services/garage-drywall-repair/mississauga/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 208,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 10,
+    "responsive": 3,
+    "menu": "opens and closes",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/skylight-drywall-repair/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 232,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 16,
+    "responsive": 9,
+    "menu": "opens and closes",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/blog/why-garage-drywall-tape-peels/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 652,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 11,
+    "responsive": 4,
+    "menu": "opens and closes",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/blog/why-drywall-patches-show-through-paint/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 328,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 15,
+    "responsive": 4,
+    "menu": "opens and closes",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/interior-painting/",
+    "viewport": 390,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 184,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 13,
+    "responsive": 6,
+    "menu": "opens and closes",
+    "gallery": "not present",
+    "lightbox": "opens full responsive source and preserves alt"
+  },
+  {
+    "path": "/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 220,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 15,
+    "responsive": 7,
+    "menu": "not checked",
+    "gallery": "opens with decoded image",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 280,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 11,
+    "responsive": 3,
+    "menu": "not checked",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/drywall-repair/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 272,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 14,
+    "responsive": 3,
+    "menu": "not checked",
+    "gallery": "not present",
+    "lightbox": "opens full responsive source and preserves alt"
+  },
+  {
+    "path": "/services/garage-drywall-repair/mississauga/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 204,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 10,
+    "responsive": 3,
+    "menu": "not checked",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/skylight-drywall-repair/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 228,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 15,
+    "responsive": 8,
+    "menu": "not checked",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/blog/why-garage-drywall-tape-peels/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 336,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 11,
+    "responsive": 4,
+    "menu": "not checked",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/blog/why-drywall-patches-show-through-paint/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 392,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 15,
+    "responsive": 4,
+    "menu": "not checked",
+    "gallery": "not present",
+    "lightbox": "not present"
+  },
+  {
+    "path": "/services/interior-painting/",
+    "viewport": 1440,
+    "status": 200,
+    "overflow": false,
+    "vitals": {
+      "lcp": 252,
+      "cls": 0
+    },
+    "errors": [],
+    "broken": [],
+    "images": 13,
+    "responsive": 6,
+    "menu": "not checked",
+    "gallery": "not present",
+    "lightbox": "opens full responsive source and preserves alt"
+  }
+]

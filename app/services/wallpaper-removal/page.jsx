@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/services/wallpaper-removal/page.jsx
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
@@ -8,8 +10,7 @@ const PAGE_PATH = "/services/wallpaper-removal/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata = {
-  title:
-    "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready | EPF Pro Services",
+  title: { absolute: "Wallpaper Removal — Dust-Controlled Adhesive Wash, Skim-Coat, Paint-Ready | EPF Pro Services" },
   description:
     "Pro wallpaper removal across the GTA. Full adhesive wash, drywall repairs, skim-coat, primer and a smooth, paint-ready finish. Tidy crews, HEPA control, 3-year warranty.",
   alternates: { canonical: PAGE_PATH },
@@ -110,7 +111,7 @@ export default function Page() {
         </p>
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {images.map((src, i) => (
-            <img
+            <ResponsiveImage
               key={src}
               src={src}
               alt={`Wallpaper removal project ${

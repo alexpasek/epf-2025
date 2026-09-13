@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -86,14 +89,14 @@ export const metadata = {
       "Local drywall contractors in Mississauga for repairs, skim coating, finishing, and coordinated drywall services across homes, condos, and commercial interiors.",
     url: ABSOLUTE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/gallery/drywall-installation/drywall-installation-hero.webp",
         width: 1200,
         height: 630,
         alt: "Drywall contractor working in a Mississauga interior",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -417,7 +420,7 @@ export default function Page() {
 
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
-                <img
+                <ResponsiveImage
                   src="/gallery/drywall-installation/drywall-installation-hero.webp"
                   alt="Mississauga drywall contractor handling wall and ceiling work"
                   className="w-full h-[500px] object-cover"
@@ -702,7 +705,7 @@ export default function Page() {
               Neighbourhood Coverage
             </p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Drywall contractor service across Mississauga
+              Drywall Contractor Mississauga — Neighbourhoods We Serve
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Local drywall contractors for City Centre, Port Credit,

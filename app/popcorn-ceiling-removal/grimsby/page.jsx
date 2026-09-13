@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 // app/popcorn-ceiling-removal/grimsby/page.jsx
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
@@ -107,21 +110,21 @@ export const metadata = {
     siteName: "EPF Pro Services",
     locale: "en_CA",
     type: "website",
-    images: [
+    images: socialImages([
       {
-        url: "https://epfproservices.ca/gallery/PopcornCeilingRemoval/popcorn-ceiling-removal1.jpg",
+        url: "https://epfproservices.com/gallery/PopcornCeilingRemoval/popcorn-ceiling-removal1.jpg",
         width: 1200,
         height: 630,
         alt: "Popcorn Ceiling Removal Grimsby Ontario",
       },
-    ],
+    ]),
   },
   twitter: {
     card: "summary_large_image",
     title: `Popcorn Ceiling Removal Grimsby, ON | Professional Contractor`,
     description:
       "Professional popcorn ceiling removal in Grimsby. HEPA dust control, Level 5 skim coat finish. Free quotes.",
-    images: ["https://epfproservices.ca/gallery/PopcornCeilingRemoval/popcorn-ceiling-removal1.jpg"],
+    images: socialImages(["https://epfproservices.com/gallery/PopcornCeilingRemoval/popcorn-ceiling-removal1.jpg"]),
   },
   robots: { 
     index: true, 
@@ -278,7 +281,7 @@ export default function Page() {
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <ResponsiveImage
             src={images[0]}
             alt={`${CITY} popcorn ceiling removal`}
             className="w-full h-full object-cover"
@@ -465,7 +468,7 @@ export default function Page() {
                 key={src}
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={`Grimsby popcorn ceiling removal project ${i + 1}`}
                   className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -976,9 +979,7 @@ export default function Page() {
       {/* NEIGHBOURHOODS */}
       <section className="py-20 bg-gradient-to-b from-blue-50 to-white" id="neighbourhoods">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            {CITY} Neighbourhoods We Serve
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Popcorn Ceiling Removal Grimsby — Neighbourhoods We Serve</h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
             Professional popcorn ceiling removal service across all Grimsby areas—from lakeside to escarpment.
           </p>

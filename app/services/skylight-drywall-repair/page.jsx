@@ -1,3 +1,5 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 import SkylightDrywallRepairPage from "@/components/SkylightDrywallRepairPage";
 
 export const revalidate = 86400;
@@ -35,14 +37,14 @@ export const metadata = {
       "Interior drywall repair, skylight shaft refinishing, cathedral ceiling repair, popcorn or stipple removal, primer, painting, and smooth finish prep.",
     url: "/services/skylight-drywall-repair/",
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/services/skylight-drywall-repair/skylight-drywall-repair-clean-hero-v2.jpg",
         width: 1200,
         height: 630,
         alt: "Clean skylight drywall repair and smooth ceiling preparation around a bright light well",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };

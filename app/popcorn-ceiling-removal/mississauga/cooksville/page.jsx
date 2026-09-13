@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/mississauga/cooksville/page.jsx
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
@@ -166,7 +168,7 @@ export default function Page() {
               </div>
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img
+              <ResponsiveImage
                 src="/services/popcorn-ceiling-removal/3.webp"
                 alt="Cooksville crew using HEPA sander on popcorn ceiling"
                 className="w-full h-full object-cover"
@@ -342,7 +344,7 @@ export default function Page() {
       {/* GALLERY */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((src, i) => (
-          <img
+          <ResponsiveImage
             key={i}
             src={src}
             alt={`Popcorn ceiling removal in Cooksville — project ${i + 1}`}

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // filepath: /Users/alex/EpfProservicesn2025/epfproservices2025build/app/services/drywall-repair/hamilton/page.jsx
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
@@ -132,7 +134,7 @@ const FAQS = [
 ];
 
 export const metadata = {
-  title: `Drywall Repair Hamilton | Water Damage, Patching & Seamless Finish | EPF Pro Services`,
+  title: { absolute: `Drywall Repair Hamilton | Water Damage, Patching & Seamless Finish | EPF Pro Services` },
   description:
     "Drywall repair Hamilton specialists. Water damage, cracks, holes, trade cut-outs, and Level 5 finishing across Hamilton, Ancaster, Stoney Creek & Dundas.",
   keywords: [
@@ -490,7 +492,7 @@ export default function Page() {
             {/* Right Column - Hero Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <img
+                <ResponsiveImage
                   src="/gallery/drywall-repair/drywall-repair.webp"
                   alt="Professional drywall repair Hamilton - expert contractors finishing seamless ceiling repair"
                   className="w-full h-[500px] object-cover"
@@ -729,7 +731,7 @@ export default function Page() {
 
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                  <img
+                  <ResponsiveImage
                     src={images[0]}
                     alt="Drywall repair Hamilton Level 5 finish"
                     className="w-full h-full object-cover"
@@ -853,7 +855,7 @@ export default function Page() {
                 key={src}
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={`${CITY} drywall repair project ${i + 1}`}
                   loading={i < 3 ? "eager" : "lazy"}
@@ -875,7 +877,7 @@ export default function Page() {
                 CITYWIDE SERVICE
               </p>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Serving Every {CITY} Neighbourhood
+                Drywall Repair {CITY} — Neighbourhoods We Serve
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Call us for emergency work on the Mountain, lakefront

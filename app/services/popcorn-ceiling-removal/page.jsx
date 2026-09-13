@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 import AuthorityClusterBlock from "@/components/AuthorityClusterBlock/AuthorityClusterBlock";
@@ -16,8 +19,7 @@ import {
 export const revalidate = 86400;
 
 export const metadata = {
-  title:
-    "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services",
+  title: { absolute: "Popcorn Ceiling Removal | Smooth Ceilings (Level 5) | EPF Pro Services" },
   description:
     "Professional popcorn ceiling removal and Level 5 finishing across the GTA. Dust-controlled scraping, skim-coating, HEPA sanding, stain-block primer and optional ceiling painting. Free quotes and same-day estimates.",
   keywords: [
@@ -50,14 +52,14 @@ export const metadata = {
       "Dust-controlled popcorn ceiling removal, Level 5 skim coat, HEPA sanding, primer and optional ceiling painting. Serving the GTA with quick quotes.",
     url: "/services/popcorn-ceiling-removal/",
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/services/popcorn-ceiling-removal/1.webp",
         width: 1200,
         height: 630,
         alt: "Professional popcorn ceiling removal",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -330,7 +332,7 @@ export default function Page() {
             {/* Right: Hero Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl md:border-4 md:border-white/20">
-                <img
+                <ResponsiveImage
                   src={images[0]}
                   alt="Professional popcorn ceiling removal contractor - before and after"
                   className="w-full h-[500px] object-cover"
@@ -693,7 +695,7 @@ export default function Page() {
                 key={i}
                 className="relative bg-white rounded-2xl border-2 border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-300 transition group cursor-pointer"
               >
-                <img
+                <ResponsiveImage
                   src={s}
                   alt={`Popcorn ceiling removal project ${
                     i + 1

@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/oakville/page.jsx
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
@@ -282,7 +284,7 @@ export default function Page() {
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <ResponsiveImage
             src={images[0]}
             alt="Oakville popcorn ceiling removal project"
             className="w-full h-full object-cover"
@@ -526,7 +528,7 @@ export default function Page() {
                 key={src}
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={`Oakville popcorn ceiling removal project ${i + 1}`}
                   className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -999,9 +1001,7 @@ export default function Page() {
       {/* NEIGHBOURHOODS */}
       <section className="py-20 bg-white" id="neighbourhoods">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Oakville Neighbourhoods We Serve
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Popcorn Ceiling Removal Oakville — Neighbourhoods We Serve</h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
             Pick your area for local project details, access notes, and ceiling
             finishing guidance.

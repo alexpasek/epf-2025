@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CONTACT } from "@/app/config";
@@ -35,7 +38,7 @@ export async function generateMetadata({ params }) {
       description,
       url: pageUrl,
       type: "video.other",
-      images: [videoThumbnailUrl(video)],
+      images: socialImages([videoThumbnailUrl(video)]),
       videos: [videoEmbedUrl(video)],
     },
   };
@@ -149,7 +152,7 @@ export default function Page({ params }) {
                 {otherVideos.map((v) => (
                   <li key={v.slug} className="flex gap-3">
                     <Link href={videoPagePath(v)} className="block w-28 shrink-0">
-                      <img
+                      <ResponsiveImage
                         src={videoThumbnailUrl(v)}
                         alt={v.title}
                         className="h-16 w-full rounded-lg object-cover border"

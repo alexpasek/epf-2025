@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -100,14 +103,14 @@ export const metadata = {
       "Drywall hanging, taping, sanding, and Level 5 finishing for renovations, basements, ceilings, and commercial spaces across the GTA.",
     url: PAGE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/gallery/drywall-installation/drywall-installation-hero.webp",
         width: 1200,
         height: 630,
         alt: "Professional drywall installation services - GTA crew hanging and finishing new walls",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -481,7 +484,7 @@ export default function Page() {
             {/* Right Column - Hero Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <img
+                <ResponsiveImage
                   src="/gallery/drywall-installation/drywall-installation-hero.webp"
                   alt="Professional drywall installation services - expert crew hanging and finishing new drywall in GTA home"
                   className="w-full h-[500px] object-cover"
@@ -809,7 +812,7 @@ export default function Page() {
               key={item.src}
               className="group overflow-hidden rounded-3xl border shadow bg-white flex flex-col"
             >
-              <img
+              <ResponsiveImage
                 src={item.src}
                 alt={item.alt || `Professional drywall installation project ${i + 1}`}
                 loading={i < 3 ? "eager" : "lazy"}

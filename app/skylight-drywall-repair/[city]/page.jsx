@@ -1,3 +1,5 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 import { notFound } from "next/navigation";
 import SkylightDrywallRepairPage from "@/components/SkylightDrywallRepairPage";
 import {
@@ -47,14 +49,14 @@ export async function generateMetadata({ params }) {
       description: city.metaDescription,
       url: path,
       type: "website",
-      images: [
+      images: socialImages([
         {
           url: city.heroImage,
           width: 1200,
           height: 630,
           alt: city.imageAlt,
         },
-      ],
+      ]),
     },
     robots: { index: true, follow: true },
   };

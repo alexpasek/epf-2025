@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
@@ -46,7 +49,7 @@ export function buildBaseboardMetadata(cityName, citySlug) {
       description: `Baseboard installation in ${cityName} with clean lines, tight corners, and paint-ready finishing.`,
       url: absoluteSlug,
       type: "website",
-      images: heroImage ? [{ url: absoluteServiceUrl(heroImage) }] : [],
+      images: socialImages(heroImage ? [{ url: absoluteServiceUrl(heroImage) }] : []),
     },
     robots: { index: true, follow: true },
   };
@@ -227,7 +230,7 @@ export function BaseboardCityPage({ cityName, citySlug, signals }) {
               className="overflow-hidden border-2 border-slate-300 bg-white shadow-[0_8px_30px_rgba(0,0,0,.06)]"
               style={{ height: "320px" }}
             >
-              <img
+              <ResponsiveImage
                 src={heroImage}
                 alt={`Baseboard installation in ${cityName}`}
                 className="h-full w-full object-cover transition duration-200 ease-out hover:brightness-110 hover:contrast-110"

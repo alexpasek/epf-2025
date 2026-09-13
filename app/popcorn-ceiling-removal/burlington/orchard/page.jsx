@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CONTACT } from "@/app/config";
 
@@ -218,7 +220,7 @@ export default function Page() {
       {/* GALLERY */}
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map((src, i) => (
-          <img
+          <ResponsiveImage
             key={i}
             src={src}
             alt={`${NAME} Burlington popcorn ceiling removal — project ${
@@ -408,9 +410,7 @@ export default function Page() {
 
       {/* LINKS */}
       <section id="links" className="mt-10">
-        <h2 className="text-2xl font-semibold">
-          More Burlington neighbourhoods
-        </h2>
+        <h2 className="text-2xl font-semibold">Popcorn Ceiling Removal Burlington — Nearby Neighbourhoods</h2>
         <div className="mt-4 flex flex-wrap gap-2">
           {ALL.filter(([s]) => s !== SLUG).map(([s, n]) => (
             <Link key={s} href={`${CITY_BASE}/${s}/`} className="pill">

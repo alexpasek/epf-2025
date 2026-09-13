@@ -1,14 +1,16 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 // app/services/page.jsx
 import Link from "next/link";
 import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
 
 export const revalidate = 86400;
 
-const HERO_IMG = "/services/epf-services-hero.png"; // update to a real image
+const HERO_IMG = "/gallery/drywall-installation/drywall-installation-hero.webp";
 
 export const metadata = {
-  title:
-    "Services — Popcorn Ceiling Removal, Drywall, Skylight & Cathedral Ceiling Repair, Painting | EPF Pro Services",
+  title: { absolute: "Services — Popcorn Ceiling Removal, Drywall, Skylight & Cathedral Ceiling Repair, Painting | EPF Pro Services" },
   description:
     "Dust-controlled popcorn ceiling removal to Level 5 smooth, drywall installation & finishing, skylight and cathedral ceiling repair, wallpaper removal with wall skim, and interior painting. Local, insured crew serving Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines.",
   alternates: { canonical: "/services/" },
@@ -19,7 +21,7 @@ export const metadata = {
       "Popcorn ceiling removal (Level 5), drywall finishing, skylight and cathedral ceiling repair, wallpaper removal, and interior painting with clean containment and tidy job sites.",
     url: "/services/",
     type: "website",
-    images: [{ url: HERO_IMG }],
+    images: socialImages([{ url: HERO_IMG, width: 1529, height: 900, alt: "Ceiling openings before repair and a smooth refinished ceiling" }]),
   },
   robots: { index: true, follow: true },
 };
@@ -398,9 +400,11 @@ export default function ServicesPage() {
           <div className="absolute -inset-4 md:-inset-6 bg-gradient-to-tr from-sky-300/15 via-blue-300/15 to-indigo-300/15 blur-2xl rounded-[28px]" />
           <div className="relative rounded-[22px] p-[2px] bg-gradient-to-tr from-sky-500/25 via-blue-400/20 to-indigo-500/25">
             <div className="rounded-[20px] overflow-hidden bg-white shadow-[0_40px_120px_-40px_rgba(0,0,0,.35)] ring-1 ring-black/5">
-              <img
+              <ResponsiveImage
                 src={HERO_IMG}
-                alt="EPF Pro Services crew — popcorn ceiling removal and Level 5 finishing"
+                alt="Ceiling openings before repair and a smooth refinished ceiling"
+                width={1529}
+                height={900}
                 className="w-full h-full object-cover"
                 loading="eager"
               />
@@ -576,7 +580,7 @@ export default function ServicesPage() {
               href={item.href}
               className="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm hover:shadow-md transition"
             >
-              <img
+              <ResponsiveImage
                 src={item.src}
                 alt={item.alt}
                 className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"

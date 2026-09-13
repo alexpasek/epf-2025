@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 // app/about/page.tsx (Next.js App Router)
 
 import Link from "next/link";
@@ -9,8 +12,7 @@ export const revalidate = 86400;
 const HERO_IMG = "/about/Popcorn_ceiling_removal_team.png";
 
 export const metadata = {
-  title:
-    "About Us — EPF Pro Services | Popcorn Ceiling Removal & Level 5 Finishing",
+  title: { absolute: "About Us — EPF Pro Services | Popcorn Ceiling Removal & Level 5 Finishing" },
   description:
     "EPF Pro Services: dust-controlled popcorn ceiling removal to Level 5 smooth, drywall finishing, wallpaper removal, and interior painting. Local, insured crew serving Mississauga, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, St. Catharines.",
   alternates: { canonical: "/about/" },
@@ -20,7 +22,7 @@ export const metadata = {
       "Local, insured crew delivering dust-controlled popcorn ceiling removal, Level 5 skim coating, drywall finishing, and interior painting with tidy job sites and on-time schedules.",
     url: "/about/",
     type: "article",
-    images: [{ url: HERO_IMG }],
+    images: socialImages([{ url: HERO_IMG }]),
   },
   robots: { index: true, follow: true },
 };
@@ -226,7 +228,7 @@ export default function AboutPage() {
           {/* gradient frame */}
           <div className="relative rounded-[22px] p-[2px] bg-gradient-to-tr from-red-500/30 via-rose-300/20 to-blue-500/30">
             <div className="rounded-[20px] overflow-hidden bg-white shadow-[0_40px_120px_-40px_rgba(0,0,0,.35)] ring-1 ring-black/5">
-              <img
+              <ResponsiveImage
                 src={HERO_IMG}
                 alt="EPF Pro Services crew performing dust-controlled popcorn ceiling removal"
                 loading="eager"

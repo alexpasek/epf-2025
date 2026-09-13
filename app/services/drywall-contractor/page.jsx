@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
@@ -98,14 +101,14 @@ export const metadata = {
       "Drywall company and local drywall contractors for repairs, finishing, skim coating, and coordinated wall and ceiling services across the GTA.",
     url: PAGE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/gallery/drywall-installation/drywall-installation-hero.webp",
         width: 1200,
         height: 630,
         alt: "Professional drywall contractor service in the GTA",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -604,7 +607,7 @@ export default function Page() {
 
               <div className="relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                  <img
+                  <ResponsiveImage
                     src="/gallery/drywall-installation/drywall-installation-hero.webp"
                     alt="Professional drywall contractor handling installation and finishing in GTA home"
                     className="w-full h-[500px] object-cover"
@@ -996,7 +999,7 @@ export default function Page() {
                   key={item.src}
                   className="group overflow-hidden rounded-3xl border shadow bg-white flex flex-col"
                 >
-                  <img
+                  <ResponsiveImage
                     src={item.src}
                     alt={item.alt}
                     loading={i < 2 ? "eager" : "lazy"}

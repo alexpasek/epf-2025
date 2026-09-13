@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 import LandingActionButtons from "@/components/landing/LandingActionButtons";
 import LandingGoogleReviewCards from "@/components/landing/LandingGoogleReviewCards";
@@ -65,7 +67,7 @@ function BeforeAfterPanel({ landing, compact = false }) {
     >
       <div className="grid grid-cols-2 gap-1.5">
         <figure className="relative overflow-hidden border border-white/20 bg-black">
-          <img
+          <ResponsiveImage
             src={before.src}
             alt={`${landing.city} popcorn ceiling before removal`}
             loading="eager"
@@ -81,7 +83,7 @@ function BeforeAfterPanel({ landing, compact = false }) {
           </figcaption>
         </figure>
         <figure className="relative overflow-hidden border border-white/20 bg-black">
-          <img
+          <ResponsiveImage
             src="/gallery/popcorn-ceiling-removal.jpeg"
             alt={`${landing.city} popcorn ceiling after removal`}
             loading="eager"
@@ -106,7 +108,7 @@ function DesktopHeader({ landing }) {
     <header className="hidden border-b border-[#d8ded8] bg-white md:block">
       <div className="container-x flex items-center justify-between py-4">
         <a href="#hero" className="flex items-center gap-3">
-          <img src="/logo.png" alt="EPP Pro Services" className="h-12 w-auto" />
+          <ResponsiveImage src="/logo.png" alt="EPP Pro Services" className="h-12 w-auto" />
         </a>
 
         <nav
@@ -151,7 +153,7 @@ function MobileHeader({ landing }) {
   return (
     <header className="md:hidden">
       <div className="flex items-center justify-between border-b border-[#d7ddd7] bg-white px-3 py-3">
-        <img src="/logo.png" alt="EPP Pro Services" className="h-8 w-auto" />
+        <ResponsiveImage src="/logo.png" alt="EPP Pro Services" className="h-8 w-auto" />
         <LandingActionButtons
           city={landing.city}
           phoneHref={PHONE_HREF}
@@ -548,7 +550,7 @@ export default function PopcornAdsLandingPage({ landing }) {
             </div>
 
             <div className="relative overflow-hidden rounded-2xl border border-[#d0d7cf] bg-[#dfe5df] shadow-[0_24px_40px_-28px_rgba(0,0,0,.5)]">
-              <img
+              <ResponsiveImage
                 src="/gallery/popcornceilingremoval_4238.jpeg"
                 alt={`${landing.city} ceiling finish after popcorn removal`}
                 loading="lazy"
@@ -606,7 +608,7 @@ export default function PopcornAdsLandingPage({ landing }) {
               key={`${item.src}-${idx}`}
               className="overflow-hidden rounded-xl border border-[#ccd3cc] bg-white shadow-sm"
             >
-              <img
+              <ResponsiveImage
                 src={item.src}
                 alt={item.alt}
                 loading="lazy"

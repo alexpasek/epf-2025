@@ -1,3 +1,5 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 import { cities } from "@/data/cities";
 
 const BASE_URL = "https://epfproservices.com";
@@ -487,14 +489,14 @@ export function getMetadata(config) {
         `Local drywall contractors in ${config.city} for repairs, smoother walls, damaged drywall replacement, and clean finishes across homes, condos, and commercial interiors.`,
       url: `${BASE_URL}${config.path}`,
       type: "website",
-      images: [
+      images: socialImages([
         {
           url: "/gallery/drywall-installation/drywall-installation-hero.webp",
           width: 1200,
           height: 630,
           alt: `Drywall contractor working in a ${config.city} interior`,
         },
-      ],
+      ]),
     },
     robots: { index: true, follow: true },
   };

@@ -1,3 +1,5 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { ServiceCopy } from "@/components/LocalSEOCopy";
@@ -71,14 +73,14 @@ export const metadata = {
       "Professional drywall installation services in Grimsby with clean job sites, straight walls, ceiling finishing, and paint-ready results.",
     url: ABSOLUTE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/services/drywall/2.webp",
         width: 1200,
         height: 630,
         alt: "Drywall installation in Grimsby",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };

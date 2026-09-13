@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { ServiceCopy } from "@/components/LocalSEOCopy";
@@ -116,14 +119,14 @@ export const metadata = {
       "Professional drywall installation services Burlington covering framing coordination, sheetrock hanging, taping, sanding, and painting. Level 4 and Level 5 finishes.",
     url: ABSOLUTE_URL,
     type: "website",
-    images: [
+    images: socialImages([
       {
         url: "/services/drywall/1.webp",
         width: 1200,
         height: 630,
         alt: "Drywall installation Burlington crew hanging new board",
       },
-    ],
+    ]),
   },
   robots: { index: true, follow: true },
 };
@@ -371,7 +374,7 @@ export default function Page() {
 
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
-                <img
+                <ResponsiveImage
                   src={images[0]}
                   alt="Crew hanging drywall board for Burlington renovation"
                   className="w-full h-[500px] object-cover"
@@ -666,7 +669,7 @@ export default function Page() {
                 key={src}
                 className="relative bg-white rounded-2xl border-2 border-gray-200 overflow-hidden hover:shadow-xl hover:border-blue-300 transition group"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={galleryAlts[index % galleryAlts.length]}
                   className="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
@@ -982,7 +985,7 @@ export default function Page() {
 
           <div className="bg-gray-50 rounded-2xl p-8 border-2 border-gray-200">
             <h3 className="text-2xl font-bold text-center mb-4">
-              Areas We Serve in Burlington
+              Drywall Installation Burlington — Neighbourhoods We Serve
             </h3>
             <p className="text-center text-gray-600 mb-6 max-w-3xl mx-auto">
               From Aldershot waterfront condos to Millcroft custom homes, our licensed crews deliver professional drywall installation services throughout Burlington's diverse communities. Every neighbourhood receives the same quality workmanship and attention to detail.

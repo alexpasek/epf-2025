@@ -1,3 +1,5 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { PHONE_HREF, PHONE_NUMBER } from "@/app/config";
 import LandingActionButtons from "@/components/landing/LandingActionButtons";
 import DrywallEstimateCard from "@/components/landing/DrywallEstimateCard";
@@ -40,7 +42,7 @@ export default function DrywallAdsLandingPage() {
     <div className="scroll-smooth bg-sky-50 pb-[84px] md:pb-0">
       <header className="border-b border-sky-100 bg-white">
         <div className="container-x flex items-center justify-between py-3">
-          <img src="/logo.png" alt="EPF Pro Services" className="h-10 w-auto" />
+          <ResponsiveImage src="/logo.png" alt="EPF Pro Services" className="h-10 w-auto" />
           <LandingActionButtons
             city={city}
             phoneHref={PHONE_HREF}
@@ -219,7 +221,7 @@ export default function DrywallAdsLandingPage() {
                 key={src}
                 className="overflow-hidden rounded-3xl border border-sky-100 bg-sky-50 shadow-sm"
               >
-                <img
+                <ResponsiveImage
                   src={src}
                   alt={`Drywall repair project photo ${idx + 1}`}
                   loading="lazy"

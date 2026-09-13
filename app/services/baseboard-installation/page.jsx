@@ -1,3 +1,6 @@
+
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { socialImages } from "@/lib/responsiveImages";
 import Link from "next/link";
 import QuoteForm from "@/components/QuoteForm";
 import LocalSignals from "@/components/LocalSignals";
@@ -36,7 +39,7 @@ export const metadata = {
       "Professional baseboard installation across the Greater Toronto Area. Expert baseboard installation, baseboard replacement, shoe moulding. Licensed contractor.",
     url: ABSOLUTE_SERVICE_URL,
     type: "website",
-    images: HERO_IMG ? [{ url: `${SITE_URL}${HERO_IMG}` }] : [],
+    images: socialImages(HERO_IMG ? [{ url: `${SITE_URL}${HERO_IMG}` }] : []),
   },
   robots: { index: true, follow: true },
 };
@@ -250,7 +253,7 @@ export default function BaseboardInstallationPage() {
                 className="overflow-hidden border-2 border-slate-300 bg-white shadow-[0_8px_30px_rgba(0,0,0,.06)]"
                 style={{ height: "320px" }}
               >
-                <img
+                <ResponsiveImage
                   src={HERO_IMAGE}
                   alt="Baseboard installation in the GTA"
                   className="h-full w-full object-cover transition duration-200 ease-out hover:brightness-110 hover:contrast-110"

@@ -1,6 +1,8 @@
+
+import { socialImages } from "@/lib/responsiveImages";
 // app/contact/page.tsx — Next.js App Router
 import Link from "next/link";
-import Image from "next/image";
+import { NextResponsiveImage as Image } from "@/components/ResponsiveImage";
 import { CONTACT, SITE_URL } from "@/app/config"; // { phoneHref, phoneNumber, email }
 import QuoteForm from "@/components/QuoteForm";
 
@@ -16,7 +18,7 @@ const LOC_STONEY_ID = `${BASE_URL}/#loc-stoney`;
 const HERO_IMG = "/contact/popcorn-ceiling-removal.png";
 
 export const metadata = {
-  title: `Contact — ${BRAND} | Popcorn Ceiling Removal & Level 5 Finishes`,
+  title: { absolute: `Contact — ${BRAND} | Popcorn Ceiling Removal & Level 5 Finishes` },
   description:
     "Contact EPF Pro Services for dust-controlled popcorn ceiling removal (Level 5 smooth), drywall finishing, wallpaper removal, and interior painting. Fast estimates across Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines.",
   keywords: [
@@ -39,7 +41,7 @@ export const metadata = {
       "Local, insured crew specializing in popcorn ceiling removal with clean containment, Level 5 finishes, and on-time schedules.",
     url: PAGE_URL,
     type: "website",
-    images: [{ url: HERO_IMG }],
+    images: socialImages([{ url: HERO_IMG }]),
   },
   robots: { index: true, follow: true },
 };
