@@ -1,3 +1,5 @@
+import "./home.css";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { cities } from "@/data/cities";
 import { PHONE_HREF, PHONE_NUMBER, SITE_URL, BUSINESS_NAME } from "./config";
@@ -377,14 +379,14 @@ export default function Page() {
   ];
 
   return (
-    <div className="space-y-12 pb-10 pt-6">
+    <div className="epf-home">
       <JsonLd />
 
       {/* HERO */}
-      <section className="container-x">
-        <div className="rounded-3xl border bg-white p-6 md:p-10 shadow-xl ring-1 ring-black/5">
-          <div className="grid gap-10 lg:grid-cols-[3fr_2fr]">
-            <div>
+      <section className="container-x epf-home-hero">
+        <div className="epf-home-hero-shell">
+          <div className="epf-home-hero-grid">
+            <div className="epf-home-hero-copy">
               <p className="text-sm uppercase tracking-[0.2em] text-amber-700 font-semibold">
                 Popcorn ceilings • Drywall • Paint-ready finishing
               </p>
@@ -397,6 +399,7 @@ export default function Page() {
                 the GTA with dust containment and concierge-level communication.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/quote/" className="epf-home-quote-link">Request a quote</Link>
                 <a href={PHONE_HREF} className="btn-cta">
                   📞 {PHONE_NUMBER}
                 </a>
@@ -407,6 +410,22 @@ export default function Page() {
                   See recent work
                 </Link>
               </div>
+            </div>
+            <figure className="epf-home-hero-photo">
+              <ResponsiveImage
+                src="/gallery/popcornceilingremoval_4236.jpeg"
+                alt="Smooth finished ceiling above a curved staircase in EPF’s Burlington project gallery"
+                width={480}
+                height={640}
+                sizes="(max-width: 767px) 100vw, (max-width: 1279px) 48vw, 580px"
+                priority
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-x epf-home-support">
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 {heroStats.map((stat) => (
                   <div
@@ -464,37 +483,49 @@ export default function Page() {
                   Interior Painting
                 </Link>
               </div>
-            </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl">
-              <h2 className="text-2xl font-semibold">
-                Plan your popcorn ceiling project
-              </h2>
-              <p className="mt-2 text-sm text-slate-600">
-                Share the rooms, ceiling height, and timing. We’ll reply within
-                hours with scope and schedule.
-              </p>
-              <div className="mt-4">
-                <QuoteForm />
-              </div>
-              <p className="mt-3 text-xs text-slate-500">
-                Prefer to text photos? Message{" "}
-                <a
-                  href={`sms:${PHONE_NUMBER.replace(/[^0-9]/g, "")}`}
-                  className="underline"
-                >
-                  {PHONE_NUMBER}
-                </a>{" "}
-                anytime.
-              </p>
-            </div>
-          </div>
+
+      </section>
+
+      {/* SERVICES */}
+      <section className="container-x epf-home-services">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
+            What’s included
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold">
+            Core finishing services, clearly separated
+          </h2>
+          <p className="mt-3 text-slate-600">
+            Popcorn ceilings, drywall installation, drywall repair, and wallpaper
+            removal each have their own workflow, scope, and city pages.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {serviceHighlights.map((service) => (
+            <article
+              key={service.title}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <h3 className="text-xl font-semibold text-slate-900">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">{service.copy}</p>
+              <Link
+                href={service.href}
+                className="mt-4 inline-flex text-sm font-semibold text-amber-700 hover:underline"
+              >
+                Explore service →
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
+
 
       {/* REVIEWS */}
       <GoogleReviews className="bg-white" />
       {/* VIDEOS */}
-      <section className="container-x">
+      <section className="container-x epf-home-videos">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
             Video walk-throughs
@@ -553,7 +584,7 @@ export default function Page() {
       </section>
 
       {/* GALLERY */}
-      <section className="bg-slate-50 py-10">
+      <section className="epf-home-gallery">
         <OurWorkGallery
           items={galleryItems}
           menuItems={galleryMenu}
@@ -568,40 +599,6 @@ export default function Page() {
         />
       </section>
 
-      {/* SERVICES */}
-      <section className="container-x">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
-            What’s included
-          </p>
-          <h2 className="mt-2 text-3xl font-semibold">
-            Core finishing services, clearly separated
-          </h2>
-          <p className="mt-3 text-slate-600">
-            Popcorn ceilings, drywall installation, drywall repair, and wallpaper
-            removal each have their own workflow, scope, and city pages.
-          </p>
-        </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {serviceHighlights.map((service) => (
-            <article
-              key={service.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <h3 className="text-xl font-semibold text-slate-900">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">{service.copy}</p>
-              <Link
-                href={service.href}
-                className="mt-4 inline-flex text-sm font-semibold text-amber-700 hover:underline"
-              >
-                Explore service →
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className="container-x">
         <div className="grid gap-8 lg:grid-cols-2">
@@ -685,7 +682,7 @@ export default function Page() {
       </section>
 
       {/* CONTACT + PROCESS */}
-      <section className="container-x grid gap-8 lg:grid-cols-2">
+      <section className="container-x epf-home-process grid gap-8 lg:grid-cols-2">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-semibold">
             Our 4-step finishing plan
@@ -754,7 +751,7 @@ export default function Page() {
       </section>
 
       {/* FAQ */}
-      <section className="container-x">
+      <section className="container-x epf-home-faq">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-semibold">
             FAQ
@@ -782,8 +779,34 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Existing quote form and copy retained below the introduction. */}
+      <section className="container-x epf-home-estimate">
+            <div className="epf-home-estimate-panel">
+              <h2 className="text-2xl font-semibold">
+                Plan your popcorn ceiling project
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Share the rooms, ceiling height, and timing. We’ll reply within
+                hours with scope and schedule.
+              </p>
+              <div className="mt-4">
+                <QuoteForm />
+              </div>
+              <p className="mt-3 text-xs text-slate-500">
+                Prefer to text photos? Message{" "}
+                <a
+                  href={`sms:${PHONE_NUMBER.replace(/[^0-9]/g, "")}`}
+                  className="underline"
+                >
+                  {PHONE_NUMBER}
+                </a>{" "}
+                anytime.
+              </p>
+            </div>
+      </section>
+
       {/* CTA */}
-      <section className="container-x">
+      <section className="container-x epf-home-cta">
         <div className="rounded-3xl bg-gradient-to-r from-amber-500 to-red-500 p-8 text-white shadow-2xl">
           <div className="grid gap-6 md:grid-cols-2">
             <div>
