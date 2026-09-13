@@ -164,7 +164,7 @@ function JsonLd() {
             name: "Which areas do you serve?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines.",
+              text: "Mississauga, Toronto, Oakville, Burlington, Hamilton, Milton, Etobicoke, Grimsby, and St. Catharines. We serve the entire Greater Toronto Area (GTA) and surrounding communities. Don’t see your area listed? Contact us directly to confirm availability.",
             },
           },
         ],
@@ -611,6 +611,14 @@ export default function AboutPage() {
               St. Catharines
             </Link>
             .
+          </p>
+          <p className="mt-3 text-gray-700">
+            We serve the entire Greater Toronto Area (GTA) and surrounding
+            communities. Don’t see your area listed?{" "}
+            <Link href="/contact/" className="underline">
+              Contact us directly
+            </Link>{" "}
+            to confirm availability.
           </p>
         </details>
         </div>
