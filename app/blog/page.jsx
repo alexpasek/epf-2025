@@ -1,108 +1,44 @@
-
-import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from 'next/link';
 import { getPosts } from '@/lib/posts';
+import BlogBrowser from './BlogBrowser';
+import './blog-index.css';
 
-export const metadata={title:'Blog'};
+export const metadata = {
+  title: { absolute: 'Home Renovation Guides for the GTA | EPF Pro Services' },
+  description: 'Practical guides to popcorn ceiling removal, drywall repair and interior painting for GTA homeowners. Compare options, plan your project and find local help.',
+  alternates: { canonical: '/blog/' },
+  openGraph: { title: 'Home Renovation Guides | EPF Pro Services', description: 'Practical ceiling, drywall and painting advice for homeowners in the GTA and surrounding communities.', url: '/blog/', type: 'website' },
+};
 export const revalidate = 86400;
 
-const ALLOWED_BLOG_IMAGE_HOSTS = new Set([
-  'epfproservices.com',
-  'www.epfproservices.com',
-]);
-
-const isAllowedBlogImageSrc = (src) => {
-  if (!src || typeof src !== 'string') return false;
-  if (src.startsWith('/')) return true;
-
-  try {
-    return ALLOWED_BLOG_IMAGE_HOSTS.has(new URL(src).hostname);
-  } catch {
-    return false;
-  }
-};
-
-const getBlogCardImage = (post) => (
-  isAllowedBlogImageSrc(post?.image) ? post.image : null
-);
-
-const getBlogCardImageClassName = (post) => (
-  post?.cardImageMode === 'contain'
-    ? 'h-full w-full object-contain p-3 transition duration-500 group-hover:scale-[1.015]'
-    : 'h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]'
-);
-
-const formatPostDate = (date) => {
+function topicFor(post) {
+  const title = `${post.title} ${post.slug}`.toLowerCase();
+  if (/garage/.test(title)) return 'Garage drywall';
+  if (/popcorn|stucco|skim|smooth.ceiling/.test(title)) return 'Popcorn ceilings';
+  if (/drywall|taping|ceiling.repair|ceiling.rebuild/.test(title)) return 'Drywall & repairs';
+  if (/paint|wallpaper/.test(title)) return 'Painting & wallpaper';
+  return 'Project planning';
+}
+function imageFor(src) {
+  if (typeof src !== 'string' || !src || src.startsWith('//')) return null;
+  if (src.startsWith('/')) return src;
+  try { return ['epfproservices.com', 'www.epfproservices.com'].includes(new URL(src).hostname) ? src : null; } catch { return null; }
+}
+function formatDate(date) {
   if (!date) return null;
-  const parsed = new Date(`${date}T12:00:00Z`);
-  if (Number.isNaN(parsed.getTime())) return null;
-
-  return new Intl.DateTimeFormat('en-CA', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(parsed);
-};
-
-export default async function Blog(){
-  const posts=await getPosts();
-
-  return(
-    <main className='bg-[#fcfcfb] py-10 sm:py-14 lg:py-16'>
-      <div className='container-x'>
-        <div className='mx-auto max-w-[1220px]'>
-          <header className='sr-only'>
-            <h1>Blog</h1>
-          </header>
-
-          <div className='grid gap-x-4 gap-y-5 sm:grid-cols-2 lg:grid-cols-3'>
-            {posts.map((p) => {
-              const imageSrc = getBlogCardImage(p);
-              const formattedDate = formatPostDate(p.date);
-
-              return(
-                <article key={p.slug} className='h-full'>
-                  <Link
-                    href={`/blog/${p.slug}/`}
-                    className='group flex h-full flex-col overflow-hidden bg-white transition duration-200 hover:-translate-y-0.5'
-                  >
-                    {imageSrc ? (
-                      <div className='aspect-[1.34/1] overflow-hidden bg-[#dde5ec]'>
-                        <ResponsiveImage
-                          src={imageSrc}
-                          alt={p.title}
-                          className={getBlogCardImageClassName(p)}
-                          loading='lazy'
-                        />
-                      </div>
-                    ) : (
-                      <div className='aspect-[1.34/1] bg-gradient-to-br from-[#d9e2ea] via-[#edf2f6] to-[#d6dee6]' />
-                    )}
-
-                    <div className='flex flex-1 flex-col bg-[#eef2f6] px-6 pb-5 pt-4'>
-                      {formattedDate ? (
-                        <time
-                          dateTime={p.date}
-                          className='mb-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[#6b7f91]'
-                        >
-                          {formattedDate}
-                        </time>
-                      ) : null}
-                      <h2 className='line-clamp-2 text-[1.02rem] font-semibold leading-[1.12] tracking-[-0.025em] text-[#324a65] sm:text-[1.08rem]'>
-                        {p.title}
-                      </h2>
-                      <p className='mt-3 line-clamp-3 text-[0.98rem] leading-8 text-[#4b6177]'>
-                        {p.excerpt}
-                      </p>
-                    </div>
-                  </Link>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </main>
-  );
+  const parsed = new Date(date);
+  return Number.isNaN(parsed.getTime()) ? null : new Intl.DateTimeFormat('en-CA', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(parsed);
+}
+export default async function Blog() {
+  const posts = (await getPosts()).map(post => ({ slug: post.slug, title: post.title, excerpt: post.excerpt || '', date: post.date || null, formattedDate: formatDate(post.date), image: imageFor(post.image), cardImageMode: post.cardImageMode || 'cover', topic: topicFor(post) }));
+  const collection = { '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': 'https://epfproservices.com/blog/#webpage', url: 'https://epfproservices.com/blog/', name: 'Home renovation guides', description: metadata.description, mainEntity: { '@type': 'ItemList', itemListElement: posts.map((post, index) => ({ '@type': 'ListItem', position: index + 1, name: post.title, url: `https://epfproservices.com/blog/${post.slug}/` })) } };
+  return <div className="epf-guides">
+    <div className="guide-shell">
+      <header className="guide-hero"><div><p className="guide-eyebrow">The EPF homeowner journal</p><h1>Practical guides.<br /><em>Better home projects.</em></h1><p className="guide-intro">Clear answers on popcorn ceiling removal, drywall repair and interior painting—so you can understand the options before you start.</p><p className="guide-local">For homeowners across the GTA and surrounding communities.</p></div><aside className="guide-help"><span className="guide-eyebrow">Have a project in mind?</span><h2>Start with your space.</h2><p>Send a few photos, your location and what you’d like to change. We’ll help you understand the next step.</p><Link href="/quote/" className="guide-cta">Get a free estimate <span aria-hidden="true">↗</span></Link><a href="tel:+16479236784">Or call (647) 923-6784</a></aside></header>
+      <nav className="guide-services" aria-label="Explore EPF services"><span>Looking for a service?</span><Link href="/services/popcorn-ceiling-removal/">Popcorn ceiling removal ↗</Link><Link href="/services/drywall-repair/">Drywall repair ↗</Link><Link href="/services/interior-painting/">Interior painting ↗</Link></nav>
+      <BlogBrowser posts={posts} />
+      <section className="guide-coverage"><div><p className="guide-eyebrow">Local advice. Local help.</p><h2>Find EPF in your area.</h2><p>Serving Toronto, Mississauga, Oakville, Burlington, Milton and surrounding communities. Don’t see your area? Contact us directly to confirm availability.</p></div><div><Link href="/service-areas/">Explore our service areas ↗</Link><Link href="/contact/">Contact EPF Pro Services ↗</Link></div></section>
+    </div>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection).replace(/</g, '\\u003c') }} />
+  </div>;
 }

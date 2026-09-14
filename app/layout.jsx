@@ -106,7 +106,7 @@ gtag('config', 'AW-17986124771');`,
         {SHOW_CHAT_WIDGET ? <ChatWidgetDeferred /> : null}
         <HeaderNav /> {/* ✅ use the client header */}
         <TrustBar />
-        <main className="flex-1">{children}</main>
+        <main id="site-main" className="flex-1">{children}</main>
         <Footer />
         <StickyCTA />
         <LightboxGlobal />

@@ -1,10 +1,11 @@
 "use client";
+import "./header-navigation.css";
 import ResponsiveImage from "@/components/ResponsiveImage";
 
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { PHONE_HREF, PHONE_NUMBER, SITE_URL } from "@/app/config";
 import { headerServiceLabel } from "@/lib/headerServiceLabel";
 import { isAdsLandingPath } from "@/lib/isAdsLandingPath";
@@ -133,23 +134,13 @@ export default function HeaderNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+
 
   useEffect(() => {
     setMobileOpen(false);
     setMobileServicesOpen(false);
     setMobileLocationsOpen(false);
   }, [pathname]);
-
-  useEffect(() => {
-    const handler = () => {
-      const shouldCollapse = window.scrollY > 80;
-      setIsCollapsed(shouldCollapse);
-    };
-    handler();
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
 
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -296,12 +287,13 @@ export default function HeaderNav() {
   }
 
   return (
-    <header className="sticky top-0 z-50">
+    <header className="epf-site-header sticky top-0 z-50">
+      <a className="epf-skip-link" href="#site-main">Skip to content</a>
       {/* Row 1: taller + stylish glassy header */}
       <div
         className={[
-          "border-b bg-gradient-to-r from-white via-white to-red-50/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_10px_30px_-20px_rgba(0,0,0,.55)] transition-transform duration-300",
-          isCollapsed ? "lg:-translate-y-full" : "",
+          "epf-brand-row border-b bg-gradient-to-r from-white via-white to-red-50/60 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-[0_10px_30px_-20px_rgba(0,0,0,.55)] transition-transform duration-300",
+
         ].join(" ")}
       >
         <div className="container-x py-2 md:py-3 flex h-24 md:h-28 items-center gap-3">
@@ -366,7 +358,8 @@ export default function HeaderNav() {
           <button
             type="button"
             className="lg:hidden ml-auto inline-flex items-center justify-center rounded-xl p-2 ring-1 ring-slate-300/60 shadow-sm bg-white/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-controls="epf-mobile-navigation"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
           >
@@ -385,8 +378,8 @@ export default function HeaderNav() {
       {/* Row 2: right-aligned menu */}
       <div
         className={[
-          "hidden lg:block border-b bg-gradient-to-r from-red-50/60 via-white to-red-50/60 sticky top-0 z-40 transition-transform duration-300",
-          isCollapsed ? "-translate-y-24" : "translate-y-0",
+          "epf-menu-row hidden lg:block border-b bg-gradient-to-r from-red-50/60 via-white to-red-50/60 sticky top-0 z-40 transition-transform duration-300",
+
         ].join(" ")}
       >
         <nav
@@ -487,54 +480,19 @@ export default function HeaderNav() {
         </nav>
       </div>
 
-      {/* Row 3: Breadcrumb stripe (blue) */}
-      {pathname !== "/" && (
-        <>
-          <BreadcrumbJsonLd crumbs={crumbs} />
-          <div
-            className={[
-              "bg-[#005F87] text-white transition-transform duration-300 sticky top-0 z-30",
-              isCollapsed ? "-translate-y-24" : "translate-y-0",
-            ].join(" ")}
-          >
-            <nav
-              aria-label="Breadcrumb"
-              className="container-x py-1 text-[13px] leading-5"
-            >
-              <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
-                {crumbs.map((c, i) => {
-                  const isLast = i === crumbs.length - 1;
-                  return (
-                    <div key={c.href} className="flex items-center shrink-0">
-                      {i > 0 && <span className="mx-2 opacity-70">/</span>}
-                      {isLast ? (
-                        <span
-                          className="font-semibold text-white"
-                          aria-current="page"
-                          title={c.label}
-                        >
-                          {c.label}
-                        </span>
-                      ) : (
-                        <Link
-                          href={c.href}
-                          className="text-white underline decoration-white/70 underline-offset-2 hover:decoration-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded"
-                          title={c.label}
-                        >
-                          {c.label}
-                        </Link>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </nav>
-          </div>
-        </>
-      )}
+      {/* Visible hierarchy and structured data share the same destinations. */}
+      {pathname !== "/" && <>
+        <BreadcrumbJsonLd crumbs={crumbs} />
+        <nav className="epf-breadcrumbs" aria-label="Breadcrumb">
+          <ol className="container-x">{crumbs.map((crumb, index) => <li key={`${crumb.href}-${index}`}>
+            {index > 0 && <span className="epf-crumb-separator" aria-hidden="true">›</span>}
+            {index === crumbs.length - 1 ? <span aria-current="page">{crumb.label}</span> : <Link href={crumb.href}>{crumb.label}</Link>}
+          </li>)}</ol>
+        </nav>
+      </>}
 
       {/* Mobile drawer */}
-      <div
+      <div hidden={!mobileOpen} id="epf-mobile-navigation"
         className={[
           "lg:hidden bg-white/95 backdrop-blur transition-[max-height] overflow-hidden",
           mobileOpen ? "max-h-[75vh]" : "max-h-0",
@@ -641,6 +599,8 @@ function SmoothDropdown({
   closeKey,
 }) {
   const [open, setOpen] = useState(false);
+  const panelId = useId();
+  const triggerRef = useRef(null);
   const openTimer = useRef(null);
   const closeTimer = useRef(null);
 
@@ -648,7 +608,8 @@ function SmoothDropdown({
     clearTimeout(closeTimer.current);
     openTimer.current = setTimeout(() => setOpen(true), 80);
   };
-  const handleLeave = () => {
+  const handleLeave = (event) => {
+    if (event?.currentTarget.contains(document.activeElement)) return;
     clearTimeout(openTimer.current);
     closeTimer.current = setTimeout(() => setOpen(false), 110);
   };
@@ -670,12 +631,31 @@ function SmoothDropdown({
       className="relative"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      onFocus={handleEnter}
-      onBlur={handleLeave}
+      onBlur={event => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          clearTimeout(openTimer.current);
+          clearTimeout(closeTimer.current);
+          setOpen(false);
+        }
+      }}
+      onKeyDown={event => {
+        if (event.key === "Escape") {
+          clearTimeout(openTimer.current);
+          clearTimeout(closeTimer.current);
+          setOpen(false);
+          triggerRef.current?.focus();
+        }
+      }}
     >
       <button
         type="button"
-        aria-haspopup="menu"
+        ref={triggerRef}
+        aria-controls={panelId}
+        onClick={() => {
+          clearTimeout(openTimer.current);
+          clearTimeout(closeTimer.current);
+          setOpen(value => !value);
+        }}
         aria-expanded={open}
         className={[
           "px-3 py-2 rounded-xl transition-all inline-flex items-center gap-1",
@@ -706,10 +686,11 @@ function SmoothDropdown({
             : "opacity-0 -translate-y-1 pointer-events-none",
         ].join(" ")}
         style={style}
-        role="menu"
+        id={panelId}
+        hidden={!open}
         aria-label={`${label} menu`}
       >
-        <div role="none">{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   );
@@ -738,8 +719,6 @@ function MenuItemCard({ href, label }) {
     <Link
       href={href}
       title={label}
-      role="menuitem"
-      tabIndex={-1}
       className={[
         "group p-3 rounded-xl border bg-white",
         ACCENT.border,
@@ -759,8 +738,6 @@ function DropdownLink({ href, label, bold }) {
   return (
     <Link
       href={href}
-      role="menuitem"
-      tabIndex={-1}
       title={label}
       className={[
         "block px-3 py-2 rounded-xl text-[15px] transition",
