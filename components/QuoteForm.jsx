@@ -43,31 +43,18 @@ export default function QuoteForm() {
       onSubmit={onSubmit}
       className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 "
     >
-      {/* your inputs... */}
-      <input
-        className=" border shadow-md border-gray-500 rounded-2xl p-3"
-        name="name"
-        placeholder="Name"
-        required
-      />
-      <input
-        className="border shadow-md  border-gray-500 rounded-2xl p-3"
-        name="phone"
-        placeholder="Phone"
-        required
-      />
-      <input
-        className="border shadow-md border-gray-500 rounded-2xl p-3 md:col-span-2"
-        type="email"
-        name="email"
-        placeholder="Email"
-      />
-      <textarea
-        className="border shadow-md border-gray-500 rounded-2xl p-3 md:col-span-2"
-        rows={5}
-        name="details"
-        placeholder="Project details"
-      />
+      <label className="grid gap-2 text-sm font-medium">Name (required)
+        <input className="border shadow-md border-gray-500 rounded-2xl p-3" name="name" autoComplete="name" placeholder="Your name" required />
+      </label>
+      <label className="grid gap-2 text-sm font-medium">Phone (required)
+        <input className="border shadow-md border-gray-500 rounded-2xl p-3" type="tel" name="phone" autoComplete="tel" placeholder="Your phone number" required />
+      </label>
+      <label className="grid gap-2 text-sm font-medium md:col-span-2">Email (optional)
+        <input className="border shadow-md border-gray-500 rounded-2xl p-3" type="email" name="email" autoComplete="email" placeholder="you@example.com" />
+      </label>
+      <label className="grid gap-2 text-sm font-medium md:col-span-2">Project details (optional)
+        <textarea className="border shadow-md border-gray-500 rounded-2xl p-3" rows={5} name="details" placeholder="Your city, the service you need, room sizes and preferred timing. You can include a link to photos." />
+      </label>
 
       <button
         type="submit"
@@ -76,10 +63,10 @@ export default function QuoteForm() {
                    bg-gradient-to-b from-blue-500 to-blue-700 shadow-lg
                    disabled:opacity-70"
       >
-        {sending ? "Sending..." : "Send"}
+        {sending ? "Sending..." : "Send estimate request"}
       </button>
 
-      {status && <p className="text-sm md:col-span-2 text-red-600">{status}</p>}
+      {status && <p role="alert" className="text-sm md:col-span-2 text-red-600">{status}</p>}
     </form>
   );
 }
