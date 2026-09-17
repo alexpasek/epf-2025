@@ -5,6 +5,7 @@ import { socialImages } from "@/lib/responsiveImages";
 import { CONTACT, SITE_URL } from "@/app/config";
 import { cities } from "@/data/cities";
 import styles from "./hamilton.module.css";
+import AreaCards from "@/components/hamilton/AreaCards";
 
 export const revalidate = 86400;
 
@@ -151,9 +152,11 @@ export default function Page() {
       </div></section>
 
       <section className={`${styles.section} ${styles.shell} ${styles.localGrid}`} aria-labelledby="local-title">
-        <div><p className={styles.eyebrow}>Local service, practical planning</p><h2 id="local-title">Across Hamilton.<br />Ready for your neighbourhood.</h2><p>From established homes in Westdale and Kirkendall to basement renovations on Hamilton Mountain, we plan around access, existing surfaces and the rooms you need to keep using.</p><ul className={styles.neighborhoods}>{neighborhoods.map((n) => <li key={n.slug}>{n.name}</li>)}</ul></div>
+        <div><p className={styles.eyebrow}>Local service, practical planning</p><h2 id="local-title">Across Hamilton.<br />Ready for your neighbourhood.</h2><p>From established homes in Westdale and Kirkendall to basement renovations on Hamilton Mountain, we plan around access, existing surfaces and the rooms you need to keep using.</p><ul className={styles.neighborhoods}>{neighborhoods.map((n) => <li key={n.slug}><Link href={`/services/drywall-installation/hamilton/${n.slug}/`}>{n.name}</Link></li>)}</ul></div>
         <aside className={styles.localCard}><span className={styles.locationLabel}>Stoney Creek / Hamilton service hub</span><h3>Let’s start with<br />your project.</h3><address>37 Dalegrove Crescent<br />Stoney Creek, ON L8J 3R5</address><p>Tell us your neighbourhood, room sizes and the stage of your renovation. We’ll discuss the next step for an estimate.</p><a href={MAP_URL} className={styles.textLink}>View the Hamilton service location <Arrow /></a><a href={PHONE_HREF} className={styles.textLink}>Speak with estimating: {PHONE}</a></aside>
       </section>
+
+      <section className={`${styles.section} ${styles.shell}`} aria-labelledby="area-pages-title"><p className={styles.eyebrow}>Explore your area</p><h2 id="area-pages-title">Drywall installation by neighbourhood</h2><p>Find preparation details and project considerations for your part of Hamilton.</p><AreaCards type="drywall" /></section>
 
       <section id="quote-form" className={styles.quoteSection} aria-labelledby="quote-title"><div className={`${styles.shell} ${styles.quoteGrid}`}>
         <div className={styles.quoteIntro}><p className={styles.eyebrow}>Tell us what you are building</p><h2 id="quote-title">Let’s put your<br />drywall plan on paper.</h2><p>Share a few details and we’ll follow up about the scope, finish and timing. Include a link to photos or drawings if you have them.</p><ul><li>Your Hamilton neighbourhood and property type</li><li>Approximate wall and ceiling dimensions</li><li>New installation, replacement or finishing only</li><li>Preferred start date and access requirements</li></ul><a href={PHONE_HREF} className={styles.phoneLink}>Prefer to talk? {PHONE}</a></div>

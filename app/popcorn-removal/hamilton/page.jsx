@@ -2,19 +2,11 @@
 import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { CityCopy } from "@/components/LocalSEOCopy";
-export const metadata = { title: "Hamilton — Popcorn Ceiling Removal Pro" };
+export const metadata = { title: { absolute: "Popcorn Ceiling Removal Hamilton | EPF Pro Services" }, alternates: { canonical: "/popcorn-ceiling-removal/hamilton/" } };
 export default function City() {
   const images = Array.from({ length: 6 }, (_, i) => `/home/${i + 1}.webp`);
-  const hidden = Array.from({ length: 120 }).map((_, i) => (
-    <span key={i} className="hidden" aria-hidden="true">
-      Hamilton
-    </span>
-  ));
   return (
     <div className="container-x py-10">
-      <div className="sr-only" aria-hidden="true">
-        {hidden}
-      </div>
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/">Home</Link> / Hamilton
       </nav>
@@ -22,10 +14,11 @@ export default function City() {
         Hamilton — Wallpaper, Popcorn Ceiling, Drywall & Painting
       </h1>
       <p className="mt-2 text-gray-700">
-        Trusted contractor for wallpaper removal, dust‑free popcorn ceiling
+        Trusted contractor for wallpaper removal, dust-controlled popcorn ceiling
         removal, drywall installation & repair, and interior painting in
         Hamilton.
       </p>
+      <p className="mt-4">For texture assessment, finishing options and local coverage, see our <Link className="underline" href="/popcorn-ceiling-removal/hamilton/">Hamilton popcorn ceiling removal service</Link>.</p>
       <p className="mt-1 text-sm">
         Official site:{" "}
         <a
@@ -46,7 +39,7 @@ export default function City() {
             data-lightbox="true"
             key={i}
             src={src}
-            alt="Hamilton project"
+            alt={`Residential renovation interior ${i + 1}`}
             className="w-full h-56 object-cover rounded-2xl border shadow"
           />
         ))}
