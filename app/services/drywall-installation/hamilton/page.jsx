@@ -69,7 +69,7 @@ function JsonLd({ neighborhoods }) {
     "@graph": [
       {
         "@type": "HomeAndConstructionBusiness", "@id": hubId,
-        name: "EPF Pro Services — Stoney Creek / Hamilton Service Hub",
+        name: "Popcorn Ceiling Removal Burlington /Oakville/Hamilton Grimsby",
         url: URL, telephone: PHONE, email: CONTACT?.email || "info@epfproservices.com",
         image: `${BASE}${HERO}`, parentOrganization: { "@id": `${BASE}/#org` },
         hasMap: MAP_URL,
@@ -153,7 +153,7 @@ export default function Page() {
 
       <section className={`${styles.section} ${styles.shell} ${styles.localGrid}`} aria-labelledby="local-title">
         <div><p className={styles.eyebrow}>Local service, practical planning</p><h2 id="local-title">Across Hamilton.<br />Ready for your neighbourhood.</h2><p>From established homes in Westdale and Kirkendall to basement renovations on Hamilton Mountain, we plan around access, existing surfaces and the rooms you need to keep using.</p><ul className={styles.neighborhoods}>{neighborhoods.map((n) => <li key={n.slug}><Link href={`/services/drywall-installation/hamilton/${n.slug}/`}>{n.name}</Link></li>)}</ul></div>
-        <aside className={styles.localCard}><span className={styles.locationLabel}>Stoney Creek / Hamilton service hub</span><h3>Let’s start with<br />your project.</h3><address>37 Dalegrove Crescent<br />Stoney Creek, ON L8J 3R5</address><p>Tell us your neighbourhood, room sizes and the stage of your renovation. We’ll discuss the next step for an estimate.</p><a href={MAP_URL} className={styles.textLink}>View the Hamilton service location <Arrow /></a><a href={PHONE_HREF} className={styles.textLink}>Speak with estimating: {PHONE}</a></aside>
+        <aside className={styles.localCard}><span className={styles.locationLabel}>Popcorn Ceiling Removal Burlington /Oakville/Hamilton Grimsby</span><h3>Let’s start with<br />your project.</h3><address>37 Dalegrove Crescent<br />Stoney Creek, ON L8J 3R5</address><p>Tell us your neighbourhood, room sizes and the stage of your renovation. We’ll discuss the next step for an estimate.</p><a href={MAP_URL} className={styles.textLink}>View the Hamilton service location <Arrow /></a><a href={PHONE_HREF} className={styles.textLink}>Speak with estimating: {PHONE}</a></aside>
       </section>
 
       <section className={`${styles.section} ${styles.shell}`} aria-labelledby="area-pages-title"><p className={styles.eyebrow}>Explore your area</p><h2 id="area-pages-title">Drywall installation by neighbourhood</h2><p>Find preparation details and project considerations for your part of Hamilton.</p><AreaCards type="drywall" /></section>

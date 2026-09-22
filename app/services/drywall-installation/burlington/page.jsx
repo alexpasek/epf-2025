@@ -151,7 +151,7 @@ function JsonLd() {
         areaServed,
         provider: {
           "@type": "LocalBusiness",
-          name: "EPF Pro Services",
+          name: "Popcorn Ceiling Removal Burlington /Oakville/Hamilton Grimsby",
           description: PROVIDER_DESCRIPTION,
           telephone: phoneText,
           email: EMAIL,

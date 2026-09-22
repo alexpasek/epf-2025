@@ -179,7 +179,7 @@ const LOCATIONS = [
     geo: { lat: 43.591024471105115, lng: -79.76399362333954 },
   },
   {
-    label: "Stoney Creek / Hamilton Service Hub",
+    label: "Popcorn Ceiling Removal Burlington /Oakville/Hamilton Grimsby",
     phone: "647.824.3723",
     phoneHref: "+16478243723",
     address: {
