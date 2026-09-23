@@ -1,0 +1,26 @@
+{
+  "method": "Built-in image_gen; converted to WebP with sharp for delivery",
+  "destination": "public/blog/",
+  "prompts": [
+    {
+      "asset": "stay-home-popcorn-ceiling-removal.webp",
+      "prompt": "Photorealistic natural renovation editorial photograph, wide landscape 1536x1024. An unoccupied Canadian living room prepared for popcorn ceiling renovation, with textured ceiling, carefully taped floor protection, furniture removed, clear plastic dust barrier across doorway separating the work area from a clean adjoining hallway. No work being performed. Practical believable modest home, daylight, realistic materials, balanced wide composition. No people, no text, no logos, no watermark. Illustrative blog featured image about planning to stay home during ceiling removal, not a claimed actual contractor project."
+    },
+    {
+      "asset": "repaint-wall-after-drywall-repair.webp",
+      "prompt": "Photorealistic natural renovation editorial photograph, wide landscape 1536x1024. Close medium view of a neutral warm-grey interior wall illuminated by soft daylight from a nearby window, one professionally feathered drywall repair area and a subtle rectangular dried paint test patch nearby, showing understated texture and sheen differences, protected floor edge at bottom. Realistic modest Canadian home, no exaggerated damage, no dramatic fake before-after split. No people, no text, no logos, no watermark. Featured image for choosing touch-up versus repainting a repaired wall."
+    },
+    {
+      "asset": "smooth-ceiling-inspection-checklist.webp",
+      "prompt": "Photorealistic natural interior renovation editorial photograph, wide landscape 1536x1024. A finished smooth matte white ceiling in a modest bright Canadian living room, soft natural side lighting from large windows, clean ceiling-to-wall junction, broad uncluttered ceiling taking most of frame, restrained neutral decor below. Realistic slight material texture rather than sterile computer render, straight architectural lines. No people, no text, no logos, no watermark. Blog featured image about inspecting a smooth ceiling after finishing."
+    },
+    {
+      "asset": "drywall-repair-preparation-detail.webp",
+      "prompt": "Photorealistic editorial renovation photograph, landscape 1536x1024. Close-up of a smooth interior wall with a wide thin feathered joint-compound repair drying above white baseboard, prepared sanded edges, floor protected with a clean canvas drop cloth. A wide drywall knife resting safely on a tray on the floor. Side daylight, believable materials. No people, faces, words, logos or watermarks. Illustrative guide image, not a claimed real project."
+    },
+    {
+      "asset": "repainted-wall-natural-boundaries.webp",
+      "prompt": "Photorealistic editorial home renovation photograph, landscape 1536x1024. Finished neutral beige interior wall extending from one room corner to the next, consistent matte paint, clean white baseboard, modest empty room with daylight from side window, a doorway visible on right. Show the whole wall and natural painting boundaries, believable subtly textured paint, no dramatic staged luxury. No people, faces, text, logos or watermarks. Illustrative guide image about repainting an entire wall."
+    }
+  ]
+}
