@@ -70,6 +70,7 @@ const FAQS = [
 ];
 
 const CLUSTER_GUIDES = [
+  ["/blog/bathroom-ceiling-repair-burlington/", "Bathroom ceiling repairs", "Understand peeling paint, loose tape and repair boundaries."],
   [
     "/blog/drywall-contractor-burlington-guide/",
     "Drywall Contractor Burlington Guide",

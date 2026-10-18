@@ -1,0 +1,50 @@
+Bathroom drywall guides — confirmed scope, 18 October 2026
+
+User clarified Mississauga and requested city-wide guides for Mississauga, Oakville, Burlington, Grimsby and Toronto, plus a general guide. Mississauga mentioned twice is one guide. No neighbourhood-specific articles or job-location claims.
+
+All: original 2,200+ word field guides; informational/commercial investigation; drywall installation/repair cluster; early main service link, matching existing city service link, 2-3 relevant guides and quote CTA; visible FAQs and native BlogPosting/BreadcrumbList/FAQPage; unique newly generated featured image and newly generated supporting illustrations. No historic site images reused in the articles' photo galleries.
+
+1. General: Bathroom drywall materials and finishing: what belongs where.
+Keyword: bathroom drywall materials. Type: comparison/planning guide.
+Pillar: /services/drywall-installation/. Secondary /services/drywall-repair/.
+Gap: product/assembly selection, painted vs tiled finish, specification and acceptance.
+
+2. Mississauga: Bathroom drywall renovation planning: from layout to paint.
+Keyword: bathroom drywall Mississauga. Type: local process/quote-preparation guide.
+City: /services/drywall-installation/mississauga/ and /services/drywall-repair/mississauga/.
+Gap: whole-room sequence, fixture decisions, scope handoffs and occupied-home logistics. City-wide; no neighbourhood targeting.
+
+3. Oakville: existing published bathroom-drywall-oakville-repair-or-replace retained and refreshed.
+Keyword: bathroom drywall Oakville. Type: local repair/replacement comparison.
+City: /services/drywall-installation/oakville/ and /services/drywall-repair/oakville/.
+Gap: retaining sound existing board, evaluating damaged sections. Update all three images and connect to general guide; no duplicate Oakville article.
+
+4. Burlington: bathroom ceiling repair: peeling paint, tape and patches.
+Keyword: bathroom ceiling repair Burlington. Type: local problem/solution guide.
+City: /services/drywall-repair/burlington/; main repair and installation hubs as useful.
+Gap: distinguish coating failure from joint/board damage, lighting, fan-opening coordination, finishing scope.
+
+5. Grimsby: bathroom drywall after a leak: planning reinstatement.
+Keyword: bathroom drywall repair Grimsby. Type: local reinstatement/process guide.
+City: /services/drywall-repair/grimsby/ and /services/drywall-installation/grimsby/.
+Gap: repair readiness, documented boundaries, matching existing thickness/finish, trade handoffs; not DIY water-remediation instructions.
+
+6. Toronto: condo bathroom drywall planning and coordination.
+Keyword: condo bathroom drywall Toronto. Type: local homeowner/process guide.
+City: /services/drywall-contractor/toronto/ (existing route; no invented Toronto installation route).
+Gap: management coordination, access, small work zones, other-trade completion and finish acceptance. Building-specific rules must be confirmed, no universal approvals or work-hour claims.
+
+Research references:
+Patch Dudes https://patchdudes.com/blog/ and https://patchdudes.com/best-drywall-for-bathrooms/ — broad intent only; no copied language, structure or prices.
+https://www.schluter.com/schluter-us/en_US/faq/shower-system-kerdi-over-drywall-tiled-shower
+https://www.schluter.com/schluter-us/en_US/article-tiled-shower-waterproofing
+https://www.canada.ca/en/health-canada/services/publications/healthy-living/addressing-moisture-mould-your-home.html
+https://www.condoauthorityontario.ca/before-you-buy-or-rent-a-condo/how-condos-work/condo-operations/condo-renovations/
+https://www.benjaminmoore.com/en-us/interior-exterior-paints-stains/how-to-advice/interiors/paint-bathroom-walls-professionally
+
+Images planned before generation:
+Five unique featured images: materials comparison scene; Mississauga renovation preparation; Burlington ceiling coating problem; Grimsby clean open-wall reinstatement; Toronto compact protected bathroom.
+Oakville uses new bathroom-drywall-renovation-overview.webp. Newly generated bathroom-vanity-wall-repair-detail.webp and bathroom-smooth-walls-finished.webp are supporting illustrations. Captions explicitly distinguish illustration from actual jobs and unrelated rooms from a before/after sequence.
+Each asset has descriptive alt text, compressed WebP and responsive sizes. Full prompts recorded with final asset mapping.
+
+Publishing: isolate from unrelated dirty workspace changes, preserve existing Oakville URL. Run standard build, browser/content/link checks and Cloudflare Pages adapter; push main for epf-2025 Pages and verify live content. No Workers deployment or domain-routing changes.

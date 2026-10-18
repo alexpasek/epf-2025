@@ -251,6 +251,7 @@ export default function Page() {
       },
     ],
     guides: [
+      { href: "/blog/bathroom-drywall-materials-and-finishing-guide/", title: "Bathroom drywall materials and finishing", text: "Choose backing, plan painted surfaces and coordinate the shower handoff." },
       {
         href: "/blog/bathroom-drywall-oakville-repair-or-replace/",
         title: "Bathroom drywall: repair or replace?",

@@ -244,6 +244,7 @@ export default function Page() {
     "Completed Mississauga drywall installation ready for trim and paint",
   ];
   const authorityGuides = [
+    { href: "/blog/bathroom-drywall-mississauga-renovation-plan/", title: "Plan your Mississauga bathroom drywall", text: "Sequence fixtures, protection, installation and finishing before booking." },
     {
       href: "/blog/drywall-contractor-mississauga-guide/",
       title: "Drywall contractor Mississauga guide",

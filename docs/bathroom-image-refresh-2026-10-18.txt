@@ -1,0 +1,23 @@
+Bathroom article replacement images — 18 October 2026
+
+All three images generated anew with the built-in image_gen tool; no existing image used as a reference. All depict generic Canadian bathroom interiors. No real project or neighbourhood attribution.
+
+Image plan:
+1. Featured: public/blog/bathroom-drywall-renovation-overview.webp — retained painted wall beside new board and protected fixtures.
+2. Detail: public/blog/bathroom-vanity-wall-repair-detail.webp — repair compound and torn facing above a protected vanity.
+3. Finished: public/blog/bathroom-smooth-walls-finished.webp — smooth painted surfaces beside a tiled bathtub. Separate illustration, not a before/after claim.
+
+Descriptive alt text and illustration captions are stored in lib/october2026BathroomPosts.js. All original images are 1536 x 1024, compressed as WebP with responsive variants. Old files remain because other articles may use them, but this article references only the new set.
+
+Location clarified: city-wide Mississauga, Oakville, Burlington, Grimsby and Toronto, plus a general guide. This refreshed article retains its existing Oakville URL; five additional guides provide distinct coverage.
+
+Final prompts:
+
+bathroomOverview
+Use case: photorealistic-natural. Create a new wide landscape editorial renovation photograph for a bathroom drywall repair-versus-replacement guide. Ordinary Ontario suburban home bathroom, viewed diagonally from doorway, natural daylight. Half of a dry vanity wall has newly installed plain pale gypsum board with realistic taped joints; adjacent sound painted wall retained, vanity protected with clean drop cloth, floor protected with paper. Finished bathtub with intact tiled surround in background, no exposed plumbing or electrical wiring. Main focus is where repaired drywall meets retained wall. Believable modest residential space, no people, no text, no logos, no watermarks, no location signs, no exaggerated luxury. A standalone original image, not a collage and not a before/after comparison.
+
+bathroomRepair
+Use case: photorealistic-natural. Generate a new close editorial photograph for a bathroom drywall repair homeowner guide. Dry painted bathroom vanity wall after removal of an old mirror, showing one neat rectangular drywall repair with feathered joint compound and a small adjacent area of torn facing awaiting preparation. Lower edge shows a sink and vanity carefully covered with clean protective fabric. Eye-level perspective, natural side light clearly reveals the repair surface, realistic compound texture, organised work area. No mould, no running tools, no people, no exposed wires, no readable labels, logos, text or watermarks. Ordinary Canadian residential interior with no identifiable location. Wide landscape standalone image.
+
+bathroomFinished
+Use case: photorealistic-natural. Generate an original wide landscape editorial photograph of a modest newly finished Canadian residential bathroom. Smooth softly painted warm-white walls and ceiling, simple oak vanity, oval mirror, understated wall light, white bathtub with a fully finished tiled surround. Daylight from a small frosted window grazes the painted wall to show its even finish. Clean practical family bathroom, believable proportions and textures, restrained styling, not glossy luxury. No people, no text, logos, watermarks, location signs or identifiable exterior. Standalone finished-room illustration for an article on bathroom drywall finishing, not a claimed real project and not a before/after composite.

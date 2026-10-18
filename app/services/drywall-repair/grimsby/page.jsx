@@ -1069,6 +1069,7 @@ export default function Page() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
+                ["/blog/bathroom-drywall-after-leak-grimsby/", "Bathroom drywall after a leak", "Plan readiness, rebuilding and finishing responsibilities."],
                 ["/blog/drywall-repair-vs-replacement/", "Repair vs Replacement", "When damaged drywall should be patched, cut out, or replaced."],
                 ["/blog/ceiling-crack-drywall-repair/", "Ceiling Crack Repair", "Why ceiling cracks return after paint and how proper repair prevents it."],
                 ["/blog/drywall-repair-after-plumbing-electrical-work/", "Plumbing & Electrical Cutouts", "How drywall openings are patched after trade work."],

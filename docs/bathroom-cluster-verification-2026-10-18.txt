@@ -1,0 +1,27 @@
+Bathroom guide collection — verification, 18 October 2026
+
+Scope: five new articles and one refreshed existing Oakville article. Mississauga coverage is city-wide, as are the other local guides. No neighbourhood landing pages or claimed local jobs were added.
+
+Body word counts (excluding FAQs and navigation):
+General materials and finishing: 2,264
+Mississauga renovation planning: 2,228
+Burlington ceiling repair: 2,241
+Grimsby reinstatement after a leak: 2,243
+Toronto condo planning: 2,329
+Oakville repair versus replacement: 2,326
+
+Content: distinct questions and decision frameworks, original prose, early answers and main-service links, practical comparison tables, field notes, quotation CTA, five FAQs per new guide and six on Oakville. Competitor intention informed the topic; wording, headings, examples and images were not copied. Technical references are linked where relevant. No keyword-volume or ranking prediction is claimed.
+
+Links: main drywall installation/repair services, matching existing city services, relevant repair/finishing guides and /quote/. Central materials guide links to all five city guides. Inbound links added on main drywall installation, Mississauga installation, Burlington repair, Grimsby repair and Toronto contractor pages. Oakville retains its published inbound service link and gains a link to the central materials guide. Internal article destinations checked against repository routes and blog inventory.
+
+Images: eight new original generated assets for this collection: six unique featured images and two new supporting illustrations. All article galleries use this new set. Captions identify generated illustrations, not verified jobs or before/after evidence. WebP originals and responsive variants built; descriptive alt text provided. Full prompts in bathroom-image-refresh-2026-10-18.txt and bathroom-cluster-image-prompts-2026-10-18.txt.
+
+Browser verification: all six production-preview pages HTTP 200; one H1 each; self-referencing canonical; title and description; BlogPosting and FAQPage schema; accurate body word counts. Local areaServed is the corresponding Ontario city; general guide has no invented local city. Tables present, TOC targets resolve, images load and have alt text. Widths 360, 768 and 1280 show no horizontal page overflow. Zero page errors. Blog listing contains all six and each required service-page backlink resolves. Mobile hero, desktop hero and mobile comparison table visually reviewed.
+
+Checks: npm run images:build and npm run images:check passed in the working tree; isolated publishing clone npm run build passed. Pages adapter verification and deployment results recorded below when completed.
+
+Publication is isolated from unrelated existing working-tree edits. No new dependency, public renderer, environment variable, domain routing, form endpoint or SEO backend change. Exact article routing bypasses avoid the known trailing-slash middleware loop. Existing service and article URLs are preserved.
+
+Follow-up: inspect actual Search Console indexing, impressions and enquiries after Google recrawls. Internal links support discovery and relevance; ranking gains are not guaranteed. Product and building requirements remain project-specific.
+
+Cloudflare Pages adapter: npx @cloudflare/next-on-pages@1 passed (exit 0). Existing dynamic-route prerender warnings remain; no new package or routing configuration introduced. Publication will use the existing GitHub main → epf-2025 Pages integration.

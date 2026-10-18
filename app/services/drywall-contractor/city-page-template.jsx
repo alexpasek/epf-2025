@@ -141,6 +141,7 @@ export default function DrywallContractorCityPage({ slug }) {
   ];
 
   const relatedLinks = [
+    ...(slug === "toronto" ? [{ href: "/blog/toronto-condo-bathroom-drywall-planning/", title: "Toronto condo bathroom drywall planning", text: "Coordinate building access, trade handoffs and finishing visits." }] : []),
     ...(config.cityHubLink
       ? [
           {
