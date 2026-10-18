@@ -1,0 +1,51 @@
+EPF editorial research — 18 October 2026
+
+Competitor verified: Patch Dudes (patchdudes.com), as clarified by the owner.
+Source index: https://patchdudes.com/blog/
+Latest listed post: What Type of Drywall Do I Need for a Bathroom or Wet Area? (9 October; index shows day/month, not year).
+Source: https://patchdudes.com/best-drywall-for-bathrooms/
+Other recent listed subjects: popcorn removal mess (18 September), repainting after repair (14 September), recurring cracks (10 September), Level 5 (28 August).
+
+Decision: publish one substantial bathroom article rather than duplicating all recent competitor subjects. EPF already has stay-home/dust-control, repaint-after-repair, crack/tape and finish-level coverage. Existing source inventory had no dedicated bathroom board-selection article. General repair-versus-replacement coverage remains distinct from this bathroom-specific planning guide.
+Competitor intent: choose suitable bathroom wall materials. Original EPF angle: assess existing board, choose repair/replacement boundaries, coordinate shower backing and painted-wall handoffs, then plan finishing and quotes. Different structure, wording and examples. No competitor prices, claims, images or prose reused. No verified keyword volume or ranking forecast is claimed.
+
+Pre-writing brief:
+Topic: retaining, repairing and replacing bathroom drywall before renovation finishing.
+Main keyword: bathroom drywall Oakville.
+Intent: informational/commercial investigation for a bathroom renovation and contractor scope.
+Type: local comparison / problem-solution homeowner guide.
+City: Oakville; local references concern actual project logistics, not invented neighbourhood conditions.
+Cluster: drywall installation and repair.
+Primary pillar: /services/drywall-installation/ (early contextual link).
+City service: /services/drywall-installation/oakville/.
+Related service: /services/drywall-repair/oakville/.
+Related guides: why-drywall-patches-show-through-paint; drywall-repair-drying-time-before-primer-paint; repaint-wall-after-drywall-repair.
+CTA: /quote/.
+Inbound link: main drywall installation page's existing supporting guide cards.
+Metadata/schema: native post metadata, BlogPosting, visible FAQ/FAQPage, BreadcrumbList; established field-guide renderer. No new schema renderer.
+
+Technical sources:
+https://www.canada.ca/en/health-canada/services/publications/healthy-living/addressing-moisture-mould-your-home.html
+https://www.schluter.com/schluter-us/en_US/article-tiled-shower-waterproofing
+https://www.schluter.com/schluter-us/en_US/faq/shower-system-kerdi-over-drywall-tiled-shower
+Key distinction: specific waterproofing systems can approve gypsum backing; avoid a universal prohibition and avoid implying moisture-resistant board alone is waterproof. Manufacturer instructions and applicable project requirements control the assembly.
+
+Image plan and result:
+Featured: bathroom-drywall-oakville-repair-or-replace.webp, unique generated illustration, 1536 x 1024, compressed WebP plus responsive variants.
+Prompt: realistic Canadian residential bathroom mid-renovation; taped moisture-resistant vanity wall beside shower alcove with generic membrane; protected floor and vanity, natural daylight, no people, text, logos or branding. Educational illustration, not proof of a real project.
+Alt: Bathroom renovation with taped vanity wall, protected floor and blue shower membrane.
+Caption explicitly identifies generated illustration and says it is not an installation detail.
+Supporting: existing site illustrations drywall-repair-before-painting-oakville-featured.png and drywall-repair-drying-time-featured.png, visually inspected; distinct descriptive alt and captions; not labelled as bathroom job photos or verified Oakville projects.
+
+Manual limitations:
+No guarantee of ranking, traffic or measurable authority gains. Monitor actual impressions, clicks and enquiries after indexing. Technical assembly must be confirmed for each actual renovation. Illustrations are not construction specifications.
+
+Verification:
+Body: 2,326 words, excluding FAQs, metadata and navigation.
+Metadata: 43-character title (site template appends the brand), 157-character description; one rendered H1; self-referencing canonical.
+Browser: HTTP 200; widths 360, 768 and 1280 without horizontal page overflow; no page errors after wrapping the checklist for the existing renderer. TOC targets resolve. Blog listing and main service page both include the guide.
+Structured data: BlogPosting with accurate word count, BreadcrumbList and FAQPage with six visible questions.
+Links: all seven distinct internal destinations exist; linked article slugs are unique.
+Images: generated WebP plus five responsive variants; existing image build/check passed. Three images have distinct descriptive alt and honest captions.
+Builds: npm run build passed; Cloudflare Pages adapter build passed (existing prerender warnings emitted).
+Publication scope: isolated from pre-existing workspace changes. A route-specific middleware bypass prevents the new article's trailing-slash rewrite loop without changing other article routes.

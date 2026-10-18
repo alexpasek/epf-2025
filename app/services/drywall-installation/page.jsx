@@ -252,6 +252,11 @@ export default function Page() {
     ],
     guides: [
       {
+        href: "/blog/bathroom-drywall-oakville-repair-or-replace/",
+        title: "Bathroom drywall: repair or replace?",
+        text: "What to retain, rebuild and confirm with the shower installer before finishing.",
+      },
+      {
         href: "/blog/drywall-contractors-near-me/",
         title: "Drywall contractors near me",
         text: "What to check in quotes, photos, and finish expectations before you book.",
