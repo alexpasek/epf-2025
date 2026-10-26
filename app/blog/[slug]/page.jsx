@@ -903,10 +903,10 @@ export default async function Post({ params }) {
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b45309]">
-                    Field Photos
+                    {post.galleryLabel || "Field Photos"}
                   </p>
                   <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">
-                    What the Work Can Look Like
+                    {post.galleryHeading || "What the Work Can Look Like"}
                   </h2>
                 </div>
                 <Link

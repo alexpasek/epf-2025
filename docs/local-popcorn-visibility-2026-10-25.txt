@@ -1,0 +1,52 @@
+Local popcorn ceiling visibility review — 25 October 2026
+Scope: Mississauga, Oakville, Burlington, Hamilton; original blog support and internal linking before approved publication. Public search observations, not a measured Google Maps rank grid or Search Console report.
+
+Data limits:
+GSC Wizard list_sites refused with payment_required/subscription_required. Active subscription required at https://tool.gscwizard.com/settings/subscription. No ranking, CTR, impressions, demand volume or forecast invented. Search results can vary by location and are not proof of which company ranks first for a local resident. No prior SERP snapshot to establish competitor changes over time; findings describe what stands out now.
+
+Current public evidence:
+Mississauga: https://patchdudes.com/mississauga/stucco-popcorn-ceiling-removal-mississauga/ publishes area-based prices and occupied-room surcharge; https://gtarenovators.ca/popcorn-ceiling-removal-mississauga/ emphasizes full finish scope and dust control. Different prices imply different scope, not a rate EPF should copy.
+Oakville: https://gtarenovators.ca/popcorn-ceiling-removal-oakville/ explains inclusion stages and homeowner situations; https://smoothceilingoakville.ca/ presents ceiling specialization and related upgrades.
+Burlington: https://kwpopcornceilingremoval.ca/popcorn-ceiling-removal-burlington emphasizes complete finish packages; https://masterceiling.ca/popcorn-ceiling-removal-burlington/ search excerpt emphasizes HEPA equipment and project duration (direct fetch unavailable). https://www.reddit.com/r/BurlingtonON/comments/1v7mw59/popcorn_ceiling_removal/ raises connected-room work, a removed-wall patch, and uncertainty over scope. Discussion is qualitative topic evidence, not verified technical advice or demand volume.
+Hamilton: https://www.justceilings.ca/ prominently presents a named ceiling specialist, gallery and customer accounts; https://kwpopcornceilingremoval.ca/popcorn-ceiling-removal-hamilton stresses all-inclusive finishing. These are competitor self-descriptions, not independently verified workmanship claims.
+Google: https://support.google.com/business/answer/7091?hl=en explains relevance, distance and prominence; accurate business details, reviews, photos/videos and genuine links matter. Blog links cannot override distance or guarantee Maps placement.
+
+Priority by city (editorial hypotheses, not measured keyword opportunities):
+1. Mississauga — concrete-condo finish decisions with headroom, bulkheads and management handoffs. Expand the new concrete guide's local service connection; existing condo article links to it. Target /popcorn-ceiling-removal/mississauga/. Avoid another general condo/removal/cost article already covered.
+2. Burlington — popcorn ceiling repair after wall removal, continuous living/dining ceiling, repair strip versus whole-plane finish. New original guide targets this decision, with an early service hub link and Burlington city service connection. No city-swapped copies.
+3. Oakville — demonstrate how a finish is accepted under real daylight, with verified sample/primer/final photographs and scope. Existing Level 5, skim, inspection and painted-texture guides already cover the prose; prioritize evidence in those pages and the city hub. Owner-confirmed project data is currently absent (data/oakvilleProjects.js is intentionally empty). Do not relabel generated illustrations as local jobs.
+4. Hamilton — show substrate assessment and handoff for older mixed plaster/drywall ceilings before broad refinishing. Existing older-Hamilton-home and skim-coat guides cover broad intent. Add a verified repair-to-finish project when available rather than another generic safety article.
+
+Next additions ranked by usefulness and effort:
+A. Publish the two approved distinct guides plus one connected-room guide and deliberate city links (implemented). Medium effort; supports relevance and useful navigation, impact unmeasured.
+B. Add one verified before/during/after project per city: room and approximate area, painted/unpainted, diagnosed defect, scope, finish endpoint, actual duration, photos with consent. No address/customer details needed. Highest differentiating evidence; needs owner facts.
+C. Improve existing cost comparison guides with explicit included/optional/excluded scope, minimum-job context and an owner-approved price basis. Reuse calculators, do not invent rate tables. Medium effort.
+D. Create a short real process video showing protection, HEPA sanding, primer inspection and finished ceiling under normal light, with captions and a factual transcript. Embed on relevant existing guide/city page; no stock footage represented as EPF work. Requires media.
+E. Audit Business Profile completeness, correct service/category details, genuine recent photos, review responses and eligible service-area setup. Ask customers for honest reviews without incentives or selective gating; do not create fictitious city offices. External account changes not performed in this task.
+F. Obtain real local mentions from renovation partners/suppliers or documented projects where editorially appropriate; do not buy ranking links or mass-generate city directories.
+G. After GSC access returns, compare settled 28-day windows for city service pages and queries, check which URL receives impressions, then resolve actual overlap before considering consolidation. No URL deletions/redirect changes in this task.
+
+New article brief before drafting:
+Topic: ceiling restoration after removing an interior wall.
+Keyword: popcorn ceiling repair after wall removal.
+Intent: informational/commercial repair decision.
+Type: problem/solution and comparison guide.
+Cluster/pillar: popcorn ceiling removal and smooth refinishing, /services/popcorn-ceiling-removal/.
+Local scope: real EPF service area Mississauga, Oakville, Burlington, Hamilton; one shared renovation problem, no fabricated city housing statistics.
+Primary city fit: Burlington; links to each city hub in a concise service section; adjacent /services/drywall-repair/; related painted-texture, finish inspection and renovation sequencing guides; /quote/ CTA.
+Original angle: separate the structural approval from the decorative bridge, identify mismatched planes versus textures, choose stop lines before quoting, distinguish local patch from continuous smooth finish. No engineering instructions.
+Metadata/schema supported through existing field-guide renderer. Minimum 2,200 body words; visible FAQ, BlogPosting/FAQPage/BreadcrumbList.
+Image plan: unique generated featured image popcorn-ceiling-repair-after-wall-removal.webp; realistic wide view of an ordinary Ontario living/dining renovation, wall already removed by others, fully closed ceiling strip with unpainted taped drywall joints running between two differently textured ceiling areas; no exposed beams/wiring, workers or active demolition. Protected floor, daylight, no text/logos/watermarks. Alt: Taped ceiling strip between two textured ceiling areas in a protected open living and dining room. Caption: Generated planning illustration, not a real EPF project or a structural detail. Supporting existing inspected images: drywall-repair-drying-time-featured.png and smooth-ceiling-inspection-checklist.webp with honest separate-stage captions.
+
+Owner evidence received in this conversation, 25 October 2026:
+"Yes, I did complete recently project in Mississauga. Popcorn ceiling removal in a big room, and it was removed and patched, skim coated and primed."
+Published fact set: large room, Mississauga, texture removed, patched, skim-coated, primed. Added to existing skim-coating-after-popcorn-ceiling-removal-mississauga guide with local service link. No square footage, dates of work, duration, price, final painting, exact neighbourhood or project photos invented. Generated article images remain explicitly illustrative and are not attached as evidence of this project.
+Implementation: original wall-removal guide is 2,495 body words; links to all four city hubs, main service, drywall repair, quote and three related guides. Existing Burlington guide links to it. Concrete guide now also links to Mississauga city service. All examples are planning explanations; none are represented as another completed project.
+
+Validation and publication scope:
+Clean publication tree based on c01cf321ebf89e98d0bf1b269637a2b76e809f05; remote main verified at same revision before preparation. Unrelated pre-existing Oakville consolidation, service-page changes, package-lock changes and other workspace work are excluded.
+Clean npm run build passed; Cloudflare next-on-pages 1.13.16 ran the complete npm build again. Adapter warning baseline includes invalid prerender-config notices for existing dynamic routes; new article routes use established Edge blog renderer.
+Browser against the clean production build: three new articles HTTP 200, one H1 each, canonical URLs correct, BlogPosting word counts 2,340 / 2,357 / 2,495, five visible FAQs each with FAQPage, BreadcrumbList present, working contents anchors and image loads. Widths 360/768/1280 pass without horizontal overflow; no JS page errors. Blog index lists all three. Owner-confirmed Mississauga note verified visible after fixing native routing for the four existing guides touched by this task. Screenshots inspected.
+New featured assets: concrete-condo-ceiling-finish-planning.webp, ceiling-water-stain-after-painting.webp, popcorn-ceiling-repair-after-wall-removal.webp; built-in imagegen, fifteen responsive variants in total. Prompts recorded in this brief and companion research file. Existing supporting illustrations reused with descriptive captions.
+Files in scoped publication: lib/posts.js, lib/october2026CeilingDecisionPosts.js, lib/openPlanCeilingPosts.js, lib/popcornAuthorityPosts.js, lib/drywallRepairClusterPosts.js, app/blog/[slug]/page.jsx (gallery captions), middleware.js (native routes for the seven affected guides), lib/imageDimensions.json, lib/responsiveImages.json, public/sitemap-0.xml (three URLs only), two research records, three featured WebP files, fifteen generated responsive variants. No dependency, secret, deployment-setting or business-profile changes.
+Manual next steps: add genuine project photos when available; verify more project facts before writing further case studies; restore GSC access to measure city impressions/clicks and URL overlap after indexing. No measured ranking improvement is claimed.
