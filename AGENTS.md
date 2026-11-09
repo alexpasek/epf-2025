@@ -46,6 +46,14 @@ When the task is related to deployment, Cloudflare, GitHub publishing, contact f
 
 The public website must be deployed through the Cloudflare Pages project `epf-2025` from GitHub. Do not attach the old `wallpaper-removal-pro` Worker to `epfproservices.com` or `www.epfproservices.com`.
 
+When the task involves Our Work, completed projects, project posts, case studies, before-and-after job stories, or project cards on city/service/neighbourhood pages, follow:
+
+- docs/rules/our-work-project-rules.md
+- docs/rules/our-work-project-brief.md
+- docs/rules/our-work-project-review-checklist.md
+
+Classify content by purpose, not by the word "post". A completed-job case study belongs to the Our Work rules even when called a post. For these case studies, the project rules take precedence over blog-specific length, generated-image, layout and FAQ requirements. Use genuine photographs of that job; do not generate featured images as project evidence. Project length follows the available verified facts, with no mandatory 2,200-word minimum. General truthfulness, safety, coding and deployment rules still apply. Educational blog articles remain governed by the blog rules below.
+
 When the task is related to blogs, articles, guides, SEO support content, cost guides, local service support content, or image planning for blog posts, follow these files:
 
 - docs/rules/blog-agent-rules.md

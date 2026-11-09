@@ -1,3 +1,4 @@
+import ProjectCard from "@/components/ProjectCard";
 
 import ResponsiveImage from "@/components/ResponsiveImage";
 // app/popcorn-ceiling-removal/burlington/page.jsx
@@ -411,6 +412,8 @@ export default function Page() {
             Real Burlington homes—from waterfront condos to Aldershot bungalows.
             Smooth Level 5 ceilings that photograph beautifully.
           </p>
+
+          <ProjectCard nearby />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {images.map((src, i) => (

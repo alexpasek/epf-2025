@@ -1,0 +1,58 @@
+Editorial research and image plan — 8 November 2026
+
+Live index fetched from https://patchdudes.com/blog/ on this date. Latest listed entry remains 23 October; no newer November article was found. Cached web open showed an older index, so live HTML was checked separately.
+Verified individual article JSON-LD dates:
+https://patchdudes.com/how-to-compare-drywall-repair-quotes/ — published 2026-10-23.
+https://patchdudes.com/can-drywall-be-patched-and-painted-in-one-day/ — published 2026-10-12.
+Other recent themes: ceiling water stains (20 Oct), concrete condo ceiling texture removal (16 Oct), bathroom drywall (9 Oct). Existing EPF October posts already cover these. This batch adds two new posts; user explicitly requested fresh keyword-focused articles even where related EPF coverage exists.
+
+Plan 1
+Topic/keyword: how to compare drywall repair quotes.
+Intent: commercial comparison and pre-estimate research.
+Type: comparison/homeowner planning guide.
+Distinct angle: an occupied-home decision worksheet, repair map, household access, paint boundaries, scope reconciliation and practical handover. Not a reworded competitor checklist.
+Cluster/pillar: drywall repair, /services/drywall-repair/.
+Area: GTA homeowners; contextual /services/drywall-repair/mississauga/ link, not a city-swapped article.
+Internal links: existing quote inclusion checklist, paint-after-repair guide, new one-day planning guide, interior painting service, quote page.
+
+Plan 2
+Topic/keyword: can drywall be patched and painted in one day.
+Intent: informational and deadline/pre-booking research.
+Type: process/decision guide.
+Distinct angle: planning backward from guests, a move or painting appointment; staged endpoints and a fallback plan when the surface is not ready. Not a promise of EPF same-day availability.
+Cluster/pillar: drywall repair, /services/drywall-repair/.
+Area: GTA homeowners; contextual /services/drywall-repair/oakville/ link.
+Internal links: drying-time technical guide, paint-after-repair guide, new quote comparison guide, interior painting service, quote page.
+
+Both: new unique generated featured image required; existing fieldGuideLayout, metadata, BlogPosting, BreadcrumbList and visible FAQ/FAQPage supported. At least 2,200 body words each. Organization author/reviewer, actual date, early answer, table, TOC, field note, middle and bottom CTA, related cards. No fabricated projects, prices, reviews or ranking guarantees. New contextual backlinks strengthen the existing cluster.
+
+Image generation plan — built-in imagegen, photorealistic-natural
+1. compare-drywall-repair-quotes-occupied-home.webp
+Prompt: Realistic professional home renovation editorial photograph for a guide about comparing drywall repair quotes in an occupied Ontario home. Wide landscape composition of a modest living room with a small dry drywall dent and two old fixing holes on a pale warm-grey wall, white baseboard, sofa moved away and neatly covered in a white protective sheet, kraft floor protection beside the wall. In the foreground a small plain table holds two blank unmarked sheets of paper, a pencil and a closed tape measure. Natural daylight, plausible materials, ordinary comfortable home, no people. No writing, numbers, logos, watermarks, brands, luxurious styling or active demolition. Educational illustration, not a documentary EPF project photo.
+Alt: Protected living room with small wall damage and blank estimate papers on a nearby table.
+2. drywall-patched-painted-one-day-planning.webp
+Prompt: Realistic professional home renovation editorial photograph for a guide asking whether drywall can be patched and painted in one day. Wide landscape view of a modest Ontario spare bedroom in preparation for finishing, one small neatly feathered unpainted joint-compound repair at chest height on a pale blue-grey wall, natural window sidelight showing its subtle texture, protected floor and clean white baseboard. A clean metal taping knife and shallow compound pan rest on a low protected work surface, a covered chair farther away. No people, no active sanding, no exposed wiring, no moisture damage. Natural understated photography with realistic materials, no text, clocks, logos, watermarks or fake brands. Educational illustration, not a real EPF job.
+Alt: Unpainted drywall patch on a bedroom wall above protected flooring with finishing tools nearby.
+Supporting assets per article: visually inspect existing /blog/drywall-repair-drying-time-featured.png (process) and /blog/smooth-ceiling-inspection-checklist.webp (finished room). Label as separate existing illustrations, never a before/after pair. If unsuitable, generate replacements.
+
+Primary technical references checked: Health Canada asbestos guidance (https://www.canada.ca/en/health-canada/services/air-quality/indoor-air-contaminants/health-risks-asbestos.html); USG drywall repair kit instructions (https://www.usg.com/api/download-center/v1/assets/dc35c146-3bc0-5b2c-9bc4-8cf0a6502bb2?country=us&download=true), which distinguish compound hardening from sanding/priming when dry. Do not provide hazardous disturbance instructions.
+
+Implementation notes
+- Added lib/november2026RepairPlanningPosts.js and registered it in lib/posts.js.
+- New paths: /blog/how-to-compare-drywall-repair-quotes-occupied-home/ and /blog/can-drywall-be-patched-and-painted-in-one-day/.
+- Body word counts excluding FAQs/layout: 2,258 and 2,315.
+- Each has seven distinct internal body destinations, including three related guides, the repair service, one relevant city repair service, interior painting and quote. Added contextual incoming links in lib/competitorResponsePosts.js.
+- Originality check: no shared 12-word body passages with the respective competitor article. Manual editorial check confirms different structure and household planning emphasis; this is not a formal plagiarism certification.
+- Generated unique featured WebPs with built-in imagegen; full prompts and alt text above. Both visually reviewed. Two existing supporting illustrations per article inspected and captioned honestly. Responsive pipeline generated 11 variants; dimensions and responsive manifests gained only the two new source entries.
+- Organization authorship uses the existing renderer's default (omitting a person author property); visible author/reviewer remain EPF Pro Services.
+- Local HTTP checks found the existing slash-rewrite loop on directly linked legacy guides. Added narrow native-route exceptions for the two new articles and the existing quote-inclusion, drying-time and repaint-after-repair guides. No broad middleware rewrite or service route changes.
+- Preserved all pre-existing workspace edits. Sitemap output is scoped to two new URLs, retaining the pre-task content and dates of other entries.
+
+Final validation
+- npm run build passed after the final routing changes, including image build/check, compilation, type/lint stage, 562 generated static pages and next-sitemap. Existing external Google Maps and generated-post requests were unavailable in the restricted build environment; their existing fallbacks were used. No new packages.
+- Headless installed Chrome against the local production server: both article URLs HTTP 200 at 360, 768 and 1280px; one H1, expected canonical, BlogPosting wordCount, Organization author, BreadcrumbList and five FAQPage questions each. Every visible FAQ answer matches its schema exactly. All article images load, TOC targets resolve, no page overflow and no page JavaScript errors. External browser requests blocked for deterministic layout checks; analytics delivery was not tested.
+- Blog index includes both articles. All eight distinct linked service/quote/legacy-blog destinations returned HTTP 200 after the narrow middleware fix.
+- Visually reviewed generated images, mobile quote hero/table and desktop one-day hero screenshots. No copied competitor imagery or attributed fake project photos.
+- git diff --check passed. Sitemap retains all previous URLs and adds the two new paths. Existing user changes preserved.
+- Task files: lib/november2026RepairPlanningPosts.js; lib/posts.js (import/registration only); lib/competitorResponsePosts.js (two contextual backlinks); middleware.js (five precise article exceptions); lib/imageDimensions.json; lib/responsiveImages.json; public/sitemap-0.xml; this research record; public/blog/compare-drywall-repair-quotes-occupied-home.webp; public/blog/drywall-patched-painted-one-day-planning.webp; eleven corresponding public/_images/*.webp responsive variants.
+- Status: implemented and tested locally, not committed/pushed/deployed. Owner editorial review and normal GitHub-to-Cloudflare Pages publication remain. Live indexing/ranking effects are not measured or guaranteed; structured data does not guarantee rich results.

@@ -5,7 +5,7 @@ import { services, base, altFor } from './content';
 import styles from '@/app/services/drywall-installation/hamilton/hamilton.module.css';
 import local from './area.module.css';
 
-export default function NeighborhoodPage({area,type}) {
+export default function NeighborhoodPage({area,type,children}) {
  const service=services[type]; const isDrywall=type==='drywall'; const focus=isDrywall?area.focus:area.popcornFocus;
  const url=`${base}${service.hub}${area.slug}/`;
  const faqs=[
@@ -34,6 +34,7 @@ export default function NeighborhoodPage({area,type}) {
    <p>For the complete process, finish choices and city-wide coverage, see our <Link href={service.hub}>{isDrywall?'Hamilton drywall installation service':'Hamilton popcorn ceiling removal service'}</Link>. This local page focuses on practical preparation for your project; the condition of your property determines the final scope.</p>
    <div className={local.callout}><strong>Useful details for your {area.name} quote</strong><ul className={local.list}>{area.checklist.map(c=><li key={c}>{c}</li>)}</ul></div>
   </section>
+  {children && <div className={styles.shell}>{children}</div>}
   <section className={styles.finishSection}><div className={`${styles.shell} ${styles.finishGrid}`}>
    <div className={local.copy}><p className={styles.eyebrow}>Agree on the endpoint</p><h2>{isDrywall?'From open framing to a finished surface.':'From textured ceiling to a consistent finish.'}</h2><p>{isDrywall?'We review board specification, backing, joints and the intended paint before choosing the finishing scope. Level 4 is common for many painted walls; a Level 5 skim coat may be appropriate for demanding light or higher-sheen finishes. Neither replaces the need for sound, properly prepared framing.':'We establish the surface condition and material concerns before choosing a method. Painted texture, weak paper, old patches and uneven joints can change the repair and skim-coat allowance. Primer and ceiling paint follow an agreed surface inspection, with the final lighting considered.'}</p></div>
    <div className={styles.localCard}><h3>What belongs in the estimate?</h3><ul className={local.list}>{(isDrywall?['Board supply, hanging and specified assemblies','Taping, mudding, sanding and finish level','Protection, debris handling and cleanup','Primer, paint and any exclusions']:['Assessment and a suitable removal or resurfacing method','Surface repairs and the extent of skim coating','Containment, dust-controlled sanding and cleanup','Primer, ceiling paint and finish boundaries']).map(x=><li key={x}>{x}</li>)}</ul></div>

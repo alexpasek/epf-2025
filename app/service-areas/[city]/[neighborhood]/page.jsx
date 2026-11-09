@@ -127,7 +127,7 @@ export default async function Page({ params }) {
             {nearby.map((x) => (
               <Link
                 key={x.slug}
-                href={`/popcorn-ceiling-removal/${c.slug}/${x.slug}/`}
+                href={c.slug === "oakville" ? "/popcorn-ceiling-removal/oakville/" : `/popcorn-ceiling-removal/${c.slug}/${x.slug}/`}
                 className="pill"
               >
                 {x.name}

@@ -24,6 +24,8 @@ function hasExplicitNeighborhoodPage(city, neighborhood) {
 export function generateStaticParams() {
   const out = [];
   for (const c of cities) {
+    // Oakville neighbourhoods are consolidated by the explicit 301 map.
+    if (c.slug === "oakville") continue;
     for (const n of c.neighborhoods || []) {
       if (hasExplicitNeighborhoodPage(c.slug, n.slug)) continue;
       out.push({ city: c.slug, neighborhood: n.slug });

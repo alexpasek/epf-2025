@@ -1,3 +1,4 @@
+import ProjectCard from "@/components/ProjectCard";
 import "./home.css";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import Link from "next/link";
@@ -393,6 +394,7 @@ export default function Page() {
               <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
                 Popcorn ceilings, drywall, and paint-ready interiors without the mess.
               </h1>
+<p className="my-4">For local ceiling planning, explore <a className="font-semibold underline underline-offset-4" href="/popcorn-ceiling-removal/oakville/">popcorn ceiling removal in Oakville</a>.</p>
               <p className="mt-4 text-lg text-slate-700">
                 EPF Pro Services handles popcorn ceiling removal, drywall installation,
                 drywall repair, wallpaper removal, and Level 5 finishing throughout
@@ -585,6 +587,7 @@ export default function Page() {
 
       {/* GALLERY */}
       <section className="epf-home-gallery">
+        <div className="mx-auto max-w-6xl px-4"><ProjectCard /></div>
         <OurWorkGallery
           items={galleryItems}
           menuItems={galleryMenu}

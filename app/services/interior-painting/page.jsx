@@ -165,6 +165,7 @@ export default function Page() {
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
               Interior Painting
             </h1>
+<p className="my-4">Planning ceiling work too? Compare our <a className="font-semibold underline underline-offset-4" href="/popcorn-ceiling-removal/oakville/">Oakville popcorn ceiling removal service</a>.</p>
             <p className="mt-3 text-gray-700">
               Sharp lines, durable finishes, and modern colours for walls, trim,
               and ceilings. Careful prep, Level 5 smoothing where needed, and a

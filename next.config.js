@@ -9,6 +9,7 @@
 //
 //
 /** @type {import('next').NextConfig} */
+const oakvilleRedirects = require("./data/oakvilleRedirects.json");
 const nextConfig = {
     trailingSlash: true,
     skipTrailingSlashRedirect: true,
@@ -16,6 +17,10 @@ const nextConfig = {
     outputFileTracingRoot: __dirname,
     async redirects() {
         return [
+            ...Object.entries(oakvilleRedirects).flatMap(([source, destination]) => [
+                { source, destination, statusCode: 301 },
+                { source: source.slice(0, -1), destination, statusCode: 301 },
+            ]),
             // 1) popcorn-removal -> popcorn-ceiling-removal (ALL paths)
             {
                 source: "/popcorn-removal/:path*",

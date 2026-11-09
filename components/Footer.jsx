@@ -349,6 +349,7 @@ export default function Footer() {
       {/* Google Reviews */}
       {!hideReviews && (
         <GoogleReviews
+          includeSchema={pathname?.replace(/\/$/, "") !== "/popcorn-ceiling-removal/oakville"}
           intent={
             isDrywallInstallationPage
               ? "drywall-installation"

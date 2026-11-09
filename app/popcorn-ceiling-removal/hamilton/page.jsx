@@ -1,3 +1,4 @@
+import ProjectCard from "@/components/ProjectCard";
 import Link from 'next/link';
 import ResponsiveImage from '@/components/ResponsiveImage';
 import QuoteForm from '@/components/QuoteForm';
@@ -55,6 +56,7 @@ export default function Page(){
  ['Unknown material history','Do not use a scrape test to rule out asbestos.','Professional material assessment before disturbance.'],
  ].map(([a,b,c])=><tr key={a}><td>{a}</td><td data-label="Consideration">{b}</td><td data-label="Quote detail">{c}</td></tr>)}</tbody></table>
  <div className={local.callout}><strong>Asbestos questions come before surface work.</strong><p>If the material or its history raises a concern, do not scrape, sand or drill it. Arrange assessment by a qualified professional and resolve any specialist work before ordinary refinishing. Read <a href="https://www.canada.ca/en/health-canada/services/air-quality/indoor-air-contaminants/health-risks-asbestos.html">Health Canada’s advice on asbestos and renovation</a>.</p></div></section>
+ <div className={styles.shell}><ProjectCard /></div>
  <section id="process" className={styles.finishSection}><div className={`${styles.shell} ${styles.finishGrid}`}><figure className={local.plainImage}><ResponsiveImage src="/services/hamilton/hamilton-ceiling-protection.png" alt={altFor('/services/hamilton/hamilton-ceiling-protection.png')} width={1536} height={1024} loading="lazy" sizes="(max-width:800px) 90vw, 560px"/><figcaption>Generated preparation illustration: protection is planned before ceiling disturbance.</figcaption></figure><div className={local.copy}><p className={styles.eyebrow}>A considered sequence</p><h2>Protect. Repair.<br/>Refine the finish.</h2><p>We discuss furniture, the route through the home and the rooms that need to stay usable. Suitable containment, floor protection, controlled methods and HEPA-assisted sanding help reduce dust. They do not make a renovation completely dust-free.</p><p>When lighting is changing, confirm fixture locations and coordinate electrical work before the final skim and paint. Keeping the sequence clear avoids opening a newly finished ceiling for work that could have been planned earlier.</p></div></div></section>
  <section className={`${styles.section} ${styles.shell}`}><ol className={styles.process}>{[
  ['Assess & agree','Review material concerns, paint layers, damage, access and the intended finish. Set out inclusions and how discovered conditions will be approved.'],

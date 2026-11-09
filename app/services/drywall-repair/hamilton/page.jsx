@@ -1199,6 +1199,7 @@ export default function Page() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
+                ["/blog/ceiling-drywall-repair-after-pot-light-installation/", "Ceiling Repair After Pot Lights", "Plan abandoned openings, supported patches, drying and the ceiling repainting boundary."],
                 ["/blog/drywall-contractor-hamilton-guide/", "Drywall Contractor Hamilton", "Installation, repair, taping, finishing, dust control, and quote scope for Hamilton homes."],
                 ["/blog/basement-drywall-contractor-hamilton/", "Basement Drywall Contractor Hamilton", "Board hanging, bulkheads, taping, sanding, and paint-ready basement planning."],
                 ["/blog/basement-drywall-repair-hamilton/", "Basement Drywall Repair Hamilton", "Hamilton basement walls, ceiling patches, access panels, moisture, and paint-ready repair."],

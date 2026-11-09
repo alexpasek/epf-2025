@@ -36,6 +36,7 @@ function Stars({ value = 5, size = 14 }) {
 export default function GoogleReviews({
   className = "",
   intent = "general",
+  includeSchema = true,
 }) {
   const [data, setData] = useState({
     ok: false,
@@ -203,7 +204,7 @@ export default function GoogleReviews({
       }
       className={["py-12 md:py-16 bg-slate-50", className].join(" ")}
     >
-      {jsonLd ? (
+      {includeSchema && jsonLd ? (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

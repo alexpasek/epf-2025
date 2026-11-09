@@ -1,3 +1,4 @@
+import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 import PopcornMap from "@/components/PopcornMap";
 import OurWorkGallery from "@/components/OurWorkGallery";
@@ -158,10 +159,13 @@ export default function Page() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-center mb-4">
-        Popcorn Ceiling Removal — GTA Coverage Map
+        Our Work — Ceiling and Interior Projects
       </h1>
+<ProjectCard />
+      <h2 className="mt-10 text-2xl font-semibold">GTA Service Coverage</h2>
+<p className="my-4">For local ceiling planning, explore <a className="font-semibold underline underline-offset-4" href="/popcorn-ceiling-removal/oakville/">popcorn ceiling removal in Oakville</a>.</p>
       <p className="text-center text-gray-600 mb-8">
-        Click any house to open the service page for that neighbourhood.
+        Coverage markers link to neighbourhood service pages; they are not completed-project locations.
       </p>
 
       <PopcornMap points={POINTS} />

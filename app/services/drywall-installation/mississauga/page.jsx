@@ -245,6 +245,7 @@ export default function Page() {
   ];
   const authorityGuides = [
     { href: "/blog/bathroom-drywall-mississauga-renovation-plan/", title: "Plan your Mississauga bathroom drywall", text: "Sequence fixtures, protection, installation and finishing before booking." },
+    {href: "/blog/plaster-repair-vs-drywall-replacement-mississauga/", title: "Plaster repair or drywall replacement", text: "When retaining plaster makes sense and when a supported drywall rebuild is more practical."},
     {
       href: "/blog/drywall-contractor-mississauga-guide/",
       title: "Drywall contractor Mississauga guide",

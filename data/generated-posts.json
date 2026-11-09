@@ -172,7 +172,7 @@
                 "html": "<strong>Related guides and service pages</strong>"
             },
             {
-                "html": "<ul><li><a href=\"/popcorn-ceiling-removal/oakville/\" class=\"font-semibold text-blue-600 hover:underline\">Popcorn ceiling removal in Oakville</a>: Local service page for the target city and service.</li><li><a href=\"/services/popcorn-ceiling-removal/\" class=\"font-semibold text-blue-600 hover:underline\">Popcorn ceiling removal service</a>: Main service page for this service.</li><li><a href=\"/blog/popcorn-removal-oakville-cost-finish-guide/\" class=\"font-semibold text-blue-600 hover:underline\">popcorn removal cost and finish guide</a>: Cost factors, dust control, and smooth ceiling finish quality.</li><li><a href=\"/blog/painted-popcorn-ceiling-removal-scrape-or-skim-coat/\" class=\"font-semibold text-blue-600 hover:underline\">painted popcorn ceiling removal guide</a>: How painted texture changes scraping, skim coating, and finishing.</li><li><a href=\"/quote/\" class=\"text-blue-600 font-semibold hover:underline\">request a renovation quote</a>: Send photos and room details for review.</li></ul>"
+                "html": "<ul><li><a href=\"/popcorn-ceiling-removal/oakville/\" class=\"font-semibold text-blue-600 hover:underline\">Popcorn ceiling removal in Oakville</a>: Local service page for the target city and service.</li><li><a href=\"/services/popcorn-ceiling-removal/\" class=\"font-semibold text-blue-600 hover:underline\">Popcorn ceiling removal service</a>: Main service page for this service.</li><li><a href=\"/blog/popcorn-ceiling-removal-cost-oakville/\" class=\"font-semibold text-blue-600 hover:underline\">popcorn removal cost and finish guide</a>: Cost factors, dust control, and smooth ceiling finish quality.</li><li><a href=\"/blog/painted-popcorn-ceiling-removal-scrape-or-skim-coat/\" class=\"font-semibold text-blue-600 hover:underline\">painted popcorn ceiling removal guide</a>: How painted texture changes scraping, skim coating, and finishing.</li><li><a href=\"/quote/\" class=\"text-blue-600 font-semibold hover:underline\">request a renovation quote</a>: Send photos and room details for review.</li></ul>"
             },
             {
                 "html": "<strong>Bottom line</strong>"
@@ -233,7 +233,7 @@
                 "description": "Main service page for this service."
             },
             {
-                "href": "/blog/popcorn-removal-oakville-cost-finish-guide/",
+                "href": "/blog/popcorn-ceiling-removal-cost-oakville/",
                 "anchor": "popcorn removal cost and finish guide",
                 "description": "Cost factors, dust control, and smooth ceiling finish quality."
             },

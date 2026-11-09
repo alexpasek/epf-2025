@@ -136,7 +136,7 @@ export default function PopcornMap({ points = [] }) {
         {points.map((p) => {
           const city = slugify(p.city);
           const hood = p.nbh ? slugify(p.nbh) : null;
-          const href = hood
+          const href = city === "oakville" ? "/popcorn-ceiling-removal/oakville/" : hood
             ? `/popcorn-ceiling-removal/${city}/${hood}`
             : `/popcorn-ceiling-removal/${city}`;
 

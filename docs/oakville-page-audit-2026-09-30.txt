@@ -1,0 +1,245 @@
+EPF OAKVILLE SERVICE PAGE IMPLEMENTATION AUDIT — 2026-09-30
+
+Primary URL: /popcorn-ceiling-removal/oakville/ (unchanged)
+Main topic / keyword: popcorn ceiling removal Oakville
+Intent: local service research and contractor comparison; secondary cost planning.
+Task types: service-page improvement, blog consolidation, internal-link improvement.
+Cluster / primary service: popcorn ceiling removal and smooth ceiling refinishing.
+Supporting pillar: /services/popcorn-ceiling-removal/.
+Image plan: reuse the existing optimized service-process photo as a general EPF
+example, with ALT describing the visible sander and texture. No generated photos
+or new blog posts were requested. Do not use generated imagery as project proof.
+Metadata and structured data are supported by the existing Next.js project.
+
+1. PAGE CHANGES
+- One requested H1, concise dark hero, trust coverage, quote and telephone CTAs.
+- Crawlable Cost / Projects / Painted Ceilings / What's Included / Process /
+  Timeline / FAQ navigation.
+- Up-to-three-card verified-project data model (empty until EPF supplies evidence).
+- Lightweight interactive cost estimator, centralized existing prices, accessible
+  labels, live result, validation, exclusions and no-JavaScript fallback.
+- Preserved published Oakville room budgets; no discounts or new numeric
+  repair, painted-texture or height surcharges invented.
+- Painted/unpainted comparison, testing warning, scope checklist and quote
+  comparison checklist, Level 5 explanation, consolidated process and dust plan.
+- Project-type timeline and one purposeful neighbourhood/logistics section.
+- Google review link without unverified quotes, review count or rating.
+- Existing QuoteForm reused without changing the submit endpoint or fields.
+- Preserved FAQ content. Most content remains server-rendered; the estimator is
+  the only new client component (existing form and site shell remain interactive).
+
+2. REMOVED / CONSOLIDATED
+- Repeated protection, dust, skim, quote preparation, access and location copy.
+- Local project claims with no job records and shared-photo Oakville labels.
+- Duplicate page-level fixed mobile CTA (the existing site shell CTA remains).
+- Four overlapping blog entries are archived in source, excluded from public
+  post lists, merged through oakvilleContentConsolidation.js and served via 301s.
+- Fourteen explicit neighbourhood pages plus the dynamically generated
+  Iroquois Ridge South route now lead to the main Oakville page. No new
+  neighbourhood URLs were created. These pages reused general photos,
+  template service copy and keyword blocks; none supplied a corroborated
+  local job record. General useful access guidance is retained on the main page.
+- In particular Clearview, Palermo West and West Oak Trails each contained over
+  4,000 lines with repeated generated prose. No unique verified case study was lost.
+
+3. OVERLAP DECISIONS
+Preparation pair: retain how-to-prepare-for-popcorn-ceiling-removal-oakville,
+which has detailed furnished/vacant-room guidance. Merge the duplicate's photo,
+access and scheduling checklist.
+General guide pair: retain the established oakville-popcorn-ceiling-removal-guide
+URL with the more specific operational narrative. Merge useful basement/phasing
+notes from the generic generated Practical Homeowner Guide. Remove its visible
+SEO paragraph and unverified photo prompts. This is an informational companion,
+not a second service landing page; it links directly to the service URL.
+Cost pair: retain popcorn-ceiling-removal-cost-oakville; merge the shorter
+cost-finish guide's removal/primer/paint comparison and link to the estimator.
+Painted pair: retain painted-popcorn-ceiling-removal-oakville; incorporate the
+useful unpainted comparison from painted-vs-unpainted-popcorn-ceiling-removal-oakville.
+Distinct condo, pot-light, asbestos, skim-coat, dust, terminology, resale,
+contractor-selection and before/after intents remain. Drywall and painting
+articles address separate services and were not blindly consolidated.
+No search analytics were available; decisions use content and intent, not assumed
+traffic or rankings. No content was padded merely to increase word count.
+
+4. EXACT 301 REDIRECTS (BOTH TRAILING-SLASH VARIANTS)
+/blog/prepare-home-popcorn-ceiling-removal-oakville/ -> /blog/how-to-prepare-for-popcorn-ceiling-removal-oakville/
+/blog/popcorn-ceiling-removal-in-oakville-a-practical-homeowner-guide/ -> /blog/oakville-popcorn-ceiling-removal-guide/
+/blog/popcorn-removal-oakville-cost-finish-guide/ -> /blog/popcorn-ceiling-removal-cost-oakville/
+/blog/painted-vs-unpainted-popcorn-ceiling-removal-oakville/ -> /blog/painted-popcorn-ceiling-removal-oakville/
+/popcorn-ceiling-removal/oakville/bronte/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/bronte-creek/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/clearview/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/college-park/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/downtown-oakville/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/falgarwood/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/glen-abbey/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/iroquois-ridge-north/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/kerr-village/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/old-oakville/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/palermo-west/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/river-oaks/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/uptown-core/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/west-oak-trails/ -> /popcorn-ceiling-removal/oakville/
+/popcorn-ceiling-removal/oakville/iroquois-ridge-south/ -> /popcorn-ceiling-removal/oakville/
+
+5. METADATA / STRUCTURED DATA
+Title: Popcorn Ceiling Removal Oakville | Level 5 Smooth Ceilings
+Description: Oakville popcorn ceiling removal with HEPA dust control, Level 5
+skim coating, repairs, primer and optional painting. Painted or unpainted.
+Request a free quote.
+Self-referencing canonical: https://epfproservices.com/popcorn-ceiling-removal/oakville/
+Open Graph uses the same title and description.
+Removed the keyword array and separate embedded LocalBusiness entity.
+Service references the existing layout business ID /#org, which is a
+HomeAndConstructionBusiness (Organization subtype). Oakville, Ontario, Canada
+is areaServed, not a made-up physical address. BreadcrumbList matches visible
+breadcrumbs. The shared header supplies BreadcrumbList. No duplicate page breadcrumb is
+added. Footer Google reviews retain their genuine display, but their extra
+business/review schema is disabled only on this Oakville page. No Review,
+AggregateRating or new FAQPage schema is emitted.
+
+6. INTERNAL LINKS / IMAGES
+Added direct inbound contextual links from homepage, Our Work, Oakville drywall
+repair and interior painting. Existing main popcorn-service, cost, painted,
+dust-control and before/after article links already support the main city URL.
+Updated literal links to consolidated URLs and normalize remote-generated
+post links at render time. Redirect sources are excluded from sitemap output.
+Main page links to cost, painted, prep, dust-control and before/after guides,
+Oakville drywall and skylight repair, painting and the existing quote form.
+Hero uses the existing prebuilt responsive WebP image component (Cloudflare
+configuration disables Next's image optimizer), intrinsic dimensions, responsive
+sizes and eager/high-priority loading. Future project images lazy-load with
+reserved aspect ratios. No new bitmap assets or generated project evidence.
+
+7. PRICING AND EVIDENCE LIMITATIONS TO REVIEW
+Existing Oakville pricing is inconsistent: the main page used room budgets,
+Falgarwood used $5.75–$9.75/sq ft for scrape + Level 5 skim, and College Park
+used $0.90–$1.60/sq ft for primer + paint. Some old neighbourhood FAQ rates
+contradicted their own price cards. The estimator uses the published Level 5
+range, plus the published primer-and-paint allowance only for that finish.
+Room budgets remain a separate alternative; they are not added to area estimates.
+The estimate explicitly says primer scope needs written confirmation and that
+height/repair allowances are unpriced. Condition, height and repair selectors
+change those disclosures; they do not fabricate numeric multipliers. EPF should
+confirm a unified full-scope rate schedule before relying on this as an all-in
+quote calculator. Current output is a planning allowance, not a binding quote.
+
+No verifiable Oakville before/after photo pairs with documented job details were
+found. The existing before/after article expressly disclaims Oakville photo
+verification. The Our Work map derives example locations from seeds/random
+jitter and is not evidence of a job address. Do not import those as real projects.
+To populate each project: confirm neighbourhood, room type, approximate area,
+paint status, repair work, finish scope, duration, before/after photo ownership
+and job association, descriptive ALT text and a short factual note. The data
+model requires verified=true and a source record before a card can render.
+No independently sourced stored review text was available for static reuse;
+the new page block links to the existing EPF Google profile without inventing
+ratings or counts. The existing footer can display actual Google API reviews
+when that service is available, labelled for GTA homeowners, not Oakville jobs.
+Insurance, WSIB and 3-year warranty statements are retained from existing copy;
+EPF should continue to supply current documents and warranty terms with quotes.
+
+8. OAKVILLE BLOG INVENTORY (INCLUDING GENERATED CITY TOPICS)
+oakville-popcorn-ceiling-removal-before-after — retained, distinct intent or merge destination
+popcorn-ceiling-removal-in-oakville-a-practical-homeowner-guide — consolidated via 301
+basement-drywall-taping-mudding-oakville — retained, distinct intent or merge destination
+drywall-installation-oakville-basement-finishing — retained, distinct intent or merge destination
+ceiling-rebuild-after-leak-oakville-project — retained, distinct intent or merge destination
+drywall-contractor-oakville-guide — retained, distinct intent or merge destination
+level-5-drywall-finishing-oakville — retained, distinct intent or merge destination
+how-seasonal-humidity-and-temperature-changes-affect-drywall-oakville — retained, distinct intent or merge destination
+drywall-repair-oakville-homes-smooth-walls-premium-finishes — retained, distinct intent or merge destination
+drywall-repair-before-painting-oakville — retained, distinct intent or merge destination
+drywall-repair-before-selling-home-oakville — retained, distinct intent or merge destination
+drywall-tape-repair-oakville — retained, distinct intent or merge destination
+corner-bead-drywall-repair-oakville — retained, distinct intent or merge destination
+stucco-popcorn-stipple-ceiling-oakville — retained, distinct intent or merge destination
+dustless-popcorn-ceiling-removal-oakville — retained, distinct intent or merge destination
+popcorn-ceiling-removal-before-selling-oakville-home — retained, distinct intent or merge destination
+prepare-home-popcorn-ceiling-removal-oakville — consolidated via 301
+painted-popcorn-ceiling-removal-oakville — retained, distinct intent or merge destination
+popcorn-ceiling-removal-cost-oakville — retained, distinct intent or merge destination
+how-to-choose-popcorn-ceiling-removal-contractor-oakville — retained, distinct intent or merge destination
+painted-vs-unpainted-popcorn-ceiling-removal-oakville — consolidated via 301
+condo-popcorn-ceiling-removal-oakville — retained, distinct intent or merge destination
+popcorn-ceiling-removal-with-pot-lights-oakville — retained, distinct intent or merge destination
+asbestos-popcorn-ceiling-testing-oakville — retained, distinct intent or merge destination
+skim-coating-after-popcorn-ceiling-removal-oakville — retained, distinct intent or merge destination
+interior-painting-oakville-premium-finish-prep-guide — retained, distinct intent or merge destination
+popcorn-removal-oakville-cost-finish-guide — consolidated via 301
+how-to-prepare-for-popcorn-ceiling-removal-oakville — retained, distinct intent or merge destination
+oakville-popcorn-ceiling-removal-guide — retained, distinct intent or merge destination
+
+9. IMPLEMENTATION FILES
+app/popcorn-ceiling-removal/oakville/page.jsx
+app/popcorn-ceiling-removal/oakville/{14 existing neighbourhoods}/page.jsx
+app/popcorn-ceiling-removal/[city]/[neighborhood]/page.jsx
+components/oakville/OakvilleCostEstimator.jsx
+components/oakville/OakvilleProjects.jsx
+data/oakvilleProjects.js
+data/oakvilleRedirects.json
+lib/oakvilleCeilingPricing.mjs
+lib/oakvilleContentConsolidation.js
+lib/posts.js (scoped additions; pre-existing user edits preserved)
+lib/popcornAuthorityPosts.js (direct canonical link)
+data/generated-posts.json (direct canonical cost links)
+app/page.jsx
+app/our-work/page.jsx
+app/popcorn-ceiling-removal/page.jsx
+app/service-areas/popcorn/page.jsx
+app/service-areas/[city]/[neighborhood]/page.jsx
+components/PopcornMap.jsx
+app/services/drywall-repair/oakville/page.jsx
+app/services/interior-painting/page.jsx
+components/GoogleReviews.jsx (optional schema output)
+components/Footer.jsx (disable review schema only on Oakville service page)
+middleware.js (native routing for Oakville blogs; avoids rewrite self-proxy loop)
+next.config.js
+next-sitemap.config.js
+public/sitemap-0.xml (regenerated)
+scripts/check-oakville.mjs
+This audit file.
+
+10. VALIDATION
+- npm run build passed, including image generation/checks, compilation and
+  Next's lint/type-validation stage. No standalone lint/typecheck scripts exist.
+- node --test scripts/check-oakville.mjs: five tests passed, including all 36
+  selector combinations, arithmetic, invalid areas, redirect chains and sitemap.
+- Post-loader audit confirmed 29 Oakville blog entries before consolidation,
+  including generated city topics; four duplicate sources are filtered out.
+- Build warnings: stale browser-compatibility data; existing external Google
+  Maps/generated-post fetches unavailable in the sandbox and fall back safely.
+- Browser results and remaining publication checks are recorded below.
+
+Browser testing also exposed a pre-existing trailing-slash middleware self-proxy
+loop on Oakville blog URLs (500 responses). Oakville blogs now bypass that
+rewrite and use native Next routing; other blog routing is unchanged.
+
+FINAL BROWSER VALIDATION (production build, local server)
+- All 19 redirect sources checked with and without trailing slash: 38 actual
+  HTTP 301 responses with correct destinations and no chains.
+- All nine distinct internal page-body links returned successful responses,
+  including retained Oakville blog URLs after the middleware fix.
+- One H1, requested title and self-canonical verified in the browser.
+- JSON-LD parsed; one Service and shared organization reference; no extra
+  review/rating/FAQ schema after the live review component hydrated.
+- 360, 390, 768 and 1280 px viewports: no horizontal overflow. Mobile and
+  desktop screenshots visually reviewed. Dropdown accessible labels corrected.
+- Calculator input, finish arithmetic, access/repair disclosures and empty
+  input behavior passed in the browser.
+- Existing quote form: intercepted POST and successful /thank-you/ navigation.
+  This was a mock only; no real email was sent.
+- Main content, pricing and FAQ remain visible with JavaScript disabled.
+- Zero browser runtime errors.
+- Final npm run build, node --test scripts/check-oakville.mjs and git diff
+  --check passed.
+
+REMAINING PUBLICATION REVIEW
+- Supply real Oakville project records/photos for the three featured slots.
+- Confirm a consistent complete-scope price schedule, especially primer,
+  small-job minimums, painted ceilings, repairs and high-access allowances.
+- Measure LCP/INP/CLS on the deployed site; local layout tests do not establish
+  production Core Web Vitals. No new large client libraries were added.
+- Confirm actual email delivery after deployment if a live end-to-end test is
+  desired. Existing endpoint and form implementation were preserved.
+- This work is implemented locally, not committed, pushed or deployed.

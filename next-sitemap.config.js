@@ -1,4 +1,6 @@
 const fs = require("fs");
+const oakvilleRedirects = require("./data/oakvilleRedirects.json");
+const isConsolidated = (path) => Boolean(oakvilleRedirects[`${path.replace(/\/$/, "")}/`]);
 const path = require("path");
 
 /** @type {import('next-sitemap').IConfig} */
@@ -68,6 +70,7 @@ module.exports = {
 
     // only exclude things that should never be indexed
     exclude: [
+        ...Object.keys(oakvilleRedirects),
         "/api/*",
         "/404",
         "/500",
@@ -81,6 +84,7 @@ module.exports = {
     // Transform function for discovered pages
     transform: async(config, path) => {
         // Skip template/bracket routes 
+        if (isConsolidated(path)) return null;
         if (path.includes("[") || path.includes("]")) {
             return null;
         }
@@ -117,12 +121,23 @@ module.exports = {
     },
 
     additionalPaths: async() =>
-        collectBlogSlugs().map((slug) => ({
+        [
+          ...require("./data/projects.json")
+            .filter(project => project.status === "published" && project.publicationDate &&
+                project.images.some(image => image.featured && image.src && image.width && image.height))
+            .map(project => ({
+                loc: `/our-work/${project.slug}/`,
+                changefreq: "monthly",
+                priority: 0.7,
+                lastmod: project.publicationDate,
+            })),
+          ...collectBlogSlugs().filter(slug => !isConsolidated(`/blog/${slug}/`)).map((slug) => ({
             loc: `/blog/${slug}/`,
             changefreq: "weekly",
             priority: 0.7,
             lastmod: new Date().toISOString(),
-        })),
+          })),
+        ],
 
     robotsTxtOptions: {
         policies: [{

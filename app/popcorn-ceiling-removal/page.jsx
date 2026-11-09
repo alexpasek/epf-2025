@@ -44,7 +44,8 @@ export default function Page() {
               </Link>
             </div>
 
-            {Array.isArray(c.neighborhoods) && c.neighborhoods.length > 0 && (
+            {c.slug === "oakville" && <p className="mt-4 text-sm text-gray-600">Oakville neighbourhood access and project planning are covered on the city page.</p>}
+            {c.slug !== "oakville" && Array.isArray(c.neighborhoods) && c.neighborhoods.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
                 {c.neighborhoods.map((n) => (
                   <Link

@@ -70,7 +70,7 @@ export default function Page() {
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {c.neighborhoods.map((n) => (
+                  {(c.slug === "oakville" ? [] : c.neighborhoods).map((n) => (
                     <Link
                       key={n.slug}
                       href={`/popcorn-ceiling-removal/${c.slug}/${n.slug}`}

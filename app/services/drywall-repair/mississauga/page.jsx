@@ -67,6 +67,7 @@ const QUOTE_CHECKLIST = [
 ];
 
 const CLUSTER_GUIDES = [
+  ["/blog/plaster-repair-vs-drywall-replacement-mississauga/", "Plaster Repair or Drywall Replacement?", "Compare retaining sound plaster with a larger drywall rebuild, including trim and final finishing."],
   [
     "/blog/drywall-contractor-mississauga-guide/",
     "Drywall Contractor Mississauga Guide",

@@ -380,6 +380,7 @@ export default function Page() {
                   Premium Drywall Repair{" "}
                   <span className="text-blue-600">{CITY}, Ontario</span>
                 </h1>
+<p className="my-4">Planning ceiling work too? Compare our <a className="font-semibold underline underline-offset-4" href="/popcorn-ceiling-removal/oakville/">Oakville popcorn ceiling removal service</a>.</p>
 
                 <p className="text-xl md:text-2xl text-gray-700 font-medium leading-relaxed">
                   Luxury <strong>drywall repair Oakville Ontario</strong> for
