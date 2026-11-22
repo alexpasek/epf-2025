@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getPosts } from '@/lib/posts';
+import LocalServiceQuestions from '@/components/LocalServiceQuestions';
 import BlogBrowser from './BlogBrowser';
 import './blog-index.css';
 
@@ -35,8 +36,12 @@ export default async function Blog() {
   return <div className="epf-guides">
     <div className="guide-shell">
       <header className="guide-hero"><div><p className="guide-eyebrow">The EPF homeowner journal</p><h1>Practical guides.<br /><em>Better home projects.</em></h1><p className="guide-intro">Clear answers on popcorn ceiling removal, drywall repair and interior painting—so you can understand the options before you start.</p><p className="guide-local">For homeowners across the GTA and surrounding communities.</p></div><aside className="guide-help"><span className="guide-eyebrow">Have a project in mind?</span><h2>Start with your space.</h2><p>Send a few photos, your location and what you’d like to change. We’ll help you understand the next step.</p><Link href="/quote/" className="guide-cta">Get a free estimate <span aria-hidden="true">↗</span></Link><a href="tel:+16479236784">Or call (647) 923-6784</a></aside></header>
-      <nav className="guide-services" aria-label="Explore EPF services"><span>Looking for a service?</span><Link href="/services/popcorn-ceiling-removal/">Popcorn ceiling removal ↗</Link><Link href="/services/drywall-repair/">Drywall repair ↗</Link><Link href="/services/interior-painting/">Interior painting ↗</Link></nav>
+      <nav className="guide-services" aria-label="Explore EPF services"><span>Looking for a service?</span><Link href="/services/popcorn-ceiling-removal/">Popcorn ceiling removal ↗</Link><Link href="/services/drywall-repair/">Drywall repair ↗</Link><Link href="/services/interior-painting/">Interior painting ↗</Link><a href="#local-service-questions">Ceiling and drywall questions by city ↓</a></nav>
       <BlogBrowser posts={posts} />
+      <section id="local-service-questions" aria-labelledby="local-service-heading" className="mt-10 scroll-mt-24">
+        <h2 id="local-service-heading" className="text-2xl font-semibold">Ceiling removal and drywall repair questions by city</h2>
+        <LocalServiceQuestions />
+      </section>
       <section className="guide-coverage"><div><p className="guide-eyebrow">Local advice. Local help.</p><h2>Find EPF in your area.</h2><p>Serving Toronto, Mississauga, Oakville, Burlington, Milton and surrounding communities. Don’t see your area? Contact us directly to confirm availability.</p></div><div><Link href="/service-areas/">Explore our service areas ↗</Link><Link href="/contact/">Contact EPF Pro Services ↗</Link></div></section>
     </div>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection).replace(/</g, '\\u003c') }} />
