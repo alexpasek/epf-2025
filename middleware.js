@@ -5,6 +5,9 @@ export function middleware(request) {
 
   // Keep the repair guides and the Dundas project companion guide on native routing.
   if ([
+    '/blog/ceiling-texture-matching-after-drywall-repair',
+    '/blog/popcorn-ceiling-removal-with-crown-moulding',
+    '/blog/drywall-repair-after-wallpaper-removal',
     '/blog/why-popcorn-ceiling-removal-needs-skim-coating-hamilton',
     '/blog/how-to-compare-drywall-repair-quotes-occupied-home',
     '/blog/can-drywall-be-patched-and-painted-in-one-day',
